@@ -1,0 +1,26 @@
+<IfModule mod_headers.c>
+        Header set Vary "Accept-Encoding"
+        Header set Cache-Control "max-age=10672000, must-revalidate"
+</IfModule>
+<IfModule mod_expires.c>
+        ExpiresActive On
+        ExpiresByType text/css A30672000
+        ExpiresByType text/javascript A30672000
+        ExpiresByType application/javascript A30672000
+</IfModule>
+<IfModule mod_deflate.c>
+    <FilesMatch "\.(js|css)$">
+        SetOutputFilter DEFLATE
+    </FilesMatch>
+</IfModule>
+<IfModule mod_authz_core.c>
+    <Files *.php>
+        Require all denied
+    </Files>
+</IfModule>
+<IfModule !mod_authz_core.c>
+    <Files *.php>
+        Order deny,allow
+        Deny from all
+    </Files>
+</IfModule>
