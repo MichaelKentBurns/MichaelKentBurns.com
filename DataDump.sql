@@ -6757,9 +6757,9 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (148,	'bvActivateTime',	'1680043687',	'no'),
 (149,	'breeze_first_install',	'no',	'yes'),
 (152,	'bvAccountsList',	'a:1:{s:32:\"649b67ae0ae6163b3498ffaa3f47a159\";a:7:{s:6:\"secret\";s:32:\"0f673f045b8323b6aa76a8e4552f7202\";s:11:\"account_gid\";s:8:\"txcHzpbR\";s:14:\"lastbackuptime\";i:1694577086;s:7:\"malcare\";b:1;s:12:\"account_type\";s:10:\"botprotect\";s:3:\"url\";s:50:\"https://wordpress-971999-3400096.cloudwaysapps.com\";s:5:\"email\";s:21:\"971******@cw_user.com\";}}',	'no'),
-(153,	'bvLastRecvTime',	'1694638773',	'no'),
+(153,	'bvLastRecvTime',	'1694640029',	'no'),
 (154,	'bvApiPublic',	'649b67ae0ae6163b3498ffaa3f47a159',	'no'),
-(155,	'bvwatchtime',	'1694638787',	'no'),
+(155,	'bvwatchtime',	'1694640035',	'no'),
 (156,	'mcconfig',	'a:6:{s:8:\"services\";a:1:{i:0;s:7:\"protect\";}s:7:\"protect\";a:6:{s:15:\"mc_conf_version\";s:1:\"2\";s:8:\"ipheader\";a:2:{s:3:\"hdr\";s:20:\"HTTP_X_FORWARDED_FOR\";s:3:\"pos\";i:0;}s:9:\"brandname\";s:14:\"Bot Protection\";s:7:\"confkey\";s:32:\"e226639095138e54882d425659658b44\";s:2:\"fw\";a:15:{s:4:\"mode\";i:3;s:16:\"reqprofilingmode\";i:2;s:11:\"bypasslevel\";i:2;s:10:\"cookiemode\";i:2;s:11:\"loggingmode\";i:1;s:15:\"admincookiemode\";i:1;s:12:\"ipcookiemode\";i:2;s:11:\"customroles\";a:0:{}s:9:\"cookiekey\";s:32:\"08b46051fd1385d50ac6db706e77f058\";s:10:\"cookiepath\";s:0:\"\";s:12:\"cookiedomain\";s:0:\"\";s:9:\"rulesmode\";i:1;s:27:\"cansetcachepreventioncookie\";b:0;s:13:\"isgeoblocking\";b:0;s:9:\"logconfig\";a:3:{s:16:\"reqprofilingmode\";i:2;s:11:\"loggingmode\";i:1;s:6:\"except\";a:3:{s:7:\"cookies\";a:5:{i:0;s:46:\"wordpress_sec_666b0a6cd8f8a0c7464eb6bd298be1c7\";i:1;s:52:\"wordpress_logged_in_666b0a6cd8f8a0c7464eb6bd298be1c7\";i:2;s:42:\"wordpress_666b0a6cd8f8a0c7464eb6bd298be1c7\";i:3;s:44:\"wp-postpass_666b0a6cd8f8a0c7464eb6bd298be1c7\";i:4;s:45:\"wp-resetpass-666b0a6cd8f8a0c7464eb6bd298be1c7\";}s:7:\"headers\";a:1:{i:0;s:6:\"Cookie\";}s:4:\"post\";a:3:{i:0;s:8:\"password\";i:1;s:6:\"passwd\";i:2;s:3:\"pwd\";}}}}s:2:\"lp\";a:8:{s:6:\"ptplug\";s:7:\"malcare\";s:4:\"mode\";i:3;s:12:\"captchalimit\";i:10;s:14:\"tempblocklimit\";i:15;s:13:\"blockalllimit\";i:100;s:14:\"failedlogingap\";i:1800;s:15:\"successlogingap\";i:3600;s:13:\"allblockedgap\";i:1800;}}s:10:\"db_version\";s:1:\"4\";s:7:\"abspath\";s:54:\"/home/971999.cloudwaysapps.com/hynxgrbyjv/public_html/\";s:7:\"siteurl\";s:50:\"https://wordpress-971999-3400096.cloudwaysapps.com\";s:14:\"siteurl_scheme\";s:5:\"https\";}',	'no'),
 (157,	'objectcache_license',	'O:8:\"stdClass\":7:{s:4:\"plan\";s:10:\"L3 Partner\";s:5:\"state\";s:5:\"valid\";s:5:\"token\";s:60:\"e279430effe043b8c17d3f3c751c4c0846bc70c97f0eaaea766b4079001c\";s:12:\"organization\";O:8:\"stdClass\":2:{s:4:\"name\";s:17:\"Cloudways Limited\";s:4:\"slug\";s:17:\"cloudways-limited\";}s:9:\"stability\";s:6:\"stable\";s:10:\"last_check\";i:1694577121;s:11:\"valid_as_of\";i:1694577121;}',	'no'),
 (159,	'WPLANG',	'',	'yes'),
@@ -6854,7 +6854,7 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (265,	'tiled_galleries',	'1',	'yes'),
 (273,	'social_notifications_subscribe',	'off',	'yes'),
 (274,	'widget_blog_subscription',	'a:1:{s:12:\"_multiwidget\";i:1;}',	'yes'),
-(284,	'_transient_jetpack_autoloader_plugin_paths',	'a:1:{i:0;s:25:\"{{WP_PLUGIN_DIR}}/jetpack\";}',	'yes'),
+(284,	'_transient_jetpack_autoloader_plugin_paths',	'a:0:{}',	'yes'),
 (291,	'finished_updating_comment_type',	'1',	'yes'),
 (298,	'auto_core_update_notified',	'a:4:{s:4:\"type\";s:7:\"success\";s:5:\"email\";s:26:\"michaelkentburns@gmail.com\";s:7:\"version\";s:5:\"6.2.2\";s:9:\"timestamp\";i:1684904413;}',	'no'),
 (303,	'_transient_health-check-site-status-result',	'{\"good\":\"42\",\"recommended\":\"3\",\"critical\":\"2\"}',	'yes'),
@@ -7335,4 +7335,4 @@ INSERT INTO `wp_users` (`ID`, `user_login`, `user_pass`, `user_nicename`, `user_
 (2,	'Michael',	'$P$BGZr/3QA5ula.NFhs4EuFYF9VILif.1',	'michael-2',	'MichaelBurns@mac.com',	'http://MichaelKentBurns.com',	'2023-04-01 23:43:21',	'1680392601:$P$BbwjhJFT.OMI1dLSjHFRwqS1YryeQh1',	0,	'Michael Burns'),
 (3,	'ArtAdmin',	'$P$BDTzjV7Y2QoTng1n9WXNTljBvsKnH.1',	'artadmin',	'mpkburns@mac.com',	'',	'2023-08-05 17:33:59',	'1691256839:$P$BqunHw2C88Wm.wkxsNunJkltDiTXF9/',	0,	'Mary Burns');
 
--- 2023-09-13 21:04:59
+-- 2023-09-13 21:21:31
