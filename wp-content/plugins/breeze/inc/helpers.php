@@ -1005,7 +1005,7 @@ function breeze_migrate_old_settings( $is_sigle = true, $subsite_id = 0, $is_roo
 
 	$preload = array(
 		'breeze-preload-fonts' => ( isset( $options['breeze-preload-fonts'] ) ? $options['breeze-preload-fonts'] : array() ),
-		'breeze-preload-links' => ( isset( $options['breeze-preload-links'] ) ? $options['breeze-preload-links'] : '0' ),
+		'breeze-preload-links' => ( isset( $options['breeze-preload-links'] ) ? $options['breeze-preload-links'] : '1' ),
 	);
 
 	$advanced = array(

@@ -98,6 +98,21 @@ class Breeze_MinificationScripts extends Breeze_MinificationBase {
 	private $original_content = '';
 	private $show_original_content = 0;
 	private $do_process = false;
+
+	/**
+	 * Holds the 3rd party defer links
+	 * @var array[]
+	 */
+	private $do_defer_action = array(
+		'head'   => array(),
+		'footer' => array(),
+	);
+	/**
+	 * Holds the 3rd party defer tags
+	 * @var array[]
+	 */
+	private $do_defer_tag = array();
+
 	/**
 	 * Defer/Delay the inline scripts.
 	 *
@@ -369,7 +384,23 @@ class Breeze_MinificationScripts extends Breeze_MinificationBase {
 					} else {
 						//External script (example: google analytics)
 						//OR Script is dynamic (.php etc)
-						if ( $this->ismovable( $tag ) ) {
+						if ( // Defer 3rd party scripts.
+							breeze_validate_url_via_regexp( $url ) &&
+							! empty( $this->defer_js ) &&
+							true === $this->is_in_defer_is( $url, $this->defer_js )
+						) {
+
+							if ( true === $head ) {
+								$this->do_defer_action['head'][ $url ] = $url;
+							} else {
+								$this->do_defer_action['footer'][ $url ] = $url;
+							}
+							$this->do_defer_tag[ $url ] = $tag;
+
+							//Remove the original script tag
+							#$content = str_replace( $tag, '', $content );
+
+						} else if ( $this->ismovable( $tag ) ) {
 							if ( $this->movetolast( $tag ) ) {
 								$this->move['last'][] = $tag;
 							} else {
@@ -1007,6 +1038,55 @@ class Breeze_MinificationScripts extends Breeze_MinificationBase {
 				if ( ! empty( $this->js_min_footer ) ) {
 					$this->inject_in_html( $jsReplacement, $replaceTag );
 				}
+			}
+		}
+
+		if ( ! empty( $this->do_defer_action['head'] ) || ! empty( $this->do_defer_action['footer'] ) ) {
+
+			if ( ! empty( $this->do_defer_action['head'] ) ) {
+				$replaceTag  = array( '</head>', 'before' );
+				$js_head     = array();
+				$defer       = 'defer ';
+				$delay_defer = 'true';
+
+				foreach ( $this->do_defer_action['head'] as $js_url => $js_path ) {
+					if ( true === $this->delay_javascript && false === $this->ignore_from_delay( $js_url ) ) {
+						$js_head[] = '<div class="breeze-scripts-load" data-file="1" data-async="false" data-locate="footer" data-defer="' . $delay_defer . '" style="display:none">' . $js_url . '</div>' . "\n";
+					} else {
+						$js_head[] = "<script type='application/javascript' {$defer}src='{$js_url}'></script>\n";
+					}
+
+					if ( isset( $this->do_defer_tag[ $js_url ] ) ) {
+						$this->content = str_replace( $this->do_defer_tag[ $js_url ], '', $this->content );
+					}
+				}
+
+				$js_replacement = '';
+				$js_replacement .= implode( '', $js_head );
+				$this->inject_in_html( $js_replacement, $replaceTag );
+			}
+
+			if ( ! empty( $this->do_defer_action['footer'] ) ) {
+				$replaceTag  = array( '</body>', 'before' );
+				$js_footer   = array();
+				$defer       = 'defer ';
+				$delay_defer = 'true';
+
+				foreach ( $this->do_defer_action['footer'] as $js_url => $js_path ) {
+					if ( true === $this->delay_javascript && false === $this->ignore_from_delay( $js_url ) ) {
+						$js_footer[] = '<div class="breeze-scripts-load" data-file="1" data-async="false" data-locate="footer" data-defer="' . $delay_defer . '" style="display:none">' . $js_url . '</div>' . "\n";
+					} else {
+						$js_footer[] = "<script type='application/javascript' {$defer}src='{$js_url}'></script>\n";
+					}
+
+					if ( isset( $this->do_defer_tag[ $js_url ] ) ) {
+						$this->content = str_replace( $this->do_defer_tag[ $js_url ], '', $this->content );
+					}
+				}
+
+				$js_replacement = '';
+				$js_replacement .= implode( '', $js_footer );
+				$this->inject_in_html( $js_replacement, $replaceTag );
 			}
 		}
 

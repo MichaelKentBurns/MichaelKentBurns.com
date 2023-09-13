@@ -1,6 +1,5 @@
 <?php
 /**
-
  * @copyright 2017  Cloudways  https://www.cloudways.com
  *
  *  This plugin is inspired from WP Speed of Light by JoomUnited.
@@ -1964,7 +1963,7 @@ class Breeze_Configuration {
 		// Preload default
 		$default_preload = array(
 			'breeze-preload-fonts' => array(),
-			'breeze-preload-links' => '0',
+			'breeze-preload-links' => '1',
 			'breeze-prefetch-urls' => array(),
 		);
 		$preload         = $default_preload;

@@ -384,4 +384,37 @@ abstract class Breeze_MinificationBase {
 
 		return $cache_dir;
 	}
+
+	/**
+	 * @param string $url Script url.
+	 * @param array $defer_data Array with all defer scripts.
+	 *
+	 * @return bool
+	 */
+	protected function is_in_defer_is( $url, $defer_data ): bool {
+		if ( empty( $url ) || empty( $defer_data ) ) {
+			return false;
+		}
+
+		if (
+			in_array( $url, $defer_data, true ) ||
+			array_key_exists( $url, $defer_data )
+		) {
+			return true;
+		}
+
+		$return = false;
+
+		foreach ( $defer_data as $key => $value ) {
+			if (
+				false !== strpos( $key, $url ) ||
+				false !== strpos( $value, $url )
+			) {
+				$return = true;
+				break;
+			}
+		}
+
+		return $return;
+	}
 }

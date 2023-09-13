@@ -5,16 +5,16 @@ if (!class_exists('BVCallbackBase')) :
 
 class BVCallbackBase {
 
-	public static $wing_infos = array("MANAGE_WING_VERSION" => '1.2',
+	public static $wing_infos = array("MANAGE_WING_VERSION" => '1.3',
 		"ACTLOG_WING_VERSION" => '1.0',
 		"DYNSYNC_WING_VERSION" => '1.0',
 		"UPGRADER_WING_VERSION" => '1.1',
 		"BRAND_WING_VERSION" => '1.0',
 		"DB_WING_VERSION" => '1.3',
-		"ACCOUNT_WING_VERSION" => '1.1',
+		"ACCOUNT_WING_VERSION" => '1.2',
 		"MISC_WING_VERSION" => '1.2',
 		"FS_WING_VERSION" => '1.2',
-		"INFO_WING_VERSION" => '1.6',
+		"INFO_WING_VERSION" => '1.8',
 		"WATCH_WING_VERSION" => '1.1',
 		"FS_WRITE_WING_VERSION" => '1.0',
 		"IPSTORE_WING_VERSION" => '1.2',

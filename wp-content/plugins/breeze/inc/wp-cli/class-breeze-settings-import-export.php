@@ -436,7 +436,7 @@ class Breeze_Settings_Import_Export {
 
 			$preload = array(
 				'breeze-preload-fonts' => ( isset( $options['breeze-preload-fonts'] ) ? $options['breeze-preload-fonts'] : array() ),
-				'breeze-preload-links' => ( isset( $options['breeze-preload-links'] ) ? $options['breeze-preload-links'] : '0' ),
+				'breeze-preload-links' => ( isset( $options['breeze-preload-links'] ) ? $options['breeze-preload-links'] : '1' ),
 			);
 
 			$advanced = array(
@@ -663,7 +663,7 @@ class Breeze_Settings_Import_Export {
 			'breeze-group-js'           => '0',
 			'breeze-include-inline-js'  => '0',
 			'breeze-enable-js-delay'    => '0',
-			'breeze-preload-links'      => '0',
+			'breeze-preload-links'      => '1',
 			'breeze-wp-emoji'           => '0',
 			'cdn-active'                => '0',
 			'cdn-relative-path'         => '1',
