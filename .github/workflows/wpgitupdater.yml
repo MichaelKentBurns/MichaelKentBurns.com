@@ -1,0 +1,16 @@
+name: wpgitupdater
+on:
+  schedule:
+  - cron: 46 14 * * *
+  workflow_dispatch:
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - run: git checkout develop
+    - run: curl https://install.wpgitupdater.dev/install.sh | bash -s -- -b $HOME/bin
+    - run: $HOME/bin/wpgitupdater update
+      env:
+        WP_GIT_UPDATER_TOKEN: ${{ secrets.WP_GIT_UPDATER_TOKEN }}
+        WP_GIT_UPDATER_GIT_TOKEN: ${{ secrets.GITHUB_TOKEN }}

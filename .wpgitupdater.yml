@@ -1,0 +1,7 @@
+version: "1.0"
+plugins:
+  enabled: true
+  path: plugins
+themes:
+  enabled: true
+  path: themes
