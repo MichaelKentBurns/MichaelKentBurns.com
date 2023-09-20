@@ -329,7 +329,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 <link rel='stylesheet' id='dashicons-css' href='https://c0.wp.com/c/6.3.1/wp-includes/css/dashicons.min.css' media='all' />
 <link rel='stylesheet' id='thickbox-css' href='https://c0.wp.com/c/6.3.1/wp-includes/js/thickbox/thickbox.css' media='all' />
 <script id='ce4wp_form_submit-js-extra'>
-var ce4wp_form_submit_data = {"siteUrl":"https:\/\/wordpress-971999-3400096.cloudwaysapps.com","url":"https:\/\/wordpress-971999-3400096.cloudwaysapps.com\/wp-admin\/admin-ajax.php","nonce":"febd04a306","listNonce":"31a755f093","activatedNonce":"6c19c794cf"};
+var ce4wp_form_submit_data = {"siteUrl":"https:\/\/wordpress-971999-3400096.cloudwaysapps.com","url":"https:\/\/wordpress-971999-3400096.cloudwaysapps.com\/wp-admin\/admin-ajax.php","nonce":"3772a79d77","listNonce":"8a54c70638","activatedNonce":"e08db48bf6"};
 </script>
 <script src='https://wordpress-971999-3400096.cloudwaysapps.com/wp-content/plugins/creative-mail-by-constant-contact/assets/js/block/submit.js?ver=1681327278' id='ce4wp_form_submit-js'></script>
 <script src='https://wordpress-971999-3400096.cloudwaysapps.com/wp-content/plugins/jetpack/jetpack_vendor/automattic/jetpack-image-cdn/dist/image-cdn.js?minify=false&#038;ver=132249e245926ae3e188' id='jetpack-photon-js'></script>
@@ -353,5 +353,5 @@ var Jetpack_Block_Assets_Base_Url = {"url":"https:\/\/wordpress-971999-3400096.c
 </body>
 </html>
 
-<!-- Cache served by breeze CACHE - Last modified: Wed, 13 Sep 2023 09:59:04 GMT -->
-";s:7:"headers";a:3:{i:0;a:2:{s:4:"name";s:14:"Content-Length";s:5:"value";i:48257;}i:1;a:2:{s:4:"name";s:12:"Content-Type";s:5:"value";s:24:"text/html; charset=utf-8";}i:2;a:2:{s:4:"name";s:13:"Last-Modified";s:5:"value";s:29:"Wed, 13 Sep 2023 09:59:04 GMT";}}}
+<!-- Cache served by breeze CACHE - Last modified: Wed, 20 Sep 2023 07:17:39 GMT -->
+";s:7:"headers";a:3:{i:0;a:2:{s:4:"name";s:14:"Content-Length";s:5:"value";i:48257;}i:1;a:2:{s:4:"name";s:12:"Content-Type";s:5:"value";s:24:"text/html; charset=utf-8";}i:2;a:2:{s:4:"name";s:13:"Last-Modified";s:5:"value";s:29:"Wed, 20 Sep 2023 07:17:39 GMT";}}}
