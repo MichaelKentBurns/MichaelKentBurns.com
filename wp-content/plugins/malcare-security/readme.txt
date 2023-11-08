@@ -4,9 +4,9 @@ Tags: security, wordpress security, security plugin, firewall, malware scanner, 
 Plugin URI: https://www.malcare.com
 Donate link: https://www.malcare.com
 Requires at least: 4.0
-Tested up to: 6.3
-Requires PHP: 5.4.0
-Stable tag: 5.25
+Tested up to: 6.4
+Requires PHP: 5.6.0
+Stable tag: 5.38
 License: GPLv2 or later
 License URI: [http://www.gnu.org/licenses/gpl-2.0.html](http://www.gnu.org/licenses/gpl-2.0.html)
 
@@ -403,6 +403,11 @@ These are available on our website: [Terms of Service](https://www.malcare.com/t
 8. MalCare’s Uptime Monitoring notifies if a website goes down so that you can handle the situation before starting to lose visitors.
 
 == CHANGELOG ==
+= 5.38 =
+* Added WooCommerce 8.2.1 Real-Time-Backup support.
+* Enhanced Firewall for greater robustness
+* Enhanced WAF
+
 = 5.25 =
 * Bug fix get_admin_url
 

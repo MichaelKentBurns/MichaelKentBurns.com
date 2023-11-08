@@ -5,11 +5,17 @@ if (!class_exists('BVSecurityCallback')) :
 		function getCrontab() {
 			$resp = array();
 
-			if (function_exists('exec') && exec('crontab -l', $output, $retval) !== false) {
-				$resp["content"] = implode("\n", $output);
-				$resp["status"] = "success";
-				$resp["code"] = $retval;
-			} elseif (function_exists('popen')) {
+			if (function_exists('exec')) {
+				$output = array();
+				$retval = -1;
+				$execRes = exec('crontab -l', $output, $retval);
+				if ($execRes !== false && $execRes !== null) {
+					$resp["content"] = implode("\n", $output);
+					$resp["status"] = "success";
+					$resp["code"] = $retval;
+				}
+			}
+			if (empty($resp) && function_exists('popen')) {
 				$handle = popen('crontab -l', 'rb');
 				if ($handle) {
 					$output = '';

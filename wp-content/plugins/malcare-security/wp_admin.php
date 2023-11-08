@@ -81,9 +81,9 @@ class MCWPAdmin {
 	}
 
 	public function menu() {
-		add_submenu_page(null, 'Malcare', 'Malcare', 'manage_options', 'bv_add_account',
+		add_submenu_page('', 'Malcare', 'Malcare', 'manage_options', 'bv_add_account',
 			array($this, 'showAddAccountPage'));
-		add_submenu_page(null, 'Malcare', 'Malcare', 'manage_options', 'bv_account_details',
+		add_submenu_page('', 'Malcare', 'Malcare', 'manage_options', 'bv_account_details',
 			array($this, 'showAccountDetailsPage'));
 
 		$brand = $this->bvinfo->getBrandInfo();

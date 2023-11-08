@@ -301,6 +301,8 @@ class Breeze_Minify {
 			$is_caching_on = $is_found;
 		}
 
+		//TODO: Move the store files locally function here in case it won't work where it is originally
+
 		if ( ! empty( $conf ) && false === $is_caching_on && is_user_logged_in() ) {
 			$content = apply_filters( 'breeze_html_after_minify', $content );
 

@@ -354,6 +354,10 @@ class Breeze_Configuration {
 			'breeze-exclude-urls'  => $exclude_urls,
 			'cached-query-strings' => $cache_query_str,
 			'breeze-wp-emoji'      => ( isset( $_POST['breeze-wpjs-emoji'] ) ? '1' : '0' ),
+			'breeze-store-googlefonts-locally' => ( isset( $_POST['breeze-store-googlefonts-locally'] ) ? '1' : '0' ),
+			'breeze-store-googleanalytics-locally' => ( isset( $_POST['breeze-store-googleanalytics-locally'] ) ? '1' : '0' ),
+			'breeze-store-facebookpixel-locally' => ( isset( $_POST['breeze-store-facebookpixel-locally'] ) ? '1' : '0' ),
+			'breeze-store-gravatars-locally' => ( isset( $_POST['breeze-store-gravatars-locally'] ) ? '1' : '0' ),
 		);
 
 		breeze_update_option( 'advanced_settings', $advanced, true );

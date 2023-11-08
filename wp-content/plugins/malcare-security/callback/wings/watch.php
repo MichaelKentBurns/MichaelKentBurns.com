@@ -7,7 +7,7 @@ class BVWatchCallback extends BVCallbackBase {
 	public $db;
 	public $settings;
 
-	const WATCH_WING_VERSION = 1.1;
+	const WATCH_WING_VERSION = 1.2;
 
 	public function __construct($callback_handler) {
 		$this->db = $callback_handler->db;
@@ -91,13 +91,13 @@ class BVWatchCallback extends BVCallbackBase {
 			$resp = array();
 
 			if (array_key_exists('lp', $params)) {
-				require_once dirname( __FILE__ ) . '/../../protect/wp/lp/config.php';
+				require_once dirname( __FILE__ ) . '/../../protect/lp.php';
 				$lp_params = $params['lp'];
-				if (!isset($lp_params['bv_check_table']) || $db->isTablePresent($db->getBVTable(BVWPLPConfig::$requests_table))) {
+				if (!isset($lp_params['bv_check_table']) || $db->isTablePresent($db->getBVTable(MCProtectLP::TABLE_NAME))) {
 					$limit = intval($lp_params['limit']);
 					$filter = $lp_params['filter'];
-					$db->deleteBVTableContent(BVWPLPConfig::$requests_table, $lp_params['rmfilter']);
-					$table = $db->getBVTable(BVWPLPConfig::$requests_table);
+					$db->deleteBVTableContent(MCProtectLP::TABLE_NAME, $lp_params['rmfilter']);
+					$table = $db->getBVTable(MCProtectLP::TABLE_NAME);
 					$resp["lplogs"] = $this->getData($table, $limit, $filter);
 				} else {
 					$resp["lplogs"] = array("status" => "TABLE_NOT_PRESENT");
@@ -110,13 +110,13 @@ class BVWatchCallback extends BVCallbackBase {
 			}
 
 			if (array_key_exists('fw', $params)) {
-				require_once dirname( __FILE__ ) . '/../../protect/fw/config.php';
+				require_once dirname( __FILE__ ) . '/../../protect/fw.php';
 				$fw_params = $params['fw'];
-				if (!isset($fw_params['bv_check_table']) || $db->isTablePresent($db->getBVTable(BVFWConfig::$requests_table))) {
+				if (!isset($fw_params['bv_check_table']) || $db->isTablePresent($db->getBVTable(MCProtectFW::TABLE_NAME))) {
 					$limit = intval($fw_params['limit']);
 					$filter = $fw_params['filter'];
-					$db->deleteBVTableContent(BVFWConfig::$requests_table, $fw_params['rmfilter']);
-					$table = $db->getBVTable(BVFWConfig::$requests_table);
+					$db->deleteBVTableContent(MCProtectFW::TABLE_NAME, $fw_params['rmfilter']);
+					$table = $db->getBVTable(MCProtectFW::TABLE_NAME);
 					$resp["fwlogs"] = $this->getData($table, $limit, $filter);
 				} else {
 					$resp["fwlogs"] = array("status" => "TABLE_NOT_PRESENT");

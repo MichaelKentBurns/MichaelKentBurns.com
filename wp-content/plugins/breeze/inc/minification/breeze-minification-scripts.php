@@ -305,10 +305,15 @@ class Breeze_MinificationScripts extends Breeze_MinificationBase {
 
 			foreach ( $matches[0] as $tag ) {
 
-				if ( true === breeze_is_script_ignored_from_delay( $tag ) ) {
+				if ( false !== strpos( $tag, 'ga(' ) ||
+				     false !== strpos( $tag, 'google-analytics.com/analytics.js' ) ||
+				     false !== strpos( $tag, '/breeze-extra/' ) ||
+				     false !== strpos( $tag, "gtag('js'" )
+				) {
 					$tag = '';
 					continue;
 				}
+
 
 				// only consider aggregation whitelisted in should_aggregate-function
 				if ( ! $this->should_aggregate( $tag ) ) {

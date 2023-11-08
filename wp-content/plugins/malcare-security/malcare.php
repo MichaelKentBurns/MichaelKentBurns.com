@@ -5,7 +5,7 @@ Plugin URI: https://www.malcare.com
 Description: MalCare WordPress Security Plugin - Malware Scanner, Cleaner, Security Firewall
 Author: MalCare Security
 Author URI: https://www.malcare.com
-Version: 5.25
+Version: 5.38
 Network: True
  */
 
@@ -143,13 +143,12 @@ if ((array_key_exists('bvplugname', $_REQUEST)) && ($_REQUEST['bvplugname'] == "
 } else {
 	if ($bvinfo->hasValidDBVersion()) {
 		if ($bvinfo->isProtectModuleEnabled()) {
-		require_once dirname( __FILE__ ) . '/protect/wp/protect.php';
-		$bvprotect = new BVProtect($bvdb, $bvsettings);
-		$bvprotect->init();
-		if ($bvinfo->isActivePlugin() && !(defined( 'WP_CLI' ) && WP_CLI)) {
-			$bvprotect->run();
+			require_once dirname( __FILE__ ) . '/protect/protect.php';
+			add_action('clear_pt_config', array('MCProtect', 'uninstall'));
+			if ($bvinfo->isActivePlugin() && !(defined( 'WP_CLI' ) && WP_CLI)) {
+				MCProtect::init(MCProtect::MODE_WP);
+			}
 		}
-	}
 
 		if ($bvinfo->isDynSyncModuleEnabled()) {
 		require_once dirname( __FILE__ ) . '/wp_dynsync.php';
@@ -184,4 +183,5 @@ if ((array_key_exists('bvplugname', $_REQUEST)) && ($_REQUEST['bvplugname'] == "
 		add_filter('site_transient_update_plugins', array($wpadmin, 'hidePluginUpdate'));
 	}
 
+	##THIRDPARTYCACHINGMODULE##
 }

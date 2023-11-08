@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Breeze
  * Description: Breeze is a WordPress cache plugin with extensive options to speed up your website. All the options including Varnish Cache are compatible with Cloudways hosting.
- * Version: 2.0.29
+ * Version: 2.0.30
  * Text Domain: breeze
  * Domain Path: /languages
  * Author: Cloudways
@@ -37,7 +37,7 @@ if ( ! defined( 'BREEZE_PLUGIN_DIR' ) ) {
 	define( 'BREEZE_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 }
 if ( ! defined( 'BREEZE_VERSION' ) ) {
-	define( 'BREEZE_VERSION', '2.0.29' );
+	define( 'BREEZE_VERSION', '2.0.30' );
 }
 if ( ! defined( 'BREEZE_SITEURL' ) ) {
 	define( 'BREEZE_SITEURL', get_site_url() );
@@ -47,6 +47,9 @@ if ( ! defined( 'BREEZE_MINIFICATION_CACHE' ) ) {
 }
 if ( ! defined( 'BREEZE_CACHEFILE_PREFIX' ) ) {
 	define( 'BREEZE_CACHEFILE_PREFIX', 'breeze_' );
+}
+if ( ! defined( 'BREEZE_MINIFICATION_EXTRA' ) ) {
+	define( 'BREEZE_MINIFICATION_EXTRA', WP_CONTENT_DIR . '/cache/breeze-extra/' );
 }
 if ( ! defined( 'BREEZE_CACHE_CHILD_DIR' ) ) {
 	define( 'BREEZE_CACHE_CHILD_DIR', '/cache/breeze-minification/' );
@@ -105,6 +108,15 @@ require_once( BREEZE_PLUGIN_DIR . 'inc/breeze-admin.php' );
 require_once( BREEZE_PLUGIN_DIR . 'inc/class-breeze-prefetch.php' );
 require_once( BREEZE_PLUGIN_DIR . 'inc/class-breeze-preload-fonts.php' );
 
+
+// Load Store Local Files class.
+require_once( BREEZE_PLUGIN_DIR . 'inc/class-breeze-store-files-locally.php' );
+
+// Include cronjobs (Gravatars curently(
+require_once BREEZE_PLUGIN_DIR . 'inc/class-breeze-cache-cronjobs.php';
+$gravatars_enabled = Breeze_Options_Reader::get_option_value( 'breeze-store-gravatars-locally' );
+new Breeze_Cache_CronJobs( $gravatars_enabled );
+
 if ( is_admin() || 'cli' === php_sapi_name() ) {
 
 	require_once( BREEZE_PLUGIN_DIR . 'inc/breeze-configuration.php' );
@@ -124,18 +136,26 @@ if ( is_admin() || 'cli' === php_sapi_name() ) {
 
 } else {
 	if ( ! empty( Breeze_Options_Reader::get_option_value( 'cdn-active' ) )
-		 || ! empty( Breeze_Options_Reader::get_option_value( 'breeze-minify-js' ) )
-		 || ! empty( Breeze_Options_Reader::get_option_value( 'breeze-minify-css' ) )
-		 || ! empty( Breeze_Options_Reader::get_option_value( 'breeze-minify-html' ) )
-		 || ! empty( Breeze_Options_Reader::get_option_value( 'breeze-defer-js' ) )
-		 || ! empty( Breeze_Options_Reader::get_option_value( 'breeze-move-to-footer-js' ) )
-		 || ! empty( Breeze_Options_Reader::get_option_value( 'breeze-delay-all-js' ) )
-		 || ! empty( Breeze_Options_Reader::get_option_value( 'breeze-delay-js-scripts' ) )
+	     || ! empty( Breeze_Options_Reader::get_option_value( 'breeze-minify-js' ) )
+	     || ! empty( Breeze_Options_Reader::get_option_value( 'breeze-minify-css' ) )
+	     || ! empty( Breeze_Options_Reader::get_option_value( 'breeze-minify-html' ) )
+	     || ! empty( Breeze_Options_Reader::get_option_value( 'breeze-defer-js' ) )
+	     || ! empty( Breeze_Options_Reader::get_option_value( 'breeze-move-to-footer-js' ) )
+	     || ! empty( Breeze_Options_Reader::get_option_value( 'breeze-delay-all-js' ) )
+	     || ! empty( Breeze_Options_Reader::get_option_value( 'breeze-delay-js-scripts' ) )
 	) {
 		// Call back ob start
 		ob_start( 'breeze_ob_start_callback' );
 	}
 }
+
+/**
+ * Store files locally, First buffer controller to occur in this plugin
+ */
+add_action( 'init', function () {
+	ob_start( 'breeze_ob_start_localfiles_callback' );
+}, 5 );
+
 
 /**
  * Clear all cache if the Breeze version changed.
@@ -167,6 +187,38 @@ add_action( 'admin_init', 'breeze_check_versions' );
 // Compatibility with ShortPixel.
 require_once( BREEZE_PLUGIN_DIR . 'inc/compatibility/class-breeze-shortpixel-compatibility.php' );
 require_once( BREEZE_PLUGIN_DIR . 'inc/compatibility/class-breeze-avada-cache.php' );
+
+/**
+ * Buffer to work with the contents before any changes occured
+ *
+ * @param $buffer
+ *
+ * @return array|false|int|mixed|string|string[]
+ */
+function breeze_ob_start_localfiles_callback( $buffer ) {
+
+	// Store Files Locally
+	if ( class_exists( 'Breeze_Store_Files' ) ) {
+
+		$enabled_options = array();
+
+		$options = array(
+			'breeze-store-googlefonts-locally',
+			'breeze-store-googleanalytics-locally',
+			'breeze-store-facebookpixel-locally',
+		);
+
+		foreach ( $options as $option ) {
+			$enabled_options[ $option ] = Breeze_Options_Reader::get_option_value( $option );
+		}
+
+		$store_locally = new \Breeze_Store_Files();
+		$buffer        = $store_locally->init( $buffer, $enabled_options );
+	}
+
+	// Return content
+	return $buffer;
+}
 
 
 // Call back ob start - stack

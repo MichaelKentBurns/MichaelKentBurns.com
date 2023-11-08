@@ -480,6 +480,10 @@ class Breeze_Admin {
 			'breeze-exclude-urls'  => array(),
 			'cached-query-strings' => array(),
 			'breeze-wp-emoji'      => '0',
+			'breeze-store-googlefonts-locally' => '0',
+			'breeze-store-googleanalytics-locally' => '0',
+			'breeze-store-facebookpixel-locally' => '0',
+			'breeze-store-gravatars-locally' => '0',
 		);
 
 		$heartbeat = breeze_get_option( 'heartbeat_settings' );
@@ -808,6 +812,10 @@ class Breeze_Admin {
 			'breeze-exclude-urls'  => array(),
 			'cached-query-strings' => array(),
 			'breeze-wp-emoji'      => '0',
+			'breeze-store-googlefonts-locally' => '0',
+			'breeze-store-googleanalytics-locally' => '0',
+			'breeze-store-facebookpixel-locally' => '0',
+			'breeze-store-gravatars-locally' => '0',
 		);
 		$default_heartbeat = array(
 			'breeze-control-heartbeat'  => '0',
@@ -948,6 +956,7 @@ class Breeze_Admin {
 		Breeze_ConfigCache::factory()->toggle_caching( false );
 		Breeze_Configuration::update_htaccess( true );
 
+
 		$check_varnish = is_varnish_cache_started();
 		if ( $check_varnish ) {
 			if ( is_multisite() ) {
@@ -972,6 +981,8 @@ class Breeze_Admin {
 	public static function plugin_uninstall_hook() {
 		// Remove config files and update .htaccess.
 		self::plugin_deactive_hook();
+		// Remove extra cache files. (fb,google,fonts...)
+		Breeze_Store_Files::cleanup_all_extra_folder();
 		// Remove data from the database.
 		self::purge_local_options();
 	}

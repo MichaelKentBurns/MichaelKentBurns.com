@@ -38,7 +38,6 @@ if (!class_exists('MCWPAction')) :
 
 		public static function uninstall() {
 			do_action('clear_pt_config');
-			do_action('clear_ip_store');
 			do_action('clear_dynsync_config');
 			##CLEARCACHECONFIG##
 			do_action('clear_bv_services_config');

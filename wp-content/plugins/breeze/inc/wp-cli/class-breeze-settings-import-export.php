@@ -13,7 +13,6 @@ class Breeze_Settings_Import_Export {
 		add_action( 'wp_ajax_breeze_export_json', array( &$this, 'export_json_settings' ) );
 		add_action( 'wp_ajax_breeze_import_json', array( &$this, 'import_json_settings' ) );
 
-
 	}
 
 	/**
@@ -64,13 +63,11 @@ class Breeze_Settings_Import_Export {
 						$action = $this->replace_options( $json, $level );
 					}
 
-
 					if ( false === $action ) {
 						wp_send_json_error( new WP_Error( 'option_read', __( 'Could not read the options from the provided JSON file', 'breeze' ) ) );
 					} elseif ( true !== $action ) {
 						wp_send_json_error( new WP_Error( 'error_meta', $action ) );
 					}
-
 
 					wp_send_json_success( __( "Settings imported successfully. \nPage will reload", 'breeze' ) );
 				}
@@ -80,12 +77,9 @@ class Breeze_Settings_Import_Export {
 				wp_send_json_error( new WP_Error( 'invalid_file', __( 'The JSON file is not valid', 'breeze' ) . ': ' . json_last_error_msg() ) );
 
 			}
-
-
 		} else {
 			wp_send_json_error( new WP_Error( 'file_not_set', __( 'The JSON file is missing', 'breeze' ) ) );
 		}
-
 
 	}
 
@@ -308,7 +302,6 @@ class Breeze_Settings_Import_Export {
 				$is_blog  = get_blog_details( $level );
 				$site_url = $is_blog->siteurl;
 
-
 				WP_CLI::line( WP_CLI::colorize( '%GUpdating%n %M' . $site_url . '%n options' ) );
 				$blog_id = $level;
 
@@ -409,7 +402,7 @@ class Breeze_Settings_Import_Export {
 			$is_group_js               = ( isset( $options['breeze-group-js'] ) ? $options['breeze-group-js'] : '0' );
 
 			if ( 0 === absint( $is_minification_js ) || 0 === absint( $is_inline_minification_js ) ) {
-			//	$is_group_js = '0';
+				//	$is_group_js = '0';
 			}
 
 			$file = array(
@@ -440,9 +433,13 @@ class Breeze_Settings_Import_Export {
 			);
 
 			$advanced = array(
-				'breeze-exclude-urls'  => ( isset( $options['breeze-exclude-urls'] ) ? $options['breeze-exclude-urls'] : array() ),
-				'cached-query-strings' => ( isset( $options['cached-query-strings'] ) ? $options['cached-query-strings'] : array() ),
-				'breeze-wp-emoji'      => ( isset( $options['breeze-wp-emoji'] ) ? $options['breeze-wp-emoji'] : '0' ),
+				'breeze-exclude-urls'                  => ( isset( $options['breeze-exclude-urls'] ) ? $options['breeze-exclude-urls'] : array() ),
+				'cached-query-strings'                 => ( isset( $options['cached-query-strings'] ) ? $options['cached-query-strings'] : array() ),
+				'breeze-wp-emoji'                      => ( isset( $options['breeze-wp-emoji'] ) ? $options['breeze-wp-emoji'] : '0' ),
+				'breeze-store-googlefonts-locally'     => ( isset( $options['breeze-store-googlefonts-locally'] ) ? $options['breeze-store-googlefonts-locally'] : '0' ),
+				'breeze-store-googleanalytics-locally' => ( isset( $options['breeze-store-googleanalytics-locally'] ) ? $options['breeze-store-googleanalytics-locally'] : '0' ),
+				'breeze-store-facebookpixel-locally'   => ( isset( $options['breeze-store-facebookpixel-locally'] ) ? $options['breeze-store-facebookpixel-locally'] : '0' ),
+				'breeze-store-gravatars-locally'       => ( isset( $options['breeze-store-gravatars-locally'] ) ? $options['breeze-store-gravatars-locally'] : '0' ),
 			);
 
 			$heartbeat = array(
@@ -638,39 +635,42 @@ class Breeze_Settings_Import_Export {
 			return $value;
 		}
 
-
 		/**
 		 * Validate all the checkboxes.
 		 * Include the default values.
 		 */
 		$checkboxes = array(
-			'breeze-active'             => '1',
-			'breeze-cross-origin'       => '0',
-			'breeze-gzip-compression'   => '1',
-			'breeze-browser-cache'      => '1',
-			'breeze-lazy-load'          => '0',
-			'breeze-lazy-load-native'   => '0',
-			'breeze-lazy-load-iframes'  => '0',
-			'breeze-desktop-cache'      => '1',
-			'breeze-mobile-cache'       => '1',
-			'breeze-display-clean'      => '1',
-			'breeze-minify-html'        => '0',
-			'breeze-minify-css'         => '0',
-			'breeze-font-display-swap'  => '0',
-			'breeze-group-css'          => '0',
-			'breeze-include-inline-css' => '0',
-			'breeze-minify-js'          => '0',
-			'breeze-group-js'           => '0',
-			'breeze-include-inline-js'  => '0',
-			'breeze-enable-js-delay'    => '0',
-			'breeze-preload-links'      => '1',
-			'breeze-wp-emoji'           => '0',
-			'cdn-active'                => '0',
-			'cdn-relative-path'         => '1',
-			'auto-purge-varnish'        => '1',
-			'breeze_inherit_settings'   => '0',
-			'breeze-control-heartbeat'  => '0',
-			'breeze-delay-all-js'       => '0',
+			'breeze-active'                        => '1',
+			'breeze-cross-origin'                  => '0',
+			'breeze-gzip-compression'              => '1',
+			'breeze-browser-cache'                 => '1',
+			'breeze-lazy-load'                     => '0',
+			'breeze-lazy-load-native'              => '0',
+			'breeze-lazy-load-iframes'             => '0',
+			'breeze-desktop-cache'                 => '1',
+			'breeze-mobile-cache'                  => '1',
+			'breeze-display-clean'                 => '1',
+			'breeze-minify-html'                   => '0',
+			'breeze-minify-css'                    => '0',
+			'breeze-font-display-swap'             => '0',
+			'breeze-group-css'                     => '0',
+			'breeze-include-inline-css'            => '0',
+			'breeze-minify-js'                     => '0',
+			'breeze-group-js'                      => '0',
+			'breeze-include-inline-js'             => '0',
+			'breeze-enable-js-delay'               => '0',
+			'breeze-preload-links'                 => '1',
+			'breeze-wp-emoji'                      => '0',
+			'cdn-active'                           => '0',
+			'cdn-relative-path'                    => '1',
+			'auto-purge-varnish'                   => '1',
+			'breeze_inherit_settings'              => '0',
+			'breeze-control-heartbeat'             => '0',
+			'breeze-delay-all-js'                  => '0',
+			'breeze-store-googlefonts-locally'     => '0',
+			'breeze-store-googleanalytics-locally' => '0',
+			'breeze-store-facebookpixel-locally'   => '0',
+			'breeze-store-gravatars-locally'       => '0',
 		);
 
 		if ( array_key_exists( $option, $checkboxes ) ) {

@@ -1,17 +1,14 @@
 <?php
-
 if (!defined('ABSPATH')) exit;
-if (!class_exists('BVProtectCallback')) :
 
-require_once dirname( __FILE__ ) . '/../../protect/wp/protect.php';
-require_once dirname( __FILE__ ) . '/../../protect/fw/config.php';
-require_once dirname( __FILE__ ) . '/../../protect/wp/lp/config.php';
+if (!class_exists('BVProtectCallback')) :
+require_once dirname( __FILE__ ) . '/../../protect/lp.php';
 
 class BVProtectCallback extends BVCallbackBase {
 	public $db;
 	public $settings;
 
-	const PROTECT_WING_VERSION = 1.0;
+	const PROTECT_WING_VERSION = 1.1;
 
 	public function __construct($callback_handler) {
 		$this->db = $callback_handler->db;
@@ -43,7 +40,7 @@ class BVProtectCallback extends BVCallbackBase {
 	}
 
 	public function unBlockIP($ip, $attempts, $time) {
-		$transient_name = BVWPLP::$unblock_ip_transient.$ip;
+		$transient_name = MCProtectLP::UNBLOCK_IP_TRANSIENT_PREFIX . $ip;
 		$this->settings->setTransient($transient_name, $attempts, $time);
 		return $this->settings->getTransient($transient_name);
 	}
