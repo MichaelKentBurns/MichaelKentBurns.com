@@ -289,6 +289,7 @@ if (!class_exists('BVCallbackRequest')) :
 		public function authFailedResp() {
 			$api_public_key = MCAccount::getApiPublicKey($this->settings);
 			$default_secret = MCRecover::getDefaultSecret($this->settings);
+			$default_account_pubkey = MCAccount::getDefaultPublicKey();
 			$bvinfo = new MCInfo($this->settings);
 			$resp = array(
 				"request_info" => $this->info(),
@@ -297,6 +298,10 @@ if (!class_exists('BVCallbackRequest')) :
 				"api_pubkey" => substr($api_public_key, 0, 8),
 				"def_sigmatch" => substr(hash('sha1', $this->method.$default_secret.$this->time.$this->version), 0, 8)
 			);
+
+			if (is_string($default_account_pubkey) && strlen($default_account_pubkey) >= 32) {
+				$resp["default_account_pubkey"] = substr($default_account_pubkey, 0, 8);
+			}
 
 			if ($this->account) {
 				$resp["account_info"] = $this->account->info();

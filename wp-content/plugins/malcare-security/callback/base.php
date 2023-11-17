@@ -5,7 +5,7 @@ if (!class_exists('BVCallbackBase')) :
 
 class BVCallbackBase {
 
-	public static $wing_infos = array("MANAGE_WING_VERSION" => '1.3',
+	public static $wing_infos = array("MANAGE_WING_VERSION" => '1.4',
 		"ACTLOG_WING_VERSION" => '1.0',
 		"DYNSYNC_WING_VERSION" => '1.0',
 		"UPGRADER_WING_VERSION" => '1.1',
@@ -15,10 +15,10 @@ class BVCallbackBase {
 		"MISC_WING_VERSION" => '1.2',
 		"FS_WING_VERSION" => '1.2',
 		"INFO_WING_VERSION" => '1.8',
-		"WATCH_WING_VERSION" => '1.2',
+		"WATCH_WING_VERSION" => '1.3',
 		"FS_WRITE_WING_VERSION" => '1.0',
-		"IPSTORE_WING_VERSION" => '1.3',
-		"PROTECT_WING_VERSION" => '1.1',
+		"IPSTORE_WING_VERSION" => '1.4',
+		"PROTECT_WING_VERSION" => '1.2',
 		"SECURITY_WING_VERSION" => '1.0',
 		);
 

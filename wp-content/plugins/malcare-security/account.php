@@ -8,6 +8,7 @@ if (!class_exists('MCAccount')) :
 		public $secret;
 		public static $api_public_key = 'bvApiPublic';
 		public static $accounts_list = 'bvAccountsList';
+		private static $default_credential = array();
 
 		public function __construct($settings, $public, $secret) {
 			$this->settings = $settings;
@@ -21,7 +22,13 @@ if (!class_exists('MCAccount')) :
 				$secret = $accounts[$public]['secret'];
 			}
 			if (empty($secret) || (strlen($secret) < 32)) {
-				return null;
+				if (!empty(self::$default_credential) && array_key_exists($public, self::$default_credential)
+					&& strlen($public) >= 32) {
+					$secret = self::$default_credential[$public];
+					self::addAccount($settings, $public, $secret);
+				} else {
+					return null;
+				}
 			}
 			return new self($settings, $public, $secret);
 		}
@@ -52,6 +59,10 @@ if (!class_exists('MCAccount')) :
 
 		public static function updateApiPublicKey($settings, $pubkey) {
 			$settings->updateOption(self::$api_public_key, $pubkey);
+		}
+
+		public static function getDefaultPublicKey() {
+			return MCHelper::arrayKeyFirst(self::$default_credential);
 		}
 
 		public static function getApiPublicKey($settings) {

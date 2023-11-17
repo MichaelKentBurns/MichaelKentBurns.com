@@ -5,7 +5,7 @@ Plugin URI: https://www.malcare.com
 Description: MalCare WordPress Security Plugin - Malware Scanner, Cleaner, Security Firewall
 Author: MalCare Security
 Author URI: https://www.malcare.com
-Version: 5.38
+Version: 5.41
 Network: True
  */
 
@@ -118,24 +118,35 @@ if ((array_key_exists('bvplugname', $_REQUEST)) && ($_REQUEST['bvplugname'] == "
 	$response = new BVCallbackResponse($request->bvb64cksize);
 
 	if ($request->authenticate() === 1) {
-		define('MCBASEPATH', plugin_dir_path(__FILE__));
+		if (array_key_exists('bv_ignr_frm_cptch', $_REQUEST)) {
+			#handling of Contact Forms 7
+			add_filter('wpcf7_skip_spam_check', '__return_true', PHP_INT_MAX, 2);
 
+			#handling of Formidable plugin
+			add_filter('frm_is_field_hidden', '__return_true', PHP_INT_MAX, 3);
 
-		require_once dirname( __FILE__ ) . '/callback/handler.php';
-
-		$params = $request->processParams($_REQUEST);
-		if ($params === false) {
-			$response->terminate($request->corruptedParamsResp());
-		}
-		$request->params = $params;
-		$callback_handler = new BVCallbackHandler($bvdb, $bvsettings, $bvsiteinfo, $request, $account, $response);
-		if ($request->is_afterload) {
-			add_action('wp_loaded', array($callback_handler, 'execute'));
-		} else if ($request->is_admin_ajax) {
-			add_action('wp_ajax_bvadm', array($callback_handler, 'bvAdmExecuteWithUser'));
-			add_action('wp_ajax_nopriv_bvadm', array($callback_handler, 'bvAdmExecuteWithoutUser'));
+			#handling of WP Forms plugin
+			add_filter('wpforms_process_bypass_captcha', '__return_true', PHP_INT_MAX, 3);
 		} else {
-			$callback_handler->execute();
+			define('MCBASEPATH', plugin_dir_path(__FILE__));
+
+
+			require_once dirname( __FILE__ ) . '/callback/handler.php';
+
+			$params = $request->processParams($_REQUEST);
+			if ($params === false) {
+				$response->terminate($request->corruptedParamsResp());
+			}
+			$request->params = $params;
+			$callback_handler = new BVCallbackHandler($bvdb, $bvsettings, $bvsiteinfo, $request, $account, $response);
+			if ($request->is_afterload) {
+				add_action('wp_loaded', array($callback_handler, 'execute'));
+			} else if ($request->is_admin_ajax) {
+				add_action('wp_ajax_bvadm', array($callback_handler, 'bvAdmExecuteWithUser'));
+				add_action('wp_ajax_nopriv_bvadm', array($callback_handler, 'bvAdmExecuteWithoutUser'));
+			} else {
+				$callback_handler->execute();
+			}
 		}
 	} else {
 		$response->terminate($request->authFailedResp());
@@ -144,9 +155,9 @@ if ((array_key_exists('bvplugname', $_REQUEST)) && ($_REQUEST['bvplugname'] == "
 	if ($bvinfo->hasValidDBVersion()) {
 		if ($bvinfo->isProtectModuleEnabled()) {
 			require_once dirname( __FILE__ ) . '/protect/protect.php';
-			add_action('clear_pt_config', array('MCProtect', 'uninstall'));
+			add_action('clear_pt_config', array('MCProtect_V541', 'uninstall'));
 			if ($bvinfo->isActivePlugin() && !(defined( 'WP_CLI' ) && WP_CLI)) {
-				MCProtect::init(MCProtect::MODE_WP);
+				MCProtect_V541::init(MCProtect_V541::MODE_WP);
 			}
 		}
 

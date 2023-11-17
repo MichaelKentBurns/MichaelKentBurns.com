@@ -1,8 +1,8 @@
 <?php
 if (!defined('ABSPATH') && !defined('MCDATAPATH')) exit;
 
-if (!trait_exists('MCProtectFWRuleArrayFunc')) :
-trait MCProtectFWRuleArrayFunc {
+if (!trait_exists('MCProtectFWRuleArrayFunc_V541')) :
+trait MCProtectFWRuleArrayFunc_V541 {
 	private function _rf_inArray() {
 		$args = $this->processRuleFunctionParams(
 			'inArray',
@@ -15,18 +15,49 @@ trait MCProtectFWRuleArrayFunc {
 		$strict = isset($args[2]) ? $args[2] : false;
 
 		if (!is_array($array)) {
-			throw new MCProtectRuleError(
+			throw new MCProtectRuleError_V541(
 				$this->addExState("inArray: 2nd param is not an array")
 			);
 		}
 
 		if (!is_bool($strict)) {
-			throw new MCProtectRuleError(
+			throw new MCProtectRuleError_V541(
 				$this->addExState("inArray: 3rd param is not a boolean")
 			);
 		}
 
 		return in_array($element, $array, $strict);
+	}
+
+	private function _rf_recInArray() {
+		$args = $this->processRuleFunctionParams(
+			'recInArray',
+			func_num_args(),
+			func_get_args(),
+			2
+		);
+		$element = $args[0];
+		$array = $args[1];
+
+		if (is_array($array)) {
+			foreach ($array as $key => $value) {
+				if (is_array($value)) {
+					if ($this->_rf_recInArray($element, $value)) {
+						return true;
+					}
+				} else {
+					if ($value === $element) {
+						return true;
+					}
+				}
+			}
+		} else {
+			throw new MCProtectRuleError_V541(
+				$this->addExState("recInArray: Expects an array")
+			);
+		}
+
+		return false;
 	}
 
 	private function _rf_arrayKeyExists() {
@@ -40,11 +71,11 @@ trait MCProtectFWRuleArrayFunc {
 		$array = $args[1];
 
 		if (!is_array($array)) {
-			throw new MCProtectRuleError(
+			throw new MCProtectRuleError_V541(
 				$this->addExState("arrayKeyExists: Array must be of type array")
 			);
 		} elseif (!is_string($key) && !is_int($key)) {
-			throw new MCProtectRuleError(
+			throw new MCProtectRuleError_V541(
 				$this->addExState("arrayKeyExists: Key must be of type string or int")
 			);
 		}
@@ -91,7 +122,7 @@ trait MCProtectFWRuleArrayFunc {
 
 		foreach ($keys as $key) {
 			if (!is_int($key) && !is_string($key)) {
-				throw new MCProtectRuleError(
+				throw new MCProtectRuleError_V541(
 					$this->addExState("hasAnyArrayKey: Key must be of type string or int")
 				);
 			}
@@ -117,7 +148,7 @@ trait MCProtectFWRuleArrayFunc {
 
 		foreach ($keys as $key) {
 			if (!is_int($key) && !is_string($key)) {
-				throw new MCProtectRuleError(
+				throw new MCProtectRuleError_V541(
 					$this->addExState("digArray: Keys must be a valid array of string, or integer type")
 				);
 			}
@@ -139,7 +170,7 @@ trait MCProtectFWRuleArrayFunc {
 
 		foreach ($keys as $key) {
 			if (!is_int($key) && !is_string($key)) {
-				throw new MCProtectRuleError(
+				throw new MCProtectRuleError_V541(
 					$this->addExState("filterArray: Keys must be a valid array of string, or integer type")
 				);
 			}
@@ -160,7 +191,7 @@ trait MCProtectFWRuleArrayFunc {
 		$key = $args[1];
 
 		if (!is_string($key) && !is_int($key)) {
-			throw new MCProtectRuleError(
+			throw new MCProtectRuleError_V541(
 				$this->addExState("getArrayVal: Key must be a valid string or integer")
 			);
 		}

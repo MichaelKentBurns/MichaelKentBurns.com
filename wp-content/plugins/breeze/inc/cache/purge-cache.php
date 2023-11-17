@@ -253,7 +253,7 @@ class Breeze_PurgeCache {
 		array_push(
 			$list_of_urls,
 			get_rest_url(),
-			home_url() . '/'
+			trailingslashit( home_url() )
 		);
 		if ( 'page' === get_option( 'show_on_front' ) ) {
 			// Ensure we have a page_for_posts setting to avoid empty URL
@@ -313,7 +313,7 @@ class Breeze_PurgeCache {
 	}
 
 	/**
-	 * Clear Breeze & Wordpress Cache
+	 * Clear Breeze & WordPress Cache
 	 *
 	 * @param $flush_cache
 	 * @param $clear_ocp

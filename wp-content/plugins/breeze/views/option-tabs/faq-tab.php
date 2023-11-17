@@ -34,6 +34,25 @@ $icon = BREEZE_PLUGIN_URL . 'assets/images/faq-active.png';
 			</div>
 		</div>
 
+        <div class="faq-block">
+            <h3 class="faq-question"><?php _e( 'Does Breeze support Aelia Currency Switcher Plugin For WooCommerce?', 'breeze' ); ?></h3>
+            <div class="faq-answer">
+                <p>
+                    <?php
+	                $url_kb_aelia = 'https://support.cloudways.com/en/articles/5496342-how-to-use-varnish-at-cloudways#h_23a588a7a9';
+	                echo sprintf(
+	                /* translators: %s Export file location */
+		                __( 'Breeze is fully compatible with Aelia Currency Switcher Plugin. Also exclude the cookie of Aelia currency switcher plugin "aelia_cs_selected_currency" from Varnish settings.
+<br/>
+<br/>
+If Varnish is active, you will need to exclude URLs and file type(s) in the Varnish configuration. If you are hosting WordPress websites on Cloudways servers, follow <a href="%s" target="_blank">this KB to exclude URLs from the Varnish cache</a>.', 'breeze' ),
+		                $url_kb_aelia
+	                );
+                      ?>
+                </p>
+            </div>
+        </div>
+
 		<div class="faq-block">
 			<h3 class="faq-question"><?php _e( 'Does Breeze support Varnish and to what extent?', 'breeze' ); ?></h3>
 			<div class="faq-answer">
@@ -80,9 +99,14 @@ $icon = BREEZE_PLUGIN_URL . 'assets/images/faq-active.png';
 		<div class="faq-block">
 			<h3 class="faq-question"><?php _e( 'Does Breeze have compatibility issues with other known plugins?', 'breeze' ); ?></h3>
 			<div class="faq-answer">
-				<p><?php _e( 'Breeze has been tested with popular plugins available on WordPress.org. Please feel free to report any incompatibilities on the WordPress Support Forums or on ', 'breeze' ); ?>
-					<a href="https://community.cloudways.com/" target="_blank"><?php _e( 'Cloudways Community Forum.', 'breeze' ); ?></a>
-				</p>
+                <p><?php
+					$url_kb_compat = 'https://community.cloudways.com/';
+					echo sprintf(
+					/* translators: %s Cloudways community */
+						__( 'Breeze has been tested with popular plugins available on WordPress.org. Please feel free to report any incompatibilities on the WordPress Support Forums or on <a href="%s" target="_blank">Cloudways Community Forum.</a>.', 'breeze' ),
+						$url_kb_compat
+					);
+					?></p>
 			</div>
 		</div>
 

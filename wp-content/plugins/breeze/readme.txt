@@ -2,9 +2,9 @@
 Contributors: Cloudways
 Tags: cache,caching, performance, wp-cache, cdn, combine, compress, speed plugin, database cache,gzip, http compression, js cache, minify, optimize, page cache, performance, speed, expire headers
 Requires at least: 6.0
-Tested up to: 6.3
+Tested up to: 6.4.1
 Requires PHP: 7.4
-Stable tag: 2.0.30
+Stable tag: 2.0.32
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -159,6 +159,17 @@ Yes. The process of setting up CloudFlare with Breeze is easy. Check out the fol
 Using Gzip, Breeze compresses the request files, further reducing the size of the download files and speeding up the user experience.
 
 == Changelog ==
+
+= 2.0.32=
+
+* Add: Now users can exclude their custom HTTP headers from caching when HTML minification is on. Simply pass your custom headers through the WP filter 'breeze_custom_headers_allow' for a more tailored and dynamic caching experience.
+* Fix: Breeze now seamlessly supports both relative and absolute URL paths for preloading. Say goodbye to errors – and more assets effortlessly with the enhanced Breeze preload feature.
+
+
+= 2.0.31=
+
+* Add: Breeze now supports the Aelia Currency Switcher for WooCommerce.
+* Add: Breeze will automatically clear the cache for order products, homepage, and shop page if the "Out of stock visibility" option is enabled and the stock is no longer available.
 
 = 2.0.30=
 

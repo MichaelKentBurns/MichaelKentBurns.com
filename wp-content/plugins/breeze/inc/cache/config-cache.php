@@ -437,6 +437,36 @@ class Breeze_ConfigCache {
 			}
 		}
 
+		$the_headers = breeze_helper_fetch_headers();
+
+		$allowed_headers =  apply_filters('breeze_custom_headers_allow', array(
+			'content-security-policy',
+			'x-frame-options',
+			'referrer-policy',
+			'strict-transport-security',
+			'X-Content-Type-Options',
+			'Access-Control-Allow-Origin',
+			'Cross-Origin-Opener-Policy',
+			'Cross-Origin-Embedder-Policy',
+			'Cross-Origin-Resource-Policy',
+			'Permissions-Policy',
+			'X-XSS-Protection',
+		));
+
+		if(is_array($the_headers) && !empty($the_headers)){
+			$to_save_headers = array();
+
+			foreach($allowed_headers as $header_name){
+				$header_name = strtolower( $header_name);
+				if(array_key_exists($header_name, $the_headers)){
+					$to_save_headers[$header_name] = $the_headers[$header_name];
+				}
+			}
+			if(!empty($to_save_headers)){
+				$storage['breeze_custom_headers'] = $to_save_headers;
+			}
+		}
+
 		return self::write_config( $storage, $create_root_config );
 	}
 

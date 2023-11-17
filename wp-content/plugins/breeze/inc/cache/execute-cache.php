@@ -304,6 +304,15 @@ function breeze_cache( $buffer, $flags ) {
 		),
 	);
 
+	if ( isset( $GLOBALS['breeze_config']['breeze_custom_headers'] ) && is_array($GLOBALS['breeze_config']['breeze_custom_headers'])) {
+		foreach($GLOBALS['breeze_config']['breeze_custom_headers'] as $header_name => $header_value){
+			$headers[] = array(
+				'name' => $header_name,
+				'value' => $header_value,
+			);
+		}
+	}
+
 	$data = serialize(
 		array(
 			'body'    => $buffer,
@@ -449,6 +458,12 @@ function breeze_serve_cache( $filename, $breeze_current_url_path, $X1, $opts ) {
 			//check gzip request from client
 			if ( isset( $_SERVER['HTTP_ACCEPT_ENCODING'] ) && ( strpos( $_SERVER['HTTP_ACCEPT_ENCODING'], 'gzip' ) === false || strpos( $_SERVER['HTTP_ACCEPT_ENCODING'], 'deflate' ) === false ) ) {
 				$client_support_gzip = false;
+			}
+
+			if ( isset( $GLOBALS['breeze_config']['breeze_custom_headers'] ) && is_array($GLOBALS['breeze_config']['breeze_custom_headers'])) {
+				foreach($GLOBALS['breeze_config']['breeze_custom_headers'] as $header_name => $header_value){
+					header( $header_name.': '.$header_value );
+				}
 			}
 
 			if ( $client_support_gzip && function_exists( 'gzdecode' ) && ! empty( $GLOBALS['breeze_config']['cache_options']['breeze-gzip-compression'] ) ) {

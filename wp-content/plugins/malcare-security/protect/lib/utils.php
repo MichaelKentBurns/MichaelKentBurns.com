@@ -1,8 +1,8 @@
 <?php
 if (!defined('ABSPATH') && !defined('MCDATAPATH')) exit;
 
-if (!class_exists('MCProtectUtils')) :
-class MCProtectUtils {
+if (!class_exists('MCProtectUtils_V541')) :
+class MCProtectUtils_V541 {
 	public static function getIP($ip_header) {
 		$ip = null;
 
@@ -126,7 +126,7 @@ class MCProtectUtils {
 			foreach ($objects as $object) {
 				if ($object != "." && $object != "..") {
 					if (is_dir($dir . "/" . $object) && !is_link($dir . "/" . $object)) {
-						MCProtectUtils::rrmdir($dir . "/" . $object);
+						MCProtectUtils_V541::rrmdir($dir . "/" . $object);
 					} else {
 						unlink($dir . "/" . $object);
 					}
@@ -141,7 +141,7 @@ class MCProtectUtils {
 
 		if (is_array($val)) {
 			foreach ($val as $e) {
-				$length += MCProtectUtils::getLength($e);
+				$length += MCProtectUtils_V541::getLength($e);
 			}
 
 			return $length;
@@ -227,7 +227,7 @@ class MCProtectUtils {
 	}
 
 	public static function signMessage($message, $key, $algorithm = 'sha256') {
-		if (!is_string($message) && !is_string($key)) {
+		if (!is_string($message) || !is_string($key)) {
 			return false;
 		}
 
@@ -235,7 +235,7 @@ class MCProtectUtils {
 	}
 
 	public static function verifyMessage($message, $signature, $key, $algorithm = 'sha256') {
-		if (!is_string($message) && !is_string($signature) && !is_string($key)) {
+		if (!is_string($message) || !is_string($signature) || !is_string($key)) {
 			return false;
 		}
 

@@ -7,7 +7,7 @@ require_once dirname( __FILE__ ) . '/../../protect/ipstore.php';
 class BVIPStoreCallback extends BVCallbackBase {
 	public $db;
 
-	const IPSTORE_WING_VERSION = 1.3;
+	const IPSTORE_WING_VERSION = 1.4;
 
 	public function __construct($callback_handler) {
 		$this->db = $callback_handler->db;
@@ -50,7 +50,7 @@ class BVIPStoreCallback extends BVCallbackBase {
 
 	public function getIPs($table, $auto_increment_offset, $type, $category) {
 		$query = "SELECT `start_ip_range` FROM $table WHERE id < $auto_increment_offset AND `type` in (" . implode(',', $type) . ") AND ";
-		$query .= ($category == MCProtectIpstoreDB::CATEGORY_FW) ? "`is_fw` = true;" : "`is_lp` = true;";
+		$query .= ($category == MCProtectIpstoreDB_V541::CATEGORY_FW) ? "`is_fw` = true;" : "`is_lp` = true;";
 		return $this->db->getCol($query);
 	}
 
@@ -64,13 +64,13 @@ class BVIPStoreCallback extends BVCallbackBase {
 		$info = array();
 
 		$info['fw_blacklisted_ips'] = $this->getIPs($table, $auto_increment_offset,
-			MCProtectIpstoreDB::blacklistedTypes(), MCProtectIpstoreDB::CATEGORY_FW);
+			MCProtectIpstoreDB_V541::blacklistedTypes(), MCProtectIpstoreDB_V541::CATEGORY_FW);
 		$info['lp_blacklisted_ips'] = $this->getIPs($table, $auto_increment_offset,
-			MCProtectIpstoreDB::blacklistedTypes(), MCProtectIpstoreDB::CATEGORY_LP);
+			MCProtectIpstoreDB_V541::blacklistedTypes(), MCProtectIpstoreDB_V541::CATEGORY_LP);
 		$info['fw_whitelisted_ips'] = $this->getIPs($table, $auto_increment_offset,
-			MCProtectIpstoreDB::whitelistedTypes(), MCProtectIpstoreDB::CATEGORY_FW);
+			MCProtectIpstoreDB_V541::whitelistedTypes(), MCProtectIpstoreDB_V541::CATEGORY_FW);
 		$info['lp_whitelisted_ips'] = $this->getIPs($table, $auto_increment_offset,
-			MCProtectIpstoreDB::whitelistedTypes(), MCProtectIpstoreDB::CATEGORY_LP);
+			MCProtectIpstoreDB_V541::whitelistedTypes(), MCProtectIpstoreDB_V541::CATEGORY_LP);
 		$info['ip_store_offset'] = $this->getIPStoreOffset($table, $auto_increment_offset);
 		$info['country_ips_size'] = intval($db->getVar("SELECT COUNT(id) FROM $table WHERE id >= $auto_increment_offset"));
 

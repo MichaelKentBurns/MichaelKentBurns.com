@@ -1,8 +1,8 @@
 <?php
 if (!defined('ABSPATH') && !defined('MCDATAPATH')) exit;
 
-if (!class_exists('MCProtectRequest')) :
-class MCProtectRequest {
+if (!class_exists('MCProtectRequest_V541')) :
+class MCProtectRequest_V541 {
 	public $ip;
 	public $host = '';
 	public $uri;
@@ -16,8 +16,8 @@ class MCProtectRequest {
 	public $file_names = array();
 	public $files;
 	public $respcode;
-	public $status = MCProtectRequest::STATUS_ALLOWED;
-	public $category = MCProtectRequest::CATEGORY_NORMAL;
+	public $status = MCProtectRequest_V541::STATUS_ALLOWED;
+	public $category = MCProtectRequest_V541::CATEGORY_NORMAL;
 
 	public $wp_user;
 
@@ -38,7 +38,7 @@ class MCProtectRequest {
 	const CATEGORY_GLOBAL_BOT_BLOCKED = 90;
 
 	public function __construct($ip_header) {
-		$this->ip = MCProtectUtils::getIP($ip_header);
+		$this->ip = MCProtectUtils_V541::getIP($ip_header);
 		$this->timestamp = time();
 		$this->get_params = $_GET;
 		$this->cookies = $_COOKIE;
@@ -88,15 +88,15 @@ class MCProtectRequest {
 
 	public static function blacklistedCategories() {
 		return array(
-			MCProtectRequest::CATEGORY_BOT_BLOCKED,
-			MCProtectRequest::CATEGORY_COUNTRY_BLOCKED,
-			MCProtectRequest::CATEGORY_USER_BLACKLISTED,
-			MCProtectRequest::CATEGORY_GLOBAL_BOT_BLOCKED
+			MCProtectRequest_V541::CATEGORY_BOT_BLOCKED,
+			MCProtectRequest_V541::CATEGORY_COUNTRY_BLOCKED,
+			MCProtectRequest_V541::CATEGORY_USER_BLACKLISTED,
+			MCProtectRequest_V541::CATEGORY_GLOBAL_BOT_BLOCKED
 		);
 	}
 
 	public static function whitelistedCategories() {
-		return array(MCProtectRequest::CATEGORY_WHITELISTED);
+		return array(MCProtectRequest_V541::CATEGORY_WHITELISTED);
 	}
 
 	public function setRespCode($code) {

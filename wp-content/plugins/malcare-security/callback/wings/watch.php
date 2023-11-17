@@ -7,7 +7,7 @@ class BVWatchCallback extends BVCallbackBase {
 	public $db;
 	public $settings;
 
-	const WATCH_WING_VERSION = 1.2;
+	const WATCH_WING_VERSION = 1.3;
 
 	public function __construct($callback_handler) {
 		$this->db = $callback_handler->db;
@@ -93,11 +93,11 @@ class BVWatchCallback extends BVCallbackBase {
 			if (array_key_exists('lp', $params)) {
 				require_once dirname( __FILE__ ) . '/../../protect/lp.php';
 				$lp_params = $params['lp'];
-				if (!isset($lp_params['bv_check_table']) || $db->isTablePresent($db->getBVTable(MCProtectLP::TABLE_NAME))) {
+				if (!isset($lp_params['bv_check_table']) || $db->isTablePresent($db->getBVTable(MCProtectLP_V541::TABLE_NAME))) {
 					$limit = intval($lp_params['limit']);
 					$filter = $lp_params['filter'];
-					$db->deleteBVTableContent(MCProtectLP::TABLE_NAME, $lp_params['rmfilter']);
-					$table = $db->getBVTable(MCProtectLP::TABLE_NAME);
+					$db->deleteBVTableContent(MCProtectLP_V541::TABLE_NAME, $lp_params['rmfilter']);
+					$table = $db->getBVTable(MCProtectLP_V541::TABLE_NAME);
 					$resp["lplogs"] = $this->getData($table, $limit, $filter);
 				} else {
 					$resp["lplogs"] = array("status" => "TABLE_NOT_PRESENT");
@@ -112,11 +112,11 @@ class BVWatchCallback extends BVCallbackBase {
 			if (array_key_exists('fw', $params)) {
 				require_once dirname( __FILE__ ) . '/../../protect/fw.php';
 				$fw_params = $params['fw'];
-				if (!isset($fw_params['bv_check_table']) || $db->isTablePresent($db->getBVTable(MCProtectFW::TABLE_NAME))) {
+				if (!isset($fw_params['bv_check_table']) || $db->isTablePresent($db->getBVTable(MCProtectFW_V541::TABLE_NAME))) {
 					$limit = intval($fw_params['limit']);
 					$filter = $fw_params['filter'];
-					$db->deleteBVTableContent(MCProtectFW::TABLE_NAME, $fw_params['rmfilter']);
-					$table = $db->getBVTable(MCProtectFW::TABLE_NAME);
+					$db->deleteBVTableContent(MCProtectFW_V541::TABLE_NAME, $fw_params['rmfilter']);
+					$table = $db->getBVTable(MCProtectFW_V541::TABLE_NAME);
 					$resp["fwlogs"] = $this->getData($table, $limit, $filter);
 				} else {
 					$resp["fwlogs"] = array("status" => "TABLE_NOT_PRESENT");

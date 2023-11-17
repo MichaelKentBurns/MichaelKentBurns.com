@@ -1,15 +1,15 @@
 <?php
 if (!defined('ABSPATH') && !defined('MCDATAPATH')) exit;
 
-if (!class_exists('MCProtectFWRuleEngine')) :
+if (!class_exists('MCProtectFWRuleEngine_V541')) :
 require_once dirname( __FILE__ ) . '/functions.php';
 
-class MCProtectFWRuleEngine {
-	use MCProtectFWRuleStringFunc;
-	use MCProtectFWRuleArrayFunc;
-	use MCProtectFWRuleMiscFunc;
-	use MCProtectFWRuleRequestFunc;
-	use MCProtectFWRuleWPFunc;
+class MCProtectFWRuleEngine_V541 {
+	use MCProtectFWRuleStringFunc_V541;
+	use MCProtectFWRuleArrayFunc_V541;
+	use MCProtectFWRuleMiscFunc_V541;
+	use MCProtectFWRuleRequestFunc_V541;
+	use MCProtectFWRuleWPFunc_V541;
 
 	private $request;
 	private $variables;
@@ -18,11 +18,11 @@ class MCProtectFWRuleEngine {
 	private $ex_stack = array();
 	private $ex_stack_inx = -1;
 
-	const VERSION = 0.8;
+	const VERSION = 0.9;
 
 	const MAX_DEPTH_TO_ALLOWED_TYPE_FUNC = 8;
 	const FUNC_NAME_PREFIX = '_rf_';
-	const CONST_NAME_PREFIX = 'MCProtectFWRule::';
+	const CONST_NAME_PREFIX = 'MCProtectFWRule_V541::';
 	const ALLOWED_EXT_CONSTANTS = [
 		'DOING_CRON'
 	];
@@ -45,7 +45,7 @@ class MCProtectFWRuleEngine {
 	public function evaluate($rule) {
 		try {
 			return $this->executeStmt($rule->logic);
-		} catch (MCProtectRuleError $e) {
+		} catch (MCProtectRuleError_V541 $e) {
 			$this->error = $e;
 		}
 	}
@@ -117,7 +117,7 @@ class MCProtectFWRuleEngine {
 
 	private function getValue($stmt) {
 		if (!is_array($stmt) || empty($stmt["type"])) {
-			throw new MCProtectRuleError(
+			throw new MCProtectRuleError_V541(
 				$this->addExState("InvalidStatementError: Malformed value statement"));
 		}
 
@@ -126,7 +126,7 @@ class MCProtectFWRuleEngine {
 		switch ($stmt["type"]) {
 		case "NUMBER":
 			if (!isset($stmt["value"]) || !is_int($stmt["value"])) {
-				throw new MCProtectRuleError(
+				throw new MCProtectRuleError_V541(
 					$this->addExState("TypeError: Value is not a number")
 				);
 			}
@@ -134,7 +134,7 @@ class MCProtectFWRuleEngine {
 			return $stmt["value"];
 		case "STRING":
 			if (!isset($stmt["value"]) || !is_string($stmt["value"])) {
-				throw new MCProtectRuleError(
+				throw new MCProtectRuleError_V541(
 					$this->addExState("TypeError: Value is not a string")
 				);
 			}
@@ -142,7 +142,7 @@ class MCProtectFWRuleEngine {
 			return $stmt["value"];
 		case "BOOL":
 			if (!isset($stmt["value"]) || !is_bool($stmt["value"])) {
-				throw new MCProtectRuleError(
+				throw new MCProtectRuleError_V541(
 					$this->addExState("TypeError: Value is not a boolean")
 				);
 			}
@@ -150,7 +150,7 @@ class MCProtectFWRuleEngine {
 			return $stmt["value"];
 		case "CONST":
 			if (!isset($stmt["value"]) || !is_string($stmt["value"])) {
-				throw new MCProtectRuleError(
+				throw new MCProtectRuleError_V541(
 					$this->addExState("TypeError: Invalid constant name")
 				);
 			}
@@ -162,7 +162,7 @@ class MCProtectFWRuleEngine {
 			}
 
 			if (!defined($name)) {
-				throw new MCProtectRuleError(
+				throw new MCProtectRuleError_V541(
 					$this->addExState("TypeError: Undefined constant" . $stmt["value"])
 				);
 			}
@@ -170,7 +170,7 @@ class MCProtectFWRuleEngine {
 			return constant($name);
 		case "ARRAY":
 			if (!isset($stmt["value"]) || !is_array($stmt["value"])) {
-				throw new MCProtectRuleError(
+				throw new MCProtectRuleError_V541(
 					$this->addExState("TypeError: Value is not a array")
 				);
 			}
@@ -181,19 +181,19 @@ class MCProtectFWRuleEngine {
 			}
 
 			return $arr;
-		case "HASH":
+		case "HASH_MAP":
 			if (!isset($stmt["value"]) || !is_array($stmt["value"])) {
 				throw new MCProtectRuleError(
-					$this->addExState("TypeError: Value is not a hash")
+					$this->addExState("TypeError: Value is not a hash map")
 				);
 			}
 
-			$hash = array();
+			$hash_map = array();
 			foreach($stmt["value"] as $key => $value) {
-				$hash[strval($key)] = $value; //why not getValue?
+				$hash_map[$key] = $this->getValue($value);
 			}
 
-			return $hash;
+			return $hash_map;
 		default:
 			return $this->executeStmt($stmt);
 		}
@@ -201,7 +201,7 @@ class MCProtectFWRuleEngine {
 
 	private function executeStmt($stmt) {
 		if (!is_array($stmt) || empty($stmt["type"])) {
-			throw new MCProtectRuleError(
+			throw new MCProtectRuleError_V541(
 				$this->addExState("InvalidStatementError: Malformed logic statement")
 			);
 		}
@@ -213,7 +213,7 @@ class MCProtectFWRuleEngine {
 		switch ($stmt["type"]) {
 		case "AND":
 			if (empty($stmt["left_operand"]) || empty($stmt["right_operand"])) {
-				throw new MCProtectRuleError(
+				throw new MCProtectRuleError_V541(
 					$this->addExState("InvalidOperandError: Malformed operand(s)")
 				);
 			}
@@ -222,7 +222,7 @@ class MCProtectFWRuleEngine {
 			break;
 		case "OR":
 			if (empty($stmt["left_operand"]) || empty($stmt["right_operand"])) {
-				throw new MCProtectRuleError(
+				throw new MCProtectRuleError_V541(
 					$this->addExState("InvalidOperandError: Malformed operand(s)")
 				);
 			}
@@ -231,7 +231,7 @@ class MCProtectFWRuleEngine {
 			break;
 		case "NOT":
 			if (empty($stmt["value"])) {
-				throw new MCProtectRuleError(
+				throw new MCProtectRuleError_V541(
 					$this->addExState("InvalidOperandError: Malformed operand")
 				);
 			}
@@ -240,7 +240,7 @@ class MCProtectFWRuleEngine {
 			break;
 		case "FUNCTION":
 			if (empty($stmt["name"]) || !is_string($stmt["name"])) {
-				throw new MCProtectRuleError(
+				throw new MCProtectRuleError_V541(
 					$this->addExState("InvalidFunctionName: Malformed name")
 				);
 			}
@@ -249,13 +249,13 @@ class MCProtectFWRuleEngine {
 			$handler = array($this, $name);
 
 			if (!is_callable($handler)) {
-				throw new MCProtectRuleError(
+				throw new MCProtectRuleError_V541(
 					$this->addExState("UndefinedFunctionCall: " . $stmt["name"])
 				);
 			}
 
 			if (!array_key_exists('args', $stmt) || !is_array($stmt['args'])) {
-				throw new MCProtectRuleError(
+				throw new MCProtectRuleError_V541(
 					$this->addExState("InvalidArguments: Malformed args")
 				);
 			}
@@ -268,7 +268,7 @@ class MCProtectFWRuleEngine {
 			$return_val = self::toAllowedType(call_user_func_array($handler, $args));
 			break;
 		default:
-			throw new MCProtectRuleError(
+			throw new MCProtectRuleError_V541(
 				$this->addExState("UnknownOperation: -")
 			);
 		}
@@ -279,14 +279,14 @@ class MCProtectFWRuleEngine {
 
 	private function processRuleFunctionParams($func_name, $args_cnt, $args, $required_params = 0, $param_types = array()) {
 		if (($args_cnt < $required_params)) {
-			throw new MCProtectRuleError(
+			throw new MCProtectRuleError_V541(
 				$this->addExState("ArgumentCountError: Too few arguments for " . $func_name)
 			);
 		}
 
 		foreach ($param_types as $pos => $type) {
 			if (!is_int($pos)) {
-				throw new MCProtectRuleError(
+				throw new MCProtectRuleError_V541(
 					$this->addExState("InvalidParamType: " . $pos)
 				);
 			}
@@ -294,35 +294,35 @@ class MCProtectFWRuleEngine {
 			switch ($type) {
 			case "string":
 				if (!isset($args[$pos]) || !is_string($args[$pos])) {
-					throw new MCProtectRuleError(
+					throw new MCProtectRuleError_V541(
 						$this->addExState("TypeError: " . $func_name . " param at " . $pos . " is not a string.")
 					);
 				}
 				break;
 			case 'integer':
 				if (!isset($args[$pos]) || !is_int($args[$pos])) {
-					throw new MCProtectRuleError(
+					throw new MCProtectRuleError_V541(
 						$this->addExState("TypeError: " . $func_name . " param at " . $pos . " is not a integer.")
 					);
 				}
 				break;
 			case 'double':
 				if (!isset($args[$pos]) || !is_double($args[$pos])) {
-					throw new MCProtectRuleError(
+					throw new MCProtectRuleError_V541(
 						$this->addExState("TypeError: " . $func_name . " param at " . $pos . " is not a double.")
 					);
 				}
 				break;
 			case 'boolean':
 				if (!isset($args[$pos]) || !is_bool($args[$pos])) {
-					throw new MCProtectRuleError(
+					throw new MCProtectRuleError_V541(
 						$this->addExState("TypeError: " . $func_name . " param at " . $pos . " is not a boolean.")
 					);
 				}
 				break;
 			case 'array':
 				if (!isset($args[$pos]) || !is_array($args[$pos])) {
-					throw new MCProtectRuleError(
+					throw new MCProtectRuleError_V541(
 						$this->addExState("TypeError: " . $func_name . " param at " . $pos . " is not an array.")
 					);
 				}
@@ -330,7 +330,7 @@ class MCProtectFWRuleEngine {
 			case 'mixed':
 				break;
 			default:
-				throw new MCProtectRuleError(
+				throw new MCProtectRuleError_V541(
 					$this->addExState("InvalidParamTypeError: Invalid type at " . $pos . " for " . $func_name)
 				);
 			}

@@ -1,8 +1,8 @@
 <?php
 if (!defined('ABSPATH') && !defined('MCDATAPATH')) exit;
 
-if (!trait_exists('MCProtectFWRuleWPFunc')) :
-trait MCProtectFWRuleWPFunc {
+if (!trait_exists('MCProtectFWRuleWPFunc_V541')) :
+trait MCProtectFWRuleWPFunc_V541 {
 	private function _rf_sanitizeUser() {
 		$args = $this->processRuleFunctionParams(
 			'sanitizeUser',
@@ -14,8 +14,8 @@ trait MCProtectFWRuleWPFunc {
 		$username = $args[0];
 		$strict = $args[1];
 
-		if (!function_exists('sanitize_user') || !MCProtectUtils::haveMupluginsLoaded()) {
-			throw new MCProtectRuleError(
+		if (!function_exists('sanitize_user') || !MCProtectUtils_V541::haveMupluginsLoaded()) {
+			throw new MCProtectRuleError_V541(
 				$this->addExState("sanitizeUser: Func sanitize_user doesn't exist.")
 			);
 		}
@@ -32,8 +32,8 @@ trait MCProtectFWRuleWPFunc {
 		);
 		$data = $args[0];
 
-		if (!function_exists('maybe_serialize') || !MCProtectUtils::haveMupluginsLoaded()) {
-			throw new MCProtectRuleError(
+		if (!function_exists('maybe_serialize') || !MCProtectUtils_V541::haveMupluginsLoaded()) {
+			throw new MCProtectRuleError_V541(
 				$this->addExState("maybeSerialize: Func maybe_serialize doesn't exist.")
 			);
 		}
@@ -48,8 +48,8 @@ trait MCProtectFWRuleWPFunc {
 			func_get_args()
 		);
 
-		if (!function_exists('is_user_logged_in') || !MCProtectUtils::havePluginsLoaded()) {
-			throw new MCProtectRuleError(
+		if (!function_exists('is_user_logged_in') || !MCProtectUtils_V541::havePluginsLoaded()) {
+			throw new MCProtectRuleError_V541(
 				$this->addExState("isUserLoggedIn: Func is_user_logged_in doesn't exist.")
 			);
 		}
@@ -64,13 +64,13 @@ trait MCProtectFWRuleWPFunc {
 			func_get_args()
 		);
 
-		if (!function_exists('wp_get_current_user') || !MCProtectUtils::havePluginsLoaded()) {
-			throw new MCProtectRuleError(
+		if (!function_exists('wp_get_current_user') || !MCProtectUtils_V541::havePluginsLoaded()) {
+			throw new MCProtectRuleError_V541(
 				$this->addExState("getCurrentWPUser: Func wp_get_current_user doesn't exist.")
 			);
 		}
 
-		return MCProtectFWRuleEngine::toAllowedType(wp_get_current_user());
+		return MCProtectFWRuleEngine_V541::toAllowedType(wp_get_current_user());
 	}
 
 	private function _rf_currentUserCan() {
@@ -85,8 +85,8 @@ trait MCProtectFWRuleWPFunc {
 		$arg1 = isset($args[1]) ? $args[1] : null;
 		$arg2 = isset($args[2]) ? $args[2] : null;
 
-		if (!function_exists('current_user_can') || !MCProtectUtils::havePluginsLoaded()) {
-			throw new MCProtectRuleError(
+		if (!function_exists('current_user_can') || !MCProtectUtils_V541::havePluginsLoaded()) {
+			throw new MCProtectRuleError_V541(
 				$this->addExState("currentUserCan: Required funcs doesn't exist.")
 			);
 		}
@@ -113,20 +113,20 @@ trait MCProtectFWRuleWPFunc {
 		$field = $args[0];
 		$value = $args[1];
 
-		if (!function_exists('get_user_by') || !MCProtectUtils::havePluginsLoaded()) {
-			throw new MCProtectRuleError(
+		if (!function_exists('get_user_by') || !MCProtectUtils_V541::havePluginsLoaded()) {
+			throw new MCProtectRuleError_V541(
 				$this->addExState("getUserBy: Func get_user_by doesn't exist")
 			);
 		}
 
 		if ($field === 'ID' || $field === 'id') {
 			if (!is_string($value) && !is_int($value)) {
-				throw new MCProtectRuleError(
+				throw new MCProtectRuleError_V541(
 					$this->addExState("getUserBy: Value must be a valid string or an integer")
 				);
 			}
 		} elseif (!is_string($value)) {
-			throw new MCProtectRuleError(
+			throw new MCProtectRuleError_V541(
 				$this->addExState("getUserBy: Value must be a valid string")
 			);
 		}
@@ -136,7 +136,7 @@ trait MCProtectFWRuleWPFunc {
 			return null;
 		}
 
-		return MCProtectFWRuleEngine::toAllowedType($user);
+		return MCProtectFWRuleEngine_V541::toAllowedType($user);
 	}
 
 	private function _rf_getCurrentWPUserCapabilities() {
@@ -149,12 +149,12 @@ trait MCProtectFWRuleWPFunc {
 		$user = $this->_rf_getCurrentWPUser();
 
 		if (!array_key_exists("allcaps", $user)) {
-			throw new MCProtectRuleError(
+			throw new MCProtectRuleError_V541(
 				$this->addExState("getCurrentWPUserCapabilities: allcaps doesn't exist in user.")
 			);
 		}
 
-		return MCProtectFWRuleEngine::toAllowedType($user["allcaps"]);
+		return MCProtectFWRuleEngine_V541::toAllowedType($user["allcaps"]);
 	}
 
 	private function _rf_getUserCapabilities() {
@@ -172,12 +172,12 @@ trait MCProtectFWRuleWPFunc {
 		}
 
 		if (!array_key_exists("allcaps", $user)) {
-			throw new MCProtectRuleError(
+			throw new MCProtectRuleError_V541(
 				$this->addExState("getUserCapabilities: allcaps doesn't exist in user.")
 			);
 		}
 
-		return MCProtectFWRuleEngine::toAllowedType($user["allcaps"]);
+		return MCProtectFWRuleEngine_V541::toAllowedType($user["allcaps"]);
 	}
 
 	private function _rf_getDefaultUserRole() {
@@ -201,13 +201,13 @@ trait MCProtectFWRuleWPFunc {
 		$option = $args[0];
 		$default_value = isset($args[1]) ? $args[1] : false;
 
-		if (!function_exists('get_option') || !MCProtectUtils::haveMupluginsLoaded()) {
-			throw new MCProtectRuleError(
+		if (!function_exists('get_option') || !MCProtectUtils_V541::haveMupluginsLoaded()) {
+			throw new MCProtectRuleError_V541(
 				$this->addExState("getOption: Func get_option doesn't exist.")
 			);
 		}
 
-		return MCProtectFWRuleEngine::toAllowedType(get_option($option, $default_value));
+		return MCProtectFWRuleEngine_V541::toAllowedType(get_option($option, $default_value));
 	}
 
 	private function _rf_checkPasswordResetKey() {
@@ -221,8 +221,8 @@ trait MCProtectFWRuleWPFunc {
 		$key = $args[0];
 		$login = $args[1];
 
-		if (!function_exists('check_password_reset_key') || !MCProtectUtils::havePluginsLoaded()) {
-			throw new MCProtectRuleError(
+		if (!function_exists('check_password_reset_key') || !MCProtectUtils_V541::havePluginsLoaded()) {
+			throw new MCProtectRuleError_V541(
 				$this->addExState("checkPasswordResetKey: Func check_password_reset_key doesn't exist.")
 			);
 		}
@@ -230,7 +230,7 @@ trait MCProtectFWRuleWPFunc {
 		$user = check_password_reset_key($key, $login);
 
 		if (is_a($user, "WP_User")) {
-			return MCProtectFWRuleEngine::toAllowedType($user);
+			return MCProtectFWRuleEngine_V541::toAllowedType($user);
 		}
 
 		return null;

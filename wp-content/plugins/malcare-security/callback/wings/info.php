@@ -45,29 +45,11 @@ class BVInfoCallback extends BVCallbackBase {
 		);
 	}
 
-	public function getLatestWooCommerceDB() {
-		$version = false;
-
-		if (defined('WC_ABSPATH') && file_exists(WC_ABSPATH . 'includes/class-wc-install.php')) {
-			include_once WC_ABSPATH . 'includes/class-wc-install.php';
-		}
-
-		if (class_exists('WC_Install')) {
-			$update_versions = array_keys(WC_Install::get_db_update_callbacks());
-			usort($update_versions, 'version_compare');
-			if (!empty($update_versions)) {
-				$version = end($update_versions);
-			}
-		}
-
-		return $version;
-	}
-
 	public function addDBInfoToPlugin($pdata, $plugin_file) {
 		switch ($plugin_file) {
 		case "woocommerce/woocommerce.php":
 			$pdata['current_db_version'] = $this->settings->getOption('woocommerce_db_version');
-			$pdata['latest_db_version'] = $this->getLatestWooCommerceDB();
+			$pdata['latest_db_version'] = $this->bvinfo->getLatestWooCommerceDBVersion();
 			break;
 		}
 

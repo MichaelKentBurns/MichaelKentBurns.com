@@ -1,8 +1,8 @@
 <?php
 if (!defined('ABSPATH') && !defined('MCDATAPATH')) exit;
 
-if (!trait_exists('MCProtectFWRuleStringFunc')) :
-trait MCProtectFWRuleStringFunc {
+if (!trait_exists('MCProtectFWRuleStringFunc_V541')) :
+trait MCProtectFWRuleStringFunc_V541 {
 	private function _rf_isNumeric() {
 		$args = $this->processRuleFunctionParams(
 			'isNumeric',
@@ -237,7 +237,7 @@ trait MCProtectFWRuleStringFunc {
 				}
 			}
 		} else {
-			throw new MCProtectRuleError(
+			throw new MCProtectRuleError_V541(
 				$this->addExState("containsAnySubstring: Expects an array of substrings.")
 			);
 		}
@@ -272,7 +272,7 @@ trait MCProtectFWRuleStringFunc {
 		$offset = isset($args[2]) ? $args[2] : 0;
 
 		if (!is_int($offset)) {
-			throw new MCProtectRuleError(
+			throw new MCProtectRuleError_V541(
 				$this->addExState("strPos: Offset should be an integer")
 			);
 		}

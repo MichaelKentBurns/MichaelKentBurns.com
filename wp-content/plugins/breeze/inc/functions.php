@@ -414,6 +414,10 @@ function breeze_currency_switcher_cache() {
 		$currency = $currency.weglot_get_current_language();
 	}
 
+	if(isset($_COOKIE['aelia_cs_selected_currency'])){
+		$currency = trim( $_COOKIE['aelia_cs_selected_currency'] );
+	}
+
 	if ( is_string( $currency ) && ! empty( $currency ) ) {
 		$currency = mb_strtolower( $currency );
 	}
@@ -708,4 +712,31 @@ function breeze_all_country_codes() {
 		'ZM' => 'Zambia',
 		'ZW' => 'Zimbabwe',
 	);
+}
+
+
+function breeze_page_provided_headers() {
+	$headers_output        = array();
+	$headers_output_return = array();
+	if ( ! function_exists( 'apache_request_headers' ) ) {
+
+		foreach ( $_SERVER as $key => $value ) {
+			if ( 'HTTP_' === mb_strtoupper( substr( $key, 0, 5 ) ) ) {
+				$key                    = str_replace( ' ', '-', ucwords( strtolower( str_replace( '_', ' ', substr( $key, 5 ) ) ) ) );
+				$headers_output[ $key ] = $value;
+			} else {
+				$headers_output[ $key ] = $value;
+			}
+		}
+	} else {
+		$headers_output = apache_request_headers();
+	}
+
+	if ( ! empty( $headers_output ) ) {
+		foreach ( $headers_output as $header_key => $heaver_value ) {
+			$headers_output_return[ strtolower( $header_key ) ] = $heaver_value;
+		}
+	}
+
+	return $headers_output_return;
 }

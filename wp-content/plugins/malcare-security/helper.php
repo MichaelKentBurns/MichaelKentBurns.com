@@ -38,5 +38,16 @@ if (!class_exists('MCHelper')) :
 			}
 			return $curr_array;
 		}
+
+		public static function arrayKeyFirst($array) {
+			if (!function_exists('array_key_first')) {
+				foreach ($array as $key => $value) {
+					return $key;
+				}
+				return null;
+			}
+
+			return array_key_first($array);
+		}
 	}
 endif;

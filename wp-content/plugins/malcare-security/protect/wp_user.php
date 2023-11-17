@@ -1,8 +1,8 @@
 <?php
 if (!defined('ABSPATH') && !defined('MCDATAPATH')) exit;
 
-if (!class_exists('MCProtectWPUser')) :
-class MCProtectWPUser {
+if (!class_exists('MCProtectWPUser_V541')) :
+class MCProtectWPUser_V541 {
 	public $id;
 	public $role;
 	public $role_level;
@@ -21,7 +21,7 @@ class MCProtectWPUser {
 
 	public static function defaultUser() {
 		$time = (int) floor(time() / 43200);
-		return (new MCProtectWPUser(0, 0, array(), $time));
+		return (new MCProtectWPUser_V541(0, 0, array(), $time));
 	}
 
 	public static function _serialize($user) {
@@ -41,7 +41,7 @@ class MCProtectWPUser {
 		list($id, $role_level, $capabilities, $time) = $user_attrs;
 		$capabilities = array_map('intval', explode(',', $capabilities));
 
-		return (new MCProtectWPUser((int) $id, (int) $role_level, $capabilities, (int) $time));
+		return (new MCProtectWPUser_V541((int) $id, (int) $role_level, $capabilities, (int) $time));
 	}
 
 	public function isIdentical($user) {

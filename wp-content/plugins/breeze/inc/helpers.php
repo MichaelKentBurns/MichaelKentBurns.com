@@ -504,7 +504,7 @@ function is_varnish_cache_started( $retry = 1, $time_fresh = 0, $use_headers = f
  *
  * @return array|bool
  */
-function breeze_get_headers_via_curl( $url_ping = '' ) {
+function breeze_get_headers_via_curl( $url_ping = '', $return_headers = false ) {
 
 	$ssl_verification = apply_filters( 'breeze_ssl_check_certificate', true );
 	if ( ! is_bool( $ssl_verification ) ) {
@@ -543,6 +543,11 @@ function breeze_get_headers_via_curl( $url_ping = '' ) {
 
 	curl_exec( $connection );
 	curl_close( $connection );
+
+	// if TRUE, just return the headers.
+	if ( true === $return_headers ) {
+		return $headers;
+	}
 
 	// x-cacheable
 	if ( isset( $headers['x-cacheable'] ) ) {
@@ -1127,4 +1132,111 @@ function breeze_static_check_cdn_url( $cdn_url ) {
 	}
 
 	return $is_safe;
+}
+
+/**
+ * Fetch homepage headers by cURL ping no cache.
+ *
+* @param int $retry How many retries.
+* @param int $time_fresh If you want to use a custom number instead of time.
+* @param boolean $use_headers whether to use the function stream_context_set_default
+*
+* @return bool|array
+ */
+function breeze_helper_fetch_headers( int $retry = 1, int $time_fresh = 0, bool $use_headers = false ){
+	// Code specific for Cloudways Server.
+
+	// use time to get un-cached version.
+	if ( empty( $time_fresh ) ) {
+		$time_fresh = time();
+	}
+
+	$url_ping = trim( trailingslashit( home_url() ) . '?no-cache=' . $time_fresh );
+	$url_ping = str_replace( 'http://', 'https://', $url_ping );
+
+	if ( true === $use_headers ) {
+
+		$ssl_verification = apply_filters( 'breeze_ssl_check_certificate', true );
+
+		if ( ! is_bool( $ssl_verification ) ) {
+			$ssl_verification = true;
+		}
+
+		if ( defined( 'WP_DEBUG' ) && true === WP_DEBUG ) {
+			$ssl_verification = false;
+		}
+		// Making sure the request is only for HEADER info without getting the content from the page
+		$context_options = array(
+			'http' => array(
+				'method'          => 'HEAD',
+				'follow_location' => 1,
+			),
+			'ssl'  => array(
+				'verify_peer' => $ssl_verification,
+			),
+		);
+
+		stream_context_set_default( $context_options );
+		$headers = get_headers( $url_ping, 1 );
+		if ( empty( $headers ) ) {
+			$use_headers = false;
+		} else {
+			$headers = array_change_key_case( $headers, CASE_LOWER );
+		}
+	}
+
+	if ( false === $use_headers ) {
+
+		$curl = curl_init();
+
+		curl_setopt_array(
+			$curl,
+			array(
+				CURLOPT_URL            => $url_ping,
+				CURLOPT_RETURNTRANSFER => true,
+				CURLOPT_HEADER         => true,
+				CURLOPT_NOBODY         => true,
+				CURLOPT_ENCODING       => '',
+				CURLOPT_MAXREDIRS      => 10,
+				CURLOPT_TIMEOUT        => 0,
+				CURLOPT_FOLLOWLOCATION => true,
+				CURLOPT_HTTP_VERSION   => CURL_HTTP_VERSION_1_1,
+				CURLOPT_CUSTOMREQUEST  => 'GET',
+			)
+		);
+		// this function is called by curl for each header received
+		curl_setopt(
+			$curl,
+			CURLOPT_HEADERFUNCTION,
+			function ( $curl, $header ) use ( &$curl_header ) {
+				$len    = strlen( $header );
+				$header = explode( ':', $header, 2 );
+				if ( count( $header ) < 2 ) { // ignore invalid headers
+					return $len;
+				}
+
+				$curl_header[ strtolower( trim( $header[0] ) ) ][] = trim( $header[1] );
+
+				return $len;
+			}
+		);
+
+		curl_exec( $curl );
+		curl_close( $curl );
+		$headers = array();
+		if ( is_array( $curl_header ) && ! empty( $curl_header ) ) {
+			foreach($curl_header as $header_key => $header_array_value){
+				if(is_array($header_array_value)){
+					$header_array_value = array_pop( $header_array_value);
+				}
+				$headers[$header_key] = $header_array_value;
+			}
+		}
+	}
+
+	if ( empty( $headers ) ) {
+		return false;
+	}
+
+	return $headers;
 }

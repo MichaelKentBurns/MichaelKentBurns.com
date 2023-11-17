@@ -10,7 +10,7 @@ if (!class_exists('MCInfo')) :
 		public $badgeinfo = 'mcbadge';
 		public $ip_header_option = 'mcipheader';
 		public $brand_option = 'mcbrand';
-		public $version = '5.38';
+		public $version = '5.41';
 		public $webpage = 'https://www.malcare.com';
 		public $appurl = 'https://app.malcare.com';
 		public $slug = 'malcare-security/malcare.php';
@@ -38,6 +38,23 @@ if (!class_exists('MCInfo')) :
 
 		public function hasValidDBVersion() {
 			return MCInfo::DB_VERSION === $this->getCurrentDBVersion();
+		}
+
+		public function getLatestWooCommerceDBVersion() {
+			if (defined('WC_ABSPATH') && file_exists(WC_ABSPATH . 'includes/class-wc-install.php')) {
+				include_once WC_ABSPATH . 'includes/class-wc-install.php';
+
+				if (class_exists('WC_Install')) {
+					$update_versions = array_keys(WC_Install::get_db_update_callbacks());
+
+					if (!empty($update_versions)) {
+						asort($update_versions);
+						return end($update_versions);
+					}
+				}
+			}
+
+			return false;
 		}
 
 		public static function getRequestID() {

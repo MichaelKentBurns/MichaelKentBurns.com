@@ -1,8 +1,8 @@
 <?php
 if (!defined('ABSPATH') && !defined('MCDATAPATH')) exit;
 
-if (!class_exists('MCProtectIpstoreFS')) :
-	class MCProtectIpstoreFS {
+if (!class_exists('MCProtectIpstoreFS_V541')) :
+	class MCProtectIpstoreFS_V541 {
 		private $whitelisted_ips;
 		private $blacklisted_ips;
 
@@ -11,21 +11,21 @@ if (!class_exists('MCProtectIpstoreFS')) :
 
 		function __construct() {
 			$ip_store_file = MCDATAPATH . MCCONFKEY . '-' . 'mc_ips.conf';
-			$ips = MCProtectUtils::parseFile($ip_store_file);
+			$ips = MCProtectUtils_V541::parseFile($ip_store_file);
 			$this->whitelisted_ips = array_key_exists('whitelisted', $ips) ? $ips['whitelisted'] : array();
 			$this->blacklisted_ips = array_key_exists('blacklisted', $ips) ? $ips['blacklisted'] : array();
 		}
 
 		public function getTypeIfBlacklistedIP($ip) {
-			return $this->getIPType($ip, MCProtectIpstoreFS::IP_TYPE_BLACKLISTED);
+			return $this->getIPType($ip, MCProtectIpstoreFS_V541::IP_TYPE_BLACKLISTED);
 		}
 
 		public function isFWIPBlacklisted($ip) {
-			return $this->checkIPPresent($ip, MCProtectIpstoreFS::IP_TYPE_BLACKLISTED);
+			return $this->checkIPPresent($ip, MCProtectIpstoreFS_V541::IP_TYPE_BLACKLISTED);
 		}
 
 		public function isFWIPWhitelisted($ip) {
-			return $this->checkIPPresent($ip, MCProtectIpstoreFS::IP_TYPE_WHITELISTED);
+			return $this->checkIPPresent($ip, MCProtectIpstoreFS_V541::IP_TYPE_WHITELISTED);
 		}
 
 		private function checkIPPresent($ip, $type) {
@@ -36,9 +36,9 @@ if (!class_exists('MCProtectIpstoreFS')) :
 		#XNOTE: getIPCategory or getIPType?
 		private function getIPType($ip, $type) {
 			switch ($type) {
-			case MCProtectIpstoreFS::IP_TYPE_BLACKLISTED:
+			case MCProtectIpstoreFS_V541::IP_TYPE_BLACKLISTED:
 				return isset($this->blacklisted_ips[$ip]) ? $this->blacklisted_ips[$ip] : null;
-			case MCProtectIpstoreFS::IP_TYPE_WHITELISTED:
+			case MCProtectIpstoreFS_V541::IP_TYPE_WHITELISTED:
 				return isset($this->whitelisted_ips[$ip]) ? $this->whitelisted_ips[$ip] : null;
 			}
 		}

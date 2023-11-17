@@ -8,7 +8,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Breeze_Woocommerce_Product_Cache {
 	function __construct() {
 		// When a new order is placed.
-		add_action( 'woocommerce_checkout_order_processed', array( &$this, 'recreate_cache_for_products' ), 10, 3 );
+		add_action( 'woocommerce_checkout_order_processed', array( &$this, 'recreate_cache_for_products' ), 99, 3 );
+		add_action( 'woocommerce_order_status_changed', array( &$this, 'recreate_cache_for_products' ), 99, 3 );
 	}
 
 	/**
@@ -33,10 +34,22 @@ class Breeze_Woocommerce_Product_Cache {
 			$items = $order->get_items();
 
 			$product_list_cd = array();
+			$change_stock_hide = false;
+			$is_no_stock       = false;
+			// yes === Hide out of stock items from the catalog
+			if ( 'yes' === get_option( 'woocommerce_hide_out_of_stock_items' ) ) {
+				$change_stock_hide = true;
+			}
 
 			if ( ! empty( $items ) ) {
 				foreach ( $items as $item_id => $item_product ) {
 					$product_id = $item_product->get_product_id();
+					$product    = wc_get_product( absint( $product_id ) );
+					$stock_no   = intval( $product->get_stock_quantity() ) - 1;
+
+					if ( true === $product->managing_stock() && 1 > $stock_no ) { // if stock is 0
+						$is_no_stock = true;
+					}
 
 					if ( ! empty( $product_id ) ) {
 						$url_path = get_permalink( $product_id );
@@ -44,6 +57,17 @@ class Breeze_Woocommerce_Product_Cache {
 						// Clear Varnish server cache for this URL.
 						breeze_varnish_purge_cache( $url_path, $do_varnish_purge );
 					}
+				}
+
+				if ( true === $is_no_stock && true === $change_stock_hide ) {
+
+					$home_url          = trailingslashit( home_url() );
+					$shop_page         = trailingslashit( wc_get_page_permalink( 'shop' ) );
+					$product_list_cd[] = $home_url;
+					$product_list_cd[] = $shop_page;
+
+					breeze_varnish_purge_cache( $home_url, $do_varnish_purge );
+					breeze_varnish_purge_cache( $shop_page, $do_varnish_purge );
 				}
 
 				if ( ! empty( $product_list_cd ) ) {
