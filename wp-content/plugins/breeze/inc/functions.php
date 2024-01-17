@@ -97,7 +97,6 @@ function breeze_current_user_type( $as_dir = true ) {
 		}
 	}
 
-
 	return '';
 }
 
@@ -128,7 +127,6 @@ function breeze_all_wp_user_roles() {
 
 function breeze_all_user_folders() {
 	$all_roles = breeze_all_wp_user_roles();
-
 
 	$roles = array(
 		'',
@@ -319,7 +317,6 @@ function breeze_is_restricted_access( $bool_response = false ) {
 		} else {
 			return true;//restrict the access.
 		}
-
 	}
 
 	if ( true === $bool_response ) {
@@ -356,7 +353,7 @@ function breeze_which_role_folder( $hash = '' ) {
 }
 
 
-function breeze_load_delay_script(){
+function breeze_load_delay_script() {
 
 	$delay_script_js = <<<SCRIPT_TEST
 		<script>
@@ -403,7 +400,7 @@ function breeze_currency_switcher_cache() {
 
 				$the_path = strtoupper( $the_path );
 				if ( array_key_exists( $the_path, $county_list ) ) {
-					$currency = $currency.$the_path;
+					$currency = $currency . $the_path;
 
 				}
 			}
@@ -411,10 +408,10 @@ function breeze_currency_switcher_cache() {
 	}
 
 	if ( function_exists( 'weglot_get_current_language' ) ) {
-		$currency = $currency.weglot_get_current_language();
+		$currency = $currency . weglot_get_current_language();
 	}
 
-	if(isset($_COOKIE['aelia_cs_selected_currency'])){
+	if ( isset( $_COOKIE['aelia_cs_selected_currency'] ) ) {
 		$currency = trim( $_COOKIE['aelia_cs_selected_currency'] );
 	}
 
@@ -434,7 +431,8 @@ function breeze_is_script_ignored_from_delay( $script = '' ) {
 	}
 
 	$not_delayed     = false;
-	$scripts_ignored = apply_filters( 'default_scripts_gnore_from_delay',
+	$scripts_ignored = apply_filters(
+		'default_scripts_gnore_from_delay',
 		array(
 			'gtag(',
 			'ga(',
@@ -451,7 +449,6 @@ function breeze_is_script_ignored_from_delay( $script = '' ) {
 				$not_delayed = true;
 				break;
 			}
-
 		}
 
 		return $not_delayed;
@@ -714,6 +711,159 @@ function breeze_all_country_codes() {
 	);
 }
 
+/**
+ * Load Mobile Detect library based on PHP version
+ *
+ * @return \Detection\MobileDetect|false
+ */
+function breeze_mobile_detect_library() {
+	$call_class     = false;
+	$path_to_plugin = dirname( __FILE__, 2 ) . '/';
+
+	if ( ! class_exists( '\Detection\MobileDetect' ) ) {
+		if ( version_compare( PHP_VERSION, '7.3.0' ) >= 0 && version_compare( PHP_VERSION, '8.0.0', '<' ) ) {
+			// Mobile detect 3.74
+			require_once( $path_to_plugin . 'vendor-extra/mobiledetect/php7/vendor/autoload.php' );
+			$call_class = true;
+		}
+
+		if ( version_compare( PHP_VERSION, '8.0.0' ) >= 0 ) {
+			// Mobile detect 4.8
+			require_once( $path_to_plugin . 'vendor-extra/mobiledetect/php8/vendor/autoload.php' );
+			$call_class = true;
+		}
+	}
+
+	if ( class_exists( '\Detection\MobileDetect' ) ) {
+		$call_class = true;
+	}
+
+	if ( true === $call_class ) {
+		return new \Detection\MobileDetect;
+	}
+
+	return false;
+
+}
+
+/**
+ * Get the device type.
+ *
+ * @return string
+ */
+function breeze_mobile_detect( $as_folder = true ) {
+	if ( false === is_breeze_mobile_cache() ) {
+		return '';
+	}
+	$device_type = '';
+
+	// Cloudways server variable.
+	if ( true === breeze_is_cloudways_server() ) {
+		$get_cloudways_type = breeze_cache_type_return();
+		if ( 'T' === $get_cloudways_type ) {
+			$device_type = 'tablet';
+		} elseif ( 'M' === $get_cloudways_type ) {
+			$device_type = 'mobile';
+		}
+	} else {
+		/**
+		 * \Detection\MobileDetect object
+		 */
+		$is_library = breeze_mobile_detect_library();
+
+		if ( false !== $is_library ) {
+			try {
+				if ( ! isset( $_SERVER['HTTP_USER_AGENT'] ) ) {
+					$_SERVER['HTTP_USER_AGENT'] = 'empty_agent';
+				}
+				$is_library->setUserAgent( $_SERVER['HTTP_USER_AGENT'] );
+				//code...
+				$device_type = ( $is_library->isMobile() ? ( $is_library->isTablet() ? 'tablet' : 'mobile' ) : '' ); // last one can be 'desktop'
+			} catch ( \Exception $e ) {
+				// handle exception
+				$device_type = '';
+			}
+		}
+	}
+
+	if ( true === $as_folder && ! empty( $device_type ) ) {
+		$device_type = $device_type . '_';
+	}
+
+	return $device_type;
+}
+
+/**
+ * Detect if mobile cache is enabled.
+ *
+ * @param bool $just_cw_server To check for Mobile Cache option value only from CW server or also Breeze options.
+ *
+ * @return bool|mixed
+ */
+function is_breeze_mobile_cache( $just_cw_server = false ) {
+	$accepted_cloudways_values = array(
+		'desktop',
+		'tablet',
+		'mobile',
+	);
+	if ( isset( $_SERVER['HTTP_X_DEVICE_TYPE'] ) && in_array( $_SERVER['HTTP_X_DEVICE_TYPE'], $accepted_cloudways_values, true ) ) {
+		return true;
+	}
+
+	// just return false if the server is not CLoudWays.
+	if ( true === $just_cw_server ) {
+		return false;
+	}
+
+	if ( isset( $GLOBALS['breeze_config']['cache_options']['breeze-mobile-separate'] ) ) {
+		return filter_var( $GLOBALS['breeze_config']['cache_options']['breeze-mobile-separate'], FILTER_VALIDATE_BOOLEAN );
+	}
+
+	return false;
+}
+
+/**
+ * Identify server type, Cloudways or other.
+ *
+ * @return bool
+ */
+function breeze_is_cloudways_server() {
+
+	if (
+		false !== strpos( $_SERVER['DOCUMENT_ROOT'], 'cloudwaysapps' ) ||
+		false !== strpos( $_SERVER['DOCUMENT_ROOT'], 'cloudwaysstagingapps' ) ||
+		! empty( getenv( 'FPC_ENV' ) )
+	) {
+		return true;
+	}
+
+	return false;
+}
+
+function breeze_cache_type_return() {
+	$accepted_cloudways_values = array(
+		'desktop',
+		'tablet',
+		'mobile',
+	);
+	/**
+	 * D = Desktop
+	 * T = Tablet
+	 * M = Mobile phone
+	 */
+	$return_type = 'D';
+	if ( isset( $_SERVER['HTTP_X_DEVICE_TYPE'] ) && in_array( $_SERVER['HTTP_X_DEVICE_TYPE'], $accepted_cloudways_values, true ) ) {
+		$cache_type = trim( $_SERVER['HTTP_X_DEVICE_TYPE'] );
+
+		if ( 'tablet' === $cache_type ) {
+			$return_type = 'T';
+		} elseif ( 'mobile' === $cache_type ) {
+			$return_type = 'M';
+		}
+	}
+
+	return $return_type;
+}
 
 function breeze_page_provided_headers() {
 	$headers_output        = array();

@@ -65,7 +65,15 @@ class Breeze_Store_Files {
 			$file_dir        = $files_dir . $font_title . '/';
 			$stored_file_uri = $stored_files_uri . $font_title . '/';
 
-			$font_content = file_get_contents( $font_url );
+
+			$context = stream_context_create([
+				"http" => [
+					"header" => "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3",
+				],
+			]);
+
+
+			$font_content = file_get_contents($font_url, false, $context);
 
 			$local_css = $this->rewrite_google_fonts_files( $font_content, $font_title, $file_dir, $stored_file_uri );
 

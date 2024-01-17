@@ -33,6 +33,7 @@ class Breeze_MinificationStyles extends Breeze_MinificationBase {
 	private $original_content      = '';
 	private $show_original_content = 0;
 	private $do_process            = false;
+	private $dontmove            = false;
 
 
 	//Reads the page and collects style tags
@@ -103,7 +104,7 @@ class Breeze_MinificationStyles extends Breeze_MinificationBase {
 		if ( $excludeCSS !== '' ) {
 			$this->dontmove = array_filter( array_map( 'trim', explode( ',', $excludeCSS ) ) );
 		} else {
-			$this->dontmove = '';
+			$this->dontmove = array();
 		}
 		// should we defer css?
 		// value: true/ false
@@ -848,7 +849,7 @@ class Breeze_MinificationStyles extends Breeze_MinificationBase {
 			// no match with whitelist
 			return false;
 		} else {
-			if ( is_array( $this->dontmove ) ) {
+			if ( is_array( $this->dontmove ) && !empty($this->dontmove)) {
 				foreach ( $this->dontmove as $match ) {
 					if ( strpos( $tag, $match ) !== false ) {
 						//Matched something

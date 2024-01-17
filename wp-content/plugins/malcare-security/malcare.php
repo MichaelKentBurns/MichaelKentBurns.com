@@ -5,7 +5,7 @@ Plugin URI: https://www.malcare.com
 Description: MalCare WordPress Security Plugin - Malware Scanner, Cleaner, Security Firewall
 Author: MalCare Security
 Author URI: https://www.malcare.com
-Version: 5.41
+Version: 5.42
 Network: True
  */
 
@@ -70,7 +70,7 @@ if (is_admin()) {
 	require_once dirname( __FILE__ ) . '/wp_admin.php';
 	$wpadmin = new MCWPAdmin($bvsettings, $bvsiteinfo);
 	add_action('admin_init', array($wpadmin, 'initHandler'));
-	add_filter('all_plugins', array($wpadmin, 'initBranding'));
+	add_filter('all_plugins', array($wpadmin, 'initWhitelabel'));
 	add_filter('plugin_row_meta', array($wpadmin, 'hidePluginDetails'), 10, 2);
 	add_filter('debug_information', array($wpadmin, 'handlePluginHealthInfo'), 10, 1);
 	if ($bvsiteinfo->isMultisite()) {
@@ -96,6 +96,13 @@ if ($bvinfo->hasValidDBVersion()) {
 		$bvconfig = $bvinfo->config;
 		$actlog = new BVWPActLog($bvdb, $bvsettings, $bvinfo, $bvconfig['activity_log']);
 		$actlog->init();
+	}
+
+	if ($bvinfo->isServiceActive('maintenance_mode')) {
+		require_once dirname( __FILE__ ). '/maintenance/wp_maintenance.php';
+		$bvconfig = $bvinfo->config;
+		$maintenance = new BVWPMaintenance($bvconfig['maintenance_mode']);
+		$maintenance->init();
 	}
 
 }
@@ -155,9 +162,9 @@ if ((array_key_exists('bvplugname', $_REQUEST)) && ($_REQUEST['bvplugname'] == "
 	if ($bvinfo->hasValidDBVersion()) {
 		if ($bvinfo->isProtectModuleEnabled()) {
 			require_once dirname( __FILE__ ) . '/protect/protect.php';
-			add_action('clear_pt_config', array('MCProtect_V541', 'uninstall'));
+			add_action('clear_pt_config', array('MCProtect_V542', 'uninstall'));
 			if ($bvinfo->isActivePlugin() && !(defined( 'WP_CLI' ) && WP_CLI)) {
-				MCProtect_V541::init(MCProtect_V541::MODE_WP);
+				MCProtect_V542::init(MCProtect_V542::MODE_WP);
 			}
 		}
 

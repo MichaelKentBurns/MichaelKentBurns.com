@@ -385,6 +385,7 @@ class Breeze_Settings_Import_Export {
 		if ( ! empty( $options ) ) {
 			$basic = array(
 				'breeze-active'           => ( isset( $options['breeze-active'] ) ? $options['breeze-active'] : '1' ),
+				'breeze-mobile-separate'  => ( isset( $options['breeze-mobile-separate'] ) ? $options['breeze-mobile-separate'] : '1' ),
 				'breeze-cross-origin'     => ( isset( $options['breeze-cross-origin'] ) ? $options['breeze-cross-origin'] : '0' ),
 				'breeze-disable-admin'    => ( isset( $options['breeze-disable-admin'] ) ? $options['breeze-disable-admin'] : array() ),
 				'breeze-gzip-compression' => ( isset( $options['breeze-gzip-compression'] ) ? $options['breeze-gzip-compression'] : '1' ),
@@ -440,6 +441,10 @@ class Breeze_Settings_Import_Export {
 				'breeze-store-googleanalytics-locally' => ( isset( $options['breeze-store-googleanalytics-locally'] ) ? $options['breeze-store-googleanalytics-locally'] : '0' ),
 				'breeze-store-facebookpixel-locally'   => ( isset( $options['breeze-store-facebookpixel-locally'] ) ? $options['breeze-store-facebookpixel-locally'] : '0' ),
 				'breeze-store-gravatars-locally'       => ( isset( $options['breeze-store-gravatars-locally'] ) ? $options['breeze-store-gravatars-locally'] : '0' ),
+				'breeze-enable-api'    => ( isset( $options['breeze-enable-api'] ) ? $options['breeze-enable-api'] : '0' ),
+				'breeze-secure-api'    => ( isset( $options['breeze-secure-api'] ) ? $options['breeze-secure-api'] : '0' ),
+				'breeze-api-token'     => ( isset( $options['breeze-api-token'] ) ? $options['breeze-api-token'] : '' ),
+
 			);
 
 			$heartbeat = array(
@@ -641,6 +646,7 @@ class Breeze_Settings_Import_Export {
 		 */
 		$checkboxes = array(
 			'breeze-active'                        => '1',
+			'breeze-mobile-separate'               => '1',
 			'breeze-cross-origin'                  => '0',
 			'breeze-gzip-compression'              => '1',
 			'breeze-browser-cache'                 => '1',
@@ -661,6 +667,8 @@ class Breeze_Settings_Import_Export {
 			'breeze-enable-js-delay'               => '0',
 			'breeze-preload-links'                 => '1',
 			'breeze-wp-emoji'                      => '0',
+			'breeze-enable-api'                     => '0',
+			'breeze-secure-api'                     => '0',
 			'cdn-active'                           => '0',
 			'cdn-relative-path'                    => '1',
 			'auto-purge-varnish'                   => '1',

@@ -250,7 +250,7 @@ abstract class UpdraftPlus_BackupModule {
 		if ($return_instead_of_echo) {
 			return $output;
 		} else {
-			echo $output;
+			echo wp_kses_post($output);
 		}
 	}
 	

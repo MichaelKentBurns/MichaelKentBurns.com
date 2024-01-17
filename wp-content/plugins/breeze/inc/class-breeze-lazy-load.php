@@ -99,9 +99,17 @@ class Breeze_Lazy_Load {
 		// If this option is set to true then loading="lazy" attribute will be use instead.
 		// The native lazy load is not yet supported by all browsers. ( As of February 2021, 73% of browsers support lazy loading. )
 		$use_native = apply_filters( 'breeze_use_native_lazy_load', $this->lazy_load_native );
-
+		if ( version_compare( PHP_VERSION, '8.2.0', '<' ) ) {
 		$content = mb_convert_encoding( $content, 'HTML-ENTITIES', 'UTF-8' );
-
+		} else {
+			$content = mb_encode_numericentity(
+				htmlspecialchars_decode(
+					htmlentities($content, ENT_NOQUOTES, 'UTF-8', false)
+					,ENT_NOQUOTES
+				), [0x80, 0x10FFFF, 0, ~0],
+				'UTF-8'
+			);
+		}
 
 		/**
 		 * Fetch all images
@@ -281,7 +289,7 @@ class Breeze_Lazy_Load {
 		if ( empty( trim( $current_classes ) ) ) {
 			$current_classes = 'br-lazy';
 		} else {
-					$current_classes .= 'br-lazy';
+			$current_classes .= ' br-lazy';
 		}
 
 		return $current_classes;

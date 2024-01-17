@@ -41,6 +41,12 @@ class Breeze_Admin {
 		add_action( 'breeze_clear_all_cache', array( $this, 'breeze_clear_all_cache' ) );
 		add_action( 'breeze_clear_varnish', array( $this, 'breeze_clear_varnish' ) );
 
+		// Check if woocommerce exists
+		if ( function_exists( 'is_woocommerce_active' ) && is_woocommerce_active() ) {
+			// Clear all cache on bulk update
+			add_action( 'woocommerce_after_product_object_save', array( $this, 'clear_cache_if_changed_api' ), 10, 2 );
+		}
+
 		if ( is_admin() || 'cli' === php_sapi_name() ) {
 			add_action( 'admin_init', array( $this, 'admin_init' ) );
 
@@ -71,9 +77,28 @@ class Breeze_Admin {
 
 			// Add setting buttons to plugins list page
 			add_filter( 'plugin_action_links_' . BREEZE_BASENAME, array( $this, 'breeze_add_action_links' ) );
-			add_filter( 'network_admin_plugin_action_links_' . BREEZE_BASENAME, array( $this, 'breeze_add_action_links_network' ) );
+			add_filter( 'network_admin_plugin_action_links_' . BREEZE_BASENAME, array(
+				$this,
+				'breeze_add_action_links_network'
+			) );
 		}
 
+	}
+
+
+	/**
+	 * Clear cache if products are changed trough API
+	 *
+	 * @param $product
+	 * @param $data_store
+	 *
+	 * @return void
+	 */
+	public function clear_cache_if_changed_api( $product, $data_store ) {
+		// Check if this is a REST API update
+		if ( defined( 'REST_REQUEST' ) && REST_REQUEST ) {
+			$this->breeze_clear_all_cache();
+		}
 	}
 
 	/**
@@ -425,11 +450,18 @@ class Breeze_Admin {
 		$active_cache_users = array();
 		foreach ( $all_user_roles as $usr_role ) {
 			$active_cache_users[ $usr_role ] = 0;
+		}
 
+		$characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+		$token      = '';
+
+		for ( $i = 0; $i < 12; $i ++ ) {
+			$token .= $characters[ random_int( 0, strlen( $characters ) - 1 ) ];
 		}
 
 		$default_basic = array(
 			'breeze-active'            => '1',
+			'breeze-mobile-separate'   => '1',
 			'breeze-cross-origin'      => '0',
 			'breeze-disable-admin'     => $active_cache_users,
 			'breeze-gzip-compression'  => '1',
@@ -484,6 +516,9 @@ class Breeze_Admin {
 			'breeze-store-googleanalytics-locally' => '0',
 			'breeze-store-facebookpixel-locally' => '0',
 			'breeze-store-gravatars-locally' => '0',
+			'breeze-enable-api'    => '0',
+			'breeze-secure-api'    => '0',
+			'breeze-api-token'     => $token,
 		);
 
 		$heartbeat = breeze_get_option( 'heartbeat_settings' );
@@ -755,6 +790,7 @@ class Breeze_Admin {
 	 * Reset all options to default
 	 *
 	 * @return bool
+	 * @throws Exception
 	 */
 	public static function reset_to_default() {
 
@@ -767,6 +803,13 @@ class Breeze_Admin {
 		foreach ( $all_user_roles as $usr_role ) {
 			$active_cache_users[ $usr_role ] = 0;
 
+		}
+
+		$characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+		$token      = '';
+
+		for ( $i = 0; $i < 12; $i ++ ) {
+			$token .= $characters[ random_int( 0, strlen( $characters ) - 1 ) ];
 		}
 
 		$default_basic = array(
@@ -816,6 +859,9 @@ class Breeze_Admin {
 			'breeze-store-googleanalytics-locally' => '0',
 			'breeze-store-facebookpixel-locally' => '0',
 			'breeze-store-gravatars-locally' => '0',
+			'breeze-enable-api'    => '0',
+			'breeze-secure-api'    => '0',
+			'breeze-api-token'     => $token,
 		);
 		$default_heartbeat = array(
 			'breeze-control-heartbeat'  => '0',

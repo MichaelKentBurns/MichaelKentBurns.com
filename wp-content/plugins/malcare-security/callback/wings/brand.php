@@ -6,7 +6,7 @@ if (!class_exists('BVBrandCallback')) :
 class BVBrandCallback extends BVCallbackBase {
 	public $settings;
 
-	const BRAND_WING_VERSION = 1.0;
+	const BRAND_WING_VERSION = 1.1;
 
 	public function __construct($callback_handler) {
 		$this->settings = $callback_handler->settings;
@@ -15,37 +15,28 @@ class BVBrandCallback extends BVCallbackBase {
 	public function process($request) {
 		$bvinfo = new MCInfo($this->settings);
 		$option_name = $bvinfo->brand_option;
+		$whitelabel_infos = $bvinfo->getPluginsWhitelabelInfos();
 		$params = $request->params;
 		switch($request->method) {
 		case 'setbrand':
-			$brandinfo = array();
-			if (array_key_exists('hide', $params)) {
-				$brandinfo['hide'] = $params['hide'];
-			} else {
-				$brandinfo['name'] = $params['name'];
-				$brandinfo['title'] = $params['title'];
-				$brandinfo['description'] = $params['description'];
-				$brandinfo['pluginuri'] = $params['pluginuri'];
-				$brandinfo['author'] = $params['author'];
-				$brandinfo['authorname'] = $params['authorname'];
-				$brandinfo['authoruri'] = $params['authoruri'];
-				$brandinfo['menuname'] = $params['menuname'];
-				$brandinfo['logo'] = $params['logo'];
-				$brandinfo['webpage'] = $params['webpage'];
-				$brandinfo['appurl'] = $params['appurl'];
-				if (array_key_exists('hide_plugin_details', $params)) {
-					$brandinfo['hide_plugin_details'] = $params['hide_plugin_details'];
-				}
-				if (array_key_exists('hide_from_menu', $params)) {
-					$brandinfo['hide_from_menu'] = $params['hide_from_menu'];
+			foreach ($params as $slug => $whitelabel_info) {
+				if (isset($slug) && is_array($whitelabel_info)) {
+					$whitelabel_infos[$slug] = $whitelabel_info;
 				}
 			}
-			$this->settings->updateOption($option_name, $brandinfo);
+			$this->settings->updateOption($option_name, $whitelabel_infos);
 			$resp = array("setbrand" => $this->settings->getOption($option_name));
 			break;
 		case 'rmbrand':
+			foreach ($params["delete_keys"] as $slug) {
+				unset($whitelabel_infos[$slug]);
+			}
+			$this->settings->updateOption($option_name, $whitelabel_infos);
+			$resp = array("rmbrand" => true);
+			break;
+		case 'rmallbrands':
 			$this->settings->deleteOption($option_name);
-			$resp = array("rmbrand" => !$this->settings->getOption($option_name));
+			$resp = array("rmallbrands" => !$this->settings->getOption($option_name));
 			break;
 		default:
 			$resp = false;

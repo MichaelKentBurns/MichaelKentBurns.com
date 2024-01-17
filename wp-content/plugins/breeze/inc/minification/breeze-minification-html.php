@@ -12,6 +12,7 @@ class Breeze_MinificationHtml extends Breeze_MinificationBase {
 	private $original_content      = '';
 	private $show_original_content = 0;
 	private $do_process            = false;
+	private $forcexhtml            = false;
 
 	public function read( $options ) {
 		$this_path_url = $this->get_cache_file_url( '' );

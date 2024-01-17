@@ -26,8 +26,8 @@ class Breeze_PurgeCacheTime {
 	protected $varnishcache = 0;
 
 	public function __construct( $settings = null ) {
-		if ( isset( $settings['breeze-ttl'] ) ) {
-			$this->timettl = $settings['breeze-ttl'];
+		if ( isset( $settings['breeze-b-ttl'] ) ) {
+			$this->timettl = $settings['breeze-b-ttl'];
 		}
 
 		if ( isset( $settings['breeze-active'] ) ) {
@@ -51,10 +51,25 @@ class Breeze_PurgeCacheTime {
 		wp_unschedule_event( $timestamp, 'breeze_purge_cache' );
 	}
 
-	//       set up schedule_events
-	public function schedule_events() {
+	//
+
+	/** Setup for schedule_events
+	 * TODO: Rethink the current logic as it has flaws and is fired for no actual reason
+	 *
+	 * @param $time
+	 *
+	 * @return void
+	 */
+	public function schedule_events( $time = 0 ) {
 
 		$timestamp = wp_next_scheduled( 'breeze_purge_cache' );
+
+		if ( $time ) {
+			#error_log( 'Time: ' . $time );
+			wp_schedule_event( $time * 60, 'breeze_varnish_time', 'breeze_purge_cache' );
+
+			return;
+		}
 
 		// Expire cache never
 		if ( isset( $this->timettl ) && (int) $this->timettl === 0 ) {
@@ -114,7 +129,7 @@ class Breeze_PurgeCacheTime {
 //Enabled auto purge the varnish caching by time life
 $params = array(
 	'breeze-active'        => (int) Breeze_Options_Reader::get_option_value( 'breeze-active' ),
-	'breeze-ttl'           => (int) Breeze_Options_Reader::get_option_value( 'breeze-ttl' ),
+	'breeze-b-ttl'         => (int) Breeze_Options_Reader::get_option_value( 'breeze-b-ttl' ),
 	'breeze-varnish-purge' => (int) Breeze_Options_Reader::get_option_value( 'auto-purge-varnish' ),
 );
 

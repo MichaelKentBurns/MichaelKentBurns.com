@@ -32,3 +32,10 @@
 .breeze-box *, ::after, ::before {
   box-sizing: unset;
 }
+
+@media screen and (max-width: 782px) {
+  #wpadminbar li#wp-admin-bar-breeze-topbar {
+    display: block;
+    position: static;
+  }
+}

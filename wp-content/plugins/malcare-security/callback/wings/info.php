@@ -10,7 +10,7 @@ class BVInfoCallback extends BVCallbackBase {
 	public $bvinfo;
 	public $bvapi;
 	
-	const INFO_WING_VERSION = 1.8;
+	const INFO_WING_VERSION = 1.9;
 
 	public function __construct($callback_handler) {
 		$this->db = $callback_handler->db;
@@ -375,11 +375,12 @@ class BVInfoCallback extends BVCallbackBase {
 	}
 
 	function getCoreHandler() {
-		global $wp_db_version;
+		global $wp_db_version, $wp_version;
 
 		$result = $this->getTransient('update_core');
 		$result['current_db_version'] = $this->settings->getOption('db_version');
 		$result['latest_db_version'] = $wp_db_version;
+		$result['wp_version'] = $wp_version;
 		
 		return $result;
 	}
@@ -488,7 +489,7 @@ class BVInfoCallback extends BVCallbackBase {
 			$resp = $this->getStats();
 			break;
 		case "gtdbvariables":
-			$variable = (array_key_exists('variable', $params)) ? $variable : "";
+			$variable = (array_key_exists('variable', $params)) ? $params['variable'] : "";
 			$resp = $this->db->showDbVariables($variable);
 			break;
 		case "gtplgs":

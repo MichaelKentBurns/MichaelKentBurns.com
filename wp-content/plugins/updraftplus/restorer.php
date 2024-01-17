@@ -1487,12 +1487,10 @@ class Updraft_Restorer {
 				// Directory
 				if ($wp_filesystem->is_file($dest_dir.'/'.$rname)) @$wp_filesystem->delete($dest_dir.'/'.$rname, false, 'f');// phpcs:ignore Generic.PHP.NoSilencedErrors.Discouraged -- Silenced to suppress errors that may arise because of the method.
 				// No such directory yet: just move it
-				if (!$wp_filesystem->is_dir($dest_dir.'/'.$rname)) {
-					if (!$wp_filesystem->move($source_dir.'/'.$rname, $dest_dir.'/'.$rname, false)) {
+				if ($wp_filesystem->exists($dest_dir.'/'.$rname) && !$wp_filesystem->is_dir($dest_dir.'/'.$rname) && !$wp_filesystem->move($source_dir.'/'.$rname, $dest_dir.'/'.$rname, false)) {
 						$this->restore_log_permission_failure_message($dest_dir, 'Move '.$source_dir.'/'.$rname.' -> '.$dest_dir.'/'.$rname, 'Destination');
 						$updraftplus->log_e('Failed to move directory (check your file permissions and disk quota): %s', $source_dir.'/'.$rname." -&gt; ".$dest_dir.'/'.$rname);
 						return false;
-					}
 				} elseif (!empty($rfile['files'])) {
 					if (!$wp_filesystem->exists($dest_dir.'/'.$rname)) $wp_filesystem->mkdir($dest_dir.'/'.$rname, $chmod);
 					// There is a directory - and we want to to copy in
@@ -4299,7 +4297,7 @@ class Updraft_Restorer {
 				$um_sql = "SELECT umeta_id, meta_key 
 					FROM {$import_table_prefix}usermeta 
 					WHERE meta_key 
-					LIKE '".str_replace('_', '\_', $old_table_prefix)."%'";
+					LIKE '".UpdraftPlus_Database_Utility::esc_like($old_table_prefix)."%'";
 				$meta_keys = $wpdb->get_results($um_sql);
 
 				foreach ($meta_keys as $meta_key) {
@@ -4314,7 +4312,7 @@ class Updraft_Restorer {
 				}
 			} else {
 				// New, fast way: do it in a single query
-				$sql = "UPDATE {$import_table_prefix}usermeta SET meta_key = REPLACE(meta_key, '$old_table_prefix', '{$import_table_prefix}') WHERE meta_key LIKE '".str_replace('_', '\_', $old_table_prefix)."%';";
+				$sql = "UPDATE {$import_table_prefix}usermeta SET meta_key = REPLACE(meta_key, '$old_table_prefix', '{$import_table_prefix}') WHERE meta_key LIKE '".UpdraftPlus_Database_Utility::esc_like($old_table_prefix)."%';";
 				if (false === $wpdb->query($sql)) $errors_occurred = true;
 			}
 

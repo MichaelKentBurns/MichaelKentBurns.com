@@ -28,6 +28,10 @@ if ( ! isset( $basic['breeze-lazy-load-native'] ) ) {
 	$basic['breeze-lazy-load-native'] = '0';
 }
 
+if ( ! isset( $basic['breeze-mobile-separate'] ) ) {
+	$basic['breeze-mobile-separate'] = '1';
+}
+
 $icon = BREEZE_PLUGIN_URL . 'assets/images/basic-active.png';
 ?>
 <form data-section="basic">
@@ -68,7 +72,68 @@ $icon = BREEZE_PLUGIN_URL . 'assets/images/basic-active.png';
 			</div>
 		</div>
 		<!-- END OPTION -->
+		<?php
+		$mobile_cache_enabled = breeze_is_cloudways_server();
 
+		$div_condition = '';
+		$item_cursor =' ';
+		if ( true === $mobile_cache_enabled ) {
+			$div_condition = ' disabled="disabled"';
+			$item_cursor =' breeze_disable_cursor';
+		}
+		?>
+		<!-- START OPTION -->
+		<div class="br-option-item">
+			<div class="br-label">
+				<div class="br-option-text">
+					<?php _e( 'Mobile Cache', 'breeze' ); ?>
+				</div>
+			</div>
+			<div class="br-option">
+				<?php
+				$basic_value = isset( $basic['breeze-mobile-separate'] ) ? filter_var( $basic['breeze-mobile-separate'], FILTER_VALIDATE_BOOLEAN ) : false;
+				$check_basic = ( isset( $basic_value ) && true === $basic_value ) ? checked( $basic['breeze-mobile-separate'], '1', false ) : '';
+				if ( ! empty( $div_condition ) ) {
+                    $mobile_cache_cw = is_breeze_mobile_cache(true);
+                    if(true === $mobile_cache_cw){
+	                    $check_basic = checked( '1', '1', false );
+                    }else{
+	                    $check_basic = checked( '0', '1', false );
+                    }
+
+				}
+				?>
+				<div class="on-off-checkbox">
+					<label class="br-switcher<?php esc_attr_e($item_cursor); ?>">
+						<input id="breeze-mobile-separate" type="checkbox" name="breeze-mobile-separate" class="br-box" <?php echo $check_basic; ?> value='1' <?php echo $div_condition; ?>/>
+						<div class="br-see-state">
+						</div>
+					</label><br>
+				</div>
+				<div class="br-note">
+					<p>
+						<?php _e( 'Modern themes are built to be responsive and they usually function optimally without the need for an additional cache. Only activate mobile caching if you happen to be using a dedicated mobile theme or plugin.', 'breeze' ); ?>
+					</p>
+				</div>
+				<?php
+				if ( ! empty( $div_condition ) ) {
+					echo '<p class="br-important">';
+					echo '<strong>';
+					_e( 'Important: ', 'breeze' );
+					echo '</strong>';
+
+					$kb_mobile_cache = 'https://support.cloudways.com/en/articles/8460042-how-to-use-device-detection-with-your-application#h_78ed161271';
+					echo sprintf(
+					/* translators: %s Export file location */
+						__( 'To use mobile caching with the Breeze plugin on Cloudways, you must enable the Device Detection feature through the Cloudways Platform. Please follow this <a href="%s" target="_blank">guide</a> to ensure the mobile cache functions properly.', 'breeze' ),
+						$kb_mobile_cache
+					);
+					echo '</p>';
+				}
+				?>
+			</div>
+		</div>
+		<!-- END OPTION -->
 
 		<!-- START OPTION -->
 		<div class="br-option-item">
@@ -79,7 +144,7 @@ $icon = BREEZE_PLUGIN_URL . 'assets/images/basic-active.png';
 			</div>
 			<div class="br-option">
 				<?php
-				$cache_ttl = ( isset( $basic['breeze-ttl'] ) && ! empty( $basic['breeze-ttl'] ) ? (int) $basic['breeze-ttl'] : '1440' );
+				$cache_ttl = ( isset( $basic['breeze-b-ttl'] ) && ! empty( $basic['breeze-b-ttl'] ) ? (int) $basic['breeze-b-ttl'] : '1440' );
 				?>
 				<input type="text" id="cache-ttl" name="cache-ttl" size="50" placeholder="<?php _e( '1440', 'breeze' ); ?>" value="<?php echo $cache_ttl; ?>"/>
 				<div class="br-note">

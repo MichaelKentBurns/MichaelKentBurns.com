@@ -17,7 +17,7 @@
  * @author Stephen Clay <steve@mrclay.org>
  */
 class Minify_HTML {
-
+	private string $_html;
 	/**
 	 * "Minify" an HTML page
 	 *

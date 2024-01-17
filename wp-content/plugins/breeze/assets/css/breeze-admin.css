@@ -272,6 +272,10 @@ New checkbox 2
   user-select: none;
 }
 
+.breeze_disable_cursor {
+  cursor: default;
+}
+
 .br-switcher input {
   display: none;
 }
@@ -431,6 +435,24 @@ Radio button graphic.
 }
 .br-radio input[type=radio] + .radio-label:empty:before {
   margin-right: 0;
+}
+
+#refresh-api-token {
+  cursor: pointer;
+}
+#refresh-api-token .dashicons {
+  font-size: 30px;
+  padding-top: 5px;
+  color: #11ACDF;
+}
+
+#breeze-api-token {
+  width: 301px;
+}
+@media only screen and (max-width: 480px) {
+  #breeze-api-token {
+    width: 80%;
+  }
 }
 
 .br-loader-spinner {
@@ -1195,7 +1217,7 @@ body {
 }
 .breeze-box .br-overlay-disable {
   position: absolute;
-  background-color: rgba(0, 0, 0, 0.6784313725);
+  background-color: #000000ad;
   width: 100%;
   height: auto;
   z-index: 9999;
@@ -1257,7 +1279,7 @@ span.br-important {
 
 .br-inherit-wait {
   position: absolute;
-  background-color: rgba(0, 0, 0, 0.6784313725);
+  background-color: #000000ad;
   width: 100%;
   height: auto;
   z-index: 9999;
@@ -1302,7 +1324,7 @@ span.br-important {
   top: 0;
   bottom: 0;
   margin: auto;
-  background-color: rgba(252, 252, 253, 0.7215686275);
+  background-color: #fcfcfdb8;
   position: absolute;
 }
 
@@ -1372,7 +1394,7 @@ span.br-important {
 }
 @media only screen and (max-width: 782px) {
   #dbsummary-content .wp-list-table #number,
-  #dbsummary-content .wp-list-table td.number {
+#dbsummary-content .wp-list-table td.number {
     text-align: left;
   }
 }
@@ -1385,7 +1407,7 @@ span.br-important {
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.6784313725);
+  background-color: #000000ad;
   z-index: 9999;
   margin: auto;
   text-align: center;

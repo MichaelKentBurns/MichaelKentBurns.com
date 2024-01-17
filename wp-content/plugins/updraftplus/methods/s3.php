@@ -913,9 +913,9 @@ Check your permissions and credentials.','updraftplus'), 'error');
 	protected function get_pre_configuration_template_engine($key, $whoweare_short, $whoweare_long, $console_descrip, $console_url, $opening_html = '') {
 		$classes = $this->get_css_classes(false);
 		?>
-		<tr class="<?php echo $classes . ' ' . $whoweare_short . '_pre_config_container';?>">
+		<tr class="<?php echo esc_attr($classes . ' ' . $whoweare_short . '_pre_config_container');?>">
 			<td colspan="2">
-				<?php echo $opening_html.'<br>'; ?>
+				<?php echo wp_kses_post($opening_html).'<br>'; ?>
 				<?php
 
 					global $updraftplus_admin;

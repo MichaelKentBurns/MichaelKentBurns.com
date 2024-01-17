@@ -6,7 +6,7 @@
  * @since 12.4
  */
 
-use Automattic\Jetpack\Extensions\Premium_Content\Subscription_Service\Token_Subscription_Service;
+use Automattic\Jetpack\Extensions\Premium_Content\Subscription_Service\Abstract_Token_Subscription_Service;
 use const Automattic\Jetpack\Extensions\Subscriptions\META_NAME_FOR_POST_LEVEL_ACCESS_SETTINGS;
 
 /**
@@ -169,6 +169,12 @@ HTML;
 			return false;
 		}
 
+		// Don't show when previewing blog posts or site's theme
+		// phpcs:ignore WordPress.Security.NonceVerification.Recommended
+		if ( isset( $_GET['preview'] ) || isset( $_GET['theme_preview'] ) || isset( $_GET['customize_preview'] ) || isset( $_GET['hide_banners'] ) ) {
+			return false;
+		}
+
 		// Don't show if one of subscribe query params is set.
 		// They are set when user submits the subscribe form.
 		// The nonce is checked elsewhere before redirect back to this page with query params.
@@ -184,14 +190,15 @@ HTML;
 		} else {
 			$access_level = get_post_meta( $post->ID, '_jetpack_newsletter_access', true );
 		}
-		$is_accessible_by_everyone = Token_Subscription_Service::POST_ACCESS_LEVEL_EVERYBODY === $access_level || empty( $access_level );
+		require_once JETPACK__PLUGIN_DIR . 'extensions/blocks/premium-content/_inc/subscription-service/include.php';
+		$is_accessible_by_everyone = Abstract_Token_Subscription_Service::POST_ACCESS_LEVEL_EVERYBODY === $access_level || empty( $access_level );
 		if ( ! $is_accessible_by_everyone ) {
 			return false;
 		}
 
 		// Don't show if user is subscribed to blog.
 		require_once __DIR__ . '/../views.php';
-		if ( Jetpack_Memberships::is_current_user_subscribed() ) {
+		if ( ! class_exists( 'Jetpack_Memberships' ) || Jetpack_Memberships::is_current_user_subscribed() ) {
 			return false;
 		}
 		return true;

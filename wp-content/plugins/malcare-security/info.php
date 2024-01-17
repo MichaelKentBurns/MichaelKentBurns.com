@@ -9,8 +9,8 @@ if (!class_exists('MCInfo')) :
 		public $brandname = 'MalCare';
 		public $badgeinfo = 'mcbadge';
 		public $ip_header_option = 'mcipheader';
-		public $brand_option = 'mcbrand';
-		public $version = '5.41';
+		public $brand_option = 'bv_whitelabel_infos';
+		public $version = '5.42';
 		public $webpage = 'https://www.malcare.com';
 		public $appurl = 'https://app.malcare.com';
 		public $slug = 'malcare-security/malcare.php';
@@ -79,12 +79,51 @@ if (!class_exists('MCInfo')) :
 			return false;
 		}
 
+		public function canWhiteLabel($slug = NULL) {
+			if (array_key_exists("bv_override_global_whitelabel", $_REQUEST)) {
+				return false;
+			}
+			if (array_key_exists("bv_override_plugin_whitelabel", $_REQUEST) && isset($slug) &&
+				$_REQUEST["bv_override_plugin_whitelabel"] === $slug) {
+				return false;
+			}
+			return true;
+		}
+
+		public function getPluginWhitelabelInfo($slug = null) {
+			if ($slug === null) {
+				$slug = $this->slug;
+			}
+			$whitelabel_infos = $this->getPluginsWhitelabelInfos();
+			if (!array_key_exists($slug, $whitelabel_infos) || !is_array($whitelabel_infos[$slug])) {
+				return array();
+			}
+			return $whitelabel_infos[$slug];
+		}
+
 		public function getBrandInfo() {
 			return $this->settings->getOption($this->brand_option);
 		}
 
+		public function getPluginsWhitelabelInfos() {
+			$whitelabel_infos = $this->settings->getOption($this->brand_option);
+			return is_array($whitelabel_infos) ? $whitelabel_infos : array();
+		}
+
+		public function getPluginsWhitelabelInfoByTitle() {
+			$whitelabel_infos = $this->getPluginsWhitelabelInfos();
+			$whitelabel_infos_by_title = array();
+			foreach ($whitelabel_infos as $slug => $whitelabel_info) {
+				if (is_array($whitelabel_info) && array_key_exists('default_title', $whitelabel_info) && isset($whitelabel_info['default_title'])) {
+					$whitelabel_info['slug'] = $slug;
+					$whitelabel_infos_by_title[$whitelabel_info['default_title']] = $whitelabel_info;
+				}
+			}
+			return $whitelabel_infos_by_title;
+		}
+
 		public function getBrandName() {
-			$brand = $this->getBrandInfo();
+			$brand = $this->getPluginWhitelabelInfo();
 			if (is_array($brand) && array_key_exists('menuname', $brand)) {
 				return $brand['menuname'];
 			}
@@ -97,7 +136,7 @@ if ($bvinfo->canSetCWBranding()) {
 		}
 
 		public function getBrandIcon() {
-			$brand = $this->getBrandInfo();
+			$brand = $this->getPluginWhitelabelInfo();
 			if (is_array($brand) && array_key_exists('brand_icon', $brand)) {
 				return $brand['brand_icon'];
 			}
@@ -113,7 +152,7 @@ if ($bvinfo->canSetCWBranding()) {
 			if (defined('BV_APP_URL')) {
 				return BV_APP_URL;
 			} else {
-				$brand = $this->getBrandInfo();
+				$brand = $this->getPluginWhitelabelInfo();
 				if (is_array($brand) && array_key_exists('appurl', $brand)) {
 					return $brand['appurl'];
 				}

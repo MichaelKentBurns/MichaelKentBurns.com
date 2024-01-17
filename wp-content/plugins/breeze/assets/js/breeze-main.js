@@ -351,6 +351,28 @@ jQuery( document ).ready(
 
 		current_url_clean();
 
+		// Advanced options, API tab
+		$box_container.on(
+			'change',
+			'#breeze-enable-api',
+			function () {
+				var secure_api = $( '#breeze-secure-api' );
+				var token_api = $( '#breeze-api-token' );
+				//var api_route = $( '#breeze-secure-api' );
+
+				if ( $( this ).is( ':checked' ) ) {
+					secure_api.closest( 'div.br-option-item' ).removeClass( 'br-apply-disable' );
+					token_api.closest( 'div.br-option-item' ).removeClass( 'br-apply-disable' );
+				} else {
+					secure_api.closest( 'div.br-option-item' ).addClass( 'br-apply-disable' );
+					token_api.closest( 'div.br-option-item' ).addClass( 'br-apply-disable' );
+
+					secure_api.prop( 'checked', false );
+					//token_api.trigger( 'change' );
+				}
+			}
+		);
+
 		$box_container.on(
 			'change',
 			'#bz-lazy-load',
@@ -1562,6 +1584,41 @@ jQuery( document ).ready(
 					dataType: "JSON", // xml, html, script, json, jsonp, text
 					success: function ( data ) {
 						$( '#tab-' + tab_is ).trigger( 'click' );
+					},
+					error: function ( jqXHR, textStatus, errorThrown ) {
+
+					},
+					// called when the request finishes (after success and error callbacks are executed)
+					complete: function ( jqXHR, textStatus ) {
+
+					}
+				}
+			);
+		}
+	);
+
+	$container_box.on(
+		'click',
+		'#refresh-api-token',
+		function ( e ) {
+			e.preventDefault();
+
+			var data_send = {
+				'action': 'refresh_api_token_key',
+				'security': breeze_token_name.breeze_save_options,
+				'is-network': $( 'body' ).hasClass( 'network-admin' )
+			};
+
+			$.ajax(
+				{
+					type: "POST",
+					url: ajaxurl,
+					data: data_send,
+					dataType: "JSON", // xml, html, script, json, jsonp, text
+					success: function ( data ) {
+						if(typeof data.new_token !== 'undefined'){
+							$('#breeze-api-token').val(data.new_token);
+						}
 					},
 					error: function ( jqXHR, textStatus, errorThrown ) {
 

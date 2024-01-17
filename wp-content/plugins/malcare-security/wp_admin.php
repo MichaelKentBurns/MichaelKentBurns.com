@@ -86,7 +86,7 @@ class MCWPAdmin {
 		add_submenu_page('', 'Malcare', 'Malcare', 'manage_options', 'bv_account_details',
 			array($this, 'showAccountDetailsPage'));
 
-		$brand = $this->bvinfo->getBrandInfo();
+		$brand = $this->bvinfo->getPluginWhitelabelInfo();
 		if (!$this->bvinfo->canSetCWBranding() && (!is_array($brand) || (!array_key_exists('hide', $brand) && !array_key_exists('hide_from_menu', $brand)))) {
 			$bname = $this->bvinfo->getBrandName();
 			$icon = $this->bvinfo->getBrandIcon();
@@ -102,21 +102,26 @@ class MCWPAdmin {
 	}
 
 	public function hidePluginUpdate($plugins) {
-		$brand = $this->bvinfo->getBrandInfo();
-		$bvslug = $this->bvinfo->slug;
-		if (isset($plugins->response[$bvslug]) && is_array($brand)) {
-			if (array_key_exists('hide_from_menu', $brand) || array_key_exists('hide', $brand)) {
-				unset($plugins->response[$bvslug]);
+		if (!$this->bvinfo->canWhiteLabel()) {
+			return $plugins;
+		}
+		$whitelabel_infos = $this->bvinfo->getPluginsWhitelabelInfos();
+		foreach ($whitelabel_infos as $slug => $brand) {
+			if ($this->bvinfo->canWhiteLabel($slug) && isset($plugins->response[$slug]) && is_array($brand)) {
+				if (array_key_exists('hide_from_menu', $brand) || array_key_exists('hide', $brand)) {
+					unset($plugins->response[$slug]);
+				}
 			}
 		}
 		return $plugins;
 	}
 
 	public function hidePluginDetails($plugin_metas, $slug) {
-		$brand = $this->bvinfo->getBrandInfo();
-		$bvslug = $this->bvinfo->slug;
-
-		if ($slug === $bvslug && is_array($brand) && array_key_exists('hide_plugin_details', $brand)) {
+		if (!is_array($plugin_metas) || !$this->bvinfo->canWhiteLabel($slug)) {
+			return $plugin_metas;
+		}
+		$whitelabel_info = $this->bvinfo->getPluginWhitelabelInfo($slug);
+		if (array_key_exists('hide_plugin_details', $whitelabel_info)) {
 			foreach ($plugin_metas as $pluginKey => $pluginValue) {
 				if (strpos($pluginValue, sprintf('>%s<', translate('View details')))) {
 					unset($plugin_metas[$pluginKey]);
@@ -128,29 +133,31 @@ class MCWPAdmin {
 	}
 
 	public function handlePluginHealthInfo($plugins) {
-		$brand = $this->bvinfo->getBrandInfo();
-		$title = $this->bvinfo->title;
 		if (!isset($plugins["wp-plugins-active"]) ||
-			!isset($plugins["wp-plugins-active"]["fields"]) ||
-			!isset($plugins["wp-plugins-active"]["fields"][$title])) {
+			!isset($plugins["wp-plugins-active"]["fields"]) || !$this->bvinfo->canWhiteLabel()) {
 			return $plugins;
 		}
-		if (is_array($brand)) {
-			if (array_key_exists('hide', $brand)) {
-				unset($plugins["wp-plugins-active"]["fields"][$title]);
-			} else {
-				$plugin = $plugins["wp-plugins-active"]["fields"][$title];
-				$author = $this->bvinfo->author;
-				if (array_key_exists('name', $brand)) {
-					$plugin["label"] = $brand['name'];
+
+		$whitelabel_infos_by_title = $this->bvinfo->getPluginsWhitelabelInfoByTitle();
+
+		foreach ($whitelabel_infos_by_title as $title => $brand) {
+			if (is_array($brand) && array_key_exists('slug', $brand) && $this->bvinfo->canWhiteLabel($brand["slug"])) {
+				if (array_key_exists('hide', $brand)) {
+					unset($plugins["wp-plugins-active"]["fields"][$title]);
+				} else {
+					$plugin = $plugins["wp-plugins-active"]["fields"][$title];
+					$author = $brand['default_author'];
+					if (array_key_exists('name', $brand)) {
+						$plugin["label"] = $brand['name'];
+					}
+					if (array_key_exists('author', $brand)) {
+						$plugin["value"] = str_replace($author, $brand['author'], $plugin["value"]);
+					}
+					if (array_key_exists('description', $brand)) {
+						$plugin["debug"] = str_replace($author, $brand['author'], $plugin["debug"]);
+					}
+					$plugins["wp-plugins-active"]["fields"][$title] = $plugin;
 				}
-				if (array_key_exists('author', $brand)) {
-					$plugin["value"] = str_replace($author, $brand['author'], $plugin["value"]);
-				}
-				if (array_key_exists('description', $brand)) {
-					$plugin["debug"] = str_replace($author, $brand['author'], $plugin["debug"]);
-				}
-				$plugins["wp-plugins-active"]["fields"][$title] = $plugin;
 			}
 		}
 		return $plugins;
@@ -160,7 +167,7 @@ class MCWPAdmin {
 		#XNOTE: Fix this
 		if ( $file == plugin_basename( dirname(__FILE__).'/malcare.php' ) ) {
 			if (!$this->bvinfo->canSetCWBranding()) {
-				$brand = $this->bvinfo->getBrandInfo();
+				$brand = $this->bvinfo->getPluginWhitelabelInfo();
 				if (!is_array($brand) || !array_key_exists('hide_from_menu', $brand)) {
 					$settings_link = '<a href="'.$this->mainUrl().'">'.__( 'Settings' ).'</a>';
 					array_unshift($links, $settings_link);
@@ -173,10 +180,18 @@ class MCWPAdmin {
 	}
 
 	public function getPluginLogo() {
+		$brand = $this->bvinfo->getPluginWhitelabelInfo();
+		if (array_key_exists('logo', $brand)) {
+			return $brand['logo'];
+		}
 		return $this->bvinfo->logo;
 	}
 
 	public function getWebPage() {
+		$brand = $this->bvinfo->getPluginWhitelabelInfo();
+		if (array_key_exists('webpage', $brand)) {
+			return $brand['webpage'];
+		}
 		return $this->bvinfo->webpage;
 	}
 
@@ -243,20 +258,19 @@ class MCWPAdmin {
 		}
 	}
 
-	public function initBranding($plugins) {
-		$slug = $this->bvinfo->slug;
-
-		if (!is_array($plugins) || !isset($slug, $plugins)) {
+	public function initWhitelabel($plugins) {
+		if (!is_array($plugins) || !$this->bvinfo->canWhiteLabel()) {
 			return $plugins;
 		}
-
+		$whitelabel_infos = $this->bvinfo->getPluginsWhitelabelInfos();
 		if ($this->bvinfo->canSetCWBranding()) {
-			$brand = $this->cwBrandInfo();
-		} else {
-			$brand = $this->bvinfo->getBrandInfo();
+			$whitelabel_infos[$this->bvinfo->slug] = $this->cwBrandInfo();
 		}
 
-		if (is_array($brand)) {
+		foreach ($whitelabel_infos as $slug => $brand) {
+			if (!isset($slug) || !$this->bvinfo->canWhiteLabel($slug) || !array_key_exists($slug, $plugins) || !is_array($brand)) {
+				continue;
+			}
 			if (array_key_exists('hide', $brand)) {
 				unset($plugins[$slug]);
 			} else {
@@ -283,7 +297,6 @@ class MCWPAdmin {
 				}
 			}
 		}
-
 		return $plugins;
 	}
 }

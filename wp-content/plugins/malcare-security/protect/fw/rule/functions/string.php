@@ -1,8 +1,8 @@
 <?php
 if (!defined('ABSPATH') && !defined('MCDATAPATH')) exit;
 
-if (!trait_exists('MCProtectFWRuleStringFunc_V541')) :
-trait MCProtectFWRuleStringFunc_V541 {
+if (!trait_exists('MCProtectFWRuleStringFunc_V542')) :
+trait MCProtectFWRuleStringFunc_V542 {
 	private function _rf_isNumeric() {
 		$args = $this->processRuleFunctionParams(
 			'isNumeric',
@@ -237,7 +237,7 @@ trait MCProtectFWRuleStringFunc_V541 {
 				}
 			}
 		} else {
-			throw new MCProtectRuleError_V541(
+			throw new MCProtectRuleError_V542(
 				$this->addExState("containsAnySubstring: Expects an array of substrings.")
 			);
 		}
@@ -272,7 +272,7 @@ trait MCProtectFWRuleStringFunc_V541 {
 		$offset = isset($args[2]) ? $args[2] : 0;
 
 		if (!is_int($offset)) {
-			throw new MCProtectRuleError_V541(
+			throw new MCProtectRuleError_V542(
 				$this->addExState("strPos: Offset should be an integer")
 			);
 		}
@@ -302,6 +302,33 @@ trait MCProtectFWRuleStringFunc_V541 {
 		}
 
 		return false;
+	}
+
+	private function _rf_splitString() {
+		$args = $this->processRuleFunctionParams(
+			'splitString',
+			func_num_args(),
+			func_get_args(),
+			2,
+			['string', 'string']
+		);
+		$separator = $args[0];
+		$str = $args[1];
+		$limit = isset($args[2]) ? $args[2] : PHP_INT_MAX;
+
+		if (empty($separator)) {
+			throw new MCProtectRuleError_V542(
+				$this->addExState("splitString: Separator cannot be empty")
+			);
+		}
+
+		if (!is_int($limit)) {
+			throw new MCProtectRuleError_V542(
+				$this->addExState("splitString: Limit should be an integer")
+			);
+		}
+
+		return explode($separator, $str, $limit);
 	}
 }
 endif;
