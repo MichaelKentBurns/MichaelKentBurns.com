@@ -1,4 +1,4 @@
-a:2:{s:4:"body";s:32261:"<!DOCTYPE html>
+a:2:{s:4:"body";s:32674:"<!DOCTYPE html>
 <html lang="en-US" class="no-js">
 <head>
 	<meta charset="UTF-8">
@@ -122,6 +122,8 @@ var screenReaderText = {"expand":"<span class=\"screen-reader-text\">expand chil
 <li id="menu-item-60" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60"><a href="https://michaelkentburns.com/index.php/work-globally/">Work globally&#8230;</a></li>
 <li id="menu-item-77" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-77"><a href="https://michaelkentburns.com/index.php/building-your-brand/">Building your brand</a></li>
 <li id="menu-item-80" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-80"><a href="https://michaelkentburns.com/index.php/finding-work/">Finding work</a></li>
+<li id="menu-item-109" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-109"><a href="https://michaelkentburns.com/index.php/how-to/">How to&#8230;</a></li>
+<li id="menu-item-112" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-112"><a href="https://michaelkentburns.com/index.php/how-to-administer-a-wordpress-site/">How to administer a WordPress site</a></li>
 </ul></div>			</nav><!-- .main-navigation -->
 		
 		
@@ -186,7 +188,7 @@ var screenReaderText = {"expand":"<span class=\"screen-reader-text\">expand chil
 </div><!-- .site -->
 
 <script id="ce4wp_form_submit-js-extra">
-var ce4wp_form_submit_data = {"siteUrl":"https:\/\/michaelkentburns.com","url":"https:\/\/michaelkentburns.com\/wp-admin\/admin-ajax.php","nonce":"a3f6c9098c","listNonce":"bb45f5d72a","activatedNonce":"2737462f55"};
+var ce4wp_form_submit_data = {"siteUrl":"https:\/\/michaelkentburns.com","url":"https:\/\/michaelkentburns.com\/wp-admin\/admin-ajax.php","nonce":"81703dfcf6","listNonce":"d71e84f944","activatedNonce":"8587ace84f"};
 </script>
 <script src="https://michaelkentburns.com/wp-content/plugins/creative-mail-by-constant-contact/assets/js/block/submit.js?ver=1681327278" id="ce4wp_form_submit-js"></script>
 <script src="https://michaelkentburns.com/wp-includes/js/comment-reply.min.js?ver=6.4.2" id="comment-reply-js" async data-wp-strategy="async"></script>
@@ -194,5 +196,5 @@ var ce4wp_form_submit_data = {"siteUrl":"https:\/\/michaelkentburns.com","url":"
 </body>
 </html>
 
-<!-- Cache served by breeze CACHE - Last modified: Wed, 17 Jan 2024 18:50:01 GMT -->
-";s:7:"headers";a:3:{i:0;a:2:{s:4:"name";s:14:"Content-Length";s:5:"value";i:32261;}i:1;a:2:{s:4:"name";s:12:"Content-Type";s:5:"value";s:24:"text/html; charset=utf-8";}i:2;a:2:{s:4:"name";s:13:"Last-Modified";s:5:"value";s:29:"Wed, 17 Jan 2024 18:50:01 GMT";}}}
+<!-- Cache served by breeze CACHE - Last modified: Thu, 18 Jan 2024 19:44:47 GMT -->
+";s:7:"headers";a:3:{i:0;a:2:{s:4:"name";s:14:"Content-Length";s:5:"value";i:32674;}i:1;a:2:{s:4:"name";s:12:"Content-Type";s:5:"value";s:24:"text/html; charset=utf-8";}i:2;a:2:{s:4:"name";s:13:"Last-Modified";s:5:"value";s:29:"Thu, 18 Jan 2024 19:44:47 GMT";}}}
