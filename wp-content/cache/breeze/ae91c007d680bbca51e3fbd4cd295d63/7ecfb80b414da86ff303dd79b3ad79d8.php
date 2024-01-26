@@ -1,4 +1,4 @@
-a:2:{s:4:"body";s:32674:"<!DOCTYPE html>
+a:2:{s:4:"body";s:30973:"<!DOCTYPE html>
 <html lang="en-US" class="no-js">
 <head>
 	<meta charset="UTF-8">
@@ -122,8 +122,7 @@ var screenReaderText = {"expand":"<span class=\"screen-reader-text\">expand chil
 <li id="menu-item-60" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60"><a href="https://michaelkentburns.com/index.php/work-globally/">Work globally&#8230;</a></li>
 <li id="menu-item-77" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-77"><a href="https://michaelkentburns.com/index.php/building-your-brand/">Building your brand</a></li>
 <li id="menu-item-80" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-80"><a href="https://michaelkentburns.com/index.php/finding-work/">Finding work</a></li>
-<li id="menu-item-109" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-109"><a href="https://michaelkentburns.com/index.php/how-to/">How to&#8230;</a></li>
-<li id="menu-item-112" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-112"><a href="https://michaelkentburns.com/index.php/how-to-administer-a-wordpress-site/">How to administer a WordPress site</a></li>
+<li id="menu-item-109" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-109"><a href="https://michaelkentburns.com/index.php/how-to/">How to &#8230;</a></li>
 </ul></div>			</nav><!-- .main-navigation -->
 		
 		
@@ -162,13 +161,7 @@ var screenReaderText = {"expand":"<span class=\"screen-reader-text\">expand chil
 	
 	
 		<div id="respond" class="comment-respond">
-		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="/index.php/2023/03/30/under-construction/#respond" style="display:none;">Cancel reply</a></small></h3><form action="https://michaelkentburns.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate><p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> <span class="required-field-message">Required fields are marked <span class="required">*</span></span></p><p class="comment-form-comment"><label for="comment">Comment <span class="required">*</span></label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" autocomplete="name" required /></p>
-<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" autocomplete="email" required /></p>
-<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" autocomplete="url" /></p>
-<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes" /> <label for="wp-comment-cookies-consent">Save my name, email, and website in this browser for the next time I comment.</label></p>
-<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='33' id='comment_post_ID' />
-<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
-</p></form>	</div><!-- #respond -->
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="/index.php/2023/03/30/under-construction/#respond" style="display:none;">Cancel reply</a></small></h3><p class="must-log-in">You must be <a href="https://michaelkentburns.com/wp-login.php?redirect_to=https%3A%2F%2Fmichaelkentburns.com%2Findex.php%2F2023%2F03%2F30%2Funder-construction%2F">logged in</a> to post a comment.</p>	</div><!-- #respond -->
 	
 </div><!-- .comments-area -->
 
@@ -188,7 +181,7 @@ var screenReaderText = {"expand":"<span class=\"screen-reader-text\">expand chil
 </div><!-- .site -->
 
 <script id="ce4wp_form_submit-js-extra">
-var ce4wp_form_submit_data = {"siteUrl":"https:\/\/michaelkentburns.com","url":"https:\/\/michaelkentburns.com\/wp-admin\/admin-ajax.php","nonce":"81703dfcf6","listNonce":"d71e84f944","activatedNonce":"8587ace84f"};
+var ce4wp_form_submit_data = {"siteUrl":"https:\/\/michaelkentburns.com","url":"https:\/\/michaelkentburns.com\/wp-admin\/admin-ajax.php","nonce":"4274495742","listNonce":"4e9710e006","activatedNonce":"1ca9f8ee89"};
 </script>
 <script src="https://michaelkentburns.com/wp-content/plugins/creative-mail-by-constant-contact/assets/js/block/submit.js?ver=1681327278" id="ce4wp_form_submit-js"></script>
 <script src="https://michaelkentburns.com/wp-includes/js/comment-reply.min.js?ver=6.4.2" id="comment-reply-js" async data-wp-strategy="async"></script>
@@ -196,5 +189,5 @@ var ce4wp_form_submit_data = {"siteUrl":"https:\/\/michaelkentburns.com","url":"
 </body>
 </html>
 
-<!-- Cache served by breeze CACHE - Last modified: Thu, 18 Jan 2024 19:44:47 GMT -->
-";s:7:"headers";a:3:{i:0;a:2:{s:4:"name";s:14:"Content-Length";s:5:"value";i:32674;}i:1;a:2:{s:4:"name";s:12:"Content-Type";s:5:"value";s:24:"text/html; charset=utf-8";}i:2;a:2:{s:4:"name";s:13:"Last-Modified";s:5:"value";s:29:"Thu, 18 Jan 2024 19:44:47 GMT";}}}
+<!-- Cache served by breeze CACHE - Last modified: Fri, 26 Jan 2024 09:19:45 GMT -->
+";s:7:"headers";a:3:{i:0;a:2:{s:4:"name";s:14:"Content-Length";s:5:"value";i:30973;}i:1;a:2:{s:4:"name";s:12:"Content-Type";s:5:"value";s:24:"text/html; charset=utf-8";}i:2;a:2:{s:4:"name";s:13:"Last-Modified";s:5:"value";s:29:"Fri, 26 Jan 2024 09:19:45 GMT";}}}

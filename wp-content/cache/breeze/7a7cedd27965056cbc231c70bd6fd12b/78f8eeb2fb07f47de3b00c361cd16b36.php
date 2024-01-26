@@ -1,4 +1,4 @@
-a:2:{s:4:"body";s:30019:"<!DOCTYPE html>
+a:2:{s:4:"body";s:34198:"<!DOCTYPE html>
 <html lang="en-US" class="no-js">
 <head>
 	<meta charset="UTF-8">
@@ -121,8 +121,7 @@ var screenReaderText = {"expand":"<span class=\"screen-reader-text\">expand chil
 <li id="menu-item-60" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60"><a href="https://michaelkentburns.com/index.php/work-globally/">Work globally&#8230;</a></li>
 <li id="menu-item-77" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-77"><a href="https://michaelkentburns.com/index.php/building-your-brand/">Building your brand</a></li>
 <li id="menu-item-80" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-80"><a href="https://michaelkentburns.com/index.php/finding-work/">Finding work</a></li>
-<li id="menu-item-109" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-109"><a href="https://michaelkentburns.com/index.php/how-to/">How to&#8230;</a></li>
-<li id="menu-item-112" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-112"><a href="https://michaelkentburns.com/index.php/how-to-administer-a-wordpress-site/">How to administer a WordPress site</a></li>
+<li id="menu-item-109" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-109"><a href="https://michaelkentburns.com/index.php/how-to/">How to &#8230;</a></li>
 </ul></div>			</nav><!-- .main-navigation -->
 		
 		
@@ -147,6 +146,10 @@ var screenReaderText = {"expand":"<span class=\"screen-reader-text\">expand chil
 
 	<div class="entry-content">
 		
+<p>Front end, or<a href="https://en.wikipedia.org/wiki/Front-end_web_development"> front-end web development</a> refers to the skills and technology related to building pages and applications that run in a web browser.   </p>
+
+
+
 <h2 class="wp-block-heading">Skills</h2>
 
 
@@ -155,11 +158,19 @@ var screenReaderText = {"expand":"<span class=\"screen-reader-text\">expand chil
 
 
 
-<p>Almost all of them can be learned at a number of mentor sites.  One of which is <a href="https://www.frontendmentor.io">FrontEndMentor</a>.</p>
+<p>Almost all of them can be learned at a number of mentor sites.  One of which is <a href="https://www.frontendmentor.io">FrontendMentor</a>.  That site (and others like it) have a wealth of information and tutorials that teach you the fundamentals and details of all of these skills.   After reading this page and exploring FrontendMentor some, I recommend you try one of their challenges yourself.     </p>
 
 
 
-<h3 class="wp-block-heading">HTML</h3>
+<p>Looking ahead, in our page on <a href="https://michaelkentburns.com/index.php/work-globally/" data-type="page" data-id="59">Work globally…</a> there is a challenge to do one of the FrontendMentor challenges and capture your process and final work in a GitHub repository that you can show off what you have learned.   Keep an eye out for that, as it is a very important step in your professional development. </p>
+
+
+
+<h3 class="wp-block-heading">HTML &#8211; Hyper Text Markup Language</h3>
+
+
+
+<p><a href="https://en.wikipedia.org/wiki/HTML">HTML</a> is a rich markup language which can be viewed and coded in a simple text editing program.   It consists of the text to be presented interspersed with HTML markup tags that specify how that text should be displayed.   The filename usually ends in either .htm or .html to indicated that it can be displayed in a web browser.  The HTML markup standards have been around since the beginning of the <a href="https://en.wikipedia.org/wiki/World_Wide_Web">World Wide Web.</a>  </p>
 
 
 
@@ -167,11 +178,57 @@ var screenReaderText = {"expand":"<span class=\"screen-reader-text\">expand chil
 
 
 
-<h3 class="wp-block-heading">CSS</h3>
+<p><a href="https://en.wikipedia.org/wiki/HTML5">HTML5</a> is simply the 5th major revision of the HTML standards that added significant modern features that make some web pages very dynamic. </p>
 
 
 
-<h3 class="wp-block-heading">Javascript</h3>
+<h3 class="wp-block-heading">CSS &#8211; Cascading Style Sheets</h3>
+
+
+
+<p><a href="https://en.wikipedia.org/wiki/CSS">CSS</a> is a speciality language for styling text and graphics. </p>
+
+
+
+<h3 class="wp-block-heading">JavaScript &#8211; A procedural programming language for web pages.</h3>
+
+
+
+<p><a href="https://en.wikipedia.org/wiki/Javascript">JavaScript</a> is a programming language inspired by Java that is meant to run inside a web page.   All of the actual work is performed by the web browser itself. </p>
+
+
+
+<p>As discussed above, all of the above technologies can run on any computer with a web browser.  The HTML, CSS files and any embedded JavaScript code can be contained in a text file in a folder on the local computer.   You can test this yourself by creating a simple web page in a text editor (Notepad or TextEdit) and storing it on your hard drive.  Cut and paste this in your favorite text editor into a file called HelloWorld.htm:</p>
+
+
+
+<pre class="wp-block-code"><code>&lt;HTML&gt;
+&lt;H1&gt;Hello World!&lt;/H1&gt;
+&lt;/HTML&gt;</code></pre>
+
+
+
+<p>Then using your file browser (Windows explorer or Mac Finder) to locate that file and open it as you would any other document. </p>
+
+
+
+<h3 class="wp-block-heading">HTTP &#8211; Hypertext Transport Protocol</h3>
+
+
+
+<p>Sometimes, that is all that is needed.  However, that does not make any use of the internet or the World Wide Web.   The &#8220;World Wide&#8221; part of the Web indicates that computers all over the world that are connected to the internet can work together to present a very dynamic universe of information and entertainment.    In order to connect your local computer to any web page in the World Wide Web you simply enter a web address such as <a href="http://MichaelKentBurns.com/HelloWorld.htm">http://MichaelKentBurns.com/HelloWorld.htm</a> into the search or address bar of your browser.   The first four characters stand for HyperText Transport Protocol.  After that the &#8216;:&#8217; indicates the beginning of the location of the resource which usually starts with &#8216;//&#8217; followed by the name of the resource.   Try it yourself.</p>
+
+
+
+<p>What happened when you pressed return after that address is that your browser used that resource information to find the appropriate web server somewhere in the world (MichaelKentBurns.com) and request a specific page (HelloWorld.htm).  A program called a web server running on that computer located the file for that page and other associated information and sent it back to your browser running on your computer.  Your browser then formatted it according to the HTML rules and you then see the results.   </p>
+
+
+
+<p>The details of that is for the next page (<a href="https://michaelkentburns.com/index.php/back-end-web/">Back end web</a>).</p>
+
+
+
+<p></p>
 
 
 
@@ -197,12 +254,12 @@ var screenReaderText = {"expand":"<span class=\"screen-reader-text\">expand chil
 </div><!-- .site -->
 
 <script id="ce4wp_form_submit-js-extra">
-var ce4wp_form_submit_data = {"siteUrl":"https:\/\/michaelkentburns.com","url":"https:\/\/michaelkentburns.com\/wp-admin\/admin-ajax.php","nonce":"f5ec322846","listNonce":"fcb49d242a","activatedNonce":"83a3abf878"};
+var ce4wp_form_submit_data = {"siteUrl":"https:\/\/michaelkentburns.com","url":"https:\/\/michaelkentburns.com\/wp-admin\/admin-ajax.php","nonce":"0a528a3534","listNonce":"3a40b03548","activatedNonce":"73b3a7d90e"};
 </script>
 <script src="https://michaelkentburns.com/wp-content/plugins/creative-mail-by-constant-contact/assets/js/block/submit.js?ver=1681327278" id="ce4wp_form_submit-js"></script>
 
 </body>
 </html>
 
-<!-- Cache served by breeze CACHE - Last modified: Thu, 18 Jan 2024 03:30:35 GMT -->
-";s:7:"headers";a:3:{i:0;a:2:{s:4:"name";s:14:"Content-Length";s:5:"value";i:30019;}i:1;a:2:{s:4:"name";s:12:"Content-Type";s:5:"value";s:24:"text/html; charset=utf-8";}i:2;a:2:{s:4:"name";s:13:"Last-Modified";s:5:"value";s:29:"Thu, 18 Jan 2024 03:30:35 GMT";}}}
+<!-- Cache served by breeze CACHE - Last modified: Wed, 24 Jan 2024 09:19:57 GMT -->
+";s:7:"headers";a:3:{i:0;a:2:{s:4:"name";s:14:"Content-Length";s:5:"value";i:34198;}i:1;a:2:{s:4:"name";s:12:"Content-Type";s:5:"value";s:24:"text/html; charset=utf-8";}i:2;a:2:{s:4:"name";s:13:"Last-Modified";s:5:"value";s:29:"Wed, 24 Jan 2024 09:19:57 GMT";}}}

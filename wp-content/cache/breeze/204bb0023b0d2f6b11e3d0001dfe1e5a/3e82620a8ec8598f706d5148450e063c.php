@@ -1,4 +1,4 @@
-a:2:{s:4:"body";s:35020:"<!DOCTYPE html>
+a:2:{s:4:"body";s:35722:"<!DOCTYPE html>
 <html lang="en-US" class="no-js">
 <head>
 	<meta charset="UTF-8">
@@ -122,8 +122,7 @@ var screenReaderText = {"expand":"<span class=\"screen-reader-text\">expand chil
 <li id="menu-item-60" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60"><a href="https://michaelkentburns.com/index.php/work-globally/">Work globally&#8230;</a></li>
 <li id="menu-item-77" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-77"><a href="https://michaelkentburns.com/index.php/building-your-brand/">Building your brand</a></li>
 <li id="menu-item-80" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-80"><a href="https://michaelkentburns.com/index.php/finding-work/">Finding work</a></li>
-<li id="menu-item-109" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-109"><a href="https://michaelkentburns.com/index.php/how-to/">How to&#8230;</a></li>
-<li id="menu-item-112" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-112"><a href="https://michaelkentburns.com/index.php/how-to-administer-a-wordpress-site/">How to administer a WordPress site</a></li>
+<li id="menu-item-109" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-109"><a href="https://michaelkentburns.com/index.php/how-to/">How to &#8230;</a></li>
 </ul></div>			</nav><!-- .main-navigation -->
 		
 		
@@ -156,6 +155,14 @@ var screenReaderText = {"expand":"<span class=\"screen-reader-text\">expand chil
 
 
 <p>There are many locations around the globe that are hotspots for software development.   If you happen to live in one of those places, jobs can come looking for you.   But there are many places around the world that have little or no jobs in this field.  In those places you need some extra skills to get and keep work, but it can be done.  This site is a place to find help and to build community of fellow developers.</p>
+
+
+
+<h3 class="wp-block-heading">Welcome</h3>
+
+
+
+<p>My intention with this main page is to tell a story of a journey that you might be on.  I&#8217;ll try to keep it pretty brief and include &#8220;Learn more&#8230;&#8221; links so you can dive deeper as you need.   Hopefully you will find yourself on this journey and find where you are in the story.  When you do, I invite you to contact me.  My intention is that I can help guide you along.   I hope that this will become a community of like minded people.  I invite you to help me understand your needs and together we will keep you moving.  No tricks or fees are involved.   See my <a href="https://michaelkentburns.com/index.php/about-michael/" data-type="page" data-id="22">About page</a> for that background.  If you have questions or comments along the way please email me.   This site is a work in progress and I intend to develop it to meet the needs of my readers. </p>
 
 
 
@@ -276,12 +283,12 @@ var screenReaderText = {"expand":"<span class=\"screen-reader-text\">expand chil
 </div><!-- .site -->
 
 <script id="ce4wp_form_submit-js-extra">
-var ce4wp_form_submit_data = {"siteUrl":"https:\/\/michaelkentburns.com","url":"https:\/\/michaelkentburns.com\/wp-admin\/admin-ajax.php","nonce":"f5ec322846","listNonce":"fcb49d242a","activatedNonce":"83a3abf878"};
+var ce4wp_form_submit_data = {"siteUrl":"https:\/\/michaelkentburns.com","url":"https:\/\/michaelkentburns.com\/wp-admin\/admin-ajax.php","nonce":"1668312b11","listNonce":"15a137d9ca","activatedNonce":"f2067c8739"};
 </script>
 <script src="https://michaelkentburns.com/wp-content/plugins/creative-mail-by-constant-contact/assets/js/block/submit.js?ver=1681327278" id="ce4wp_form_submit-js"></script>
 
 </body>
 </html>
 
-<!-- Cache served by breeze CACHE - Last modified: Thu, 18 Jan 2024 00:39:57 GMT -->
-";s:7:"headers";a:3:{i:0;a:2:{s:4:"name";s:14:"Content-Length";s:5:"value";i:35020;}i:1;a:2:{s:4:"name";s:12:"Content-Type";s:5:"value";s:24:"text/html; charset=utf-8";}i:2;a:2:{s:4:"name";s:13:"Last-Modified";s:5:"value";s:29:"Thu, 18 Jan 2024 00:39:57 GMT";}}}
+<!-- Cache served by breeze CACHE - Last modified: Tue, 23 Jan 2024 20:39:39 GMT -->
+";s:7:"headers";a:3:{i:0;a:2:{s:4:"name";s:14:"Content-Length";s:5:"value";i:35722;}i:1;a:2:{s:4:"name";s:12:"Content-Type";s:5:"value";s:24:"text/html; charset=utf-8";}i:2;a:2:{s:4:"name";s:13:"Last-Modified";s:5:"value";s:29:"Tue, 23 Jan 2024 20:39:39 GMT";}}}

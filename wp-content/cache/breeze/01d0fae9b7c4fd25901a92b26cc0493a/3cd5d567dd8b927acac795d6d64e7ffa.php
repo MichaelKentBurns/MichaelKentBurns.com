@@ -1,4 +1,4 @@
-a:2:{s:4:"body";s:29829:"<!DOCTYPE html>
+a:2:{s:4:"body";s:30505:"<!DOCTYPE html>
 <html lang="en-US" class="no-js">
 <head>
 	<meta charset="UTF-8">
@@ -121,8 +121,7 @@ var screenReaderText = {"expand":"<span class=\"screen-reader-text\">expand chil
 <li id="menu-item-60" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60"><a href="https://michaelkentburns.com/index.php/work-globally/">Work globally&#8230;</a></li>
 <li id="menu-item-77" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-77"><a href="https://michaelkentburns.com/index.php/building-your-brand/">Building your brand</a></li>
 <li id="menu-item-80" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-79 current_page_item menu-item-80"><a href="https://michaelkentburns.com/index.php/finding-work/" aria-current="page">Finding work</a></li>
-<li id="menu-item-109" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-109"><a href="https://michaelkentburns.com/index.php/how-to/">How to&#8230;</a></li>
-<li id="menu-item-112" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-112"><a href="https://michaelkentburns.com/index.php/how-to-administer-a-wordpress-site/">How to administer a WordPress site</a></li>
+<li id="menu-item-109" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-109"><a href="https://michaelkentburns.com/index.php/how-to/">How to &#8230;</a></li>
 </ul></div>			</nav><!-- .main-navigation -->
 		
 		
@@ -147,11 +146,23 @@ var screenReaderText = {"expand":"<span class=\"screen-reader-text\">expand chil
 
 	<div class="entry-content">
 		
-<p></p>
+<p>There are a number of freelancing sites that allow both clients (customers) and talent (workers) to connect.</p>
 
 
 
-<p>Here is a link with tips on improving your Upwork profile. <a href="https://support.upwork.com/hc/en-us/articles/360016252373-Build-Your-Profile-Essential-Items">https://support.upwork.com/hc/en-us/articles/360016252373-Build-Your-Profile-Essential-Items</a></p>
+<p>One very general international sites is <a href="https://upwork.com">Upwork</a>.  It has many categories over a wide variety of trades.    However, the process of getting established and finding work can be quite challenging for a number of reasons.  </p>
+
+
+
+<p>Here is a link with <a href="https://support.upwork.com/hc/en-us/articles/360016252373-Build-Your-Profile-Essential-Items">tips on improving your Upwork profile</a>. </p>
+
+
+
+<p>Our friends at <a href="https://africamupya.com">Africa M</a>upya have a <a href="https://africamupya.com/wp-content/uploads/2023/10/Upwork-Tips-Resources-Oct-2023.pdf">nice page of helpful tips and resource pointers</a> for getting going using Upwork. </p>
+
+
+
+<p>If you read our page on <a href="https://michaelkentburns.com/index.php/front-end-web/" data-type="page" data-id="49">front end web skills</a> then you saw a link to <a href="https://www.frontendmentor.io/">FrontEndMentor</a>.   That site has now added its own Freelance site called <a href="https://hiring.frontendmentor.io">Frontend Mentor Hiring</a>.</p>
 			</div><!-- .entry-content -->
 
 	
@@ -173,12 +184,12 @@ var screenReaderText = {"expand":"<span class=\"screen-reader-text\">expand chil
 </div><!-- .site -->
 
 <script id="ce4wp_form_submit-js-extra">
-var ce4wp_form_submit_data = {"siteUrl":"https:\/\/michaelkentburns.com","url":"https:\/\/michaelkentburns.com\/wp-admin\/admin-ajax.php","nonce":"f5ec322846","listNonce":"fcb49d242a","activatedNonce":"83a3abf878"};
+var ce4wp_form_submit_data = {"siteUrl":"https:\/\/michaelkentburns.com","url":"https:\/\/michaelkentburns.com\/wp-admin\/admin-ajax.php","nonce":"42b01caad2","listNonce":"b719789b6f","activatedNonce":"5bdef7276b"};
 </script>
 <script src="https://michaelkentburns.com/wp-content/plugins/creative-mail-by-constant-contact/assets/js/block/submit.js?ver=1681327278" id="ce4wp_form_submit-js"></script>
 
 </body>
 </html>
 
-<!-- Cache served by breeze CACHE - Last modified: Thu, 18 Jan 2024 06:33:48 GMT -->
-";s:7:"headers";a:3:{i:0;a:2:{s:4:"name";s:14:"Content-Length";s:5:"value";i:29829;}i:1;a:2:{s:4:"name";s:12:"Content-Type";s:5:"value";s:24:"text/html; charset=utf-8";}i:2;a:2:{s:4:"name";s:13:"Last-Modified";s:5:"value";s:29:"Thu, 18 Jan 2024 06:33:48 GMT";}}}
+<!-- Cache served by breeze CACHE - Last modified: Fri, 26 Jan 2024 19:11:44 GMT -->
+";s:7:"headers";a:3:{i:0;a:2:{s:4:"name";s:14:"Content-Length";s:5:"value";i:30505;}i:1;a:2:{s:4:"name";s:12:"Content-Type";s:5:"value";s:24:"text/html; charset=utf-8";}i:2;a:2:{s:4:"name";s:13:"Last-Modified";s:5:"value";s:29:"Fri, 26 Jan 2024 19:11:44 GMT";}}}
