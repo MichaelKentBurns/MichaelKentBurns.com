@@ -1,8 +1,8 @@
 <?php
 if (!defined('ABSPATH') && !defined('MCDATAPATH')) exit;
 
-if (!class_exists('MCProtectUtils_V542')) :
-class MCProtectUtils_V542 {
+if (!class_exists('MCProtectUtils_V545')) :
+class MCProtectUtils_V545 {
 	public static function getIP($ip_header) {
 		$ip = null;
 
@@ -126,7 +126,7 @@ class MCProtectUtils_V542 {
 			foreach ($objects as $object) {
 				if ($object != "." && $object != "..") {
 					if (is_dir($dir . "/" . $object) && !is_link($dir . "/" . $object)) {
-						MCProtectUtils_V542::rrmdir($dir . "/" . $object);
+						MCProtectUtils_V545::rrmdir($dir . "/" . $object);
 					} else {
 						unlink($dir . "/" . $object);
 					}
@@ -141,7 +141,7 @@ class MCProtectUtils_V542 {
 
 		if (is_array($val)) {
 			foreach ($val as $e) {
-				$length += MCProtectUtils_V542::getLength($e);
+				$length += MCProtectUtils_V545::getLength($e);
 			}
 
 			return $length;

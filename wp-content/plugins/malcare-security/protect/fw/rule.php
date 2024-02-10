@@ -1,8 +1,8 @@
 <?php
 if (!defined('ABSPATH') && !defined('MCDATAPATH')) exit;
 
-if (!class_exists('MCProtectFWRule_V542')) :
-class MCProtectFWRule_V542 {
+if (!class_exists('MCProtectFWRule_V545')) :
+class MCProtectFWRule_V545 {
 	public $id;
 	public $logic;
 	public $actions;
@@ -88,13 +88,13 @@ class MCProtectFWRule_V542 {
 		}
 
 		if (!array_key_exists('min_rule_engine_ver', $attributes) || !is_float($attributes['min_rule_engine_ver']) ||
-				$attributes['min_rule_engine_ver'] > MCProtectFWRuleEngine_V542::VERSION) {
+				$attributes['min_rule_engine_ver'] > MCProtectFWRuleEngine_V545::VERSION) {
 
 			return false;
 		}
 
 		if (array_key_exists('max_rule_engine_ver', $attributes) && (!is_float($attributes['max_rule_engine_ver']) ||
-				$attributes['max_rule_engine_ver'] < MCProtectFWRuleEngine_V542::VERSION)) {
+				$attributes['max_rule_engine_ver'] < MCProtectFWRuleEngine_V545::VERSION)) {
 
 			return false;
 		}
@@ -113,81 +113,81 @@ class MCProtectFWRule_V542 {
 
 		if (!array_key_exists('execute_on', $attributes)) {
 			if (array_key_exists('level', $attributes) && $attributes['level'] === 1) {
-				$attributes['execute_on'] = MCProtectFWRule_V542::EXE_ON_BOOT;
+				$attributes['execute_on'] = MCProtectFWRule_V545::EXE_ON_BOOT;
 			} else {
 				return false;
 			}
 		}
 
-		return new MCProtectFWRule_V542($attributes);
+		return new MCProtectFWRule_V545($attributes);
 	}
 
 	public function isExeOnBoot() {
-		return ($this->execute_on === MCProtectFWRule_V542::EXE_ON_BOOT);
+		return ($this->execute_on === MCProtectFWRule_V545::EXE_ON_BOOT);
 	}
 
 	public function isExeOnPreUpdateOption() {
-		return ($this->execute_on === MCProtectFWRule_V542::EXE_ON_PRE_UPDATE_OPTION);
+		return ($this->execute_on === MCProtectFWRule_V545::EXE_ON_PRE_UPDATE_OPTION);
 	}
 
 	public function isExeOnPreDeletePost() {
-		return ($this->execute_on === MCProtectFWRule_V542::EXE_ON_PRE_DELETE_POST);
+		return ($this->execute_on === MCProtectFWRule_V545::EXE_ON_PRE_DELETE_POST);
 	}
 
 	public function isExeOnWPInsertPostEmptyContent() {
-		return ($this->execute_on === MCProtectFWRule_V542::EXE_ON_WP_INSERT_POST_EMPTY_CONTENT);
+		return ($this->execute_on === MCProtectFWRule_V545::EXE_ON_WP_INSERT_POST_EMPTY_CONTENT);
 	}
 
 	public function isExeOnInsertUserMeta() {
-		return ($this->execute_on === MCProtectFWRule_V542::EXE_ON_INSERT_USER_META);
+		return ($this->execute_on === MCProtectFWRule_V545::EXE_ON_INSERT_USER_META);
 	}
 
 	public function isExeOnDeleteOption() {
-		return ($this->execute_on === MCProtectFWRule_V542::EXE_ON_DELETE_OPTION);
+		return ($this->execute_on === MCProtectFWRule_V545::EXE_ON_DELETE_OPTION);
 	}
 
 	public function isExeOnDeleteUser() {
-		return ($this->execute_on === MCProtectFWRule_V542::EXE_ON_DELETE_USER);
+		return ($this->execute_on === MCProtectFWRule_V545::EXE_ON_DELETE_USER);
 	}
 
 	public function isExeOnPasswordReset() {
-		return ($this->execute_on === MCProtectFWRule_V542::EXE_ON_PASSWORD_RESET);
+		return ($this->execute_on === MCProtectFWRule_V545::EXE_ON_PASSWORD_RESET);
 	}
 
 	public function isExeOnSendAuthCookies() {
-		return ($this->execute_on === MCProtectFWRule_V542::EXE_ON_SEND_AUTH_COOKIES);
+		return ($this->execute_on === MCProtectFWRule_V545::EXE_ON_SEND_AUTH_COOKIES);
 	}
 
 	public function isExeOnSetAuthCookie() {
-		return ($this->execute_on === MCProtectFWRule_V542::EXE_ON_SET_AUTH_COOKIE);
+		return ($this->execute_on === MCProtectFWRule_V545::EXE_ON_SET_AUTH_COOKIE);
 	}
 
 	public function isExeOnInit() {
-		return ($this->execute_on === MCProtectFWRule_V542::EXE_ON_INIT);
+		return ($this->execute_on === MCProtectFWRule_V545::EXE_ON_INIT);
 	}
 
 	public function isExeOnUserRegister() {
-		return ($this->execute_on === MCProtectFWRule_V542::EXE_ON_USER_REGISTER);
+		return ($this->execute_on === MCProtectFWRule_V545::EXE_ON_USER_REGISTER);
 	}
 
 	public function isExeOnAddUserMeta() {
-		return ($this->execute_on === MCProtectFWRule_V542::EXE_ON_ADD_USER_META);
+		return ($this->execute_on === MCProtectFWRule_V545::EXE_ON_ADD_USER_META);
 	}
 
 	public function isExeOnUpdateUserMetadata() {
-		return ($this->execute_on === MCProtectFWRule_V542::EXE_ON_UPDATE_USER_METADATA);
+		return ($this->execute_on === MCProtectFWRule_V545::EXE_ON_UPDATE_USER_METADATA);
 	}
 
 	public function isExeOnUpdateUserMeta() {
-		return ($this->execute_on === MCProtectFWRule_V542::EXE_ON_UPDATE_USER_META);
+		return ($this->execute_on === MCProtectFWRule_V545::EXE_ON_UPDATE_USER_META);
 	}
 
 	public function isExeOnAddOption() {
-		return ($this->execute_on === MCProtectFWRule_V542::EXE_ON_ADD_OPTION);
+		return ($this->execute_on === MCProtectFWRule_V545::EXE_ON_ADD_OPTION);
 	}
 
 	public function isExeOnWpPreInsertUserData() {
-		return ($this->execute_on === MCProtectFWRule_V542::EXE_ON_WP_PRE_INSERT_USER_DATA);
+		return ($this->execute_on === MCProtectFWRule_V545::EXE_ON_WP_PRE_INSERT_USER_DATA);
 	}
 }
 endif;

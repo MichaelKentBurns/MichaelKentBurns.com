@@ -10,7 +10,7 @@ class BVInfoCallback extends BVCallbackBase {
 	public $bvinfo;
 	public $bvapi;
 	
-	const INFO_WING_VERSION = 1.9;
+	const INFO_WING_VERSION = 2.0;
 
 	public function __construct($callback_handler) {
 		$this->db = $callback_handler->db;
@@ -50,6 +50,11 @@ class BVInfoCallback extends BVCallbackBase {
 		case "woocommerce/woocommerce.php":
 			$pdata['current_db_version'] = $this->settings->getOption('woocommerce_db_version');
 			$pdata['latest_db_version'] = $this->bvinfo->getLatestWooCommerceDBVersion();
+			break;
+		case "elementor/elementor.php":
+		case "elementor-pro/elementor-pro.php":
+			$pdata['current_db_version'] = $this->settings->getOption('elementor_version');
+			$pdata['latest_db_version'] = $this->bvinfo->getLatestElementorDBVersion($plugin_file);
 			break;
 		}
 

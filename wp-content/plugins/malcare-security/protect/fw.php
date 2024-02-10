@@ -1,12 +1,12 @@
 <?php
 if (!defined('ABSPATH') && !defined('MCDATAPATH')) exit;
 
-if (!class_exists('MCProtectFW_V542')) :
+if (!class_exists('MCProtectFW_V545')) :
 require_once dirname( __FILE__ ) . '/fw/rule/errors.php';
 require_once dirname( __FILE__ ) . '/fw/rule/engine.php';
 require_once dirname( __FILE__ ) . '/fw/rule.php';
 
-class MCProtectFW_V542 {
+class MCProtectFW_V545 {
 	private $brand_name;
 	private $protect_mode;
 	private $request;
@@ -22,22 +22,22 @@ class MCProtectFW_V542 {
 	private $is_ip_checked_for_blacklisted = false;
 	private $has_valid_bypass_cookie;
 
-	private $mode = MCProtectFW_V542::MODE_DISABLED;
-	private $ip_cookie_mode = MCProtectFW_V542::IP_COOKIE_MODE_DISABLED;
-	private $admin_cookie_mode = MCProtectFW_V542::ADMIN_COOKIE_MODE_DISABLED;
-	private $bypass_level = MCProtectFW_V542::WP_USER_ROLE_LEVEL_CONTRIBUTOR;
-	private $wpf_rule_init_mode = MCProtectFW_V542::WPF_RULE_INIT_MODE_WP;
+	private $mode = MCProtectFW_V545::MODE_DISABLED;
+	private $ip_cookie_mode = MCProtectFW_V545::IP_COOKIE_MODE_DISABLED;
+	private $admin_cookie_mode = MCProtectFW_V545::ADMIN_COOKIE_MODE_DISABLED;
+	private $bypass_level = MCProtectFW_V545::WP_USER_ROLE_LEVEL_CONTRIBUTOR;
+	private $wpf_rule_init_mode = MCProtectFW_V545::WPF_RULE_INIT_MODE_WP;
 	private $custom_roles = array();
 	private $cookie_key = "";
 	private $cookie_path = "";
 	private $cookie_domain = "";
 	private $can_set_cache_prevention_cookie = false;
-	private $rules_mode = MCProtectFW_V542::RULES_MODE_DISABLED;
+	private $rules_mode = MCProtectFW_V545::RULES_MODE_DISABLED;
 	private $is_geo_blocking = false;
 	private $is_wp_user_cookie_enabled = false;
 	private $log_config = array();
-	private $request_profiling_mode = MCProtectFW_V542::REQ_PROFILING_MODE_DISABLED;
-	private $logging_mode = MCProtectFW_V542::LOGGING_MODE_VISITOR;
+	private $request_profiling_mode = MCProtectFW_V545::REQ_PROFILING_MODE_DISABLED;
+	private $logging_mode = MCProtectFW_V545::LOGGING_MODE_VISITOR;
 	private $skip_log_config = array();
 	private $skip_log_cookies = array();
 	private $skip_log_headers = array();
@@ -95,16 +95,16 @@ class MCProtectFW_V542 {
 	const LOGGING_MODE_DISABLED = 3;
 
 	const DEFAULT_WP_USER_ROLE_LEVELS = array(
-		'administrator' => MCProtectFW_V542::WP_USER_ROLE_LEVEL_ADMIN,
-		'editor'        => MCProtectFW_V542::WP_USER_ROLE_LEVEL_EDITOR,
-		'author'        => MCProtectFW_V542::WP_USER_ROLE_LEVEL_AUTHOR,
-		'contributor'   => MCProtectFW_V542::WP_USER_ROLE_LEVEL_CONTRIBUTOR,
-		'subscriber'    => MCProtectFW_V542::WP_USER_ROLE_LEVEL_SUBSCRIBER
+		'administrator' => MCProtectFW_V545::WP_USER_ROLE_LEVEL_ADMIN,
+		'editor'        => MCProtectFW_V545::WP_USER_ROLE_LEVEL_EDITOR,
+		'author'        => MCProtectFW_V545::WP_USER_ROLE_LEVEL_AUTHOR,
+		'contributor'   => MCProtectFW_V545::WP_USER_ROLE_LEVEL_CONTRIBUTOR,
+		'subscriber'    => MCProtectFW_V545::WP_USER_ROLE_LEVEL_SUBSCRIBER
 	);
 
 	const EXTRA_WP_USER_ROLE_LEVELS = array(
-		'custom'        => MCProtectFW_V542::WP_USER_ROLE_LEVEL_CUSTOM,
-		'unknown'       => MCProtectFW_V542::WP_USER_ROLE_LEVEL_UNKNOWN
+		'custom'        => MCProtectFW_V545::WP_USER_ROLE_LEVEL_CUSTOM,
+		'unknown'       => MCProtectFW_V545::WP_USER_ROLE_LEVEL_UNKNOWN
 	);
 
 	const TABLE_NAME                = "fw_requests";
@@ -219,11 +219,11 @@ class MCProtectFW_V542 {
 
 		if ($this->isPrependMode()) {
 			$log_file = MCDATAPATH . MCCONFKEY . '-mc.log';
-			$this->ipstore = new MCProtectIpstore_V542(MCProtectIpstore_V542::STORAGE_TYPE_FS);
-			$this->logger = new MCProtectLogger_V542($log_file, MCProtectLogger_V542::TYPE_FS);
+			$this->ipstore = new MCProtectIpstore_V545(MCProtectIpstore_V545::STORAGE_TYPE_FS);
+			$this->logger = new MCProtectLogger_V545($log_file, MCProtectLogger_V545::TYPE_FS);
 		} else {
-			$this->ipstore = new MCProtectIpstore_V542(MCProtectIpstore_V542::STORAGE_TYPE_DB);
-			$this->logger = new MCProtectLogger_V542(MCProtectFW_V542::TABLE_NAME, MCProtectLogger_V542::TYPE_DB);
+			$this->ipstore = new MCProtectIpstore_V545(MCProtectIpstore_V545::STORAGE_TYPE_DB);
+			$this->logger = new MCProtectLogger_V545(MCProtectFW_V545::TABLE_NAME, MCProtectLogger_V545::TYPE_DB);
 		}
 
 		if ($this->is_wp_user_cookie_enabled) {
@@ -236,10 +236,10 @@ class MCProtectFW_V542 {
 	public static function getInstance($protect_mode, $request, $config, $brand_name) {
 		if (!isset(self::$instance)) {
 			self::$instance = new self($protect_mode, $request, $config, $brand_name);
-		} elseif (self::$instance->protect_mode != $protect_mode && $protect_mode == MCProtect_V542::MODE_WP) {
+		} elseif (self::$instance->protect_mode != $protect_mode && $protect_mode == MCProtect_V545::MODE_WP) {
 			self::$instance->protect_mode = $protect_mode;
 			self::$instance->brand_name = $brand_name;
-			self::$instance->ipstore = new MCProtectIpstore_V542(MCProtectIpstore_V542::STORAGE_TYPE_DB);
+			self::$instance->ipstore = new MCProtectIpstore_V545(MCProtectIpstore_V545::STORAGE_TYPE_DB);
 			self::$instance->initRules();
 		}
 
@@ -247,7 +247,7 @@ class MCProtectFW_V542 {
 	}
 
 	public static function uninstall() {
-		MCProtect_V542::$db->dropBVTable(MCProtectFW_V542::TABLE_NAME);
+		MCProtect_V545::$db->dropBVTable(MCProtectFW_V545::TABLE_NAME);
 	}
 
 	public function init() {
@@ -267,40 +267,40 @@ class MCProtectFW_V542 {
 	}
 
 	private function isPrependMode() {
-		return ($this->protect_mode === MCProtect_V542::MODE_PREPEND);
+		return ($this->protect_mode === MCProtect_V545::MODE_PREPEND);
 	}
 
 	private function isWPMode() {
-		return ($this->protect_mode === MCProtect_V542::MODE_WP);
+		return ($this->protect_mode === MCProtect_V545::MODE_WP);
 	}
 
 	private function isModeDisabled() {
-		return ($this->mode === MCProtectFW_V542::MODE_DISABLED);
+		return ($this->mode === MCProtectFW_V545::MODE_DISABLED);
 	}
 
 	private function isModeProtect() {
-		return ($this->mode === MCProtectFW_V542::MODE_PROTECT);
+		return ($this->mode === MCProtectFW_V545::MODE_PROTECT);
 	}
 
 	private function isAdminCookieEnabled() {
-		return ($this->admin_cookie_mode === MCProtectFW_V542::ADMIN_COOKIE_MODE_ENABLED);
+		return ($this->admin_cookie_mode === MCProtectFW_V545::ADMIN_COOKIE_MODE_ENABLED);
 	}
 
 	private function isIPCookieEnabled() {
-		return ($this->ip_cookie_mode === MCProtectFW_V542::IP_COOKIE_MODE_ENABLED);
+		return ($this->ip_cookie_mode === MCProtectFW_V545::IP_COOKIE_MODE_ENABLED);
 	}
 
 	private function isRequestProfilingDisabled() {
-		return ($this->request_profiling_mode === MCProtectFW_V542::REQ_PROFILING_MODE_DISABLED);
+		return ($this->request_profiling_mode === MCProtectFW_V545::REQ_PROFILING_MODE_DISABLED);
 	}
 
 	private function isRequestProfilingModeDebug() {
-		return ($this->request_profiling_mode === MCProtectFW_V542::REQ_PROFILING_MODE_DEBUG);
+		return ($this->request_profiling_mode === MCProtectFW_V545::REQ_PROFILING_MODE_DEBUG);
 	}
 
 	private function isRequestHasValidBypassCookie() {
 		if (!isset($this->has_valid_bypass_cookie)) {
-			$cookie = (string) $this->request->getCookies(MCProtectFW_V542::BYPASS_COOKIE_NAME);
+			$cookie = (string) $this->request->getCookies(MCProtectFW_V545::BYPASS_COOKIE_NAME);
 			$new_cookie = $this->generateBypassCookie();
 			$is_valid = ($this->isAdminCookieEnabled() && $new_cookie && ($cookie === $new_cookie));
 			$this->has_valid_bypass_cookie = $is_valid;
@@ -310,15 +310,15 @@ class MCProtectFW_V542 {
 	}
 
 	private function isRulesModeProtect() {
-		return ($this->rules_mode === MCProtectFW_V542::RULES_MODE_PROTECT);
+		return ($this->rules_mode === MCProtectFW_V545::RULES_MODE_PROTECT);
 	}
 
 	public function isLoggingModeComplete() {
-		return ($this->logging_mode === MCProtectFW_V542::LOGGING_MODE_COMPLETE);
+		return ($this->logging_mode === MCProtectFW_V545::LOGGING_MODE_COMPLETE);
 	}
 
 	public function isLoggingModeVisitor() {
-		return ($this->logging_mode === MCProtectFW_V542::LOGGING_MODE_VISITOR);
+		return ($this->logging_mode === MCProtectFW_V545::LOGGING_MODE_VISITOR);
 	}
 
 	public function isGeoBlockingEnabled() {
@@ -326,11 +326,11 @@ class MCProtectFW_V542 {
 	}
 
 	private function isWPFRuleInitModePrepend() {
-		return ($this->wpf_rule_init_mode === MCProtectFW_V542::WPF_RULE_INIT_MODE_PREPEND);
+		return ($this->wpf_rule_init_mode === MCProtectFW_V545::WPF_RULE_INIT_MODE_PREPEND);
 	}
 
 	private function isWPFRuleInitModeWP() {
-		return ($this->wpf_rule_init_mode === MCProtectFW_V542::WPF_RULE_INIT_MODE_WP);
+		return ($this->wpf_rule_init_mode === MCProtectFW_V545::WPF_RULE_INIT_MODE_WP);
 	}
 
 	private function canInitWPFRules() {
@@ -359,16 +359,16 @@ class MCProtectFW_V542 {
 			$current_wp_user = $this->getCurrentWPUser();
 
 			if (!$current_wp_user->isIdentical($this->request->wp_user)) {
-				$serialized_wp_user = MCProtectWPUser_V542::_serialize($current_wp_user);
+				$serialized_wp_user = MCProtectWPUser_V545::_serialize($current_wp_user);
 				$cookie_val = $serialized_wp_user . '_' .
-					MCProtectUtils_V542::signMessage($serialized_wp_user, $this->cookie_key);
+					MCProtectUtils_V545::signMessage($serialized_wp_user, $this->cookie_key);
 				$cookie_val = base64_encode($cookie_val);
 
-				$this->setcookie(MCProtectWPUser_V542::COOKIE_NAME, $cookie_val, time() + 43200);
+				$this->setcookie(MCProtectWPUser_V545::COOKIE_NAME, $cookie_val, time() + 43200);
 			}
 		} elseif ($this->request->wp_user->isLoggedIn()) {
-			$this->request->wp_user = MCProtectWPUser_V542::defaultUser();
-			$this->unsetCookie(MCProtectWPUser_V542::COOKIE_NAME);
+			$this->request->wp_user = MCProtectWPUser_V545::defaultUser();
+			$this->unsetCookie(MCProtectWPUser_V545::COOKIE_NAME);
 		}
 	}
 
@@ -385,7 +385,7 @@ class MCProtectFW_V542 {
 			$capabilities = $this->getCurrentWPUserCapabilities();
 		}
 
-		return (new MCProtectWPUser_V542($id, $role_level, $capabilities, $time));
+		return (new MCProtectWPUser_V545($id, $role_level, $capabilities, $time));
 	}
 
 	private function getCurrentWPUserCapabilities() {
@@ -404,9 +404,9 @@ class MCProtectFW_V542 {
 	}
 
 	private function loadWPUser() {
-		$this->request->wp_user = MCProtectWPUser_V542::defaultUser();
+		$this->request->wp_user = MCProtectWPUser_V545::defaultUser();
 
-		$cookie_val = $this->request->getCookies(MCProtectWPUser_V542::COOKIE_NAME);
+		$cookie_val = $this->request->getCookies(MCProtectWPUser_V545::COOKIE_NAME);
 		if (!is_string($cookie_val)) {
 			return;
 		}
@@ -422,8 +422,8 @@ class MCProtectFW_V542 {
 		}
 		list($serialized_user, $signature) = $cookie_val_array;
 
-		if (MCProtectUtils_V542::verifyMessage($serialized_user, $signature, $this->cookie_key) === true) {
-			$wp_user = MCProtectWPUser_V542::_unserialize($serialized_user);
+		if (MCProtectUtils_V545::verifyMessage($serialized_user, $signature, $this->cookie_key) === true) {
+			$wp_user = MCProtectWPUser_V545::_unserialize($serialized_user);
 
 			if (!isset($wp_user) || $wp_user->time !== (int) floor(time() / 43200)) {
 				return;
@@ -438,8 +438,8 @@ class MCProtectFW_V542 {
 				}
 			}
 
-			$role_by_level = array_flip(array_merge(MCProtectFW_V542::DEFAULT_WP_USER_ROLE_LEVELS,
-					MCProtectFW_V542::EXTRA_WP_USER_ROLE_LEVELS));
+			$role_by_level = array_flip(array_merge(MCProtectFW_V545::DEFAULT_WP_USER_ROLE_LEVELS,
+					MCProtectFW_V545::EXTRA_WP_USER_ROLE_LEVELS));
 			$this->request->wp_user->role = $role_by_level[$this->request->wp_user->role_level];
 		}
 	}
@@ -463,9 +463,9 @@ class MCProtectFW_V542 {
 
 		if ($this->isPrependMode()) {
 			$rules_file = MCDATAPATH . MCCONFKEY . '-' . 'mc_rules.json';
-			$rule_arrays = MCProtectUtils_V542::parseFile($rules_file);
+			$rule_arrays = MCProtectUtils_V545::parseFile($rules_file);
 		} else {
-			$rule_arrays = MCProtect_V542::$settings->getOption('bvruleset');
+			$rule_arrays = MCProtect_V545::$settings->getOption('bvruleset');
 			if(!is_array($rule_arrays)) {
 				$rule_arrays = array();
 			}
@@ -477,7 +477,7 @@ class MCProtectFW_V542 {
 		}
 
 		foreach($rule_arrays as $rule_array) {
-			$rule = MCProtectFWRule_V542::init($rule_array);
+			$rule = MCProtectFWRule_V545::init($rule_array);
 
 			if ($rule) {
 				if (!$this->is_rule_initialized && $rule->isExeOnBoot()) {
@@ -548,7 +548,7 @@ class MCProtectFW_V542 {
 					add_filter($hook_name, $callback, -9999999, $accepted_args);
 				}
 			} else {
-				MCProtectUtils_V542::preInitWPHook($hook_name, $callback, -9999999, $accepted_args);
+				MCProtectUtils_V545::preInitWPHook($hook_name, $callback, -9999999, $accepted_args);
 			}
 		}
 
@@ -911,12 +911,12 @@ class MCProtectFW_V542 {
 
 	private function setIPCookie() {
 		if (!$this->is_ip_cookie_set && $this->isIPCookieEnabled() &&
-				!$this->request->getCookies(MCProtectFW_V542::IP_COOKIE_NAME)) {
+				!$this->request->getCookies(MCProtectFW_V545::IP_COOKIE_NAME)) {
 
 			$time = floor(time() / 86400);
 			$cookie = hash('sha256', $this->request->ip . $time . $this->cookie_key);
 			if ($cookie) {
-				$this->setCookie(MCProtectFW_V542::IP_COOKIE_NAME, $cookie, time() + 86400);
+				$this->setCookie(MCProtectFW_V545::IP_COOKIE_NAME, $cookie, time() + 86400);
 			}
 		}
 	}
@@ -924,16 +924,16 @@ class MCProtectFW_V542 {
 	private function getCurrentWPUserRoleLevel() {
 		if (function_exists('current_user_can')) {
 			if (function_exists('is_super_admin') &&  is_super_admin()) {
-				return MCProtectFW_V542::WP_USER_ROLE_LEVEL_ADMIN;
+				return MCProtectFW_V545::WP_USER_ROLE_LEVEL_ADMIN;
 			}
 
 			foreach ($this->custom_roles as $role) {
 				if (current_user_can($role)) {
-					return MCProtectFW_V542::WP_USER_ROLE_LEVEL_CUSTOM;
+					return MCProtectFW_V545::WP_USER_ROLE_LEVEL_CUSTOM;
 				}
 			}
 
-			foreach (MCProtectFW_V542::DEFAULT_WP_USER_ROLE_LEVELS as $role => $level) {
+			foreach (MCProtectFW_V545::DEFAULT_WP_USER_ROLE_LEVELS as $role => $level) {
 				if (current_user_can($role)) {
 					return $level;
 				}
@@ -1024,9 +1024,9 @@ class MCProtectFW_V542 {
 	private function getBVCookies() {
 		$cookies = array();
 
-		if ($this->request->getCookies(MCProtectFW_V542::IP_COOKIE_NAME) !== NULL) {
-			$cookie_val = (string) $this->request->getCookies(MCProtectFW_V542::IP_COOKIE_NAME);
-			$cookies[MCProtectFW_V542::IP_COOKIE_NAME] = $cookie_val;
+		if ($this->request->getCookies(MCProtectFW_V545::IP_COOKIE_NAME) !== NULL) {
+			$cookie_val = (string) $this->request->getCookies(MCProtectFW_V545::IP_COOKIE_NAME);
+			$cookies[MCProtectFW_V545::IP_COOKIE_NAME] = $cookie_val;
 		}
 
 		return $cookies;
@@ -1161,7 +1161,7 @@ class MCProtectFW_V542 {
 	}
 
 	private function getUserBy($attribute, $value) {
-		if (isset($value) && function_exists('get_user_by') && MCProtectUtils_V542::havePluginsLoaded()) {
+		if (isset($value) && function_exists('get_user_by') && MCProtectUtils_V545::havePluginsLoaded()) {
 			return get_user_by($attribute, $value);
 		}
 	}
@@ -1265,7 +1265,7 @@ class MCProtectFW_V542 {
 						$profiled_data[$key]["file"] = true;
 					}
 
-					if ($this->matchCount(MCProtectFWRule_V542::SQLIREGEX, $value) > 2) {
+					if ($this->matchCount(MCProtectFWRule_V545::SQLIREGEX, $value) > 2) {
 						$profiled_data[$key]["sql"] = true;
 					}
 
@@ -1317,13 +1317,13 @@ class MCProtectFW_V542 {
 
 	private function canRequestBypassFirewall() {
 		if ($this->isRequestIPWhitelisted() || $this->isRequestHasValidBypassCookie()) {
-			$this->request->category = MCProtectRequest_V542::CATEGORY_WHITELISTED;
-			$this->request->status = MCProtectRequest_V542::STATUS_BYPASSED;
+			$this->request->category = MCProtectRequest_V545::CATEGORY_WHITELISTED;
+			$this->request->status = MCProtectRequest_V545::STATUS_BYPASSED;
 
 			return true;
-		} elseif (MCProtectUtils_V542::isPrivateIP($this->request->ip)) {
-			$this->request->category = MCProtectRequest_V542::CATEGORY_PRIVATEIP;
-			$this->request->status = MCProtectRequest_V542::STATUS_BYPASSED;
+		} elseif (MCProtectUtils_V545::isPrivateIP($this->request->ip)) {
+			$this->request->category = MCProtectRequest_V545::CATEGORY_PRIVATEIP;
+			$this->request->status = MCProtectRequest_V545::STATUS_BYPASSED;
 
 			return true;
 		}
@@ -1357,7 +1357,7 @@ class MCProtectFW_V542 {
 				$_engine_vars = array_merge($_engine_vars, $rule->opts['variables']);
 			}
 
-			$rule_engine = new MCProtectFWRuleEngine_V542($this->request, $_engine_vars);
+			$rule_engine = new MCProtectFWRuleEngine_V545($this->request, $_engine_vars);
 
 			if ($rule_engine->evaluate($rule) && !$rule_engine->hasError()) {
 				if (!empty($log_data)) {
@@ -1370,11 +1370,11 @@ class MCProtectFW_V542 {
 					switch ($action["type"]) {
 					case "ALLOW":
 						$this->break_rule_matching = true;
-						$this->request->category = MCProtectRequest_V542::CATEGORY_RULE_ALLOWED;
+						$this->request->category = MCProtectRequest_V545::CATEGORY_RULE_ALLOWED;
 						return;
 					case "BLOCK":
 						if ($this->isModeProtect()) {
-							$this->terminateRequest(MCProtectRequest_V542::CATEGORY_RULE_BLOCKED);
+							$this->terminateRequest(MCProtectRequest_V545::CATEGORY_RULE_BLOCKED);
 						}
 						return;
 					case "INSPECT":
@@ -1390,13 +1390,13 @@ class MCProtectFW_V542 {
 
 	private function terminateRequest($category) {
 		$this->request->category = $category;
-		$this->request->status = MCProtectRequest_V542::STATUS_BLOCKED;
+		$this->request->status = MCProtectRequest_V545::STATUS_BLOCKED;
 		$this->request->setRespCode(403);
 
 		if ($this->can_set_cache_prevention_cookie &&
-			!$this->request->getCookies(MCProtectFW_V542::PREVENT_CACHE_COOKIE_NAME)) {
+			!$this->request->getCookies(MCProtectFW_V545::PREVENT_CACHE_COOKIE_NAME)) {
 			$value = "Prevent Caching Response.";
-			$this->setCookie(MCProtectFW_V542::PREVENT_CACHE_COOKIE_NAME, $value, time() + 43200);
+			$this->setCookie(MCProtectFW_V545::PREVENT_CACHE_COOKIE_NAME, $value, time() + 43200);
 		}
 
 		header("Cache-Control: no-cache, no-store, must-revalidate");
@@ -1422,7 +1422,7 @@ class MCProtectFW_V542 {
 			if ($role_level >= $this->bypass_level) {
 				$cookie = $this->generateBypassCookie();
 				if ($cookie) {
-					$this->setCookie(MCProtectFW_V542::BYPASS_COOKIE_NAME, $cookie, time() + 43200);
+					$this->setCookie(MCProtectFW_V545::BYPASS_COOKIE_NAME, $cookie, time() + 43200);
 				}
 			}
 		}

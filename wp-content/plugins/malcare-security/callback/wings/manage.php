@@ -7,7 +7,7 @@ class BVManageCallback extends BVCallbackBase {
 	public $skin;
 	public $bvinfo;
 
-	const MANAGE_WING_VERSION = 1.4;
+	const MANAGE_WING_VERSION = 1.5;
 
 	public function __construct($callback_handler) {
 		$this->settings = $callback_handler->settings;
@@ -705,10 +705,62 @@ class BVManageCallback extends BVCallbackBase {
 		return true;
 	}
 
+	function upgradeElementorDB($file) {
+		try {
+			if (!defined('ELEMENTOR_PATH')) {
+				return array('status' => 'Error', 'error' => 'Elementor not found', 'source' => 'BV');
+			}
+
+			$managerFilePath = ELEMENTOR_PATH . 'core/upgrade/manager.php';
+			if (!file_exists($managerFilePath)) {
+				return array('status' => 'Error', 'error' => 'Manager file not found', 'source' => 'BV');
+			}
+
+			require_once $managerFilePath;
+
+			if ($file === 'elementor-pro/elementor-pro.php') {
+				$managerClass = '\ElementorPro\Core\Upgrade\Manager';
+			} else {
+				$managerClass = '\Elementor\Core\Upgrade\Manager';
+			}
+
+			$manager = new $managerClass();
+
+			$required_methods = array('get_task_runner', 'should_upgrade', 'on_runner_complete',
+					'get_current_version', 'get_new_version');
+			foreach ($required_methods as $method) {
+				if (!method_exists($manager, $method)) {
+					return array('status' => 'Error', 'error' => 'Required methods are missing', 'source' => 'BV');
+				}
+			}
+
+			$updateInfo = array(
+				'from' => $manager->get_current_version(),
+				'to' => $manager->get_new_version(),
+			);
+
+			if ($manager->should_upgrade()) {
+				$callbacks = $manager->get_upgrade_callbacks();
+
+				if (!empty($callbacks)) {
+					$manager->get_task_runner()->handle_immediately($callbacks);
+					$manager->on_runner_complete(true);
+				}
+			} else {
+				return array('status' => 'Error', 'error' => 'Database Update is not available currently',
+						'update_info' => $updateInfo, 'source' => 'BV');
+			}
+
+			return array('status' => 'Done', 'update_info' => $updateInfo);
+		} catch (Exception $e) {
+			return array('status' => 'Error', 'error' => $e->getMessage());
+		}
+	}
+
 	function upgradeWoocommerceDb() {
 		try {
 			if (!defined('WC_ABSPATH')) {
-				return array('status' => 'Error', 'error' => 'WC not found');
+				return array('status' => 'Error', 'error' => 'WC not found', 'source' => 'BV');
 			}
 
 			if (file_exists(WC_ABSPATH . 'includes/class-wc-install.php')) {
@@ -721,17 +773,17 @@ class BVManageCallback extends BVCallbackBase {
 
 			if (!class_exists('WC_Install') || !method_exists('WC_Install', 'needs_db_update') ||
 					!method_exists('WC_Install', 'get_db_update_callbacks')) {
-				return array('status' => 'Error', 'error' => 'WC files missing or corrupted');
+				return array('status' => 'Error', 'error' => 'WC files missing or corrupted', 'source' => 'BV');
 			}
 
 			$current_db_version = $this->settings->getOption('woocommerce_db_version');
 			if (!$current_db_version) {
-				return array('status' => 'Error', 'error' => 'Current WC DB version not available');
+				return array('status' => 'Error', 'error' => 'Current WC DB version not available', 'source' => 'BV');
 			}
 
 			$latest_db_version = $this->bvinfo->getLatestWooCommerceDBVersion();
 			if ($current_db_version >= $latest_db_version) {
-				return array('status' => 'Error', 'error' => 'WC DB update not available');
+				return array('status' => 'Error', 'error' => 'WC DB update not available', 'source' => 'BV');
 			}
 
 			$db_update_callbacks = WC_Install::get_db_update_callbacks();
@@ -846,6 +898,10 @@ class BVManageCallback extends BVCallbackBase {
 				switch ($file) {
 					case "woocommerce/woocommerce.php":
 						$resp[$file] = $this->upgradeWoocommerceDb();
+						break;
+					case "elementor/elementor.php":
+					case "elementor-pro/elementor-pro.php":
+						$resp[$file] = $this->upgradeElementorDB($file);
 						break;
 				}
 			}
