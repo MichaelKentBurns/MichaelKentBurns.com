@@ -1,8 +1,8 @@
 <?php
 if (!defined('ABSPATH') && !defined('MCDATAPATH')) exit;
 
-if (!trait_exists('MCProtectFWRuleMiscFunc_V545')) :
-trait MCProtectFWRuleMiscFunc_V545 {
+if (!trait_exists('MCProtectFWRuleMiscFunc_V547')) :
+trait MCProtectFWRuleMiscFunc_V547 {
 	private function _rf_isTrue() {
 		$args = $this->processRuleFunctionParams(
 			'isTrue',
@@ -55,7 +55,7 @@ trait MCProtectFWRuleMiscFunc_V545 {
 		$name = $args[0];
 
 		if (!array_key_exists($name, $this->variables)) {
-			throw new MCProtectRuleError_V545(
+			throw new MCProtectRuleError_V547(
 				$this->addExState("UndefinedVariableError: " . $name . " is not defined.")
 			);
 		}
@@ -116,7 +116,7 @@ trait MCProtectFWRuleMiscFunc_V545 {
 		}
 		$resp = MCHelper::safePregMatch((string) $pattern, (string) $subject);
 		if ($resp === false) {
-			throw new MCProtectRuleError_V545(
+			throw new MCProtectRuleError_V547(
 				$this->addExState('BVHelper::safePregMatch' . serialize($subject))
 			);
 		} elseif ($resp > 0) {
@@ -157,7 +157,7 @@ trait MCProtectFWRuleMiscFunc_V545 {
 		}
 		$count = preg_match_all((string) $pattern, (string) $subject, $matches);
 		if ($count === false) {
-			throw new MCProtectRuleError_V545(
+			throw new MCProtectRuleError_V547(
 				$this->addExState("preg_match_all: " . serialize($subject))
 			);
 		}
@@ -183,7 +183,7 @@ trait MCProtectFWRuleMiscFunc_V545 {
 		}
 		$count = preg_match_all((string) $pattern, (string) $subject, $matches);
 		if ($count === false) {
-			throw new MCProtectRuleError_V545(
+			throw new MCProtectRuleError_V547(
 				$this->addExState("preg_match_all: " . serialize($subject))
 			);
 		}

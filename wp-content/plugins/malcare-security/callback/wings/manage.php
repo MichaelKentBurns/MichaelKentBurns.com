@@ -7,7 +7,7 @@ class BVManageCallback extends BVCallbackBase {
 	public $skin;
 	public $bvinfo;
 
-	const MANAGE_WING_VERSION = 1.5;
+	const MANAGE_WING_VERSION = 1.6;
 
 	public function __construct($callback_handler) {
 		$this->settings = $callback_handler->settings;
@@ -707,21 +707,10 @@ class BVManageCallback extends BVCallbackBase {
 
 	function upgradeElementorDB($file) {
 		try {
-			if (!defined('ELEMENTOR_PATH')) {
-				return array('status' => 'Error', 'error' => 'Elementor not found', 'source' => 'BV');
-			}
+			$managerClass = $file === "elementor/elementor.php" ? '\Elementor\Core\Upgrade\Manager' : '\ElementorPro\Core\Upgrade\Manager';
 
-			$managerFilePath = ELEMENTOR_PATH . 'core/upgrade/manager.php';
-			if (!file_exists($managerFilePath)) {
-				return array('status' => 'Error', 'error' => 'Manager file not found', 'source' => 'BV');
-			}
-
-			require_once $managerFilePath;
-
-			if ($file === 'elementor-pro/elementor-pro.php') {
-				$managerClass = '\ElementorPro\Core\Upgrade\Manager';
-			} else {
-				$managerClass = '\Elementor\Core\Upgrade\Manager';
+			if (!class_exists($managerClass)) {
+				return array('status' => 'Error', 'error' => 'Elementor plugin not found or disabled', 'source' => 'BV');
 			}
 
 			$manager = new $managerClass();

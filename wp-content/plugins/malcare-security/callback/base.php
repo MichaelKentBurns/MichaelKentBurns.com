@@ -5,7 +5,7 @@ if (!class_exists('BVCallbackBase')) :
 
 class BVCallbackBase {
 
-	public static $wing_infos = array("MANAGE_WING_VERSION" => '1.5',
+	public static $wing_infos = array("MANAGE_WING_VERSION" => '1.6',
 		"ACTLOG_WING_VERSION" => '1.0',
 		"DYNSYNC_WING_VERSION" => '1.0',
 		"UPGRADER_WING_VERSION" => '1.1',

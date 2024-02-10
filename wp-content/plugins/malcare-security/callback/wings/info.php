@@ -52,8 +52,11 @@ class BVInfoCallback extends BVCallbackBase {
 			$pdata['latest_db_version'] = $this->bvinfo->getLatestWooCommerceDBVersion();
 			break;
 		case "elementor/elementor.php":
-		case "elementor-pro/elementor-pro.php":
 			$pdata['current_db_version'] = $this->settings->getOption('elementor_version');
+			$pdata['latest_db_version'] = $this->bvinfo->getLatestElementorDBVersion($plugin_file);
+			break;
+		case "elementor-pro/elementor-pro.php":
+			$pdata['current_db_version'] = $this->settings->getOption('elementor_pro_version');
 			$pdata['latest_db_version'] = $this->bvinfo->getLatestElementorDBVersion($plugin_file);
 			break;
 		}
