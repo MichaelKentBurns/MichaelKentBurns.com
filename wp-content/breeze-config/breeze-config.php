@@ -114,6 +114,7 @@
   'use-lazy-load-native' => '0',
   'breeze-preload-links' => '0',
   'breeze-lazy-load-iframes' => '0',
+  'breeze-lazy-load-videos' => 0,
   'woocommerce_geolocation_ajax' => 0,
   'permalink_structure' => '/index.php/%year%/%monthnum%/%day%/%postname%/',
 ); 

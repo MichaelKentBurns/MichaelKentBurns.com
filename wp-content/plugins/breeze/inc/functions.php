@@ -714,32 +714,32 @@ function breeze_all_country_codes() {
 /**
  * Load Mobile Detect library based on PHP version
  *
- * @return \Detection\MobileDetect|false
+ * @return \Breeze\Detection\MobileDetect|false
  */
 function breeze_mobile_detect_library() {
 	$call_class     = false;
 	$path_to_plugin = dirname( __FILE__, 2 ) . '/';
 
-	if ( ! class_exists( '\Detection\MobileDetect' ) ) {
+	if ( ! class_exists( '\Breeze\Detection\MobileDetect' ) ) {
 		if ( version_compare( PHP_VERSION, '7.3.0' ) >= 0 && version_compare( PHP_VERSION, '8.0.0', '<' ) ) {
 			// Mobile detect 3.74
-			require_once( $path_to_plugin . 'vendor-extra/mobiledetect/php7/vendor/autoload.php' );
+			require_once( $path_to_plugin . 'vendor-extra/mobiledetect/build/php7/vendor/autoload.php' );
 			$call_class = true;
 		}
 
 		if ( version_compare( PHP_VERSION, '8.0.0' ) >= 0 ) {
 			// Mobile detect 4.8
-			require_once( $path_to_plugin . 'vendor-extra/mobiledetect/php8/vendor/autoload.php' );
+			require_once( $path_to_plugin . 'vendor-extra/mobiledetect/build/php8/vendor/autoload.php' );
 			$call_class = true;
 		}
 	}
 
-	if ( class_exists( '\Detection\MobileDetect' ) ) {
+	if ( class_exists( '\Breeze\Detection\MobileDetect' ) ) {
 		$call_class = true;
 	}
 
 	if ( true === $call_class ) {
-		return new \Detection\MobileDetect;
+		return new \Breeze\Detection\MobileDetect;
 	}
 
 	return false;

@@ -302,8 +302,13 @@ $icon = BREEZE_PLUGIN_URL . 'assets/images/basic-active.png';
 				$basic_value      = isset( $basic['breeze-lazy-load-native'] ) ? filter_var( $basic['breeze-lazy-load-native'], FILTER_VALIDATE_BOOLEAN ) : false;
 				$native_lazy_load = ( isset( $basic_value ) && true === $basic_value ) ? checked( $basic['breeze-lazy-load-native'], '1', false ) : '';
 
+                // Lazy load iframe
 				$basic_value      = isset( $basic['breeze-lazy-load-iframes'] ) ? filter_var( $basic['breeze-lazy-load-iframes'], FILTER_VALIDATE_BOOLEAN ) : false;
 				$iframe_lazy_load = ( isset( $basic_value ) && true === $basic_value ) ? checked( $basic['breeze-lazy-load-iframes'], '1', false ) : '';
+
+                // Lazy load videos
+				$basic_value      = isset( $basic['breeze-lazy-load-videos'] ) ? filter_var( $basic['breeze-lazy-load-videos'], FILTER_VALIDATE_BOOLEAN ) : false;
+				$videos_lazy_load = ( isset( $basic_value ) && true === $basic_value ) ? checked( $basic['breeze-lazy-load-videos'], '1', false ) : '';
 				?>
 
 				<span <?php echo $hide; ?> id="native-lazy-option-iframe">
@@ -324,7 +329,30 @@ $icon = BREEZE_PLUGIN_URL . 'assets/images/basic-active.png';
 						echo '<strong>';
 						_e( 'Important: ', 'breeze' );
 						echo '</strong>';
-						_e( 'Apply lazy load to iframe/videos tags.', 'breeze' );
+						_e( 'Apply lazy load to all iframe tags.', 'breeze' );
+						?>
+					</p>
+				</span>
+
+                <span <?php echo $hide; ?> id="native-lazy-option-videos">
+
+					<div class="on-off-checkbox">
+					<label class="br-switcher">
+						<input id="bz-lazy-load-videos" type="checkbox" name="bz-lazy-load-videos" class="br-box" value='1' <?php echo $videos_lazy_load; ?>>
+						<div class="br-see-state">
+						</div>
+					</label><br>
+					</div>
+
+						<p>
+					<?php _e( 'Video lazy load', 'breeze' ); ?><br/>
+					</p>
+					<p class="br-important">
+						<?php
+						echo '<strong>';
+						_e( 'Important: ', 'breeze' );
+						echo '</strong>';
+						_e( 'Apply lazy load to all videos tags.', 'breeze' );
 						?>
 					</p>
 				</span>
@@ -398,7 +426,7 @@ $icon = BREEZE_PLUGIN_URL . 'assets/images/basic-active.png';
 
 				foreach ( $roles as $user_role => $user_role_data ) {
 					$is_checked_role = 0;
-					if ( is_array( $basic['breeze-disable-admin'] ) && isset( $basic['breeze-disable-admin'] ) && isset( $basic['breeze-disable-admin'][ $user_role ] ) ) {
+					if (  isset( $basic['breeze-disable-admin'] ) &&  is_array( $basic['breeze-disable-admin'] ) && isset( $basic['breeze-disable-admin'][ $user_role ] ) ) {
 						$is_checked_role = (int) $basic['breeze-disable-admin'][ $user_role ];
 					}
 

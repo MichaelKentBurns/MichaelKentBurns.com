@@ -4,7 +4,7 @@ Tags: cache,caching, performance, wp-cache, cdn, combine, compress, speed plugin
 Requires at least: 6.0
 Tested up to: 6.4.1
 Requires PHP: 7.4
-Stable tag: 2.1.3
+Stable tag: 2.1.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -27,7 +27,7 @@ What makes Breeze WordPress Cache Plugin awesome is that it comes with builtin s
 **FEATURES**
 
 * Seamless integration with Varnish Cache for efficient content delivery. No manual adjustments needed – all settings come pre-configured for your convenience.
-* Optimize performance using Cloudflare's caching capabilities. No specific Breeze configurations are needed – it works out of the box. 
+* Optimize performance using Cloudflare's caching capabilities. No specific Breeze configurations are needed – it works out of the box.
 * Effortlessly integrate your preferred Content Delivery Network (CDN) for global content distribution with Breeze instead of using the the CDN providers' plugins.
 * Trim WordPress database bloat effortlessly. Breeze's Database Options optimize and declutter your database, boosting performance by removing unneeded data like post revisions and trashed content.
 * Take command over caching exclusions. With Breeze, you have the power to prevent specific URLs, JS files, and CSS files from being cached.
@@ -160,6 +160,17 @@ Using Gzip, Breeze compresses the request files, further reducing the size of th
 
 == Changelog ==
 
+= 2.1.4=
+
+* Fix: Addressed a vulnerability discovered by CovertSwarm.
+* Fix: Limited the thank-you message display to admin and super admin users after activating Breeze.
+* Fix: Resolved file permission warning issues in the multisite network, ensuring seamless operation when adding a new subsite.
+* Fix: Modified the Mobile Detect PHP Namespace in the third-party library to prevent conflicts with other plugins or themes, improving overall compatibility.
+* Fix: Ignored images with both JSON and JSON encryption to prevent adverse effects on other libraries handling those tags, ensuring smooth functionality.
+* Fix: Separated lazy load functionality for videos and iframes, providing increased control over website lazy loading behavior for a more optimized user experience.
+* Add: Implemented distinct functionality for <video> tags specifically with the 'src' attribute, excluding video tags with <source> tags, enhancing flexibility and control over video elements.
+
+
 = 2.1.3=
 
 * Fix: Functionality is improved to handle cases where no "HTTP_USER_AGENT" header is sent.
@@ -202,13 +213,13 @@ Using Gzip, Breeze compresses the request files, further reducing the size of th
 
 = 2.0.29=
 
-* Add: Breeze now supports the latest version of the CSS minified library for superior performance. 
+* Add: Breeze now supports the latest version of the CSS minified library for superior performance.
 * Add: Preload Link option is enabled by default now to boost your website performance.
- 
+
 
 = 2.0.28=
 
-* Add: JavaScript file deferred loading feature now supports external third-party files alongside WP Core, themes, and plugins files. 
+* Add: JavaScript file deferred loading feature now supports external third-party files alongside WP Core, themes, and plugins files.
 
 = 2.0.27=
 
@@ -248,12 +259,12 @@ Using Gzip, Breeze compresses the request files, further reducing the size of th
 = 2.0.20=
 
 * Fix: Fatal error displayed while editing WooCommerce attributes and other entities.
- 
+
 
 = 2.0.19=
 
 * Fix: Purge All Cache permalink for WordPress subdirectory installations.
- 
+
 
 
 = 2.0.18=
@@ -301,10 +312,10 @@ Using Gzip, Breeze compresses the request files, further reducing the size of th
 * Fix: DOMDocument class was removed while enabling the options Lazy Load Images and Cross-origin Safe Links.
 
 = 2.0.12=
- 
+
 * Fix: Synchronized the reset cache option of the Avada theme with Breeze.
 
- 
+
 = 2.0.11=
 
 * Add: Scanning of CDN URL to verify it is not malicious in the CDN.
@@ -336,14 +347,14 @@ Using Gzip, Breeze compresses the request files, further reducing the size of th
 = 2.0.7 =
 
  * Fix: In some cases call to undefined function is_plugin_active() shows, it is fixed now by replacing it with a check for class_exist in CURCY and WOOCS plugins.
- 
- 
+
+
 = 2.0.6 =
 
- * Fix: Overwrites the TimeZone To UTC of The Events Calendar plugin. 
- * Fix: currency menu is cached with HTML, changing it with the currency is difficult in CURCY and WOOCS plugins.  
- * Fix: Preloading links that do not have “href“ attribute or the “href“ attribute contains the value “#” was displaying errors in the console log.   
- * Fix: Some inline javascript files were not displayed when the option "JS Files With Deferred Loading" had at least one value-added breaking functionality for other JavaScript scripts.   
+ * Fix: Overwrites the TimeZone To UTC of The Events Calendar plugin.
+ * Fix: currency menu is cached with HTML, changing it with the currency is difficult in CURCY and WOOCS plugins.
+ * Fix: Preloading links that do not have “href“ attribute or the “href“ attribute contains the value “#” was displaying errors in the console log.
+ * Fix: Some inline javascript files were not displayed when the option "JS Files With Deferred Loading" had at least one value-added breaking functionality for other JavaScript scripts.
 
 = 2.0.5 =
 
@@ -354,7 +365,7 @@ Using Gzip, Breeze compresses the request files, further reducing the size of th
 
  * Add: Improve page load by delaying JavaScript execution. Delay JS is disabled by default for new installations.
  * Fix: Added JavaScript checks to see if the sortable library is loaded or not, if not then the JS code that requires the library will not execute.
- * Fix: Undefined variable in Breeze minification scripts. 
+ * Fix: Undefined variable in Breeze minification scripts.
 
 = 2.0.3 =
 
@@ -433,7 +444,7 @@ Using Gzip, Breeze compresses the request files, further reducing the size of th
  * Add: Addition in Gzip compression rules.
  * Fix: Improvise the handling of the Request header while the varnish is disable
  * Fix: Improvise the condition of Option "Enable cache for logged-in users"
- 
+
 
 
 = 1.2.2 =

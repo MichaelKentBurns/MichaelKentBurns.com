@@ -380,14 +380,18 @@ jQuery( document ).ready(
 
 				var native_lazy = $( '#native-lazy-option' );
 				var native_lazy_iframes = $( '#native-lazy-option-iframe' );
+				var native_lazy_video = $( '#native-lazy-option-videos' );
 				if ( true === $( this ).is( ':checked' ) ) {
 					native_lazy.show();
 					native_lazy_iframes.show();
+					native_lazy_video.show();
 				} else {
 					native_lazy.hide();
 					native_lazy_iframes.hide();
+					native_lazy_video.hide();
 					$( '#bz-lazy-load-nat' ).attr( 'checked', false );
 					$( '#bz-lazy-load-iframe' ).attr( 'checked', false );
+					$( '#bz-lazy-load-videos' ).attr( 'checked', false );
 				}
 			}
 		);
@@ -1052,8 +1056,7 @@ jQuery( document ).ready(
 		},
 		1000
 	);
-
-
+	
 	$( window ).on(
 		'resize',
 		function () {

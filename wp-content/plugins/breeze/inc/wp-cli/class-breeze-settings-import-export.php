@@ -459,7 +459,10 @@ class Breeze_Settings_Import_Export {
 				'cdn-active'          => ( isset( $options['cdn-active'] ) ? $options['cdn-active'] : '0' ),
 				'cdn-relative-path'   => ( isset( $options['cdn-relative-path'] ) ? $options['cdn-relative-path'] : '1' ),
 				'cdn-url'             => ( isset( $options['cdn-url'] ) ? $options['cdn-url'] : '' ),
-				'cdn-content'         => ( isset( $options['cdn-content'] ) ? $options['cdn-content'] : array( 'wp-includes', $wp_content ) ),
+				'cdn-content'         => ( isset( $options['cdn-content'] ) ? $options['cdn-content'] : array(
+					'wp-includes',
+					$wp_content
+				) ),
 				'cdn-exclude-content' => ( isset( $options['cdn-exclude-content'] ) ? $options['cdn-exclude-content'] : array( '.php' ) ),
 			);
 
@@ -653,6 +656,7 @@ class Breeze_Settings_Import_Export {
 			'breeze-lazy-load'                     => '0',
 			'breeze-lazy-load-native'              => '0',
 			'breeze-lazy-load-iframes'             => '0',
+			'breeze-lazy-load-videos'              => '0',
 			'breeze-desktop-cache'                 => '1',
 			'breeze-mobile-cache'                  => '1',
 			'breeze-display-clean'                 => '1',
