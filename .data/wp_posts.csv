@@ -328,7 +328,7 @@
 <!-- /wp:image -->",Home,"",inherit,closed,closed,"",2-revision-v1,"","",2023-03-30 22:13:36,2023-03-30 22:13:36,"",2,https://michaelkentburns.com/?p=30,"0",revision,"","0"
 33,1,2023-03-30 22:31:52,2023-03-30 22:31:52,"<!-- wp:paragraph -->
 <p>My first WordPress site, just getting started.</p>
-<!-- /wp:paragraph -->",Under construction...,"",publish,open,open,"",under-construction,"","",2023-03-30 22:31:52,2023-03-30 22:31:52,"","0",https://michaelkentburns.com/?p=33,"0",post,"","0"
+<!-- /wp:paragraph -->",Under construction...,"",trash,open,open,"",under-construction__trashed,"","",2024-02-18 03:42:52,2024-02-18 03:42:52,"","0",https://michaelkentburns.com/?p=33,"0",post,"","0"
 34,1,2023-03-30 22:31:52,2023-03-30 22:31:52,"<!-- wp:paragraph -->
 <p>My first WordPress site, just getting started.</p>
 <!-- /wp:paragraph -->",Under construction...,"",inherit,closed,closed,"",33-revision-v1,"","",2023-03-30 22:31:52,2023-03-30 22:31:52,"",33,https://michaelkentburns.com/?p=34,"0",revision,"","0"
@@ -1812,20 +1812,6 @@
 <li>Make suggestions for changes.</li>
 <!-- /wp:list-item --></ul>
 <!-- /wp:list -->",How to contribute to this site,"",inherit,closed,closed,"",115-revision-v1,"","",2024-01-18 23:33:40,2024-01-18 23:33:40,"",115,https://michaelkentburns.com/?p=117,"0",revision,"","0"
-120,1,2024-01-20 22:13:46,2024-01-20 22:13:46,"{
-    ""nav_menu_item[112]"": {
-        ""value"": false,
-        ""type"": ""nav_menu_item"",
-        ""user_id"": 1,
-        ""date_modified_gmt"": ""2024-01-20 22:13:46""
-    },
-    ""nav_menu_item[116]"": {
-        ""value"": false,
-        ""type"": ""nav_menu_item"",
-        ""user_id"": 1,
-        ""date_modified_gmt"": ""2024-01-20 22:13:46""
-    }
-}","","",trash,closed,closed,"",6239de53-5e73-4c38-b811-c5866ca0cb27,"","",2024-01-20 22:13:46,2024-01-20 22:13:46,"","0",https://michaelkentburns.com/index.php/2024/01/20/6239de53-5e73-4c38-b811-c5866ca0cb27/,"0",customize_changeset,"","0"
 122,1,2024-01-20 22:18:01,2024-01-20 22:18:01,"<!-- wp:list -->
 <ul><!-- wp:list-item -->
 <li><a href=""https://michaelkentburns.com/index.php/how-to/how-to-contribute-to-this-site/"" data-type=""page"" data-id=""115"">Contribute to this site</a></li>
@@ -2957,7 +2943,7 @@
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p>The best way to build your skills as a team player and move up to more responsible positions is to find a role that you can already fill and join a team.   With a little effort you will be able to learn more about the other team members and their roles as well as learn more about the larger project.   As you develop your skills you can build a reputation of trust.   Open source software projects are a great opportunity because they depend on volunteer contributions.  But, it should be noted that all work done for open software projects is not done for free.  The companies or organizations that rely on open source software often have specific needs that are not necessarily shared by the community at large.   These organizations will often pay their employees, or outside developers, to work on their special needs.  </p>
+<p>The best way to build your skills as a team player and move up to more responsible positions is to find a role that you can already fill and join a team.   With a little effort you will be able to learn more about the other team members and their roles as well as learn more about the larger project.   As you develop your skills you can build a reputation of trust.   Open source software projects are a great opportunity because they depend on volunteer contributions.  But, it should be noted that all work done for open software projects is not done for free.  The companies or organizations that rely on open source software often have specific needs that are not necessarily shared by the community at large.   These organizations will often pay their employees, or outside developers, to work on their special needs.  A close friend of mine does exactly this at SAS where I retired from. </p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
@@ -2966,57 +2952,7 @@
 
 <!-- wp:paragraph -->
 <p>Finally, you can build relationships with other developers and learn of other opportunities.  </p>
-<!-- /wp:paragraph -->",Working in a team,"",publish,closed,closed,"",working-in-a-professional-team,"","",2024-02-10 23:36:34,2024-02-10 23:36:34,"","0",https://michaelkentburns.com/?page_id=149,"0",page,"","0"
-150,1,2024-02-10 20:32:58,"0000-00-00 00:00:00","{
-    ""nav_menu_item[77]"": {
-        ""value"": {
-            ""menu_item_parent"": 0,
-            ""object_id"": 76,
-            ""object"": ""page"",
-            ""type"": ""post_type"",
-            ""type_label"": ""Block editor"",
-            ""url"": ""https://michaelkentburns.com/index.php/building-your-brand/"",
-            ""title"": """",
-            ""target"": """",
-            ""attr_title"": """",
-            ""description"": """",
-            ""classes"": """",
-            ""xfn"": """",
-            ""nav_menu_term_id"": 11,
-            ""position"": 9,
-            ""status"": ""publish"",
-            ""original_title"": ""Building your brand"",
-            ""_invalid"": false
-        },
-        ""type"": ""nav_menu_item"",
-        ""user_id"": 1,
-        ""date_modified_gmt"": ""2024-02-10 20:32:58""
-    },
-    ""nav_menu_item[80]"": {
-        ""value"": {
-            ""menu_item_parent"": 0,
-            ""object_id"": 79,
-            ""object"": ""page"",
-            ""type"": ""post_type"",
-            ""type_label"": ""Block editor"",
-            ""url"": ""https://michaelkentburns.com/index.php/finding-work/"",
-            ""title"": """",
-            ""target"": """",
-            ""attr_title"": """",
-            ""description"": """",
-            ""classes"": """",
-            ""xfn"": """",
-            ""nav_menu_term_id"": 11,
-            ""position"": 8,
-            ""status"": ""publish"",
-            ""original_title"": ""Finding work"",
-            ""_invalid"": false
-        },
-        ""type"": ""nav_menu_item"",
-        ""user_id"": 1,
-        ""date_modified_gmt"": ""2024-02-10 20:32:58""
-    }
-}","","",auto-draft,closed,closed,"",281b47e7-69f0-4bbb-ab5f-56bbc759db4e,"","",2024-02-10 20:32:58,"0000-00-00 00:00:00","","0",https://michaelkentburns.com/?p=150,"0",customize_changeset,"","0"
+<!-- /wp:paragraph -->",Working in a team,"",publish,closed,closed,"",working-in-a-professional-team,"","",2024-02-19 14:06:13,2024-02-19 14:06:13,"","0",https://michaelkentburns.com/?page_id=149,"0",page,"","0"
 151,1,2024-02-16 16:02:49,2024-02-10 22:01:14, ,"","",publish,closed,closed,"",151,"","",2024-02-16 16:02:49,2024-02-16 16:02:49,"","0",https://michaelkentburns.com/index.php/2024/02/10/151/,9,nav_menu_item,"","0"
 152,1,2024-02-10 22:01:14,2024-02-10 22:01:14,"<!-- wp:paragraph -->
 <p>Because of the rapid pace of technology development and market requirements, most web and application development is done by integrated teams.  No one person can do it all themselves. It takes a team of specialists working individually and cross discipline to be successful. </p>
@@ -3135,104 +3071,6 @@
 <!-- wp:paragraph -->
 <p>filling one role, doing it well, learn the project, working into new roles.</p>
 <!-- /wp:paragraph -->",Working in a professional team,"",inherit,closed,closed,"",149-revision-v1,"","",2024-02-10 22:01:14,2024-02-10 22:01:14,"",149,https://michaelkentburns.com/?p=152,"0",revision,"","0"
-153,1,2024-02-10 22:02:47,"0000-00-00 00:00:00","{
-    ""nav_menu_item[77]"": {
-        ""value"": {
-            ""menu_item_parent"": 0,
-            ""object_id"": 76,
-            ""object"": ""page"",
-            ""type"": ""post_type"",
-            ""type_label"": ""Block editor"",
-            ""url"": ""https://michaelkentburns.com/index.php/building-your-brand/"",
-            ""title"": """",
-            ""target"": """",
-            ""attr_title"": """",
-            ""description"": """",
-            ""classes"": """",
-            ""xfn"": """",
-            ""nav_menu_term_id"": 11,
-            ""position"": 10,
-            ""status"": ""publish"",
-            ""original_title"": ""Building your brand"",
-            ""_invalid"": false
-        },
-        ""type"": ""nav_menu_item"",
-        ""user_id"": 1,
-        ""date_modified_gmt"": ""2024-02-10 22:02:47""
-    },
-    ""nav_menu_item[80]"": {
-        ""value"": {
-            ""menu_item_parent"": 0,
-            ""object_id"": 79,
-            ""object"": ""page"",
-            ""type"": ""post_type"",
-            ""type_label"": ""Block editor"",
-            ""url"": ""https://michaelkentburns.com/index.php/finding-work/"",
-            ""title"": """",
-            ""target"": """",
-            ""attr_title"": """",
-            ""description"": """",
-            ""classes"": """",
-            ""xfn"": """",
-            ""nav_menu_term_id"": 11,
-            ""position"": 8,
-            ""status"": ""publish"",
-            ""original_title"": ""Finding work"",
-            ""_invalid"": false
-        },
-        ""type"": ""nav_menu_item"",
-        ""user_id"": 1,
-        ""date_modified_gmt"": ""2024-02-10 22:02:47""
-    },
-    ""nav_menu_item[109]"": {
-        ""value"": {
-            ""menu_item_parent"": 0,
-            ""object_id"": 108,
-            ""object"": ""page"",
-            ""type"": ""post_type"",
-            ""type_label"": ""Block editor"",
-            ""url"": ""https://michaelkentburns.com/index.php/how-to/"",
-            ""title"": """",
-            ""target"": """",
-            ""attr_title"": """",
-            ""description"": """",
-            ""classes"": """",
-            ""xfn"": """",
-            ""nav_menu_term_id"": 11,
-            ""position"": 11,
-            ""status"": ""publish"",
-            ""original_title"": ""How to \u2026"",
-            ""_invalid"": false
-        },
-        ""type"": ""nav_menu_item"",
-        ""user_id"": 1,
-        ""date_modified_gmt"": ""2024-02-10 22:02:47""
-    },
-    ""nav_menu_item[151]"": {
-        ""value"": {
-            ""menu_item_parent"": 0,
-            ""object_id"": 149,
-            ""object"": ""page"",
-            ""type"": ""post_type"",
-            ""type_label"": ""Block editor"",
-            ""url"": ""https://michaelkentburns.com/index.php/working-in-a-professional-team/"",
-            ""title"": """",
-            ""target"": """",
-            ""attr_title"": """",
-            ""description"": """",
-            ""classes"": """",
-            ""xfn"": """",
-            ""nav_menu_term_id"": 11,
-            ""position"": 9,
-            ""status"": ""publish"",
-            ""original_title"": ""Working in a professional team"",
-            ""_invalid"": false
-        },
-        ""type"": ""nav_menu_item"",
-        ""user_id"": 1,
-        ""date_modified_gmt"": ""2024-02-10 22:02:47""
-    }
-}","","",auto-draft,closed,closed,"",642c5e5d-f4d5-4c68-bbd5-9da37ce1df5c,"","",2024-02-10 22:02:47,"0000-00-00 00:00:00","","0",https://michaelkentburns.com/?p=153,"0",customize_changeset,"","0"
 155,1,2024-02-10 23:15:55,2024-02-10 23:15:55,"<!-- wp:paragraph -->
 <p>Because of the rapid pace of technology development and market requirements, most web and application development is done by integrated teams.  No one person can do it all themselves. It takes a team of specialists working individually and cross discipline to be successful. </p>
 <!-- /wp:paragraph -->
@@ -4289,104 +4127,6 @@
 <!-- wp:paragraph -->
 <p>Finally, you can build relationships with other developers and learn of other opportunities.  </p>
 <!-- /wp:paragraph -->",Working in a team,"",inherit,closed,closed,"",149-revision-v1,"","",2024-02-10 23:36:34,2024-02-10 23:36:34,"",149,https://michaelkentburns.com/?p=162,"0",revision,"","0"
-163,1,2024-02-10 23:38:20,"0000-00-00 00:00:00","{
-    ""nav_menu_item[77]"": {
-        ""value"": {
-            ""menu_item_parent"": 0,
-            ""object_id"": 76,
-            ""object"": ""page"",
-            ""type"": ""post_type"",
-            ""type_label"": ""Block editor"",
-            ""url"": ""https://michaelkentburns.com/index.php/building-your-brand/"",
-            ""title"": """",
-            ""target"": """",
-            ""attr_title"": """",
-            ""description"": """",
-            ""classes"": """",
-            ""xfn"": """",
-            ""nav_menu_term_id"": 11,
-            ""position"": 10,
-            ""status"": ""publish"",
-            ""original_title"": ""Building your brand"",
-            ""_invalid"": false
-        },
-        ""type"": ""nav_menu_item"",
-        ""user_id"": 1,
-        ""date_modified_gmt"": ""2024-02-10 23:38:20""
-    },
-    ""nav_menu_item[80]"": {
-        ""value"": {
-            ""menu_item_parent"": 0,
-            ""object_id"": 79,
-            ""object"": ""page"",
-            ""type"": ""post_type"",
-            ""type_label"": ""Block editor"",
-            ""url"": ""https://michaelkentburns.com/index.php/finding-work/"",
-            ""title"": """",
-            ""target"": """",
-            ""attr_title"": """",
-            ""description"": """",
-            ""classes"": """",
-            ""xfn"": """",
-            ""nav_menu_term_id"": 11,
-            ""position"": 8,
-            ""status"": ""publish"",
-            ""original_title"": ""Finding work"",
-            ""_invalid"": false
-        },
-        ""type"": ""nav_menu_item"",
-        ""user_id"": 1,
-        ""date_modified_gmt"": ""2024-02-10 23:38:20""
-    },
-    ""nav_menu_item[109]"": {
-        ""value"": {
-            ""menu_item_parent"": 0,
-            ""object_id"": 108,
-            ""object"": ""page"",
-            ""type"": ""post_type"",
-            ""type_label"": ""Block editor"",
-            ""url"": ""https://michaelkentburns.com/index.php/how-to/"",
-            ""title"": """",
-            ""target"": """",
-            ""attr_title"": """",
-            ""description"": """",
-            ""classes"": """",
-            ""xfn"": """",
-            ""nav_menu_term_id"": 11,
-            ""position"": 11,
-            ""status"": ""publish"",
-            ""original_title"": ""How to \u2026"",
-            ""_invalid"": false
-        },
-        ""type"": ""nav_menu_item"",
-        ""user_id"": 1,
-        ""date_modified_gmt"": ""2024-02-10 23:38:20""
-    },
-    ""nav_menu_item[151]"": {
-        ""value"": {
-            ""menu_item_parent"": 0,
-            ""object_id"": 149,
-            ""object"": ""page"",
-            ""type"": ""post_type"",
-            ""type_label"": ""Block editor"",
-            ""url"": ""https://michaelkentburns.com/index.php/working-in-a-professional-team/"",
-            ""title"": """",
-            ""target"": """",
-            ""attr_title"": """",
-            ""description"": """",
-            ""classes"": """",
-            ""xfn"": """",
-            ""nav_menu_term_id"": 11,
-            ""position"": 9,
-            ""status"": ""publish"",
-            ""original_title"": ""Working in a team"",
-            ""_invalid"": false
-        },
-        ""type"": ""nav_menu_item"",
-        ""user_id"": 1,
-        ""date_modified_gmt"": ""2024-02-10 23:38:20""
-    }
-}","","",auto-draft,closed,closed,"",a1739bce-e96c-4880-ada6-20d6b88fe3e8,"","",2024-02-10 23:38:20,"0000-00-00 00:00:00","","0",https://michaelkentburns.com/?p=163,"0",customize_changeset,"","0"
 164,1,2024-02-10 23:38:34,2024-02-10 23:38:34,"<!-- wp:paragraph -->
 <p></p>
 <!-- /wp:paragraph -->
@@ -4707,7 +4447,6 @@
 <!-- /wp:heading -->
 
 <!-- wp:latest-posts {""align"":""center""} /-->",Home,"",inherit,closed,closed,"",2-revision-v1,"","",2024-02-10 23:44:05,2024-02-10 23:44:05,"",2,https://michaelkentburns.com/?p=167,"0",revision,"","0"
-168,1,2024-02-10 23:45:19,"0000-00-00 00:00:00","",Auto Draft,"",auto-draft,open,open,"","","","",2024-02-10 23:45:19,"0000-00-00 00:00:00","","0",https://michaelkentburns.com/?p=168,"0",post,"","0"
 169,1,2024-02-15 17:50:39,2024-02-15 17:50:39,"",Michael at work,"",inherit,open,closed,"",michaelatwork,"","",2024-02-15 17:51:21,2024-02-15 17:51:21,"","0",https://michaelkentburns.com/wp-content/uploads/2024/02/MichaelAtWork.jpeg,"0",attachment,image/jpeg,"0"
 171,1,2024-02-15 17:54:43,2024-02-15 17:54:43,"<!-- wp:paragraph -->
 <p>Michael lives near Cedar Park, Texas with his wife Mary.</p>
@@ -6842,187 +6581,6 @@
 <!-- wp:social-links -->
 <ul class=""wp-block-social-links""></ul>
 <!-- /wp:social-links -->",About Michael,"",inherit,closed,closed,"",22-revision-v1,"","",2024-02-16 16:28:39,2024-02-16 16:28:39,"",22,https://michaelkentburns.com/?p=213,"0",revision,"","0"
-214,1,2024-02-16 16:38:52,2024-02-16 16:38:52,"<!-- wp:image {""align"":""right"",""id"":169,""width"":""678px"",""height"":""auto"",""sizeSlug"":""large"",""linkDestination"":""none"",""className"":""is-style-default""} -->
-<figure class=""wp-block-image alignright size-large is-resized is-style-default""><img src=""https://michaelkentburns.com/wp-content/uploads/2024/02/MichaelAtWork-1024x768.jpeg"" alt="""" class=""wp-image-169"" style=""width:678px;height:auto""/></figure>
-<!-- /wp:image -->
-
-<!-- wp:heading -->
-<h2 class=""wp-block-heading"">Software development freelancing...</h2>
-<!-- /wp:heading -->
-
-<!-- wp:paragraph -->
-<p>There are many locations around the globe that are hotspots for software development.   If you happen to live in one of those places, jobs can come looking for you.   But there are many places around the world that have little or no jobs in this field.  In those places you need some extra skills to get and keep work, but it can be done.  This site is a place to find help and to build community of fellow developers.</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph -->
-<p>Learn a little about me and why I am developing this site on my <a href=""https://michaelkentburns.com/index.php/about-michael/"" data-type=""page"" data-id=""22"">About page...</a></p>
-<!-- /wp:paragraph -->
-
-<!-- wp:heading {""level"":1} -->
-<h1 class=""wp-block-heading"">Welcome</h1>
-<!-- /wp:heading -->
-
-<!-- wp:paragraph -->
-<p>My intention with this main page is to tell a story of a journey that you might be on.  I'll try to keep it pretty brief and include ""Learn more..."" links so you can dive deeper as you need.   Hopefully you will find yourself on this journey and find where you are in the story.  When you do, I invite you to contact me.  My intention is that I can help guide you along.   I hope that this will become a community of like minded people.  I invite you to help me understand your needs and together we will keep you moving.  No tricks or fees are involved.   See my <a href=""https://michaelkentburns.com/index.php/about-michael/"" data-type=""page"" data-id=""22"">About page</a> for that background.  If you have questions or comments along the way please <a href=""mailto: MichaelKentBurns@gmail.com"">email me</a>.   This site is a work in progress and I intend to develop it to meet the needs of my readers. </p>
-<!-- /wp:paragraph -->
-
-<!-- wp:heading -->
-<h2 class=""wp-block-heading"">Developing your skills</h2>
-<!-- /wp:heading -->
-
-<!-- wp:paragraph -->
-<p>While traditional full time employment brings a degree of long term job security, freelancers need to keep their current skills fresh in order to stay relevant.  High tech work is constantly changing with new fields opening up almost daily.  Those new fields often have a higher demand for skilled individuals.  Being willing and able to add new skills will increase your chances of finding work and better pay.  </p>
-<!-- /wp:paragraph -->
-
-<!-- wp:heading {""level"":4} -->
-<h4 class=""wp-block-heading"">Front end web</h4>
-<!-- /wp:heading -->
-
-<!-- wp:paragraph -->
-<p>The World Wide Web is a rapidly evolving place, and it is a challenging field to stay fresh in.   Sometimes there are dramatic shifts in interactive technology.</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph -->
-<p><a href=""https://michaelkentburns.com/index.php/front-end-web/"" data-type=""page"" data-id=""49"">Learn more about front end work...</a></p>
-<!-- /wp:paragraph -->
-
-<!-- wp:heading {""level"":4} -->
-<h4 class=""wp-block-heading"">Back end web</h4>
-<!-- /wp:heading -->
-
-<!-- wp:paragraph -->
-<p>Back end technologies don't change as fast as front end, but...</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph -->
-<p><a href=""https://michaelkentburns.com/index.php/back-end-web/"" data-type=""page"" data-id=""52"">Learn more about back end work...</a></p>
-<!-- /wp:paragraph -->
-
-<!-- wp:heading {""level"":4} -->
-<h4 class=""wp-block-heading"">Full stack</h4>
-<!-- /wp:heading -->
-
-<!-- wp:paragraph -->
-<p>On the surface full stack development is just front end and back end, but there is more to consider...</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph -->
-<p><a href=""https://michaelkentburns.com/index.php/full-stack/"" data-type=""page"" data-id=""55"">Learn more about putting it all together...</a></p>
-<!-- /wp:paragraph -->
-
-<!-- wp:heading {""level"":4} -->
-<h4 class=""wp-block-heading"">Working globally</h4>
-<!-- /wp:heading -->
-
-<!-- wp:paragraph -->
-<p>With the advent of <a href=""https://en.wikipedia.org/wiki/Open-source_software""><strong>open-source software</strong></a> there arose the need to have world wide access to the source code for the many projects.   <a href=""https://en.wikipedia.org/wiki/Git""><strong>Git</strong></a> is the source control tool invented for Linux development.  <a href=""https://en.wikipedia.org/wiki/GitHub""><strong>GitHub</strong></a> is a web interface for software development which uses Git for the source control features, and describes itself as collaborative version control.   It not only allows you to manage your own projects but lets you share them.  Furthermore it lets you explore a vast galaxy of other projects that you can learn from, and in some cases contribute to.  That is a great way of building your reputation. </p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph -->
-<p><a href=""https://michaelkentburns.com/?page_id=59"" data-type=""page"" data-id=""59"">Learn more about how software is developed globally...</a></p>
-<!-- /wp:paragraph -->
-
-<!-- wp:heading {""level"":3} -->
-<h3 class=""wp-block-heading"">Let's get acquainted so I can figure out how I can begin to help you. </h3>
-<!-- /wp:heading -->
-
-<!-- wp:paragraph -->
-<p>Please take the first challenge to tell me about yourself.  Once we get acquainted I can learn about your needs and desires and continue to develop this site to help you move forward.   I can also get some feedback from you on what is helpful and what is not so much.  Eventually, I would like you to consider being more actively involved in making this site a place where you can help others and learn from them too. </p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph -->
-<p><a href=""https://michaelkentburns.com/index.php/challenge-tell-me-about-yourself-so-i-know-how-i-can-help-you/"" data-type=""page"" data-id=""181"">Take the challenge of introducing your self.</a></p>
-<!-- /wp:paragraph -->
-
-<!-- wp:heading {""level"":3} -->
-<h3 class=""wp-block-heading"">Let's consider your development environment</h3>
-<!-- /wp:heading -->
-
-<!-- wp:paragraph -->
-<p>If you are reading this you are probably far enough into web development that you have at least a starter machine and programs to get the work done.    I have a summary of development platforms that you should read to consider what you have, what you might need to move forward.   At the end of that I'd like to know what you have and what you think you might need.</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph -->
-<p><a href=""https://michaelkentburns.com/index.php/development-platforms/"" data-type=""page"" data-id=""175"">Learn more about development platforms..</a>.</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph -->
-<p>Take a challenge to <a href=""https://michaelkentburns.com/index.php/challenge-tell-me-about-your-development-setup/"" data-type=""page"" data-id=""184"">tell me about your current development setup...</a></p>
-<!-- /wp:paragraph -->
-
-<!-- wp:heading -->
-<h2 class=""wp-block-heading"">Finding work as an individual</h2>
-<!-- /wp:heading -->
-
-<!-- wp:paragraph -->
-<p>There are a number of <a href=""https://en.wikipedia.org/wiki/Freelancer"">freelance</a> marketplaces online.</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph -->
-<p><a href=""https://www.upwork.com/freelance-jobs/"">Upwork</a> is one we recommend.</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph -->
-<p><a href=""https://michaelkentburns.com/index.php/finding-work/"" data-type=""page"" data-id=""79"">Learn more about freelancing work...</a></p>
-<!-- /wp:paragraph -->
-
-<!-- wp:heading -->
-<h2 class=""wp-block-heading"">Working as part of a team</h2>
-<!-- /wp:heading -->
-
-<!-- wp:paragraph -->
-<p>Because of the rapid pace of technology development and market requirements, most web and application development is done by integrated teams.  No one person can do it all themselves. It takes a team of specialists working individually and cross discipline to be successful. </p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph -->
-<p>A team can take on big jobs that a single person cannot do.   This presents opportunity for the individual developer.  Once you understand how a team can work together you can find the best place  to contribute.   But while you are doing what you already know how to do, you will also learn something about the rest of the team and the roles they fill.   And you will find avenues to learn new skills while you build team skills.   </p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph -->
-<p><a href=""https://michaelkentburns.com/index.php/working-in-a-professional-team/"" data-type=""page"" data-id=""149"">Learn more about working as part of a larger team ...</a></p>
-<!-- /wp:paragraph -->
-
-<!-- wp:heading -->
-<h2 class=""wp-block-heading"">Development platforms</h2>
-<!-- /wp:heading -->
-
-<!-- wp:paragraph -->
-<p>Doing web development work as an individual can be done with most any computer running Windows, Linux, or Macintosh.   You most likely already made a choice and are doing work.   However, as you move into full stack work, or start working as part of a team it will get more complex.   It is worth considering the options again. </p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph -->
-<p>So, take a moment to<a href=""https://michaelkentburns.com/index.php/development-platforms/"" data-type=""page"" data-id=""175""> learn more about development platforms...</a></p>
-<!-- /wp:paragraph -->
-
-<!-- wp:heading -->
-<h2 class=""wp-block-heading"">Accepting challenges to put your learning to work.</h2>
-<!-- /wp:heading -->
-
-<!-- wp:paragraph -->
-<p>You may have already encountered a prompt to accept a challenge as you have read this far.  If so, good for you.   I will continue to add more challenges to keep you moving forward.  </p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph -->
-<p>Learn more from the <a href=""https://michaelkentburns.com/index.php/take-a-challenge/"" data-type=""page"" data-id=""178"">complete list of challenges...</a></p>
-<!-- /wp:paragraph -->
-
-<!-- wp:heading -->
-<h2 class=""wp-block-heading"">How to do many things related to this work</h2>
-<!-- /wp:heading -->
-
-<!-- wp:paragraph -->
-<p>I continue to develop <a href=""https://michaelkentburns.com/index.php/how-to/"" data-type=""page"" data-id=""108"">how to pages on simple and more advanced topics.</a></p>
-<!-- /wp:paragraph -->
-
-<!-- wp:heading -->
-<h2 class=""wp-block-heading"">Latest Posts</h2>
-<!-- /wp:heading -->
-
-<!-- wp:latest-posts {""align"":""center""} /-->
-
-<!-- wp:paragraph -->
-<p></p>
-<!-- /wp:paragraph -->",Home,"",inherit,closed,closed,"",2-autosave-v1,"","",2024-02-16 16:38:52,2024-02-16 16:38:52,"",2,https://michaelkentburns.com/?p=214,"0",revision,"","0"
 215,1,2024-02-16 16:35:47,2024-02-16 16:35:47,"<!-- wp:image {""align"":""right"",""id"":169,""width"":""678px"",""height"":""auto"",""sizeSlug"":""large"",""linkDestination"":""none"",""className"":""is-style-default""} -->
 <figure class=""wp-block-image alignright size-large is-resized is-style-default""><img src=""https://michaelkentburns.com/wp-content/uploads/2024/02/MichaelAtWork-1024x768.jpeg"" alt="""" class=""wp-image-169"" style=""width:678px;height:auto""/></figure>
 <!-- /wp:image -->
@@ -7931,7 +7489,6 @@
 <!-- wp:paragraph -->
 <p>After you have looked at mine, do your own.   When you are done <a href=""mailto: MichaelKentBurns@gmail.com"">send me an email</a> with that link and a writeup of what you learned, what problems or questions you had.   </p>
 <!-- /wp:paragraph -->",Challenge: capture a tutorial project in a GitHub repository,"",publish,closed,closed,"",challenge-capture-a-tutorial-project-in-a-github-repository,"","",2024-02-16 17:08:57,2024-02-16 17:08:57,"","0",https://michaelkentburns.com/?page_id=222,"0",page,"","0"
-223,1,2024-02-16 17:08:57,2024-02-16 17:08:57, ,"","",publish,closed,closed,"",223,"","",2024-02-16 17:08:57,2024-02-16 17:08:57,"","0",https://michaelkentburns.com/index.php/2024/02/16/223/,13,nav_menu_item,"","0"
 224,1,2024-02-16 17:08:57,2024-02-16 17:08:57,"<!-- wp:paragraph -->
 <p>Your task is to create a new repository for doing a tutorial project (of your choosing) and capturing your work step by step in that repository.    </p>
 <!-- /wp:paragraph -->
@@ -8215,3 +7772,389 @@
 <!-- wp:paragraph -->
 <p>Lots more to come... </p>
 <!-- /wp:paragraph -->",Take a challenge,"",inherit,closed,closed,"",178-revision-v1,"","",2024-02-16 17:16:44,2024-02-16 17:16:44,"",178,https://michaelkentburns.com/?p=228,"0",revision,"","0"
+229,1,2024-02-17 21:28:29,2024-02-17 21:28:29,"<!-- wp:paragraph -->
+<p>The initial construction process is complete enough that I'm ready for a soft opening.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>I welcome visitors and would greatly appreciate feedback.  After you have looked around a bit and think this might be helpful to you, please let me know.  On posts like this you can simply leave a comment.  It should also give you the option to subscribe when you submit the comment.  You can also subscribe on the bottom of the side bar.  Lastly you can simply email to <a href=""mailto:MichaelKentBurns@gmail.com"">MichaelKentBurns@gmail.com</a>.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>When you get far enough to find one of my <a href=""https://michaelkentburns.com/index.php/take-a-challenge/"" data-type=""page"" data-id=""178"">challenges </a> please engage and let me know how it goes for you.   Each challenge should include a request to send me a detailed email, and I would greatly appreciate it if you do so.  </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>I still have a lot of writing to do so please check back often.   My writing will prioritized around what you find valuable.  I'm happy to revise any of it to make it more valuable to you. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>So, for now, have a look around. </p>
+<!-- /wp:paragraph -->",Welcome to my mentoring site!,"",publish,open,open,"",welcome-to-my-mentoring-site,"","",2024-02-19 20:10:49,2024-02-19 20:10:49,"","0",https://michaelkentburns.com/?p=229,"0",post,"","0"
+230,1,2024-02-17 21:28:29,2024-02-17 21:28:29,"<!-- wp:paragraph -->
+<p>The initial construction process is complete enough that I'm ready for a soft opening.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>I welcome visitors and would greatly appreciate feedback.  So, please leave a comment on this post to let me know you have stopped by.  After you have looked around a bit and think this might be helpful to you, please let me know.  You can do so either in your comment or by a private email to <a href=""mailto:MichaelKentBurns@gmail.com"">MichaelKentBurns@gmail.com</a>.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>When you get far enough to find one of my <a href=""https://michaelkentburns.com/index.php/take-a-challenge/"" data-type=""page"" data-id=""178"">challenges </a> please engage and let me know how it goes for you.   Each challenge should include a request to send me a detailed email, and I would greatly appreciate it if you do so.  </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>I still have a lot of writing to do so please check back often.   My writing will prioritized around what you find valuable.  I'm happy to revise any of it to make it more valuable to you. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>So, for now, have a look around. </p>
+<!-- /wp:paragraph -->",Welcome to my mentoring site!,"",inherit,closed,closed,"",229-revision-v1,"","",2024-02-17 21:28:29,2024-02-17 21:28:29,"",229,https://michaelkentburns.com/?p=230,"0",revision,"","0"
+232,1,2024-02-17 21:50:18,2024-02-17 21:50:18,"<!-- wp:paragraph -->
+<p>The initial construction process is complete enough that I'm ready for a soft opening.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>I welcome visitors and would greatly appreciate feedback.  After you have looked around a bit and think this might be helpful to you, please let me know.  I have not figured out the best way to handle subscriptions and memberships, so in the mean time please send an email to <a href=""mailto:MichaelKentBurns@gmail.com"">MichaelKentBurns@gmail.com</a>.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>When you get far enough to find one of my <a href=""https://michaelkentburns.com/index.php/take-a-challenge/"" data-type=""page"" data-id=""178"">challenges </a> please engage and let me know how it goes for you.   Each challenge should include a request to send me a detailed email, and I would greatly appreciate it if you do so.  </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>I still have a lot of writing to do so please check back often.   My writing will prioritized around what you find valuable.  I'm happy to revise any of it to make it more valuable to you. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>So, for now, have a look around. </p>
+<!-- /wp:paragraph -->",Welcome to my mentoring site!,"",inherit,closed,closed,"",229-revision-v1,"","",2024-02-17 21:50:18,2024-02-17 21:50:18,"",229,https://michaelkentburns.com/?p=232,"0",revision,"","0"
+233,1,2024-02-17 22:25:36,2024-02-17 22:25:36,"{
+    ""widget_block[14]"": {
+        ""value"": {
+            ""raw_instance"": {
+                ""content"": ""<!-- wp:jetpack/subscriptions {\""includeSocialFollowers\"":false,\""buttonOnNewLine\"":true,\""buttonWidth\"":\""100%\"",\""fontSize\"":\""13px\"",\""customFontSize\"":\""13px\"",\""borderWeight\"":0,\""spacing\"":0,\""className\"":\""is-style-compact\""} /-->""
+            }
+        },
+        ""type"": ""option"",
+        ""user_id"": 1,
+        ""date_modified_gmt"": ""2024-02-17 22:25:19""
+    }
+}","","",trash,closed,closed,"",36b31af8-afc9-49e2-9fc4-365674b05176,"","",2024-02-17 22:25:36,2024-02-17 22:25:36,"","0",https://michaelkentburns.com/?p=233,"0",customize_changeset,"","0"
+234,1,2024-02-17 22:27:38,2024-02-17 22:27:38,"{
+    ""sidebars_widgets[sidebar-1]"": {
+        ""value"": [
+            ""block-11"",
+            ""block-12"",
+            ""block-14""
+        ],
+        ""type"": ""option"",
+        ""user_id"": 1,
+        ""date_modified_gmt"": ""2024-02-17 22:26:19""
+    },
+    ""widget_block[11]"": {
+        ""value"": {
+            ""raw_instance"": {
+                ""content"": ""<!-- wp:latest-posts {\""postsToShow\"":7,\""displayPostContent\"":true,\""displayAuthor\"":true,\""displayPostDate\"":true,\""align\"":\""center\""} /-->""
+            }
+        },
+        ""type"": ""option"",
+        ""user_id"": 1,
+        ""date_modified_gmt"": ""2024-02-17 22:27:19""
+    }
+}","","",trash,closed,closed,"","01411389-40c6-4e9f-a8eb-3a830d30b170","","",2024-02-17 22:27:38,2024-02-17 22:27:38,"","0",https://michaelkentburns.com/?p=234,"0",customize_changeset,"","0"
+235,1,2024-02-18 20:58:38,2024-02-18 20:58:38,"{
+    ""sidebars_widgets[sidebar-1]"": {
+        ""value"": [
+            ""block-17"",
+            ""block-11"",
+            ""block-12"",
+            ""block-14""
+        ],
+        ""type"": ""option"",
+        ""user_id"": 1,
+        ""date_modified_gmt"": ""2024-02-18 20:56:56""
+    },
+    ""widget_block[17]"": {
+        ""value"": {
+            ""raw_instance"": {
+                ""content"": ""<!-- wp:heading {\""level\"":1} -->\n<h1 class=\""wp-block-heading\""><strong>Latest Blog Posts:</strong></h1>\n<!-- /wp:heading -->""
+            }
+        },
+        ""type"": ""option"",
+        ""user_id"": 1,
+        ""date_modified_gmt"": ""2024-02-18 20:58:38""
+    }
+}","","",trash,closed,closed,"",3cc6b093-fe35-4a86-8a04-921adf4147a5,"","",2024-02-18 20:58:38,2024-02-18 20:58:38,"","0",https://michaelkentburns.com/?p=235,"0",customize_changeset,"","0"
+236,1,2024-02-18 21:01:25,2024-02-18 21:01:25,"{
+    ""widget_block[17]"": {
+        ""value"": {
+            ""raw_instance"": {
+                ""content"": ""<!-- wp:heading -->\n<h2 class=\""wp-block-heading\""><strong>Latest Blog Posts:</strong></h2>\n<!-- /wp:heading -->""
+            }
+        },
+        ""type"": ""option"",
+        ""user_id"": 1,
+        ""date_modified_gmt"": ""2024-02-18 21:01:25""
+    }
+}","","",trash,closed,closed,"",a6d77718-4342-4ab5-b381-52861f2b6fef,"","",2024-02-18 21:01:25,2024-02-18 21:01:25,"","0",https://michaelkentburns.com/index.php/2024/02/18/a6d77718-4342-4ab5-b381-52861f2b6fef/,"0",customize_changeset,"","0"
+237,1,2024-02-18 21:25:31,2024-02-18 21:25:31,"{
+    ""widget_block[17]"": {
+        ""value"": {
+            ""raw_instance"": {
+                ""content"": ""<!-- wp:heading -->\n<h2 class=\""wp-block-heading\""><strong>Latest Blog Posts:</strong></h2>\n<!-- /wp:heading -->""
+            }
+        },
+        ""type"": ""option"",
+        ""user_id"": 1,
+        ""date_modified_gmt"": ""2024-02-18 21:12:26""
+    }
+}","","",trash,closed,closed,"","0a249d26-28e2-4a75-851a-fe6c87f8ab64","","",2024-02-18 21:25:31,2024-02-18 21:25:31,"","0",https://michaelkentburns.com/?p=237,"0",customize_changeset,"","0"
+239,1,2024-02-19 14:06:13,2024-02-19 14:06:13,"<!-- wp:paragraph -->
+<p>Because of the rapid pace of technology development and market requirements, most web and application development is done by integrated teams.  No one person can do it all themselves. It takes a team of specialists working individually and cross discipline to be successful. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class=""wp-block-heading"">Some of the roles that are needed are:</h2>
+<!-- /wp:heading -->
+
+<!-- wp:list -->
+<ul><!-- wp:list-item -->
+<li><strong>Project lead</strong> - responsible for planning how the individuals in the team can work together to complete the project.   This is usually done in cooperation with the whole team to come to consensus on next steps and how to keep the project moving.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Design lead</strong> - responsible for the technical design and requirements for each major piece of the solution.   This person is responsible for making sure that the contribution of all the team members will fit together and produce a good product.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Database designer</strong> - much of the interface between the different parts of the solution are stored in a database.   This person designs the specific tables, columns, and indexes needed to ensure proper communication and integrity.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Lead coder</strong> - this coder is the lead and will establish and enforce coding standards and facilitate code reviews.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Coder</strong> - an individual contributor that writes one or more specific code components. They may be front end, back end, or full stack coders depending on the languages they are proficient in. They will also design and write functional tests that ensure proper operation. These tests are often referred to as <strong>unit tests</strong> because they test the function of a specific code module.    </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Tester</strong> - a person responsible for designing an implementing test suites that ensure that the individual code components operate together.   This person will often work with the individual coders to ensure their unit tests are properly written.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Documenter</strong> - works with the individual team members to understand how their contributions work and writes functional internal documentation and/or end user documentation.  The documentation may be in the form of a user manual but will also likely have on screen components such as roll-over tool tips or info links like ⓘ.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Source controller</strong> - ensures that all of the artifacts of the team members are properly kept in a repository and that all changes to those artifacts are also captured in the repository.  </li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:heading -->
+<h2 class=""wp-block-heading""><a href=""https://en.wikipedia.org/wiki/Software_engineering"">Software engineering</a> team processes</h2>
+<!-- /wp:heading -->
+
+<!-- wp:list -->
+<ul><!-- wp:list-item -->
+<li><strong><a href=""https://en.wikipedia.org/wiki/Requirements_analysis"">Requirements analysis</a></strong></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Scope and effort estimation</strong> </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Prioritizing next steps and coordinating cadence and milestones</strong> - eg. <a href=""https://en.wikipedia.org/wiki/Agile_software_development"">Agile</a> </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong><a href=""https://en.wikipedia.org/wiki/Code_review"">Code reviews</a></strong></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong><a href=""https://en.wikipedia.org/wiki/Integration_testing"">Integration testing</a></strong></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong><a href=""https://en.wikipedia.org/wiki/Continuous_integration"">Continuous integration</a></strong></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong><a href=""https://en.wikipedia.org/wiki/Software_deployment"">Software deployment</a></strong> - </li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:heading -->
+<h2 class=""wp-block-heading""><a href=""https://en.wikipedia.org/wiki/Programming_tool"">Team tools</a></h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>The team processes are often facilitated by specialized software.  Here is a list of some of those.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><!-- wp:list-item -->
+<li><a href=""https://en.wikipedia.org/wiki/Repository_(version_control)""><strong>Project repository manager</strong></a> - eg. GitHub</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><a href=""https://en.wikipedia.org/wiki/Code_reviewing_software""><strong>Code review software</strong></a> - eg. <a href=""https://www.gerritcodereview.com/index.html"">Gerrit</a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Bug, feature, and project management system</strong> - eg. <a href=""https://www.atlassian.com/software/jira"">Jira</a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><a href=""https://en.wikipedia.org/wiki/List_of_unit_testing_frameworks""><strong>Unit testing framework</strong></a> - eg. </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Source, build, testing and deployment automation system</strong> - eg. <a href=""https://en.wikipedia.org/wiki/Jenkins_(software)"">Jenkins</a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><a href=""https://en.wikipedia.org/wiki/Continuous_integration"" target=""_blank"" rel=""noreferrer noopener""><strong>Continuous integration system</strong></a> - eg. GitHub Actions</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Deployment framework</strong> - eg. <a href=""https://en.wikipedia.org/wiki/Kubernetes"">Kubernetes</a></li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:heading -->
+<h2 class=""wp-block-heading"">Build your brand</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>The best way to build your skills as a team player and move up to more responsible positions is to find a role that you can already fill and join a team.   With a little effort you will be able to learn more about the other team members and their roles as well as learn more about the larger project.   As you develop your skills you can build a reputation of trust.   Open source software projects are a great opportunity because they depend on volunteer contributions.  But, it should be noted that all work done for open software projects is not done for free.  The companies or organizations that rely on open source software often have specific needs that are not necessarily shared by the community at large.   These organizations will often pay their employees, or outside developers, to work on their special needs.  A close friend of mine does exactly this at SAS where I retired from. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Many open source projects are dependent on other open source projects.  Working on one can give you valuable skills and understanding that can be a gateway to other projects.   </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Finally, you can build relationships with other developers and learn of other opportunities.  </p>
+<!-- /wp:paragraph -->",Working in a team,"",inherit,closed,closed,"",149-revision-v1,"","",2024-02-19 14:06:13,2024-02-19 14:06:13,"",149,https://michaelkentburns.com/?p=239,"0",revision,"","0"
+240,1,2024-02-19 16:48:36,2024-02-19 16:48:36,"{
+    ""nav_menu_item[223]"": {
+        ""value"": false,
+        ""type"": ""nav_menu_item"",
+        ""user_id"": 1,
+        ""date_modified_gmt"": ""2024-02-19 16:48:36""
+    }
+}","","",trash,closed,closed,"",8da4fc7b-cc5a-4b9e-9cba-f66eee7d08de,"","",2024-02-19 16:48:36,2024-02-19 16:48:36,"","0",https://michaelkentburns.com/index.php/2024/02/19/8da4fc7b-cc5a-4b9e-9cba-f66eee7d08de/,"0",customize_changeset,"","0"
+241,1,2024-02-19 16:48:57,2024-02-19 16:48:57,"{
+    ""nav_menu[11]"": {
+        ""value"": {
+            ""name"": ""Home menu"",
+            ""description"": """",
+            ""parent"": 0,
+            ""auto_add"": false
+        },
+        ""type"": ""nav_menu"",
+        ""user_id"": 1,
+        ""date_modified_gmt"": ""2024-02-19 16:48:57""
+    }
+}","","",trash,closed,closed,"",8069038d-fb1d-4a26-becb-bfb0d999c7cc,"","",2024-02-19 16:48:57,2024-02-19 16:48:57,"","0",https://michaelkentburns.com/index.php/2024/02/19/8069038d-fb1d-4a26-becb-bfb0d999c7cc/,"0",customize_changeset,"","0"
+242,1,2024-02-19 16:50:23,2024-02-19 16:50:23,"{
+    ""sidebars_widgets[sidebar-1]"": {
+        ""value"": [
+            ""block-19"",
+            ""block-12"",
+            ""block-14""
+        ],
+        ""type"": ""option"",
+        ""user_id"": 1,
+        ""date_modified_gmt"": ""2024-02-19 16:50:21""
+    },
+    ""widget_block[19]"": {
+        ""value"": {
+            ""raw_instance"": {
+                ""content"": ""<!-- wp:group {\""layout\"":{\""type\"":\""constrained\""}} -->\n<div class=\""wp-block-group\""><!-- wp:heading -->\n<h2 class=\""wp-block-heading\""><strong>Latest Blog Posts:</strong></h2>\n<!-- /wp:heading -->\n\n<!-- wp:latest-posts {\""postsToShow\"":7,\""displayPostContent\"":true,\""displayAuthor\"":true,\""displayPostDate\"":true,\""align\"":\""center\""} /--></div>\n<!-- /wp:group -->""
+            }
+        },
+        ""type"": ""option"",
+        ""user_id"": 1,
+        ""date_modified_gmt"": ""2024-02-19 16:50:21""
+    }
+}","","",trash,closed,closed,"",12e04b8a-dffa-49d2-8ef1-9c752f7414d9,"","",2024-02-19 16:50:23,2024-02-19 16:50:23,"","0",https://michaelkentburns.com/?p=242,"0",customize_changeset,"","0"
+243,1,2024-02-19 16:51:21,"0000-00-00 00:00:00","{
+    ""sidebars_widgets[sidebar-1]"": {
+        ""value"": [
+            ""block-19"",
+            ""block-11"",
+            ""block-12"",
+            ""block-14""
+        ],
+        ""type"": ""option"",
+        ""user_id"": 1,
+        ""date_modified_gmt"": ""2024-02-19 16:51:21""
+    },
+    ""widget_block[19]"": {
+        ""value"": {
+            ""raw_instance"": {
+                ""content"": ""<!-- wp:group {\""layout\"":{\""type\"":\""constrained\""}} -->\n<div class=\""wp-block-group\""><!-- wp:heading -->\n<h2 class=\""wp-block-heading\""><strong>Latest Blog Posts:</strong></h2>\n<!-- /wp:heading --></div>\n<!-- /wp:group -->""
+            }
+        },
+        ""type"": ""option"",
+        ""user_id"": 1,
+        ""date_modified_gmt"": ""2024-02-19 16:51:21""
+    },
+    ""widget_block[11]"": {
+        ""value"": {
+            ""encoded_serialized_instance"": ""YToxOntzOjc6ImNvbnRlbnQiO3M6MTMwOiI8IS0tIHdwOmxhdGVzdC1wb3N0cyB7InBvc3RzVG9TaG93Ijo3LCJkaXNwbGF5UG9zdENvbnRlbnQiOnRydWUsImRpc3BsYXlBdXRob3IiOnRydWUsImRpc3BsYXlQb3N0RGF0ZSI6dHJ1ZSwiYWxpZ24iOiJjZW50ZXIifSAvLS0+Ijt9"",
+            ""title"": """",
+            ""is_widget_customizer_js_value"": true,
+            ""instance_hash_key"": ""d0c658db7884ce2e6df4ea80a1469769"",
+            ""raw_instance"": {
+                ""content"": ""<!-- wp:latest-posts {\""postsToShow\"":7,\""displayPostContent\"":true,\""displayAuthor\"":true,\""displayPostDate\"":true,\""align\"":\""center\""} /-->""
+            }
+        },
+        ""type"": ""option"",
+        ""user_id"": 1,
+        ""date_modified_gmt"": ""2024-02-19 16:51:21""
+    }
+}","","",auto-draft,closed,closed,"",4c608bef-37de-4340-8e6c-2a5b26ae9533,"","",2024-02-19 16:51:21,"0000-00-00 00:00:00","","0",https://michaelkentburns.com/?p=243,"0",customize_changeset,"","0"
+244,1,2024-02-19 20:10:26,2024-02-19 20:10:26,"<!-- wp:paragraph -->
+<p>The initial construction process is complete enough that I'm ready for a soft opening.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>I welcome visitors and would greatly appreciate feedback.  After you have looked around a bit and think this might be helpful to you, please let me know.  On posts like this you can simply leave a comment.  It should also give you the option to subscribe when you submit the comment.  You can also subscribe on email to <a href=""mailto:MichaelKentBurns@gmail.com"">MichaelKentBurns@gmail.com</a>.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>When you get far enough to find one of my <a href=""https://michaelkentburns.com/index.php/take-a-challenge/"" data-type=""page"" data-id=""178"">challenges </a> please engage and let me know how it goes for you.   Each challenge should include a request to send me a detailed email, and I would greatly appreciate it if you do so.  </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>I still have a lot of writing to do so please check back often.   My writing will prioritized around what you find valuable.  I'm happy to revise any of it to make it more valuable to you. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>So, for now, have a look around. </p>
+<!-- /wp:paragraph -->",Welcome to my mentoring site!,"",inherit,closed,closed,"",229-autosave-v1,"","",2024-02-19 20:10:26,2024-02-19 20:10:26,"",229,https://michaelkentburns.com/?p=244,"0",revision,"","0"
+245,1,2024-02-19 20:10:49,2024-02-19 20:10:49,"<!-- wp:paragraph -->
+<p>The initial construction process is complete enough that I'm ready for a soft opening.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>I welcome visitors and would greatly appreciate feedback.  After you have looked around a bit and think this might be helpful to you, please let me know.  On posts like this you can simply leave a comment.  It should also give you the option to subscribe when you submit the comment.  You can also subscribe on the bottom of the side bar.  Lastly you can simply email to <a href=""mailto:MichaelKentBurns@gmail.com"">MichaelKentBurns@gmail.com</a>.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>When you get far enough to find one of my <a href=""https://michaelkentburns.com/index.php/take-a-challenge/"" data-type=""page"" data-id=""178"">challenges </a> please engage and let me know how it goes for you.   Each challenge should include a request to send me a detailed email, and I would greatly appreciate it if you do so.  </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>I still have a lot of writing to do so please check back often.   My writing will prioritized around what you find valuable.  I'm happy to revise any of it to make it more valuable to you. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>So, for now, have a look around. </p>
+<!-- /wp:paragraph -->",Welcome to my mentoring site!,"",inherit,closed,closed,"",229-revision-v1,"","",2024-02-19 20:10:49,2024-02-19 20:10:49,"",229,https://michaelkentburns.com/?p=245,"0",revision,"","0"
+246,1,2024-02-20 17:23:54,"0000-00-00 00:00:00","",Auto Draft,"",auto-draft,open,open,"","","","",2024-02-20 17:23:54,"0000-00-00 00:00:00","","0",https://michaelkentburns.com/?p=246,"0",post,"","0"
