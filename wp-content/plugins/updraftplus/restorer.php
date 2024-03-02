@@ -3513,13 +3513,16 @@ class Updraft_Restorer {
 			} elseif (preg_match('/^SET @@GLOBAL.GTID_PURGED/i', $sql_line)) {
 				// skip the SET @@GLOBAL.GTID_PURGED command
 				$sql_type = 17;
+			} elseif (preg_match('/^\/\*\!\d+\s+SET\s+(?:[^,].*)?(?=SQL_MODE\s*=\s*\'|\")/i', $sql_line)) {
+				// skip the SET SQL_MODE command because we adjust the SQL mode dynamically during restoration and offer users the flexibility to change it themselves using action or filter, we don't use the SQL mode specified in the dumped file. Skipping this line prevents any unintended changes to the default SQL mode already set by our system or any custom mode chosen by the user.
+				$sql_type = 18;
 			} else {
 				// Prevent the previous value of $sql_type being retained for an unknown type
 				$sql_type = 0;
 			}
 
-			// Do not execute "USE" or "CREATE|DROP DATABASE" or "SET @@GLOBAL.GTID_PURGED" commands
-			if (6 != $sql_type && 7 != $sql_type && (9 != $sql_type || false == $this->triggers_forbidden) && 10 != $sql_type && 17 != $sql_type) {
+			// Do not execute "USE" or "CREATE|DROP DATABASE" or "SET @@GLOBAL.GTID_PURGED" or "SET SQL_MODE" commands
+			if (!in_array($sql_type, array(6, 7, 10, 17, 18)) && (9 != $sql_type || false == $this->triggers_forbidden)) {
 				$do_exec = $this->sql_exec($sql_line, $sql_type);
 				if (is_wp_error($do_exec)) return $do_exec;
 			} else {
@@ -3894,6 +3897,7 @@ class Updraft_Restorer {
 	 * 15 UNLOCK
 	 * 16 DROP VIEW
 	 * 17 SET GLOBAL.GTID_PURGED
+	 * 18 SET SQL_MODE|@OLD_SQL_MODE
 	 *
 	 * @param  String  $sql_line            sql line to execute
 	 * @param  Integer $sql_type            sql type

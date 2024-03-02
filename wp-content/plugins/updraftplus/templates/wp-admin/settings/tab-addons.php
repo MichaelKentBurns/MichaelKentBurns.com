@@ -79,7 +79,7 @@ if ($updraftplus_checkout_embed) {
 						<span class="installed updraft-yes"><span class="dashicons dashicons-yes" aria-label="<?php esc_attr_e('Yes', 'updraftplus');?>"></span> <?php _e('Installed', 'updraftplus');?></span>
 					</td>
 					<td>
-						<a class="button button-primary" href="<?php esc_attr(apply_filters('updraftplus_com_link', $updraftplus->get_url('shop_premium')));?>" <?php echo $checkout_embed_premium_attribute; ?>><?php _e('Upgrade now', 'updraftplus');?></a>
+						<a class="button button-primary" href="<?php echo esc_attr(apply_filters('updraftplus_com_link', $updraftplus->get_url('shop_premium')));?>" <?php echo $checkout_embed_premium_attribute; ?>><?php _e('Upgrade now', 'updraftplus');?></a>
 					</td>
 				</tr>
 				<tr>
@@ -296,7 +296,7 @@ if ($updraftplus_checkout_embed) {
 						<h4><?php _e('UpdraftVault storage', 'updraftplus');?></h4>
 						<p>
 							<?php _e('UpdraftPlus has its own embedded storage option, providing a zero-hassle way to download, store and manage all your backups from one place.', 'updraftplus');?>
-							<a href="<?php esc_attr(apply_filters('updraftplus_com_link', 'https://updraftplus.com/landing/updraftvault'));?>"><?php _e('Premium / Find out more', 'updraftplus');?></a>
+							<a href="<?php echo esc_attr(apply_filters('updraftplus_com_link', 'https://updraftplus.com/landing/updraftvault'));?>"><?php _e('Premium / Find out more', 'updraftplus');?></a>
 						</p>
 						
 					</td>
@@ -313,7 +313,7 @@ if ($updraftplus_checkout_embed) {
 						<span class="installed updraft-yes"><span class="dashicons dashicons-yes" aria-label="<?php esc_attr_e('Yes', 'updraftplus');?>"></span> <?php _e('Installed', 'updraftplus');?></span>
 					</td>
 					<td>
-						<p><a class="button button-primary" href="<?php esc_attr(apply_filters('updraftplus_com_link', $updraftplus->get_url('shop_premium')));?>" <?php echo $checkout_embed_premium_attribute; ?>><?php _e('Upgrade now', 'updraftplus');?></a></p>
+						<p><a class="button button-primary" href="<?php echo esc_attr(apply_filters('updraftplus_com_link', $updraftplus->get_url('shop_premium')));?>" <?php echo $checkout_embed_premium_attribute; ?>><?php _e('Upgrade now', 'updraftplus');?></a></p>
 					</td>
 				</tr>
 				</tbody>

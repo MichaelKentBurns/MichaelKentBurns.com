@@ -3,7 +3,7 @@ Contributors: Backup with UpdraftPlus, DavidAnderson, pmbaldha, DNutbourne, apor
 Tags: backup, database backup, wordpress backup, cloud backup, migration
 Requires at least: 3.2
 Tested up to: 6.4
-Stable tag: 1.23.16
+Stable tag: 1.24.1
 Author URI: https://updraftplus.com
 Donate link: https://david.dw-perspective.org.uk/donate
 License: GPLv3 or later
@@ -182,6 +182,24 @@ N.B. Paid versions of UpdraftPlus Backup / Restore have a version number which i
 The [UpdraftPlus backup blog](https://updraftplus.com/news/) is the best place to learn in more detail about any important changes.
 
 N.B. Paid versions of UpdraftPlus Backup / Restore have a version number which is 1 higher in the first digit, and has an extra component on the end, but the changelog below still applies. i.e. changes listed for 1.23.1.x of the free version correspond to changes made in 2.23.1.x of the paid version.
+
+= 1.24.1 - 21/Feb/2024 =
+
+* FEATURE: Implement Backblaze Object Lock support (Premium version)
+* FIX: The email backup and basic report setting didn't work causing notification email confirming backup status couldn't be delivered to admin's email address (free version)
+* FIX: Fix WP-Optimize premium discovery for UpdraftCentral
+* FIX: Regression in 1.23.16 for correcting calls to translation functions which then caused some HTML attributes to be empty
+* FIX: Restoring backup sets via Migrate/Clone tab had caused all associated backup entities being downloaded immediately ignoring user preferences about the entities they wanted to restore
+* FIX: Third-party library conflict (phpseclib) with WP All Import Pro and AIO WP Migration plugins that caused failure in testing SFTP credentials and backing up to the SFTP remote storage
+* FIX: Restore compatibility with WordPress multisite running on versions < 4.9 caused by use of function not present before then
+* TWEAK: Add new translation entries for UpdraftCentral 
+* TWEAK: Got rid of PHP 8.2 deprecation messages caused by a null value being passed to the htmlspecialchars() function and creation of dynamic property
+* TWEAK: Got rid of PHP 8.3 deprecation messages caused by calling get_class() without arguments.
+* TWEAK: Refactor methods in UpdraftPlus_Database_Utility class
+* TWEAK: Send an email if the backup directory is not writable.
+* TWEAK: Add and set the `filename_only` parameter to reduce search times when looking for specific backup files in Dropbox.
+* TWEAK: Autoload PHP secure communication library (phpseclib) in a better way that would prevent already-loaded phpseclib classes (by other plugin) from being used in certain operations
+* TWEAK: Add updraftplus_backup_db_header_append filter to allow site owners to include arbitrary content in their database backup header
 
 = 1.23.16 - 23/Dec/2023 =
 
@@ -1878,4 +1896,4 @@ Non-English translators are provided by volunteers, and wordpress.org does not g
 We recognise and thank those mentioned at https://updraftplus.com/acknowledgements/ for code and/or libraries used and/or modified under the terms of their open source licences.
 
 == Upgrade Notice ==
-* 1.23.16: Various small tweaks. A recommended update for all.
+* 1.24.1: Resolve PHPSecLib conflicts with other plugins, Backblaze Object Lock support, and various small tweaks. A recommended update for all.

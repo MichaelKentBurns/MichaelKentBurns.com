@@ -20,7 +20,7 @@ class UpdraftCentral_Main {
 	 * Class constructor
 	 */
 	public function __construct() {
-		
+
 		add_action('udrpc_log', array($this, 'udrpc_log'), 10, 3);
 		
 		add_action('wp_ajax_updraftcentral_receivepublickey', array($this, 'wp_ajax_updraftcentral_receivepublickey'));
@@ -427,10 +427,12 @@ class UpdraftCentral_Main {
 	 */
 	public function get_udrpc($indicator_name = 'migrator.updraftplus.com') {
 
-		global $updraftcentral_host_plugin;
+		global $updraftcentral_host_plugin, $updraftplus;
+
+		$updraftplus->ensure_phpseclib();
 		
-		if (!class_exists('UpdraftPlus_Remote_Communications')) include_once($updraftcentral_host_plugin->get_host_dir().'/vendor/team-updraft/common-libs/src/updraft-rpc/class-udrpc.php');
-		$ud_rpc = new UpdraftPlus_Remote_Communications($indicator_name);
+		if (!class_exists('UpdraftPlus_Remote_Communications_V2')) include_once($updraftcentral_host_plugin->get_host_dir().'/vendor/team-updraft/common-libs/src/updraft-rpc/class-udrpc2.php');
+		$ud_rpc = new UpdraftPlus_Remote_Communications_V2($indicator_name);
 		$ud_rpc->set_can_generate(true);
 		
 		return $ud_rpc;

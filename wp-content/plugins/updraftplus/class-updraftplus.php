@@ -312,8 +312,9 @@ class UpdraftPlus {
 	 * @return array
 	 */
 	public function get_udrpc($indicator_name = 'migrator.updraftplus.com') {
-		if (!class_exists('UpdraftPlus_Remote_Communications')) include_once(apply_filters('updraftplus_class_udrpc_path', UPDRAFTPLUS_DIR.'/vendor/team-updraft/common-libs/src/updraft-rpc/class-udrpc.php', $this->version));
-		$ud_rpc = new UpdraftPlus_Remote_Communications($indicator_name);
+		$this->ensure_phpseclib();
+		if (!class_exists('UpdraftPlus_Remote_Communications_V2')) include_once(apply_filters('updraftplus_class_udrpc_path', UPDRAFTPLUS_DIR.'/vendor/team-updraft/common-libs/src/updraft-rpc/class-udrpc2.php', $this->version));
+		$ud_rpc = new UpdraftPlus_Remote_Communications_V2($indicator_name);
 		$ud_rpc->set_can_generate(true);
 		return $ud_rpc;
 	}
@@ -321,28 +322,16 @@ class UpdraftPlus {
 	/**
 	 * Ensure that the indicated phpseclib classes are available
 	 *
-	 * @param String|Array $classes - a class, or list of classes. There used to be a second parameter with paths to include; but this is now inferred from $classes; and there's no backwards compatibility problem because sending more parameters than are used is acceptable in PHP.
-	 *
 	 * @return Boolean|WP_Error Boolean true if the given classes is already included or autoloader is successfully registered, otherwise WP Error
 	 */
-	public function ensure_phpseclib($classes = array()) {
+	public function ensure_phpseclib() {
 
 		if (!$this->phpseclib_requirements_met()) {
 			$this->maybe_log_phpseclib_warnings();
 			// return new WP_Error('phpseclib_php_version', "PHP Secure Communication Library doesn't meet the minimum PHP requirements.");
 		}
-
-		$classes = (array) $classes;
 	
 		$this->no_deprecation_warnings_on_php7();
-
-		$any_missing = false;
-		
-		foreach ($classes as $cl) {
-			if (!class_exists($cl)) $any_missing = true;
-		}
-
-		if (!$any_missing) return true;
 		
 		$ret = true;
 		
@@ -359,8 +348,8 @@ class UpdraftPlus {
 		
 		$phpseclib_dir = UPDRAFTPLUS_DIR.'/vendor/phpseclib/phpseclib/phpseclib';
 		if (false === strpos(get_include_path(), $phpseclib_dir)) set_include_path(get_include_path().PATH_SEPARATOR.$phpseclib_dir);
+		if (version_compare(PHP_VERSION, '5.3', '>=')) updraft_try_include_file('vendor/autoload.php', 'require_once');
 		spl_autoload_register(array($this, 'autoload_phpseclib_class'));
-		if (version_compare(PHP_VERSION, '5.3', '>=')) updraft_try_include_file('includes/phpseclib-migration.php', 'require_once');
 		return $ret;
 	}
 
@@ -376,20 +365,9 @@ class UpdraftPlus {
 		if (file_exists($phpseclib_dir.'/'.$class.'.php') == true) { // check whether the class name that has been transformed into directory paths mathces with one of the phpseclib class files
 			$phpseclib_class_v2 = 'phpseclib\\'.str_replace('/', '\\', $class);
 			$phpseclib_class_v1 = str_replace('/', '_', $class);
-			/**
-			 * Here we try to cover all the possibilites
-			 *
-			 * When running on PHP 5.2,
-			 * if there's other plugin that uses manual (include/require) or autoloader (doesn't matter whose autoloader runs first), if the given class has been succesfully included/autoloaded or it already exists then code below will do nothing (no-op) but this means there's a chance that our all phpseclib-related features can still run in this condition because our code still uses the phpseclib v1 class name
-			 * if no other plugin nor other autoloder has successfully loaded the given class then we will just do nothing as well as we now use the phpseclib v2 and can only load the given class while it's running on PHP 5.3+ due to the PHP namespace. Normally, this will later throw a PHP "class not found" fatal error
-			 *
-			 * When running on PHP 5.3+
-			 * if there's other plugin that uses manual (include/require) or autoloader (doesn't matter whose autoloader runs first), if the given class is a phpseclib v1 class and has been succesfully included/autoloaded or it already exists then we don't do the class aliasing, we just load the phpseclib v2 class namespace of the given class (if not already loaded by others)
-			 * however, if the given class is a phpseclib v1 class and is not yet included/autoloaded or it doesn't exist then we do the class aliasing, only if we have successfully loaded the phpseclib v2 class namespace of the given class or other plugin has already done that (using their own phpseclib library)
-			 * if the given class is phpseclib v2 class namespace then we do the class aliasing only if the phpseclib v1 class has not been loaded yet or doesn't exist and this should be done after phpseclib v2 class has successfully been loaded (doesn't matter what plugin loads it)
-			 */
+			$phpseclib_class_v1_prefixed = 'phpseclib_'.$phpseclib_class_v1;
 			if (version_compare(PHP_VERSION, '5.3', '>=') && !class_exists($phpseclib_class_v2)) require_once($phpseclib_dir.'/'.$class.'.php');
-			if (class_exists($phpseclib_class_v2) && !class_exists($phpseclib_class_v1)) class_alias($phpseclib_class_v2, $phpseclib_class_v1); // phpcs:ignore PHPCompatibility.FunctionUse.NewFunctions.class_aliasFound -- the use of class_alias here to make sure that existing classes like `Crypt_Rijndael` (which is now phpseclib/Crypt/Rijndael) can still be used without having to change old class names in several places.
+			if (class_exists($phpseclib_class_v2) && !class_exists($phpseclib_class_v1_prefixed)) class_alias($phpseclib_class_v2, $phpseclib_class_v1_prefixed); // phpcs:ignore PHPCompatibility.FunctionUse.NewFunctions.class_aliasFound -- the use of class_alias here to make sure that existing classes like `Crypt_Rijndael` (which is now phpseclib/Crypt/Rijndael) can still be used without having to change old class names in several places.
 		}
 	}
 
@@ -911,8 +889,9 @@ class UpdraftPlus {
 	public function get_wordpress_version() {
 		static $got_wp_version = false;
 		if (!$got_wp_version) {
+			// This doesn't need to be global, but is kept just in case version.php changes its way of doing things in a future WP core release
 			global $wp_version;
-			@include(ABSPATH.WPINC.'/version.php');// phpcs:ignore Generic.PHP.NoSilencedErrors.Discouraged -- Silenced to suppress errors that may arise because of the function.
+			include(ABSPATH.WPINC.'/version.php');
 			$got_wp_version = $wp_version;
 		}
 		return $got_wp_version;
@@ -3294,6 +3273,8 @@ class UpdraftPlus {
 		if (!is_file($this->logfile_name)) {
 			$this->log('Failed to open log file ('.$this->logfile_name.') - you need to check your UpdraftPlus settings (your chosen directory for creating files in is not writable, or you ran out of disk space). Backup aborted.');
 			$this->log(__('Could not create files in the backup directory.', 'updraftplus').' '.__('Backup aborted - check your UpdraftPlus settings.', 'updraftplus'), 'error');
+			$final_message = __('UpdraftPlus is unable to perform backups as your backup directory is not writable or the disk space is full.', 'updraftplus').' '.__('Please check the backup directory and ensure it is writable so that backups may continue.', 'updraftplus');
+			$this->send_results_email($final_message, $this->jobdata);
 			return false;
 		}
 
@@ -5794,8 +5775,8 @@ class UpdraftPlus {
 			}
 
 			// Put the options table first
-			$updraftplus_database_utility = new UpdraftPlus_Database_Utility($key, $table_prefix_raw, $dbhandle);
-			usort($all_tables, array($updraftplus_database_utility, 'backup_db_sorttables'));
+			UpdraftPlus_Database_Utility::init($key, $table_prefix_raw, $dbhandle);
+			usort($all_tables, array('UpdraftPlus_Database_Utility', 'backup_db_sorttables'));
 
 			$all_table_names = array_map(array($this, 'cb_get_name'), $all_tables);
 			$db_tables_array[$key] = $all_table_names;

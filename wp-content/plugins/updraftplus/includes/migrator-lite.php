@@ -26,6 +26,118 @@ class UpdraftPlus_Migrator_Lite {
 	public $new_blogid;
 
 	/**
+	 * Whether to use $wpdb or not
+	 *
+	 * @var Bool
+	 */
+	private $use_wpdb;
+
+	/**
+	 * Table prefix
+	 *
+	 * @var String
+	 */
+	private $base_prefix;
+
+	/**
+	 * The database handle object or false boolean
+	 *
+	 * @var Mixed
+	 */
+	private $mysql_dbh;
+
+	/**
+	 * Whether the object is using mysqli or not
+	 *
+	 * @var Boolean
+	 */
+	private $use_mysqli;
+
+	/**
+	 * Variable to store migration progress
+	 *
+	 * @var Array
+	 */
+	private $report;
+
+	/**
+	 * The site url
+	 *
+	 * @var String
+	 */
+	protected $siteurl;
+
+	/**
+	 * The old site url
+	 *
+	 * @var String
+	 */
+	private $old_siteurl;
+
+	/**
+	 * The home url
+	 *
+	 * @var String
+	 */
+	protected $home;
+
+	/**
+	 * The old home url
+	 *
+	 * @var String
+	 */
+	private $old_home;
+
+	/**
+	 * The wp-content url
+	 *
+	 * @var String
+	 */
+	protected $content;
+
+	/**
+	 * The old wp-content url
+	 *
+	 * @var String
+	 */
+	protected $old_content;
+
+	/**
+	 * The uploads url
+	 *
+	 * @var String
+	 */
+	protected $uploads;
+
+	/**
+	 * The old uploads url
+	 *
+	 * @var String
+	 */
+	protected $old_uploads;
+	
+	/**
+	 * Tables for search and replace operation
+	 *
+	 * @var Array
+	 */
+	private $which_tables;
+
+	/**
+	 * Tables that have been searched and replaced
+	 *
+	 * @var Array
+	 */
+	private $tables_replaced;
+
+	/**
+	 * Sites array of multisite
+	 *
+	 * @var Array
+	 */
+	private $original_sites;
+
+	/**
 	 * Constructor, called during UD initialisation
 	 */
 	public function __construct() {

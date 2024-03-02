@@ -1427,7 +1427,7 @@ class UpdraftPlus_BackupModule_googledrive extends UpdraftPlus_BackupModule {
 					$put_flag = FILE_APPEND;
 					$headers = array('Range' => 'bytes='.$existing_size.'-'.$end);
 				} else {
-					$put_flag = null;
+					$put_flag = 0;
 					$headers = ($end < $size) ? array('Range' => 'bytes=0-'.$end) : array();
 				}
 

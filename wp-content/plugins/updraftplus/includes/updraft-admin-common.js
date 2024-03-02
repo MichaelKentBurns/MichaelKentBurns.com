@@ -446,7 +446,7 @@ function updraft_delete_old_dirs() {
 }
 
 function updraft_initiate_restore(whichset) {
-	jQuery('#updraft-navtab-backups-content .updraft_existing_backups button[data-backup_timestamp="'+whichset+'"]').trigger('click');
+	jQuery('#updraft-navtab-backups-content .updraft_existing_backups .restore-button button[data-backup_timestamp="'+whichset+'"]').trigger('click');
 }
 
 function updraft_restore_setoptions(entities) {
@@ -3460,57 +3460,59 @@ jQuery(function($) {
 					// whichselected.push([ 'wpcore', 0 ]);
 					// }
 					$('.updraft-restore--stages li').removeClass('active').eq(1).addClass('active');
-					$('#updraft-restore-modal-stage1').slideUp('slow');
-					$('#updraft-restore-modal-stage2').show();
-					updraft_restore_stage = 2;
-					var pretty_date = $('.updraft_restore_date').first().text();
-					// Create the downloader active widgets
-	
-					// See if we some are already known to be downloaded - in which case, skip creating the download widget. (That saves on HTTP round-trips, as each widget creates a new POST request. Of course, this is at the expense of one extra one here).
-					var which_to_download = whichselected;
-					var backup_timestamp = $('#updraft_restore_timestamp').val();
-	
-					try {
-						$('.updraft-restore--next-step').prop('disabled', true);
-						$('#updraft-restore-modal-stage2a').html('<span class="dashicons dashicons-update rotate"></span> '+updraftlion.maybe_downloading_entities);
-						updraft_send_command('whichdownloadsneeded', {
-							downloads: whichselected,
-							timestamp: backup_timestamp
-						}, function(response) {
-							$('.updraft-restore--next-step').prop('disabled', false);
-							if (response.hasOwnProperty('downloads')) {
-								console.log('UpdraftPlus: items which still require downloading follow');
-								which_to_download = response.downloads;
-								console.log(which_to_download);
-							}
-	
-							// Kick off any downloads, if needed
-							if (0 == which_to_download.length) {
-								updraft_restorer_checkstage2(0);
-							} else {
-								for (var i=0; i<which_to_download.length; i++) {
-									// updraft_downloader(base, backup_timestamp, what, whicharea, set_contents, prettydate, async)
-									updraft_downloader('udrestoredlstatus_', backup_timestamp, which_to_download[i][0], '#ud_downloadstatus2', which_to_download[i][1], pretty_date, false);
-								}
-							}
-
-						}, { alert_on_error: false, error_callback: function(response, status, error_code, resp) {
-								if (typeof resp !== 'undefined' && resp.hasOwnProperty('fatal_error')) {
-								console.error(resp.fatal_error_message);
-								$('#updraft-restore-modal-stage2a').html('<p style="color:red;">'+resp.fatal_error_message+'</p>');
-								} else {
-								var error_message = "updraft_send_command: error: "+status+" ("+error_code+")";
-								$('#updraft-restore-modal-stage2a').html('<p style="color:red; margin: 5px;">'+error_message+'</p>');
-								console.log(error_message);
-								console.log(response);
-								}
+					$('#updraft-restore-modal-stage1').slideUp('slow', function() {
+						$('#updraft-restore-modal-stage2').show(100, function() {
+							updraft_restore_stage = 2;
+							var pretty_date = $('.updraft_restore_date').first().text();
+							// Create the downloader active widgets
+			
+							// See if we some are already known to be downloaded - in which case, skip creating the download widget. (That saves on HTTP round-trips, as each widget creates a new POST request. Of course, this is at the expense of one extra one here).
+							var which_to_download = whichselected;
+							var backup_timestamp = $('#updraft_restore_timestamp').val();
+			
+							try {
+								$('.updraft-restore--next-step').prop('disabled', true);
+								$('#updraft-restore-modal-stage2a').html('<span class="dashicons dashicons-update rotate"></span> '+updraftlion.maybe_downloading_entities);
+								updraft_send_command('whichdownloadsneeded', {
+									downloads: whichselected,
+									timestamp: backup_timestamp
+								}, function(response) {
+									$('.updraft-restore--next-step').prop('disabled', false);
+									if (response.hasOwnProperty('downloads')) {
+										console.log('UpdraftPlus: items which still require downloading follow');
+										which_to_download = response.downloads;
+										console.log(which_to_download);
+									}
+			
+									// Kick off any downloads, if needed
+									if (0 == which_to_download.length) {
+										updraft_restorer_checkstage2(0);
+									} else {
+										for (var i=0; i<which_to_download.length; i++) {
+											// updraft_downloader(base, backup_timestamp, what, whicharea, set_contents, prettydate, async)
+											updraft_downloader('udrestoredlstatus_', backup_timestamp, which_to_download[i][0], '#ud_downloadstatus2', which_to_download[i][1], pretty_date, false);
+										}
+									}
+		
+								}, { alert_on_error: false, error_callback: function(response, status, error_code, resp) {
+										if (typeof resp !== 'undefined' && resp.hasOwnProperty('fatal_error')) {
+										console.error(resp.fatal_error_message);
+										$('#updraft-restore-modal-stage2a').html('<p style="color:red;">'+resp.fatal_error_message+'</p>');
+										} else {
+										var error_message = "updraft_send_command: error: "+status+" ("+error_code+")";
+										$('#updraft-restore-modal-stage2a').html('<p style="color:red; margin: 5px;">'+error_message+'</p>');
+										console.log(error_message);
+										console.log(response);
+										}
+									}
+								});
+							} catch (err) {
+								console.log("UpdraftPlus: error (follows) when looking for items needing downloading");
+								console.log(err);
+								alert(updraftlion.jsonnotunderstood);
 							}
 						});
-					} catch (err) {
-						console.log("UpdraftPlus: error (follows) when looking for items needing downloading");
-						console.log(err);
-						alert(updraftlion.jsonnotunderstood);
-					}
+					});
 	
 					// Make sure all are downloaded
 				} else if (2 == updraft_restore_stage) {

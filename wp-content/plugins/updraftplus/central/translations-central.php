@@ -89,4 +89,11 @@ return array(
 	'copy_to_clipboard' => __('Copy to clipboard', 'updraftplus'),
 	'key_copied' => __('The key was copied to the clipboard.', 'updraftplus'),
 	'unable_to_copy' => __('The attempt to copy to the clipboard failed.', 'updraftplus'),
+	'wpo_not_active' => __('WP_Optimize is not installed or active.', 'updraftplus'),
+	'log_file_not_exist' => __('Log file does not exist or could not be read.', 'updraftplus'),
+	'security_check_failed' => __('Security check failed; try refreshing the page.', 'updraftplus').' '.__('If refreshing the page does not help then perhaps you do not have sufficient privilege to manage WP-Optimize.', 'updraftplus'),
+	'no_such_command' => __('No such command found.', 'updraftplus'),
+	'command_not_allowed' => __('You are not allowed to run this command.', 'updraftplus'),
+	'command_not_found' => __('The command is either not found or not allowed.', 'updraftplus'),
+	'network_admin_only' => __('The command can only be executed by a network admin.', 'updraftplus'),
 );
