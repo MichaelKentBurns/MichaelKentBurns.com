@@ -261,9 +261,9 @@
 <p>Michael lives near Cedar Park, Texas with his wife Mary.</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:group {""layout"":{""type"":""flex"",""flexWrap"":""nowrap""}} -->
-<div class=""wp-block-group""><!-- wp:image {""id"":39,""width"":""326px"",""height"":""244px"",""sizeSlug"":""large"",""linkDestination"":""none""} -->
-<figure class=""wp-block-image size-large is-resized""><img src=""https://michaelkentburns.com/wp-content/uploads/2023/04/IMG_1613-1024x768.jpeg"" alt="""" class=""wp-image-39"" style=""width:326px;height:244px""/></figure>
+<!-- wp:group {""layout"":{""type"":""flex"",""flexWrap"":""nowrap"",""justifyContent"":""space-between""}} -->
+<div class=""wp-block-group""><!-- wp:image {""id"":39,""width"":""309px"",""height"":""auto"",""aspectRatio"":""1.3360655737704918"",""sizeSlug"":""large"",""linkDestination"":""none""} -->
+<figure class=""wp-block-image size-large is-resized""><img src=""https://michaelkentburns.com/wp-content/uploads/2023/04/IMG_1613-1024x768.jpeg"" alt="""" class=""wp-image-39"" style=""aspect-ratio:1.3360655737704918;width:309px;height:auto""/></figure>
 <!-- /wp:image -->
 
 <!-- wp:image {""id"":169,""width"":""324px"",""height"":""auto"",""sizeSlug"":""large"",""linkDestination"":""none""} -->
@@ -276,7 +276,7 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p>Michael is a 40 year veteran software engineer.  The last 33 years was as a principal systems developer at <a href=""http://sas.com"">SAS Institute</a>.  His main responsibility was the enterprise metadata server that connects all SAS products. </p>
+<p>Michael is a 40 year veteran software engineer.  The last 33 years was as a principal systems developer at <a href=""http://www.sas.com"">SAS Institute</a>.  His main responsibility was the <a href=""https://www.sas.com/en_us/search.html?q=metadata%20server"">enterprise metadata server</a> that connects all SAS products. </p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
@@ -303,7 +303,7 @@
 
 <!-- wp:social-links -->
 <ul class=""wp-block-social-links""></ul>
-<!-- /wp:social-links -->",About Michael,"",publish,closed,closed,"",about-michael,"","",2024-02-16 16:28:39,2024-02-16 16:28:39,"","0",https://michaelkentburns.com/?page_id=22,"0",page,"","0"
+<!-- /wp:social-links -->",About Michael,"",publish,closed,closed,"",about-michael,"","",2024-02-27 16:45:58,2024-02-27 16:45:58,"","0",https://michaelkentburns.com/?page_id=22,"0",page,"","0"
 23,1,2023-03-30 21:59:16,2023-03-30 21:59:16,"<!-- wp:paragraph -->
 <p>Michael is a 40 year veteran software engineer.</p>
 <!-- /wp:paragraph -->
@@ -1721,8 +1721,12 @@
 
 <!-- wp:list-item -->
 <li>Find your way around this site:</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><a href=""https://michaelkentburns.com/index.php/using-xampp-for-development-work/"" data-type=""page"" data-id=""247"">Install a full stack on your local development computer</a></li>
 <!-- /wp:list-item --></ul>
-<!-- /wp:list -->",How to ...,"",publish,closed,closed,"",how-to,"","",2024-01-20 22:18:01,2024-01-20 22:18:01,"","0",https://michaelkentburns.com/?page_id=108,"0",page,"","0"
+<!-- /wp:list -->",How to ...,"",publish,closed,closed,"",how-to,"","",2024-02-24 13:18:53,2024-02-24 13:18:53,"","0",https://michaelkentburns.com/?page_id=108,"0",page,"","0"
 109,1,2024-02-16 16:02:49,2024-01-18 00:25:08,"",How to …,"",publish,closed,closed,"",109,"","",2024-02-16 16:02:49,2024-02-16 16:02:49,"","0",https://michaelkentburns.com/index.php/2024/01/18/109/,12,nav_menu_item,"","0"
 110,1,2024-01-18 00:25:08,2024-01-18 00:25:08,"<!-- wp:list -->
 <ul><!-- wp:list-item -->
@@ -6260,56 +6264,6 @@
         ""date_modified_gmt"": ""2024-02-16 16:02:49""
     }
 }","","",trash,closed,closed,"",75f17320-39a7-46d4-b0f9-7efc1df3af66,"","",2024-02-16 16:02:49,2024-02-16 16:02:49,"","0",https://michaelkentburns.com/?p=207,"0",customize_changeset,"","0"
-208,1,2024-02-16 16:03:53,"0000-00-00 00:00:00","{
-    ""nav_menu_item[60]"": {
-        ""value"": {
-            ""menu_item_parent"": 0,
-            ""object_id"": 59,
-            ""object"": ""page"",
-            ""type"": ""post_type"",
-            ""type_label"": ""Block editor"",
-            ""url"": ""https://michaelkentburns.com/index.php/work-globally/"",
-            ""title"": """",
-            ""target"": """",
-            ""attr_title"": """",
-            ""description"": """",
-            ""classes"": """",
-            ""xfn"": """",
-            ""nav_menu_term_id"": 11,
-            ""position"": 7,
-            ""status"": ""publish"",
-            ""original_title"": ""Work globally"",
-            ""_invalid"": false
-        },
-        ""type"": ""nav_menu_item"",
-        ""user_id"": 1,
-        ""date_modified_gmt"": ""2024-02-16 16:03:53""
-    },
-    ""nav_menu_item[80]"": {
-        ""value"": {
-            ""menu_item_parent"": 0,
-            ""object_id"": 79,
-            ""object"": ""page"",
-            ""type"": ""post_type"",
-            ""type_label"": ""Block editor"",
-            ""url"": ""https://michaelkentburns.com/index.php/finding-work/"",
-            ""title"": """",
-            ""target"": """",
-            ""attr_title"": """",
-            ""description"": """",
-            ""classes"": """",
-            ""xfn"": """",
-            ""nav_menu_term_id"": 11,
-            ""position"": 8,
-            ""status"": ""publish"",
-            ""original_title"": ""Finding work"",
-            ""_invalid"": false
-        },
-        ""type"": ""nav_menu_item"",
-        ""user_id"": 1,
-        ""date_modified_gmt"": ""2024-02-16 16:03:53""
-    }
-}","","",auto-draft,closed,closed,"",7a8cc437-6155-4805-a5c0-15cbfbc64d2a,"","",2024-02-16 16:03:53,"0000-00-00 00:00:00","","0",https://michaelkentburns.com/?p=208,"0",customize_changeset,"","0"
 210,1,2024-02-16 16:23:53,2024-02-16 16:23:53,"<!-- wp:image {""align"":""right"",""id"":169,""width"":""678px"",""height"":""auto"",""sizeSlug"":""large"",""linkDestination"":""none"",""className"":""is-style-default""} -->
 <figure class=""wp-block-image alignright size-large is-resized is-style-default""><img src=""https://michaelkentburns.com/wp-content/uploads/2024/02/MichaelAtWork-1024x768.jpeg"" alt="""" class=""wp-image-169"" style=""width:678px;height:auto""/></figure>
 <!-- /wp:image -->
@@ -8082,43 +8036,6 @@
         ""date_modified_gmt"": ""2024-02-19 16:50:21""
     }
 }","","",trash,closed,closed,"",12e04b8a-dffa-49d2-8ef1-9c752f7414d9,"","",2024-02-19 16:50:23,2024-02-19 16:50:23,"","0",https://michaelkentburns.com/?p=242,"0",customize_changeset,"","0"
-243,1,2024-02-19 16:51:21,"0000-00-00 00:00:00","{
-    ""sidebars_widgets[sidebar-1]"": {
-        ""value"": [
-            ""block-19"",
-            ""block-11"",
-            ""block-12"",
-            ""block-14""
-        ],
-        ""type"": ""option"",
-        ""user_id"": 1,
-        ""date_modified_gmt"": ""2024-02-19 16:51:21""
-    },
-    ""widget_block[19]"": {
-        ""value"": {
-            ""raw_instance"": {
-                ""content"": ""<!-- wp:group {\""layout\"":{\""type\"":\""constrained\""}} -->\n<div class=\""wp-block-group\""><!-- wp:heading -->\n<h2 class=\""wp-block-heading\""><strong>Latest Blog Posts:</strong></h2>\n<!-- /wp:heading --></div>\n<!-- /wp:group -->""
-            }
-        },
-        ""type"": ""option"",
-        ""user_id"": 1,
-        ""date_modified_gmt"": ""2024-02-19 16:51:21""
-    },
-    ""widget_block[11]"": {
-        ""value"": {
-            ""encoded_serialized_instance"": ""YToxOntzOjc6ImNvbnRlbnQiO3M6MTMwOiI8IS0tIHdwOmxhdGVzdC1wb3N0cyB7InBvc3RzVG9TaG93Ijo3LCJkaXNwbGF5UG9zdENvbnRlbnQiOnRydWUsImRpc3BsYXlBdXRob3IiOnRydWUsImRpc3BsYXlQb3N0RGF0ZSI6dHJ1ZSwiYWxpZ24iOiJjZW50ZXIifSAvLS0+Ijt9"",
-            ""title"": """",
-            ""is_widget_customizer_js_value"": true,
-            ""instance_hash_key"": ""d0c658db7884ce2e6df4ea80a1469769"",
-            ""raw_instance"": {
-                ""content"": ""<!-- wp:latest-posts {\""postsToShow\"":7,\""displayPostContent\"":true,\""displayAuthor\"":true,\""displayPostDate\"":true,\""align\"":\""center\""} /-->""
-            }
-        },
-        ""type"": ""option"",
-        ""user_id"": 1,
-        ""date_modified_gmt"": ""2024-02-19 16:51:21""
-    }
-}","","",auto-draft,closed,closed,"",4c608bef-37de-4340-8e6c-2a5b26ae9533,"","",2024-02-19 16:51:21,"0000-00-00 00:00:00","","0",https://michaelkentburns.com/?p=243,"0",customize_changeset,"","0"
 244,1,2024-02-19 20:10:26,2024-02-19 20:10:26,"<!-- wp:paragraph -->
 <p>The initial construction process is complete enough that I'm ready for a soft opening.</p>
 <!-- /wp:paragraph -->
@@ -8157,4 +8074,648 @@
 <!-- wp:paragraph -->
 <p>So, for now, have a look around. </p>
 <!-- /wp:paragraph -->",Welcome to my mentoring site!,"",inherit,closed,closed,"",229-revision-v1,"","",2024-02-19 20:10:49,2024-02-19 20:10:49,"",229,https://michaelkentburns.com/?p=245,"0",revision,"","0"
-246,1,2024-02-20 17:23:54,"0000-00-00 00:00:00","",Auto Draft,"",auto-draft,open,open,"","","","",2024-02-20 17:23:54,"0000-00-00 00:00:00","","0",https://michaelkentburns.com/?p=246,"0",post,"","0"
+247,1,2024-02-24 13:17:16,2024-02-24 13:17:16,"<!-- wp:paragraph -->
+<p>Running a hosted WordPress site on a cloud service is made possible by a number of services.   I use Cloudways, but there are others such as WPEngine.   In order to do development in those environments a developer needs to know Linux, shell, and remote headless environments including secure shell access.   The software that must be installed on a remote server is frequently referred to as LAMP, which stands for <strong>L</strong>inux Apache MySQL, PHP.    Typically, LAMP is installed as a series of servers which much be installed and configured on a Linux machine.  That is a fairly complex setup beyond the beginner Web developer. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>There is also a Macintosh equivalent called <strong>M</strong>AMP where <strong>M</strong> stands for Macintosh rather than Linux.   MAMP is neatly packaged up as a single downloadable application.   When you run the MAMP application it presents a simple control panel that allows you to start, stop, and monitor all of the various servers that are built into the application.   </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>However, for developers without those skills there are also several open source solutions that allow you to run a full stack environment on a Mac, Linux, or Windows personal computer.   One that I choose is called XAMPP.   The '<strong>X</strong>'  means that it will run on Linux, Windows, or Macintosh.      The one great simplification is that it is all packaged up as a single application like MAMP is. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:group {""layout"":{""type"":""flex"",""flexWrap"":""nowrap""}} -->
+<div class=""wp-block-group""><!-- wp:paragraph -->
+<p><a href=""https://www.apachefriends.org/download.html"">XAMPP</a> is available from an open source software group named <a href=""https://www.apachefriends.org"">Apache Friends</a>.   There are download links there for Windows, Linux, and OS X (Macintosh OS).    Each of those are simple application download and installs.    If you can download and install an app on your machine, you can download and install a complete full stack! </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image {""id"":254,""width"":""128px"",""height"":""auto"",""sizeSlug"":""full"",""linkDestination"":""none""} -->
+<figure class=""wp-block-image size-full is-resized""><img src=""https://michaelkentburns.com/wp-content/uploads/2024/02/XAMPP-icon.jpg"" alt="""" class=""wp-image-254"" style=""width:128px;height:auto""/></figure>
+<!-- /wp:image --></div>
+<!-- /wp:group -->
+
+<!-- wp:paragraph -->
+<p>The name <a href=""https://en.wikipedia.org/wiki/XAMPP"">XAMPP</a> means that it includes these technologies built in:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><!-- wp:list-item -->
+<li><strong>X</strong> - Can be installed on Windows, Macintosh, or Linux</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>A</strong> - <a href=""https://en.wikipedia.org/wiki/Apache_HTTP_Server"">Apache web server</a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>M<strong> </strong>- <a href=""https://en.wikipedia.org/wiki/MySQL"">MySQL</a> database</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>P</strong> - <a href=""https://en.wikipedia.org/wiki/PHP"">PHP</a> programming language built into the web stack</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>P</strong> - <a href=""https://en.wikipedia.org/wiki/Perl"">Perl</a> is a highly portable and very versatile programming language and library</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>On the <a href=""https://www.apachefriends.org/"">Apache Friends</a> page there is a short and well done video showing the installation and startup of XAMPP on Windows.  </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Once it is installed it is configured to run.   On Windows a new XAMPP application is added to the Start Menu.  Once it is started you can start and stop all the components of the stack, administer their details, see the error logs and more.   There are also buttons to get to Windows Explorer, a shell, the services menu, and more.  </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Once Apache and MySQL services are started you can point your browser to the URL <a href=""http://localhost"" target=""_blank"" rel=""noreferrer noopener"">http://localhost</a> and be greeted by the XAMPP welcome page.   At the top of that page there is a dark blue menu bar.   There you will find links to:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><!-- wp:list-item -->
+<li><strong>Apache Friends</strong> - The organization that supports XAMPP</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>FAQs</strong> - obvious</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>HOW-TO Guides</strong> - how to do many XAMPP tasks</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>PHPInfo</strong> - an extensive report of the live status of all the components of your PHP installation.  This includes lots of details you may need to know when developing and debugging your stack and any web pages that you will host in XAMPP.  You don't need to try to learn about all those details, thankfully.   In the upper right of the page is a 'php' logo which leads to its extensive documentation. </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>phpMyAdmin</strong> - a very helpful control panel for your MySQL database and other PHP details.  On that page, under the 'phpMyAdmin' title of the sidebar, there is a question mark icon that leads to the documentation for this control panel.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Finally, you can add things to this menu, but that is a lesson for another day</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>If you have read this and followed the directions to do the install, then congratulations are in order because you now are hosting a full stack web server on your personal computer.   You have completed another <a href=""https://michaelkentburns.com/index.php/take-a-challenge/"" data-type=""page"" data-id=""178"">challenge</a> from the <a href=""https://michaelkentburns.com/index.php/take-a-challenge/"" data-type=""page"" data-id=""178"">challenge list</a>.   If you have not done so while reading this page, consider taking the time to do that now. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Other how-to pages will guide you through processes like installing your own Wordpress server, learning how to debug it and much more.   </p>
+<!-- /wp:paragraph -->",Using XAMPP for development work,"",publish,closed,closed,"",using-xampp-for-development-work,"","",2024-02-27 00:31:05,2024-02-27 00:31:05,"","0",https://michaelkentburns.com/?page_id=247,"0",page,"","0"
+248,1,2024-02-24 13:17:16,2024-02-24 13:17:16,"<!-- wp:paragraph -->
+<p>Running a hosted WordPress site on a cloud service is made possible by a number of services.   I use Cloudways, but there are others such as WPEngine.   In order to do development in those environments a developer needs to know Linux, shell, and remote headless environments including secure shell access.   The software that must be installed on a remote server is frequently referred to as LAMP, which stands for <strong>L</strong>inux Apache MySQL, PHP.    Typically, LAMP is installed as a series of servers which much be installed and configured on a Linux machine.  That is a fairly complex setup beyond the beginner Web developer. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>There is also a Macintosh equivalent called <strong>M</strong>AMP where <strong>M</strong> stands for Macintosh rather than Linux.   MAMP is neatly packaged up as a single downloadable application.   When you run the MAMP application it presents a simple control panel that allows you to start, stop, and monitor all of the various servers that are built into the application.   </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>However, for developers without those skills there are also several open source solutions that allow you to run a full stack environment on a Mac, Linux, or Windows personal computer.   One that I choose is called XAMPP.   The '<strong>X</strong>'  means that it will run on Linux, Windows, or Macintosh.      The one great simplification is that it is all packaged up as a single application like MAMP is. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href=""https://www.apachefriends.org/download.html"">XAMPP</a> is available from an open software group named <a href=""https://www.apachefriends.org"">Apache Friends</a>.   There are download links there for Windows, Linux, and OS X (Macintosh OS).    Each of those are simple application download and installs.    If you can download and install an app on your machine, you can download and install a complete full stack! </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->",Using XAMPP for development work,"",inherit,closed,closed,"",247-revision-v1,"","",2024-02-24 13:17:16,2024-02-24 13:17:16,"",247,https://michaelkentburns.com/?p=248,"0",revision,"","0"
+249,1,2024-02-24 13:18:41,2024-02-24 13:18:41,"<!-- wp:list -->
+<ul><!-- wp:list-item -->
+<li><a href=""https://michaelkentburns.com/index.php/how-to/how-to-contribute-to-this-site/"" data-type=""page"" data-id=""115"">Contribute to this site</a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><a href=""https://michaelkentburns.com/index.php/how-to-administer-a-wordpress-site/"" data-type=""link"" data-id=""https://michaelkentburns.com/index.php/how-to-administer-a-wordpress-site/"">WordPress administrative tasks</a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Cloudways hosting administration tasks:</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Find your way around this site:</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Install a full stack on your local development computer</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->",How to ...,"",inherit,closed,closed,"",108-autosave-v1,"","",2024-02-24 13:18:41,2024-02-24 13:18:41,"",108,https://michaelkentburns.com/?p=249,"0",revision,"","0"
+250,1,2024-02-24 13:18:53,2024-02-24 13:18:53,"<!-- wp:list -->
+<ul><!-- wp:list-item -->
+<li><a href=""https://michaelkentburns.com/index.php/how-to/how-to-contribute-to-this-site/"" data-type=""page"" data-id=""115"">Contribute to this site</a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><a href=""https://michaelkentburns.com/index.php/how-to-administer-a-wordpress-site/"" data-type=""link"" data-id=""https://michaelkentburns.com/index.php/how-to-administer-a-wordpress-site/"">WordPress administrative tasks</a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Cloudways hosting administration tasks:</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Find your way around this site:</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><a href=""https://michaelkentburns.com/index.php/using-xampp-for-development-work/"" data-type=""page"" data-id=""247"">Install a full stack on your local development computer</a></li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->",How to ...,"",inherit,closed,closed,"",108-revision-v1,"","",2024-02-24 13:18:53,2024-02-24 13:18:53,"",108,https://michaelkentburns.com/?p=250,"0",revision,"","0"
+252,1,2024-02-24 13:23:09,2024-02-24 13:23:09,"<!-- wp:paragraph -->
+<p>Running a hosted WordPress site on a cloud service is made possible by a number of services.   I use Cloudways, but there are others such as WPEngine.   In order to do development in those environments a developer needs to know Linux, shell, and remote headless environments including secure shell access.   The software that must be installed on a remote server is frequently referred to as LAMP, which stands for <strong>L</strong>inux Apache MySQL, PHP.    Typically, LAMP is installed as a series of servers which much be installed and configured on a Linux machine.  That is a fairly complex setup beyond the beginner Web developer. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>There is also a Macintosh equivalent called <strong>M</strong>AMP where <strong>M</strong> stands for Macintosh rather than Linux.   MAMP is neatly packaged up as a single downloadable application.   When you run the MAMP application it presents a simple control panel that allows you to start, stop, and monitor all of the various servers that are built into the application.   </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>However, for developers without those skills there are also several open source solutions that allow you to run a full stack environment on a Mac, Linux, or Windows personal computer.   One that I choose is called XAMPP.   The '<strong>X</strong>'  means that it will run on Linux, Windows, or Macintosh.      The one great simplification is that it is all packaged up as a single application like MAMP is. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href=""https://www.apachefriends.org/download.html"">XAMPP</a> is available from an open software group named <a href=""https://www.apachefriends.org"">Apache Friends</a>.   There are download links there for Windows, Linux, and OS X (Macintosh OS).    Each of those are simple application download and installs.    If you can download and install an app on your machine, you can download and install a complete full stack! </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>On the <a href=""https://www.apachefriends.org/"">Apache Friends</a> page there is a short and well done video showing the installation and startup of XAMPP on Windows.  </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->",Using XAMPP for development work,"",inherit,closed,closed,"",247-revision-v1,"","",2024-02-24 13:23:09,2024-02-24 13:23:09,"",247,https://michaelkentburns.com/?p=252,"0",revision,"","0"
+254,1,2024-02-26 16:31:57,2024-02-26 16:31:57,"",XAMPP-icon,"",inherit,open,closed,"",xampp-icon,"","",2024-02-26 16:31:57,2024-02-26 16:31:57,"",247,https://michaelkentburns.com/wp-content/uploads/2024/02/XAMPP-icon.jpg,"0",attachment,image/jpeg,"0"
+255,1,2024-02-26 17:11:40,2024-02-26 17:11:40,"<!-- wp:paragraph -->
+<p>Running a hosted WordPress site on a cloud service is made possible by a number of services.   I use Cloudways, but there are others such as WPEngine.   In order to do development in those environments a developer needs to know Linux, shell, and remote headless environments including secure shell access.   The software that must be installed on a remote server is frequently referred to as LAMP, which stands for <strong>L</strong>inux Apache MySQL, PHP.    Typically, LAMP is installed as a series of servers which much be installed and configured on a Linux machine.  That is a fairly complex setup beyond the beginner Web developer. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>There is also a Macintosh equivalent called <strong>M</strong>AMP where <strong>M</strong> stands for Macintosh rather than Linux.   MAMP is neatly packaged up as a single downloadable application.   When you run the MAMP application it presents a simple control panel that allows you to start, stop, and monitor all of the various servers that are built into the application.   </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>However, for developers without those skills there are also several open source solutions that allow you to run a full stack environment on a Mac, Linux, or Windows personal computer.   One that I choose is called XAMPP.   The '<strong>X</strong>'  means that it will run on Linux, Windows, or Macintosh.      The one great simplification is that it is all packaged up as a single application like MAMP is. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:group {""layout"":{""type"":""flex"",""flexWrap"":""nowrap""}} -->
+<div class=""wp-block-group""><!-- wp:paragraph -->
+<p><a href=""https://www.apachefriends.org/download.html"">XAMPP</a> is available from an open software group named <a href=""https://www.apachefriends.org"">Apache Friends</a>.   There are download links there for Windows, Linux, and OS X (Macintosh OS).    Each of those are simple application download and installs.    If you can download and install an app on your machine, you can download and install a complete full stack! </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image {""id"":254,""width"":""128px"",""height"":""auto"",""sizeSlug"":""full"",""linkDestination"":""none""} -->
+<figure class=""wp-block-image size-full is-resized""><img src=""https://michaelkentburns.com/wp-content/uploads/2024/02/XAMPP-icon.jpg"" alt="""" class=""wp-image-254"" style=""width:128px;height:auto""/></figure>
+<!-- /wp:image --></div>
+<!-- /wp:group -->
+
+<!-- wp:paragraph -->
+<p>The name <a href=""https://en.wikipedia.org/wiki/XAMPP"">XAMPP</a> means that it includes these technologies built in:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><!-- wp:list-item -->
+<li><strong>X</strong> - Can be installed on Windows, Macintosh, or Linux</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>A</strong> - <a href=""https://en.wikipedia.org/wiki/Apache_HTTP_Server"">Apache web server</a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>M<strong> </strong>- <a href=""https://en.wikipedia.org/wiki/MySQL"">MySQL</a> database</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>P</strong> - <a href=""https://en.wikipedia.org/wiki/PHP"">PHP</a> programming language built into the web stack</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>P</strong> - <a href=""https://en.wikipedia.org/wiki/Perl"">Perl</a> is a highly portable and very versatile programming language and library</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>On the <a href=""https://www.apachefriends.org/"">Apache Friends</a> page there is a short and well done video showing the installation and startup of XAMPP on Windows.  </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Once it is installed it is configured to run.   On Windows a new XAMPP application is added to the Start Menu.  Once it is started you can start and stop all the components of the stack, administer their details, see the error logs and more.   There are also buttons to get to Windows Explorer, a shell, the services menu, and more.  </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Once Apache and MySQL services are started you can point your browser to the URL <a href=""http://localhost"" target=""_blank"" rel=""noreferrer noopener"">http://localhost</a> and be greeted by the XAMPP welcome page.   At the top of that page there is a dark blue menu bar.   There you will find links to:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><!-- wp:list-item -->
+<li><strong>Apache Friends</strong> - The organization that supports XAMPP</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>FAQs</strong> - obvious</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>HOW-TO Guides</strong> - how to do many XAMPP tasks</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>PHPInfo</strong> - an extensive report of the live status of all the components of your PHP installation.  This includes lots of details you may need to know when developing and debugging your stack and any web pages that you will host in XAMPP.  You don't need to try to learn about all those details, thankfully.   In the upper right of the page is a 'php' logo which leads to its extensive documentation. </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>phpMyAdmin</strong> - a very helpful control panel for your MySQL database and other PHP details.  On that page, under the 'phpMyAdmin' title of the sidebar, there is a question mark icon that leads to the documentation for this control panel.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Finally, you can add things to this menu, but that is a lesson for another day</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>If you have read this and followed the directions to do the install, then congratulations are in order because you now are hosting a full stack web server on your personal computer.   You have completed another <a href=""https://michaelkentburns.com/index.php/take-a-challenge/"" data-type=""page"" data-id=""178"">challenge</a> from the <a href=""https://michaelkentburns.com/index.php/take-a-challenge/"" data-type=""page"" data-id=""178"">challenge list</a>.   If you have not done so while reading this page, consider taking the time to do that now. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Other how-to pages will guide you through processes like install your own Wordpress server, learning how to debug it and much more.   </p>
+<!-- /wp:paragraph -->",Using XAMPP for development work,"",inherit,closed,closed,"",247-revision-v1,"","",2024-02-26 17:11:40,2024-02-26 17:11:40,"",247,https://michaelkentburns.com/?p=255,"0",revision,"","0"
+256,1,2024-02-27 00:27:53,2024-02-27 00:27:53,"<!-- wp:paragraph -->
+<p>Running a hosted WordPress site on a cloud service is made possible by a number of services.   I use Cloudways, but there are others such as WPEngine.   In order to do development in those environments a developer needs to know Linux, shell, and remote headless environments including secure shell access.   The software that must be installed on a remote server is frequently referred to as LAMP, which stands for <strong>L</strong>inux Apache MySQL, PHP.    Typically, LAMP is installed as a series of servers which much be installed and configured on a Linux machine.  That is a fairly complex setup beyond the beginner Web developer. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>There is also a Macintosh equivalent called <strong>M</strong>AMP where <strong>M</strong> stands for Macintosh rather than Linux.   MAMP is neatly packaged up as a single downloadable application.   When you run the MAMP application it presents a simple control panel that allows you to start, stop, and monitor all of the various servers that are built into the application.   </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>However, for developers without those skills there are also several open source solutions that allow you to run a full stack environment on a Mac, Linux, or Windows personal computer.   One that I choose is called XAMPP.   The '<strong>X</strong>'  means that it will run on Linux, Windows, or Macintosh.      The one great simplification is that it is all packaged up as a single application like MAMP is. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:group {""layout"":{""type"":""flex"",""flexWrap"":""nowrap""}} -->
+<div class=""wp-block-group""><!-- wp:paragraph -->
+<p><a href=""https://www.apachefriends.org/download.html"">XAMPP</a> is available from an open source software group named <a href=""https://www.apachefriends.org"">Apache Friends</a>.   There are download links there for Windows, Linux, and OS X (Macintosh OS).    Each of those are simple application download and installs.    If you can download and install an app on your machine, you can download and install a complete full stack! </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image {""id"":254,""width"":""128px"",""height"":""auto"",""sizeSlug"":""full"",""linkDestination"":""none""} -->
+<figure class=""wp-block-image size-full is-resized""><img src=""https://michaelkentburns.com/wp-content/uploads/2024/02/XAMPP-icon.jpg"" alt="""" class=""wp-image-254"" style=""width:128px;height:auto""/></figure>
+<!-- /wp:image --></div>
+<!-- /wp:group -->
+
+<!-- wp:paragraph -->
+<p>The name <a href=""https://en.wikipedia.org/wiki/XAMPP"">XAMPP</a> means that it includes these technologies built in:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><!-- wp:list-item -->
+<li><strong>X</strong> - Can be installed on Windows, Macintosh, or Linux</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>A</strong> - <a href=""https://en.wikipedia.org/wiki/Apache_HTTP_Server"">Apache web server</a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>M<strong> </strong>- <a href=""https://en.wikipedia.org/wiki/MySQL"">MySQL</a> database</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>P</strong> - <a href=""https://en.wikipedia.org/wiki/PHP"">PHP</a> programming language built into the web stack</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>P</strong> - <a href=""https://en.wikipedia.org/wiki/Perl"">Perl</a> is a highly portable and very versatile programming language and library</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>On the <a href=""https://www.apachefriends.org/"">Apache Friends</a> page there is a short and well done video showing the installation and startup of XAMPP on Windows.  </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Once it is installed it is configured to run.   On Windows a new XAMPP application is added to the Start Menu.  Once it is started you can start and stop all the components of the stack, administer their details, see the error logs and more.   There are also buttons to get to Windows Explorer, a shell, the services menu, and more.  </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Once Apache and MySQL services are started you can point your browser to the URL <a href=""http://localhost"" target=""_blank"" rel=""noreferrer noopener"">http://localhost</a> and be greeted by the XAMPP welcome page.   At the top of that page there is a dark blue menu bar.   There you will find links to:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><!-- wp:list-item -->
+<li><strong>Apache Friends</strong> - The organization that supports XAMPP</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>FAQs</strong> - obvious</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>HOW-TO Guides</strong> - how to do many XAMPP tasks</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>PHPInfo</strong> - an extensive report of the live status of all the components of your PHP installation.  This includes lots of details you may need to know when developing and debugging your stack and any web pages that you will host in XAMPP.  You don't need to try to learn about all those details, thankfully.   In the upper right of the page is a 'php' logo which leads to its extensive documentation. </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>phpMyAdmin</strong> - a very helpful control panel for your MySQL database and other PHP details.  On that page, under the 'phpMyAdmin' title of the sidebar, there is a question mark icon that leads to the documentation for this control panel.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Finally, you can add things to this menu, but that is a lesson for another day</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>If you have read this and followed the directions to do the install, then congratulations are in order because you now are hosting a full stack web server on your personal computer.   You have completed another <a href=""https://michaelkentburns.com/index.php/take-a-challenge/"" data-type=""page"" data-id=""178"">challenge</a> from the <a href=""https://michaelkentburns.com/index.php/take-a-challenge/"" data-type=""page"" data-id=""178"">challenge list</a>.   If you have not done so while reading this page, consider taking the time to do that now. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Other how-to pages will guide you through processes like install your own Wordpress server, learning how to debug it and much more.   </p>
+<!-- /wp:paragraph -->",Using XAMPP for development work,"",inherit,closed,closed,"",247-revision-v1,"","",2024-02-27 00:27:53,2024-02-27 00:27:53,"",247,https://michaelkentburns.com/?p=256,"0",revision,"","0"
+257,1,2024-02-27 00:31:05,2024-02-27 00:31:05,"<!-- wp:paragraph -->
+<p>Running a hosted WordPress site on a cloud service is made possible by a number of services.   I use Cloudways, but there are others such as WPEngine.   In order to do development in those environments a developer needs to know Linux, shell, and remote headless environments including secure shell access.   The software that must be installed on a remote server is frequently referred to as LAMP, which stands for <strong>L</strong>inux Apache MySQL, PHP.    Typically, LAMP is installed as a series of servers which much be installed and configured on a Linux machine.  That is a fairly complex setup beyond the beginner Web developer. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>There is also a Macintosh equivalent called <strong>M</strong>AMP where <strong>M</strong> stands for Macintosh rather than Linux.   MAMP is neatly packaged up as a single downloadable application.   When you run the MAMP application it presents a simple control panel that allows you to start, stop, and monitor all of the various servers that are built into the application.   </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>However, for developers without those skills there are also several open source solutions that allow you to run a full stack environment on a Mac, Linux, or Windows personal computer.   One that I choose is called XAMPP.   The '<strong>X</strong>'  means that it will run on Linux, Windows, or Macintosh.      The one great simplification is that it is all packaged up as a single application like MAMP is. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:group {""layout"":{""type"":""flex"",""flexWrap"":""nowrap""}} -->
+<div class=""wp-block-group""><!-- wp:paragraph -->
+<p><a href=""https://www.apachefriends.org/download.html"">XAMPP</a> is available from an open source software group named <a href=""https://www.apachefriends.org"">Apache Friends</a>.   There are download links there for Windows, Linux, and OS X (Macintosh OS).    Each of those are simple application download and installs.    If you can download and install an app on your machine, you can download and install a complete full stack! </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image {""id"":254,""width"":""128px"",""height"":""auto"",""sizeSlug"":""full"",""linkDestination"":""none""} -->
+<figure class=""wp-block-image size-full is-resized""><img src=""https://michaelkentburns.com/wp-content/uploads/2024/02/XAMPP-icon.jpg"" alt="""" class=""wp-image-254"" style=""width:128px;height:auto""/></figure>
+<!-- /wp:image --></div>
+<!-- /wp:group -->
+
+<!-- wp:paragraph -->
+<p>The name <a href=""https://en.wikipedia.org/wiki/XAMPP"">XAMPP</a> means that it includes these technologies built in:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><!-- wp:list-item -->
+<li><strong>X</strong> - Can be installed on Windows, Macintosh, or Linux</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>A</strong> - <a href=""https://en.wikipedia.org/wiki/Apache_HTTP_Server"">Apache web server</a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>M<strong> </strong>- <a href=""https://en.wikipedia.org/wiki/MySQL"">MySQL</a> database</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>P</strong> - <a href=""https://en.wikipedia.org/wiki/PHP"">PHP</a> programming language built into the web stack</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>P</strong> - <a href=""https://en.wikipedia.org/wiki/Perl"">Perl</a> is a highly portable and very versatile programming language and library</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>On the <a href=""https://www.apachefriends.org/"">Apache Friends</a> page there is a short and well done video showing the installation and startup of XAMPP on Windows.  </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Once it is installed it is configured to run.   On Windows a new XAMPP application is added to the Start Menu.  Once it is started you can start and stop all the components of the stack, administer their details, see the error logs and more.   There are also buttons to get to Windows Explorer, a shell, the services menu, and more.  </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Once Apache and MySQL services are started you can point your browser to the URL <a href=""http://localhost"" target=""_blank"" rel=""noreferrer noopener"">http://localhost</a> and be greeted by the XAMPP welcome page.   At the top of that page there is a dark blue menu bar.   There you will find links to:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><!-- wp:list-item -->
+<li><strong>Apache Friends</strong> - The organization that supports XAMPP</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>FAQs</strong> - obvious</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>HOW-TO Guides</strong> - how to do many XAMPP tasks</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>PHPInfo</strong> - an extensive report of the live status of all the components of your PHP installation.  This includes lots of details you may need to know when developing and debugging your stack and any web pages that you will host in XAMPP.  You don't need to try to learn about all those details, thankfully.   In the upper right of the page is a 'php' logo which leads to its extensive documentation. </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>phpMyAdmin</strong> - a very helpful control panel for your MySQL database and other PHP details.  On that page, under the 'phpMyAdmin' title of the sidebar, there is a question mark icon that leads to the documentation for this control panel.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Finally, you can add things to this menu, but that is a lesson for another day</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>If you have read this and followed the directions to do the install, then congratulations are in order because you now are hosting a full stack web server on your personal computer.   You have completed another <a href=""https://michaelkentburns.com/index.php/take-a-challenge/"" data-type=""page"" data-id=""178"">challenge</a> from the <a href=""https://michaelkentburns.com/index.php/take-a-challenge/"" data-type=""page"" data-id=""178"">challenge list</a>.   If you have not done so while reading this page, consider taking the time to do that now. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Other how-to pages will guide you through processes like installing your own Wordpress server, learning how to debug it and much more.   </p>
+<!-- /wp:paragraph -->",Using XAMPP for development work,"",inherit,closed,closed,"",247-revision-v1,"","",2024-02-27 00:31:05,2024-02-27 00:31:05,"",247,https://michaelkentburns.com/?p=257,"0",revision,"","0"
+258,1,2024-02-27 16:42:51,2024-02-27 16:42:51,"<!-- wp:paragraph -->
+<p>Michael lives near Cedar Park, Texas with his wife Mary.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:group {""layout"":{""type"":""flex"",""flexWrap"":""nowrap"",""justifyContent"":""space-between""}} -->
+<div class=""wp-block-group""><!-- wp:image {""id"":39,""width"":""326px"",""height"":""244px"",""sizeSlug"":""large"",""linkDestination"":""none""} -->
+<figure class=""wp-block-image size-large is-resized""><img src=""https://michaelkentburns.com/wp-content/uploads/2023/04/IMG_1613-1024x768.jpeg"" alt="""" class=""wp-image-39"" style=""width:326px;height:244px""/></figure>
+<!-- /wp:image -->
+
+<!-- wp:image {""id"":169,""width"":""324px"",""height"":""auto"",""sizeSlug"":""large"",""linkDestination"":""none""} -->
+<figure class=""wp-block-image size-large is-resized""><img src=""https://michaelkentburns.com/wp-content/uploads/2024/02/MichaelAtWork-1024x768.jpeg"" alt="""" class=""wp-image-169"" style=""width:324px;height:auto""/></figure>
+<!-- /wp:image --></div>
+<!-- /wp:group -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Michael is a 40 year veteran software engineer.  The last 33 years was as a principal systems developer at <a href=""http://www.sas.com"">SAS Institute</a>.  His main responsibility was the enterprise metadata server that connects all SAS products. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>He is now happily retired, but not yet done with the field.  This site is home base for his new focus of mentoring programmers in the art of software engineering.   The main emphasis is individuals living in a places that do not have software development jobs.  This means that their best opportunity is to go freelance.   Doing so allows them to stay in their culture and home community.   </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>While freelancing is a start, there are also opportunities to do so much more as part of a larger development team focused on many open source software projects.   This is something that I am moving into myself.  Join me.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:social-links -->
+<ul class=""wp-block-social-links""><!-- wp:social-link {""url"":""https://github.com/MichaelKentBurns"",""service"":""github""} /-->
+
+<!-- wp:social-link {""url"":""https://www.linkedin.com/in/michaelkentburns/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3B6Dj3E8auRSy51Ad%2BgA7N%2FQ%3D%3D"",""service"":""linkedin""} /-->
+
+<!-- wp:social-link {""url"":""MichaelKentBurns@gmail.com"",""service"":""mail""} /-->
+
+<!-- wp:social-link {""url"":""https://www.facebook.com/michael.burns.906"",""service"":""facebook""} /--></ul>
+<!-- /wp:social-links -->
+
+<!-- wp:social-links -->
+<ul class=""wp-block-social-links""></ul>
+<!-- /wp:social-links -->",About Michael,"",inherit,closed,closed,"",22-revision-v1,"","",2024-02-27 16:42:51,2024-02-27 16:42:51,"",22,https://michaelkentburns.com/?p=258,"0",revision,"","0"
+260,1,2024-02-27 16:45:58,2024-02-27 16:45:58,"<!-- wp:paragraph -->
+<p>Michael lives near Cedar Park, Texas with his wife Mary.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:group {""layout"":{""type"":""flex"",""flexWrap"":""nowrap"",""justifyContent"":""space-between""}} -->
+<div class=""wp-block-group""><!-- wp:image {""id"":39,""width"":""309px"",""height"":""auto"",""aspectRatio"":""1.3360655737704918"",""sizeSlug"":""large"",""linkDestination"":""none""} -->
+<figure class=""wp-block-image size-large is-resized""><img src=""https://michaelkentburns.com/wp-content/uploads/2023/04/IMG_1613-1024x768.jpeg"" alt="""" class=""wp-image-39"" style=""aspect-ratio:1.3360655737704918;width:309px;height:auto""/></figure>
+<!-- /wp:image -->
+
+<!-- wp:image {""id"":169,""width"":""324px"",""height"":""auto"",""sizeSlug"":""large"",""linkDestination"":""none""} -->
+<figure class=""wp-block-image size-large is-resized""><img src=""https://michaelkentburns.com/wp-content/uploads/2024/02/MichaelAtWork-1024x768.jpeg"" alt="""" class=""wp-image-169"" style=""width:324px;height:auto""/></figure>
+<!-- /wp:image --></div>
+<!-- /wp:group -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Michael is a 40 year veteran software engineer.  The last 33 years was as a principal systems developer at <a href=""http://www.sas.com"">SAS Institute</a>.  His main responsibility was the <a href=""https://www.sas.com/en_us/search.html?q=metadata%20server"">enterprise metadata server</a> that connects all SAS products. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>He is now happily retired, but not yet done with the field.  This site is home base for his new focus of mentoring programmers in the art of software engineering.   The main emphasis is individuals living in a places that do not have software development jobs.  This means that their best opportunity is to go freelance.   Doing so allows them to stay in their culture and home community.   </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>While freelancing is a start, there are also opportunities to do so much more as part of a larger development team focused on many open source software projects.   This is something that I am moving into myself.  Join me.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:social-links -->
+<ul class=""wp-block-social-links""><!-- wp:social-link {""url"":""https://github.com/MichaelKentBurns"",""service"":""github""} /-->
+
+<!-- wp:social-link {""url"":""https://www.linkedin.com/in/michaelkentburns/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3B6Dj3E8auRSy51Ad%2BgA7N%2FQ%3D%3D"",""service"":""linkedin""} /-->
+
+<!-- wp:social-link {""url"":""MichaelKentBurns@gmail.com"",""service"":""mail""} /-->
+
+<!-- wp:social-link {""url"":""https://www.facebook.com/michael.burns.906"",""service"":""facebook""} /--></ul>
+<!-- /wp:social-links -->
+
+<!-- wp:social-links -->
+<ul class=""wp-block-social-links""></ul>
+<!-- /wp:social-links -->",About Michael,"",inherit,closed,closed,"",22-revision-v1,"","",2024-02-27 16:45:58,2024-02-27 16:45:58,"",22,https://michaelkentburns.com/?p=260,"0",revision,"","0"
+261,1,2024-03-01 00:40:13,"0000-00-00 00:00:00","",Auto Draft,"",auto-draft,open,open,"","","","",2024-03-01 00:40:13,"0000-00-00 00:00:00","","0",https://michaelkentburns.com/?p=261,"0",post,"","0"
+262,1,2024-03-01 00:44:39,2024-03-01 00:44:39,"<!-- wp:paragraph -->
+<p>Running a hosted WordPress site on a cloud service is made possible by a number of services.   I use Cloudways, but there are others such as WPEngine.   In order to do development in those environments a developer needs to know Linux, shell, and remote headless environments including secure shell access.   The software that must be installed on a remote server is frequently referred to as LAMP, which stands for <strong>L</strong>inux Apache MySQL, PHP.    Typically, LAMP is installed as a series of servers which much be installed and configured on a Linux machine.  That is a fairly complex setup beyond the beginner Web developer. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>There is also a Macintosh equivalent called <strong>M</strong>AMP where <strong>M</strong> stands for Macintosh rather than Linux.   MAMP is neatly packaged up as a single downloadable application.   When you run the MAMP application it presents a simple control panel that allows you to start, stop, and monitor all of the various servers that are built into the application.   </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>However, for developers without those skills there are also several open source solutions that allow you to run a full stack environment on a Mac, Linux, or Windows personal computer.   One that I choose is called XAMPP.   The '<strong>X</strong>'  means that it will run on Linux, Windows, or Macintosh.      The one great simplification is that it is all packaged up as a single application like MAMP is. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:group {""layout"":{""type"":""flex"",""flexWrap"":""nowrap""}} -->
+<div class=""wp-block-group""><!-- wp:paragraph -->
+<p><a href=""https://www.apachefriends.org/download.html"">XAMPP</a> is available from an open source software group named <a href=""https://www.apachefriends.org"">Apache Friends</a>.   There are download links there for Windows, Linux, and OS X (Macintosh OS).    Each of those are simple application download and installs.    If you can download and install an app on your machine, you can download and install a complete full stack! </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image {""id"":254,""width"":""128px"",""height"":""auto"",""sizeSlug"":""full"",""linkDestination"":""none""} -->
+<figure class=""wp-block-image size-full is-resized""><img src=""https://michaelkentburns.com/wp-content/uploads/2024/02/XAMPP-icon.jpg"" alt="""" class=""wp-image-254"" style=""width:128px;height:auto""/></figure>
+<!-- /wp:image --></div>
+<!-- /wp:group -->
+
+<!-- wp:paragraph -->
+<p>The name <a href=""https://en.wikipedia.org/wiki/XAMPP"">XAMPP</a> means that it includes these technologies built in:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><!-- wp:list-item -->
+<li><strong>X</strong> - Can be installed on Windows, Macintosh, or Linux</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>A</strong> - <a href=""https://en.wikipedia.org/wiki/Apache_HTTP_Server"">Apache web server</a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>M<strong> </strong>- <a href=""https://en.wikipedia.org/wiki/MySQL"">MySQL</a> database</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>P</strong> - <a href=""https://en.wikipedia.org/wiki/PHP"">PHP</a> programming language built into the web stack</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>P</strong> - <a href=""https://en.wikipedia.org/wiki/Perl"">Perl</a> is a highly portable and very versatile programming language and library</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>On the <a href=""https://www.apachefriends.org/"">Apache Friends</a> page there is a short and well done video showing the installation and startup of XAMPP on Windows.  </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Once it is installed it is configured to run.   On Windows a new XAMPP application is added to the Start Menu.  Once it is started you can start and stop all the components of the stack, administer their details, see the error logs and more.   There are also buttons to get to Windows Explorer, a shell, the services menu, and more.  </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Once Apache and MySQL services are started you can point your browser to the URL <a href=""http://localhost"" target=""_blank"" rel=""noreferrer noopener"">http://localhost</a> and be greeted by the XAMPP welcome page.   At the top of that page there is a dark blue menu bar.   There you will find links to:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><!-- wp:list-item -->
+<li><strong>Apache Friends</strong> - The organization that supports XAMPP</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>FAQs</strong> - obvious</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>HOW-TO Guides</strong> - how to do many XAMPP tasks</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>PHPInfo</strong> - an extensive report of the live status of all the components of your PHP installation.  This includes lots of details you may need to know when developing and debugging your stack and any web pages that you will host in XAMPP.  You don't need to try to learn about all those details, thankfully.   In the upper right of the page is a 'php' logo which leads to its extensive documentation. </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>phpMyAdmin</strong> - a very helpful control panel for your MySQL database and other PHP details.  On that page, under the 'phpMyAdmin' title of the sidebar, there is a question mark icon that leads to the documentation for this control panel.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Finally, you can add things to this menu, but that is a lesson for another day</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>If you have read this and followed the directions to do the install, then congratulations are in order because you now are hosting a full stack web server on your personal computer.   You have completed another <a href=""https://michaelkentburns.com/index.php/take-a-challenge/"" data-type=""page"" data-id=""178"">challenge</a> from the <a href=""https://michaelkentburns.com/index.php/take-a-challenge/"" data-type=""page"" data-id=""178"">challenge list</a>.   If you have not done so while reading this page, consider taking the time to do that now. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Other how-to pages will guide you through processes like installing your own Wordpress server, learning how to debug it and much more.   </p>
+<!-- /wp:paragraph -->",Using XAMPP for development work,"",inherit,closed,closed,"",247-autosave-v1,"","",2024-03-01 00:44:39,2024-03-01 00:44:39,"",247,https://michaelkentburns.com/?p=262,"0",revision,"","0"
