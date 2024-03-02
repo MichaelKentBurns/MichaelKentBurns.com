@@ -1,0 +1,93 @@
+<!-- wp:paragraph -->
+<p>Running a hosted WordPress site on a cloud service is made possible by a number of services.   I use Cloudways, but there are others such as WPEngine.   In order to do development in those environments a developer needs to know Linux, shell, and remote headless environments including secure shell access.   The software that must be installed on a remote server is frequently referred to as LAMP, which stands for <strong>L</strong>inux Apache MySQL, PHP.    Typically, LAMP is installed as a series of servers which much be installed and configured on a Linux machine.  That is a fairly complex setup beyond the beginner Web developer. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>There is also a Macintosh equivalent called <strong>M</strong>AMP where <strong>M</strong> stands for Macintosh rather than Linux.   MAMP is neatly packaged up as a single downloadable application.   When you run the MAMP application it presents a simple control panel that allows you to start, stop, and monitor all of the various servers that are built into the application.   </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>However, for developers without those skills there are also several open source solutions that allow you to run a full stack environment on a Mac, Linux, or Windows personal computer.   One that I choose is called XAMPP.   The '<strong>X</strong>'  means that it will run on Linux, Windows, or Macintosh.      The one great simplification is that it is all packaged up as a single application like MAMP is. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+<div class="wp-block-group"><!-- wp:paragraph -->
+<p><a href="https://www.apachefriends.org/download.html">XAMPP</a> is available from an open source software group named <a href="https://www.apachefriends.org">Apache Friends</a>.   There are download links there for Windows, Linux, and OS X (Macintosh OS).    Each of those are simple application download and installs.    If you can download and install an app on your machine, you can download and install a complete full stack! </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image {"id":254,"width":"128px","height":"auto","sizeSlug":"full","linkDestination":"none"} -->
+<figure class="wp-block-image size-full is-resized"><img src="https://michaelkentburns.com/wp-content/uploads/2024/02/XAMPP-icon.jpg" alt="" class="wp-image-254" style="width:128px;height:auto"/></figure>
+<!-- /wp:image --></div>
+<!-- /wp:group -->
+
+<!-- wp:paragraph -->
+<p>The name <a href="https://en.wikipedia.org/wiki/XAMPP">XAMPP</a> means that it includes these technologies built in:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><!-- wp:list-item -->
+<li><strong>X</strong> - Can be installed on Windows, Macintosh, or Linux</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>A</strong> - <a href="https://en.wikipedia.org/wiki/Apache_HTTP_Server">Apache web server</a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>M<strong> </strong>- <a href="https://en.wikipedia.org/wiki/MySQL">MySQL</a> database</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>P</strong> - <a href="https://en.wikipedia.org/wiki/PHP">PHP</a> programming language built into the web stack</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>P</strong> - <a href="https://en.wikipedia.org/wiki/Perl">Perl</a> is a highly portable and very versatile programming language and library</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>On the <a href="https://www.apachefriends.org/">Apache Friends</a> page there is a short and well done video showing the installation and startup of XAMPP on Windows.  </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Once it is installed it is configured to run.   On Windows a new XAMPP application is added to the Start Menu.  Once it is started you can start and stop all the components of the stack, administer their details, see the error logs and more.   There are also buttons to get to Windows Explorer, a shell, the services menu, and more.  </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Once Apache and MySQL services are started you can point your browser to the URL <a href="http://localhost" target="_blank" rel="noreferrer noopener">http://localhost</a> and be greeted by the XAMPP welcome page.   At the top of that page there is a dark blue menu bar.   There you will find links to:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><!-- wp:list-item -->
+<li><strong>Apache Friends</strong> - The organization that supports XAMPP</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>FAQs</strong> - obvious</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>HOW-TO Guides</strong> - how to do many XAMPP tasks</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>PHPInfo</strong> - an extensive report of the live status of all the components of your PHP installation.  This includes lots of details you may need to know when developing and debugging your stack and any web pages that you will host in XAMPP.  You don't need to try to learn about all those details, thankfully.   In the upper right of the page is a 'php' logo which leads to its extensive documentation. </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>phpMyAdmin</strong> - a very helpful control panel for your MySQL database and other PHP details.  On that page, under the 'phpMyAdmin' title of the sidebar, there is a question mark icon that leads to the documentation for this control panel.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Finally, you can add things to this menu, but that is a lesson for another day</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>If you have read this and followed the directions to do the install, then congratulations are in order because you now are hosting a full stack web server on your personal computer.   You have completed another <a href="https://michaelkentburns.com/index.php/take-a-challenge/" data-type="page" data-id="178">challenge</a> from the <a href="https://michaelkentburns.com/index.php/take-a-challenge/" data-type="page" data-id="178">challenge list</a>.   If you have not done so while reading this page, consider taking the time to do that now. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Other how-to pages will guide you through processes like installing your own Wordpress server, learning how to debug it and much more.   </p>
+<!-- /wp:paragraph -->
