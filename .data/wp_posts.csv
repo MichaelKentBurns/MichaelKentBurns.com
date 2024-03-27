@@ -326,12 +326,6 @@
 30,1,2023-03-30 22:13:36,2023-03-30 22:13:36,"<!-- wp:image {""id"":12,""width"":423,""height"":282,""sizeSlug"":""large"",""linkDestination"":""none""} -->
 <figure class=""wp-block-image size-large is-resized""><img src=""https://michaelkentburns.com/wp-content/uploads/2023/03/Mentor-mentee-1-1024x683.png"" alt="""" class=""wp-image-12"" width=""423"" height=""282""/></figure>
 <!-- /wp:image -->",Home,"",inherit,closed,closed,"",2-revision-v1,"","",2023-03-30 22:13:36,2023-03-30 22:13:36,"",2,https://michaelkentburns.com/?p=30,"0",revision,"","0"
-33,1,2023-03-30 22:31:52,2023-03-30 22:31:52,"<!-- wp:paragraph -->
-<p>My first WordPress site, just getting started.</p>
-<!-- /wp:paragraph -->",Under construction...,"",trash,open,open,"",under-construction__trashed,"","",2024-02-18 03:42:52,2024-02-18 03:42:52,"","0",https://michaelkentburns.com/?p=33,"0",post,"","0"
-34,1,2023-03-30 22:31:52,2023-03-30 22:31:52,"<!-- wp:paragraph -->
-<p>My first WordPress site, just getting started.</p>
-<!-- /wp:paragraph -->",Under construction...,"",inherit,closed,closed,"",33-revision-v1,"","",2023-03-30 22:31:52,2023-03-30 22:31:52,"",33,https://michaelkentburns.com/?p=34,"0",revision,"","0"
 35,1,2023-03-30 22:49:35,2023-03-30 22:49:35,"<!-- wp:image {""id"":12,""width"":423,""height"":282,""sizeSlug"":""large"",""linkDestination"":""none""} -->
 <figure class=""wp-block-image size-large is-resized""><img src=""https://michaelkentburns.com/wp-content/uploads/2023/03/Mentor-mentee-1-1024x683.png"" alt="""" class=""wp-image-12"" width=""423"" height=""282""/></figure>
 <!-- /wp:image -->
@@ -571,16 +565,28 @@
 <!-- /wp:paragraph -->",Front end web,"",publish,closed,closed,"",front-end-web,"","",2024-02-16 16:51:24,2024-02-16 16:51:24,"","0",https://michaelkentburns.com/?page_id=49,"0",page,"","0"
 50,1,2024-02-15 21:57:29,2023-04-03 18:34:12, ,"","",publish,closed,closed,"",50,"","",2024-02-15 21:57:29,2024-02-15 21:57:29,"","0",https://michaelkentburns.com/index.php/2023/04/03/50/,4,nav_menu_item,"","0"
 51,1,2023-04-03 18:34:12,2023-04-03 18:34:12,"",Front end web,"",inherit,closed,closed,"",49-revision-v1,"","",2023-04-03 18:34:12,2023-04-03 18:34:12,"",49,https://michaelkentburns.com/?p=51,"0",revision,"","0"
-52,1,2023-04-03 18:36:03,2023-04-03 18:36:03,"<!-- wp:heading -->
+52,1,2023-04-03 18:36:03,2023-04-03 18:36:03,"<!-- wp:paragraph -->
+<p>While the front end is mostly concerned with the actual presentation of web information, there is much that the web browser cannot do.   One thing certainly is multitasking.  It is rare that a single person, using their browser to view a web page, is the only user at that specific site.  The back end is run on a more powerful machine that can server up web pages to many users around the world at the same time.   This concept is described in detail in the Wikipedia <a href=""https://en.wikipedia.org/wiki/Frontend_and_backend"">Frontend and backend</a> page. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>To make the back end work there are actually a number of servers running together that enable many web users to share access to a website.    These servers are all run as services by a system administrator and have inter dependancies.  So, the various servers have to know how to access each other to get the job done.  Since they work together we refer to the whole as a 'stack'.   This is described in detail in the Wikipedia <a href=""https://en.wikipedia.org/wiki/LAMP_(software_bundle)"">LAMP (software bundle)</a> page. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
 <h2 class=""wp-block-heading"">Skills</h2>
 <!-- /wp:heading -->
 
-<!-- wp:heading {""level"":3} -->
-<h3 class=""wp-block-heading"">PHP</h3>
+<!-- wp:paragraph -->
+<p>Web Server (Apache)</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {""level"":4} -->
+<h4 class=""wp-block-heading"">PHP</h4>
 <!-- /wp:heading -->
 
-<!-- wp:heading {""level"":3} -->
-<h3 class=""wp-block-heading"">MySQL</h3>
+<!-- wp:heading {""level"":4} -->
+<h4 class=""wp-block-heading"">MySQL</h4>
 <!-- /wp:heading -->
 
 <!-- wp:heading -->
@@ -589,7 +595,7 @@
 
 <!-- wp:paragraph -->
 <p>There are many mentoring and tutorial sites available.  Just google ""backend mentor"" or view Wikipedia's ""<a href=""https://en.wikipedia.org/wiki/Frontend_and_backend"">Frontend and backend</a>"".</p>
-<!-- /wp:paragraph -->",Back end web,"",publish,closed,closed,"",back-end-web,"","",2023-04-03 19:59:42,2023-04-03 19:59:42,"","0",https://michaelkentburns.com/?page_id=52,"0",page,"","0"
+<!-- /wp:paragraph -->",Back end web,"",publish,closed,closed,"",back-end-web,"","",2024-03-09 00:17:19,2024-03-09 00:17:19,"","0",https://michaelkentburns.com/?page_id=52,"0",page,"","0"
 53,1,2024-02-15 21:57:29,2023-04-03 18:36:03, ,"","",publish,closed,closed,"",53,"","",2024-02-15 21:57:29,2024-02-15 21:57:29,"","0",https://michaelkentburns.com/index.php/2023/04/03/53/,5,nav_menu_item,"","0"
 54,1,2023-04-03 18:36:03,2023-04-03 18:36:03,"<!-- wp:heading -->
 <h2 class=""wp-block-heading"">Skills</h2>
@@ -1050,33 +1056,6 @@
 67,1,2023-04-03 19:55:10,2023-04-03 19:55:10,"<!-- wp:paragraph -->
 <p>There are plenty of resources to learn full stack skills.  Just see Wikipedia's ""<a href=""https://en.wikipedia.org/wiki/Frontend_and_backend"">Frontend and backend</a>"" page.</p>
 <!-- /wp:paragraph -->",Full stack,"",inherit,closed,closed,"",55-revision-v1,"","",2023-04-03 19:55:10,2023-04-03 19:55:10,"",55,https://michaelkentburns.com/?p=67,"0",revision,"","0"
-68,1,2023-04-03 19:59:30,2023-04-03 19:59:30,"<!-- wp:heading -->
-<h2 class=""wp-block-heading"">Skills</h2>
-<!-- /wp:heading -->
-
-<!-- wp:heading {""level"":3} -->
-<h3 class=""wp-block-heading"">PHP</h3>
-<!-- /wp:heading -->
-
-<!-- wp:heading {""level"":3} -->
-<h3 class=""wp-block-heading"">MySQL</h3>
-<!-- /wp:heading -->
-
-<!-- wp:paragraph -->
-<p></p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph -->
-<p>But there is more...</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:heading -->
-<h2 class=""wp-block-heading"">Mentoring</h2>
-<!-- /wp:heading -->
-
-<!-- wp:paragraph -->
-<p>There are many mentoring and tutorial sites available.  Just google ""backend mentor"" or view Wikipedia's ""<a href=""https://en.wikipedia.org/wiki/Frontend_and_backend"">Frontend and backend</a>"".</p>
-<!-- /wp:paragraph -->",Back end web,"",inherit,closed,closed,"",52-autosave-v1,"","",2023-04-03 19:59:30,2023-04-03 19:59:30,"",52,https://michaelkentburns.com/?p=68,"0",revision,"","0"
 69,1,2023-04-03 19:59:42,2023-04-03 19:59:42,"<!-- wp:heading -->
 <h2 class=""wp-block-heading"">Skills</h2>
 <!-- /wp:heading -->
@@ -1239,8 +1218,6 @@
 <!-- wp:paragraph -->
 <p></p>
 <!-- /wp:paragraph -->",Work globally...,"",inherit,closed,closed,"",59-revision-v1,"","",2023-04-03 21:31:38,2023-04-03 21:31:38,"",59,https://michaelkentburns.com/?p=75,"0",revision,"","0"
-76,1,2023-04-04 17:00:18,2023-04-04 17:00:18,"",Building your brand,"",trash,closed,closed,"",building-your-brand__trashed,"","",2024-02-16 15:58:07,2024-02-16 15:58:07,"","0",https://michaelkentburns.com/?page_id=76,"0",page,"","0"
-78,1,2023-04-04 17:00:18,2023-04-04 17:00:18,"",Building your brand,"",inherit,closed,closed,"",76-revision-v1,"","",2023-04-04 17:00:18,2023-04-04 17:00:18,"",76,https://michaelkentburns.com/?p=78,"0",revision,"","0"
 79,1,2023-04-04 17:01:08,2023-04-04 17:01:08,"<!-- wp:paragraph -->
 <p>There are a number of freelancing sites that allow both clients (customers) and talent (workers) to connect.</p>
 <!-- /wp:paragraph -->
@@ -1747,9 +1724,13 @@
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
+<li><a href=""https://michaelkentburns.com/index.php/how-to/how-to-administer-a-wordpress-site/how-to-use-github-to-source-control-a-wordpress-site/"" data-type=""page"" data-id=""266"">How to use GitHub to source control a WordPress site</a>.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
 <li></li>
 <!-- /wp:list-item --></ul>
-<!-- /wp:list -->",How to administer a WordPress site,"",publish,closed,closed,"",how-to-administer-a-wordpress-site,"","",2024-01-18 23:50:19,2024-01-18 23:50:19,"",108,https://michaelkentburns.com/?page_id=111,2,page,"","0"
+<!-- /wp:list -->",How to administer a WordPress site,"",publish,closed,closed,"",how-to-administer-a-wordpress-site,"","",2024-03-09 00:01:38,2024-03-09 00:01:38,"",108,https://michaelkentburns.com/?page_id=111,2,page,"","0"
 113,1,2024-01-18 00:27:47,2024-01-18 00:27:47,"<!-- wp:list -->
 <ul><!-- wp:list-item -->
 <li>Getting to the administrative control panel.</li>
@@ -4236,104 +4217,6 @@
 <!-- wp:paragraph -->
 <p></p>
 <!-- /wp:paragraph -->",Work globally,"",inherit,closed,closed,"",59-revision-v1,"","",2024-02-10 23:38:34,2024-02-10 23:38:34,"",59,https://michaelkentburns.com/?p=164,"0",revision,"","0"
-165,1,2024-02-10 23:40:18,2024-02-10 23:40:18,"{
-    ""nav_menu_item[77]"": {
-        ""value"": {
-            ""menu_item_parent"": 0,
-            ""object_id"": 76,
-            ""object"": ""page"",
-            ""type"": ""post_type"",
-            ""type_label"": ""Block editor"",
-            ""url"": ""https://michaelkentburns.com/index.php/building-your-brand/"",
-            ""title"": """",
-            ""target"": """",
-            ""attr_title"": """",
-            ""description"": """",
-            ""classes"": """",
-            ""xfn"": """",
-            ""nav_menu_term_id"": 11,
-            ""position"": 9,
-            ""status"": ""publish"",
-            ""original_title"": ""Building your brand"",
-            ""_invalid"": false
-        },
-        ""type"": ""nav_menu_item"",
-        ""user_id"": 1,
-        ""date_modified_gmt"": ""2024-02-10 23:40:18""
-    },
-    ""nav_menu_item[80]"": {
-        ""value"": {
-            ""menu_item_parent"": 0,
-            ""object_id"": 79,
-            ""object"": ""page"",
-            ""type"": ""post_type"",
-            ""type_label"": ""Block editor"",
-            ""url"": ""https://michaelkentburns.com/index.php/finding-work/"",
-            ""title"": """",
-            ""target"": """",
-            ""attr_title"": """",
-            ""description"": """",
-            ""classes"": """",
-            ""xfn"": """",
-            ""nav_menu_term_id"": 11,
-            ""position"": 10,
-            ""status"": ""publish"",
-            ""original_title"": ""Finding work"",
-            ""_invalid"": false
-        },
-        ""type"": ""nav_menu_item"",
-        ""user_id"": 1,
-        ""date_modified_gmt"": ""2024-02-10 23:40:18""
-    },
-    ""nav_menu_item[109]"": {
-        ""value"": {
-            ""menu_item_parent"": 0,
-            ""object_id"": 108,
-            ""object"": ""page"",
-            ""type"": ""post_type"",
-            ""type_label"": ""Block editor"",
-            ""url"": ""https://michaelkentburns.com/index.php/how-to/"",
-            ""title"": """",
-            ""target"": """",
-            ""attr_title"": """",
-            ""description"": """",
-            ""classes"": """",
-            ""xfn"": """",
-            ""nav_menu_term_id"": 11,
-            ""position"": 11,
-            ""status"": ""publish"",
-            ""original_title"": ""How to \u2026"",
-            ""_invalid"": false
-        },
-        ""type"": ""nav_menu_item"",
-        ""user_id"": 1,
-        ""date_modified_gmt"": ""2024-02-10 23:40:18""
-    },
-    ""nav_menu_item[151]"": {
-        ""value"": {
-            ""menu_item_parent"": 0,
-            ""object_id"": 149,
-            ""object"": ""page"",
-            ""type"": ""post_type"",
-            ""type_label"": ""Block editor"",
-            ""url"": ""https://michaelkentburns.com/index.php/working-in-a-professional-team/"",
-            ""title"": """",
-            ""target"": """",
-            ""attr_title"": """",
-            ""description"": """",
-            ""classes"": """",
-            ""xfn"": """",
-            ""nav_menu_term_id"": 11,
-            ""position"": 8,
-            ""status"": ""publish"",
-            ""original_title"": ""Working in a team"",
-            ""_invalid"": false
-        },
-        ""type"": ""nav_menu_item"",
-        ""user_id"": 1,
-        ""date_modified_gmt"": ""2024-02-10 23:40:18""
-    }
-}","","",trash,closed,closed,"",598044e0-ece2-495a-915e-fd8c5037ce4e,"","",2024-02-10 23:40:18,2024-02-10 23:40:18,"","0",https://michaelkentburns.com/index.php/2024/02/10/598044e0-ece2-495a-915e-fd8c5037ce4e/,"0",customize_changeset,"","0"
 167,1,2024-02-10 23:44:05,2024-02-10 23:44:05,"<!-- wp:image {""align"":""right"",""id"":86,""sizeSlug"":""large"",""linkDestination"":""none""} -->
 <figure class=""wp-block-image alignright size-large""><img src=""https://michaelkentburns.com/wp-content/uploads/2023/04/AdobeStock_142610858-1024x684.jpeg"" alt="""" class=""wp-image-86""/></figure>
 <!-- /wp:image -->
@@ -4804,7 +4687,7 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p>If you choose to run Linux as your native OS then you will almost always a graphical user interface.  </p>
+<p>If you choose to run Linux as your native OS then you will almost always use a graphical user interface.  </p>
 <!-- /wp:paragraph -->
 
 <!-- wp:heading {""level"":3} -->
@@ -4812,7 +4695,7 @@
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p>With Windows you naturally have a graphical interface include Windows Explorer,  a web browser like Edge, an interactive command line tool like PowerShell or cmd.exe.   Using your browser there are applications galore that you can download and install.   </p>
+<p>With Windows you naturally have a graphical interface including Windows Explorer,  a web browser like InternetExplorer or Edge, an interactive command line tool like PowerShell or cmd.exe.   Using your browser there are applications galore that you can download and install.   </p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
@@ -4845,7 +4728,7 @@
 
 <!-- wp:paragraph -->
 <p>Give all of those options you probably already have a development platform of some sort and it's now time to talk about it.     I need to know about your setup, your needs, and your questions.    I have a '<a href=""https://michaelkentburns.com/index.php/challenge-tell-me-about-your-development-setup/"" data-type=""page"" data-id=""184"">Tell me about your development setup</a>' challenge page that you can use to tell me all about it.   So, go there and tell me.   </p>
-<!-- /wp:paragraph -->",Development platforms,"",publish,closed,closed,"",development-platforms,"","",2024-02-16 17:16:02,2024-02-16 17:16:02,"","0",https://michaelkentburns.com/?page_id=175,"0",page,"","0"
+<!-- /wp:paragraph -->",Development platforms,"",publish,closed,closed,"",development-platforms,"","",2024-03-13 16:46:57,2024-03-13 16:46:57,"","0",https://michaelkentburns.com/?page_id=175,"0",page,"","0"
 176,1,2024-02-16 16:02:49,2024-02-15 19:53:35, ,"","",publish,closed,closed,"",176,"","",2024-02-16 16:02:49,2024-02-16 16:02:49,"","0",https://michaelkentburns.com/index.php/2024/02/15/176/,10,nav_menu_item,"","0"
 177,1,2024-02-15 19:53:35,2024-02-15 19:53:35,"<!-- wp:heading -->
 <h2 class=""wp-block-heading"">Basic necessities in a development platform:</h2>
@@ -4975,6 +4858,10 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
+<p><strong>Please make sure that you report your experience.</strong>  To do this, create an email to <a href=""mailto:MichaelKentBurns@gmail.com"">MichaelKentBurns@gmail.com</a>.  Start your email by copying the text of the challenge into your message.   Make the subject of your email the title of the challenge (from the top of the page).  Then as you follow the steps, simply insert your comments, questions, and problems encountered.   Complete the email with a summary of what you learned.    </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
 <p>So, dive in:</p>
 <!-- /wp:paragraph -->
 
@@ -4998,7 +4885,7 @@
 
 <!-- wp:paragraph -->
 <p>Lots more to come... </p>
-<!-- /wp:paragraph -->",Take a challenge,"",publish,closed,closed,"",take-a-challenge,"","",2024-02-16 17:16:44,2024-02-16 17:16:44,"","0",https://michaelkentburns.com/?page_id=178,"0",page,"","0"
+<!-- /wp:paragraph -->",Take a challenge,"",publish,closed,closed,"",take-a-challenge,"","",2024-03-09 13:13:31,2024-03-09 13:13:31,"","0",https://michaelkentburns.com/?page_id=178,"0",page,"","0"
 179,1,2024-02-16 16:02:49,2024-02-15 20:03:10, ,"","",publish,closed,closed,"",179,"","",2024-02-16 16:02:49,2024-02-16 16:02:49,"","0",https://michaelkentburns.com/index.php/2024/02/15/179/,11,nav_menu_item,"","0"
 180,1,2024-02-15 20:03:10,2024-02-15 20:03:10,"<!-- wp:paragraph -->
 <p>Once you have read some of this site it is good to put some of that to a test with a challenge.    There are often several paths that will get you to one of these challenges.</p>
@@ -5034,7 +4921,7 @@
 <p>Lots more to come... </p>
 <!-- /wp:paragraph -->",Take a challenge,"",inherit,closed,closed,"",178-revision-v1,"","",2024-02-15 20:03:10,2024-02-15 20:03:10,"",178,https://michaelkentburns.com/?p=180,"0",revision,"","0"
 181,1,2024-02-15 20:12:37,2024-02-15 20:12:37,"<!-- wp:paragraph -->
-<p>Please write an email to <a href=""mailto:MichaelKentBurns@gmail.com"">MichaelKentBurns@gmail.com</a> and include these things:</p>
+<p>Please write an email to <a href=""mailto:MichaelKentBurns@gmail.com"">MichaelKentBurns@gmail.com</a> (following the instructions on the <a href=""https://michaelkentburns.com/index.php/take-a-challenge/"" data-type=""page"" data-id=""178"">Challenges page</a>) and include these things:</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:list -->
@@ -5073,7 +4960,7 @@
 
 <!-- wp:paragraph -->
 <p>There is another challenge for you to tell me about your current development setup.</p>
-<!-- /wp:paragraph -->",Challenge: Tell me about yourself so I know how I can help you.,"",publish,closed,closed,"",challenge-tell-me-about-yourself-so-i-know-how-i-can-help-you,"","",2024-02-15 20:12:37,2024-02-15 20:12:37,"","0",https://michaelkentburns.com/?page_id=181,"0",page,"","0"
+<!-- /wp:paragraph -->",Challenge: Tell me about yourself so I know how I can help you.,"",publish,closed,closed,"",challenge-tell-me-about-yourself-so-i-know-how-i-can-help-you,"","",2024-03-09 13:15:42,2024-03-09 13:15:42,"","0",https://michaelkentburns.com/?page_id=181,"0",page,"","0"
 183,1,2024-02-15 20:12:37,2024-02-15 20:12:37,"<!-- wp:paragraph -->
 <p>Please write an email to <a href=""mailto:MichaelKentBurns@gmail.com"">MichaelKentBurns@gmail.com</a> and include these things:</p>
 <!-- /wp:paragraph -->
@@ -5116,7 +5003,7 @@
 <p>There is another challenge for you to tell me about your current development setup.</p>
 <!-- /wp:paragraph -->",Challenge: Tell me about yourself so I know how I can help you.,"",inherit,closed,closed,"",181-revision-v1,"","",2024-02-15 20:12:37,2024-02-15 20:12:37,"",181,https://michaelkentburns.com/?p=183,"0",revision,"","0"
 184,1,2024-02-15 20:25:58,2024-02-15 20:25:58,"<!-- wp:paragraph -->
-<p>You may wish to start by reading my <a href=""https://michaelkentburns.com/index.php/development-platforms/"" data-type=""page"" data-id=""175"">Development platforms</a> page then come back here and tell me about your current setup in an email to <a href=""mailto:MichaelKentBurns@gmail.com"" target=""_blank"" rel=""noreferrer noopener"">MichaelKentBurns@gmail.com</a></p>
+<p>You may wish to start by reading my <a href=""https://michaelkentburns.com/index.php/development-platforms/"" data-type=""page"" data-id=""175"">Development platforms</a> page then come back here and tell me about your current setup in an email to <a href=""mailto:MichaelKentBurns@gmail.com"" target=""_blank"" rel=""noreferrer noopener"">MichaelKentBurns@gmail.com</a> (following the instructions on the <a href=""https://michaelkentburns.com/index.php/take-a-challenge/"" data-type=""page"" data-id=""178"">Challenges page</a>).</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
@@ -5175,7 +5062,7 @@
 
 <!-- wp:paragraph -->
 <p></p>
-<!-- /wp:paragraph -->",Challenge: Tell me about your development setup.,"",publish,closed,closed,"",challenge-tell-me-about-your-development-setup,"","",2024-02-15 20:25:58,2024-02-15 20:25:58,"","0",https://michaelkentburns.com/?page_id=184,"0",page,"","0"
+<!-- /wp:paragraph -->",Challenge: Tell me about your development setup.,"",publish,closed,closed,"",challenge-tell-me-about-your-development-setup,"","",2024-03-09 13:16:50,2024-03-09 13:16:50,"","0",https://michaelkentburns.com/?page_id=184,"0",page,"","0"
 186,1,2024-02-15 20:25:58,2024-02-15 20:25:58,"<!-- wp:paragraph -->
 <p>You may wish to start by reading my <a href=""https://michaelkentburns.com/index.php/development-platforms/"" data-type=""page"" data-id=""175"">Development platforms</a> page then come back here and tell me about your current setup in an email to <a href=""mailto:MichaelKentBurns@gmail.com"" target=""_blank"" rel=""noreferrer noopener"">MichaelKentBurns@gmail.com</a></p>
 <!-- /wp:paragraph -->
@@ -5241,6 +5128,10 @@
 <p>In my <a href=""https://michaelkentburns.com/index.php/work-globally/"" data-type=""page"" data-id=""59"">Work globally</a> page I discuss the importance of using GitHub to make yourself known and show off your talents.  It is also a great place to discover other projects that you can learn from and teams that you can participate in. </p>
 <!-- /wp:paragraph -->
 
+<!-- wp:paragraph -->
+<p>Don't forget to send me an email (following the instructions on the <a href=""https://michaelkentburns.com/index.php/take-a-challenge/"" data-type=""page"" data-id=""178"">Challenges page</a>) to <a href=""mailto:MichaelKentBurns@gmail.com"">MichaelKentBurns@gmail.com</a>.</p>
+<!-- /wp:paragraph -->
+
 <!-- wp:list {""ordered"":true} -->
 <ol><!-- wp:list-item -->
 <li>Go to <a href=""http://GitHub.com"">GitHub.com</a></li>
@@ -5275,7 +5166,7 @@
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li>Once you have it working locally and have pushed it to the GitHub site you can actually create a 'GitHub Page' to publish the working page for the whole world to see.   To do that when looking at the repository in GitHub.com, you will see a number of tabs along the top:  '&lt;> Code', 'Issues', ... 'Settings'.   Pick the Settings.   It will automatically fill in the repository name, and the Default branch will probably be set to 'main'.    On the left side of the screen in the sidebar, under 'Code and automation' there is an item named 'Pages'.  Pick that.   Once there it's pretty easy.  Under 'Source' there is a selector to pick the branch.   That should already say 'Deploy from a branch'.   Leave that as it is.  Below that is a section labeled 'Branch'.  In there are two buttons that should say 'None' and 'Save'.  It is not real obvious but click the 'None' button and select the 'main' branch'.  Finally press the 'Save' button.   It should then tell you 'Your GitHub Pages site is currently being built from the <code>main</code> branch. <a href=""https://docs.github.com/articles/configuring-a-publishing-source-for-github-pages/"">Learn more about configuring the publishing source for your site</a>.'  In a few moments you can refresh that page and see a note near the top that says something like 'Your site is live at <a href=""https://michaelkentburns.github.io/Hello-World/"">https://michaelkentburns.github.io/Hello-World/</a>Last <a href=""https://github.com/MichaelKentBurns/Hello-World/actions/runs/7922504847"">deployed</a> by <img width=""14"" height=""14"" src=""https://avatars.githubusercontent.com/u/5041124?s=28&amp;v=4"" alt=""@MichaelKentBurns""><a href=""https://github.com/MichaelKentBurns"">MichaelKentBurns</a> 1 minute ago'.   Just click that link or the 'Visit site' button. </li>
+<li>Once you have it working locally and have pushed it to the GitHub site you can actually create a 'GitHub Page' to publish the working page for the whole world to see.   To do that when looking at the repository in GitHub.com, you will see a number of tabs along the top:  '&lt;&gt; Code', 'Issues', ... 'Settings'.   Pick the Settings.   It will automatically fill in the repository name, and the Default branch will probably be set to 'main'.    On the left side of the screen in the sidebar, under 'Code and automation' there is an item named 'Pages'.  Pick that.   Once there it's pretty easy.  Under 'Source' there is a selector to pick the branch.   That should already say 'Deploy from a branch'.   Leave that as it is.  Below that is a section labeled 'Branch'.  In there are two buttons that should say 'None' and 'Save'.  It is not real obvious but click the 'None' button and select the 'main' branch'.  Finally press the 'Save' button.   It should then tell you 'Your GitHub Pages site is currently being built from the&nbsp;<code>main</code>&nbsp;branch.&nbsp;<a href=""https://docs.github.com/articles/configuring-a-publishing-source-for-github-pages/"">Learn more about configuring the publishing source for your site</a>.'  In a few moments you can refresh that page and see a note near the top that says something like 'Your site is live at&nbsp;<a href=""https://michaelkentburns.github.io/Hello-World/"">https://michaelkentburns.github.io/Hello-World/</a>Last&nbsp;<a href=""https://github.com/MichaelKentBurns/Hello-World/actions/runs/7922504847"">deployed</a>&nbsp;by&nbsp;<img width=""14"" height=""14"" src=""https://avatars.githubusercontent.com/u/5041124?s=28&amp;v=4"" alt=""@MichaelKentBurns""><a href=""https://github.com/MichaelKentBurns"">MichaelKentBurns</a>&nbsp;1 minute ago'.   Just click that link or the 'Visit site' button. </li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
@@ -5288,12 +5179,12 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p>Send me an email to '<a href=""mailto:MichaelKentBurns@gmail.com"">MichaelKentBurns@gmail.com</a>' with a link to your new repository.  </p>
+<p>Don't forget to finish your email with a link to your new repository.  </p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
 <p></p>
-<!-- /wp:paragraph -->",Challenge: Setup your own GitHub account and install Desktop GitHub app.,"",publish,closed,closed,"",challenge-setup-your-own-github-account-and-install-desktop-github-app,"","",2024-02-15 21:55:57,2024-02-15 21:55:57,"","0",https://michaelkentburns.com/?page_id=187,"0",page,"","0"
+<!-- /wp:paragraph -->",Challenge: Setup your own GitHub account and install Desktop GitHub app.,"",publish,closed,closed,"",challenge-setup-your-own-github-account-and-install-desktop-github-app,"","",2024-03-09 13:19:47,2024-03-09 13:19:47,"","0",https://michaelkentburns.com/?page_id=187,"0",page,"","0"
 190,1,2024-02-15 20:33:12,2024-02-15 20:33:12,"<!-- wp:paragraph -->
 <p>In my <a href=""https://michaelkentburns.com/index.php/work-globally/"" data-type=""page"" data-id=""59"">Work globally</a> page I discuss the importance of using GitHub to make yourself known and show off your talents.  It is also a great place to discover other projects that you can learn from and teams that you can participate in. </p>
 <!-- /wp:paragraph -->",Challenge: Setup your own GitHub account and install Desktop GitHub app.,"",inherit,closed,closed,"",187-revision-v1,"","",2024-02-15 20:33:12,2024-02-15 20:33:12,"",187,https://michaelkentburns.com/?p=190,"0",revision,"","0"
@@ -5326,63 +5217,6 @@
 <li>Also checkout the repository in which I captured the process I went through in developing my next challenge:  <a href=""https://github.com/MichaelKentBurns/Challenge-Interactive-rating-component"">Challenge-Interactive-rating-component</a></li>
 <!-- /wp:list-item --></ol>
 <!-- /wp:list -->",Challenge: Setup your own GitHub account and install Desktop GitHub app.,"",inherit,closed,closed,"",187-revision-v1,"","",2024-02-15 20:48:52,2024-02-15 20:48:52,"",187,https://michaelkentburns.com/?p=192,"0",revision,"","0"
-193,1,2024-02-15 21:54:57,2024-02-15 21:54:57,"<!-- wp:paragraph -->
-<p>In my <a href=""https://michaelkentburns.com/index.php/work-globally/"" data-type=""page"" data-id=""59"">Work globally</a> page I discuss the importance of using GitHub to make yourself known and show off your talents.  It is also a great place to discover other projects that you can learn from and teams that you can participate in. </p>
-<!-- /wp:paragraph -->
-
-<!-- wp:list {""ordered"":true} -->
-<ol><!-- wp:list-item -->
-<li>Go to <a href=""http://GitHub.com"">GitHub.com</a></li>
-<!-- /wp:list-item -->
-
-<!-- wp:list-item -->
-<li>Read up on what it is and how it works.</li>
-<!-- /wp:list-item -->
-
-<!-- wp:list-item -->
-<li>Click the 'Sign up' button and create yourself a free account. </li>
-<!-- /wp:list-item -->
-
-<!-- wp:list-item -->
-<li>Search around for projects that interest you and get a feel for how they are layed out.</li>
-<!-- /wp:list-item -->
-
-<!-- wp:list-item -->
-<li>Visit my page:  <a href=""https://github.com/MichaelKentBurns"">https://github.com/MichaelKentBurns</a> and checkout some of my repositories.   One you might find interesting is <a href=""https://github.com/MichaelKentBurns/MichaelKentBurns.com"">MichaelKentBurns.com</a> which is the project which is the repository for this site.   Yes, I keep an entire WordPress site captured in a repository.  </li>
-<!-- /wp:list-item -->
-
-<!-- wp:list-item -->
-<li>Also checkout the repository in which I captured the process I went through in developing my next challenge:  <a href=""https://github.com/MichaelKentBurns/Challenge-Interactive-rating-component"">Challenge-Interactive-rating-component</a>, look at the text of the file Notes.md to see how I did it. </li>
-<!-- /wp:list-item -->
-
-<!-- wp:list-item -->
-<li>Note that the GitHub site is where the public facing copy of your repository is stored.  But, you don't want to do your work there, in fact you can't.  Instead the idea is that you create a copy of that repository locally on your own machine and develop in that copy.     There are two ways to upload your progress at each step on the way.  One is the original 'git' cli command.   That requires a little learning which is not a bad idea.  But there is a companion Desktop app that looks a lot like the GitHub.com site.  It is called <a href=""https://desktop.github.com/"">GitHub Desktop</a>.  You can download that from this link now and install it.  Alternatively, once you have created your first repository and want to 'clone' it to your desktop machine, the cloning process will offer to install the desktop app for you and feed it the command to do the copy of your new repository.   </li>
-<!-- /wp:list-item -->
-
-<!-- wp:list-item -->
-<li>To get a feel for how this works, take the time to create a 'my first repo' repository and clone it to your desktop machine.   Then code a simple 'HelloWorld.html' page.  If you are not familiar with ""<a href=""https://en.wikipedia.org/wiki/%22Hello,_World!%22_program"">Hello, World!</a>"" checkout the wikipedia page.  There you will find source for this simple starter app in almost any language known, including HTML.   When you have coded it, then use the desktop app to commit that and push it to your public repository.   </li>
-<!-- /wp:list-item -->
-
-<!-- wp:list-item -->
-<li>Once you have it working locally and have pushed it to the GitHub site you can actually create a 'GitHub Page' to publish the working page for the whole world to see.   To do that when looking at the repository in GitHub.com, you will see a number of tabs along the top:  '&lt;> Code', 'Issues', ... 'Settings'.   Pick the Settings.   It will automatically fill in the repository name, and the Default branch will probably be set to 'main'.    On the left side of the screen in the sidebar, under 'Code and automation' there is an item named 'Pages'.  Pick that.   Once there it's pretty easy.  Under 'Source' there is a selector to pick the branch.   That should already say 'Deploy from a branch'.   Leave that as it is.  Below that is a section labeled 'Branch'.  In there are two buttons that should say 'None' and 'Save'.  It is not real obvious but click the 'None' button and select the 'main' branch'.  Finally press the 'Save' button.   It should then tell you 'Your GitHub Pages site is currently being built from the <code>main</code> branch. <a href=""https://docs.github.com/articles/configuring-a-publishing-source-for-github-pages/"">Learn more about configuring the publishing source for your site</a>.'  In a few moments you can refresh that page and see a note near the top that says something like 'Your site is live at <a href=""https://michaelkentburns.github.io/Hello-World/"">https://michaelkentburns.github.io/Hello-World/</a>Last <a href=""https://github.com/MichaelKentBurns/Hello-World/actions/runs/7922504847"">deployed</a> by <img width=""14"" height=""14"" src=""https://avatars.githubusercontent.com/u/5041124?s=28&amp;v=4"" alt=""@MichaelKentBurns""><a href=""https://github.com/MichaelKentBurns"">MichaelKentBurns</a> 1 minute ago'.   Just click that link or the 'Visit site' button. </li>
-<!-- /wp:list-item -->
-
-<!-- wp:list-item -->
-<li>Now that it is published live, you can make a small change to your local copy of the program and commit and push that to GitHub and within a short time your change will be live.   On the right side of the repository page, near the bottom you will see a section labeled 'Deployments'.  </li>
-<!-- /wp:list-item --></ol>
-<!-- /wp:list -->
-
-<!-- wp:paragraph -->
-<p>You have probably done this now!  Congratulations.</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph -->
-<p>Send me an email to 'MichaelKentBurns@gmail.com' with a lin</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph -->
-<p></p>
-<!-- /wp:paragraph -->",Challenge: Setup your own GitHub account and install Desktop GitHub app.,"",inherit,closed,closed,"",187-autosave-v1,"","",2024-02-15 21:54:57,2024-02-15 21:54:57,"",187,https://michaelkentburns.com/?p=193,"0",revision,"","0"
 194,1,2024-02-15 21:55:57,2024-02-15 21:55:57,"<!-- wp:paragraph -->
 <p>In my <a href=""https://michaelkentburns.com/index.php/work-globally/"" data-type=""page"" data-id=""59"">Work globally</a> page I discuss the importance of using GitHub to make yourself known and show off your talents.  It is also a great place to discover other projects that you can learn from and teams that you can participate in. </p>
 <!-- /wp:paragraph -->
@@ -6136,134 +5970,6 @@
 <!-- wp:paragraph -->
 <p></p>
 <!-- /wp:paragraph -->",Finding work,"",inherit,closed,closed,"",79-revision-v1,"","",2024-02-16 15:52:42,2024-02-16 15:52:42,"",79,https://michaelkentburns.com/?p=206,"0",revision,"","0"
-207,1,2024-02-16 16:02:49,2024-02-16 16:02:49,"{
-    ""nav_menu_item[77]"": {
-        ""value"": false,
-        ""type"": ""nav_menu_item"",
-        ""user_id"": 1,
-        ""date_modified_gmt"": ""2024-02-16 16:01:53""
-    },
-    ""nav_menu_item[151]"": {
-        ""value"": {
-            ""menu_item_parent"": 0,
-            ""object_id"": 149,
-            ""object"": ""page"",
-            ""type"": ""post_type"",
-            ""type_label"": ""Block editor"",
-            ""url"": ""https://michaelkentburns.com/index.php/working-in-a-professional-team/"",
-            ""title"": """",
-            ""target"": """",
-            ""attr_title"": """",
-            ""description"": """",
-            ""classes"": """",
-            ""xfn"": """",
-            ""nav_menu_term_id"": 11,
-            ""position"": 9,
-            ""status"": ""publish"",
-            ""original_title"": ""Working in a team"",
-            ""_invalid"": false
-        },
-        ""type"": ""nav_menu_item"",
-        ""user_id"": 1,
-        ""date_modified_gmt"": ""2024-02-16 16:02:49""
-    },
-    ""nav_menu_item[80]"": {
-        ""value"": {
-            ""menu_item_parent"": 0,
-            ""object_id"": 79,
-            ""object"": ""page"",
-            ""type"": ""post_type"",
-            ""type_label"": ""Block editor"",
-            ""url"": ""https://michaelkentburns.com/index.php/finding-work/"",
-            ""title"": """",
-            ""target"": """",
-            ""attr_title"": """",
-            ""description"": """",
-            ""classes"": """",
-            ""xfn"": """",
-            ""nav_menu_term_id"": 11,
-            ""position"": 8,
-            ""status"": ""publish"",
-            ""original_title"": ""Finding work"",
-            ""_invalid"": false
-        },
-        ""type"": ""nav_menu_item"",
-        ""user_id"": 1,
-        ""date_modified_gmt"": ""2024-02-16 16:02:49""
-    },
-    ""nav_menu_item[109]"": {
-        ""value"": {
-            ""menu_item_parent"": 0,
-            ""object_id"": 108,
-            ""object"": ""page"",
-            ""type"": ""post_type"",
-            ""type_label"": ""Block editor"",
-            ""url"": ""https://michaelkentburns.com/index.php/how-to/"",
-            ""title"": ""How to \u2026"",
-            ""target"": """",
-            ""attr_title"": """",
-            ""description"": """",
-            ""classes"": """",
-            ""xfn"": """",
-            ""nav_menu_term_id"": 11,
-            ""position"": 12,
-            ""status"": ""publish"",
-            ""original_title"": ""How to \u2026"",
-            ""_invalid"": false
-        },
-        ""type"": ""nav_menu_item"",
-        ""user_id"": 1,
-        ""date_modified_gmt"": ""2024-02-16 16:02:49""
-    },
-    ""nav_menu_item[176]"": {
-        ""value"": {
-            ""menu_item_parent"": 0,
-            ""object_id"": 175,
-            ""object"": ""page"",
-            ""type"": ""post_type"",
-            ""type_label"": ""Block editor"",
-            ""url"": ""https://michaelkentburns.com/index.php/development-platforms/"",
-            ""title"": """",
-            ""target"": """",
-            ""attr_title"": """",
-            ""description"": """",
-            ""classes"": """",
-            ""xfn"": """",
-            ""nav_menu_term_id"": 11,
-            ""position"": 10,
-            ""status"": ""publish"",
-            ""original_title"": ""Development platforms"",
-            ""_invalid"": false
-        },
-        ""type"": ""nav_menu_item"",
-        ""user_id"": 1,
-        ""date_modified_gmt"": ""2024-02-16 16:02:49""
-    },
-    ""nav_menu_item[179]"": {
-        ""value"": {
-            ""menu_item_parent"": 0,
-            ""object_id"": 178,
-            ""object"": ""page"",
-            ""type"": ""post_type"",
-            ""type_label"": ""Block editor"",
-            ""url"": ""https://michaelkentburns.com/index.php/take-a-challenge/"",
-            ""title"": """",
-            ""target"": """",
-            ""attr_title"": """",
-            ""description"": """",
-            ""classes"": """",
-            ""xfn"": """",
-            ""nav_menu_term_id"": 11,
-            ""position"": 11,
-            ""status"": ""publish"",
-            ""original_title"": ""Take a challenge"",
-            ""_invalid"": false
-        },
-        ""type"": ""nav_menu_item"",
-        ""user_id"": 1,
-        ""date_modified_gmt"": ""2024-02-16 16:02:49""
-    }
-}","","",trash,closed,closed,"",75f17320-39a7-46d4-b0f9-7efc1df3af66,"","",2024-02-16 16:02:49,2024-02-16 16:02:49,"","0",https://michaelkentburns.com/?p=207,"0",customize_changeset,"","0"
 210,1,2024-02-16 16:23:53,2024-02-16 16:23:53,"<!-- wp:image {""align"":""right"",""id"":169,""width"":""678px"",""height"":""auto"",""sizeSlug"":""large"",""linkDestination"":""none"",""className"":""is-style-default""} -->
 <figure class=""wp-block-image alignright size-large is-resized is-style-default""><img src=""https://michaelkentburns.com/wp-content/uploads/2024/02/MichaelAtWork-1024x768.jpeg"" alt="""" class=""wp-image-169"" style=""width:678px;height:auto""/></figure>
 <!-- /wp:image -->
@@ -7433,7 +7139,11 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p>I have already done that myself using a simple FrontEndMentor challenge.   I captured the whole process in a file called Notes.md in that repository.  So, go to my repository and locate the Notes.md file.   You can look around in my repository to see the code I downloaded, the tasks that I decided I needed (called Issues in GitHub terms) and the step by step work to the completed project.   I also used GitHub Pages to publish the end result for the world to see.  </p>
+<p>Don't forget to <a href=""mailto: MichaelKentBurns@gmail.com"">send me an email</a> (following the instructions on the <a href=""https://michaelkentburns.com/index.php/take-a-challenge/"" data-type=""page"" data-id=""178"">Challenges page</a>) with a link to your new repository, a writeup of what you learned, and what problems or questions you had.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>I have already done that myself using a simple FrontEndMentor challenge.   I captured the whole process in a file called Notes.md in that repository.  Find the link to my repository below.  So, go to my repository and locate the Notes.md file.   You can look around in my repository to see the code I downloaded, the tasks that I decided I needed (called Issues in GitHub terms) and the step by step work to the completed project.   I also used GitHub Pages to publish the end result for the world to see.  Make sure you do the same for your new project. </p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
@@ -7441,8 +7151,8 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p>After you have looked at mine, do your own.   When you are done <a href=""mailto: MichaelKentBurns@gmail.com"">send me an email</a> with that link and a writeup of what you learned, what problems or questions you had.   </p>
-<!-- /wp:paragraph -->",Challenge: capture a tutorial project in a GitHub repository,"",publish,closed,closed,"",challenge-capture-a-tutorial-project-in-a-github-repository,"","",2024-02-16 17:08:57,2024-02-16 17:08:57,"","0",https://michaelkentburns.com/?page_id=222,"0",page,"","0"
+<p></p>
+<!-- /wp:paragraph -->",Challenge: capture a tutorial project in a GitHub repository,"",publish,closed,closed,"",challenge-capture-a-tutorial-project-in-a-github-repository,"","",2024-03-09 13:26:36,2024-03-09 13:26:36,"","0",https://michaelkentburns.com/?page_id=222,"0",page,"","0"
 224,1,2024-02-16 17:08:57,2024-02-16 17:08:57,"<!-- wp:paragraph -->
 <p>Your task is to create a new repository for doing a tutorial project (of your choosing) and capturing your work step by step in that repository.    </p>
 <!-- /wp:paragraph -->
@@ -7739,12 +7449,12 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p>I still have a lot of writing to do so please check back often.   My writing will prioritized around what you find valuable.  I'm happy to revise any of it to make it more valuable to you. </p>
+<p>I still have a lot of writing to do so please check back often.   My writing will be prioritized around what you find valuable.  I'm happy to revise any of it to make it more valuable to you. </p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
 <p>So, for now, have a look around. </p>
-<!-- /wp:paragraph -->",Welcome to my mentoring site!,"",publish,open,open,"",welcome-to-my-mentoring-site,"","",2024-02-19 20:10:49,2024-02-19 20:10:49,"","0",https://michaelkentburns.com/?p=229,"0",post,"","0"
+<!-- /wp:paragraph -->",Welcome to my mentoring site!,"",publish,open,open,"",welcome-to-my-mentoring-site,"","",2024-03-09 15:31:42,2024-03-09 15:31:42,"","0",https://michaelkentburns.com/?p=229,"0",post,"",5
 230,1,2024-02-17 21:28:29,2024-02-17 21:28:29,"<!-- wp:paragraph -->
 <p>The initial construction process is complete enough that I'm ready for a soft opening.</p>
 <!-- /wp:paragraph -->
@@ -7783,87 +7493,6 @@
 <!-- wp:paragraph -->
 <p>So, for now, have a look around. </p>
 <!-- /wp:paragraph -->",Welcome to my mentoring site!,"",inherit,closed,closed,"",229-revision-v1,"","",2024-02-17 21:50:18,2024-02-17 21:50:18,"",229,https://michaelkentburns.com/?p=232,"0",revision,"","0"
-233,1,2024-02-17 22:25:36,2024-02-17 22:25:36,"{
-    ""widget_block[14]"": {
-        ""value"": {
-            ""raw_instance"": {
-                ""content"": ""<!-- wp:jetpack/subscriptions {\""includeSocialFollowers\"":false,\""buttonOnNewLine\"":true,\""buttonWidth\"":\""100%\"",\""fontSize\"":\""13px\"",\""customFontSize\"":\""13px\"",\""borderWeight\"":0,\""spacing\"":0,\""className\"":\""is-style-compact\""} /-->""
-            }
-        },
-        ""type"": ""option"",
-        ""user_id"": 1,
-        ""date_modified_gmt"": ""2024-02-17 22:25:19""
-    }
-}","","",trash,closed,closed,"",36b31af8-afc9-49e2-9fc4-365674b05176,"","",2024-02-17 22:25:36,2024-02-17 22:25:36,"","0",https://michaelkentburns.com/?p=233,"0",customize_changeset,"","0"
-234,1,2024-02-17 22:27:38,2024-02-17 22:27:38,"{
-    ""sidebars_widgets[sidebar-1]"": {
-        ""value"": [
-            ""block-11"",
-            ""block-12"",
-            ""block-14""
-        ],
-        ""type"": ""option"",
-        ""user_id"": 1,
-        ""date_modified_gmt"": ""2024-02-17 22:26:19""
-    },
-    ""widget_block[11]"": {
-        ""value"": {
-            ""raw_instance"": {
-                ""content"": ""<!-- wp:latest-posts {\""postsToShow\"":7,\""displayPostContent\"":true,\""displayAuthor\"":true,\""displayPostDate\"":true,\""align\"":\""center\""} /-->""
-            }
-        },
-        ""type"": ""option"",
-        ""user_id"": 1,
-        ""date_modified_gmt"": ""2024-02-17 22:27:19""
-    }
-}","","",trash,closed,closed,"","01411389-40c6-4e9f-a8eb-3a830d30b170","","",2024-02-17 22:27:38,2024-02-17 22:27:38,"","0",https://michaelkentburns.com/?p=234,"0",customize_changeset,"","0"
-235,1,2024-02-18 20:58:38,2024-02-18 20:58:38,"{
-    ""sidebars_widgets[sidebar-1]"": {
-        ""value"": [
-            ""block-17"",
-            ""block-11"",
-            ""block-12"",
-            ""block-14""
-        ],
-        ""type"": ""option"",
-        ""user_id"": 1,
-        ""date_modified_gmt"": ""2024-02-18 20:56:56""
-    },
-    ""widget_block[17]"": {
-        ""value"": {
-            ""raw_instance"": {
-                ""content"": ""<!-- wp:heading {\""level\"":1} -->\n<h1 class=\""wp-block-heading\""><strong>Latest Blog Posts:</strong></h1>\n<!-- /wp:heading -->""
-            }
-        },
-        ""type"": ""option"",
-        ""user_id"": 1,
-        ""date_modified_gmt"": ""2024-02-18 20:58:38""
-    }
-}","","",trash,closed,closed,"",3cc6b093-fe35-4a86-8a04-921adf4147a5,"","",2024-02-18 20:58:38,2024-02-18 20:58:38,"","0",https://michaelkentburns.com/?p=235,"0",customize_changeset,"","0"
-236,1,2024-02-18 21:01:25,2024-02-18 21:01:25,"{
-    ""widget_block[17]"": {
-        ""value"": {
-            ""raw_instance"": {
-                ""content"": ""<!-- wp:heading -->\n<h2 class=\""wp-block-heading\""><strong>Latest Blog Posts:</strong></h2>\n<!-- /wp:heading -->""
-            }
-        },
-        ""type"": ""option"",
-        ""user_id"": 1,
-        ""date_modified_gmt"": ""2024-02-18 21:01:25""
-    }
-}","","",trash,closed,closed,"",a6d77718-4342-4ab5-b381-52861f2b6fef,"","",2024-02-18 21:01:25,2024-02-18 21:01:25,"","0",https://michaelkentburns.com/index.php/2024/02/18/a6d77718-4342-4ab5-b381-52861f2b6fef/,"0",customize_changeset,"","0"
-237,1,2024-02-18 21:25:31,2024-02-18 21:25:31,"{
-    ""widget_block[17]"": {
-        ""value"": {
-            ""raw_instance"": {
-                ""content"": ""<!-- wp:heading -->\n<h2 class=\""wp-block-heading\""><strong>Latest Blog Posts:</strong></h2>\n<!-- /wp:heading -->""
-            }
-        },
-        ""type"": ""option"",
-        ""user_id"": 1,
-        ""date_modified_gmt"": ""2024-02-18 21:12:26""
-    }
-}","","",trash,closed,closed,"","0a249d26-28e2-4a75-851a-fe6c87f8ab64","","",2024-02-18 21:25:31,2024-02-18 21:25:31,"","0",https://michaelkentburns.com/?p=237,"0",customize_changeset,"","0"
 239,1,2024-02-19 14:06:13,2024-02-19 14:06:13,"<!-- wp:paragraph -->
 <p>Because of the rapid pace of technology development and market requirements, most web and application development is done by integrated teams.  No one person can do it all themselves. It takes a team of specialists working individually and cross discipline to be successful. </p>
 <!-- /wp:paragraph -->
@@ -7993,68 +7622,6 @@
 <!-- wp:paragraph -->
 <p>Finally, you can build relationships with other developers and learn of other opportunities.  </p>
 <!-- /wp:paragraph -->",Working in a team,"",inherit,closed,closed,"",149-revision-v1,"","",2024-02-19 14:06:13,2024-02-19 14:06:13,"",149,https://michaelkentburns.com/?p=239,"0",revision,"","0"
-240,1,2024-02-19 16:48:36,2024-02-19 16:48:36,"{
-    ""nav_menu_item[223]"": {
-        ""value"": false,
-        ""type"": ""nav_menu_item"",
-        ""user_id"": 1,
-        ""date_modified_gmt"": ""2024-02-19 16:48:36""
-    }
-}","","",trash,closed,closed,"",8da4fc7b-cc5a-4b9e-9cba-f66eee7d08de,"","",2024-02-19 16:48:36,2024-02-19 16:48:36,"","0",https://michaelkentburns.com/index.php/2024/02/19/8da4fc7b-cc5a-4b9e-9cba-f66eee7d08de/,"0",customize_changeset,"","0"
-241,1,2024-02-19 16:48:57,2024-02-19 16:48:57,"{
-    ""nav_menu[11]"": {
-        ""value"": {
-            ""name"": ""Home menu"",
-            ""description"": """",
-            ""parent"": 0,
-            ""auto_add"": false
-        },
-        ""type"": ""nav_menu"",
-        ""user_id"": 1,
-        ""date_modified_gmt"": ""2024-02-19 16:48:57""
-    }
-}","","",trash,closed,closed,"",8069038d-fb1d-4a26-becb-bfb0d999c7cc,"","",2024-02-19 16:48:57,2024-02-19 16:48:57,"","0",https://michaelkentburns.com/index.php/2024/02/19/8069038d-fb1d-4a26-becb-bfb0d999c7cc/,"0",customize_changeset,"","0"
-242,1,2024-02-19 16:50:23,2024-02-19 16:50:23,"{
-    ""sidebars_widgets[sidebar-1]"": {
-        ""value"": [
-            ""block-19"",
-            ""block-12"",
-            ""block-14""
-        ],
-        ""type"": ""option"",
-        ""user_id"": 1,
-        ""date_modified_gmt"": ""2024-02-19 16:50:21""
-    },
-    ""widget_block[19]"": {
-        ""value"": {
-            ""raw_instance"": {
-                ""content"": ""<!-- wp:group {\""layout\"":{\""type\"":\""constrained\""}} -->\n<div class=\""wp-block-group\""><!-- wp:heading -->\n<h2 class=\""wp-block-heading\""><strong>Latest Blog Posts:</strong></h2>\n<!-- /wp:heading -->\n\n<!-- wp:latest-posts {\""postsToShow\"":7,\""displayPostContent\"":true,\""displayAuthor\"":true,\""displayPostDate\"":true,\""align\"":\""center\""} /--></div>\n<!-- /wp:group -->""
-            }
-        },
-        ""type"": ""option"",
-        ""user_id"": 1,
-        ""date_modified_gmt"": ""2024-02-19 16:50:21""
-    }
-}","","",trash,closed,closed,"",12e04b8a-dffa-49d2-8ef1-9c752f7414d9,"","",2024-02-19 16:50:23,2024-02-19 16:50:23,"","0",https://michaelkentburns.com/?p=242,"0",customize_changeset,"","0"
-244,1,2024-02-19 20:10:26,2024-02-19 20:10:26,"<!-- wp:paragraph -->
-<p>The initial construction process is complete enough that I'm ready for a soft opening.</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph -->
-<p>I welcome visitors and would greatly appreciate feedback.  After you have looked around a bit and think this might be helpful to you, please let me know.  On posts like this you can simply leave a comment.  It should also give you the option to subscribe when you submit the comment.  You can also subscribe on email to <a href=""mailto:MichaelKentBurns@gmail.com"">MichaelKentBurns@gmail.com</a>.</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph -->
-<p>When you get far enough to find one of my <a href=""https://michaelkentburns.com/index.php/take-a-challenge/"" data-type=""page"" data-id=""178"">challenges </a> please engage and let me know how it goes for you.   Each challenge should include a request to send me a detailed email, and I would greatly appreciate it if you do so.  </p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph -->
-<p>I still have a lot of writing to do so please check back often.   My writing will prioritized around what you find valuable.  I'm happy to revise any of it to make it more valuable to you. </p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph -->
-<p>So, for now, have a look around. </p>
-<!-- /wp:paragraph -->",Welcome to my mentoring site!,"",inherit,closed,closed,"",229-autosave-v1,"","",2024-02-19 20:10:26,2024-02-19 20:10:26,"",229,https://michaelkentburns.com/?p=244,"0",revision,"","0"
 245,1,2024-02-19 20:10:49,2024-02-19 20:10:49,"<!-- wp:paragraph -->
 <p>The initial construction process is complete enough that I'm ready for a soft opening.</p>
 <!-- /wp:paragraph -->
@@ -8625,7 +8192,6 @@
 <!-- wp:social-links -->
 <ul class=""wp-block-social-links""></ul>
 <!-- /wp:social-links -->",About Michael,"",inherit,closed,closed,"",22-revision-v1,"","",2024-02-27 16:45:58,2024-02-27 16:45:58,"",22,https://michaelkentburns.com/?p=260,"0",revision,"","0"
-261,1,2024-03-01 00:40:13,"0000-00-00 00:00:00","",Auto Draft,"",auto-draft,open,open,"","","","",2024-03-01 00:40:13,"0000-00-00 00:00:00","","0",https://michaelkentburns.com/?p=261,"0",post,"","0"
 262,1,2024-03-01 00:44:39,2024-03-01 00:44:39,"<!-- wp:paragraph -->
 <p>Running a hosted WordPress site on a cloud service is made possible by a number of services.   I use Cloudways, but there are others such as WPEngine.   In order to do development in those environments a developer needs to know Linux, shell, and remote headless environments including secure shell access.   The software that must be installed on a remote server is frequently referred to as LAMP, which stands for <strong>L</strong>inux Apache MySQL, PHP.    Typically, LAMP is installed as a series of servers which much be installed and configured on a Linux machine.  That is a fairly complex setup beyond the beginner Web developer. </p>
 <!-- /wp:paragraph -->
@@ -8719,3 +8285,767 @@
 <!-- wp:paragraph -->
 <p>Other how-to pages will guide you through processes like installing your own Wordpress server, learning how to debug it and much more.   </p>
 <!-- /wp:paragraph -->",Using XAMPP for development work,"",inherit,closed,closed,"",247-autosave-v1,"","",2024-03-01 00:44:39,2024-03-01 00:44:39,"",247,https://michaelkentburns.com/?p=262,"0",revision,"","0"
+265,1,2024-03-08 23:38:08,2024-03-08 23:38:08,"<!-- wp:list -->
+<ul><!-- wp:list-item -->
+<li>Getting to the administrative control panel.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>How to use GitHub to source control a WordPress site.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li></li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->",How to administer a WordPress site,"",inherit,closed,closed,"",111-revision-v1,"","",2024-03-08 23:38:08,2024-03-08 23:38:08,"",111,https://michaelkentburns.com/?p=265,"0",revision,"","0"
+266,1,2024-03-08 23:58:56,2024-03-08 23:58:56,"<!-- wp:paragraph -->
+<p>As mentioned in the <a href=""https://michaelkentburns.com/index.php/work-globally/"" data-type=""page"" data-id=""59"">Work globally page</a>, GitHub is an excellent way to keep a repository of a software project.  A WordPress site is no exception.   However, a WordPress site is significantly different than normal software projects in several regards:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><!-- wp:list-item -->
+<li>There is a lot of WordPress itself, as well as its Themes and Plugins that are contained in the public_html directory.   That is OK, and it's worthwhile tracking changes to those files.  For one, it is a good way to detect corruption in a site. </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>The vast majority of the content of a WP site is in posts and pages.   When an author writes a blog post or a page of any sort, it does not create any new web pages in public_html.   This is a result of the fact that WP contains a powerful CMS (<a href=""https://en.wikipedia.org/wiki/Content_management_system"">ContentManagementSystem</a>).   A CMS manages the content in a database not a directory full of fully rendered HTML pages.   This is discussed more in the <a href=""https://michaelkentburns.com/index.php/full-stack/"" data-type=""page"" data-id=""55"">Full stack</a> page.   The actual content of a blog post or a page is stored as a separate record in the wp_posts table.  Blog posts have a post_type of 'post' and pages (like this one) have a post_type of 'page'.  There are in fact a number of other things that get stored in the wp_posts table.     As a result of these items stored as records in a table,  doing the GitHub tracking of the text of a file will not show changes in individual posts or pages.   </li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>Because the main visible content is stored in a database table it is necessary to extract the individual records of the wp_posts (and other tables) to textual form so the normal GitHub mechanisms can show it in a readable form.    As a first step to doing that, I have written a shells script called 'dumpall' that is kept in the public_html directory (for now).  That script is run in a shell process on the WP host site before a Git commit and push commands are run to update the GitHub repository.    This is step 1 in the GitHub issue #10 of the GitHub repository'.  Later, I will write a program to extract each record of the wp_posts table into a separate text file in a .data/posts directory.   It will require some nicer format than a simple SQL dump.  </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->",How to use GitHub to source control a WordPress site,"",publish,closed,closed,"",how-to-use-github-to-source-control-a-wordpress-site,"","",2024-03-09 00:00:27,2024-03-09 00:00:27,"",111,https://michaelkentburns.com/?page_id=266,2,page,"","0"
+267,1,2024-03-08 23:58:56,2024-03-08 23:58:56,"<!-- wp:paragraph -->
+<p>As mentioned in the <a href=""https://michaelkentburns.com/index.php/work-globally/"" data-type=""page"" data-id=""59"">Work globally page</a>, GitHub is an excellent way to keep a repository of a software project.  A WordPress site is no exception.   However, a WordPress site is significantly different than normal software projects in several regards:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><!-- wp:list-item -->
+<li>There is a lot of WordPress itself, as well as its Themes and Plugins that are contained in the public_html directory.   That is OK, and it's worthwhile tracking changes to those files.  For one, it is a good way to detect corruption in a site. </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>The vast majority of the content of a WP site is in posts and pages.   When an author writes a blog post or a page of any sort, it does not create any new web pages in public_html.   This is a result of the fact that WP contains a powerful CMS (<a href=""https://en.wikipedia.org/wiki/Content_management_system"">ContentManagementSystem</a>).   A CMS manages the content in a database not a directory full of fully rendered HTML pages.   This is discussed more in the <a href=""https://michaelkentburns.com/index.php/full-stack/"" data-type=""page"" data-id=""55"">Full stack</a> page.   The actual content of a blog post or a page is stored as a separate record in the wp_posts table.  Blog posts have a post_type of 'post' and pages (like this one) have a post_type of 'page'.  There are in fact a number of other things that get stored in the wp_posts table.     As a result of these items stored as records in a table,  doing the GitHub tracking of the text of a file will not show changes in individual posts or pages.   </li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>Because the main visible content is stored in a database table it is necessary to extract the individual records of the wp_posts (and other tables) to textual form so the normal GitHub mechanisms can show it in a readable form.    As a first step to doing that, I have written a shells script called 'dumpall' that is kept in the public_html directory (for now).  That script is run in a shell process on the WP host site before a Git commit and push commands are run to update the GitHub repository.    This is step 1 in the GitHub issue #10 of the GitHub repository'.  Later, I will write a program to extract each record of the wp_posts table into a separate text file in a .data/posts directory.   It will require some nicer format than a simple SQL dump.  </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->",How to use GitHub to source control a WordPress site,"",inherit,closed,closed,"",266-revision-v1,"","",2024-03-08 23:58:56,2024-03-08 23:58:56,"",266,https://michaelkentburns.com/?p=267,"0",revision,"","0"
+268,1,2024-03-09 00:00:25,2024-03-09 00:00:25,"<!-- wp:paragraph -->
+<p>As mentioned in the <a href=""https://michaelkentburns.com/index.php/work-globally/"" data-type=""page"" data-id=""59"">Work globally page</a>, GitHub is an excellent way to keep a repository of a software project.  A WordPress site is no exception.   However, a WordPress site is significantly different than normal software projects in several regards:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><!-- wp:list-item -->
+<li>There is a lot of WordPress itself, as well as its Themes and Plugins that are contained in the public_html directory.   That is OK, and it's worthwhile tracking changes to those files.  For one, it is a good way to detect corruption in a site. </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>The vast majority of the content of a WP site is in posts and pages.   When an author writes a blog post or a page of any sort, it does not create any new web pages in public_html.   This is a result of the fact that WP contains a powerful CMS (<a href=""https://en.wikipedia.org/wiki/Content_management_system"">ContentManagementSystem</a>).   A CMS manages the content in a database not a directory full of fully rendered HTML pages.   This is discussed more in the <a href=""https://michaelkentburns.com/index.php/full-stack/"" data-type=""page"" data-id=""55"">Full stack</a> page.   The actual content of a blog post or a page is stored as a separate record in the wp_posts table.  Blog posts have a post_type of 'post' and pages (like this one) have a post_type of 'page'.  There are in fact a number of other things that get stored in the wp_posts table.     As a result of these items stored as records in a table,  doing the GitHub tracking of the text of a file will not show changes in individual posts or pages.   </li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>Because the main visible content is stored in a database table it is necessary to extract the individual records of the wp_posts (and other tables) to textual form so the normal GitHub mechanisms can show it in a readable form.    As a first step to doing that, I have written a shells script called 'dumpall' that is kept in the public_html directory (for now).  That script is run in a shell process on the WP host site before a Git commit and push commands are run to update the GitHub repository.    This is step 1 in the GitHub issue #10 of the GitHub repository'.  Later, I will write a program to extract each record of the wp_posts table into a separate text file in a .data/posts directory.   It will require some nicer format than a simple SQL dump.  </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->",How to use GitHub to source control a WordPress site,"",inherit,closed,closed,"",266-autosave-v1,"","",2024-03-09 00:00:25,2024-03-09 00:00:25,"",266,https://michaelkentburns.com/?p=268,"0",revision,"","0"
+269,1,2024-03-09 00:01:38,2024-03-09 00:01:38,"<!-- wp:list -->
+<ul><!-- wp:list-item -->
+<li>Getting to the administrative control panel.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><a href=""https://michaelkentburns.com/index.php/how-to/how-to-administer-a-wordpress-site/how-to-use-github-to-source-control-a-wordpress-site/"" data-type=""page"" data-id=""266"">How to use GitHub to source control a WordPress site</a>.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li></li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->",How to administer a WordPress site,"",inherit,closed,closed,"",111-revision-v1,"","",2024-03-09 00:01:38,2024-03-09 00:01:38,"",111,https://michaelkentburns.com/?p=269,"0",revision,"","0"
+270,1,2024-03-09 00:16:42,2024-03-09 00:16:42,"<!-- wp:paragraph -->
+<p>While the front end is mostly concerned with the actual presentation of web information, there is much that the web browser cannot do.   One thing certainly is multitasking.  It is rare that a single person, using their browser to view a web page, is the only user at that specific site.  The back end is run on a more powerful machine that can server up web pages to many users around the world at the same time.   This concept is described in detail in the Wikipedia <a href=""https://en.wikipedia.org/wiki/Frontend_and_backend"">Frontend and backend</a> page. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>To make the back end work there are actually a number of servers running together that enable many web users to share access to a website.    These servers are all run as services by a system administrator and have inter dependancies.  So, the various servers have to know how to access each other to get the job done.  Since they work together we refer to the whole as a 'stack'.   This is described in detail in the Wikipedia LAMP (software bundle) page. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class=""wp-block-heading"">Skills</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Web Server (Apache)</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {""level"":4} -->
+<h4 class=""wp-block-heading"">PHP</h4>
+<!-- /wp:heading -->
+
+<!-- wp:heading {""level"":4} -->
+<h4 class=""wp-block-heading"">MySQL</h4>
+<!-- /wp:heading -->
+
+<!-- wp:heading -->
+<h2 class=""wp-block-heading"">Mentoring</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>There are many mentoring and tutorial sites available.  Just google ""backend mentor"" or view Wikipedia's ""<a href=""https://en.wikipedia.org/wiki/Frontend_and_backend"">Frontend and backend</a>"".</p>
+<!-- /wp:paragraph -->",Back end web,"",inherit,closed,closed,"",52-autosave-v1,"","",2024-03-09 00:16:42,2024-03-09 00:16:42,"",52,https://michaelkentburns.com/?p=270,"0",revision,"","0"
+271,1,2024-03-09 00:17:19,2024-03-09 00:17:19,"<!-- wp:paragraph -->
+<p>While the front end is mostly concerned with the actual presentation of web information, there is much that the web browser cannot do.   One thing certainly is multitasking.  It is rare that a single person, using their browser to view a web page, is the only user at that specific site.  The back end is run on a more powerful machine that can server up web pages to many users around the world at the same time.   This concept is described in detail in the Wikipedia <a href=""https://en.wikipedia.org/wiki/Frontend_and_backend"">Frontend and backend</a> page. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>To make the back end work there are actually a number of servers running together that enable many web users to share access to a website.    These servers are all run as services by a system administrator and have inter dependancies.  So, the various servers have to know how to access each other to get the job done.  Since they work together we refer to the whole as a 'stack'.   This is described in detail in the Wikipedia <a href=""https://en.wikipedia.org/wiki/LAMP_(software_bundle)"">LAMP (software bundle)</a> page. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class=""wp-block-heading"">Skills</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Web Server (Apache)</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {""level"":4} -->
+<h4 class=""wp-block-heading"">PHP</h4>
+<!-- /wp:heading -->
+
+<!-- wp:heading {""level"":4} -->
+<h4 class=""wp-block-heading"">MySQL</h4>
+<!-- /wp:heading -->
+
+<!-- wp:heading -->
+<h2 class=""wp-block-heading"">Mentoring</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>There are many mentoring and tutorial sites available.  Just google ""backend mentor"" or view Wikipedia's ""<a href=""https://en.wikipedia.org/wiki/Frontend_and_backend"">Frontend and backend</a>"".</p>
+<!-- /wp:paragraph -->",Back end web,"",inherit,closed,closed,"",52-revision-v1,"","",2024-03-09 00:17:19,2024-03-09 00:17:19,"",52,https://michaelkentburns.com/?p=271,"0",revision,"","0"
+273,1,2024-03-09 13:12:21,2024-03-09 13:12:21,"<!-- wp:paragraph -->
+<p>Once you have read some of this site it is good to put some of that to a test with a challenge.    There are often several paths that will get you to one of these challenges.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>When you complete a challenge tell me what you learned and what questions you still have.   For now, we can do that through email and later we can get more formal.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Please make sure that you report your experience.</strong>  To do this, create an email to <a href=""mailto:MichaelKentBurns@gmail.com"">MichaelKentBurns@gmail.com</a>.  Start your email by copying the text of the challenge into your message.   Make the subject of your email, the title of the challenge (from the top of the page).  Then as you follow the steps, simply insert your comments, questions, and problems encountered.   Complete the email with a summary of what you learned.    </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>So, dive in:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list {""ordered"":true} -->
+<ol><!-- wp:list-item -->
+<li><a href=""https://michaelkentburns.com/index.php/challenge-tell-me-about-yourself-so-i-know-how-i-can-help-you/"" data-type=""page"" data-id=""181""><strong>Tell me about yourself </strong>so I know how I can help you.</a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><a href=""https://michaelkentburns.com/index.php/challenge-tell-me-about-your-development-setup/"" data-type=""page"" data-id=""184""><strong>Tell me about your development setup</strong>,</a> what you already can do, and what you want to be able to do.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><a href=""https://michaelkentburns.com/index.php/challenge-setup-your-own-github-account-and-install-desktop-github-app/"" data-type=""page"" data-id=""187""><strong>Setup your own GitHub account</strong> and install Desktop GitHub app.</a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><a href=""https://michaelkentburns.com/index.php/challenge-capture-a-tutorial-project-in-a-github-repository/"" data-type=""page"" data-id=""222""><strong>Take any development challenge </strong>and record your work in a GitHub repository.</a> </li>
+<!-- /wp:list-item --></ol>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>Lots more to come... </p>
+<!-- /wp:paragraph -->",Take a challenge,"",inherit,closed,closed,"",178-revision-v1,"","",2024-03-09 13:12:21,2024-03-09 13:12:21,"",178,https://michaelkentburns.com/?p=273,"0",revision,"","0"
+274,1,2024-03-09 13:13:31,2024-03-09 13:13:31,"<!-- wp:paragraph -->
+<p>Once you have read some of this site it is good to put some of that to a test with a challenge.    There are often several paths that will get you to one of these challenges.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>When you complete a challenge tell me what you learned and what questions you still have.   For now, we can do that through email and later we can get more formal.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Please make sure that you report your experience.</strong>  To do this, create an email to <a href=""mailto:MichaelKentBurns@gmail.com"">MichaelKentBurns@gmail.com</a>.  Start your email by copying the text of the challenge into your message.   Make the subject of your email the title of the challenge (from the top of the page).  Then as you follow the steps, simply insert your comments, questions, and problems encountered.   Complete the email with a summary of what you learned.    </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>So, dive in:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list {""ordered"":true} -->
+<ol><!-- wp:list-item -->
+<li><a href=""https://michaelkentburns.com/index.php/challenge-tell-me-about-yourself-so-i-know-how-i-can-help-you/"" data-type=""page"" data-id=""181""><strong>Tell me about yourself </strong>so I know how I can help you.</a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><a href=""https://michaelkentburns.com/index.php/challenge-tell-me-about-your-development-setup/"" data-type=""page"" data-id=""184""><strong>Tell me about your development setup</strong>,</a> what you already can do, and what you want to be able to do.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><a href=""https://michaelkentburns.com/index.php/challenge-setup-your-own-github-account-and-install-desktop-github-app/"" data-type=""page"" data-id=""187""><strong>Setup your own GitHub account</strong> and install Desktop GitHub app.</a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><a href=""https://michaelkentburns.com/index.php/challenge-capture-a-tutorial-project-in-a-github-repository/"" data-type=""page"" data-id=""222""><strong>Take any development challenge </strong>and record your work in a GitHub repository.</a> </li>
+<!-- /wp:list-item --></ol>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>Lots more to come... </p>
+<!-- /wp:paragraph -->",Take a challenge,"",inherit,closed,closed,"",178-revision-v1,"","",2024-03-09 13:13:31,2024-03-09 13:13:31,"",178,https://michaelkentburns.com/?p=274,"0",revision,"","0"
+276,1,2024-03-09 13:15:42,2024-03-09 13:15:42,"<!-- wp:paragraph -->
+<p>Please write an email to <a href=""mailto:MichaelKentBurns@gmail.com"">MichaelKentBurns@gmail.com</a> (following the instructions on the <a href=""https://michaelkentburns.com/index.php/take-a-challenge/"" data-type=""page"" data-id=""178"">Challenges page</a>) and include these things:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><!-- wp:list-item -->
+<li>Your name and email address, as well as any other contact info like Facebook, LinkedIn, Twitter,  Discord, GitHub or other profiles you might have. </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Where you live and what your city or country is like.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Your education.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Your development training and experience.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Your career experience and goals. </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>What your hobbies are.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>What kind of development you have already done.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>What you would like to learn to do.</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>There is another challenge for you to tell me about your current development setup.</p>
+<!-- /wp:paragraph -->",Challenge: Tell me about yourself so I know how I can help you.,"",inherit,closed,closed,"",181-revision-v1,"","",2024-03-09 13:15:42,2024-03-09 13:15:42,"",181,https://michaelkentburns.com/?p=276,"0",revision,"","0"
+277,1,2024-03-09 13:16:50,2024-03-09 13:16:50,"<!-- wp:paragraph -->
+<p>You may wish to start by reading my <a href=""https://michaelkentburns.com/index.php/development-platforms/"" data-type=""page"" data-id=""175"">Development platforms</a> page then come back here and tell me about your current setup in an email to <a href=""mailto:MichaelKentBurns@gmail.com"" target=""_blank"" rel=""noreferrer noopener"">MichaelKentBurns@gmail.com</a> (following the instructions on the <a href=""https://michaelkentburns.com/index.php/take-a-challenge/"" data-type=""page"" data-id=""178"">Challenges page</a>).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Tell me about: </strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><!-- wp:list-item -->
+<li>Your computer model, memory, disk, processor.   </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Additional screens you have attached.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Your internet access and how it works for you.   What you can and cannot do.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Your operating system and release.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>What browser(s) you use.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Do you use a command line tool/shell and which one?</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Do you use a simple text editor or a graphical editor or IDE?</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Do you use GitHub or other site to publish your work?</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Do you use command line git to commit and push work or do you use a program like GitHub Desktop or other graphical tools?</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Do you host your finished work so it is visible to the public? </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>What do you like best about your current setup?</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>What don't you like, or what could be better? </li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->",Challenge: Tell me about your development setup.,"",inherit,closed,closed,"",184-revision-v1,"","",2024-03-09 13:16:50,2024-03-09 13:16:50,"",184,https://michaelkentburns.com/?p=277,"0",revision,"","0"
+278,1,2024-03-09 13:19:00,2024-03-09 13:19:00,"<!-- wp:paragraph -->
+<p>In my <a href=""https://michaelkentburns.com/index.php/work-globally/"" data-type=""page"" data-id=""59"">Work globally</a> page I discuss the importance of using GitHub to make yourself known and show off your talents.  It is also a great place to discover other projects that you can learn from and teams that you can participate in. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Don't forget to send me an email (following the instructions on the <a href=""https://michaelkentburns.com/index.php/take-a-challenge/"" data-type=""page"" data-id=""178"">Challenges page</a>) to <a href=""mailto:MichaelKentBurns@gmail.com"">MichaelKentBurns@gmail.com</a>.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list {""ordered"":true} -->
+<ol><!-- wp:list-item -->
+<li>Go to <a href=""http://GitHub.com"">GitHub.com</a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Read up on what it is and how it works.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Click the 'Sign up' button and create yourself a free account. </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Search around for projects that interest you and get a feel for how they are layed out.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Visit my page:  <a href=""https://github.com/MichaelKentBurns"">https://github.com/MichaelKentBurns</a> and checkout some of my repositories.   One you might find interesting is <a href=""https://github.com/MichaelKentBurns/MichaelKentBurns.com"">MichaelKentBurns.com</a> which is the project which is the repository for this site.   Yes, I keep an entire WordPress site captured in a repository.  </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Also checkout the repository in which I captured the process I went through in developing my next challenge:  <a href=""https://github.com/MichaelKentBurns/Challenge-Interactive-rating-component"">Challenge-Interactive-rating-component</a>, look at the text of the file Notes.md to see how I did it. </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Note that the GitHub site is where the public facing copy of your repository is stored.  But, you don't want to do your work there, in fact you can't.  Instead the idea is that you create a copy of that repository locally on your own machine and develop in that copy.     There are two ways to upload your progress at each step on the way.  One is the original 'git' cli command.   That requires a little learning which is not a bad idea.  But there is a companion Desktop app that looks a lot like the GitHub.com site.  It is called <a href=""https://desktop.github.com/"">GitHub Desktop</a>.  You can download that from this link now and install it.  Alternatively, once you have created your first repository and want to 'clone' it to your desktop machine, the cloning process will offer to install the desktop app for you and feed it the command to do the copy of your new repository.   </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>To get a feel for how this works, take the time to create a 'my first repo' repository and clone it to your desktop machine.   Then code a simple 'HelloWorld.html' page.  If you are not familiar with ""<a href=""https://en.wikipedia.org/wiki/%22Hello,_World!%22_program"">Hello, World!</a>"" checkout the wikipedia page.  There you will find source for this simple starter app in almost any language known, including HTML.   When you have coded it, then use the desktop app to commit that and push it to your public repository.   </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Once you have it working locally and have pushed it to the GitHub site you can actually create a 'GitHub Page' to publish the working page for the whole world to see.   To do that when looking at the repository in GitHub.com, you will see a number of tabs along the top:  '&lt;&gt; Code', 'Issues', ... 'Settings'.   Pick the Settings.   It will automatically fill in the repository name, and the Default branch will probably be set to 'main'.    On the left side of the screen in the sidebar, under 'Code and automation' there is an item named 'Pages'.  Pick that.   Once there it's pretty easy.  Under 'Source' there is a selector to pick the branch.   That should already say 'Deploy from a branch'.   Leave that as it is.  Below that is a section labeled 'Branch'.  In there are two buttons that should say 'None' and 'Save'.  It is not real obvious but click the 'None' button and select the 'main' branch'.  Finally press the 'Save' button.   It should then tell you 'Your GitHub Pages site is currently being built from the&nbsp;<code>main</code>&nbsp;branch.&nbsp;<a href=""https://docs.github.com/articles/configuring-a-publishing-source-for-github-pages/"">Learn more about configuring the publishing source for your site</a>.'  In a few moments you can refresh that page and see a note near the top that says something like 'Your site is live at&nbsp;<a href=""https://michaelkentburns.github.io/Hello-World/"">https://michaelkentburns.github.io/Hello-World/</a>Last&nbsp;<a href=""https://github.com/MichaelKentBurns/Hello-World/actions/runs/7922504847"">deployed</a>&nbsp;by&nbsp;<img width=""14"" height=""14"" src=""https://avatars.githubusercontent.com/u/5041124?s=28&amp;v=4"" alt=""@MichaelKentBurns""><a href=""https://github.com/MichaelKentBurns"">MichaelKentBurns</a>&nbsp;1 minute ago'.   Just click that link or the 'Visit site' button. </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Now that it is published live, you can make a small change to your local copy of the program and commit and push that to GitHub and within a short time your change will be live.   On the right side of the repository page, near the bottom you will see a section labeled 'Deployments'.  </li>
+<!-- /wp:list-item --></ol>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>You have probably done this now!  Congratulations.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Send me an email to '<a href=""mailto:MichaelKentBurns@gmail.com"">MichaelKentBurns@gmail.com</a>' with a link to your new repository.  </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->",Challenge: Setup your own GitHub account and install Desktop GitHub app.,"",inherit,closed,closed,"",187-autosave-v1,"","",2024-03-09 13:19:00,2024-03-09 13:19:00,"",187,https://michaelkentburns.com/?p=278,"0",revision,"","0"
+279,1,2024-03-09 13:19:47,2024-03-09 13:19:47,"<!-- wp:paragraph -->
+<p>In my <a href=""https://michaelkentburns.com/index.php/work-globally/"" data-type=""page"" data-id=""59"">Work globally</a> page I discuss the importance of using GitHub to make yourself known and show off your talents.  It is also a great place to discover other projects that you can learn from and teams that you can participate in. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Don't forget to send me an email (following the instructions on the <a href=""https://michaelkentburns.com/index.php/take-a-challenge/"" data-type=""page"" data-id=""178"">Challenges page</a>) to <a href=""mailto:MichaelKentBurns@gmail.com"">MichaelKentBurns@gmail.com</a>.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list {""ordered"":true} -->
+<ol><!-- wp:list-item -->
+<li>Go to <a href=""http://GitHub.com"">GitHub.com</a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Read up on what it is and how it works.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Click the 'Sign up' button and create yourself a free account. </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Search around for projects that interest you and get a feel for how they are layed out.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Visit my page:  <a href=""https://github.com/MichaelKentBurns"">https://github.com/MichaelKentBurns</a> and checkout some of my repositories.   One you might find interesting is <a href=""https://github.com/MichaelKentBurns/MichaelKentBurns.com"">MichaelKentBurns.com</a> which is the project which is the repository for this site.   Yes, I keep an entire WordPress site captured in a repository.  </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Also checkout the repository in which I captured the process I went through in developing my next challenge:  <a href=""https://github.com/MichaelKentBurns/Challenge-Interactive-rating-component"">Challenge-Interactive-rating-component</a>, look at the text of the file Notes.md to see how I did it. </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Note that the GitHub site is where the public facing copy of your repository is stored.  But, you don't want to do your work there, in fact you can't.  Instead the idea is that you create a copy of that repository locally on your own machine and develop in that copy.     There are two ways to upload your progress at each step on the way.  One is the original 'git' cli command.   That requires a little learning which is not a bad idea.  But there is a companion Desktop app that looks a lot like the GitHub.com site.  It is called <a href=""https://desktop.github.com/"">GitHub Desktop</a>.  You can download that from this link now and install it.  Alternatively, once you have created your first repository and want to 'clone' it to your desktop machine, the cloning process will offer to install the desktop app for you and feed it the command to do the copy of your new repository.   </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>To get a feel for how this works, take the time to create a 'my first repo' repository and clone it to your desktop machine.   Then code a simple 'HelloWorld.html' page.  If you are not familiar with ""<a href=""https://en.wikipedia.org/wiki/%22Hello,_World!%22_program"">Hello, World!</a>"" checkout the wikipedia page.  There you will find source for this simple starter app in almost any language known, including HTML.   When you have coded it, then use the desktop app to commit that and push it to your public repository.   </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Once you have it working locally and have pushed it to the GitHub site you can actually create a 'GitHub Page' to publish the working page for the whole world to see.   To do that when looking at the repository in GitHub.com, you will see a number of tabs along the top:  '&lt;&gt; Code', 'Issues', ... 'Settings'.   Pick the Settings.   It will automatically fill in the repository name, and the Default branch will probably be set to 'main'.    On the left side of the screen in the sidebar, under 'Code and automation' there is an item named 'Pages'.  Pick that.   Once there it's pretty easy.  Under 'Source' there is a selector to pick the branch.   That should already say 'Deploy from a branch'.   Leave that as it is.  Below that is a section labeled 'Branch'.  In there are two buttons that should say 'None' and 'Save'.  It is not real obvious but click the 'None' button and select the 'main' branch'.  Finally press the 'Save' button.   It should then tell you 'Your GitHub Pages site is currently being built from the&nbsp;<code>main</code>&nbsp;branch.&nbsp;<a href=""https://docs.github.com/articles/configuring-a-publishing-source-for-github-pages/"">Learn more about configuring the publishing source for your site</a>.'  In a few moments you can refresh that page and see a note near the top that says something like 'Your site is live at&nbsp;<a href=""https://michaelkentburns.github.io/Hello-World/"">https://michaelkentburns.github.io/Hello-World/</a>Last&nbsp;<a href=""https://github.com/MichaelKentBurns/Hello-World/actions/runs/7922504847"">deployed</a>&nbsp;by&nbsp;<img width=""14"" height=""14"" src=""https://avatars.githubusercontent.com/u/5041124?s=28&amp;v=4"" alt=""@MichaelKentBurns""><a href=""https://github.com/MichaelKentBurns"">MichaelKentBurns</a>&nbsp;1 minute ago'.   Just click that link or the 'Visit site' button. </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Now that it is published live, you can make a small change to your local copy of the program and commit and push that to GitHub and within a short time your change will be live.   On the right side of the repository page, near the bottom you will see a section labeled 'Deployments'.  </li>
+<!-- /wp:list-item --></ol>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>You have probably done this now!  Congratulations.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Don't forget to finish your email with a link to your new repository.  </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->",Challenge: Setup your own GitHub account and install Desktop GitHub app.,"",inherit,closed,closed,"",187-revision-v1,"","",2024-03-09 13:19:47,2024-03-09 13:19:47,"",187,https://michaelkentburns.com/?p=279,"0",revision,"","0"
+281,1,2024-03-09 13:23:09,2024-03-09 13:23:09,"<!-- wp:paragraph -->
+<p>Your task is to create a new repository for doing a tutorial project (of your choosing) and capturing your work step by step in that repository.    </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Don't forget to <a href=""mailto: MichaelKentBurns@gmail.com"">send me an email</a> with that link and a writeup of what you learned, what problems or questions you had.   Don't forget to follow the instructions for that email on the <a href=""https://michaelkentburns.com/index.php/take-a-challenge/"" data-type=""page"" data-id=""178"">Challenges page</a>.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>I have already done that myself using a simple FrontEndMentor challenge.   I captured the whole process in a file called Notes.md in that repository.  Find the link to my repository below.  So, go to my repository and locate the Notes.md file.   You can look around in my repository to see the code I downloaded, the tasks that I decided I needed (called Issues in GitHub terms) and the step by step work to the completed project.   I also used GitHub Pages to publish the end result for the world to see.  </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Here is my project repository:   <a href=""https://github.com/MichaelKentBurns/Challenge-Interactive-rating-component/"">https://github.com/MichaelKentBurns/Challenge-Interactive-rating-component/</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->",Challenge: capture a tutorial project in a GitHub repository,"",inherit,closed,closed,"",222-revision-v1,"","",2024-03-09 13:23:09,2024-03-09 13:23:09,"",222,https://michaelkentburns.com/?p=281,"0",revision,"","0"
+282,1,2024-03-09 13:25:49,2024-03-09 13:25:49,"<!-- wp:paragraph -->
+<p>Your task is to create a new repository for doing a tutorial project (of your choosing) and capturing your work step by step in that repository.    </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Don't forget to <a href=""mailto: MichaelKentBurns@gmail.com"">send me an email</a> (following the instructions on the <a href=""https://michaelkentburns.com/index.php/take-a-challenge/"" data-type=""page"" data-id=""178"">Challenges page</a>) with a link to your new repository, a writeup of what you learned, and what problems or questions you had.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>I have already done that myself using a simple FrontEndMentor challenge.   I captured the whole process in a file called Notes.md in that repository.  Find the link to my repository below.  So, go to my repository and locate the Notes.md file.   You can look around in my repository to see the code I downloaded, the tasks that I decided I needed (called Issues in GitHub terms) and the step by step work to the completed project.   I also used GitHub Pages to publish the end result for the world to see.  </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Here is my project repository:   <a href=""https://github.com/MichaelKentBurns/Challenge-Interactive-rating-component/"">https://github.com/MichaelKentBurns/Challenge-Interactive-rating-component/</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->",Challenge: capture a tutorial project in a GitHub repository,"",inherit,closed,closed,"",222-autosave-v1,"","",2024-03-09 13:25:49,2024-03-09 13:25:49,"",222,https://michaelkentburns.com/?p=282,"0",revision,"","0"
+283,1,2024-03-09 13:26:36,2024-03-09 13:26:36,"<!-- wp:paragraph -->
+<p>Your task is to create a new repository for doing a tutorial project (of your choosing) and capturing your work step by step in that repository.    </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Don't forget to <a href=""mailto: MichaelKentBurns@gmail.com"">send me an email</a> (following the instructions on the <a href=""https://michaelkentburns.com/index.php/take-a-challenge/"" data-type=""page"" data-id=""178"">Challenges page</a>) with a link to your new repository, a writeup of what you learned, and what problems or questions you had.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>I have already done that myself using a simple FrontEndMentor challenge.   I captured the whole process in a file called Notes.md in that repository.  Find the link to my repository below.  So, go to my repository and locate the Notes.md file.   You can look around in my repository to see the code I downloaded, the tasks that I decided I needed (called Issues in GitHub terms) and the step by step work to the completed project.   I also used GitHub Pages to publish the end result for the world to see.  Make sure you do the same for your new project. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Here is my project repository:   <a href=""https://github.com/MichaelKentBurns/Challenge-Interactive-rating-component/"">https://github.com/MichaelKentBurns/Challenge-Interactive-rating-component/</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->",Challenge: capture a tutorial project in a GitHub repository,"",inherit,closed,closed,"",222-revision-v1,"","",2024-03-09 13:26:36,2024-03-09 13:26:36,"",222,https://michaelkentburns.com/?p=283,"0",revision,"","0"
+284,1,2024-03-09 15:31:42,2024-03-09 15:31:42,"<!-- wp:paragraph -->
+<p>The initial construction process is complete enough that I'm ready for a soft opening.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>I welcome visitors and would greatly appreciate feedback.  After you have looked around a bit and think this might be helpful to you, please let me know.  On posts like this you can simply leave a comment.  It should also give you the option to subscribe when you submit the comment.  You can also subscribe on the bottom of the side bar.  Lastly you can simply email to <a href=""mailto:MichaelKentBurns@gmail.com"">MichaelKentBurns@gmail.com</a>.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>When you get far enough to find one of my <a href=""https://michaelkentburns.com/index.php/take-a-challenge/"" data-type=""page"" data-id=""178"">challenges </a> please engage and let me know how it goes for you.   Each challenge should include a request to send me a detailed email, and I would greatly appreciate it if you do so.  </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>I still have a lot of writing to do so please check back often.   My writing will be prioritized around what you find valuable.  I'm happy to revise any of it to make it more valuable to you. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>So, for now, have a look around. </p>
+<!-- /wp:paragraph -->",Welcome to my mentoring site!,"",inherit,closed,closed,"",229-revision-v1,"","",2024-03-09 15:31:42,2024-03-09 15:31:42,"",229,https://michaelkentburns.com/?p=284,"0",revision,"","0"
+285,1,2024-03-13 16:27:48,2024-03-13 16:27:48,"<!-- wp:heading -->
+<h2 class=""wp-block-heading"">Basic necessities in a development platform:</h2>
+<!-- /wp:heading -->
+
+<!-- wp:list -->
+<ul><!-- wp:list-item -->
+<li>Computer</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Internet access</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Web browser</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>File management - either GUI and/or command line commands.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Text editor</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Source management and distribution system</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Collaboration applications</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>While those are the basics, you will likely also need:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><!-- wp:list-item -->
+<li>Web hosting service</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Interactive Development Environment (IDE)</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Remote development shell</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:heading -->
+<h2 class=""wp-block-heading"">Common platforms:</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>I'll not bother to describe all the many programs needed for each of these platforms since that will be found in the Development Tools page.   Rather, I'll discuss some of the unique attributes of each and how they relate.   You have probably already chosen a favorite platform, but may also be considering some alternatives.   </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {""level"":3} -->
+<h3 class=""wp-block-heading"">Linux</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Almost all web hosting servers are running Linux so ultimately if you are going to do full stack development you will need to learn Linux.   Many developers have chosen to also use Linux as their local work computer.  We will discuss hosting servers a little later on this page, but for now we will consider Linux as a local development computer.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Linux of course can be installed on PC's and Macintoshes.   It can be installed in a virtual machine on either of those platforms.   It also can run native on Windows using <a href=""https://cygwin.com"">Cygwin</a> which gives an existing Windows user the ability to use both Windows apps and Linux apps interchangeably.   That also eases the Linux learning curve.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>MacOS is based on Unix and the Mac Terminal app depends on Unix (Linux) shells for line mode interactive commands.   There are many different shells available to choose from, but the most commonly used one in my experience is BASH.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>If you choose to run Linux as your native OS then you will almost always use a graphical user interface.  </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {""level"":3} -->
+<h3 class=""wp-block-heading"">Windows</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>With Windows you naturally have a graphical interface including Windows Explorer,  a web browser like InternetExplorer or Edge, an interactive command line tool like PowerShell or cmd.exe.   Using your browser there are applications galore that you can download and install.   </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>In addition as mentioned above you can also install <a href=""https://cygwin.com"">Cygwin</a> and get lots of Linux goodies as well.  </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {""level"":3} -->
+<h3 class=""wp-block-heading"">Macintosh</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>As mentioned above MacOS is really UNIX under the covers.   The Terminal window runs many different UNIX shells.   Many common development tools are available for download and install and ready for use.     </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>However, since Terminal gets you into the core of UNIX there are many UNIX, and Linux package managers available that will let you install just like you are in Linux.  Homebrew is one option.   Just Google '<a href=""https://duckduckgo.com/?hps=1&amp;q=package+managers+for+mac&amp;ia=web"">package managers for mac</a>'</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {""level"":3} -->
+<h3 class=""wp-block-heading"">Web hosting servers</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Most servers are virtual machines in a cloud server farms.   These are almost always headless meaning there is no display and keyboard.   You must access  these using some form of secure shell.   Checkout a google of '<a href=""https://duckduckgo.com/?q=ssh&amp;t=osx&amp;ia=web"">ssh</a>'.   ssh and many programs that use it require secure certificates to be generated and installed on your local machine.  I will have a whole 'How to' page dedicated to secure networking. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class=""wp-block-heading"">How about you? </h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Give all of those options you probably already have a development platform of some sort and it's now time to talk about it.     I need to know about your setup, your needs, and your questions.    I have a '<a href=""https://michaelkentburns.com/index.php/challenge-tell-me-about-your-development-setup/"" data-type=""page"" data-id=""184"">Tell me about your development setup</a>' challenge page that you can use to tell me all about it.   So, go there and tell me.   </p>
+<!-- /wp:paragraph -->",Development platforms,"",inherit,closed,closed,"",175-autosave-v1,"","",2024-03-13 16:27:48,2024-03-13 16:27:48,"",175,https://michaelkentburns.com/?p=285,"0",revision,"","0"
+286,1,2024-03-13 16:46:57,2024-03-13 16:46:57,"<!-- wp:heading -->
+<h2 class=""wp-block-heading"">Basic necessities in a development platform:</h2>
+<!-- /wp:heading -->
+
+<!-- wp:list -->
+<ul><!-- wp:list-item -->
+<li>Computer</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Internet access</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Web browser</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>File management - either GUI and/or command line commands.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Text editor</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Source management and distribution system</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Collaboration applications</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>While those are the basics, you will likely also need:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><!-- wp:list-item -->
+<li>Web hosting service</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Interactive Development Environment (IDE)</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Remote development shell</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:heading -->
+<h2 class=""wp-block-heading"">Common platforms:</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>I'll not bother to describe all the many programs needed for each of these platforms since that will be found in the Development Tools page.   Rather, I'll discuss some of the unique attributes of each and how they relate.   You have probably already chosen a favorite platform, but may also be considering some alternatives.   </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {""level"":3} -->
+<h3 class=""wp-block-heading"">Linux</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Almost all web hosting servers are running Linux so ultimately if you are going to do full stack development you will need to learn Linux.   Many developers have chosen to also use Linux as their local work computer.  We will discuss hosting servers a little later on this page, but for now we will consider Linux as a local development computer.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Linux of course can be installed on PC's and Macintoshes.   It can be installed in a virtual machine on either of those platforms.   It also can run native on Windows using <a href=""https://cygwin.com"">Cygwin</a> which gives an existing Windows user the ability to use both Windows apps and Linux apps interchangeably.   That also eases the Linux learning curve.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>MacOS is based on Unix and the Mac Terminal app depends on Unix (Linux) shells for line mode interactive commands.   There are many different shells available to choose from, but the most commonly used one in my experience is BASH.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>If you choose to run Linux as your native OS then you will almost always use a graphical user interface.  </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {""level"":3} -->
+<h3 class=""wp-block-heading"">Windows</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>With Windows you naturally have a graphical interface including Windows Explorer,  a web browser like InternetExplorer or Edge, an interactive command line tool like PowerShell or cmd.exe.   Using your browser there are applications galore that you can download and install.   </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>In addition as mentioned above you can also install <a href=""https://cygwin.com"">Cygwin</a> and get lots of Linux goodies as well.  </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {""level"":3} -->
+<h3 class=""wp-block-heading"">Macintosh</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>As mentioned above MacOS is really UNIX under the covers.   The Terminal window runs many different UNIX shells.   Many common development tools are available for download and install and ready for use.     </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>However, since Terminal gets you into the core of UNIX there are many UNIX, and Linux package managers available that will let you install just like you are in Linux.  Homebrew is one option.   Just Google '<a href=""https://duckduckgo.com/?hps=1&amp;q=package+managers+for+mac&amp;ia=web"">package managers for mac</a>'</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {""level"":3} -->
+<h3 class=""wp-block-heading"">Web hosting servers</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Most servers are virtual machines in a cloud server farms.   These are almost always headless meaning there is no display and keyboard.   You must access  these using some form of secure shell.   Checkout a google of '<a href=""https://duckduckgo.com/?q=ssh&amp;t=osx&amp;ia=web"">ssh</a>'.   ssh and many programs that use it require secure certificates to be generated and installed on your local machine.  I will have a whole 'How to' page dedicated to secure networking. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class=""wp-block-heading"">How about you? </h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Give all of those options you probably already have a development platform of some sort and it's now time to talk about it.     I need to know about your setup, your needs, and your questions.    I have a '<a href=""https://michaelkentburns.com/index.php/challenge-tell-me-about-your-development-setup/"" data-type=""page"" data-id=""184"">Tell me about your development setup</a>' challenge page that you can use to tell me all about it.   So, go there and tell me.   </p>
+<!-- /wp:paragraph -->",Development platforms,"",inherit,closed,closed,"",175-revision-v1,"","",2024-03-13 16:46:57,2024-03-13 16:46:57,"",175,https://michaelkentburns.com/?p=286,"0",revision,"","0"
+287,1,2024-03-25 18:35:31,"0000-00-00 00:00:00","",Auto Draft,"",auto-draft,open,open,"","","","",2024-03-25 18:35:31,"0000-00-00 00:00:00","","0",https://michaelkentburns.com/?p=287,"0",post,"","0"
