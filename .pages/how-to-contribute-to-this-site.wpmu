@@ -1,0 +1,35 @@
+<!-- wp:group {"layout":{"type":"constrained"}} -->
+<div class="wp-block-group"><!-- wp:heading -->
+<h2 class="wp-block-heading">Review pages</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"fontSize":"medium"} -->
+<p class="has-medium-font-size">Read pages as normal, but keep notes about your experience.   Then when you have completed a page leave a comment with your notes.  Here are some ideas of things to note:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><!-- wp:list-item -->
+<li>Things that were not clear to you as a reader.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Things that seemed particularly helpful to you.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Information that seemed lacking but relevant.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Examples or graphics that would have helped you. </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Links to other relevant resources.</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list --></div>
+<!-- /wp:group -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->

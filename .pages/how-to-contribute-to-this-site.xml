@@ -1,0 +1,70 @@
+					<item>
+		<title><![CDATA[How to contribute to this site]]></title>
+		<link>https://michaelkentburns.com/index.php/how-to/how-to-contribute-to-this-site/</link>
+		<pubDate>Thu, 18 Jan 2024 23:33:40 +0000</pubDate>
+		<dc:creator><![CDATA[michaelkentburns@gmail.com]]></dc:creator>
+		<guid isPermaLink="false">https://michaelkentburns.com/?page_id=115</guid>
+		<description></description>
+		<content:encoded><![CDATA[<!-- wp:group {"layout":{"type":"constrained"}} -->
+<div class="wp-block-group"><!-- wp:heading -->
+<h2 class="wp-block-heading">Review pages</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"fontSize":"medium"} -->
+<p class="has-medium-font-size">Read pages as normal, but keep notes about your experience.   Then when you have completed a page leave a comment with your notes.  Here are some ideas of things to note:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><!-- wp:list-item -->
+<li>Things that were not clear to you as a reader.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Things that seemed particularly helpful to you.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Information that seemed lacking but relevant.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Examples or graphics that would have helped you. </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Links to other relevant resources.</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list --></div>
+<!-- /wp:group -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>115</wp:post_id>
+		<wp:post_date><![CDATA[2024-01-18 23:33:40]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2024-01-18 23:33:40]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2024-01-21 03:47:42]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2024-01-21 03:47:42]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[open]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[how-to-contribute-to-this-site]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>108</wp:post_parent>
+		<wp:menu_order>1</wp:menu_order>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+														<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[classic-editor-remember]]></wp:meta_key>
+		<wp:meta_value><![CDATA[block-editor]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_last_editor_used_jetpack]]></wp:meta_key>
+		<wp:meta_value><![CDATA[block-editor]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
