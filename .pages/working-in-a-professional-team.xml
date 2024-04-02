@@ -1,0 +1,160 @@
+					<item>
+		<title><![CDATA[Working in a team]]></title>
+		<link>https://michaelkentburns.com/index.php/working-in-a-professional-team/</link>
+		<pubDate>Sat, 10 Feb 2024 22:01:14 +0000</pubDate>
+		<dc:creator><![CDATA[michaelkentburns@gmail.com]]></dc:creator>
+		<guid isPermaLink="false">https://michaelkentburns.com/?page_id=149</guid>
+		<description></description>
+		<content:encoded><![CDATA[<!-- wp:paragraph -->
+<p>Because of the rapid pace of technology development and market requirements, most web and application development is done by integrated teams.  No one person can do it all themselves. It takes a team of specialists working individually and cross discipline to be successful. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Some of the roles that are needed are:</h2>
+<!-- /wp:heading -->
+
+<!-- wp:list -->
+<ul><!-- wp:list-item -->
+<li><strong>Project lead</strong> - responsible for planning how the individuals in the team can work together to complete the project.   This is usually done in cooperation with the whole team to come to consensus on next steps and how to keep the project moving.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Design lead</strong> - responsible for the technical design and requirements for each major piece of the solution.   This person is responsible for making sure that the contribution of all the team members will fit together and produce a good product.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Database designer</strong> - much of the interface between the different parts of the solution are stored in a database.   This person designs the specific tables, columns, and indexes needed to ensure proper communication and integrity.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Lead coder</strong> - this coder is the lead and will establish and enforce coding standards and facilitate code reviews.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Coder</strong> - an individual contributor that writes one or more specific code components. They may be front end, back end, or full stack coders depending on the languages they are proficient in. They will also design and write functional tests that ensure proper operation. These tests are often referred to as <strong>unit tests</strong> because they test the function of a specific code module.    </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Tester</strong> - a person responsible for designing an implementing test suites that ensure that the individual code components operate together.   This person will often work with the individual coders to ensure their unit tests are properly written.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Documenter</strong> - works with the individual team members to understand how their contributions work and writes functional internal documentation and/or end user documentation.  The documentation may be in the form of a user manual but will also likely have on screen components such as roll-over tool tips or info links like ⓘ.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Source controller</strong> - ensures that all of the artifacts of the team members are properly kept in a repository and that all changes to those artifacts are also captured in the repository.  </li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading"><a href="https://en.wikipedia.org/wiki/Software_engineering">Software engineering</a> team processes</h2>
+<!-- /wp:heading -->
+
+<!-- wp:list -->
+<ul><!-- wp:list-item -->
+<li><strong><a href="https://en.wikipedia.org/wiki/Requirements_analysis">Requirements analysis</a></strong></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Scope and effort estimation</strong> </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Prioritizing next steps and coordinating cadence and milestones</strong> - eg. <a href="https://en.wikipedia.org/wiki/Agile_software_development">Agile</a> </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong><a href="https://en.wikipedia.org/wiki/Code_review">Code reviews</a></strong></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong><a href="https://en.wikipedia.org/wiki/Integration_testing">Integration testing</a></strong></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong><a href="https://en.wikipedia.org/wiki/Continuous_integration">Continuous integration</a></strong></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong><a href="https://en.wikipedia.org/wiki/Software_deployment">Software deployment</a></strong> - </li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading"><a href="https://en.wikipedia.org/wiki/Programming_tool">Team tools</a></h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>The team processes are often facilitated by specialized software.  Here is a list of some of those.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><!-- wp:list-item -->
+<li><a href="https://en.wikipedia.org/wiki/Repository_(version_control)"><strong>Project repository manager</strong></a> - eg. GitHub</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><a href="https://en.wikipedia.org/wiki/Code_reviewing_software"><strong>Code review software</strong></a> - eg. <a href="https://www.gerritcodereview.com/index.html">Gerrit</a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Bug, feature, and project management system</strong> - eg. <a href="https://www.atlassian.com/software/jira">Jira</a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><a href="https://en.wikipedia.org/wiki/List_of_unit_testing_frameworks"><strong>Unit testing framework</strong></a> - eg. </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Source, build, testing and deployment automation system</strong> - eg. <a href="https://en.wikipedia.org/wiki/Jenkins_(software)">Jenkins</a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><a href="https://en.wikipedia.org/wiki/Continuous_integration" target="_blank" rel="noreferrer noopener"><strong>Continuous integration system</strong></a> - eg. GitHub Actions</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Deployment framework</strong> - eg. <a href="https://en.wikipedia.org/wiki/Kubernetes">Kubernetes</a></li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Build your brand</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>The best way to build your skills as a team player and move up to more responsible positions is to find a role that you can already fill and join a team.   With a little effort you will be able to learn more about the other team members and their roles as well as learn more about the larger project.   As you develop your skills you can build a reputation of trust.   Open source software projects are a great opportunity because they depend on volunteer contributions.  But, it should be noted that all work done for open software projects is not done for free.  The companies or organizations that rely on open source software often have specific needs that are not necessarily shared by the community at large.   These organizations will often pay their employees, or outside developers, to work on their special needs.  A close friend of mine does exactly this at SAS where I retired from. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Many open source projects are dependent on other open source projects.  Working on one can give you valuable skills and understanding that can be a gateway to other projects.   </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Finally, you can build relationships with other developers and learn of other opportunities.  </p>
+<!-- /wp:paragraph -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>149</wp:post_id>
+		<wp:post_date><![CDATA[2024-02-10 22:01:14]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2024-02-10 22:01:14]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2024-02-19 14:06:13]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2024-02-19 14:06:13]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[working-in-a-professional-team]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+														<wp:postmeta>
+		<wp:meta_key><![CDATA[classic-editor-remember]]></wp:meta_key>
+		<wp:meta_value><![CDATA[block-editor]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_last_editor_used_jetpack]]></wp:meta_key>
+		<wp:meta_value><![CDATA[block-editor]]></wp:meta_value>
+		</wp:postmeta>
+							</item>

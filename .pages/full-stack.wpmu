@@ -1,0 +1,49 @@
+<!-- wp:paragraph -->
+<p>There are plenty of resources to learn full stack skills.  Just see Wikipedia's "<a href="https://en.wikipedia.org/wiki/Frontend_and_backend">Frontend and backend</a>" page.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>While it seems obvious that full stack includes both front end and back end skills there is more to it.   The most obvious is the issue of deployment and configuration.  After all the front end (web page) needs to know how to connect to the back end server.  </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Fortunately, there are many cloud platforms that provide all of these services and integration and deployment into a simple "one click" service.    This WordPress site is running on a single core, Cloudways VPS (virtual private server) in a <a href="https://www.vultr.com">Vultr </a>datacenter in Seattle, Washington.   In fact that VPS hosts several WordPress sites as well as other technologies I am playing with. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>I have chosen to focus on using WordPress because:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><!-- wp:list-item -->
+<li>It is free</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>It is open source</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>It is widely used (43% of all websites on the internet use WP)</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>It is very flexible since it is a general website builder, a content management system, and a blogging platform all rolled into one. </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>It is fairly easy to use</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>It is the platform I am using to build this site</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>It allows me to train new developers in this field by having them help me improve and expand this site.</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>For more information on the benefits of WordPress read the article <a href="https://www.wpbeginner.com/why-you-should-use-wordpress/">6 Most Important Reasons to Use WordPress in 2024</a>.</p>
+<!-- /wp:paragraph -->

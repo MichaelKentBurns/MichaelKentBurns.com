@@ -1,0 +1,92 @@
+					<item>
+		<title><![CDATA[Challenge: Setup your own GitHub account and install Desktop GitHub app.]]></title>
+		<link>https://michaelkentburns.com/index.php/challenge-setup-your-own-github-account-and-install-desktop-github-app/</link>
+		<pubDate>Thu, 15 Feb 2024 20:33:12 +0000</pubDate>
+		<dc:creator><![CDATA[michaelkentburns@gmail.com]]></dc:creator>
+		<guid isPermaLink="false">https://michaelkentburns.com/?page_id=187</guid>
+		<description></description>
+		<content:encoded><![CDATA[<!-- wp:paragraph -->
+<p>In my <a href="https://michaelkentburns.com/index.php/work-globally/" data-type="page" data-id="59">Work globally</a> page I discuss the importance of using GitHub to make yourself known and show off your talents.  It is also a great place to discover other projects that you can learn from and teams that you can participate in. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Don't forget to send me an email (following the instructions on the <a href="https://michaelkentburns.com/index.php/take-a-challenge/" data-type="page" data-id="178">Challenges page</a>) to <a href="mailto:MichaelKentBurns@gmail.com">MichaelKentBurns@gmail.com</a>.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list {"ordered":true} -->
+<ol><!-- wp:list-item -->
+<li>Go to <a href="http://GitHub.com">GitHub.com</a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Read up on what it is and how it works.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Click the 'Sign up' button and create yourself a free account. </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Search around for projects that interest you and get a feel for how they are layed out.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Visit my page:  <a href="https://github.com/MichaelKentBurns">https://github.com/MichaelKentBurns</a> and checkout some of my repositories.   One you might find interesting is <a href="https://github.com/MichaelKentBurns/MichaelKentBurns.com">MichaelKentBurns.com</a> which is the project which is the repository for this site.   Yes, I keep an entire WordPress site captured in a repository.  </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Also checkout the repository in which I captured the process I went through in developing my next challenge:  <a href="https://github.com/MichaelKentBurns/Challenge-Interactive-rating-component">Challenge-Interactive-rating-component</a>, look at the text of the file Notes.md to see how I did it. </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Note that the GitHub site is where the public facing copy of your repository is stored.  But, you don't want to do your work there, in fact you can't.  Instead the idea is that you create a copy of that repository locally on your own machine and develop in that copy.     There are two ways to upload your progress at each step on the way.  One is the original 'git' cli command.   That requires a little learning which is not a bad idea.  But there is a companion Desktop app that looks a lot like the GitHub.com site.  It is called <a href="https://desktop.github.com/">GitHub Desktop</a>.  You can download that from this link now and install it.  Alternatively, once you have created your first repository and want to 'clone' it to your desktop machine, the cloning process will offer to install the desktop app for you and feed it the command to do the copy of your new repository.   </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>To get a feel for how this works, take the time to create a 'my first repo' repository and clone it to your desktop machine.   Then code a simple 'HelloWorld.html' page.  If you are not familiar with "<a href="https://en.wikipedia.org/wiki/%22Hello,_World!%22_program">Hello, World!</a>" checkout the wikipedia page.  There you will find source for this simple starter app in almost any language known, including HTML.   When you have coded it, then use the desktop app to commit that and push it to your public repository.   </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Once you have it working locally and have pushed it to the GitHub site you can actually create a 'GitHub Page' to publish the working page for the whole world to see.   To do that when looking at the repository in GitHub.com, you will see a number of tabs along the top:  '&lt;&gt; Code', 'Issues', ... 'Settings'.   Pick the Settings.   It will automatically fill in the repository name, and the Default branch will probably be set to 'main'.    On the left side of the screen in the sidebar, under 'Code and automation' there is an item named 'Pages'.  Pick that.   Once there it's pretty easy.  Under 'Source' there is a selector to pick the branch.   That should already say 'Deploy from a branch'.   Leave that as it is.  Below that is a section labeled 'Branch'.  In there are two buttons that should say 'None' and 'Save'.  It is not real obvious but click the 'None' button and select the 'main' branch'.  Finally press the 'Save' button.   It should then tell you 'Your GitHub Pages site is currently being built from the&nbsp;<code>main</code>&nbsp;branch.&nbsp;<a href="https://docs.github.com/articles/configuring-a-publishing-source-for-github-pages/">Learn more about configuring the publishing source for your site</a>.'  In a few moments you can refresh that page and see a note near the top that says something like 'Your site is live at&nbsp;<a href="https://michaelkentburns.github.io/Hello-World/">https://michaelkentburns.github.io/Hello-World/</a>Last&nbsp;<a href="https://github.com/MichaelKentBurns/Hello-World/actions/runs/7922504847">deployed</a>&nbsp;by&nbsp;<img width="14" height="14" src="https://avatars.githubusercontent.com/u/5041124?s=28&amp;v=4" alt="@MichaelKentBurns"><a href="https://github.com/MichaelKentBurns">MichaelKentBurns</a>&nbsp;1 minute ago'.   Just click that link or the 'Visit site' button. </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Now that it is published live, you can make a small change to your local copy of the program and commit and push that to GitHub and within a short time your change will be live.   On the right side of the repository page, near the bottom you will see a section labeled 'Deployments'.  </li>
+<!-- /wp:list-item --></ol>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>You have probably done this now!  Congratulations.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Don't forget to finish your email with a link to your new repository.  </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>187</wp:post_id>
+		<wp:post_date><![CDATA[2024-02-15 20:33:12]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2024-02-15 20:33:12]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2024-03-09 13:19:47]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2024-03-09 13:19:47]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[challenge-setup-your-own-github-account-and-install-desktop-github-app]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+														<wp:postmeta>
+		<wp:meta_key><![CDATA[classic-editor-remember]]></wp:meta_key>
+		<wp:meta_value><![CDATA[block-editor]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_last_editor_used_jetpack]]></wp:meta_key>
+		<wp:meta_value><![CDATA[block-editor]]></wp:meta_value>
+		</wp:postmeta>
+							</item>

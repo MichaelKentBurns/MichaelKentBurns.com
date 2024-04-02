@@ -1,0 +1,110 @@
+					<item>
+		<title><![CDATA[Work globally]]></title>
+		<link>https://michaelkentburns.com/index.php/work-globally/</link>
+		<pubDate>Mon, 03 Apr 2023 19:32:32 +0000</pubDate>
+		<dc:creator><![CDATA[michaelkentburns@gmail.com]]></dc:creator>
+		<guid isPermaLink="false">https://michaelkentburns.com/?page_id=59</guid>
+		<description></description>
+		<content:encoded><![CDATA[<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">GitHub</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>With the advent of <a href="https://en.wikipedia.org/wiki/Open-source_software"><strong>open-source software</strong></a> there arose the need to have world wide access to the source code for the many projects.   <a href="https://en.wikipedia.org/wiki/Git"><strong>Git</strong></a> is the source control tool invented for Linux development, but it is now widely used on all platforms, operating systems, and languages.    I actually use Git to control the source of this entire WordPress site. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>There are command line versions of git for all major desktop systems.  One of the more popular graphical interfaces for git is <a href="https://desktop.github.com"><strong>GitDesktop</strong></a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="https://en.wikipedia.org/wiki/GitHub"><strong>GitHub</strong></a> is a web interface for software development which uses Git for the source control features, and describes itself as collaborative version control.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>GitHub</strong> supports the creation of personal accounts.  Each account can contain a number of repositories, which can be made public or private access.   A personal account allows a developer to create a repository for each project that is being worked on.   On the developer's personal machine, a matching copy of the GitHub repository can be made in a process called cloning.   As work progresses on the local machine and certain testable milestones are reached, the local changes can be committed and pushed to the GitHub repository.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>To get an idea of how this looks visit <a href="https://github.com/MichaelKentBurns">my GitHub account.</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Using a GitHub account with repositories for each project that you have done allows others (if your repo is public) to see not only your code and documentation, but also the process you used to make the changes.   Each time you fix a bug or add a new feature, you should push that to GitHub with a comment that describes the fix or new feature.  </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>With all that in mind you should take action now by taking my <a href="https://michaelkentburns.com/index.php/challenge-setup-your-own-github-account-and-install-desktop-github-app/" data-type="page" data-id="187">Challenge: Setup your own GitHub account and install Desktop GitHub app</a>.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Capture your learning in a repository.</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>There are many tutorial sites to help you learn new skills.  As an example look at <strong><a href="https://www.frontendmentor.io">Frontend Mentor.</a></strong>  It is a good practice to capture your work for each challenge in a GitHub repository.  While it seems natural to download the starting material and jump right into the work, resist this urge and be very intentional about utilizing the features of Git.    </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>When you begin a challenge, you should create a GitHub repository and do all of your work step by step capturing your work as you go.    </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>When you are ready to try that, go to<a href="https://michaelkentburns.com/index.php/challenge-capture-a-tutorial-project-in-a-github-repository/"> the challenge page</a>.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>When you are all finished with the challenge, take the time to update the ReadMe file in the repository.   In the first paragraph, and prominently marked, describe the specific skills demonstrated.  For instance if you are learning new HTML5 multimedia tags, list those.   This will be important when you start looking for work.  </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Finally, update your resumé, CV, or Upwork profile to have a link to that repository.  A prospect client reading your profile will be able to click on that and see a clear demonstration that you actually do know that specific skill.    One final note is that when you do a real project of your own design,  replace the link to the challenge repository with a link to your own original project repository.   Putting your skills to work on a project of your own design shows that you really know how and why to use that skill.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Create a project with other developers.</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>As you learn with your friends take the opportunity to propose an original project that you all can work on together.   Get a consensus of the scope and focus of the project, but feel free to include some features that require a skill that only a few collaborators know well.   This teaches the real world reality that open-source software is a collaboration of many people to build and enhance projects that no single person can achieve alone. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Search GitHub for a project that you are interested in learning more about it. </h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Take some time to browse the galaxy of open-source projects in GitHub and find ones that you know about, or are interested in learning about.   You can actively follow the work of others, and can review the code that has been pushed to see how it has been coded.    Clone the repository to your local machine so you have a working copy.  As you test it out and find bugs or desired features, consider creating an issue in the GitHub project.   Note that some repositories have restrictions about who can do what.   By following projects, you will learn.  As you submit features, and if you get a chance to fix an issue you will start building your public credentials.   When you do that, be sure to update your resumé or CV or profile to point the projects you have participated in.   </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>59</wp:post_id>
+		<wp:post_date><![CDATA[2023-04-03 19:32:32]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2023-04-03 19:32:32]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2024-02-16 17:10:47]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2024-02-16 17:10:47]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[work-globally]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+														<wp:postmeta>
+		<wp:meta_key><![CDATA[classic-editor-remember]]></wp:meta_key>
+		<wp:meta_value><![CDATA[block-editor]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
