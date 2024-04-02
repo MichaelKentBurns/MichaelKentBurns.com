@@ -1,0 +1,51 @@
+<!-- wp:paragraph -->
+<p>Michael lives near Cedar Park, Texas with his wife Mary.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
+<div class="wp-block-group"><!-- wp:image {"id":39,"width":"309px","height":"auto","aspectRatio":"1.3360655737704918","sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large is-resized"><img src="https://michaelkentburns.com/wp-content/uploads/2023/04/IMG_1613-1024x768.jpeg" alt="" class="wp-image-39" style="aspect-ratio:1.3360655737704918;width:309px;height:auto"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:image {"id":169,"width":"324px","height":"auto","sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large is-resized"><img src="https://michaelkentburns.com/wp-content/uploads/2024/02/MichaelAtWork-1024x768.jpeg" alt="" class="wp-image-169" style="width:324px;height:auto"/></figure>
+<!-- /wp:image --></div>
+<!-- /wp:group -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Michael is a 40 year veteran software engineer.  The last 33 years was as a principal systems developer at <a href="http://www.sas.com">SAS Institute</a>.  His main responsibility was the <a href="https://www.sas.com/en_us/search.html?q=metadata%20server">enterprise metadata server</a> that connects all SAS products. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>He is now happily retired, but not yet done with the field.  This site is home base for his new focus of mentoring programmers in the art of software engineering.   The main emphasis is individuals living in a places that do not have software development jobs.  This means that their best opportunity is to go freelance.   Doing so allows them to stay in their culture and home community.   </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>While freelancing is a start, there are also opportunities to do so much more as part of a larger development team focused on many open source software projects.   This is something that I am moving into myself.  Join me.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Acknowledgement of Contributors</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>I am grateful to those who have read this site and made valuable contributions through feedback and contributed material.     <a href="https://michaelkentburns.com/index.php/about-michael/contributors/" data-type="page" data-id="295">See this full list.</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:social-links -->
+<ul class="wp-block-social-links"><!-- wp:social-link {"url":"https://github.com/MichaelKentBurns","service":"github"} /-->
+
+<!-- wp:social-link {"url":"https://www.linkedin.com/in/michaelkentburns/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3B6Dj3E8auRSy51Ad%2BgA7N%2FQ%3D%3D","service":"linkedin"} /-->
+
+<!-- wp:social-link {"url":"MichaelKentBurns@gmail.com","service":"mail"} /-->
+
+<!-- wp:social-link {"url":"https://www.facebook.com/michael.burns.906","service":"facebook"} /--></ul>
+<!-- /wp:social-links -->
+
+<!-- wp:social-links -->
+<ul class="wp-block-social-links"></ul>
+<!-- /wp:social-links -->
