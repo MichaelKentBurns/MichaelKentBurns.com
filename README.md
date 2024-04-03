@@ -26,4 +26,4 @@ This is a live WP site, it explains itself.
 * Where users can get help with your project: 
   Contact me through the site and I'll guide you.
 * Who maintains and contributes to the project:
-  I personally do, along with some of my mentees as described in [https://michaelkentburns.com/index.php/about-michael/contributors/](my contributors page)
+  I personally do, along with some of my mentees as described in [https://michaelkentburns.com/index.php/about-michael/contributors/]([my contributors page](https://michaelkentburns.com/index.php/about-michael/contributors/))
