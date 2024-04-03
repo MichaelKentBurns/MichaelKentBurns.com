@@ -17,13 +17,13 @@ This is a live WP site, it explains itself.
 [https://MichaelKentBurns.com](https://MichaelKentBurns.com) 
 
 ## Like any good repository, this one has this README.md which tells you:
-* What the project does
+* What the project does:
   It helps me mentor young developers who may know web design (or other software development fields) but lack the experience of working as part of a team in a global endeavor.  
-* Why the project is useful
+* Why the project is useful:
   It not only describes the journey a developer goes on while maturing, but it demonstrates the process through participating. I am actively involved in each students journey. 
-* How users can get started with the project
+* How users can get started with the project:
   Start reading and respond as suggested in the text.  If you are serious, I will respond.  
-* Where users can get help with your project
+* Where users can get help with your project: 
   Contact me through the site and I'll guide you.
-* Who maintains and contributes to the project
+* Who maintains and contributes to the project:
   I personally do, along with some of my mentees as described in [https://michaelkentburns.com/index.php/about-michael/contributors/](my contributors page)
