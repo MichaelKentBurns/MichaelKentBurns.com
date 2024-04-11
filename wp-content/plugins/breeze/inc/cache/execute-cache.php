@@ -428,12 +428,12 @@ function breeze_cache( $buffer, $flags ) {
 	if ( strpos( $breeze_current_url_path, '_breeze_cache_' ) !== false ) {
 		if ( ! empty( $GLOBALS['breeze_config']['cache_options']['breeze-gzip-compression'] ) && function_exists( 'gzencode' ) ) {
 
-			$wp_filesystem->put_contents( $path . breeze_mobile_detect() . md5( $breeze_current_url_path . '/index.gzip.html' ) . $is_suffix . '.php', $data );
-			$wp_filesystem->touch( $path . breeze_mobile_detect() . md5( $breeze_current_url_path . '/index.gzip.html' ) . $is_suffix . '.php', $modified_time );
+			$wp_filesystem->put_contents( $path . breeze_mobile_detect() . md5( $breeze_current_url_path . '/index.gzip.html' ) . $is_suffix . '.html', $data );
+			$wp_filesystem->touch( $path . breeze_mobile_detect() . md5( $breeze_current_url_path . '/index.gzip.html' ) . $is_suffix . '.html', $modified_time );
 		} else {
 
-			$wp_filesystem->put_contents( $path . breeze_mobile_detect() . md5( $breeze_current_url_path . '/index.html' ) . $is_suffix . '.php', $data );
-			$wp_filesystem->touch( $path . breeze_mobile_detect() . md5( $breeze_current_url_path . '/index.html' ) . $is_suffix . '.php', $modified_time );
+			$wp_filesystem->put_contents( $path . breeze_mobile_detect() . md5( $breeze_current_url_path . '/index.html' ) . $is_suffix . '.html', $data );
+			$wp_filesystem->touch( $path . breeze_mobile_detect() . md5( $breeze_current_url_path . '/index.html' ) . $is_suffix . '.html', $modified_time );
 		}
 	} else {
 		return $buffer;
@@ -495,9 +495,9 @@ function breeze_serve_cache( $filename, $breeze_current_url_path, $X1, $opts ) {
 	}
 	$is_suffix = breeze_currency_switcher_cache();
 	if ( function_exists( 'gzencode' ) && ! empty( $GLOBALS['breeze_config']['cache_options']['breeze-gzip-compression'] ) ) {
-		$file_name = md5( $filename . '/index.gzip.html' ) . $is_suffix . '.php';
+		$file_name = md5( $filename . '/index.gzip.html' ) . $is_suffix . '.html';
 	} else {
-		$file_name = md5( $filename . '/index.html' ) . $is_suffix . '.php';
+		$file_name = md5( $filename . '/index.html' ) . $is_suffix . '.html';
 	}
 
 	$blog_id_requested = isset( $GLOBALS['breeze_config']['blog_id'] ) ? $GLOBALS['breeze_config']['blog_id'] : 0;

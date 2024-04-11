@@ -1,10 +1,10 @@
 === Breeze - WordPress Cache Plugin ===
 Contributors: Cloudways
-Tags: cache,caching, performance, wp-cache, cdn, combine, compress, speed plugin, database cache,gzip, http compression, js cache, minify, optimize, page cache, performance, speed, expire headers
+Tags: cache,caching, performance, wp-cache, cdn
 Requires at least: 6.0
 Tested up to: 6.4.1
 Requires PHP: 7.4
-Stable tag: 2.1.4
+Stable tag: 2.1.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -160,7 +160,23 @@ Using Gzip, Breeze compresses the request files, further reducing the size of th
 
 == Changelog ==
 
-= 2.1.4=
+= 2.1.6 =
+
+* Fix: Error when placing WooCommerce order on the checkout page.
+* Fix: Issue when query strings contain uppercase letters.
+
+= 2.1.5 =
+
+* Add: Implemented wildcard functionality in the Cache Query String.
+* Fix: Updated CSS minification library.
+* Fix: Successfully resolved the CSS calc function minification issue.
+* Fix: Change the file extension of the cache file from .php to .html.
+* Fix: Refactored the caching procedure for responses from any 'edit' type API requests.
+* Fix: Enhanced cache mechanism on WooCommerce orders workflow.
+* Fix: Enhanced the mechanism to automatically clear the archive cache whenever a term is updated.
+* Fix: Enhanced the CDN URLs pattern to accommodate additional characters for top-level domains.
+
+= 2.1.4 =
 
 * Fix: Addressed a vulnerability discovered by CovertSwarm.
 * Fix: Limited the thank-you message display to admin and super admin users after activating Breeze.
@@ -170,71 +186,70 @@ Using Gzip, Breeze compresses the request files, further reducing the size of th
 * Fix: Separated lazy load functionality for videos and iframes, providing increased control over website lazy loading behavior for a more optimized user experience.
 * Add: Implemented distinct functionality for <video> tags specifically with the 'src' attribute, excluding video tags with <source> tags, enhancing flexibility and control over video elements.
 
-
-= 2.1.3=
+= 2.1.3 =
 
 * Fix: Functionality is improved to handle cases where no "HTTP_USER_AGENT" header is sent.
 
-= 2.1.2=
+= 2.1.2 =
 
 * Fix: Enhanced the conditions of device-based caching for users on the Cloudways Autoscale Platform.
 
-= 2.1.1=
+= 2.1.1 =
 
 * Fix: Resolve issue of Breeze plugin directory location.
 
-= 2.1.0=
+= 2.1.0 =
 
 * Add: Device-based caching for desktops, tablets, and mobile devices.
 * Add: WordPress REST API Integration for cache purging.
 * Add: Ability to set authentication key for REST API integration.
 
-= 2.0.33=
+= 2.0.33 =
 
 * Fix: Breeze plugin is now fully compatible with PHP 8.2 as all the compatibility issues are solved.
 * Fix: Lazy load option is enhanced to ensure compatibility with diverse themes and avoid image or video loading conflicts.
 * Fix: Host font locally option is improved to handle special characters effectively, enhancing font display.
 * Fix: WooCommerce cart caching is prevented when the preload option is enabled, preventing unwanted cart data caching.
 
-= 2.0.32=
+= 2.0.32 =
 
 * Add: Now users can exclude their custom HTTP headers from caching when HTML minification is on. Simply pass your custom headers through the WP filter 'breeze_custom_headers_allow' for a more tailored and dynamic caching experience.
 * Fix: Breeze now seamlessly supports both relative and absolute URL paths for preloading. Say goodbye to errors – and more assets effortlessly with the enhanced Breeze preload feature.
 
 
-= 2.0.31=
+= 2.0.31 =
 
 * Add: Breeze now supports the Aelia Currency Switcher for WooCommerce.
 * Add: Breeze will automatically clear the cache for order products, homepage, and shop page if the "Out of stock visibility" option is enabled and the stock is no longer available.
 
-= 2.0.30=
+= 2.0.30 =
 
 * Add: Host Files Locally improve website speed by serving Google Fonts, Google Analytics, Facebook, and Gravatar files directly from your application's local path.
 
-= 2.0.29=
+= 2.0.29 =
 
 * Add: Breeze now supports the latest version of the CSS minified library for superior performance.
 * Add: Preload Link option is enabled by default now to boost your website performance.
 
 
-= 2.0.28=
+= 2.0.28 =
 
 * Add: JavaScript file deferred loading feature now supports external third-party files alongside WP Core, themes, and plugins files.
 
-= 2.0.27=
+= 2.0.27 =
 
 * Add: Installing and activating Breeze using WP CLI will now automatically add GZIP compression and browser cache rules to the .htaccess file. Similarly, deactivating and deleting Breeze using WP CLI will remove these rules from the .htaccess file.
 
-= 2.0.26=
+= 2.0.26 =
 
 * Fix: The issue caused by CLI plugin update, resolving error related to WP_Upgrader_Skin class requirement removal.
 
-= 2.0.25=
+= 2.0.25 =
 
 * Fix: Purging the cache from Breeze for WordPress Multisite applications will not purge the OCP cache.
 
 
-= 2.0.24=
+= 2.0.24 =
 
 * Fix: Handling of the 'WP_Upgrader_Skin' class for seamless update functionality via wp-cli.
 
@@ -245,29 +260,29 @@ Using Gzip, Breeze compresses the request files, further reducing the size of th
 * Add: Filters are added to interact with the content buffer before cache files are created. Use a filter called "breeze_cache_buffer_before_processing" to interact with buffer content before performing any changes and "breeze_cache_buffer_after_processing" after markup changes are finished.
 
 
-= 2.0.22=
+= 2.0.22 =
 
 * Fix: Issues with Lazy Load and Cross-origin have been fixed by rewriting the engine to avoid interfering with bad markup.
 
-= 2.0.21=
+= 2.0.21 =
 
 * Add: Moved the Cloudflare Cache option to Purge Modules for Cloudways users only.
 * Add: Purge Varnish option will not be shown if varnish header not available.
 
 
 
-= 2.0.20=
+= 2.0.20 =
 
 * Fix: Fatal error displayed while editing WooCommerce attributes and other entities.
 
 
-= 2.0.19=
+= 2.0.19 =
 
 * Fix: Purge All Cache permalink for WordPress subdirectory installations.
 
 
 
-= 2.0.18=
+= 2.0.18 =
 
 * Add: Integrated Cloudflare Cache in Breeze for Cloudways users only.
 * Add: s-maxage in cache-control of Response Headers.
@@ -277,13 +292,13 @@ Using Gzip, Breeze compresses the request files, further reducing the size of th
 * Fix: Preserving declared media for styles on combine CSS.
 
 
-= 2.0.17=
+= 2.0.17 =
 
 * Fix: P-Tag will not be added when Lazy Load Images and Cross-Origin Safe Links are enabled.
 
 
 
-= 2.0.16=
+= 2.0.16 =
 
 
 * Fix: Ninja Forms now works when Lazy Load Images and Cross-Origin Safe Links are enabled.
@@ -292,7 +307,7 @@ Using Gzip, Breeze compresses the request files, further reducing the size of th
 * Add: Enabled "Combine JS" option will disable "Delay JS Inline Script" or "Delay All JavaScript" and vice versa.
 
 
-= 2.0.15=
+= 2.0.15 =
 
 * Add: Internal cache Purge while changing Theme.
 * Add: Internal cache Purge while using the options WP Customizer.
@@ -301,22 +316,22 @@ Using Gzip, Breeze compresses the request files, further reducing the size of th
 
 
 
-= 2.0.14=
+= 2.0.14 =
 
 * Fix: Applied condition to look new Facebook feed link in the plugin Facebook for WooCommerce.
 
 
 
-= 2.0.13=
+= 2.0.13 =
 
 * Fix: DOMDocument class was removed while enabling the options Lazy Load Images and Cross-origin Safe Links.
 
-= 2.0.12=
+= 2.0.12 =
 
 * Fix: Synchronized the reset cache option of the Avada theme with Breeze.
 
 
-= 2.0.11=
+= 2.0.11 =
 
 * Add: Scanning of CDN URL to verify it is not malicious in the CDN.
 * Fix: Improvised process of generating JS files from PHP files.
@@ -325,18 +340,18 @@ Using Gzip, Breeze compresses the request files, further reducing the size of th
 * Fix: Enhanced the compatibility with Weglot Translate.
 
 
-= 2.0.10=
+= 2.0.10 =
 
 * Add: More options added in the Database option tab.
 * Add: Display Autoload summary with Autoload total size as well as Autoload count.
 * Fix: Enhance the functionality of the options Combine CSS and Inline CSS while CSS is generated by Elementor.
 * Fix: Overwrite the TimeZone To UTC being sent out in ticket/order confirmations of The Events Calendar plugin.
 
-= 2.0.9=
+= 2.0.9 =
 
 * Fix: Added nonce check to import settings ajax request, in order to improve security and prevent cross-site requests.
 
-= 2.0.8=
+= 2.0.8 =
 
 * Fix: Enhance compatibility with the Pickingpal plugin to load the orders.
 * Fix: Remove duplication header calls in Varnish requests.

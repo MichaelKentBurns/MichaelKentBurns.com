@@ -96,9 +96,10 @@ $icon = BREEZE_PLUGIN_URL . 'assets/images/advanced-active.png';
 					$cached_query_strings = esc_textarea( $output );
 				}
 
+                $placeholder_cache_query_str = "Include Single Query String:&#10;city&#10;&#10;Include Multiple Query Strings using wildcard&#10;city(.*)";
 				?>
                 <textarea cols="100" rows="7" id="cache-query-str" name="cache-query-str"
-                          placeholder="City"><?php echo $cached_query_strings; ?></textarea>
+                          placeholder="<?php esc_attr_e( $placeholder_cache_query_str ); ?>"><?php echo $cached_query_strings; ?></textarea>
                 <div class="br-note">
                     <p>
 						<?php

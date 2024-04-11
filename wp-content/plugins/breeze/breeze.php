@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Breeze
  * Description: Breeze is a WordPress cache plugin with extensive options to speed up your website. All the options including Varnish Cache are compatible with Cloudways hosting.
- * Version: 2.1.4
+ * Version: 2.1.6
  * Text Domain: breeze
  * Domain Path: /languages
  * Author: Cloudways
@@ -37,7 +37,7 @@ if ( ! defined( 'BREEZE_PLUGIN_DIR' ) ) {
 	define( 'BREEZE_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 }
 if ( ! defined( 'BREEZE_VERSION' ) ) {
-	define( 'BREEZE_VERSION', '2.1.4' );
+	define( 'BREEZE_VERSION', '2.1.6' );
 }
 if ( ! defined( 'BREEZE_SITEURL' ) ) {
 	define( 'BREEZE_SITEURL', get_site_url() );
@@ -142,7 +142,7 @@ if ( is_admin() || 'cli' === php_sapi_name() ) {
 	     || ! empty( Breeze_Options_Reader::get_option_value( 'breeze-defer-js' ) )
 	     || ! empty( Breeze_Options_Reader::get_option_value( 'breeze-move-to-footer-js' ) )
 	     || ! empty( Breeze_Options_Reader::get_option_value( 'breeze-delay-all-js' ) )
-	     || ! empty( Breeze_Options_Reader::get_option_value( 'breeze-delay-js-scripts' ) )
+	     || ! empty( Breeze_Options_Reader::get_option_value( 'breeze-enable-js-delay' ) )
 	) {
 		// Call back ob start
 		ob_start( 'breeze_ob_start_callback' );
@@ -234,6 +234,10 @@ function breeze_ob_start_localfiles_callback( $buffer ) {
 
 // Call back ob start - stack
 function breeze_ob_start_callback( $buffer ) {
+
+	if ( ! empty( $_SERVER ) && ! empty( $_SERVER['REQUEST_URI'] ) && strpos( $_SERVER['REQUEST_URI'], 'context=edit' ) ) {
+		return $buffer;
+	}
 
 	// Get buffer from minify
 	$buffer = apply_filters( 'breeze_minify_content_return', $buffer );
@@ -759,9 +763,9 @@ function breeze_cc_process_match( $match ) {
 
 	// Check if this is an external link
 	if ( ! empty( $href_attr ) &&
-		 filter_var( $href_attr, FILTER_VALIDATE_URL ) &&
-		 strpos( $href_attr, $home_url ) === false &&
-		 strpos( $target_attr, '_blank' ) !== false ) {
+	     filter_var( $href_attr, FILTER_VALIDATE_URL ) &&
+	     strpos( $href_attr, $home_url ) === false &&
+	     strpos( $target_attr, '_blank' ) !== false ) {
 
 		// Extract the rel attribute, if present
 		$rel_attr = '';

@@ -82,7 +82,8 @@ class Breeze_Query_Strings_Rules {
 	private static $instance = null;
 
 	function __construct() {
-
+		// Include necessary helper functions.
+		require_once $this->trailingslashit( dirname( __FILE__ ) ) . '/helpers.php';
 	}
 
 	public static function get_instance() {
@@ -91,6 +92,15 @@ class Breeze_Query_Strings_Rules {
 		}
 
 		return self::$instance;
+	}
+
+	/**
+	 * Appends a trailing slash.
+	 * @param $value the path.
+	 * @return string path with a trailing slash added.
+	 */
+	public function trailingslashit( $value ) {
+		return rtrim( $value, '/\\' ) . '/';
 	}
 
 	public function fetch_ignored_list() {
@@ -331,7 +341,6 @@ class Breeze_Query_Strings_Rules {
 		}
 
 		foreach ( $extracted_vars as $index => $value ) {
-			$index = mb_strtolower( trim( $index ) );
 
 			// Fetch all the query vars that are in the ignore list and found in current URL.
 			if ( in_array( $index, $ignored_query_vars, true ) ) {
@@ -348,7 +357,10 @@ class Breeze_Query_Strings_Rules {
 			}
 
 			// Fetch all the query vars that are in the must cache list and found in current URL, user defined.
-			if ( in_array( $index, $user_defined_query_vars, true ) ) {
+			if ( 
+				in_array( $index, $user_defined_query_vars, true ) 
+				|| ! empty( breeze_is_string_in_array_values( $index, $user_defined_query_vars ) )
+			) {
 				$found_items['user_cached_no'] ++;
 				$found_items['user_cached_items'][ $index ] = $value;
 				unset( $not_found_anywhere[ $index ] );
