@@ -37,7 +37,7 @@ CREATE TABLE `wp_users` (
   KEY `user_login_key` (`user_login`),
   KEY `user_nicename` (`user_nicename`),
   KEY `user_email` (`user_email`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -46,7 +46,7 @@ CREATE TABLE `wp_users` (
 
 LOCK TABLES `wp_users` WRITE;
 /*!40000 ALTER TABLE `wp_users` DISABLE KEYS */;
-INSERT INTO `wp_users` VALUES (1,'michaelkentburns@gmail.com','$P$BYU5QjN1.rTMUuyFqotafBeTNUoJRr0','michael','michaelkentburns@gmail.com','https://michaelkentburns.com','2023-03-28 22:47:23','',0,'Michael'),(2,'Michael','$P$B/27ElBvfVdnDyLg9xlfphS.IiZIxN1','michael-2','MichaelBurns@mac.com','http://MichaelKentBurns.com','2023-04-01 23:43:21','',0,'Michael Burns'),(4,'Mike','$P$BDQ0yDRwMrFDa9HdCQSkUpqB0fZ6Qu.','mike','Mike@michaelkentburns.com','','2024-01-20 23:51:53','1705794713:$P$BB7FXpt7dr3lGgqUPI61Avg5xmaC1r0',0,'Mike Burns'),(5,'Bahati Philemon','$P$BASTWB9GDJHE6JjNMN3e7QqMut9uOU1','bahati-philemon','bahatiphilmon8@gmail.com','https://bahatiphilemon.netlify.app','2024-04-01 20:11:32','',0,'Philemon Bahati'),(6,'Efatha','$P$Bx2AvMw7XZfc6Kx7P3ZHCgJfUjKLX90','efatha','efathabyamungu4@gmail.com','','2024-04-01 20:12:38','1712007595:$P$BAIcUj7U3/gx364bpXpYrx0YH8L.dy1',0,'Efatha Byamungu');
+INSERT INTO `wp_users` VALUES (1,'michaelkentburns@gmail.com','$P$BYU5QjN1.rTMUuyFqotafBeTNUoJRr0','michael','michaelkentburns@gmail.com','https://michaelkentburns.com','2023-03-28 22:47:23','',0,'Michael'),(2,'Michael','$P$B/27ElBvfVdnDyLg9xlfphS.IiZIxN1','michael-2','MichaelBurns@mac.com','http://MichaelKentBurns.com','2023-04-01 23:43:21','',0,'Michael Burns'),(4,'Mike','$P$BDQ0yDRwMrFDa9HdCQSkUpqB0fZ6Qu.','mike','Mike@michaelkentburns.com','','2024-01-20 23:51:53','1705794713:$P$BB7FXpt7dr3lGgqUPI61Avg5xmaC1r0',0,'Mike Burns'),(5,'Bahati Philemon','$P$BASTWB9GDJHE6JjNMN3e7QqMut9uOU1','bahati-philemon','bahatiphilmon8@gmail.com','https://bahatiphilemon.netlify.app','2024-04-01 20:11:32','',0,'Philemon Bahati'),(6,'Efatha','$P$Bx2AvMw7XZfc6Kx7P3ZHCgJfUjKLX90','efatha','efathabyamungu4@gmail.com','','2024-04-01 20:12:38','1712007595:$P$BAIcUj7U3/gx364bpXpYrx0YH8L.dy1',0,'Efatha Byamungu'),(7,'ashuza','$P$BTuyeZ38dzEIxcNAPvEPpUlWFVMMcx0','ashuza','ashuzamaheshe4@gmail.com','','2024-04-16 21:45:10','',0,'Destin Ashuza');
 /*!40000 ALTER TABLE `wp_users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -59,4 +59,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-04-05 16:55:49
+-- Dump completed on 2024-04-17 22:04:56
