@@ -1,5 +1,5 @@
 <!-- wp:paragraph -->
-<p>Front end, or<a href="https://en.wikipedia.org/wiki/Front-end_web_development"> front-end web development</a> refers to the skills and technology related to building pages and applications that run in a web browser.   </p>
+<p>Front end, or<a href="https://en.wikipedia.org/wiki/Front-end_web_development"> front-end web development</a> refers to the skills and technology related to building pages and applications that run in a web browser. The front end development is the part of web development that deals with the user interface(UI) and user experience (UX) of a website. It involves designing and developing the visible parts of the website that users interact with. As a beginner in front-end web development, it is important to learn all of that and follow some best practices to create efficient, and user-friendly web pages.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:heading -->
@@ -27,24 +27,92 @@
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p><a href="https://en.wikipedia.org/wiki/HTML">HTML</a> is a rich markup language which can be viewed and coded in a simple text editing program.   It consists of the text to be presented interspersed with HTML markup tags that specify how that text should be displayed.   The filename usually ends in either .htm or .html to indicated that it can be displayed in a web browser.  The HTML markup standards have been around since the beginning of the <a href="https://en.wikipedia.org/wiki/World_Wide_Web">World Wide Web.</a>  </p>
+<p><a href="https://en.wikipedia.org/wiki/HTML">HTML</a> is a rich markup language which can be viewed and coded in a simple text editing program. It consists of the text to be presented interspersed with HTML markup tags that specify how that text should be displayed. The filename usually ends in either .htm or .html to indicated that it can be displayed in a web browser. The HTML markup standards have been around since the beginning of the <a href="https://en.wikipedia.org/wiki/World_Wide_Web">World Wide Web.</a></p>
 <!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Here is an example of a HTML document</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image {"id":341,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://michaelkentburns.com/wp-content/uploads/2024/04/htm-1024x342.png" alt="" class="wp-image-341"/></figure>
+<!-- /wp:image -->
 
 <!-- wp:heading {"level":3} -->
 <h3 class="wp-block-heading">HTML5</h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p><a href="https://en.wikipedia.org/wiki/HTML5">HTML5</a> is simply the 5th major revision of the HTML standards that added significant modern features that make some web pages very dynamic. </p>
+<p><a href="https://en.wikipedia.org/wiki/HTML5">HTML5</a> is simply the 5th major revision of the HTML standards that added significant modern features that make some web pages very dynamic.</p>
 <!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>HTML5 is a significant evolution of HTML, introducing new features that enhance web development capabilities. Here are some key aspects:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><!-- wp:list-item -->
+<li><strong>Semantic Elements:</strong>&nbsp;HTML5 introduces semantic elements like&nbsp;<code>&lt;header&gt;</code>,&nbsp;<code>&lt;nav&gt;</code>,&nbsp;<code>&lt;article&gt;</code>, etc., which provide more meaning to the content beyond just visual presentation. Search engines can better understand the structure of your webpage, aiding in searchability.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Multimedia Support:</strong>&nbsp;Gone are the days of relying solely on plugins like Flash. HTML5 offers built-in support for audio and video elements, allowing direct embedding of multimedia content within web pages.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Offline Capabilities:</strong>&nbsp;Web applications can leverage features like local storage and application cache to store data locally. This enables functionality even when the user is offline, improving user experience.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Improved Forms:</strong>&nbsp;HTML5 provides new input types like&nbsp;<code>email</code>,&nbsp;<code>url</code>,&nbsp;<code>date</code>, etc., simplifying user input validation and enhancing form functionality.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Canvas and SVG:</strong>&nbsp;Developers can create dynamic graphics, animations, and illustrations directly within web pages using the&nbsp;<code>&lt;canvas&gt;</code>&nbsp;and&nbsp;<code>&lt;svg&gt;</code>&nbsp;elements.</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
 
 <!-- wp:heading {"level":3} -->
 <h3 class="wp-block-heading">CSS - Cascading Style Sheets</h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p><a href="https://en.wikipedia.org/wiki/CSS">CSS</a> is a speciality language for styling text and graphics.   While simple HTML can be coded to create the desired look and layout it can be extremely tedious to do so on a large scale.   If you are not consistent then the look and feel will be inconsistent.  Furthermore, if you decide to change the way your site looks then you will have a monstrous job to adjust all of the tags from start to finish.   The intent of CSS is that the raw HTML page should contain the content only.   A single reference in the header of the page is made to a .css file that contains the styling directives.   If you choose to change the look and feel, then you can code a new css file and change the reference to point to the new one.    A further refinement of that idea is with a content management system (CMS) that stores the content in a database.  But, that is another subject for another day.</p>
+<p><a href="https://en.wikipedia.org/wiki/CSS">CSS</a> is a speciality language for styling text and graphics. While simple HTML can be coded to create the desired look and layout it can be extremely tedious to do so on a large scale. If you are not consistent then the look and feel will be inconsistent. Furthermore, if you decide to change the way your site looks then you will have a monstrous job to adjust all of the tags from start to finish. The intent of CSS is that the raw HTML page should contain the content only. A single reference in the header of the page is made to a .css file that contains the styling directives. If you choose to change the look and feel, then you can code a new css file and change the reference to point to the new one. A further refinement of that idea is with a content management system (CMS) that stores the content in a database. But, that is another subject for another day.</p>
 <!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Here is an example of a CSS docume</strong>nt</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image {"id":351,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://michaelkentburns.com/wp-content/uploads/2024/04/css-1-1024x444.png" alt="" class="wp-image-351"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p><strong>Advanced CSS Techniques:</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>While basic CSS covers fundamental styling, advanced techniques unlock more intricate visual effects and control:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><!-- wp:list-item -->
+<li><strong>CSS Preprocessors (Sass, LESS):</strong>&nbsp;These add another layer of abstraction to CSS, allowing you to use variables, mixins, and functions for more maintainable and reusable code.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>CSS Frameworks (Bootstrap, Tailwind CSS):</strong>&nbsp;These pre-built libraries provide pre-defined styles and components, accelerating the development process and ensuring consistency across your web project.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>CSS Grid and Flexbox:</strong>&nbsp;Techniques like CSS Grid and Flexbox offer enhanced flexibility in web page layout. You can define complex layouts with rows, columns, and flexible positioning for a responsive design that adapts to different screen sizes.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>CSS Animations and Transitions:</strong>&nbsp;Add interactive elements to your website with smooth transitions and animations triggered by user actions or events.</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
 
 <!-- wp:heading {"level":3} -->
 <h3 class="wp-block-heading">JavaScript - A procedural programming language for web pages.</h3>
@@ -65,8 +133,34 @@
 <!-- /wp:code -->
 
 <!-- wp:paragraph -->
-<p>Then using your file browser (Windows explorer or Mac Finder) to locate that file and open it as you would any other document. </p>
+<p>Then using your file browser (Windows explorer or Mac Finder) to locate that file and open it as you would any other document.</p>
 <!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Example of JavaScript</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image {"id":345,"sizeSlug":"full","linkDestination":"none"} -->
+<figure class="wp-block-image size-full"><img src="https://michaelkentburns.com/wp-content/uploads/2024/04/js.png" alt="" class="wp-image-345"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p><strong>JavaScript Frameworks and Libraries:</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>JavaScript frameworks and libraries build upon core JavaScript functionalities, providing pre-written code and tools for specific tasks:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><!-- wp:list-item -->
+<li><strong>Frontend Frameworks (React, Vue.js, Angular):</strong>&nbsp;These frameworks offer a structured approach to building complex user interfaces with features like data binding, component-based architecture, and state management.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>JavaScript Libraries (jQuery, Lodash):</strong>&nbsp;Libraries provide a collection of pre-written functions for tasks like DOM manipulation, animation, asynchronous operations, and utility functions. They simplify common JavaScript operations and promote code reusability.</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
 
 <!-- wp:heading {"level":3} -->
 <h3 class="wp-block-heading">HTTP - Hypertext Transport Protocol</h3>
@@ -86,6 +180,10 @@
 
 <!-- wp:paragraph -->
 <p>The details of that is for the next page (<a href="https://michaelkentburns.com/index.php/back-end-web/">Back end web</a>).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Want to see web development concepts come to life? Dive deeper into the code behind this post! W3Schools (<a href="https://www.w3schools.com/" target="_blank" rel="noreferrer noopener">https://www.w3schools.com/</a>) offers a fantastic interactive learning environment where you can experiment with HTML, CSS, and JavaScript. Play around with live code snippets, tweak them, and witness the results in real time. This hands-on approach is a great way to solidify your understanding and unlock your creative potential in web development!</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:heading -->
