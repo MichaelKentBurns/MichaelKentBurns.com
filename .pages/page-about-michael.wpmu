@@ -29,11 +29,41 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:heading -->
-<h2 class="wp-block-heading">Acknowledgement of Contributors</h2>
+<h2 class="wp-block-heading">Students and Contributors</h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p>I am grateful to those who have read this site and made valuable contributions through feedback and contributed material.     <a href="https://michaelkentburns.com/index.php/about-michael/contributors/" data-type="page" data-id="295">See this full list.</a></p>
+<p>Using the power of the internet and all the collaborative software available, I can now mentor and collaborate with like minded individuals around the globe. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Bukavu, Democratic Republic of the Congo </h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>My first cohort of students live in the city of <a href="https://en.wikipedia.org/wiki/Bukavu">Bukavu</a>.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><!-- wp:list-item -->
+<li>Philemon Bahati  <img class="wp-image-353" style="width: 150px;" src="https://michaelkentburns.com/wp-content/uploads/2024/04/work-scaled.jpg" alt=""></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Destin Ashuza <img class="wp-image-359" style="width: 150px;" src="https://michaelkentburns.com/wp-content/uploads/2024/04/DestinAshuza.jpeg" alt=""></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Efatha Byamungu <img class="wp-image-358" style="width: 150px;" src="https://michaelkentburns.com/wp-content/uploads/2024/04/Efatha.png" alt=""></li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Contributors</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>I am grateful to those who have read this site and made valuable contributions through feedback and contributed material. <a href="https://michaelkentburns.com/index.php/about-michael/contributors/" data-type="page" data-id="295">See this full list.</a></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:social-links -->

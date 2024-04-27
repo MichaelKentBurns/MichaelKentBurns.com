@@ -1,6 +1,15 @@
-<!-- wp:image {"align":"right","id":169,"width":"678px","height":"auto","sizeSlug":"large","linkDestination":"none","className":"is-style-default"} -->
-<figure class="wp-block-image alignright size-large is-resized is-style-default"><img src="https://michaelkentburns.com/wp-content/uploads/2024/02/MichaelAtWork-1024x768.jpeg" alt="" class="wp-image-169" style="width:678px;height:auto"/></figure>
+<!-- wp:group {"layout":{"type":"constrained"}} -->
+<div class="wp-block-group"><!-- wp:group {"layout":{"type":"constrained"}} -->
+<div class="wp-block-group"><!-- wp:gallery {"linkTo":"none","layout":{"type":"flex","flexWrap":null}} -->
+<figure class="wp-block-gallery has-nested-images columns-default is-cropped"><!-- wp:image {"id":169,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://michaelkentburns.com/wp-content/uploads/2024/02/MichaelAtWork-1024x768.jpeg" alt="" class="wp-image-169"/><figcaption class="wp-element-caption">Michael</figcaption></figure>
 <!-- /wp:image -->
+
+<!-- wp:image {"id":353,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://michaelkentburns.com/wp-content/uploads/2024/04/work-1024x683.jpg" alt="" class="wp-image-353"/><figcaption class="wp-element-caption">Philémon</figcaption></figure>
+<!-- /wp:image --></figure>
+<!-- /wp:gallery --></div>
+<!-- /wp:group -->
 
 <!-- wp:heading -->
 <h2 class="wp-block-heading">Software development freelancing...</h2>
@@ -178,4 +187,5 @@
 
 <!-- wp:paragraph -->
 <p></p>
-<!-- /wp:paragraph -->
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
