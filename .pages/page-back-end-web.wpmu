@@ -1,0 +1,31 @@
+<!-- wp:paragraph -->
+<p>While the front end is mostly concerned with the actual presentation of web information, there is much that the web browser cannot do.   One thing certainly is multitasking.  It is rare that a single person, using their browser to view a web page, is the only user at that specific site.  The back end is run on a more powerful machine that can server up web pages to many users around the world at the same time.   This concept is described in detail in the Wikipedia <a href="https://en.wikipedia.org/wiki/Frontend_and_backend">Frontend and backend</a> page. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>To make the back end work there are actually a number of servers running together that enable many web users to share access to a website.    These servers are all run as services by a system administrator and have inter dependancies.  So, the various servers have to know how to access each other to get the job done.  Since they work together we refer to the whole as a 'stack'.   This is described in detail in the Wikipedia <a href="https://en.wikipedia.org/wiki/LAMP_(software_bundle)">LAMP (software bundle)</a> page. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Skills</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Web Server (Apache)</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":4} -->
+<h4 class="wp-block-heading">PHP</h4>
+<!-- /wp:heading -->
+
+<!-- wp:heading {"level":4} -->
+<h4 class="wp-block-heading">MySQL</h4>
+<!-- /wp:heading -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Mentoring</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>There are many mentoring and tutorial sites available.  Just google "backend mentor" or view Wikipedia's "<a href="https://en.wikipedia.org/wiki/Frontend_and_backend">Frontend and backend</a>".</p>
+<!-- /wp:paragraph -->

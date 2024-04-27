@@ -1,0 +1,21 @@
+<!-- wp:list -->
+<ul><!-- wp:list-item -->
+<li><a href="https://michaelkentburns.com/index.php/how-to/how-to-contribute-to-this-site/" data-type="page" data-id="115">Contribute to this site</a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><a href="https://michaelkentburns.com/index.php/how-to-administer-a-wordpress-site/" data-type="link" data-id="https://michaelkentburns.com/index.php/how-to-administer-a-wordpress-site/">WordPress administrative tasks</a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Cloudways hosting administration tasks:</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Find your way around this site:</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><a href="https://michaelkentburns.com/index.php/using-xampp-for-development-work/" data-type="page" data-id="247">Install a full stack on your local development computer</a></li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
