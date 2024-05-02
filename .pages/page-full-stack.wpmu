@@ -1,17 +1,75 @@
-<!-- wp:paragraph -->
-<p>There are plenty of resources to learn full stack skills.  Just see Wikipedia's "<a href="https://en.wikipedia.org/wiki/Frontend_and_backend">Frontend and backend</a>" page.</p>
+<!-- wp:paragraph {"align":"justify"} -->
+<p class="has-text-align-justify">Full-stack development encompasses the creation of <strong><em>web applications</em></strong> or <strong><em>websites</em></strong> that involve collaboration among multiple developers handling various aspects such as front-end, back-end, and stack deployment and management. While there are proficient full-stack developers capable of managing all aspects independently, it's more common for teams to collaborate under a team lead's coordination.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p>While it seems obvious that full stack includes both front end and back end skills there is more to it.   The most obvious is the issue of deployment and configuration.  After all the front end (web page) needs to know how to connect to the back end server.  </p>
+<p><strong>Full-stack developers</strong> are like unicorns in the web development world – valuable and highly sought-after. Their well-rounded skillset allows them to work independently on projects, streamlining communication and development processes. They can switch between front-end and back-end tasks as needed, ensuring a cohesive final product.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image {"id":390,"width":"670px","height":"auto","sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large is-resized"><img src="https://michaelkentburns.com/wp-content/uploads/2024/05/full-stack-dev-1-1024x731.png" alt="" class="wp-image-390" style="width:670px;height:auto"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p><strong><a href="https://michaelkentburns.com/index.php/front-end-web/" data-type="page" data-id="49">Front-end development</a></strong> focuses on the user-facing side of things. This encompasses the visual design, layout, and interactivity that users experience directly. Languages like <em>HTML</em>, <em>CSS</em>, and <em>JavaScript</em> are commonly used for front-end development.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p>Fortunately, there are many cloud platforms that provide all of these services and integration and deployment into a simple "one click" service.    This WordPress site is running on a single core, Cloudways VPS (virtual private server) in a <a href="https://www.vultr.com">Vultr </a>datacenter in Seattle, Washington.   In fact that VPS hosts several WordPress sites as well as other technologies I am playing with. </p>
+<p><strong><a href="https://michaelkentburns.com/index.php/back-end-web/" data-type="page" data-id="52">Back-end development</a></strong>, on the other hand, deals with the server-side. It's where the data is stored, manipulated, and processed to deliver the functionalities users experience on the front-end. Here, developers might use programming languages like <a href="https://www.python.org" data-type="link" data-id="https://www.python.org">Python</a>, <a href="https://www.java.com" data-type="link" data-id="https://www.java.com">Java</a>, or <a href="https://www.php.net/downloads.php" data-type="link" data-id="https://www.php.net/downloads.php">PHP</a>, and rely on databases like <a href="https://www.mysql.com/" data-type="link" data-id="https://www.mysql.com/">MySQL</a> or <a href="https://www.mongodb.com/" data-type="link" data-id="https://www.mongodb.com/">MongoDB</a>.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p>I have chosen to focus on using WordPress because:</p>
+<p>Full stack developers are essentially jacks-of-all-trades who can handle all aspects of web development. This makes them very valuable to businesses, as they can work on projects from start to finish without needing to rely on other specialists.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>If you're interested in a career in web development, then becoming a full stack developer is a great option. It will require you to learn a lot of different skills, but it can be a very rewarding career path.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>It's an ever-evolving field, influenced by technological advancements, user behavior trends, and design aesthetics.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Some frameworks</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p><strong>Framework</strong> is an abstraction in which software, providing generic functionality, can be selectively changed by additional user-written code, thus providing application-specific software. It provides a standard way to build and deploy applications and is a universal, reusable software environment that provides particular functionality as part of a larger software platform to facilitate the development of software applications, products and solutions. <a href="https://en.wikipedia.org/wiki/Software_framework">More about framework</a>s<br></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Fortunately, there are many framework like: </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><!-- wp:list-item -->
+<li><mark style="background-color:rgba(0, 0, 0, 0);color:#be6902" class="has-inline-color"><em><strong><a href="https://www.djangoproject.com" data-type="link" data-id="https://www.djangoproject.com">Django (Python):</a> </strong></em></mark><mark style="background-color:rgba(0, 0, 0, 0)" class="has-inline-color has-dark-gray-color"><em>A high-level framework known for its rapid development capabilities and clean syntax</em>.</mark></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><mark style="background-color:rgba(0, 0, 0, 0);color:#be6902" class="has-inline-color"><em><a href="https://rubyonrails.org" data-type="link" data-id="https://rubyonrails.org"><strong>Ruby on Rails</strong> </a></em></mark><mark style="background-color:rgba(0, 0, 0, 0)" class="has-inline-color has-dark-gray-color"><em>(Ruby): Another popular choice with a focus on developer convenience and productivity</em>.</mark></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><mark style="background-color:rgba(0, 0, 0, 0);color:#be6902" class="has-inline-color"><em><a href="https://laravel.com/" data-type="link" data-id="https://laravel.com/"><strong>Laravel (PHP)</strong>: </a></em></mark><mark style="background-color:rgba(0, 0, 0, 0)" class="has-inline-color has-dark-gray-color"><em>A feature-rich framework offering a wide range of tools for building complex web applications</em>.</mark></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><mark style="background-color:rgba(0, 0, 0, 0);color:#be6902" class="has-inline-color"><strong><a href="https://expressjs.com/" data-type="link" data-id="https://expressjs.com/">Express.js (JavaScript)</a>:</strong> </mark><mark style="background-color:rgba(0, 0, 0, 0)" class="has-inline-color has-dark-gray-color"><em>A flexible Node.js framework that provides a foundation for building web applications with a focus on back-end functionality. While primarily back-end, it can be used alongside front-end frameworks like React or Vue.js for full-stack development</em></mark>.</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Platforms</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Currently, for advanced full-stack development concepts, understanding the use of certain platforms is important and cloud platforms that provide all of these services and integration and deployment into a simple "one click" service.<br>This WordPress site is running on a single core, Cloudways VPS (virtual private server) in a Vultr datacenter in Seattle, Washington. In fact that VPS hosts several WordPress sites as well as other technologies I am playing with.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>We have chosen to focus on using WordPress because:</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:list -->
@@ -47,3 +105,17 @@
 <!-- wp:paragraph -->
 <p>For more information on the benefits of WordPress read the article <a href="https://www.wpbeginner.com/why-you-should-use-wordpress/">6 Most Important Reasons to Use WordPress in 2024</a>.</p>
 <!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>If you're looking to develop your skills to become a full stack developer, there are plenty of online resources that can help you achieve that goal. Here are some suggestions:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><!-- wp:list-item -->
+<li><strong>Online Courses</strong>: <a href="https://www.udemy.com/" data-type="link" data-id="https://www.udemy.com/">Platforms like Udemy</a>, <a href="https://www.coursera.org/" data-type="link" data-id="https://www.coursera.org/">Coursera</a>, <a href="https://www.edx.org/" data-type="link" data-id="https://www.edx.org/">edX</a>, and Pluralsight offer a variety of courses on full stack development, covering topics ranging from basic web programming to specific frameworks and technologies.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Tutorials and Documentation</strong>: Sites like <a href="https://developer.mozilla.org/" data-type="link" data-id="https://developer.mozilla.org/">MDN Web Docs</a>, <a href="https://www.w3schools.com/" data-type="link" data-id="https://www.w3schools.com/">W3Schools</a>, and <a href="https://stackoverflow.com/" data-type="link" data-id="https://stackoverflow.com/">Stack Overflow</a> can provide detailed tutorials as well as forums where you can ask questions and get help from the community.</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
