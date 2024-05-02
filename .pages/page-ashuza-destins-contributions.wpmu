@@ -1,3 +1,11 @@
 <!-- wp:paragraph -->
-<p>Destin has done excellent work reviewing and recommending improvements to the pages of this site.   He will be editing our <a href="https://michaelkentburns.com/index.php/full-stack/" data-type="page" data-id="55">full stack page</a> with his recommendations and also those from Philemon and Efatha. </p>
+<p>Destin has done excellent work reviewing and recommending improvements to the pages of this site. He has completed our  <a href="https://michaelkentburns.com/index.php/full-stack/" data-type="page" data-id="55">full stack page</a> with his recommendations and also those from Philemon and Efatha.   I'm confident there will be more.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image {"id":397,"width":"554px","height":"auto","sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large is-resized"><img src="https://michaelkentburns.com/wp-content/uploads/2024/05/ash-picture-1024x875.jpg" alt="" class="wp-image-397" style="width:554px;height:auto"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p><br>Hello! I'm <strong>ASHUZA Destin</strong>, a tech enthusiast with a particular passion for development, especially in applications and websites. I'm primarily focused on backend development, specializing in the PHP programming language, particularly with the Laravel framework. However, I also have some knowledge in frontend development, including HTML, CSS, JavaScript, and Bootstrap. <a href="https://github.com/AshDest" data-type="link" data-id="https://github.com/AshDest">My github</a></p>
 <!-- /wp:paragraph -->
