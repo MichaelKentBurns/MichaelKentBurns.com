@@ -38,6 +38,41 @@
 <figure class="wp-block-image size-large"><img src="https://michaelkentburns.com/wp-content/uploads/2024/04/htm-1024x342.png" alt="" class="wp-image-341"/></figure>
 <!-- /wp:image -->
 
+<!-- wp:paragraph -->
+<p>As discussed above, all of the above technologies can run on any computer with a web browser. The HTML, CSS files and any embedded JavaScript code can be contained in a text file in a folder on the local computer. You can test this yourself by doing the following challenge:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Instructions:</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list {"ordered":true} -->
+<ol><!-- wp:list-item -->
+<li><strong>Create a New File:</strong> Open a text editor like Notepad or a more advanced code editor like Visual Studio Code. Create a new file and save it with the extension <code>.html</code> (e.g., <code>helloworld.html</code>).</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Write Basic HTML:</strong> Inside your file, paste the following code:</li>
+<!-- /wp:list-item --></ol>
+<!-- /wp:list -->
+
+<!-- wp:code -->
+<pre class="wp-block-code"><code>&lt;!DOCTYPE html>
+&lt;html>
+&lt;head>
+    &lt;title>Hello World!&lt;/title>
+&lt;/head>
+&lt;body>
+    &lt;h1>Hello World!&lt;/h1>
+&lt;/body>
+&lt;/html>
+</code></pre>
+<!-- /wp:code -->
+
+<!-- wp:paragraph -->
+<p>3. <strong>Open in a Browser:</strong> Double-click the <code>.html</code> file to open it in your default web browser. You should see a simple webpage with the title "Hello World!" and the text "Hello World!" displayed in a heading (h1) format.</p>
+<!-- /wp:paragraph -->
+
 <!-- wp:heading {"level":3} -->
 <h3 class="wp-block-heading">HTML5</h3>
 <!-- /wp:heading -->
@@ -123,17 +158,7 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p>As discussed above, all of the above technologies can run on any computer with a web browser.  The HTML, CSS files and any embedded JavaScript code can be contained in a text file in a folder on the local computer.   You can test this yourself by creating a simple web page in a text editor (Notepad or TextEdit) and storing it on your hard drive.  Cut and paste this in your favorite text editor into a file called HelloWorld.htm:</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:code -->
-<pre class="wp-block-code"><code>&lt;HTML&gt;
-&lt;H1&gt;Hello World!&lt;/H1&gt;
-&lt;/HTML&gt;</code></pre>
-<!-- /wp:code -->
-
-<!-- wp:paragraph -->
-<p>Then using your file browser (Windows explorer or Mac Finder) to locate that file and open it as you would any other document.</p>
+<p></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
