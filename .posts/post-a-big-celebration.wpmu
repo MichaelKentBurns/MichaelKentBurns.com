@@ -1,0 +1,39 @@
+<!-- wp:paragraph -->
+<p>Today is a big day in the history of this effort for several reasons!</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Our first cohort #1 has now finished the introductory challenges and are ready to work as a team.</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"fontSize":"small"} -->
+<p class="has-small-font-size">Meet Philémon <img class="wp-image-353" style="width: 150px;" src="https://michaelkentburns.com/wp-content/uploads/2024/04/work-scaled.jpg" alt="">,     Destin <img class="wp-image-397" style="width: 120px;" src="https://michaelkentburns.com/wp-content/uploads/2024/05/ash-picture.jpg" alt="">, and Efatha <img class="wp-image-358" style="width: 120px;" src="https://michaelkentburns.com/wp-content/uploads/2024/04/Efatha.png" alt="">.  </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Two of our members have also finished projects that are important contributions to this site.  </h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"fontSize":"small"} -->
+<p class="has-small-font-size">Philémon made major updates to the <a href="https://michaelkentburns.com/index.php/front-end-web/" data-type="page" data-id="49">front-end web</a> page, while Destin made major additions to our <a href="https://michaelkentburns.com/index.php/full-stack/" data-type="page" data-id="55">full stack page</a>. Each of them successfully planned their project and executed it on time and according to budget. I was somewhat surprised that they each made good estimates and worked accordingly. They have learned a lot about agile methods without knowing what agile methods are. Good job guys!</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Together the three of them are now embarking on their very own self managed team project.   </h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"fontSize":"small"} -->
+<p class="has-small-font-size">With Philémon as team lead, the three of them are currently in the kickoff phase of their very own project.  When they are well underway we will announce the GitHub repository where you can see their work as it progresses.  There will also be a public demo site that you can see it in action.   Stay tuned...    When complete, it will likely be incorporated as a new feature of this mentoring site satisfying an outstanding enhancement issue. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"fontSize":"small"} -->
+<p class="has-small-font-size">They are currently getting oriented to their new project and are in a one week training iteration in order to begin to learn the important Agile development methods they will need to succeed.   Some new additions to this site are featured on the <a href="https://michaelkentburns.com/" data-type="page" data-id="2">Home page</a>, and a new How to... page <a href="https://michaelkentburns.com/index.php/how-to/how-to-do-easy-time-estimates/" data-type="page" data-id="404">How To Do Easy Time Estimates</a>.   You will be able to spot those new sections by the marker graphic <img class="wp-image-420" style="width: 50px;" src="https://michaelkentburns.com/wp-content/uploads/2024/05/New.jpg" alt=""></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"fontSize":"small"} -->
+<p class="has-small-font-size">The other part of their training is getting oriented to the use of a common Github repository that they each will clone and work on.  Each will have separate "Issues" managed in the central repository.   They will plan those issues as a team in weekly scrum meetings, and then each of them will decompose those larger "story" issues into smaller "task" issues.  As each task is completed they will commit the code, test cases, and documentation to the main branch and then push it to the common repository.   There the whole team will be able to review and guide each other's efforts to make maximum use of the skills of all.  </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Please!  If you read this post, leave a comment to let us know and congratulate our new team.</strong></p>
+<!-- /wp:paragraph -->

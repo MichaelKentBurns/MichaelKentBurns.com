@@ -1,0 +1,71 @@
+<!-- wp:paragraph -->
+<p><img class="wp-image-420" style="width: 30px;" src="https://michaelkentburns.com/wp-content/uploads/2024/05/New.jpg" alt="">One of the most critical and least successful parts of software development is estimating how long a project is going to take and meeting those estimates.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Long ago projects were small and done by small teams of highly motivated engineers. They had an idea of something good to build and they just dove in and started writing code. These were the pioneering days and most of these projects are called <strong><a href="https://en.wikipedia.org/wiki/Skunkworks_project">skunk-works projects</a>.</strong> They often worked long hours and did not tell anyone what they built until it worked. Some famous projects were <strong>UNIX</strong>, <strong>Linux</strong>, the <strong>Macintosh Personal Computer</strong>, and other little things.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>However, as time went on and people started paying big money for big computers and needed big complex software, the whole process got big and complicated. Lots of money was raised, lots of people were hired, and customers were anxious to get the final product. This meant that you had to make promises of functionality and set dates for delivery. This meant that a lot of success was riding on getting it right. This was the era of the <strong><a href="https://en.wikipedia.org/wiki/Waterfall_model">waterfall method</a> </strong>of project planning. These projects costs many millions of dollars and often took many years to build. IBM was THE BIG player in such projects. They would often start several teams in different places of the world and give them all the same project. That caused a lot of competition between the teams. This is because as some teams fell behind their project was cancelled and the people often fired. In the end one team was selected as the victor. Many of these large projects involved multiple companies collaborating, and the end result was often gigantic failures.  Some examples are the <a href="https://en.wikipedia.org/wiki/Multics">Multics</a> operating system, and <a href="https://en.wikipedia.org/wiki/Taligent">Taligent</a>.  I'll bet you have never heard of either of them. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>There were a handful of pioneers that decided there had to be a better way of project planning. One of the results of those efforts became a group of methods under the umbrella term<strong> <a href="https://en.wikipedia.org/wiki/Agile_software_development">Agile Software Development</a>.</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>There are two stories I wish to share that are a quick introduction to Agile techniques.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">The Chicken and the Pig</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p><a href="https://www.michaelvizdos.com/resources/scrum-chicken-pig-cartoon-origin">The cartoon: </a> </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>One day <a href="https://en.wikipedia.org/wiki/The_Chicken_and_the_Pig"><strong>a Chicken and a Pig</strong></a> decided they would open a restaurant together. As they each decided what they could contribute to the effort it became clear that they were very different from each other in their investment. The chicken pointed out that she could lay eggs almost every day, and with her fellow chickens they could bring fresh eggs to cook every day. However, when the pig volunteered its ham, he realized that his and his friends investment was a one time all in investment.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>What this funny story shows is that the "boss" or project sponsor has a small investment and he can have many projects some of which might succeed and some might fail.   However, the workers that worked full time on the project were investing their very livelihoods and all of their time.   </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The agile moral of this story is that the boss gets to decide what the project should build and how it needs to function for the customer, but his interest stops there.  His job is to hire a team that are qualified to do the job, guide them along the way, and get them the resources they need to do the job.   </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The team however, gets to determine how they will organize the work, plan the schedule, and get the job done.  They are day to day, week by week, coordinating and working together as best they can to get it done on time and to requirements.    </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Gummy Bears</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p><a href="https://en.wikipedia.org/wiki/Gummy_bear">Gummy Bears are a favorite snack of children and software engineers. </a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Many of the early agile teams wanted a quick and easy way to make rough estimates of the work required and how best to organize the effort.  They wanted to spend only a little time on the estimate and then simply get to work.   As they worked they kept rough track of the time spent on each task they had estimated and after every week or two (called a sprint like in Rugby) they took a few minutes to reflect on the sprint and their estimates versus actuals.   The idea is to slowly get better and better at estimating the effort for small pieces of the work so they could more accurately plan and finish small to large parts of the overall project.   Each sprint they get better and learn more.  That makes the next sprint planning meeting much quicker and more accurate.   </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>One particular team always had a bowl of gummy bears on the table when they had their planning meetings.  So everybody grabbed a handful and put them on the table in front of themselves.    As they considered each task they would each put a certain number of bears out in front (like poker) and then explained why they thought that task was easy or hard to do.   After everybody made their bid, the team came to a quick agreement and assigned a number (usually between 1 and 7 bears) to a task.  Then they moved on.  The whole meeting goes pretty quick and soon they have a set of tasks to do in the sprint and assign those to capable engineers.    Done. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Why something silly? Well many teams got a little more formal and ended up calling them "<a href="https://www.agilealliance.org/glossary/points-estimates-in/"><strong>Story Points</strong></a>". The main idea is that it is a concept that each team uses to judge relative difficulty based on what they are capable of . You DON'T want to use some real unit of time (like hours or days or weeks). Because once you do that, you have driven a stake in the ground and committed yourself to actually getting it done on that schedule. This leads to short cuts, burn out, and slipped schedules.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>So, what does it really mean to the team?  That is up to the team.  They have their own way of relating the effort for a specific task based on what similar tasks have been in their past.   Also, what ends up happening is that since their knowledge of the tasks grows and they get quicker at understanding and finishing tasks, they find out that they are getting faster at getting the tasks done.  We call this "team velocity".   As they get better they can get more gummy bears or story points done in a single sprint.    This is a very rewarding and motivating way of planning.  It is empowering.   The alternative of setting hard deadlines and then missing them or getting done too early is very de-motivating.    </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Much more to come...</h2>
+<!-- /wp:heading -->
