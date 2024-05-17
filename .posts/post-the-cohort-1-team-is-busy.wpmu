@@ -1,0 +1,49 @@
+<!-- wp:paragraph -->
+<p>My last post announced that cohort #1 was beginning their first project together. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>I am very pleased to tell you that they are hard at work and making good progress.  There are in fact two efforts underway:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><!-- wp:list-item -->
+<li>Working together to build a working site using their collective skills.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>More importantly, they are learning and practicing the skills described in our '<a href="https://michaelkentburns.com/index.php/working-in-a-professional-team/" data-type="page" data-id="149"><strong>Working in a team</strong></a>' page.  </li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>Philemon is the team leader on this project. He is wearing several hats and juggling those hats effectively. He is scheduling weekly team meetings where they review the work done in the previous week and planning and initiating the new work to be done. Meanwhile, he monitors the work of Efatha as together they are working on the primary web page for the new site. Efatha is doing the HTML and CSS work to build the look and feel of the <a href="https://michaelkentburns.com/index.php/front-end-web/" data-type="page" data-id="49"><strong>front end</strong></a> of the survey application. At the same time, Philemon is coding the JavaScript code to read in the actual survey questions and to write the survey answers to data storage. They are collaborating on the same program day by day using their own unique skills. As they do so, they are doing <a href="https://en.wikipedia.org/wiki/Code_review"><strong>code reviews</strong></a> of each other's new code so that they understand how the pieces fit together and to make sure that the result meets the requirements.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Meanwhile, I (Michael) am monitoring their code commits and reviewing their code.  I also have a cloned copy of the project repository on my development machine here in Texas.   My contribution to the project is to manually test the working program as the end user (whose name is Fred) would.   Not only do I use it in my browser, but I also have my clone of the repository inside a working full stack server.   So, I am testing it as it will be fully deployed for the world to see and use.    I am also using a testing framework called <strong><a href="https://en.wikipedia.org/wiki/Selenium_(software)">Selenium</a> </strong>to automate the manual tests that I do.  As I manually do the testing,  Selenium captures all of my actions (click here, type there, scroll to somewhere else, ...) and the results of my actions.   After my test run, the captured actions are stored in a "test case" in the team's testing library.   Those test cases (and results) become part of the project repository that we all share.   When Efatha and Philemon are working on a new feature or fixing a bug, they will be able to push a button and watch all of my testing get replayed against their new code.  This way, they can quickly re-run all of my testing to make sure they have not broken anything.   This shows the two processes of <a href="https://en.wikipedia.org/wiki/Integration_testing"><strong>Integration Testing</strong></a>, and <strong><a href="https://en.wikipedia.org/wiki/Test_automation">Test Automation</a>.</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Finally, Ash is busy on the deployment (<a href="https://michaelkentburns.com/index.php/full-stack/" data-type="page" data-id="55"><strong>full stack)</strong></a> work that will become the live demonstration of this whole project.    Once that is deployed, he will be able to begin his own development task of collecting the survey results from the json data file that is written by the front end application and permanently storing the results in an SQL database in the deployed stack.    </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Once Ash has the demo site deployed, that deployment will run out of a live clone of the GitHub repository.   Every day,  that clone will pull the latest copy of the repository and the live site will reflect the previous days work by each member of the team.  This is two processes called called <a href="https://en.wikipedia.org/wiki/Software_deployment"><strong>Software deployment</strong></a> and <a href="https://en.wikipedia.org/wiki/Continuous_integration"><strong>continuous integration</strong></a>.   </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The real message of this post is a lot of knowledge, hard work done collaboratively across the globe,  and in the first week of the project the team is already using most of the software engineering team processes described in our <a href="https://michaelkentburns.com/index.php/working-in-a-professional-team/" data-type="page" data-id="149"><strong>Working in a team</strong></a> page.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>I'm writing this post on Friday of the first full week of the project.   When the team meets (virtually) early next week, Efatha and Philemon will do a live virtual demonstration of the current state of the program.  The whole team will be able to see real running code taking its first baby steps.   This will allow us to ask questions, discuss options and next steps, and more importantly get a very tangible reward of their first week of working globally as a team.    </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Way to go team!</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>If you read this post, please leave a comment here so we may know your personal take away from this team's efforts.  </p>
+<!-- /wp:paragraph -->

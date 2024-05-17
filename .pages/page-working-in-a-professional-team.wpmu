@@ -66,6 +66,10 @@
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
+<li><a href="https://en.wikipedia.org/wiki/Test_automation">Test automation</a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
 <li><strong><a href="https://en.wikipedia.org/wiki/Continuous_integration">Continuous integration</a></strong></li>
 <!-- /wp:list-item -->
 
@@ -96,7 +100,7 @@
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li><a href="https://en.wikipedia.org/wiki/List_of_unit_testing_frameworks"><strong>Unit testing framework</strong></a> - eg. </li>
+<li><a href="https://en.wikipedia.org/wiki/List_of_unit_testing_frameworks"><strong>Unit testing framework</strong></a> - eg. <a href="https://en.wikipedia.org/wiki/Selenium_(software)">Selenium</a></li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
