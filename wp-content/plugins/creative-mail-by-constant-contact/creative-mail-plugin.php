@@ -3,24 +3,27 @@
  * Creative Mail by Newfold Digital
  *
  * @package CreativeMail
- */
-/**
+ *
  * Plugin Name: Creative Mail by Newfold Digital
  * Plugin URI: https://wordpress.org/plugins/creative-mail-by-constant-contact/
  * Description: Free email marketing designed specifically for WordPress, Jetpack and WooCommerce. Send newsletters, promotions, updates and transactional e-commerce emails. Simple and easy, powered by Newfold Digital’s rock solid reliability.
  * Author: Newfold Digital
- * Version: 1.6.7
+ * Version: 1.6.9
  * Author URI: https://newfold.com/
  * WC requires at least: 3.6.0
- * WC tested up to: 6.8.2
  */
 use CreativeMail\CreativeMail;
 use CreativeMail\Blocks\LoadBlock;
 
+// Load all the required files.
+if ( file_exists(__DIR__ . '/vendor/autoload.php') ) {
+    include_once __DIR__ . '/vendor/autoload.php';
+}
+
+define('CE4WP_PLUGIN_VERSION', '1.6.9');
 define('CE4WP_PLUGIN_DIR', __DIR__ . '/');
 define('CE4WP_PLUGIN_URL', plugin_dir_url(__FILE__) . '/');
 define('CE4WP_PLUGIN_FILE', __FILE__);
-define('CE4WP_PLUGIN_VERSION', '1.6.7');
 define('CE4WP_INSTANCE_UUID_KEY', 'ce4wp_instance_uuid');
 define('CE4WP_INSTANCE_HANDSHAKE_TOKEN', 'ce4wp_handshake_token');
 define('CE4WP_INSTANCE_HANDSHAKE_EXPIRATION', 'ce4wp_handshake_expiration');
@@ -34,11 +37,11 @@ define('CE4WP_ACCEPTED_CONSENT', 'ce4wp_accepted_consent');
 define('CE4WP_SYNCHRONIZE_ACTION', 'ce4wp_synchronize_contacts');
 define('CE4WP_CHECKOUT_CHECKBOX_TEXT', 'ce4wp_checkout_checkbox_text');
 define('CE4WP_CHECKOUT_CHECKBOX_ENABLED', 'ce4wp_checkout_checkbox_enabled');
-define('CE4WP_APP_GATEWAY_URL', 'https://app-gateway.creativemail.com/');
-define('CE4WP_APP_URL', 'https://app.creativemail.com/');
-define('CE4WP_ENVIRONMENT', 'PRODUCTION');
-define('CE4WP_BUILD_NUMBER', '2019');
-define('CE4WP_DATADOG_API_KEY', 'pub0da48851ee228f7358831087e7652909');
+define('CE4WP_APP_GATEWAY_URL', '{GATEWAY_URL}');
+define('CE4WP_APP_URL', '{APP_URL}');
+define('CE4WP_ENVIRONMENT', '{ENV}');
+define('CE4WP_BUILD_NUMBER', '{BUILD}');
+define('CE4WP_DATADOG_API_KEY', '{DATADOG_KEY}');
 define('CE4WP_BATCH_SIZE', 500);
 define('CE4WP_WC_API_KEY_ID', 'ce4wp_woocommerce_api_key_id');
 define('CE4WP_WC_API_CONSUMER_KEY', 'ce4wp_woocommerce_consumer_key');
@@ -55,11 +58,6 @@ function _load_ce4wp_plugin() {
 
 	if ( null != $creativemail ) {
 		return true;
-	}
-
-	// Load all the required files.
-	if ( file_exists(__DIR__ . '/vendor/autoload.php') ) {
-		include_once __DIR__ . '/vendor/autoload.php';
 	}
 
 	$creativemail = CreativeMail::get_instance();

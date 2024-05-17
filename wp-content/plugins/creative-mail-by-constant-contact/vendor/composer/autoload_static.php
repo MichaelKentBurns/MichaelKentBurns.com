@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit3c9b62b755b058c8ca81d87b4ec70b4a
+class ComposerStaticInitcd34e511a5990716856487eba8d6264c
 {
     public static $prefixLengthsPsr4 = array (
         'P' => 
@@ -25,12 +25,6 @@ class ComposerStaticInit3c9b62b755b058c8ca81d87b4ec70b4a
         ),
         'C' => 
         array (
-            'CreativeMail\\Modules\\' => 21,
-            'CreativeMail\\Models\\' => 20,
-            'CreativeMail\\Managers\\' => 22,
-            'CreativeMail\\Integrations\\' => 26,
-            'CreativeMail\\Helpers\\' => 21,
-            'CreativeMail\\Constants\\' => 23,
             'CreativeMail\\Blocks\\' => 20,
             'CreativeMail\\' => 13,
         ),
@@ -53,30 +47,6 @@ class ComposerStaticInit3c9b62b755b058c8ca81d87b4ec70b4a
         array (
             0 => __DIR__ . '/..' . '/defuse/php-encryption/src',
         ),
-        'CreativeMail\\Modules\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/src/modules',
-        ),
-        'CreativeMail\\Models\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/src/models',
-        ),
-        'CreativeMail\\Managers\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/src/managers',
-        ),
-        'CreativeMail\\Integrations\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/src/integrations',
-        ),
-        'CreativeMail\\Helpers\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/src/helpers',
-        ),
-        'CreativeMail\\Constants\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/src/constants',
-        ),
         'CreativeMail\\Blocks\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src/blocks',
@@ -88,6 +58,7 @@ class ComposerStaticInit3c9b62b755b058c8ca81d87b4ec70b4a
     );
 
     public static $classMap = array (
+        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'CreativeMail\\Blocks\\LoadBlock' => __DIR__ . '/../..' . '/src/blocks/LoadBlock.php',
         'CreativeMail\\Clients\\CreativeMailClient' => __DIR__ . '/../..' . '/src/Clients/CreativeMailClient.php',
         'CreativeMail\\Constants\\EnvironmentNames' => __DIR__ . '/../..' . '/src/Constants/EnvironmentNames.php',
@@ -317,9 +288,9 @@ class ComposerStaticInit3c9b62b755b058c8ca81d87b4ec70b4a
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit3c9b62b755b058c8ca81d87b4ec70b4a::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit3c9b62b755b058c8ca81d87b4ec70b4a::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit3c9b62b755b058c8ca81d87b4ec70b4a::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitcd34e511a5990716856487eba8d6264c::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitcd34e511a5990716856487eba8d6264c::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInitcd34e511a5990716856487eba8d6264c::$classMap;
 
         }, null, ClassLoader::class);
     }

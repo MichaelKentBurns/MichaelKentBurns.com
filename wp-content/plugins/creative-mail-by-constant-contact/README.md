@@ -1,15 +1,15 @@
 === Creative Mail – Easier WordPress & WooCommerce Email Marketing ===
-Contributors: Newfold Digital
+Contributors: bluehost, newfold
 Tags: email, marketing, newsletter, subscribe, contact form, crm, automations, campaigns, ecommerce, promotion, offers, retargeting, newfold, newfold digital, correo electronico
 Requires at least: 4.9
-Tested up to: 6.1
-Stable tag: 1.6.7
+Tested up to: 6.5
+Stable tag: 1.6.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Requires PHP: 7.2
+Requires PHP: 7.3
 Website: https://www.creativemail.com
 WC requires at least: 3.6.0
-WC tested up to: 6.8.2
+WC tested up to: 8.7.0
 
 Creative Mail was designed specifically for WordPress and WooCommerce.
 Our intelligent (and super fun) email editor simplifies email marketing campaign creation and pulls your WordPress blog posts, website images and WooCommerce products right into your email content.
@@ -92,6 +92,8 @@ Creative Mail [Privacy Notice](https://newfold.com/privacy-center)
 6. Enhance your brand with LogoBuilder
 
 == Changelog ==
+* 1.6.9 - Update to support PHP 7.3+
+* 1.6.8 - Added support for wordpress 6.5 and woocommerce version 8.7
 * 1.6.7 - Add additional Links to Navigation Dashboard
 * 1.6.6 - Better security fixes
 * 1.6.5 - Abandoned Cart improvements

@@ -300,10 +300,7 @@ function breeze_cache( $buffer, $flags ) {
 			$buffer = mb_convert_encoding( $buffer, 'HTML-ENTITIES', 'UTF-8' );
 		} else {
 			$buffer = mb_encode_numericentity(
-				htmlspecialchars_decode(
-					htmlentities( $buffer, ENT_NOQUOTES, 'UTF-8', false ),
-					ENT_NOQUOTES
-				),
+				$buffer,
 				array( 0x80, 0x10FFFF, 0, ~0 ),
 				'UTF-8'
 			);

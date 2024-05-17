@@ -2,9 +2,9 @@
 Contributors: Cloudways
 Tags: cache,caching, performance, wp-cache, cdn
 Requires at least: 6.0
-Tested up to: 6.4.1
+Tested up to: 6.5.2
 Requires PHP: 7.4
-Stable tag: 2.1.6
+Stable tag: 2.1.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -159,6 +159,14 @@ Yes. The process of setting up CloudFlare with Breeze is easy. Check out the fol
 Using Gzip, Breeze compresses the request files, further reducing the size of the download files and speeding up the user experience.
 
 == Changelog ==
+
+= 2.1.7 =
+
+* Fix: Enhancing WooCommerce Default Pages Exclusion Conditions from Cache.
+* Fix: Lazy-load placeholder changed to base64 encoding in order to fix incorrect characters from displaying.
+* Fix: Improving Compatibility of Delay All JS and Lazy Load Images Options with PHP 8.2
+* Fix: The Purge Cache After option's updated value is now accurately reflected when importing data through the Command Line Interface (CLI).
+* Fix: In Multisite where a file permission warning is displayed upon plugin reactivation following deactivation has been addressed.
 
 = 2.1.6 =
 

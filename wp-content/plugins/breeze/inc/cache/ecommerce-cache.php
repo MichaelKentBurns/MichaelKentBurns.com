@@ -457,6 +457,33 @@ class Breeze_Ecommerce_Cache {
 	}
 
 	/**
+	 * Take page id and checks if it's in the exluded pages list 
+	 * when woocommerce is active the exluded pages currently are
+	 * cart,checkout,myaccount.
+	 * 
+	 * @param int $page_id
+	 * @return boolean $is_excluded_ecom_page
+	 */
+	public static function is_excluded_ecom_page( $page_id ) {
+
+		$is_excluded_ecom_page = false;
+		if ( class_exists( 'WooCommerce' ) && function_exists( 'wc_get_page_id' ) ) {
+			$cart_id      = wc_get_page_id( 'cart' );
+			$checkout_id  = wc_get_page_id( 'checkout' );
+			$myaccount_id = wc_get_page_id( 'myaccount' );
+			if ( 
+				$page_id == $cart_id
+				|| $page_id == $checkout_id
+				|| $page_id == $myaccount_id
+			) {
+				$is_excluded_ecom_page = true;
+			}
+		}
+		return $is_excluded_ecom_page;
+
+	}
+
+	/**
 	 * Exclude pages of e-commerce from cache
 	 */
 	public function ecommerce_exclude_pages() {
@@ -468,19 +495,19 @@ class Breeze_Ecommerce_Cache {
 			$checkoutId  = wc_get_page_id( 'checkout' );
 			$myaccountId = wc_get_page_id( 'myaccount' );
 
-			if ( $cardId > 0 ) {
+			if ( $cardId > 0 && 'publish' === get_post_status( $cardId ) ) {
 				$urls[] = $this->get_basic_urls( $cardId, $regex );
 				// Get url through multi-languages plugin
 				$urls = $this->get_translate_urls( $urls, $cardId, $regex );
 			}
 
-			if ( $checkoutId > 0 ) {
+			if ( $checkoutId > 0 && 'publish' === get_post_status( $checkoutId ) ) {
 				$urls[] = $this->get_basic_urls( $checkoutId, $regex );
 				// Get url through multi-languages plugin
 				$urls = $this->get_translate_urls( $urls, $checkoutId, $regex );
 			}
 
-			if ( $myaccountId > 0 ) {
+			if ( $myaccountId > 0 && 'publish' === get_post_status( $myaccountId ) ) {
 				$urls[] = $this->get_basic_urls( $myaccountId, $regex );
 				// Get url through multi-languages plugin
 				$urls = $this->get_translate_urls( $urls, $myaccountId, $regex );

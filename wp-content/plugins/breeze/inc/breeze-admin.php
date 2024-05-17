@@ -41,6 +41,8 @@ class Breeze_Admin {
 		add_action( 'breeze_clear_all_cache', array( $this, 'breeze_clear_all_cache' ) );
 		add_action( 'breeze_clear_varnish', array( $this, 'breeze_clear_varnish' ) );
 
+		// Check the status change of excluded ecommerce pages.
+		add_action(  'transition_post_status',  array( $this, 'on_all_status_transitions' ), 10, 3 );
 		// Check if woocommerce exists
 		if ( function_exists( 'is_woocommerce_active' ) && is_woocommerce_active() ) {
 			// Clear all cache on bulk update
@@ -87,6 +89,25 @@ class Breeze_Admin {
 			add_action( 'wpmu_new_blog', array( &$this, 'create_new_blog_items' ), 10, 6 );
 		}
 
+	}
+
+	/**
+	 * Check the page status and if the current page is 
+	 * in the excluded ecommerce pages list.
+	 * 
+	 * @param string $new_status
+	 * @param string $old_status
+	 * @param object $post
+	 * @return void
+	 */
+	public function on_all_status_transitions( $new_status, $old_status, $post ) {
+				
+		// Make sure the Breeze_Ecommerce_Cache class is available.
+		require_once( BREEZE_PLUGIN_DIR . 'inc/cache/ecommerce-cache.php' );
+
+		if ( $new_status != $old_status && Breeze_Ecommerce_Cache::is_excluded_ecom_page( $post->ID )  ) {
+			Breeze_ConfigCache::write_config_cache();
+		}
 	}
 
 	public function create_new_blog_items( $blog_id, $user_id, $domain, $path, $site_id, $meta ) {
@@ -1114,7 +1135,7 @@ class Breeze_Admin {
 	public static function plugin_deactive_hook() {
 		WP_Filesystem();
 		Breeze_ConfigCache::factory()->clean_up();
-		Breeze_ConfigCache::factory()->clean_config();
+		//Breeze_ConfigCache::factory()->clean_config();
 		Breeze_ConfigCache::factory()->toggle_caching( false );
 		Breeze_Configuration::update_htaccess( true );
 
@@ -1144,6 +1165,8 @@ class Breeze_Admin {
 		self::plugin_deactive_hook();
 		// Remove extra cache files. (fb,google,fonts...)
 		Breeze_Store_Files::cleanup_all_extra_folder();
+		// Delete config file(s).
+		Breeze_ConfigCache::factory()->clean_config();
 		// Remove data from the database.
 		self::purge_local_options();
 	}

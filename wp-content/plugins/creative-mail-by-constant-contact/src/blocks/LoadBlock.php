@@ -1,8 +1,5 @@
 <?php
 
-/**
- * Class MyPlugin_Blocks
- */
 namespace CreativeMail\Blocks;
 
 class LoadBlock {

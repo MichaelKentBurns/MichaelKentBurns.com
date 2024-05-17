@@ -102,11 +102,10 @@ class Breeze_Lazy_Load {
 		if ( version_compare( PHP_VERSION, '8.2.0', '<' ) ) {
 			$content = mb_convert_encoding( $content, 'HTML-ENTITIES', 'UTF-8' );
 		} else {
+
 			$content = mb_encode_numericentity(
-				htmlspecialchars_decode(
-					htmlentities( $content, ENT_NOQUOTES, 'UTF-8', false )
-					, ENT_NOQUOTES
-				), [ 0x80, 0x10FFFF, 0, ~0 ],
+				$content,
+				array( 0x80, 0x10FFFF, 0, ~0 ),
 				'UTF-8'
 			);
 		}
@@ -117,10 +116,12 @@ class Breeze_Lazy_Load {
 		preg_match_all( '/<img[^>]+>/i', $content, $img_matches );
 
 		// Remove any image tags that have \ inside as it's probably targeted by other scripts
-		$img_matches[0] = array_filter($img_matches[0], function($tag) {
-			return strpos($tag, '\\') === false;
-		});
-
+		$img_matches[0] = array_filter(
+			$img_matches[0],
+			function( $tag ) {
+				return strpos( $tag, '\\' ) === false;
+			}
+		);
 
 		// Check if images available
 		if ( ! empty( $img_matches[0] ) ) {
@@ -142,6 +143,15 @@ class Breeze_Lazy_Load {
 
 				// Non-native behavior
 				foreach ( $img_matches[0] as $img_match ) {
+
+					// Get width and height
+					preg_match( '/width=["\'](.*?)["\']/', $img_match, $width );
+					preg_match( '/height=["\'](.*?)["\']/', $img_match, $height );
+
+					// Skip if image width and height is 1.
+					if ( isset( $width[1] ) && isset( $height[1] ) && ( (int) $width[1] <= 1 && (int) $height[1] <= 1 ) ) {
+						continue;
+					}
 
 					// Check if the image is to be ignored.
 					if ( is_array( $this->exclude_if_atts ) && ! empty( $this->exclude_if_atts ) ) {
@@ -208,31 +218,32 @@ class Breeze_Lazy_Load {
 
 						$content = str_replace( $img_match, $img_match_new, $content );
 
-
 					}
 				}
 			}
 		}
 
-
 		$apply_to_iframes = Breeze_Options_Reader::get_option_value( 'breeze-lazy-load-iframes' );
 		$apply_to_iframes = apply_filters( 'breeze_enable_lazy_load_iframes', $apply_to_iframes );
 
 		if ( true === filter_var( $apply_to_iframes, FILTER_VALIDATE_BOOLEAN ) ) {
-			$allowed_iframes_url = apply_filters( 'breeze_iframe_lazy_load_list', array(
-				'youtube.com',
-				'dailymotion.com/embed/video',
-				'facebook.com/plugins/video.php',
-				'player.vimeo.com',
-				'fast.wistia.net/embed/',
-				'players.brightcove.net',
-				's3.amazonaws.com',
-				'cincopa.com/media',
-				'twitch.tv',
-				'bitchute.com',
-				'media.myspace.com/play/video',
-				'tiktok.com/embed',
-			) );
+			$allowed_iframes_url = apply_filters(
+				'breeze_iframe_lazy_load_list',
+				array(
+					'youtube.com',
+					'dailymotion.com/embed/video',
+					'facebook.com/plugins/video.php',
+					'player.vimeo.com',
+					'fast.wistia.net/embed/',
+					'players.brightcove.net',
+					's3.amazonaws.com',
+					'cincopa.com/media',
+					'twitch.tv',
+					'bitchute.com',
+					'media.myspace.com/play/video',
+					'tiktok.com/embed',
+				)
+			);
 
 			// Match and process iframes.
 			preg_match_all( '/<iframe.*<\/iframe>/isU', $content, $iframe_matches );
@@ -262,8 +273,6 @@ class Breeze_Lazy_Load {
 					$content        = str_replace( $iframe_tag, $iframe_tag_new, $content );
 				}
 			}
-
-
 		}
 
 		$apply_to_videos = Breeze_Options_Reader::get_option_value( 'breeze-lazy-load-videos' );
@@ -287,21 +296,21 @@ class Breeze_Lazy_Load {
 
 					continue;
 					// TODO: implement when finish the library for videos with sources
-//					$video_tag_new = preg_replace_callback(
-//						'/<source\s+[^>]*src="([^"]+)"/isU',
-//						function ( $matches ) use ( $placeholder, $placeholder_webp ) {
-//							$source_url = $matches[1];
-//							// Check for .webm and .webp extensions
-//							if ( preg_match( '/\.(webm|webp)$/i', $source_url ) ) {
-//								$placeholder_url = $placeholder_webp; // Use WebP placeholder for .webm or .webp files
-//							} else {
-//								$placeholder_url = $placeholder; // Default to MP4 placeholder
-//							}
-//
-//							return str_replace( 'src="' . $source_url . '"', 'src="' . $placeholder_url . '" data-src="' . $source_url . '"', $matches[0] );
-//						},
-//						$video_tag_new
-//					);
+					//                  $video_tag_new = preg_replace_callback(
+					//                      '/<source\s+[^>]*src="([^"]+)"/isU',
+					//                      function ( $matches ) use ( $placeholder, $placeholder_webp ) {
+					//                          $source_url = $matches[1];
+					//                          // Check for .webm and .webp extensions
+					//                          if ( preg_match( '/\.(webm|webp)$/i', $source_url ) ) {
+					//                              $placeholder_url = $placeholder_webp; // Use WebP placeholder for .webm or .webp files
+					//                          } else {
+					//                              $placeholder_url = $placeholder; // Default to MP4 placeholder
+					//                          }
+					//
+					//                          return str_replace( 'src="' . $source_url . '"', 'src="' . $placeholder_url . '" data-src="' . $source_url . '"', $matches[0] );
+					//                      },
+					//                      $video_tag_new
+					//                  );
 				}
 
 				// Add the lazy loading class to the <video> tag and process its src attribute.
@@ -332,9 +341,7 @@ class Breeze_Lazy_Load {
 				// Update the content.
 				$content = str_replace( $video_tag, $video_tag_new, $content );
 			}
-
 		}
-
 
 		return $content;
 
@@ -418,6 +425,13 @@ class Breeze_Lazy_Load {
 			$height = absint( $height );
 		}
 
-		return "data:image/svg+xml;utf8,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20{$width}%20{$height}'%3E%3C/svg%3E";
+		//return "data:image/svg+xml;utf8,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20{$width}%20{$height}'%3E%3C/svg%3E";
+		// Generate the SVG
+		$svg = "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 {$width} {$height}'></svg>";
+
+		// Convert the SVG to a base64 string
+		$svg_base64 = base64_encode( $svg );
+
+		return "data:image/svg+xml;base64,{$svg_base64}";
 	}
 }

@@ -1,5 +1,11 @@
 Changelog
 =========
+#### 1.6.9 - May 6th, 2024
+- Update to support PHP 7.3+
+
+#### 1.6.8 - May 2nd, 2024
+- Added support for wordpress 6.5 and woocommerce version 8.7
+
 #### 1.6.7 - November 25th, 2023
 - Add additional Links to Navigation Dashboard
 

@@ -313,6 +313,7 @@ class Breeze_Settings_Import_Export {
 					$meta_value = self::validate_option_group( $meta_value, $meta_key );
 
 					if ( false !== strpos( $meta_key, 'breeze_' ) ) {
+						self::ttl_exception( $meta_key, $meta_value );
 						update_blog_option( $blog_id, $meta_key, $meta_value );
 						WP_CLI::line( $meta_key . ' - ' . WP_CLI::colorize( '%Yimported%n' ) );
 					} else {
@@ -345,6 +346,16 @@ class Breeze_Settings_Import_Export {
 		do_action( 'breeze_clear_all_cache' );
 
 		return true;
+	}
+
+	public static function ttl_exception( $meta_key, $meta_value ) {
+		if ( 'breeze_basic_settings' === $meta_key ) {
+			if ( ! array_key_exists( 'breeze-b-ttl', $meta_value ) && array_key_exists( 'breeze-ttl', $meta_value ) ) {
+				$meta_value['breeze-b-ttl'] = $meta_value['breeze-ttl'];
+			}
+		}
+
+		return $meta_value;
 	}
 
 	/**
@@ -441,9 +452,9 @@ class Breeze_Settings_Import_Export {
 				'breeze-store-googleanalytics-locally' => ( isset( $options['breeze-store-googleanalytics-locally'] ) ? $options['breeze-store-googleanalytics-locally'] : '0' ),
 				'breeze-store-facebookpixel-locally'   => ( isset( $options['breeze-store-facebookpixel-locally'] ) ? $options['breeze-store-facebookpixel-locally'] : '0' ),
 				'breeze-store-gravatars-locally'       => ( isset( $options['breeze-store-gravatars-locally'] ) ? $options['breeze-store-gravatars-locally'] : '0' ),
-				'breeze-enable-api'    => ( isset( $options['breeze-enable-api'] ) ? $options['breeze-enable-api'] : '0' ),
-				'breeze-secure-api'    => ( isset( $options['breeze-secure-api'] ) ? $options['breeze-secure-api'] : '0' ),
-				'breeze-api-token'     => ( isset( $options['breeze-api-token'] ) ? $options['breeze-api-token'] : '' ),
+				'breeze-enable-api'                    => ( isset( $options['breeze-enable-api'] ) ? $options['breeze-enable-api'] : '0' ),
+				'breeze-secure-api'                    => ( isset( $options['breeze-secure-api'] ) ? $options['breeze-secure-api'] : '0' ),
+				'breeze-api-token'                     => ( isset( $options['breeze-api-token'] ) ? $options['breeze-api-token'] : '' ),
 
 			);
 
@@ -461,7 +472,7 @@ class Breeze_Settings_Import_Export {
 				'cdn-url'             => ( isset( $options['cdn-url'] ) ? $options['cdn-url'] : '' ),
 				'cdn-content'         => ( isset( $options['cdn-content'] ) ? $options['cdn-content'] : array(
 					'wp-includes',
-					$wp_content
+					$wp_content,
 				) ),
 				'cdn-exclude-content' => ( isset( $options['cdn-exclude-content'] ) ? $options['cdn-exclude-content'] : array( '.php' ) ),
 			);
@@ -643,6 +654,14 @@ class Breeze_Settings_Import_Export {
 			return $value;
 		}
 
+		if ( 'breeze-b-ttl' === $option ) {
+			if ( ! is_numeric( $value ) ) {
+				return 1440;
+			}
+
+			return $value;
+		}
+
 		/**
 		 * Validate all the checkboxes.
 		 * Include the default values.
@@ -671,8 +690,8 @@ class Breeze_Settings_Import_Export {
 			'breeze-enable-js-delay'               => '0',
 			'breeze-preload-links'                 => '1',
 			'breeze-wp-emoji'                      => '0',
-			'breeze-enable-api'                     => '0',
-			'breeze-secure-api'                     => '0',
+			'breeze-enable-api'                    => '0',
+			'breeze-secure-api'                    => '0',
 			'cdn-active'                           => '0',
 			'cdn-relative-path'                    => '1',
 			'auto-purge-varnish'                   => '1',
