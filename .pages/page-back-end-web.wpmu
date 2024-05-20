@@ -1,31 +1,193 @@
-<!-- wp:paragraph -->
-<p>While the front end is mostly concerned with the actual presentation of web information, there is much that the web browser cannot do.   One thing certainly is multitasking.  It is rare that a single person, using their browser to view a web page, is the only user at that specific site.  The back end is run on a more powerful machine that can server up web pages to many users around the world at the same time.   This concept is described in detail in the Wikipedia <a href="https://en.wikipedia.org/wiki/Frontend_and_backend">Frontend and backend</a> page. </p>
+<!-- wp:paragraph {"align":"justify"} -->
+<p class="has-text-align-justify">Backend development is the server-side aspect of web and software development that focuses on creating the infrastructure, logic, and integration necessary for an application to function properly. It involves working with databases, servers, application logic, and APIs to ensure that the front-end, or client-side, can communicate effectively with the server and perform tasks such as data retrieval, storage, and processing.</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph -->
-<p>To make the back end work there are actually a number of servers running together that enable many web users to share access to a website.    These servers are all run as services by a system administrator and have inter dependancies.  So, the various servers have to know how to access each other to get the job done.  Since they work together we refer to the whole as a 'stack'.   This is described in detail in the Wikipedia <a href="https://en.wikipedia.org/wiki/LAMP_(software_bundle)">LAMP (software bundle)</a> page. </p>
+<!-- wp:paragraph {"align":"justify"} -->
+<p class="has-text-align-justify">While the front end is mostly concerned with the actual presentation of web information, there is much that the web browser cannot do. One thing certainly is multitasking. It is rare that a single person, using their browser to view a web page, is the only user at that specific site. The back end is run on a more powerful machine that can server up web pages to many users around the world at the same time. This concept is described in detail in the Wikipedia <a href="https://en.wikipedia.org/wiki/Frontend_and_backend">Frontend and backend</a> page.</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:heading -->
-<h2 class="wp-block-heading">Skills</h2>
-<!-- /wp:heading -->
-
-<!-- wp:paragraph -->
-<p>Web Server (Apache)</p>
+<!-- wp:paragraph {"align":"justify"} -->
+<p class="has-text-align-justify">To make the back end work there are actually a number of servers running together that enable many web users to share access to a website. These servers are all run as services by a system administrator and have inter dependancies. So, the various servers have to know how to access each other to get the job done. Since they work together we refer to the whole as a 'stack'. This is described in detail in the Wikipedia <a href="https://en.wikipedia.org/wiki/LAMP_(software_bundle)">LAMP (software bundle)</a> page.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:heading {"level":4} -->
-<h4 class="wp-block-heading">PHP</h4>
+<h4 class="wp-block-heading">Key Components of Backend Development</h4>
 <!-- /wp:heading -->
+
+<!-- wp:list {"ordered":true} -->
+<ol><!-- wp:list-item -->
+<li><strong>Server</strong>: The computer or system that runs the backend software. Common server technologies include <a href="https://httpd.apache.org/" data-type="link" data-id="https://httpd.apache.org/">Apache</a>, <a href="https://nginx.org/en/" data-type="link" data-id="https://nginx.org/en/">Nginx</a>, and <a href="https://www.iis.net/" data-type="link" data-id="https://www.iis.net/">Microsoft IIS</a>.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Databases</strong>: Systems that store, retrieve, and manage data. Popular databases include:<!-- wp:list -->
+<ul><!-- wp:list-item -->
+<li><strong>SQL Databases</strong>: MySQL, PostgreSQL, SQLite</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>NoSQL Databases</strong>: MongoDB, Cassandra, Redis</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list --></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Server-Side Languages</strong>: Programming languages used to write the backend logic. Some common ones are:<!-- wp:list -->
+<ul><!-- wp:list-item -->
+<li><strong>JavaScript (Node.js)</strong></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong><a href="https://en.wikipedia.org/wiki/Python_(programming_language)" data-type="link" data-id="https://en.wikipedia.org/wiki/Python_(programming_language)">Python (Django, Flask)</a></strong></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong><a href="https://en.wikipedia.org/wiki/Ruby_(programming_language)" data-type="link" data-id="https://en.wikipedia.org/wiki/Ruby_(programming_language)">Ruby (Ruby on Rails)</a></strong></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong><a href="https://en.wikipedia.org/wiki/PHP" data-type="link" data-id="https://en.wikipedia.org/wiki/PHP">PHP</a></strong></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong><a href="https://en.wikipedia.org/wiki/Java_(programming_language)" data-type="link" data-id="https://en.wikipedia.org/wiki/Java_(programming_language)">Java (Spring)</a></strong></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>C# (.NET)</strong></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong><a href="https://en.wikipedia.org/wiki/Go_(programming_language)" data-type="link" data-id="https://en.wikipedia.org/wiki/Go_(programming_language)">Go</a></strong></li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list --></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>APIs (Application Programming Interfaces)</strong>: Mechanisms that allow different software components to communicate. Backend developers often create RESTful APIs or GraphQL APIs to enable interaction between the frontend and backend.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Frameworks</strong>: Tools that provide a structured way to build and deploy applications. Some widely used backend frameworks are:<!-- wp:list -->
+<ul><!-- wp:list-item -->
+<li><strong>Express.js</strong> (Node.js)</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Django</strong> and <strong>Flask</strong> (Python)</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Ruby on Rails</strong> (Ruby)</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Spring Boot</strong> (Java)</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>ASP.NET Core</strong> (C#)</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list --></li>
+<!-- /wp:list-item --></ol>
+<!-- /wp:list -->
 
 <!-- wp:heading {"level":4} -->
-<h4 class="wp-block-heading">MySQL</h4>
+<h4 class="wp-block-heading">Essential Skills for Backend Developers</h4>
 <!-- /wp:heading -->
 
-<!-- wp:heading -->
-<h2 class="wp-block-heading">Mentoring</h2>
+<!-- wp:list {"ordered":true} -->
+<ol><!-- wp:list-item -->
+<li><strong>Programming Proficiency</strong>: Mastery of one or more server-side languages and their associated frameworks.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Database Management</strong>: Understanding how to design, implement, and query databases effectively.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>API Development</strong>: Ability to design and build robust APIs for various client applications.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Server Management</strong>: Knowledge of server environments, deployment processes, and scaling applications.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Security Best Practices</strong>: Implementing authentication, authorization, data protection, and securing APIs.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Version Control</strong>: Using tools like Git to manage code changes and collaborate with other developers.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Problem Solving</strong>: Analytical skills to debug issues, optimize performance, and ensure reliability.</li>
+<!-- /wp:list-item --></ol>
+<!-- /wp:list -->
+
+<!-- wp:heading {"level":4} -->
+<h4 class="wp-block-heading">Common Tools and Technologies</h4>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph -->
-<p>There are many mentoring and tutorial sites available.  Just google "backend mentor" or view Wikipedia's "<a href="https://en.wikipedia.org/wiki/Frontend_and_backend">Frontend and backend</a>".</p>
-<!-- /wp:paragraph -->
+<!-- wp:list -->
+<ul><!-- wp:list-item -->
+<li><strong>Version Control</strong>: <a href="https://git-scm.com/" data-type="link" data-id="https://git-scm.com/">Git</a>, <a href="https://github.com/" data-type="link" data-id="https://github.com/">GitHub</a>, <a href="https://gitlab.com/" data-type="link" data-id="https://gitlab.com/">GitLab</a>, <a href="https://bitbucket.org/" data-type="link" data-id="https://bitbucket.org/">Bitbucket</a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Containerization</strong>: <a href="https://en.wikipedia.org/wiki/Docker_(software)" data-type="link" data-id="https://en.wikipedia.org/wiki/Docker_(software)">Docker</a>, <a href="https://en.wikipedia.org/wiki/Kubernetes" data-type="link" data-id="https://en.wikipedia.org/wiki/Kubernetes">Kubernetes</a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>CI/CD Pipelines</strong>: <a href="https://www.jenkins.io/" data-type="link" data-id="https://www.jenkins.io/">Jenkins</a>, <a href="https://www.travis-ci.com/" data-type="link" data-id="https://www.travis-ci.com/">Travis CI</a>, <a href="https://circleci.com/" data-type="link" data-id="https://circleci.com/">CircleCI</a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Cloud Services</strong>: <a href="https://aws.amazon.com/" data-type="link" data-id="https://aws.amazon.com/">AWS</a>, <a href="https://cloud.google.com/" data-type="link" data-id="https://cloud.google.com/">Google Cloud Platform</a>, <a href="https://azure.microsoft.com/" data-type="link" data-id="https://azure.microsoft.com/">Microsoft Azure</a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Monitoring and Logging</strong>: <a href="https://prometheus.io/" data-type="link" data-id="https://prometheus.io/">Prometheus</a>, <a href="https://grafana.com/" data-type="link" data-id="https://grafana.com/">Grafana</a>, ELK Stack (Elasticsearch, Logstash, Kibana)</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:heading {"level":4} -->
+<h4 class="wp-block-heading">Best Practices</h4>
+<!-- /wp:heading -->
+
+<!-- wp:list {"ordered":true} -->
+<ol><!-- wp:list-item -->
+<li><strong>Modular Code</strong>: Writing clean, modular code that is easy to maintain and scale.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Documentation</strong>: Keeping thorough documentation for APIs, codebases, and development processes.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Testing</strong>: Implementing unit tests, integration tests, and end-to-end tests to ensure code reliability.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Code Reviews</strong>: Regularly reviewing code with peers to catch bugs and improve code quality.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Scalability</strong>: Designing systems that can handle increased load and user growth efficiently.</li>
+<!-- /wp:list-item --></ol>
+<!-- /wp:list -->
+
+<!-- wp:heading {"level":4} -->
+<h4 class="wp-block-heading">Learning Resources</h4>
+<!-- /wp:heading -->
+
+<!-- wp:list {"ordered":true} -->
+<ol><!-- wp:list-item -->
+<li>Books : "<strong><em>Clean Code</em></strong>" by Robert C. Martin, "<strong><em>Designing Data-Intensive Applications</em></strong>" by Martin Kleppmann</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Online Courses</strong>: Platforms like <a href="https://www.coursera.org/" data-type="link" data-id="https://www.coursera.org/">Coursera</a>, <a href="https://www.udemy.com/" data-type="link" data-id="https://www.udemy.com/">Udemy</a>, and <a href="https://www.pluralsight.com/" data-type="link" data-id="https://www.pluralsight.com/">Pluralsight </a>offer courses on backend development.</li>
+<!-- /wp:list-item --></ol>
+<!-- /wp:list -->
