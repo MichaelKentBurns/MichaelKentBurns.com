@@ -1,0 +1,59 @@
+<!-- wp:paragraph -->
+<p>Last week as the cohort-1 team was busy working on their respective parts of the demo project they hit a few speed bumps.    There is certainly no surprise there.  The work is complicated and with everybody busy working on their assigned issues in the same project repository it is inevitable that we would discover issues that we did not anticipate.   We can choose to view these as setbacks, but they really are a reality and more importantly an opportunity for learning and process improvements. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Take for instance the fact that both Efatha and Philemon were creating different versions of basically the same application.   It is not unusual for a web page to be called <strong>index.html</strong>.   The other complicating factor is that they both decided that since their pages were just test versions of what we hope to be the real application for this project, they would put their files in the /test directory.  Efatha pushed his first and when Philemon got around to pushing his copy from his repository there were now two 'test/index.html' files that pushed.   When Philemon merged his into the shared GitHub repository there was a conflict.   The end result is that his code overwrote Efatha's.   </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Efatha was a bit surprised by this and he was confused as to how he should proceed.  He set about trying to figure out what to do about it.   He commented to me in a message in the Upwork discussion, and I said I would look into it.   However, the Upwork discussions are unique to each developer and myself.  When he asked me what to do, Philemon was not notified of the issue.   Until I figured it out, I was having two private conversations and I became the middle man.   </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>One of the important principles of team dynamics is that at some level each team member should have a high level view of what the other team members are doing and any problems they might encounter.   Since we were communicating these issues through private Upwork messages there was not a common view of the situation.    The first lesson is that <strong>these kinds of issues that block progress must be communicated in the Issues list of the project repository.</strong>   Each of them were working on their own top level story.   Efatha's story was Issue #5, and Philemon's was Issue #6.   They were each focused on their issue and not seeing what was happening to the other.   </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The proper way to communicate these kinds of issues is for everybody to have a common view of the project, the issues each person is working on, and most important any high priority issues.   The solution is a proper set of Issue labels.  I added new labels to the issues list:   </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><!-- wp:list-item -->
+<li>A bright purple label named <strong>"Stuck !!"</strong> is to be applied to an active issue that gets stuck.  In Efatha's case the "Issue #5 creating the form with html and css" now needs a "Stuck!" label.   That way when each team member reviews the Issues list they see that Efatha is stuck in his primary issue.   In addition to applying the label, Efatha should have simply added a comment to the issue explaining his problem.   That way when I and/or Philemon reviews the issues list (which should be done daily) we would quickly see that Efatha's primary task was "Stuck!".   Then we would simply open that discussion and see the problem.    So, early this morning I did what Efatha did not yet know he could have done.   In our meeting we discussed it and figured out the solution.   Part of the solution is that we now need a new issue.   </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>That new issue is "<strong>#10 We need to decide the top level structure of our demo project.</strong>"  I entered that and explained the problem and my proposal for how to setup the directory structure and how to name files.   I also created a new label colored red: <strong>"High Priority!!"</strong>.   If you hover over that label it explains: <strong>"Drop what you are doing and pay attention!"</strong>. The purpose of this label is a visual cue that each team member when daily reviewing the Issue board would see this and do as suggested.  They should suspend their normal work, open the new issue and read about the situation.   They would then read my suggestion and enter a comment that would either agree with my proposal or propose an alternative solution.   Sometimes they may decide it's not up to them, and they should enter a comment to that effect and then move on with their normal work.  This issue was not really new because Ash had commented that when reviewing Efatha's push for his issue #5.   But, since it was just a comment in a list of comments nobody paid close enough attention to realize the importance.   When I took Ash's comment and made a new issue of it, I also added <strong>"High Priority!!"</strong>.   Now, each team member should notice that, read the conversation, and add their comment.   Quickly we should arrive at a consensus opinion that someone should take responsibility to implement a solution.  When that solution is in place and pushed, they will update it with a comment that should cause the rest of the team to review their fix and comment that they agree that the solution fixes the problem.  At that point someone will remove the <strong>"High Priority!!"</strong> label. </li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>One more example of these labels is in Philemon's <strong>Issue #6: "creation of the json file structure and javascript code" </strong>which is his "Active" "Main story".   During his demo of the current state of that,  he mentioned the problem that browsers don't allow Javascript code to write files to the user's local filesystem.    This is an important security mandate and rightly so.    However, our desire to write to the /responses folder is only a temporary solution which will go away when Ash gets a backend server running that allows our code to send the Json data directly to the backend for permanent storage.     So, I proposed a temporary workaround that allows us to demo his code, see the submitted json file, and get it stored.  As a result, I added the <strong>"Stuck!"</strong> label and explained the problem and my proposed solution.  I finished my comment with this: "<strong>Give it a try. If that works for you, add a comment here and then remove the Stuck!! label and move on .</strong>"   When Philemon sees my suggestion and tries it, and agrees that it works, he will comment to that effect, remove the "Stuck!!" label and then move on with his work.  </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The bottom line on this post is:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><!-- wp:list-item -->
+<li>We have new labels that get attention and cause the team to act.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Each team member should daily take a look at the issues list and look for the labels "bug", "Stuck!", and "High Priority!!" and then stop and consider their role in the solution. </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Each team member is empowered, encouraged, an able to enter new issues and add or remove labels to them as appropriate.  </li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>So, please digest this post, make an effort to add these tools to your toolbox, and then comment on this post so I know you have absorbed and commit to applying these tools.   Thank you for your cooperation.   </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>It's now your turn to act.   </p>
+<!-- /wp:paragraph -->
