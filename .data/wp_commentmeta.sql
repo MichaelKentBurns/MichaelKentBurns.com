@@ -1,8 +1,8 @@
--- MariaDB dump 10.19  Distrib 10.4.33-MariaDB, for debian-linux-gnu (x86_64)
+-- MariaDB dump 10.19  Distrib 10.4.34-MariaDB, for debian-linux-gnu (x86_64)
 --
 -- Host: localhost    Database: hynxgrbyjv
 -- ------------------------------------------------------
--- Server version	10.4.33-MariaDB-1:10.4.33+maria~deb10-log
+-- Server version	10.4.34-MariaDB-1:10.4.34+maria~deb10-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -30,7 +30,7 @@ CREATE TABLE `wp_commentmeta` (
   PRIMARY KEY (`meta_id`),
   KEY `comment_id` (`comment_id`),
   KEY `meta_key` (`meta_key`(191))
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,7 +39,7 @@ CREATE TABLE `wp_commentmeta` (
 
 LOCK TABLES `wp_commentmeta` WRITE;
 /*!40000 ALTER TABLE `wp_commentmeta` DISABLE KEYS */;
-INSERT INTO `wp_commentmeta` VALUES (11,14,'_wp_trash_meta_status','0'),(12,14,'_wp_trash_meta_time','1713968409'),(13,13,'_wp_trash_meta_status','0'),(14,13,'_wp_trash_meta_time','1713968411'),(15,17,'_wp_trash_meta_status','0'),(16,17,'_wp_trash_meta_time','1714822838'),(17,16,'_wp_trash_meta_status','0'),(18,16,'_wp_trash_meta_time','1714822839'),(19,15,'_wp_trash_meta_status','0'),(20,15,'_wp_trash_meta_time','1714822841'),(21,18,'_wp_trash_meta_status','0'),(22,18,'_wp_trash_meta_time','1715079274'),(23,19,'_wp_trash_meta_status','0'),(24,19,'_wp_trash_meta_time','1715079330'),(25,21,'_wp_trash_meta_status','0'),(26,21,'_wp_trash_meta_time','1715942180'),(27,23,'_wp_trash_meta_status','0'),(28,23,'_wp_trash_meta_time','1715987085');
+INSERT INTO `wp_commentmeta` VALUES (15,17,'_wp_trash_meta_status','0'),(16,17,'_wp_trash_meta_time','1714822838'),(17,16,'_wp_trash_meta_status','0'),(18,16,'_wp_trash_meta_time','1714822839'),(19,15,'_wp_trash_meta_status','0'),(20,15,'_wp_trash_meta_time','1714822841'),(21,18,'_wp_trash_meta_status','0'),(22,18,'_wp_trash_meta_time','1715079274'),(23,19,'_wp_trash_meta_status','0'),(24,19,'_wp_trash_meta_time','1715079330'),(25,21,'_wp_trash_meta_status','0'),(26,21,'_wp_trash_meta_time','1715942180'),(27,23,'_wp_trash_meta_status','0'),(28,23,'_wp_trash_meta_time','1715987085'),(29,25,'_wp_trash_meta_status','1'),(30,25,'_wp_trash_meta_time','1716385774'),(31,28,'_wp_trash_meta_status','0'),(32,28,'_wp_trash_meta_time','1716590456');
 /*!40000 ALTER TABLE `wp_commentmeta` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -52,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-05-20 23:27:56
+-- Dump completed on 2024-05-25 13:58:35

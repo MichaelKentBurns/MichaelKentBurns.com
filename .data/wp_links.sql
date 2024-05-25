@@ -1,8 +1,8 @@
--- MariaDB dump 10.19  Distrib 10.4.33-MariaDB, for debian-linux-gnu (x86_64)
+-- MariaDB dump 10.19  Distrib 10.4.34-MariaDB, for debian-linux-gnu (x86_64)
 --
 -- Host: localhost    Database: hynxgrbyjv
 -- ------------------------------------------------------
--- Server version	10.4.33-MariaDB-1:10.4.33+maria~deb10-log
+-- Server version	10.4.34-MariaDB-1:10.4.34+maria~deb10-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -59,4 +59,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-05-20 23:27:56
+-- Dump completed on 2024-05-25 13:58:35

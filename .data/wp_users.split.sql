@@ -46,7 +46,13 @@ CREATE TABLE `wp_users` (
 
 LOCK TABLES `wp_users` WRITE;
 /*!40000 ALTER TABLE `wp_users` DISABLE KEYS */;
-INSERT INTO `wp_users` VALUES (1,'michaelkentburns@gmail.com','$P$BYU5QjN1.rTMUuyFqotafBeTNUoJRr0','michael','michaelkentburns@gmail.com','https://michaelkentburns.com','2023-03-28 22:47:23','',0,'Michael'),(2,'Michael','$P$B/27ElBvfVdnDyLg9xlfphS.IiZIxN1','michael-2','MichaelBurns@mac.com','http://MichaelKentBurns.com','2023-04-01 23:43:21','',0,'Michael Burns'),(4,'Mike','$P$BDQ0yDRwMrFDa9HdCQSkUpqB0fZ6Qu.','mike','Mike@michaelkentburns.com','','2024-01-20 23:51:53','1705794713:$P$BB7FXpt7dr3lGgqUPI61Avg5xmaC1r0',0,'Mike Burns'),(5,'Bahati Philemon','$P$BASTWB9GDJHE6JjNMN3e7QqMut9uOU1','bahati-philemon','bahatiphilmon8@gmail.com','https://bahatiphilemon.netlify.app','2024-04-01 20:11:32','',0,'Philemon Bahati'),(6,'Efatha','$P$Bx2AvMw7XZfc6Kx7P3ZHCgJfUjKLX90','efatha','efathabyamungu4@gmail.com','','2024-04-01 20:12:38','1712007595:$P$BAIcUj7U3/gx364bpXpYrx0YH8L.dy1',0,'Efatha Byamungu'),(7,'ashuza','$P$BTuyeZ38dzEIxcNAPvEPpUlWFVMMcx0','ashuza','ashuzamaheshe4@gmail.com','','2024-04-16 21:45:10','',0,'Destin Ashuza'),(8,'janelljeffery','$P$BoTWMs1nX8j7754.HSecBRB9OwxPjw1','janelljeffery','tracieerlinda@makekaos.com','','2024-05-24 21:20:45','',0,'janelljeffery');
+INSERT INTO `wp_users` VALUES (1,'michaelkentburns@gmail.com','$P$BYU5QjN1.rTMUuyFqotafBeTNUoJRr0','michael','michaelkentburns@gmail.com','https://michaelkentburns.com','2023-03-28 22:47:23','',0,'Michael'),
+(2,'Michael','$P$B/27ElBvfVdnDyLg9xlfphS.IiZIxN1','michael-2','MichaelBurns@mac.com','http://MichaelKentBurns.com','2023-04-01 23:43:21','',0,'Michael Burns'),
+(4,'Mike','$P$BDQ0yDRwMrFDa9HdCQSkUpqB0fZ6Qu.','mike','Mike@michaelkentburns.com','','2024-01-20 23:51:53','1705794713:$P$BB7FXpt7dr3lGgqUPI61Avg5xmaC1r0',0,'Mike Burns'),
+(5,'Bahati Philemon','$P$BASTWB9GDJHE6JjNMN3e7QqMut9uOU1','bahati-philemon','bahatiphilmon8@gmail.com','https://bahatiphilemon.netlify.app','2024-04-01 20:11:32','',0,'Philemon Bahati'),
+(6,'Efatha','$P$Bx2AvMw7XZfc6Kx7P3ZHCgJfUjKLX90','efatha','efathabyamungu4@gmail.com','','2024-04-01 20:12:38','1712007595:$P$BAIcUj7U3/gx364bpXpYrx0YH8L.dy1',0,'Efatha Byamungu'),
+(7,'ashuza','$P$BTuyeZ38dzEIxcNAPvEPpUlWFVMMcx0','ashuza','ashuzamaheshe4@gmail.com','','2024-04-16 21:45:10','',0,'Destin Ashuza'),
+(8,'janelljeffery','$P$BoTWMs1nX8j7754.HSecBRB9OwxPjw1','janelljeffery','tracieerlinda@makekaos.com','','2024-05-24 21:20:45','',0,'janelljeffery');
 /*!40000 ALTER TABLE `wp_users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
