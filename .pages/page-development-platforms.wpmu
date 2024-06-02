@@ -107,7 +107,11 @@
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p>Most servers are virtual machines in a cloud server farms.   These are almost always headless meaning there is no display and keyboard.   You must access  these using some form of secure shell.   Checkout a google of '<a href="https://duckduckgo.com/?q=ssh&amp;t=osx&amp;ia=web">ssh</a>'.   ssh and many programs that use it require secure certificates to be generated and installed on your local machine.  I will have a whole 'How to' page dedicated to secure networking. </p>
+<p>Most servers are virtual machines in a cloud server farms. These are almost always headless meaning there is no display or keyboard. You must access these using some form of secure shell. Checkout a google of '<a href="https://duckduckgo.com/?q=ssh&amp;t=osx&amp;ia=web">ssh</a>'. ssh and many programs that use it require secure certificates to be generated and installed on your local machine. I will have a whole 'How to' page dedicated to secure networking.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><img class="wp-image-420" style="width: 50px;" src="https://michaelkentburns.com/wp-content/uploads/2024/05/New.jpg" alt="">With multiple developers working to build a hosted server, there are two indispensable tools. One, just mentioned is an <strong><a href="https://en.wikipedia.org/wiki/Secure_Shell">SSH</a> client</strong> that allows interactive terminal access as though the developer was directly typing on a terminal attached to the server machine. I have discovered an app called <strong><a href="https://termius.com">Termius</a></strong> that does this very well. It also serves as a secure file transfer program (<strong><a href="https://en.wikipedia.org/wiki/SSH_File_Transfer_Protocol">SFTP</a></strong>). I have dedicated a page specifically for this tool and how it can be used. <strong><a href="https://michaelkentburns.com/index.php/termius-as-a-secure-interactive-shell-and-file-transfer-client/" data-type="page" data-id="468">Termius as a secure interactive shell and file transfer client</a>.</strong></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:heading -->

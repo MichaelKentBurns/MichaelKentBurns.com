@@ -1,0 +1,69 @@
+<!-- wp:paragraph -->
+<p>As discussed on our <a href="https://michaelkentburns.com/index.php/development-platforms/" data-type="page" data-id="175">Development platforms</a> page,  I have discovered a very handy single cross platform tool for remote work:  <strong><a href="https://termius.com">Termius</a></strong>.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>It's main features important to our work are: </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><!-- wp:list-item -->
+<li>All connections are SSH secured.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Cross platform.  Works on Windows, Mac, and Linux, iOS and Android.  It works on desktop computers, laptops, and even tablets.    </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>It includes a secure vault for the connection information for all your cloud servers and for the security credentials needed to access them.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>There can be a Team vault that is shared by all members of a team so that all resources can be defined and maintained in one place for the whole team and all devices used. </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Terminal or file transfer connections can be created with a single click, including the login sequence.  One click and you are at a shell prompt on the remote machine.   </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Remote, and local terminals are supported as well as connection over serial connection to a local server. </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>The terminal is very flexible and allows multiple terminal sessions to be on the screen at a time, side by side, or stacked vertical.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Each terminal session can have a unique color scheme to avoid confusion of which you are typing into.   </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>You can easily cut and paste between the terminals. </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>The FTP client has two side by side panes that show a standard folder and file tree.  One can be the local filesystem and the other the file system of the remote machine.  This allows file and folder tree copying, renaming, creation, and deletion.  </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>You can create a library of code snippets that can be pasted directly into a terminal session.  </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Intelligent auto complete of terminal commands. </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>And more I have yet to discover. </li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>Termius is free for individuals with a single device.   Pro, Team, and Business licenses are also available.   Free trial licenses are available for all levels.  See their <a href="https://termius.com/pricing">Pricing page</a> for details.   I am currently looking into getting a <a href="https://education.github.com/discount_requests/application">GitHub Education organization</a> status that would allow our team to access free access to Termius team license.   Stay tuned... </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->

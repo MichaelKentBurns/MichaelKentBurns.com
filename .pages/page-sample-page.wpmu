@@ -23,6 +23,18 @@
 <p>Learn a little about me and why I am developing this site on my <a href="https://michaelkentburns.com/index.php/about-michael/" data-type="page" data-id="22">About page...</a></p>
 <!-- /wp:paragraph -->
 
+<!-- wp:heading -->
+<h2 class="wp-block-heading">New Blog page</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p><img class="wp-image-420" style="width: 50px;" src="https://michaelkentburns.com/wp-content/uploads/2024/05/New.jpg" alt="">You may notice that at the bottom of the sidebar is a list of the latest blog posts.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>I have just added a dedicated <strong><a href="https://michaelkentburns.com/index.php/blog/" data-type="page" data-id="449">Blog page</a></strong> that lists all of my blog posts.   Visit that frequently to find out what new content has been added recently.   </p>
+<!-- /wp:paragraph -->
+
 <!-- wp:heading {"level":1} -->
 <h1 class="wp-block-heading">Welcome</h1>
 <!-- /wp:heading -->
@@ -115,8 +127,8 @@
 <p>Take a challenge to <a href="https://michaelkentburns.com/index.php/challenge-tell-me-about-your-development-setup/" data-type="page" data-id="184">tell me about your current development setup...</a></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:heading {"level":3} -->
-<h3 class="wp-block-heading"><img class="wp-image-420" style="width: 50px;" src="https://michaelkentburns.com/wp-content/uploads/2024/05/New.jpg" alt="">Software development freelancing activities</h3>
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Software development freelancing activities</h2>
 <!-- /wp:heading -->
 
 <!-- wp:group {"layout":{"type":"constrained"}} -->
@@ -228,7 +240,7 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:heading {"level":3} -->
-<h3 class="wp-block-heading"><img class="wp-image-420" style="width: 50px;" src="https://michaelkentburns.com/wp-content/uploads/2024/05/New.jpg" alt="">The internet to the rescue!</h3>
+<h3 class="wp-block-heading">The internet to the rescue!</h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
@@ -342,6 +354,10 @@
 <!-- /wp:heading -->
 
 <!-- wp:latest-posts {"align":"center"} /-->
+
+<!-- wp:paragraph -->
+<p>For a full list of posts, visit the <strong><a href="https://michaelkentburns.com/index.php/blog/" data-type="page" data-id="449">Blog page</a></strong>.</p>
+<!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
 <p></p>

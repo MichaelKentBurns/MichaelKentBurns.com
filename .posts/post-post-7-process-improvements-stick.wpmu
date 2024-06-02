@@ -1,0 +1,15 @@
+<!-- wp:paragraph -->
+<p>In my previous post (#6) I described how there were speed bumps in the team's process that resulted from them working as individual developers often do.  However, this created a few issues now that they were working on a team project.  I was able to use that as a teaching opportunity to not only explain why they hit the bumps, but how to use the GitHub project Issues list to rapidly detect the speed bumps, address the issue as a team and smooth the road while improving their process.    That lesson was on a Monday during their weekly scrum (team meeting).    They understood the usage of labels and new issues and agreed that it would help.      </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>As they worked that week, on their Friday, while I was happily sleeping 7 hours away,  Efatha hit a speed bump and immediately raised a red flag and described his problem in the appropriate issue.  Doing that alerted the other two guys.  When alerted, they went to the issue and sized up the situation.  Philemon identified the problem, and posted a link to a specific piece of code he had pushed.   He followed with a detailed step by step that would allow Efatha to access the right code.   Ash quickly replied that he had just tested the instructions and verified that it was indeed working for him.   Efatha made an additional comment and went on with working. Problem solved!</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>All the while, I was still asleep.  When I woke up and looked at my email I saw a flurry of 6 emails to read.   When I looked at them I saw that they were a nice thread of 6 comments from a single issue in GitHub.   I quickly read through them and realized that they had identified a problem, fixed it, tested it, and were done.   All while I was sleeping.    All I had to do was sit and be amazed at how they had implemented the process improvements and were now working very effectively as a professional team.   </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"fontSize":"medium"} -->
+<p class="has-medium-font-size">WAY TO GO TEAM!!</p>
+<!-- /wp:paragraph -->
