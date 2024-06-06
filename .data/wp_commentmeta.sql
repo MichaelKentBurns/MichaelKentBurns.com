@@ -30,7 +30,7 @@ CREATE TABLE `wp_commentmeta` (
   PRIMARY KEY (`meta_id`),
   KEY `comment_id` (`comment_id`),
   KEY `meta_key` (`meta_key`(191))
-) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=59 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,7 +39,7 @@ CREATE TABLE `wp_commentmeta` (
 
 LOCK TABLES `wp_commentmeta` WRITE;
 /*!40000 ALTER TABLE `wp_commentmeta` DISABLE KEYS */;
-INSERT INTO `wp_commentmeta` VALUES (15,17,'_wp_trash_meta_status','0'),(16,17,'_wp_trash_meta_time','1714822838'),(17,16,'_wp_trash_meta_status','0'),(18,16,'_wp_trash_meta_time','1714822839'),(19,15,'_wp_trash_meta_status','0'),(20,15,'_wp_trash_meta_time','1714822841'),(21,18,'_wp_trash_meta_status','0'),(22,18,'_wp_trash_meta_time','1715079274'),(23,19,'_wp_trash_meta_status','0'),(24,19,'_wp_trash_meta_time','1715079330'),(25,21,'_wp_trash_meta_status','0'),(26,21,'_wp_trash_meta_time','1715942180'),(27,23,'_wp_trash_meta_status','0'),(28,23,'_wp_trash_meta_time','1715987085'),(29,25,'_wp_trash_meta_status','1'),(30,25,'_wp_trash_meta_time','1716385774'),(31,28,'_wp_trash_meta_status','0'),(32,28,'_wp_trash_meta_time','1716590456'),(33,29,'_wp_trash_meta_status','0'),(34,29,'_wp_trash_meta_time','1716675017'),(35,30,'_wp_trash_meta_status','0'),(36,30,'_wp_trash_meta_time','1716809077'),(37,31,'_wp_trash_meta_status','0'),(38,31,'_wp_trash_meta_time','1716941750'),(39,35,'_wp_trash_meta_status','0'),(40,35,'_wp_trash_meta_time','1717249937'),(41,34,'_wp_trash_meta_status','0'),(42,34,'_wp_trash_meta_time','1717249976'),(43,33,'_wp_trash_meta_status','0'),(44,33,'_wp_trash_meta_time','1717249976'),(45,32,'_wp_trash_meta_status','0'),(46,32,'_wp_trash_meta_time','1717249976'),(47,8,'_wp_trash_meta_status','1'),(48,8,'_wp_trash_meta_time','1717250004'),(49,7,'_wp_trash_meta_status','1'),(50,7,'_wp_trash_meta_time','1717250006');
+INSERT INTO `wp_commentmeta` VALUES (21,18,'_wp_trash_meta_status','0'),(22,18,'_wp_trash_meta_time','1715079274'),(23,19,'_wp_trash_meta_status','0'),(24,19,'_wp_trash_meta_time','1715079330'),(25,21,'_wp_trash_meta_status','0'),(26,21,'_wp_trash_meta_time','1715942180'),(27,23,'_wp_trash_meta_status','0'),(28,23,'_wp_trash_meta_time','1715987085'),(29,25,'_wp_trash_meta_status','1'),(30,25,'_wp_trash_meta_time','1716385774'),(31,28,'_wp_trash_meta_status','0'),(32,28,'_wp_trash_meta_time','1716590456'),(33,29,'_wp_trash_meta_status','0'),(34,29,'_wp_trash_meta_time','1716675017'),(35,30,'_wp_trash_meta_status','0'),(36,30,'_wp_trash_meta_time','1716809077'),(37,31,'_wp_trash_meta_status','0'),(38,31,'_wp_trash_meta_time','1716941750'),(39,35,'_wp_trash_meta_status','0'),(40,35,'_wp_trash_meta_time','1717249937'),(41,34,'_wp_trash_meta_status','0'),(42,34,'_wp_trash_meta_time','1717249976'),(43,33,'_wp_trash_meta_status','0'),(44,33,'_wp_trash_meta_time','1717249976'),(45,32,'_wp_trash_meta_status','0'),(46,32,'_wp_trash_meta_time','1717249976'),(47,8,'_wp_trash_meta_status','1'),(48,8,'_wp_trash_meta_time','1717250004'),(49,7,'_wp_trash_meta_status','1'),(50,7,'_wp_trash_meta_time','1717250006'),(51,37,'_wp_trash_meta_status','0'),(52,37,'_wp_trash_meta_time','1717418108'),(53,36,'_wp_trash_meta_status','0'),(54,36,'_wp_trash_meta_time','1717418112'),(55,42,'_wp_trash_meta_status','0'),(56,42,'_wp_trash_meta_time','1717688634'),(57,41,'_wp_trash_meta_status','0'),(58,41,'_wp_trash_meta_time','1717688703');
 /*!40000 ALTER TABLE `wp_commentmeta` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -52,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-06-02 21:50:47
+-- Dump completed on 2024-06-06 15:53:57

@@ -12,11 +12,79 @@
 <!-- /wp:list-item --></ul>
 <!-- /wp:list -->
 
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Dumping the SQL data for source control</h2>
+<!-- /wp:heading -->
+
 <!-- wp:paragraph -->
-<p>Because the main visible content is stored in a database table it is necessary to extract the individual records of the wp_posts (and other tables) to textual form so the normal GitHub mechanisms can show it in a readable form. As a first step to doing that, I have written a shells script called '<strong>dumpall</strong>' that is kept in the public_html directory (for now). That script is run in a shell process on the WP host site before a Git commit and push commands are run to update the GitHub repository. This is step 1 in the GitHub issue #10 of the GitHub repository'. Later, I will write a program to extract each record of the wp_posts table into a separate text file in a .data/posts directory. It will require some nicer format than a simple SQL dump.</p>
-<p>One issue with the <strong>dumpall </strong>script is that the SQL dump for a specific table creates an INSERT statement to create all records into the table, but all of those records are written to a single line.  Thus when GitHub tries to show the differences between subsequent revisions of a file, it looks like one VERY long line with lots of differences.   What I would rather have is an INSERT statement that puts each record on a separate line.   I have written a shell alias that uses the sed command to split that INSERT line into many lines.   Thus, in the .data directory of my GitHub repository you will see the original SQL dump in a file named <strong>wp_posts.sql</strong> and a version with the lines split named <strong>wp_posts.split.sql</strong>.  I am pushing this change on Wednesday April 17th, 2024 so you should see the text of this post will be changed in the <strong>wp_posts.split.sql</strong> file.</p>
+<p><p>Because the main visible content is stored in a database table it is necessary to extract the individual records of the wp_posts (and other tables) to textual form so the normal GitHub mechanisms can show it in a readable form. As a first step to doing that, I have written a shells script called '<strong>dumpall</strong>' that is kept in the public_html directory (for now). That script is run in a shell process on the WP host site before a Git commit and push commands are run to update the GitHub repository. This is step 1 in the GitHub issue #10 of the GitHub repository'. Later, I will write a program to extract each record of the wp_posts table into a separate text file in a .data/posts directory. It will require some nicer format than a simple SQL dump.</p><br><p>One issue with the <strong>dumpall </strong>script is that the SQL dump for a specific table creates an INSERT statement to create all records into the table, but all of those records are written to a single line.  Thus when GitHub tries to show the differences between subsequent revisions of a file, it looks like one VERY long line with lots of differences.   What I would rather have is an INSERT statement that puts each record on a separate line.   I have written a shell alias that uses the sed command to split that INSERT line into many lines.   Thus, in the .data directory of my GitHub repository you will see the original SQL dump in a file named <strong>wp_posts.sql</strong> and a version with the lines split named <strong>wp_posts.split.sql</strong>.  I am pushing this change on Wednesday April 17th, 2024 so you should see the text of this post will be changed in the <strong>wp_posts.split.sql</strong> file.</p></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Dumping the markup for all pages and posts </h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>In addition to saving the SQL tables generally, I want to export the text of all the Pages and Posts as separate files.   This allows GitHub change tracking to present the textual changes to the posts and pages individually.    To do this I wrote two shell scripts named <strong>dumpPages</strong> and <strong>dumpPosts</strong>.   dumpPages uses the wp command line utility to get each page markup text into a file in the .pages directory.  The file is named <strong>page-&lt;name-of-page&gt;.wpmu</strong> . The .wpmu extension is my extension name for "Word Press mark up".    For example <strong>.pages/how-to-use-github-to-source-control-a-wordpress-site.wpmu</strong> contains the markup text of this page.   The dumpPosts command does the same for posts and stores them in the .posts directory. </p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p>&nbsp;</p>
+<p>When these commands are executed in a secure terminal connected to the server running this WordPress site,  then the markup is exposed as text files to the git program.   When I ask git for the status of this local repository I see this: </p>
 <!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>[michael]:public_html$ git status<br>On branch main<br>Your branch is up to date with 'origin/main'.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Changes to be committed:<br>(use "git reset HEAD …" to unstage)</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:code -->
+<pre class="wp-block-code"><code>    new file:   .pages/page-blog.wpmu
+    new file:   .pages/page-termius-as-a-secure-interactive-shell-and-file-transfer-client.wpmu
+    new file:   .posts/post-post-7-process-improvements-stick.wpmu</code></pre>
+<!-- /wp:code -->
+
+<!-- wp:paragraph -->
+<p>Changes not staged for commit:<br>(use "git add …" to update what will be committed)<br>(use "git checkout -- …" to discard changes in working directory)</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:code -->
+<pre class="wp-block-code"><code>    modified:   .data/wp_commentmeta.split.sql
+    modified:   .data/wp_commentmeta.sql
+    modified:   .data/wp_comments.split.sql
+    modified:   .data/wp_comments.sql
+    modified:   .data/wp_links.sql
+    modified:   .data/wp_options.sql
+    modified:   .data/wp_postmeta.sql
+    modified:   .data/wp_posts.split.sql
+    modified:   .data/wp_posts.sql
+    modified:   .data/wp_usermeta.split.sql
+    modified:   .data/wp_usermeta.sql
+    modified:   .data/wp_users.split.sql
+    modified:   .data/wp_users.sql
+    modified:   .pages/page-development-platforms.wpmu
+    modified:   .pages/page-how-to-do-easy-time-estimates.wpmu
+    modified:   .pages/page-how-to.wpmu
+    modified:   .pages/page-sample-page.wpmu</code></pre>
+<!-- /wp:code -->
+
+<!-- wp:paragraph -->
+<p> </p>
+<!-- /wp:paragraph -->
+
+<p>[michael]:public_html$ git diff .pages/page-how-to.wpmu<br />
+diff --git a/.pages/page-how-to.wpmu b/.pages/page-how-to.wpmu<br />
+index ed4ba26..2e8c3f7 100644<br />
+--- a/.pages/page-how-to.wpmu<br />
++++ b/.pages/page-how-to.wpmu<br />
+@@ -4,7 +4,7 @@<br />
+ <!-- /wp:list-item --></p>
+<p> <!-- wp:list-item --><br />
+-</p>
+<li><img class="wp-image-420" style="width: 30px;" src="https://michaelkentburns.com/wp-content/uploads/2024/05/New.jpg" alt=""><a href="https://michaelkentburns.com/index.php/how-to/how-to-do-easy-time-estimates/" data-type="page" data-id="404">How To Do Easy Time Estimates</a></li>
+<p>+</p>
+<li><a href="https://michaelkentburns.com/index.php/how-to/how-to-do-easy-time-estimates/" data-type="page" data-id="404">How To Do Easy Time Estimates</a></li>
+<p> <!-- /wp:list-item --></p>
+<p> <!-- wp:list-item --></p>

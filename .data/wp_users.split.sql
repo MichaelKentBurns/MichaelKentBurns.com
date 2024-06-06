@@ -37,7 +37,7 @@ CREATE TABLE `wp_users` (
   KEY `user_login_key` (`user_login`),
   KEY `user_nicename` (`user_nicename`),
   KEY `user_email` (`user_email`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -52,7 +52,8 @@ INSERT INTO `wp_users` VALUES (1,'michaelkentburns@gmail.com','$P$BYU5QjN1.rTMUu
 (5,'Bahati Philemon','$P$BASTWB9GDJHE6JjNMN3e7QqMut9uOU1','bahati-philemon','bahatiphilmon8@gmail.com','https://bahatiphilemon.netlify.app','2024-04-01 20:11:32','',0,'Philemon Bahati'),
 (6,'Efatha','$P$Bx2AvMw7XZfc6Kx7P3ZHCgJfUjKLX90','efatha','efathabyamungu4@gmail.com','','2024-04-01 20:12:38','1712007595:$P$BAIcUj7U3/gx364bpXpYrx0YH8L.dy1',0,'Efatha Byamungu'),
 (7,'ashuza','$P$BTuyeZ38dzEIxcNAPvEPpUlWFVMMcx0','ashuza','ashuzamaheshe4@gmail.com','','2024-04-16 21:45:10','',0,'Destin Ashuza'),
-(8,'janelljeffery','$P$BoTWMs1nX8j7754.HSecBRB9OwxPjw1','janelljeffery','tracieerlinda@makekaos.com','','2024-05-24 21:20:45','',0,'janelljeffery');
+(8,'janelljeffery','$P$BoTWMs1nX8j7754.HSecBRB9OwxPjw1','janelljeffery','tracieerlinda@makekaos.com','','2024-05-24 21:20:45','',0,'janelljeffery'),
+(9,'mikegiffen9','$P$BwcEVBk39NJ3YO29goyRj1.IIU848g.','mikegiffen9','jkbkxdsr@maillv.com','','2024-06-04 08:21:35','',0,'mikegiffen9');
 /*!40000 ALTER TABLE `wp_users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -65,4 +66,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-06-02 21:50:47
+-- Dump completed on 2024-06-06 15:53:57
