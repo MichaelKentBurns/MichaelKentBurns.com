@@ -56,10 +56,24 @@ class Breeze_Woocommerce_Product_Cache {
 
 			if ( ! empty( $items ) ) {
 				foreach ( $items as $item_id => $item_product ) {
-					$product_id       = $item_product->get_product_id();
-					$product_id       = absint( $product_id );
-					$product          = wc_get_product( $product_id );
-					$stock_no         = intval( $product->get_stock_quantity() ) - 1;
+
+					$product_id = $item_product->get_product_id();
+					if ( ! is_numeric( $product_id ) ) {
+						continue;
+					}
+					$product_id = absint( $product_id );
+					$product    = wc_get_product( $product_id );
+
+					if ( ! is_object( $product ) || ! $product instanceof WC_Product ) {
+						continue;
+					}
+
+					$get_stock_quantity = $product->get_stock_quantity();
+					$stock_no           = 0;
+					if ( is_numeric( $get_stock_quantity ) ) {
+						$stock_no = intval( $get_stock_quantity ) - 1;
+					}
+
 					$product_archives = array();
 
 					if ( true === $product->managing_stock() && 1 > $stock_no ) { // if stock is 0
@@ -88,8 +102,8 @@ class Breeze_Woocommerce_Product_Cache {
 					foreach ( $archive_urls as $url ) {
 						global $wp_filesystem;
 						// Clear the cache for the product page.
-						if ( $wp_filesystem->exists( breeze_get_cache_base_path() . md5( $url ) ) ) {
-							$wp_filesystem->rmdir( breeze_get_cache_base_path() . md5( $url ), true );
+						if ( $wp_filesystem->exists( breeze_get_cache_base_path() . hash( 'sha512', $url ) ) ) {
+							$wp_filesystem->rmdir( breeze_get_cache_base_path() . hash( 'sha512', $url ), true );
 						}
 						// Clear Varnish server cache for this URL.
 						breeze_varnish_purge_cache( $url, $do_varnish_purge );

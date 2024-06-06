@@ -172,7 +172,7 @@ class Breeze_Lazy_Load {
 					$current_src = ! empty( $src_value[1] ) ? $src_value[1] : '';
 					if ( true !== $this->excluded_images( $current_src ) ) {
 						// Add lazy-load data attribute.
-						$img_match_new = preg_replace( '/(<img\s+)/', '$1data-breeze="' . $current_src . '" ', $img_match );
+						$img_match_new = preg_replace( '/(<img\s+)/', '$1data-breeze="' . trim($current_src) . '" ', $img_match );
 
 						// Remove the current image source.
 						$img_match_new = preg_replace( '/(<img.+)(src=(?:"|\').+?(?:"|\'))(.+?>)/', '$1$3', $img_match_new );
@@ -342,6 +342,8 @@ class Breeze_Lazy_Load {
 				$content = str_replace( $video_tag, $video_tag_new, $content );
 			}
 		}
+		// Buffer decoding.
+		$content = mb_decode_numericentity( $content, array( 0x80, 0x10FFFF, 0, ~0 ), 'UTF-8' );
 
 		return $content;
 

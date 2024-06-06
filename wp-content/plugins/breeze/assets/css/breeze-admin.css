@@ -1472,3 +1472,15 @@ span.br-important {
     transform: rotate(360deg);
   }
 }
+.br-rollback-option {
+  gap: 5px;
+}
+.br-rollback-option .breeze-version {
+  max-width: 170px;
+}
+
+#breeze_rollback_form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

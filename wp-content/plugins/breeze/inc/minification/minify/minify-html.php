@@ -93,7 +93,8 @@ class Minify_HTML {
 			$this->_isXhtml = ( false !== strpos( $this->_html, '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML' ) );
 		}
 
-		$this->_replacementHash = 'MINIFYHTML' . md5( $_SERVER['REQUEST_TIME'] );
+		$this->_replacementHash = 'MINIFYHTML' . hash('sha512', $_SERVER['REQUEST_TIME']);
+		//$this->_replacementHash = 'MINIFYHTML' . md5( $_SERVER['REQUEST_TIME'] );
 		$this->_placeholders    = array();
 
 		// replace SCRIPTs (and minify) with placeholders

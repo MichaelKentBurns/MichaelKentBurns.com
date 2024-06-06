@@ -11,6 +11,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+if ( isset( $_GET['s'] ) && ! empty( $_GET['s'] ) ) {
+	return; // Skip caching for search results.
+}
+
+
 if ( ! isset( $_SERVER['HTTP_USER_AGENT'] ) ) {
 	$_SERVER['HTTP_USER_AGENT'] = 'empty_agent';
 }
@@ -262,7 +267,7 @@ function breeze_cache( $buffer, $flags ) {
 
 	$blog_id_requested = isset( $GLOBALS['breeze_config']['blog_id'] ) ? $GLOBALS['breeze_config']['blog_id'] : 0;
 	$cache_base_path   = breeze_get_cache_base_path( false, $blog_id_requested );
-	$path              = $cache_base_path . md5( $breeze_current_url_path );
+	$path              = $cache_base_path . hash( 'sha512', $breeze_current_url_path );
 
 	// Make sure we can read/write files and that proper folders exist
 	if ( ! wp_mkdir_p( $path ) ) {
@@ -309,7 +314,10 @@ function breeze_cache( $buffer, $flags ) {
 		$pattern = '/<a\s+(.*?)>/si';
 		$buffer  = preg_replace_callback( $pattern, 'breeze_cc_process_match', $buffer );
 
+		// Buffer decoding.
+		$buffer = mb_decode_numericentity( $buffer, array( 0x80, 0x10FFFF, 0, ~0 ), 'UTF-8' );
 	}
+
 	$cache_type = '';
 	if ( preg_match( '#</html>#i', $buffer ) ) {
 
@@ -425,12 +433,12 @@ function breeze_cache( $buffer, $flags ) {
 	if ( strpos( $breeze_current_url_path, '_breeze_cache_' ) !== false ) {
 		if ( ! empty( $GLOBALS['breeze_config']['cache_options']['breeze-gzip-compression'] ) && function_exists( 'gzencode' ) ) {
 
-			$wp_filesystem->put_contents( $path . breeze_mobile_detect() . md5( $breeze_current_url_path . '/index.gzip.html' ) . $is_suffix . '.html', $data );
-			$wp_filesystem->touch( $path . breeze_mobile_detect() . md5( $breeze_current_url_path . '/index.gzip.html' ) . $is_suffix . '.html', $modified_time );
+			$wp_filesystem->put_contents( $path . breeze_mobile_detect() . hash( 'sha512', $breeze_current_url_path . '/index.gzip.html' ) . $is_suffix . '.html', $data );
+			$wp_filesystem->touch( $path . breeze_mobile_detect() . hash( 'sha512', $breeze_current_url_path . '/index.gzip.html' ) . $is_suffix . '.html', $modified_time );
 		} else {
 
-			$wp_filesystem->put_contents( $path . breeze_mobile_detect() . md5( $breeze_current_url_path . '/index.html' ) . $is_suffix . '.html', $data );
-			$wp_filesystem->touch( $path . breeze_mobile_detect() . md5( $breeze_current_url_path . '/index.html' ) . $is_suffix . '.html', $modified_time );
+			$wp_filesystem->put_contents( $path . breeze_mobile_detect() . hash( 'sha512', $breeze_current_url_path . '/index.html' ) . $is_suffix . '.html', $data );
+			$wp_filesystem->touch( $path . breeze_mobile_detect() . hash( 'sha512', $breeze_current_url_path . '/index.html' ) . $is_suffix . '.html', $modified_time );
 		}
 	} else {
 		return $buffer;
@@ -492,13 +500,13 @@ function breeze_serve_cache( $filename, $breeze_current_url_path, $X1, $opts ) {
 	}
 	$is_suffix = breeze_currency_switcher_cache();
 	if ( function_exists( 'gzencode' ) && ! empty( $GLOBALS['breeze_config']['cache_options']['breeze-gzip-compression'] ) ) {
-		$file_name = md5( $filename . '/index.gzip.html' ) . $is_suffix . '.html';
+		$file_name = hash( 'sha512', $filename . '/index.gzip.html' ) . $is_suffix . '.html';
 	} else {
-		$file_name = md5( $filename . '/index.html' ) . $is_suffix . '.html';
+		$file_name = hash( 'sha512', $filename . '/index.html' ) . $is_suffix . '.html';
 	}
 
 	$blog_id_requested = isset( $GLOBALS['breeze_config']['blog_id'] ) ? $GLOBALS['breeze_config']['blog_id'] : 0;
-	$path              = breeze_get_cache_base_path( false, $blog_id_requested ) . md5( $breeze_current_url_path ) . '/' . breeze_mobile_detect() . $file_name;
+	$path              = breeze_get_cache_base_path( false, $blog_id_requested ) . hash( 'sha512', $breeze_current_url_path ) . '/' . breeze_mobile_detect() . $file_name;
 
 	if ( @file_exists( $path ) ) {
 
@@ -577,7 +585,7 @@ function check_exclude_page( $opts_config, $current_url ) {
 					}
 				} else {
 					// Full exclude url with regex
-					if ( strpos( $current_url, $pattent ) !== false ) {
+					if ( ( ! empty( $pattent ) && ! empty( $current_url ) ) && strpos( $current_url, $pattent ) !== false ) {
 						return true;
 					}
 				}

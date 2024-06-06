@@ -113,4 +113,42 @@ if ( is_multisite() ) {
         </div>
     </div>
     <!--  END OPTION    -->
+	
+	<!--  START OPTION  -->
+    <div class="br-option-item">
+        <div class="br-label">
+            <div class="br-option-text">
+                <?php _e( 'Rollback Version', 'breeze' ); ?>
+            </div>
+        </div>
+        <div class="br-option br-rollback-option">
+			<?php 
+				// Base rollback URL
+				$breeze_rollback_url = is_network_admin() ? network_admin_url( 'index.php' ) : admin_url( 'index.php' );
+			?>
+			<form name="breeze_rollback_form" id="breeze_rollback_form" action="<?php echo esc_url( $breeze_rollback_url ); ?>">
+				<input type="hidden" name="page" value="breeze-rollback">
+				<?php wp_nonce_field( 'breeze_rollback_nonce' ); ?>
+				<input type="hidden" name="installed_version" value="<?php echo BREEZE_VERSION; ?>">
+				<select name="breeze_version" class="breeze-version">
+					<?php
+					$versions = breeze_org_versions();
+					foreach ( $versions as $version => $url ) {
+						$selected = '';
+						if ( BREEZE_VERSION === $version ) {
+							$selected = 'selected';
+						}
+						echo "<option value='{$version}' {$selected}>{$version}</option>";
+					}
+					?>
+				</select>
+				<input type="submit" class="br-blue-button rollback-button" value="Rollback">
+			</form>
+			<div class="just-here-to-add-padding">
+				<p>
+				</p>
+        	</div>
+        </div>
+    </div>
+    <!--  END OPTION    -->
 </section>

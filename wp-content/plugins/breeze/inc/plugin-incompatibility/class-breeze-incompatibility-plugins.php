@@ -92,7 +92,7 @@ if ( ! class_exists( 'Breeze_Incompatibility_Plugins' ) ) {
 
 			$get_notice_rule = get_option( 'breeze_hide_notice', '' );
 
-			$comparing_value = md5( wp_json_encode( $incompatibility_list ) );
+			$comparing_value = hash( 'sha512', wp_json_encode( $incompatibility_list ) );
 			if ( 'yes' === $get_notice_rule ) {
 				$get_old_values = get_option( 'breeze_show_incompatibility', '' );
 				if ( $get_old_values !== $comparing_value ) {

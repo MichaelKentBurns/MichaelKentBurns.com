@@ -42,7 +42,7 @@ class Breeze_Admin {
 		add_action( 'breeze_clear_varnish', array( $this, 'breeze_clear_varnish' ) );
 
 		// Check the status change of excluded ecommerce pages.
-		add_action(  'transition_post_status',  array( $this, 'on_all_status_transitions' ), 10, 3 );
+		add_action( 'transition_post_status', array( $this, 'on_all_status_transitions' ), 10, 3 );
 		// Check if woocommerce exists
 		if ( function_exists( 'is_woocommerce_active' ) && is_woocommerce_active() ) {
 			// Clear all cache on bulk update
@@ -92,20 +92,20 @@ class Breeze_Admin {
 	}
 
 	/**
-	 * Check the page status and if the current page is 
+	 * Check the page status and if the current page is
 	 * in the excluded ecommerce pages list.
-	 * 
+	 *
 	 * @param string $new_status
 	 * @param string $old_status
 	 * @param object $post
 	 * @return void
 	 */
 	public function on_all_status_transitions( $new_status, $old_status, $post ) {
-				
+
 		// Make sure the Breeze_Ecommerce_Cache class is available.
 		require_once( BREEZE_PLUGIN_DIR . 'inc/cache/ecommerce-cache.php' );
 
-		if ( $new_status != $old_status && Breeze_Ecommerce_Cache::is_excluded_ecom_page( $post->ID )  ) {
+		if ( $new_status != $old_status && Breeze_Ecommerce_Cache::is_excluded_ecom_page( $post->ID ) ) {
 			Breeze_ConfigCache::write_config_cache();
 		}
 	}
@@ -229,6 +229,26 @@ class Breeze_Admin {
 			}
 
 			wp_enqueue_script( 'breeze-lazy', plugins_url( 'assets/js/js-front-end/breeze-lazy-load.min.js', dirname( __FILE__ ) ), array(), BREEZE_VERSION, true );
+		}
+
+		// Fix viewport images when lazy-load is active.
+		if ( true === $is_lazy_load_enabled ) {
+			if ( false === $is_lazy_load_native ) {
+				$data = "document.querySelectorAll('img[data-breeze]').forEach(img=>{if(img.getBoundingClientRect().top<=window.innerHeight){img.src=img.getAttribute('data-breeze');img.removeAttribute('data-breeze')}});";
+				wp_add_inline_script( 'breeze-lazy', $data, 'after' );
+			} else {
+				$inline_js = <<<INLINEJS
+window.addEventListener("DOMContentLoaded",(e=>{document.querySelectorAll('img[loading="lazy"]').forEach((e=>{e.getBoundingClientRect().top<=window.innerHeight&&(e.loading="eager")}))}));
+INLINEJS;
+
+				add_action(
+					'wp_footer',
+					function() use ( $inline_js ) {
+						printf( '<script type="text/javascript">%s</script>', $inline_js );
+					},
+					99
+				);
+			}
 		}
 	}
 

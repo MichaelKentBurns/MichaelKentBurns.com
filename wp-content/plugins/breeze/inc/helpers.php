@@ -700,8 +700,8 @@ function breeze_varnish_purge_cache( $url = '', $purge_varnish = false, $check_v
 	}
 
 	// Clear the local cache using the product URL.
-	if ( ! empty( $url ) && $wp_filesystem->exists( breeze_get_cache_base_path() . md5( $url ) ) ) {
-		$wp_filesystem->rmdir( breeze_get_cache_base_path() . md5( $url ), true );
+	if ( ! empty( $url ) && $wp_filesystem->exists( breeze_get_cache_base_path() . hash( 'sha512', $url ) ) ) {
+		$wp_filesystem->rmdir( breeze_get_cache_base_path() . hash( 'sha512', $url ), true );
 	}
 
 	if ( false === $purge_varnish && true === $check_varnish ) {
@@ -746,7 +746,6 @@ function breeze_varnish_purge_cache( $url = '', $purge_varnish = false, $check_v
 	if ( ! empty( $parse_url['query'] ) && 'breeze' !== strtolower( $parse_url['query'] ) ) {
 		$purgeme .= '?' . $parse_url['query'];
 	}
-
 
 	$ssl_verification = apply_filters( 'breeze_ssl_check_certificate', true );
 
@@ -831,7 +830,6 @@ function breeze_is_delayjs_changed( $is_network = false, $blog_id = 0, $root = f
 	} else {
 		$saved_options = get_option( 'breeze_advanced_settings' );
 	}
-
 
 	if ( ! isset( $saved_options['breeze-delay-js-scripts'] ) ) {
 		return true;
@@ -1095,7 +1093,6 @@ function breeze_static_check_cdn_url( $cdn_url ) {
 		$verify_host      = 0;
 	}
 
-
 	$cdn_url = ltrim( $cdn_url, 'https:' );
 	$cdn_url = 'https:' . $cdn_url;
 
@@ -1143,7 +1140,7 @@ function breeze_static_check_cdn_url( $cdn_url ) {
 *
 * @return bool|array
  */
-function breeze_helper_fetch_headers( int $retry = 1, int $time_fresh = 0, bool $use_headers = false ){
+function breeze_helper_fetch_headers( int $retry = 1, int $time_fresh = 0, bool $use_headers = false ) {
 	// Code specific for Cloudways Server.
 
 	// use time to get un-cached version.
@@ -1225,11 +1222,11 @@ function breeze_helper_fetch_headers( int $retry = 1, int $time_fresh = 0, bool 
 		curl_close( $curl );
 		$headers = array();
 		if ( is_array( $curl_header ) && ! empty( $curl_header ) ) {
-			foreach($curl_header as $header_key => $header_array_value){
-				if(is_array($header_array_value)){
-					$header_array_value = array_pop( $header_array_value);
+			foreach ( $curl_header as $header_key => $header_array_value ) {
+				if ( is_array( $header_array_value ) ) {
+					$header_array_value = array_pop( $header_array_value );
 				}
-				$headers[$header_key] = $header_array_value;
+				$headers[ $header_key ] = $header_array_value;
 			}
 		}
 	}

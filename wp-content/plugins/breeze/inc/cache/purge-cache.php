@@ -299,8 +299,8 @@ class Breeze_PurgeCache {
 			}
 
 			$url_path = get_permalink( $post_id );
-			if ( $wp_filesystem->exists( breeze_get_cache_base_path() . md5( $url_path ) ) ) {
-				$wp_filesystem->rmdir( breeze_get_cache_base_path() . md5( $url_path ), true );
+			if ( $wp_filesystem->exists( breeze_get_cache_base_path() . hash( 'sha512', $url_path ) ) ) {
+				$wp_filesystem->rmdir( breeze_get_cache_base_path() . hash( 'sha512', $url_path ), true );
 			}
 		}
 	}
@@ -321,8 +321,8 @@ class Breeze_PurgeCache {
 
 				Breeze_CloudFlare_Helper::purge_cloudflare_cache_urls( array( $url_path ) );
 
-				if ( $wp_filesystem->exists( breeze_get_cache_base_path() . md5( $url_path ) ) ) {
-					$wp_filesystem->rmdir( breeze_get_cache_base_path() . md5( $url_path ), true );
+				if ( $wp_filesystem->exists( breeze_get_cache_base_path() . hash( 'sha512', $url_path ) ) ) {
+					$wp_filesystem->rmdir( breeze_get_cache_base_path() . hash( 'sha512', $url_path ), true );
 				}
 			}
 		}

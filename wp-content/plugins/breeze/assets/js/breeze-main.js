@@ -31,6 +31,22 @@ jQuery( document ).ready(
 			);
 		}
 
+		$( document ).on(
+			'click',
+			'.rollback-button',
+			function (e) {
+				e.preventDefault();
+				const selectedVersion = $('.breeze-version').val();
+				// Display form submit confirmation dialog
+				const confirmation = confirm("Want to rollback version " + selectedVersion + " ?");
+    
+				// If user confirms, submit the form
+				if (confirmation) {
+					document.getElementById("breeze_rollback_form").submit();
+				}
+			}
+		);
+
 		// Topbar action
 		$( document ).on(
 			'click',

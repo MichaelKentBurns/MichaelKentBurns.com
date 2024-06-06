@@ -890,3 +890,23 @@ function breeze_page_provided_headers() {
 
 	return $headers_output_return;
 }
+
+function breeze_org_versions() {
+	
+	$url      = "https://api.wordpress.org/plugins/info/1.0/breeze.json?fields=versions";
+
+	$response = wp_remote_get($url);
+	if (is_wp_error($response)) {
+		return false;
+	}
+
+	$response_body         = json_decode(wp_remote_retrieve_body($response), true);
+
+	$current_version_index = array_search( BREEZE_VERSION, array_keys( $response_body['versions'] ) ) + 1;
+
+	$versions              = array_slice( $response_body['versions'], $current_version_index - 5 , 5 );
+
+	$versions              = array_reverse( $versions );
+
+	return $versions;
+}
