@@ -24,15 +24,11 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:heading -->
-<h2 class="wp-block-heading">New Blog page</h2>
+<h2 class="wp-block-heading">New Content:</h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p><img class="wp-image-420" style="width: 50px;" src="https://michaelkentburns.com/wp-content/uploads/2024/05/New.jpg" alt="">You may notice that at the bottom of the sidebar is a list of the latest blog posts.</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph -->
-<p>I have just added a dedicated <strong><a href="https://michaelkentburns.com/index.php/blog/" data-type="page" data-id="449">Blog page</a></strong> that lists all of my blog posts.   Visit that frequently to find out what new content has been added recently.   </p>
+<p><img class="wp-image-420" style="width: 50px;" src="https://michaelkentburns.com/wp-content/uploads/2024/05/New.jpg" alt="">  In the sidebar on the left I have added a link to <strong><a href="https://michaelkentburns.com/index.php/blog/" data-type="page" data-id="449">Latest Blog Posts page</a></strong> so you can look there for new posts you may not have read.   Also there is a <a href="https://michaelkentburns.com/index.php/chronological-index-of-blog-posts/" data-type="page" data-id="483"><strong>Cronological Index to Blog Posts</strong></a> that lists all of my blog posts with short excerpts. </p>
 <!-- /wp:paragraph -->
 
 <!-- wp:heading {"level":1} -->

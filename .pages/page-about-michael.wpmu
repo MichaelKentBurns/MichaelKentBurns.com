@@ -44,19 +44,81 @@
 <p>My first cohort of students live in the city of <a href="https://en.wikipedia.org/wiki/Bukavu">Bukavu</a>.</p>
 <!-- /wp:paragraph -->
 
+<!-- wp:heading {"textAlign":"center"} -->
+<h2 class="wp-block-heading has-text-align-center">Cohort-1</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Cohort-1 contains three guys that I met during my first visit to Congo in May 2023: <a href="https://michaelkentburns.com/index.php/cohort-1/" data-type="page" data-id="494">See full details.</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:gallery {"linkTo":"none"} -->
+<figure class="wp-block-gallery has-nested-images columns-default is-cropped"><!-- wp:image {"id":353,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://michaelkentburns.com/wp-content/uploads/2024/04/work-1024x683.jpg" alt="" class="wp-image-353"/><figcaption class="wp-element-caption">Philémon</figcaption></figure>
+<!-- /wp:image -->
+
+<!-- wp:image {"id":397,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://michaelkentburns.com/wp-content/uploads/2024/05/ash-picture-1024x875.jpg" alt="" class="wp-image-397"/><figcaption class="wp-element-caption">Ashuza </figcaption></figure>
+<!-- /wp:image -->
+
+<!-- wp:image {"id":358,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://michaelkentburns.com/wp-content/uploads/2024/04/Efatha.png" alt="" class="wp-image-358"/><figcaption class="wp-element-caption">Efatha</figcaption></figure>
+<!-- /wp:image --></figure>
+<!-- /wp:gallery -->
+
+<!-- wp:heading {"textAlign":"center","level":1,"fontSize":"medium"} -->
+<h1 class="wp-block-heading has-text-align-center has-medium-font-size"></h1>
+<!-- /wp:heading -->
+
+<!-- wp:heading {"textAlign":"center"} -->
+<h2 class="wp-block-heading has-text-align-center">Cohort-2</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Cohort-2 is about to launch.   </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The candidates for Cohort-2 are:</p>
+<!-- /wp:paragraph -->
+
 <!-- wp:list -->
 <ul><!-- wp:list-item -->
-<li>Philemon Bahati  <img class="wp-image-353" style="width: 150px;" src="https://michaelkentburns.com/wp-content/uploads/2024/04/work-scaled.jpg" alt=""></li>
+<li>Théophile Achiza</li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li>Destin Ashuza <img class="wp-image-359" style="width: 150px;" src="https://michaelkentburns.com/wp-content/uploads/2024/04/DestinAshuza.jpeg" alt=""></li>
+<li>Gauthier Utukufu</li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li>Efatha Byamungu <img class="wp-image-358" style="width: 150px;" src="https://michaelkentburns.com/wp-content/uploads/2024/04/Efatha.png" alt=""></li>
+<li>Samuel Bitingingwa</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Solomon Mwilo</li>
 <!-- /wp:list-item --></ul>
 <!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>These candidates are all very new to web design and Upwork.  They will have to begin to develop the web development part of their Upwork profile as well as their GitHub repository.   It is important that they capture the projects they will build while learning web design so that they develop and demonstrate the professional skills needed to work effectively for clients.   Most web design students do their projects on their own personal computer in a directory where they write and test the code.  Then they hand in their work to the instructor for grading.    This is NOT how professional developers work or deliver their finished work. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>As they learn and build projects that demonstrate that skill they will begin to add the skills and projects to their web design profile in Upwork.   Prospective clients who come upon their profile will see their advertised skills, but they want to see some evidence of that skill put to work.   Their profile and GitHub repository is where that will be evident.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>You can follow their progress by reading my blog posts.  Good skill and hard work guys! </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:separator -->
+<hr class="wp-block-separator has-alpha-channel-opacity"/>
+<!-- /wp:separator -->
 
 <!-- wp:heading -->
 <h2 class="wp-block-heading">Contributors</h2>
