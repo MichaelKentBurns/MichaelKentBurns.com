@@ -1,0 +1,207 @@
+<!-- wp:paragraph -->
+<p>In my last security post I discussed the fact that good secure <strong>passwords</strong> and proper storage and use are every web user's responsibility.  This is even more important for those of us working as web developers.    </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Providing a username and password to a website or application does primarily only one thing, and that is to prove that you are who you say you are.   You really need to be trusted by the service you are using.   However, the flip side to that is that you want there to be NO OTHER PEOPLE that can impersonate you.  You, and you alone have the legitimate right to your information.    It is a matter of proving <strong>identity</strong>. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Once you login, then the service you are talking to needs to prove to you that they are <strong>who they claim to be</strong>.   This pairing of proven identities sets up a trust relationship.    You and your web browser need a two way trust with the service on the other end of the network connection.   However, from its inception the internet was a trusting place so the connections did not need built-in security.   Originally, it was university researchers sharing information with other researchers.  There was an inherent trust in that community.    But, then many people and companies started using the internet for many different reasons, most legitimate, but unfortunately many are malicious.   Secure Socket Layer (SSL) is a technology for creating a secure tunnel from the inside of your computer to the inside of a trusted service you are connected to.   </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>How SSL works is very complicated and fortunately you don't need to understand it all.    Here is an excellent and relatively short explanation of how SSL certificates work:   <a href="https://www.cloudflare.com/learning/ssl/how-does-ssl-work/">https://www.cloudflare.com/learning/ssl/how-does-ssl-work/</a>   Please take a few minutes to at least browse through it to understand the basics.    </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Now that you have that basic understanding, we need to consider the two basic concepts that have to be carefully considered to be safe(r) on the internet:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Identity</strong> of you and your browser, and the web server and its owner.   And a <strong>secure communication channel</strong> between the two programs.     Certificates do both of those things.   </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>When you enter a URL or click on a link, the URL starts with a protocol string which is either HTTP:// or HTTP<strong>S</strong>://.   The <strong>S</strong> stands for <strong>S</strong>ecure.  You can freely communicate over HTTP protocol, but it is <strong>NOT secure</strong>.   If you want it secure then it needs to be HTTP<strong>S</strong>. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Insecure connection</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>As an example of an insecure website, try this (no really, it's OK): <a href="http://digitalparadox.org/">http://digitalparadox.org/</a>    Notice the 'http://' and when you get there the address bar of your browser should say '<strong>Insecure</strong>'.   If you forget the 'S' on a site that is secure, it has the ability (not guarantee) to forward your request to http<strong>S</strong>:// to ensure it is secure.    Try it and notice if it makes the switch. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Secure connection</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>When your browser connects to a web server, AND you are using HTTPS protocol, then your browser and the web server exchange certificate files that are used to establish the secure channel.   Both programs can determine for certain whether the other computer sent a properly secure certificate.    When that is done, your web browser should clearly indicate the connection is secure.  This is often done by displaying a lock icon to the left of the address as in these examples.  Notice that these examples are all this training site: MichaelKentBurns.com which has a proven certificate.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image {"id":577,"sizeSlug":"full","linkDestination":"none"} -->
+<figure class="wp-block-image size-full"><img src="https://michaelkentburns.com/wp-content/uploads/2024/07/Firefox-MKB.com-lock-secure-trusted.png" alt="" class="wp-image-577"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:image {"id":574,"sizeSlug":"full","linkDestination":"none"} -->
+<figure class="wp-block-image size-full"><img src="https://michaelkentburns.com/wp-content/uploads/2024/07/Edge-MKB.com-secure.png" alt="" class="wp-image-574"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Unfortunately Chrome browsers sometimes use an icon that is not clear to my mind. It is meant to indicate a two way secure connection.  Here it is:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image {"id":572,"sizeSlug":"full","linkDestination":"none"} -->
+<figure class="wp-block-image size-full"><img src="https://michaelkentburns.com/wp-content/uploads/2024/07/Chrome-MKB.com-safe.png" alt="" class="wp-image-572"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Secure connection to Uncertain site.</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>So far we have been primarily interested in the secure connection, but we have not addressed the identity of the website.    Built into a properly formed certificate is the identity of the service and the identity of several independent but trusted certificate authorities that know about this claim of identity.    Basically, your browser can decode that certificate and contact those independent authorities to check out the claims.    If all that checks out, you can be quite certain that all is well.  </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>However, a less secure type of certificate can't be proven by your browser.   In this case then your browser will make it plain to you.     One example that I am certain of is our demo site:  <a href="https://demo.MichaelKentBurns.com">https://demo.MichaelKentBurns.com</a> .   We have a certificate but it's not proven yet.   The first time your browser encounters such a site it will make it very plain by showing you a severe warning instead of the website you were hoping for.  </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image {"id":570,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://michaelkentburns.com/wp-content/uploads/2024/07/Chrome-demo-is-not-secure-1024x673.png" alt="" class="wp-image-570"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Not wanting to assume that you understand the subtleties it simply says '<strong>Your connection is not private</strong>'.  The connection is secure, but you can't be sure of the destination.    HOWEVER, don't be too quick to barge on past the warning!  This is where:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading"><strong>I give HIGH COMMENDATION to Samuel. </strong></h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>When he encountered this he said:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><!-- wp:paragraph -->
+<p>"...<strong> the problem that i have found it concern the security of this page, my software of protection had to notify me that, ..."</strong></p>
+<!-- /wp:paragraph --><cite>Samuel, an astute student! </cite></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p>Always stop at this warning and evaluate.   Double check your instructions.  Make sure the site you are going to is a low risk.   Your important accounts and high risk sites should <strong>NEVER</strong> cause this warning.    In this case, it was our demo site that was still under construction.    This warning is what prompted us to enter <a href="https://github.com/MichaelKentBurns/MKB-cohort-1-Demo/issues/24" data-type="link" data-id="https://github.com/MichaelKentBurns/MKB-cohort-1-Demo/issues/24">Issue #24</a>.  It is that issue that I have been working on that brought all of this to my attention.  This is an important issue that should never be trivialized.  </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>But, once you read the warning, you are provided with an 'Advanced' button.   If you click that, you get a little more information:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image {"id":569,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://michaelkentburns.com/wp-content/uploads/2024/07/Chrome-demo-not-secure-but-can-override-1024x768.png" alt="" class="wp-image-569"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Notice, at the very bottom line in fine print, there is a link that lets you proceed to the site.   If you click that, you get your site but there is a still a stern warning in the address line of your browser:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image {"id":568,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://michaelkentburns.com/wp-content/uploads/2024/07/Chrome-demo-still-works-but-not-securely-1024x667.png" alt="" class="wp-image-568"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Checking the details of a site certificate.</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>In some browsers there is a link or a button that will show you the details of the certificate.  </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image {"id":581,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://michaelkentburns.com/wp-content/uploads/2024/07/Safari-MKB-certificate-details-900x1024.png" alt="" class="wp-image-581"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>That's not usually very easy to do with some browsers.   There is an easier way:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="https://www.sslchecker.com/sslchecker">https://www.sslchecker.com/sslchecker</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>You can enter the domain address of any site and it will give you the details.  For example: </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image {"id":567,"sizeSlug":"full","linkDestination":"none"} -->
+<figure class="wp-block-image size-full"><img src="https://michaelkentburns.com/wp-content/uploads/2024/07/SSL-checker-MKB.com-.png" alt="" class="wp-image-567"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Now, you try it yourself:  <a href="https://www.sslchecker.com">https://www.sslchecker.com</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Put in a site that you really depend on like Upwork.com.   A really impressive one to try is google.com, give it a look. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Your responsibility as a web browser and developer.</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>So, what is the bottom line?   </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><!-- wp:list-item -->
+<li>Look for the lock!  </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Beware the warning!</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>If in doubt, check it out with <a href="https://www.sslchecker.com">https://www.sslchecker.com</a> or the features built into your browser.   </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Make sure the sites you are responsible for have a good certificate.</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>Now, dear students,  it's time to take action.   <strong>Leave a comment below.</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>What did you know about this before reading this page?<br>What did you learn? <br>Better yet, what are you going to change? <br>Whose responsibility is it to check certificates? </p>
+<!-- /wp:paragraph -->

@@ -1,0 +1,305 @@
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Introductions</h2>
+<!-- /wp:heading -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">You are not alone in this.</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>You will be engaging not only the material, but you will have a <strong>mentor</strong> who has been through the course.   </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>For this course, we anticipate this pairing:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><!-- wp:list-item -->
+<li>Efatha will mentor Salomon</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Philemon will mentor Gauthier</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Ashuza will mentor Samuel</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>And Michael will mentor Theophile.</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Starting Course</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>The starting course is designed to familiarize the student with the training website and the people and processes involved.   By the end of this course you will know what is on the site and where to find what you are looking for.  You will gain a high level overview of the training you can expect from this site.  You will also know how to interact with the material, track your progress and get the help you need on your training journey.  </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Each <strong>course</strong> is composed of a series of <strong>tasks</strong>.  These are like lessons in most learning sites but here we call them tasks because they prepare you to:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><!-- wp:list-item -->
+<li><strong>Know</strong> some new technology and skill</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Find the tools and environment to<strong> try it out for yourself</strong></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Demonstrate</strong> your new skill</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>And finally to <strong>get some feedback </strong>about it which will guide your future learning.</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>The coordination of doing these tasks while using <strong>Upwork time tracker</strong>, taking surveys, and tracking hours for these steps is pretty tricky.I’m sorry about that, but these things need to be done. While our process includes lots of communication tools, we must continue to be consistent with the <strong>Upwork</strong> process which is important for accountability for both the client and the talent.   You need to learn this skill well if you want to engage other clients, which is the purpose of this training.  </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>If you get confused or can’t follow a specific step, please use the <strong>Upwork</strong> message system to let me know so I, or your mentor, can walk you through it. If you get stuck where you can’t make progress, then include the word ‘<strong>STUCK!</strong>’ In your message. This administrative detail will get easer as you go along.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Task 1: Access the training site and this course.</h3>
+<!-- /wp:heading -->
+
+<!-- wp:list {"ordered":true} -->
+<ol><!-- wp:list-item -->
+<li>Goto <strong>Upwork</strong> and find the contract for this job. Start your time tracker to indicate what task you are starting.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Goto <strong><a href="https://michaelkentburns.com/">https://MichaelKentBurns.com</a></strong> site. Find the <strong>Subscribe</strong> field in the menu and subscribe yourself.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Use the search field to find your name.  That should lead you to this page (and possibly others).</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Leave a comment on this page so we know you were here.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Update time tracker to say you are <strong>done with task 1</strong>.</li>
+<!-- /wp:list-item --></ol>
+<!-- /wp:list -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Task 2: Read the main ‘Home’ page to see your journey.</h3>
+<!-- /wp:heading -->
+
+<!-- wp:list {"ordered":true} -->
+<ol><!-- wp:list-item -->
+<li>Note the time and update Upwork time tracker to say you are <strong>starting task 2</strong>.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Read the ‘<strong>Home</strong>’ page carefully down to and including ‘<strong>Working globally’</strong> section keeping some notes along the way. (There will be a quiz)</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Feel free always to leave comments on any pages and posts. It will make it easier for you and I to know you have read that page.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Goto&nbsp;<a href="https://demo.michaelkentburns.com/dashboard/MKB/cohort1/MKB-cohort-1-Demo"><strong>https://demo.michaelkentburns.com/dashboard/MKB/cohort1/MKB-cohort-1-Demo</strong></a>, select the ‘<strong>Visit the Demo-json</strong>’ button and take the ‘<strong>read-home-part1</strong>’ survey and press the ‘<strong>submission</strong>’ button.&nbsp;&nbsp;Your answers will be captured in a json file which will appear below the ‘<strong>Submission</strong>’ button.&nbsp;&nbsp;&nbsp;Finally, press the ‘<strong>Save Survey Results (JSON)</strong>’ link at the bottom.&nbsp;&nbsp;You should then see a dialog indicating ‘<strong>Survey results saved successfully!</strong>’&nbsp;&nbsp;Select ‘<strong>Close</strong>’.&nbsp;&nbsp;&nbsp;You may also notice that the JSON file was downloaded to your downloads directory.&nbsp;&nbsp;&nbsp;Save that for future reference.&nbsp; &nbsp;&nbsp;<strong>NOTE:</strong> If you have problems with the survey app, take notes, do a screen capture, or whatever.   Then communicate that with your mentor.   They may need to help you, or you might have uncovered a bug or a possible enhancement.  Your mentor will make that decision and enter an issue in their project to make sure it is dealt with.  By the end of this starter course, you will know how to enter an issue yourself.   One step at a time.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Note the time and calculate how much time you have used for task 2.&nbsp;&nbsp;&nbsp;Then go to the time tracker and indicate you are done with task 2 and going on to task 3.</li>
+<!-- /wp:list-item --></ol>
+<!-- /wp:list -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Task 3: Read the ‘About’ page.</h2>
+<!-- /wp:heading -->
+
+<!-- wp:list {"ordered":true} -->
+<ol><!-- wp:list-item -->
+<li>Update time tracker that you are starting Task 3.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Read the ‘<strong>About</strong>’ page including the Cohort-1 section and the ‘<strong>See full details.</strong>’ page. When you read about <strong>Philémon</strong>, <strong>Ashuza</strong>, and <strong>Efatha</strong>, follow the links to their Github and Upwork profiles.</li>
+<!-- /wp:list-item --></ol>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>* Take some time to study their Upwork profiles.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>* On <strong>Philèmon’s profile</strong>, under his picture and ‘<strong>View profile</strong>’ notice that he has two specialized profiles.  Make a note of them and take a moment to notice how they are different than the main view of the profile.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>* You will soon create your own specialized profile.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>* The next section is ‘<strong>Work history</strong>’.  Take note of the various jobs he has done and the rating and comments for those.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p> * Notice the ‘<strong>Portfolio</strong>’ section near the bottom of the profile.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>* Ashuza also has two specialized profiles: <strong>Full Stack</strong> and <strong>Mobile App</strong>.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>* Finally, notice their Certifications section. You will also get one or more certifications along the way.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>* <strong>Ashuza’s GitHub profile</strong> shows that he has 40+ repositories! Many of them were created as he took online tutorials. Though some of those are fairly trivial, that is expected starting out.  You have to start somewhere, and now is that time.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>* What is important is that they demonstrate that he not only has badges claiming knowledge of languages, frameworks, and tools, he also has done a lot of visible work that shows that he spent considerable time learning and doing.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>You should remember that and make a practice of capturing all of your learning projects in your GitHub.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>* We will talk more about that later.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>* When you look at <strong>Efatha’s GitHub profile</strong> notice the section labeled ‘<strong>Contribution activity</strong>’. It indicates that he has recently worked on two repositories of his own, but also the ‘MKB-cohort-1-Demo’. If you click ‘<strong>Show more activity</strong>’ a few times, you will see his contributions to this training site.  As you go through this training you will be demonstrating your active work on a real world project.   That is what prospective clients will be looking for to know you are not just book learners.  </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Under the ‘<strong>Their work together</strong>’ section, you will read about the survey app you will be using.  That is the result of their demo project.  There is a direct link to that survey app and also a link to the GitHub repository they worked on.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Next, return to finish the ‘<strong>About</strong>’ page.  Find yourself in <strong>Cohort-2</strong> section, and read that section and this <strong>Cohort-2 </strong>page as well very carefully. Take notes of any questions you have.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>3. The final section of the '<strong>About</strong>' page: Read the <strong>contributors</strong> section and the pages it links to.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>When you get to the individual contributions pages notice that they have both edited and/or written several pages for this site.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>4. Go to the survey app (see Task 2, step 4) and take the ‘<strong>read-about</strong>’ survey.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>5. Update time tracker that you have finished task 3.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Task 4: Read the Front end web page.</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>1. Update time tracker as usual starting task 4.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>2. Using the table of contents on the site, go read the ‘<strong>Front end web</strong>’ page. Read it carefully.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>3. As you read, make note for each section, whether you already know that information well, what you know a little bit, and what sections are new to you.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>4. In the areas you don’t know well, take some time to follow some of the many links provided. Don’t study them in detail, but read enough to see what is discussed and what you may want to revisit at a later date.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>5. In the section about HTML and the Hello World page, take the time to actually try that for yourself. In the browser notice the address bar of your browser that the url uses the ‘<a href="file://'/">file://'</a>protocol.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>6. When you get to the HTTP section, read that closely to understand how visiting a we page via http:// is different from file://</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>7 When you are done with task 4, take the survey ‘read-front-end-web -page’. You will be asked there to relate some of the notes you talk when reading this page.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>8. Leave a comment at the bottom of the page and indicate something you learned on that page.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>9. Update time tracker to indicate you are done with task 4.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Task 5:&nbsp;&nbsp;&nbsp;Read ‘Back end web’ page.</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>1. Start your timekeeping as usual.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>2. In the introduction paragraphs make note of the two key differences between the Front end, and the Back end.  The differences have to do with the programs involved and where those programs run. Make sure you can briefly explain those differences.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>3. Read the wikipedia page on 'Frontend and backend'. See if you can learn what 'client side' and 'server side' mean and which programs run in each.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>4. Read the wikipedia page on LAMP.  See if you can find the 'Stack' concept in the illustrations and make a list of what is in the stack.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>5. In the 'Key Components' section notice some of the programming languages that can be used and identify which languages you already know something about.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>6. Pay attention to the section on 'Frameworks' and research one of those frameworks enough to know why it would be used.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>7. In the 'Essential Skills...' section, note which of those skills you think you should begin learning, and why?</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>8. In the 'Common Tools and Technologies' section, are there any tools you already know something about.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>9. In the 'Best Practices' section, follow the link on 'Code Reviews' and note two of the benefits of code reviews that would help you most at this time. You will be doing some code reviews with your mentor very soon.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>10. Take the survey named <strong>Read-backend</strong>, and finish your time accounting. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Task 6:&nbsp;&nbsp;&nbsp;Read ‘Full stack’ page.</h2>
+<!-- /wp:heading -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Task 7:&nbsp;&nbsp;Read ‘Work globally’ page and take the two challenges it mentions.</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>You should now have taken challenges 1 through 4. If not, then do so now.</p>
+<!-- /wp:paragraph -->

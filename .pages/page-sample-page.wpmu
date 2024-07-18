@@ -28,11 +28,11 @@
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p><img class="wp-image-420" style="width: 50px;" src="https://michaelkentburns.com/wp-content/uploads/2024/05/New.jpg" alt="">  In the sidebar on the left I have added a link to <strong><a href="https://michaelkentburns.com/index.php/blog/" data-type="page" data-id="449">Latest Blog Posts page</a></strong> so you can look there for new posts you may not have read.   Also there is a <a href="https://michaelkentburns.com/index.php/chronological-index-of-blog-posts/" data-type="page" data-id="483"><strong>Cronological Index to Blog Posts</strong></a> that lists all of my blog posts with short excerpts. </p>
+<p><img class="wp-image-420" style="width: 50px;" src="https://michaelkentburns.com/wp-content/uploads/2024/05/New.jpg" alt=""> There is now a new major page about <strong>Security</strong> that you will find in the sidebar.   <a href="https://michaelkentburns.com/index.php/security/" data-type="page" data-id="583">That section</a> will grow over time, and its initial content is composed of the two blog posts of July 10th and 11th of 2024.   </p>
 <!-- /wp:paragraph -->
 
-<!-- wp:heading {"level":1} -->
-<h1 class="wp-block-heading">Welcome</h1>
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Welcome</h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->

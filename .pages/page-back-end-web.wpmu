@@ -170,7 +170,7 @@
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li><strong>Code Reviews</strong>: Regularly reviewing code with peers to catch bugs and improve code quality.</li>
+<li><strong><a href="https://en.wikipedia.org/wiki/Code_review" data-type="link" data-id="https://en.wikipedia.org/wiki/Code_review">Code Reviews</a></strong>: Regularly reviewing code with peers to catch bugs and improve code quality.</li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->

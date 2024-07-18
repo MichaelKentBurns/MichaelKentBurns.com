@@ -1,0 +1,177 @@
+<!-- wp:paragraph -->
+<p>NOTE: This is one of a few occasions where I will post that my readers should, and my students MUST stop and read.  So, I'm going to use a label we use on our most important GitHub issues:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image {"id":561,"sizeSlug":"full","linkDestination":"none","align":"center"} -->
+<figure class="wp-block-image aligncenter size-full"><img src="https://michaelkentburns.com/wp-content/uploads/2024/07/HighPriority-Drop-what-you-are-doing-and-pay-attention-4.png" alt="" class="wp-image-561"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p>I know that network security is<strong> such a bother</strong>!  But, please, read this carefully!  Network security begins with the user, and <strong>that means you</strong>!    It also is a <strong>primary</strong> responsibility of web and other software developers, so<strong> that means you!</strong>  But you may be thinking that you are just a front-end developer, not a full stack expert.   Wrong!  Yes, the full stack guru needs to be extra trained and vigilant, but like any chain, it is only as strong as the weakest link.  Don't let that be you.  The end user is a link to.  So, that is where we are going to start.    </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>This is just the first installment of a major section that we will add to this training site.   So, settle in and pay attention.   There will be a call to action at the end of this and every security post.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Security Lesson #1 - passwords</h2>
+<!-- /wp:heading -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Why passwords are important:</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>We all have so many online accounts and almost all of them require usernames and passwords.   In the password vault I share with my wife Mary, we have 692 passwords!!   But, we have all been advised that it is important to have good passwords to keep our digital lives secure.   </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Think of the types of accounts that you might have:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><!-- wp:list-item -->
+<li>Social media accounts (Facebook, Twitter er X, Instagram) </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Email account (me@gmail.com)</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Online shopping (Amazon.com)</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Online banking (checking account, PayPal, credit card)</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Freelancing profile (Upwork.com)</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Software repositories (GitHub.com)</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Smart phone</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Personal computer</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Work account </li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>Just think if those were not password protected.    You might think that some of those accounts are not that important because you don't have anything terribly valuable.  But consider that thieves and hackers don't know that you don't have anything valuable.  They just hack and if they get in they look for valuables.   But, many hackers are not looking for valuables, they are looking to cause trouble.  </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Is your social media presence valuable to you?  What if your account were hacked and a malicious person decides to post nasty things while posing as you?  What would that do to your relationships and social trust?   What if your work account was hacked and your companies private information was stolen or damaged?  Even if you don't control any valuable information (not likely), if a hacker gets in your login account they can use that to launch a cyber attack on many sites.  Many hosting services will quickly detect such an attack and their response is to simply shut down the machine.  Now, you and your co-workers can't login to work the next day, and maybe the day after.   Not good.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Consider that list and you decide what the value is on just five of those accounts.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">What makes a good or bad password?</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Now, open a separate browser window or tab on this: <a href="https://www.passwordmonster.com">https://www.passwordmonster.com</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>In that page, you can type in the passwords that protect your privacy.  Pay attention to the "Time to crack your password:" </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Now, go read this article: <a href="https://www.techopedia.com/password-manager/the-most-common-passwords-weakest-passwords">https://www.techopedia.com/password-manager/the-most-common-passwords-weakest-passwords</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Where to store your passwords?</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Assuming that you have now created some great passwords, you may realize that you are NOT going to be able to remember them.   Please don't write it on a sticky note on your keyboard!!   (I've seen it done!).  The previous article mentioned several good password vault programs.  I personally use 1Password.  It's been around for years and is cross platform.  My wife and I share an account and it synchronizes to all of our devices and operating systems.   It uses biometrics where supported.  </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Good password managers also contain a feature that checks the security of your passwords.   1Password calls that feature 'Watchtower'.  With one click it checks all of my passwords.   It evaluates:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><!-- wp:list-item -->
+<li>The strength of each password</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>checks for passwords used for multiple sites (very bad idea)</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>websites which are known to have been compromised (your password is at risk)</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>unsecured websites (http:// rather than https://) More about this soon...</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>sites that offer two-factor authentication that you are not using but should</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>sites that support Passkeys (much more secure than even two-factor)  </li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>However, you often need your passwords handy in your web browser and your ssh terminal program.   1Password (and others) have plugins to most browsers so it is at the ready to plugin your password when a sites prompts you to login.   I also recommend an ssh (and sftp) program called Termius that has a password vault built in.  Once I have unlocked Termius and connect to a site, it automatically retrieves the username and password from its vault.    </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Call to action:</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>You should have followed each link and chosen your five most important passwords.  </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><!-- wp:list-item -->
+<li>How strong were they?  </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>How long would it take to crack them?  </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Did you decide to change them? </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Where did you store the new better password? </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Have you considered a password manager?</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>How secure are your accounts now?  </li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>If you are one of my students, you <strong>MUST</strong> leave a comment on this post and answer each of those questions.  I would be interested any any other comments as well. </p>
+<!-- /wp:paragraph -->

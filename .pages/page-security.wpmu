@@ -1,0 +1,87 @@
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Disclaimer:</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>The author of this page (Michael Burns) is by no means a security expert.  He has worked in corporate enterprise level software development for most of his career and has learned much, but the area of internet security is growing in many dimensions faster than anyone can keep up with.   This material is only an introduction of the principles that are deemed necessary for the students of this training site.   Anything you read here should be investigated using authoritative resources.  </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Introduction</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>The origins of the Internet go back into the 1980's when universities and other research organizations wanted to share their research information.   The information ultimately would be published in publicly available journals, but the process for doing so took some time.  The desire was to share the information before it was formally published.    </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Research universities decided that they could use standard phone lines with primitive data modems to send batches of data from one university to another.   The researchers were well known within their organization and also across organizations within a specific research domain.   </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>This was an era of open trust in these research communities and it was decided that in order to maintain that trust, the network was only to be used for research information and explicitly NOT for commercial purposes.    </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The most well know ancestor of the internet is <a href="https://en.wikipedia.org/wiki/Usenet" data-type="link" data-id="https://en.wikipedia.org/wiki/Usenet">Usenet as described in Wikipedia</a>.   The Internet of today is a much different beast as described in <a href="https://en.wikipedia.org/wiki/Internet">this Wikipedia page</a>.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Basic Security Principles</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>For the purposes of this discussion there are a few basic concepts to define.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>A much more extensive reference for terminology can be found in a page titled <a href="https://www.sans.org/security-resources/glossary-of-terms/">Glossary of Cyber Security Terms</a>.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":4} -->
+<h4 class="wp-block-heading">Authentication:</h4>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Authentication is the process of confirming the correctness of the claimed identity. Historically this has been done with a username and a password. In recent years this has exploded into a much more complex field that overwhelmed almost everybody who uses the internet. However, the other end of a session also has the responsibility to prove their authenticity and that is done with site certificates. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":4} -->
+<h4 class="wp-block-heading">Secure transmission:</h4>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>In simplest terms, Secure transmission is the assurance that what was sent is received without change. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":4} -->
+<h4 class="wp-block-heading">Private communication</h4>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Private communication simply means that only the intended sender and intended recipient can read the transmitted data.  This applies to the entire conversation between a user logging into a service, the whole of the interaction, and extends to the point where the user logs out.   This is often referred to as a session. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The combination of these terms is the starting basis for safe internet use.  </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Introductory blog posts. </h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>In order to communicate the important information to the reader of this site I have chosen to write blog posts that I hope can be absorbed in a single reading session.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="https://michaelkentburns.com/index.php/2024/07/10/so-you-want-to-be-a-pro-do-you/">So, you want to be a pro do you?</a> A post on July 10, 2024 that states that anyone wanting to be a web developer professional needs to take security seriously even for non-professional use of the internet.   Good passwords, securely stored and used. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="https://michaelkentburns.com/index.php/2024/07/11/security-lesson-2-secure-web-browsing-is-your-job-too/">Security lesson #2 – Secure Web Browsing Is Your Job Too</a> A post on July 11, 2024 that states that the internet reader needs to take personal responsibility for ensuring that they are only using secure and private browsing sessions. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Much, much more to come...</h2>
+<!-- /wp:heading -->
