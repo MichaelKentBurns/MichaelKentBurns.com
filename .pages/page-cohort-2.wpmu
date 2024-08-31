@@ -15,7 +15,7 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:list -->
-<ul><!-- wp:list-item -->
+<ul class="wp-block-list"><!-- wp:list-item -->
 <li>Efatha will mentor Salomon</li>
 <!-- /wp:list-item -->
 
@@ -45,7 +45,7 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:list -->
-<ul><!-- wp:list-item -->
+<ul class="wp-block-list"><!-- wp:list-item -->
 <li><strong>Know</strong> some new technology and skill</li>
 <!-- /wp:list-item -->
 
@@ -75,7 +75,7 @@
 <!-- /wp:heading -->
 
 <!-- wp:list {"ordered":true} -->
-<ol><!-- wp:list-item -->
+<ol class="wp-block-list"><!-- wp:list-item -->
 <li>Goto <strong>Upwork</strong> and find the contract for this job. Start your time tracker to indicate what task you are starting.</li>
 <!-- /wp:list-item -->
 
@@ -101,7 +101,7 @@
 <!-- /wp:heading -->
 
 <!-- wp:list {"ordered":true} -->
-<ol><!-- wp:list-item -->
+<ol class="wp-block-list"><!-- wp:list-item -->
 <li>Note the time and update Upwork time tracker to say you are <strong>starting task 2</strong>.</li>
 <!-- /wp:list-item -->
 
@@ -127,7 +127,7 @@
 <!-- /wp:heading -->
 
 <!-- wp:list {"ordered":true} -->
-<ol><!-- wp:list-item -->
+<ol class="wp-block-list"><!-- wp:list-item -->
 <li>Update time tracker that you are starting Task 3.</li>
 <!-- /wp:list-item -->
 
@@ -295,6 +295,30 @@
 <!-- wp:heading -->
 <h2 class="wp-block-heading">Task 6:&nbsp;&nbsp;&nbsp;Read ‘Full stack’ page.</h2>
 <!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>1. Start your timekeeping as usual.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>2.  The Full stack page covers the concepts of front end and back end, but at a higher level.  This page emphasizes the expert level of knowledge needed to bring all of the front end and back end skills together to make a full web based application.   At your level of learning, you are not expected to gain this knowledge, but it is important that you are aware that someone has to put it all together.   </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>3. What the Full stack page does not yet tell you is the importance of security.  We are just now starting to explore security issues in the <a href="https://michaelkentburns.com/index.php/security/" data-type="page" data-id="583">Security page</a> and some blog posts discussed there.   </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>4. Although this page leads to many other technologies to create full stack solutions, it also points out that for many purposes WordPress is a full stack solution that is open source and contains more advanced technologies that are available.  This is why I (Michael) chose WordPress to build this training site.  </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>5. Spend some time on this page just to be familiar with it, and return to it later when you have advanced in both front end and back end development and are ready to take on more.   </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>6. Take the '<strong>read-full-stack</strong>' survey, then finish up your time keeping. </p>
+<!-- /wp:paragraph -->
 
 <!-- wp:heading -->
 <h2 class="wp-block-heading">Task 7:&nbsp;&nbsp;Read ‘Work globally’ page and take the two challenges it mentions.</h2>

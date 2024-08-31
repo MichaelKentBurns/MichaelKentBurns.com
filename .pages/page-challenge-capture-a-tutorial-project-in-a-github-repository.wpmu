@@ -3,17 +3,81 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p>Don't forget to <a href="mailto: MichaelKentBurns@gmail.com">send me an email</a> (following the instructions on the <a href="https://michaelkentburns.com/index.php/take-a-challenge/" data-type="page" data-id="178">Challenges page</a>) with a link to your new repository, a writeup of what you learned, and what problems or questions you had.</p>
+<p>This will be your first chance to work closely with your mentor on a project. </p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p>I have already done that myself using a simple FrontEndMentor challenge.   I captured the whole process in a file called Notes.md in that repository.  Find the link to my repository below.  So, go to my repository and locate the Notes.md file.   You can look around in my repository to see the code I downloaded, the tasks that I decided I needed (called Issues in GitHub terms) and the step by step work to the completed project.   I also used GitHub Pages to publish the end result for the world to see.  Make sure you do the same for your new project. </p>
+<p><strong>Step 1</strong>:  Create a new GitHub repository named '<strong>My first tutorial project</strong>'.  For the description use the title of this page: '<strong>Challenge: capture a tutorial project in a GitHub repository</strong>'.    Leave the default setting for <strong>Public</strong> rather than <strong>Private</strong>.  Check the box to 'Add a README file.'  Do not bother adding a .gitignore file.   For 'Choose a license', leave it 'None'.    Finally, click '<strong>Create repository</strong>'.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p>Here is my project repository:   <a href="https://github.com/MichaelKentBurns/Challenge-Interactive-rating-component/">https://github.com/MichaelKentBurns/Challenge-Interactive-rating-component/</a></p>
+<p><strong>Step 2</strong>:  Learn how to edit your new README.md file.  You will notice that the list of files in your repository consists of the single file 'README.md'.   Below that will be a text area labeled '<strong>README</strong>', and it should already include the name of your repository and the description text.    </p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p></p>
+<p><strong>Step 3</strong>:  Near the top of the page, under the GitHub icon and your name, you will notice a line of tab labels.   The first one is '<strong>Code</strong>' and that one will be selected automatically.   After that is '<strong>Issues</strong>'.   Click on that.  It won't look very interesting at first because you have not created any issues.  You should see a green button labeled '<strong>New issue</strong>'.  Click on that and you should see a page that lets you add a title and description for your new issue.  In the area for your description, you will notice two tabs labeled '<strong>Write</strong>' and '<strong>Preview</strong>' with '<strong>Write</strong>' being selected.  Under that is a text area.   We will cover the features of this text area which are fairly extensive.  But, for now just enter simple text.   Type 'This repository needs a good README.md file' into the Title field and the description area.  Then press the green 'Submit new issue' button.  After that, you should see a more interesting issue page with a completed comment containing the description you just typed.     Below that will be another text area where you can enter another comment.   An issue is a list of comments that you and your mentor will write.  It's like a chat session about this issue.    Finally notice to the right of the first comment a label 'Assignees' with a value of 'No one-' and a link that will assign yourself as the person assigned to fix this issue.  Do that now.   Notice the changes to the page when you do that.  You should see your name and picture appear in multiple places.   Now that you have your first issue, you have assigned yourself the task of starting the README.md file.    Finish this page by clicking on the '<strong>Code</strong>' tab a the top of the page.  </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Step 4</strong>.   Invite your mentor to join you on this repository.  At the very top of the page, you will see your repository title.  Right click on that and in the drop down menu select 'share...'.   You will see a familiar dialog allowing you to share this repository via email, or other means.   Select email and address the message to your mentor.   Address your email to your mentor and 'cc' me: MichaelKentBurns@gmail.com.   Enter an appropriate subject line, such as the title of your repository.  </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Step 5. Once your mentor has accepted your invitation you can begin working.  First, you should edit your README.md file to describe the web development challenge you have chosen.   While you can type just simple text into this file, the file extension of .md indicates that this file can contain Markdown, which is a lot more than simple text.  You don't need to learn all about Markdown, but a simple tutorial page is this one from w3schools.io:  <a href="https://www.w3schools.io/file/markdown-introduction/">Markdown Tutorials</a>.   </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Using markdown syntax you can indicate where your challenge comes from and why you chose that one.  Make sure you include a link to the source of the challenge.   You and your mentor can discuss what you hope to learn from this challenge.   </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>There are many things that are appropriate for a Github repository README.md file, but that will come later.   </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Step 5.</strong> Start reading the instructions for your challenge.  It should guide you through the process of setting up your project.   Before you start the actual work, you need to use Github Desktop or one of the other similar programs.  You can also choose one of the web development IDE programs that include GitHub support.    VS Code is a popular choice.   Using those tools, create a local clone of your repository so you have a working copy on your machine that you can edit, debug, and test the code you develop.     Usually in challenges, the first step is to download a set of files that form the starting material.   Go ahead and do that, but don't actually start working yet.  </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Step 6</strong>.  Using the tools in your IDE or other Git desktop program, commit the starting materials with an explanation code of 'download starting materials'.  Then push that to GitHub.   This allows your mentor and anyone else to see your starting point.   </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Step 7</strong>. From this point forward, you should work in small increments.  Read the instructions for a small amount of work, then <strong>create a new Issue</strong> in GitHub describing the requirements of that step and how you propose to implement it.  At first you should take some time to think through what you are going to do and describe the changes you need to accomplish it.  Assign that issue to yourself, but also include your mentor so that he is notified when you make new notes and especially when you commit and push changes. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Step 8.</strong> Use your tools, and reference to tutorial materials to implement the change you need to implement what is described in your new issue.    </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Step 9.</strong>  Test and debug your new changes.  If a test is more than trivial like just looking at your page in your web browser, you should write a test description.  I suggest creating a 'test' directory inside your project, then create a text file to describe the step by step process of setting up and executing the test.    This may seem too trivial but it is a very important step and will become much more important as your work progresses.   Specifically, name the test file descriptively so that someone else can know what issue you were working on and what specifically you are testing.  Your mentor is likely to want to use your test file to exercise your code when you push your changes for this issue.   </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Step 10.</strong> When you are confident you have addressed that issue, go ahead and commit and push.  Make sure your commit message clearly indicates the issue being addressed.  You will see later why that is important.    When you do the push, you should also add a note to the issue so your mentor knows that you pushed a significant change that he should review.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Step 11.</strong>  Review your work.   When your mentor is notified of your update to the issue, he will be able to go to the GitHub project and see your commit.   If you have not learned this yet, let me take a moment to describe it.    With every commit, not only are the changes to the files pushed to GitHub, but in the Code tab, at the top of the list of files you will see an indication of the latest commit.  It will give the name of the person, the explanation of the commit, and usually a link to the issue that is being addressed.   Too the right of that, you should see the date of the commit.  Finally, if there is enough room on the page, it should tell you how many total commits there have been.  If you don't see that, then grow the page or shrink the text until it appears.    If you click on that, you will see a complete list of all commits.  Take a look at one now, either in your project or any other GitHub project.   Each item in that list is a link that will show you a list of all the files changed and an annotated portion of the source that was changed.   Lines that were removed are highlighted in red with a '-' minus sign in the left margin.  Lines added are highlighted in green with a '+'.  Finally, notice at the bottom of the commit page there is another text box for you or more likely your mentor to comment on the changes you made.   This can start a discussion where your mentor points out something you could have done different, or asks a question about why you made the change you did.   This will be a very fruitful discussion, and you will learn a lot. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>If you have done as I suggested and written a test case file, that should be included in the commit and the source will now be in the repository.  Your mentor is likely to inspect that file and run your test.  He may notice other problems, or perhaps pointed out good aspects of the way you made your change.    This discussion is called a '<strong>Code Review</strong>'.  We will talk about those in a future lesson.  </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>It is possible that your mentor may suggest yet another change either as an additional note in the Issue you were working on, or possibly he will have created another issue.    If it is another issue, then you may be able to proceed with your work as planned, knowing that you have a new issue that can be addressed later in your process.   </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Step 12. </strong> If the code review was successful and your work was approved you should add one final note to the Issue page and rather than pressing the green Comment button, you can press the other button labeled 'Close with comment'.  That indicates that the issue is resolved.   At this point, you can go back to Step 7 where you choose another small unit of work and create a new issue to discuss and resolve that work.  This process continues until the whole project is complete.   </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Step 13.</strong>  Finish your project.   But, finishing requires one more step and that is to cleanup and complete your README.md file.    First, read this article from FreeCodeCamp about '<strong><a href="https://www.freecodecamp.org/news/how-to-write-a-good-readme-file/">How to Write a good README File for Your GitHub Project.</a></strong>'   It is especially important to do this step well.   You will also want to put a link to your GitHub repository in your Upwork profile.   It is important that clients considering you for a job be able to not just see a list of what you think you know, but to see an actual project that demonstrates your knowledge and skill.   Having followed all the instructions in this challenge will ensure that a client can read your repository and see how you work.   You will be demonstrating not only your skill in coding but also your professional discipline and teamwork.    Make sure the README.md file is a good overall summary of your project.  </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Step 14.</strong> There will soon be a survey to complete showing that you have completed this challenge.  </p>
 <!-- /wp:paragraph -->
