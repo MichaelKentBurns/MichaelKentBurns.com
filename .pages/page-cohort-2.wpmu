@@ -2,6 +2,62 @@
 <h2 class="wp-block-heading">Introductions</h2>
 <!-- /wp:heading -->
 
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Cherubala Gauthier</h3>
+<!-- /wp:heading -->
+
+<!-- wp:image {"id":708,"width":"456px","height":"auto","sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large is-resized"><img src="https://michaelkentburns.com/wp-content/uploads/2024/09/IMG-20240626-WA0016-1024x683.jpg" alt="" class="wp-image-708" style="width:456px;height:auto"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p><strong>Gauthier</strong> has completed 6 of the 7 tasks in the introductory course and is working on the largest task which is building a GitHub project of his choosing.  You can see it <a href="https://github.com/ElGautinho/My-first-tutorial-project">yourself on GitHub</a>.  One thing I like about his project is that it has an immediate application of organizing the efforts of other volunteers in the media group at his church. The visual style of his page is very cool and well layed out. It has a pleasant but subdued graphic in the background with a clear and well balanced form in the center. He has used some simple text entry fields, a multiple choice button group, a pulldown selector, a sequence of checkboxes and a larger text box for comments and suggestions. He has coded value validation.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The primary purpose of this exercise is the use of GitHub projects.   His README.md file is thorough.   It has a small table of contents up front.  It describes the purpose of the project he is building, and a description of the process he is using to build the project.  He describes the tools and techniques he is using, and has a start of a list of the lessons he has learned so far in the project.     </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>He is using the Issues list feature of the project to list the 13 major steps in his process so far.  Each issue has a short description, and he is including the issue number and a short description of each of the 18 commits.   This helps me as a reviewer to quickly understand the intent, design, and process as well as what each commit contained.     <strong>Well done Gauthier!</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Samuel Bulangalizi</h3>
+<!-- /wp:heading -->
+
+<!-- wp:image {"id":709,"width":"345px","height":"auto","sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large is-resized"><img src="https://michaelkentburns.com/wp-content/uploads/2024/09/IMG_3765-768x1024.jpeg" alt="" class="wp-image-709" style="width:345px;height:auto"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p><strong>Samuel's</strong> <a href="https://github.com/Samuel11s/My-first-tutorial-project">project for Task 7 </a> has a nice README.md file.   He describes his objectives, the features of the page,  the technology he will use to achieve it.  He describes the process he will follow with a rough schedule.   In his list of requirements the first is to learn basic Javascript.   This was a problem in his plan to build this page because Javascript is a lot to learn.    This is a worthwhile endeavor but it will delay the completion of his project.   He has done well in using the Issues feature of GitHub.  There are 6 closed issues, four of which he created and two of which I added.   These 6 he has completed and closed them.   There are 3 issues remaining, one of which is learning Javascript.    When I review the 11 commits he has made to his code I notice that he has entered good descriptions which allows me as a reviewer to know what the commit was for without having to open each to understand.   <strong>The main point of this task </strong>was to learn how to use the features of a GitHub project to complete a project and I think Samuel has done a fine job of demonstrating that knowledge.   From what he has coded already I can see that he knows how to design and layout a page well.  Well done Samuel, you have learned this lesson and I'm confident that you will complete your project when you have learned the required Javascript. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Salomon Mwilo</h3>
+<!-- /wp:heading -->
+
+<!-- wp:image {"id":710,"width":"382px","height":"auto","sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large is-resized"><img src="https://michaelkentburns.com/wp-content/uploads/2024/09/PXL_20240905_095856292.SK-I-901x1024.jpg" alt="" class="wp-image-710" style="width:382px;height:auto"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Salomon's</strong> <a href="https://github.com/Salomonmwilo/My-first-tutorial-project">project for Task 7</a> shows good progress already.  He has created an array of floating cards in a grid-template container.  He has created some nice stylings that make the cards pop and use a variety of colors that allows the eye to clearly distinguish the individual cards.   The grid adapts nicely to changes in size of display and orientation.   </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Achiza Masirika Théophile</h3>
+<!-- /wp:heading -->
+
+<!-- wp:image {"id":711,"width":"450px","height":"auto","sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large is-resized"><img src="https://michaelkentburns.com/wp-content/uploads/2024/09/PXL_20240422_1509557552-1024x748.jpg" alt="" class="wp-image-711" style="width:450px;height:auto"/></figure>
+<!-- /wp:image -->
+
 <!-- wp:heading -->
 <h2 class="wp-block-heading">You are not alone in this.</h2>
 <!-- /wp:heading -->

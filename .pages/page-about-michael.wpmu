@@ -13,7 +13,7 @@
 <!-- /wp:group -->
 
 <!-- wp:paragraph -->
-<p></p>
+<p><a href="https://michaelkentburns.com/index.php/michael/" data-type="page" data-id="666">More about Michael's personal information.</a></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
@@ -83,7 +83,7 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:list -->
-<ul><!-- wp:list-item -->
+<ul class="wp-block-list"><!-- wp:list-item -->
 <li>Théophile Achiza</li>
 <!-- /wp:list-item -->
 

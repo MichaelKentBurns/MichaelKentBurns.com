@@ -1,0 +1,146 @@
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">The Problem:</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>New programmers are rightfully focused on learning simple techniques usually focused on a single programming language.   For web developers that is usually HTML, CSS, and then later Javascript.    </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Their learning material is often learning sites such as <a href="https://www.frontendmentor.io/"><strong>FrontEndMentor</strong></a> and <a href="https://www.freecodecamp.org/"><strong>freeCodeCamp</strong></a>.   They may also refer to standards organizations documentation sites such as <a href="https://www.w3schools.com/"><strong>W3Schools</strong></a>.    These are good approaches because the student is focused on learning and doing specific simple things that produce tangible results quickly.   </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>This phase of learning will usually take months or years to learn enough to feel confident to be able to take on a large project or a full-time employment.   However, those challenges are much bigger than knowing how to do a lot of specific tasks.  </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>One of the principles that I focus on teaching fairly early in my training is to start teaching the bigger picture issues little by little during this initial learning curve.  The reason I do this is so that the student has a larger long range conceptual picture of what is required to "go pro".   Examples of that are my pages on <strong>'<a href="https://michaelkentburns.com/index.php/work-globally/" data-type="page" data-id="59">Work Globally</a>'</strong>, <strong>'<a href="https://michaelkentburns.com/index.php/working-in-a-professional-team/" data-type="page" data-id="149">Working in a team'</a>,</strong> and '<strong><a href="https://michaelkentburns.com/index.php/finding-work/" data-type="page" data-id="79">Finding Work</a>'</strong>.   </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>This page on <strong>Software Design</strong> is another key big picture item that I think beginners need to start learning and embracing early in their development.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>One of the symptoms of a new developer that has not begun to learn software design is what I call the '<strong>code snippet collection</strong>'. When building a web page to fetch some data, massage it some, and present it in a table, the beginner takes each piece of the job and either recalls or googles for code snippets. Then they stack those together to get the specific job done. For larger projects they simply repeat that process as many times as necessary. This results in many problems, one of which is '<strong>fragile code</strong>'. Fragile code is code that breaks in unpredictable ways when something in the code itself or the environment or even code it depends on changes. For example, if your HTML calls some javascript code to import some data and your program needs to run in a different environment, you may have to change your code to use a different language syntax or call a different API that has a different calling sequence. When this happens you have to go to <strong>ALL</strong> of the places in your code that does that specific thing and change them all. If you don't get them all right your program is broken and you might not have tested all of those places. This can be an extremely time consuming process, and such tedious tasks often get sloppy.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Another problem is '<strong>inconsistent behavior</strong>'.   If you need to code something that is similar, but not identical to something you have done, you may end up getting a snippet that implements some action in a different way.   This will trip up your users and if you document your solution you will end up describing features and their exceptions.   </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>These are just a few examples of issues that lead to project overruns, very expensive maintenance and customer dissatisfaction.    </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">The Solution: </h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>The biggest solution to those problems is to be able to easily understand the larger picture of the finished product, how it is built, and what is really required.  You can't do that by reading all of the code in a project.   You need a top down approach that teaches the big ideas and then works down to the details. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Many large projects have failed because they attempted to write very detailed requirements and design documentation. It's easy to see how that approach worked out by simply reading the Wikipedia page on '<strong><a href="https://en.wikipedia.org/wiki/Waterfall_model">Waterfall Model</a></strong>'. The retrospective motto of this way of working is '<em><strong>If you are going to fail, you might as well fail BIG.</strong>'</em></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>As I said above, software design should be learned incrementally and early. This means that the concepts and processes of design should start out as simple as possible and only get more complex as needed for the job at hand.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":4} -->
+<h4 class="wp-block-heading">Paradigm: Object-oriented programming:</h4>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Every person begins to learn the world around them as a collection of Objects. An object is simply a thing in the environment that is identifiable, has a set of identifiable properties, and a fairly consistent behavior. A toddler is crawling on the floor and encounters that family pet, the cat. The cat is cute, is furry, and has four legs. It makes a meow sound and likes to rub against things. It will play with things left on the floor. If you pull on its tail, sharp things come out of the legs and scratch or cut you. The family may have more than one cat and they are different sizes and colors, but they mostly behave the same. The dog however is a different animal.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>From our earliest days we encounter many different objects and learn to classify them and anticipate their properties.   As our world becomes more complex we simply develop more sophisticated understanding of objects and their classes.  </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The beauty of object-oriented languages is that their syntax can be extremely simple yet extremely intuitive.    One of the earliest programming languages that is still in use today is <strong><a href="https://en.wikipedia.org/wiki/Smalltalk">Smalltalk</a></strong>.   Smalltalk was created in the 1970s and yet is still used for educational and commercial projects to this day.   </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>That wikipedia page is only 16 pages printed on paper and yet it describes the concepts, history, syntax, and runtime environment.    In fact, the entire syntax of the language fits on a postcard: </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image {"id":704,"sizeSlug":"full","linkDestination":"none"} -->
+<figure class="wp-block-image size-full"><img src="https://michaelkentburns.com/wp-content/uploads/2024/09/Pharo-syntax-PostCard.png" alt="" class="wp-image-704"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>If you want a thorough explanation of the syntax and usage, well, that takes two whole pages: <a href="http://files.pharo.org/media/pharoCheatSheet.pdf">http://files.pharo.org/media/pharoCheatSheet.pdf</a>. There is a 29 post-card live tutorial named ProfStef. <a href="http://rmod-pharo-mooc.lille.inria.fr/MOOC/PharoMOOC-Videos/EN/Week1/W1-LiveB-EN-final.mp4">Introductory video</a>. Live tutorial.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The entire language system, operating system, interactive development environment, programming libraries, and learning system is objects.  There is no other syntax besides that.   The Smalltalk programmer can see all of the code for every part of the system and all the libraries needed.   It's all objects. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Once you learn the basics objects and the simple syntax of an object, you are well on your way.   </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>My purpose of this section is NOT to advocate for the use of Smalltalk.  I'm using it as an example of the simplicity and power of a language and runtime that is pure object-oriented.   </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":4} -->
+<h4 class="wp-block-heading">Pure Object-Oriented languages versus "Supports Objects"</h4>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>As far as I know, Smalltalk is the most pure OO language. But, there are many other languages that support definition of Objects but the basic design of the language is not object oriented. Javascript is one of them.  I won't wade into the open and endless debate but instead, refer you to this <a href="http://Javascript supports &quot;objects&quot; and &quot;classes&quot;, but the basic syntax and runtime is not object oriented.   In javascript variables can be a list of name-value pairs.  https://stackoverflow.com/questions/107464/is-javascript-object-oriented">StackOverflow thread.</a> For the purpose of this Software Design discussion, I will say that the main features of OO that make it a very powerful and simple language are NOT present in Javascript.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>But</strong>, more importantly, the Object-Oriented paradigm applies to software design whether or not you use an Object-Oriented language for your code. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Object-Oriented design</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>I will discuss two OO design techniques that are relevant to this site and its training for beginning developers: Unified Modeling Language and CRC. UML is a very powerful visually oriented way of describing a design. I am a visual learner. For me a picture is worth way more than a thousand words. If I have to read a design description, I will get a piece of paper, and diagram what I am reading. With a diagram you can actually point your finger at things and trace their relationships to other things. There are people that can describe complex things in words in very vivid terms. <a href="https://en.wikipedia.org/wiki/Richard_Feynman">Richard Feynman</a> is perhaps one of the best. He has a series of lectures to ordinary college classes in which he describes <a href="https://en.wikipedia.org/wiki/Quantum_mechanics">Quantum Mechanics</a> (which he was the major contributor to) in ways that make me say "OH! I get it now.". But, he was a very brilliant and gifted professor. Most engineers can't describe designs like that.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>I will describe UML more thoroughly shortly, but it is beyond what is needed to begin to understand software design at the beginning level.    Instead, I will begin with CRC cards.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":4} -->
+<h4 class="wp-block-heading">Design on a postcard:  CRC - Class Responsibility Collaborator</h4>
+<!-- /wp:heading -->
+
+<p>A precursor to the UML was an intentionally simplified method of describing the basics of Object-Oriented software design. <br /><a href="https://en.wikipedia.org/wiki/Class-responsibility-collaboration_card">Wikipedia has a good page describing this </a>that should be required reading (Read it!).</p>
+<p>CRC cards were written on 3x5" index cards during a design session. As the team discussed the design, whenever they determined they needed a new class they would grab a blank card and write the basics then put the card on the table. When a new card was introduced it would be laid next to the cards that it relates to, and its name was written on the 'collaborators' section of those cards. As the team discussed the design they would rearrange the cards and talk their way through common usage scenarios.</p>
+<p>This is admittedly a very simple design process, but it proved to be very effective and low cost design method.</p>
+<p>There are simple web applications to create CRC cards, but that is usually more formal than necessary.   I find that pen and paper works best.   </p>
+<p>Images of some CRC Cards and a CRC design.</p>
+<p>[gallery type="rectangular" ids="615,616,617,618,619,620"]</p>
+
+<!-- wp:heading {"level":4} -->
+<h4 class="wp-block-heading">Design by diagram:  Unified Modeling Language.</h4>
+<!-- /wp:heading -->
+
+<p>UML stands for Unified Modeling Language. <a href="https://en.wikipedia.org/wiki/Unified_Modeling_Language">Wikipedia describes the history of its development.</a></p>
+<p><strong>For full disclosure:</strong> <br />I am a HUGE proponent of the use of UML. I used it extensively during my career<br />at <a href="https://en.wikipedia.org/wiki/SAS_Institute">SAS Institute</a>. I was one of the employees that was part of the origins of the formalized use of <a href="https://en.wikipedia.org/wiki/Metadata">metadata</a>.   Metadata is a fancy term for information about data.  One of the simplest forms of metadata is the filesystem on your computer.  You create a directory called a Git repository.  Inside the repository you create files.  The files have names like README.md and index.html.   The name tells you generally what it represents and the file extension tells you the language and the program needed to edit or present it (eg. .md for markdown, .html you can edit in a text program or a programming IDE, and you run it in a web browser.    Other metadata is the date and time the file was modified, its size, and more.  </p>
+<p>The original metadata database for SAS products was written for a single specific project. It was called the "<strong>Metabase</strong>" (Metadata database) written in a SAS proprietary object-oriented language called SCL (Screen Control Language). It was written by one guy while flat on his back in the hospital after back surgery. He knew the details of how data and programs were described in our products and wrote SCL code to model that. If the details changed he would have to go back into the SCL and modify it to match.  Since this was a fairly simple model, that was not too much effort.</p>
+<p>However, when it was decided that all metadata for all SAS' many products would be incorporated into a single metadata model, it was quite a huge task.  See the <a href="https://support.sas.com/documentation/cdl/en/omamodref/67417/HTML/default/viewer.htm#hierlist.htm">product documentation of the metadata model</a>.  There are 172 different data types described. My team's job was to implement a metadata server that would provide access to the storage of all of that metadata for all <a href="https://support.sas.com/en/software/all-products-support.html">300+ SAS products</a>.  Those products were growing and changing constantly.  To implement all of that by hand coding classes was a monstrous job that would have taken a large team years to implement and maintained.</p>
+<p>I thought there was a better way. I attended a software development conference called <strong>SD2000</strong> in San Jose, California (where I went to university). Several of the presenters were the pioneers in the latest software development methodologies and technologies. I took what I learned there and came back to work. I pitched the idea of using the UML language and the applications to build and manage the model<br />as a tool. One of our team members learned to used those modeling tools, and her job was to visit with the development teams for all SAS products. She learned what metadata they needed to to make their product work and built a standardized model that unified all metadata for all those products.</p>
+<p>Meanwhile, I wrote a program called ModelCompiler (in Java) which would read in that model from the tools and generate C source code to implement the model in the<br /><a href="https://support.sas.com/en/software/metadata-server-support.html">metadata server that our team built</a>.   That code was compiled and linked into our products so that they could access the server.   By the way, the product documentation shown in the link above for the SAS metadata model is also generated using the UML model.</p>
+<p>Even though the most visible part of a UML model is the diagrams, the underlying model that describes all of those details is stored in a rich database.   The diagrams are drawn automatically using drawing algorithms.   There is also text and lists and lots of other representations.   Since the model is a live database, it is possible to write programs that navigate through the details in that database and generate almost any kind of representation, including source code, and HTML diagrams. </p>
+<h3>Examples of Object Oriented design and implementation:</h3>
+<ul>
+<li><a href="https://michaelkentburns.com/index.php/software-design/object-design-of-a-bible-study-application/">A design and implementation of a program to read and deeply study the Bible.</a></li>
+</ul>
