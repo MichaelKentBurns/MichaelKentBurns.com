@@ -38,7 +38,7 @@ CREATE TABLE `wp_users` (
   KEY `user_login_key` (`user_login`),
   KEY `user_nicename` (`user_nicename`),
   KEY `user_email` (`user_email`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -56,7 +56,8 @@ INSERT INTO `wp_users` VALUES (1,'michaelkentburns@gmail.com','$P$BYU5QjN1.rTMUu
 (8,'janelljeffery','$P$BoTWMs1nX8j7754.HSecBRB9OwxPjw1','janelljeffery','tracieerlinda@makekaos.com','','2024-05-24 21:20:45','',0,'janelljeffery'),
 (9,'mikegiffen9','$P$BwcEVBk39NJ3YO29goyRj1.IIU848g.','mikegiffen9','jkbkxdsr@maillv.com','','2024-06-04 08:21:35','',0,'mikegiffen9'),
 (10,'alda10p2621','$P$BkBPJZVwdZvx07kwGf9O6U6e9CTZ0A/','alda10p2621','canbusecfast1973@gopon-tr.store','','2024-07-10 15:44:22','',0,'alda10p2621'),
-(11,'jeffrymcclendon','$P$BLqSKhA1SvYuJAduJwAmmXoJeMt2MO.','jeffrymcclendon','trinadeandre@andindoc.com','','2024-08-17 23:16:55','1723936615:$P$BuTg7XiN0Ox.U8KewXXpNHcTaUEXlf/',0,'jeffrymcclendon');
+(11,'jeffrymcclendon','$P$BLqSKhA1SvYuJAduJwAmmXoJeMt2MO.','jeffrymcclendon','trinadeandre@andindoc.com','','2024-08-17 23:16:55','1723936615:$P$BuTg7XiN0Ox.U8KewXXpNHcTaUEXlf/',0,'jeffrymcclendon'),
+(12,'hilariobigelow8','$P$BQW92AMGhvh6v.nsHzUMgEjb8q/T/X.','hilariobigelow8','phillisperkin5910@hardseo.store','','2024-10-09 19:18:33','1728501513:$P$BOnaplh0L2aOLrqYzQw1O8Z1xVicPk.',0,'hilariobigelow8');
 /*!40000 ALTER TABLE `wp_users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -69,4 +70,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-10-03 17:10:33
+-- Dump completed on 2024-10-19 12:46:20

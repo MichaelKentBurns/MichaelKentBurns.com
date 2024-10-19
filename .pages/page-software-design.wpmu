@@ -94,6 +94,10 @@
 <p>My purpose of this section is NOT to advocate for the use of Smalltalk.  I'm using it as an example of the simplicity and power of a language and runtime that is pure object-oriented.   </p>
 <!-- /wp:paragraph -->
 
+<!-- wp:paragraph -->
+<p>For a more thorough discussion on object oriented languages and Smalltalk see this article : <a href="https://medium.com/@etherservices.vimalraj/are-there-purely-object-oriented-languages-d9a569361f58">Are There Purely Object Oriented Languages?</a></p>
+<!-- /wp:paragraph -->
+
 <!-- wp:heading {"level":4} -->
 <h4 class="wp-block-heading">Pure Object-Oriented languages versus "Supports Objects"</h4>
 <!-- /wp:heading -->
