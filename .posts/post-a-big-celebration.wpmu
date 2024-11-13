@@ -7,8 +7,22 @@
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"fontSize":"small"} -->
-<p class="has-small-font-size">Meet Philémon <img class="wp-image-353" style="width: 150px;" src="https://michaelkentburns.com/wp-content/uploads/2024/04/work-scaled.jpg" alt="">,     Destin <img class="wp-image-397" style="width: 120px;" src="https://michaelkentburns.com/wp-content/uploads/2024/05/ash-picture.jpg" alt="">, and Efatha <img class="wp-image-358" style="width: 120px;" src="https://michaelkentburns.com/wp-content/uploads/2024/04/Efatha.png" alt="">.  </p>
+<p class="has-small-font-size">Meet Philémon , Destin , and Efatha .</p>
 <!-- /wp:paragraph -->
+
+<!-- wp:gallery {"linkTo":"none"} -->
+<figure class="wp-block-gallery has-nested-images columns-default is-cropped"><!-- wp:image {"id":397,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://michaelkentburns.com/wp-content/uploads/2024/05/ash-picture-1024x875.jpg" alt="" class="wp-image-397"/><figcaption class="wp-element-caption">Ashuza </figcaption></figure>
+<!-- /wp:image -->
+
+<!-- wp:image {"id":358,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://michaelkentburns.com/wp-content/uploads/2024/04/Efatha.png" alt="" class="wp-image-358"/><figcaption class="wp-element-caption">Efatha</figcaption></figure>
+<!-- /wp:image -->
+
+<!-- wp:image {"id":353,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://michaelkentburns.com/wp-content/uploads/2024/04/work-1024x683.jpg" alt="" class="wp-image-353"/><figcaption class="wp-element-caption">Philémon</figcaption></figure>
+<!-- /wp:image --></figure>
+<!-- /wp:gallery -->
 
 <!-- wp:heading {"level":3} -->
 <h3 class="wp-block-heading">Two of our members have also finished projects that are important contributions to this site.  </h3>
