@@ -1,0 +1,53 @@
+<html lang="en">
+    
+    <body>
+        <h2>Simple program to fetch a simple .json file, from FreeCodeCamp</h2>
+        <a href="https://www.freecodecamp.org/news/how-to-read-json-file-in-javascript/">Original Article.</a>
+        <p>
+            This seems like a simple thing to do, a simple HTML file that uses a simple Javascript to use fetch
+            to read in a simple json file and display it.  
+            <p>
+            Yet, I find it does not work in any of these environments:
+            <ul>
+                <li>Chrome or Safari on Mac where the page is stored in XAMPP or file://</li>
+                <li>In VS Code on Mac, also where page is stored in XAMPP or file://</li>
+                <li>In VS Code on Windows 11, in VS Code where the page is stored in XAMPP or file://</li>
+                <li>In Chrome on Linux, where the page is stored in XAMPP or file://</li>
+            </ul> 
+
+            In all cases an exception is thrown:
+            <pre>
+                Uncaught TypeError TypeError: Failed to fetch 
+            </pre>
+        <p>
+            
+        <h2>The raw data file:</h2>
+        <a href="./user.json">Raw JSON</a>
+
+        <h2>The raw data file wrapped in an assignment to make a javascript:</h2>
+        <a href="./user.json.js">Raw JSON wrapped with a little javascript</a>
+            <h3>script in user.json.js:</h3>
+            <script src="./user.json.js"></script>
+            <p id='results1'>
+                Results expected here:
+            </p>
+
+        <h2>The Javascript that is supposed to import the json file:</h2>
+            <h3>script in import.js:</h3>
+            <script type="module" src="./import.js"></script>
+            <p id='results2'>
+                Results expected here:
+            </p>
+
+        <h2>The Javascript that is supposed to fetch and display the json data:</h2>
+            <h3>script in index.js:</h3>
+            <script type="module" src="./index.js"></script>
+            <p id='results3'>
+                Results expected here:
+            </p>
+
+        <h2>Done!, check the console log output for details. </h2>
+
+
+    </body>
+</html>
