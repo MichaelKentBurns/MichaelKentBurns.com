@@ -1,0 +1,63 @@
+<!-- wp:image {"id":748,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://michaelkentburns.com/wp-content/uploads/2025/01/christopher-gower-m_HRfLhgABo-unsplash-1024x682.jpg" alt="" class="wp-image-748"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p><em>Image source: Unspash</em></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>New programmers, especially web developers diving into HTML, CSS, and JavaScript, naturally focus on learning the fundamentals. Resources like <a href="https://www.frontendmentor.io/challenges">FrontEnd Mentor</a>, <a href="https://www.freecodecamp.org/">freeCodeCamp</a>, and <a href="https://www.w3schools.com/">W3Schools</a> are excellent for mastering specific techniques and seeing quick, tangible results. This stage, while crucial, can take months or even years to build the confidence needed for larger projects or full-time employment. But the challenge of "going pro" goes beyond just knowing a lot of individual tasks. It's about understanding the bigger picture.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Just like learning about '<a href="https://michaelkentburns.com/index.php/work-globally/"><strong>working globally</strong></a>', <a href="https://michaelkentburns.com/index.php/working-in-a-professional-team/"><strong>‘<a href="https://michaelkentburns.com/index.php/working-in-a-professional-team/">Working in a team’</a></strong></a>, and ‘<strong><a href="https://michaelkentburns.com/index.php/finding-work/">Finding Work</a>‘</strong> are essential "big picture" concepts, so is software design. It's a critical skill that beginners need to grasp early in their development. One common symptom of a developer who hasn't yet embraced software design is what I call the "code snippet collection."</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Imagine building a web page that fetches data, processes it, and displays it in a table. A beginner might approach this by piecing together code snippets found online or recalled from memory. Each piece of the puzzle – fetching data, massaging it, displaying it – is handled with a separate snippet. For larger projects, this process simply repeats, stacking snippet upon snippet. While this might seem like a quick solution initially, it leads to significant problems. It's like trying to build a house by randomly nailing together pieces of wood without a blueprint – you might end up with something that <em>sort of</em> resembles a house, but it's likely to be unstable, inefficient, and prone to collapse.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>One major issue is <em>fragile code</em>. This is code that breaks easily and unpredictably when something changes, whether it's within the code itself, the environment, or even a dependent piece of code. Think of it like a Jenga tower. If you pull out the wrong block, the whole thing comes crashing down. For example, if your HTML uses JavaScript to import data, and your program needs to run in a different environment, you might have to change the code to use a different syntax or API. Suddenly, you have to hunt down <em>every single instance</em> of that specific data import and modify it. Miss one, and your program is broken. This is incredibly time-consuming, and such tedious work often leads to mistakes and sloppy code. It's easy to get overwhelmed and make a small error that has a ripple effect throughout the entire codebase.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Another problem is <em>inconsistent behavior</em>. Let's say you need to code something similar to a previous task, but not quite identical. You might grab a snippet that implements the action in a slightly different way. This inconsistency will confuse users, and if you document your solution, you'll end up describing features and their <em>exceptions</em> – a clear sign of a cobbled-together solution. Imagine a website where the "Submit" button works differently on different pages. Frustrating, right? That's the kind of problem inconsistent behavior creates.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>These are just a few examples of the issues that arise from the "code snippet collection" approach. They lead to project overruns, expensive maintenance, and ultimately, dissatisfied customers. It's like trying to patch a leaky roof with duct tape – it might hold for a little while, but eventually, the problem will resurface, often worse than before.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>So, what's the solution? It's about understanding the <em>big picture</em> of the finished product – how it's built and what it truly requires. You can't achieve this by simply reading through all the code in a large project. Instead, you need a <em>top-down approach</em> that starts with the high-level concepts and then works its way down to the details.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>What is the Top-Down Approach?</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Imagine you're planning a road trip. A top-down approach would start with deciding your overall destination, then mapping out the major routes you'll take, then considering specific stops along the way, and finally, figuring out the details like where you'll get gas and what you'll pack. In software design, this means starting with the overall architecture of your application, then defining the major components and how they interact, then breaking down those components into smaller modules, and finally, writing the actual code. It's about having a clear roadmap before you start building.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Contrasting with the Waterfall Model</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The <a href="https://en.wikipedia.org/wiki/Waterfall_model">"Waterfall Model"</a> is a traditional, linear approach to software development where each phase (requirements gathering, design, implementation, testing, deployment) is completed<sup> <a href="https://www.geeksforgeeks.org/does-waterfall-use-sprints/">1</a></sup> before moving on to the next. It's like an assembly line. The problem is that it's very rigid and doesn't handle change well. If you discover a problem late in the process, it can be very expensive and time-consuming to fix. It's like realizing halfway through building your house that you forgot to include plumbing – you'd have to tear down walls and start over.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Why the Code Snippet Collection Approach Fails</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The code snippet collection approach is essentially the opposite of top-down design. It's a <em>bottom-up</em> approach where you start with the small pieces (code snippets) and try to assemble them into a working application. The problem is that without a clear overall design, these pieces often don't fit together well. It's like trying to assemble a puzzle without knowing what the picture is supposed to be – you might get some pieces to connect, but you'll likely end up with a jumbled mess.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>As I said above, software design should be learned incrementally and early. This means that the concepts and processes of design should start out as simple as possible and only get more complex as needed for the job at hand. This gradual approach allows developers to build a solid foundation and avoid the pitfalls of the "code snippet collection" method. It's about learning to think like an architect before you start laying bricks.</p>
+<!-- /wp:paragraph -->

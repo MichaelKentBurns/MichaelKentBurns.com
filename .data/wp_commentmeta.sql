@@ -1,9 +1,9 @@
 /*M!999999\- enable the sandbox mode */ 
--- MariaDB dump 10.19  Distrib 10.5.27-MariaDB, for debian-linux-gnu (x86_64)
+-- MariaDB dump 10.19  Distrib 10.5.28-MariaDB, for debian-linux-gnu (x86_64)
 --
 -- Host: localhost    Database: hynxgrbyjv
 -- ------------------------------------------------------
--- Server version	10.5.27-MariaDB-deb11-log
+-- Server version	10.5.28-MariaDB-deb11-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -22,7 +22,7 @@
 
 DROP TABLE IF EXISTS `wp_commentmeta`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `wp_commentmeta` (
   `meta_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `comment_id` bigint(20) unsigned NOT NULL DEFAULT 0,
@@ -31,7 +31,7 @@ CREATE TABLE `wp_commentmeta` (
   PRIMARY KEY (`meta_id`),
   KEY `comment_id` (`comment_id`),
   KEY `meta_key` (`meta_key`(191))
-) ENGINE=InnoDB AUTO_INCREMENT=964 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=970 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,7 +40,7 @@ CREATE TABLE `wp_commentmeta` (
 
 LOCK TABLES `wp_commentmeta` WRITE;
 /*!40000 ALTER TABLE `wp_commentmeta` DISABLE KEYS */;
-INSERT INTO `wp_commentmeta` VALUES (849,514,'_wp_trash_meta_status','0'),(850,514,'_wp_trash_meta_time','1735683823'),(851,513,'_wp_trash_meta_status','0'),(852,513,'_wp_trash_meta_time','1735683823'),(853,512,'_wp_trash_meta_status','0'),(854,512,'_wp_trash_meta_time','1735683823'),(855,511,'_wp_trash_meta_status','0'),(856,511,'_wp_trash_meta_time','1735683823'),(857,510,'_wp_trash_meta_status','0'),(858,510,'_wp_trash_meta_time','1735683823'),(859,509,'_wp_trash_meta_status','0'),(860,509,'_wp_trash_meta_time','1735683823'),(861,508,'_wp_trash_meta_status','0'),(862,508,'_wp_trash_meta_time','1735683823'),(863,507,'_wp_trash_meta_status','0'),(864,507,'_wp_trash_meta_time','1735683823'),(865,506,'_wp_trash_meta_status','0'),(866,506,'_wp_trash_meta_time','1735683823'),(867,505,'_wp_trash_meta_status','0'),(868,505,'_wp_trash_meta_time','1735683823'),(869,504,'_wp_trash_meta_status','0'),(870,504,'_wp_trash_meta_time','1735683823'),(871,503,'_wp_trash_meta_status','0'),(872,503,'_wp_trash_meta_time','1735683823'),(873,502,'_wp_trash_meta_status','0'),(874,502,'_wp_trash_meta_time','1735683823'),(875,501,'_wp_trash_meta_status','0'),(876,501,'_wp_trash_meta_time','1735683823'),(877,500,'_wp_trash_meta_status','0'),(878,500,'_wp_trash_meta_time','1735683823'),(879,499,'_wp_trash_meta_status','0'),(880,499,'_wp_trash_meta_time','1735683823'),(881,498,'_wp_trash_meta_status','0'),(882,498,'_wp_trash_meta_time','1735683823'),(883,497,'_wp_trash_meta_status','0'),(884,497,'_wp_trash_meta_time','1735683823'),(885,496,'_wp_trash_meta_status','0'),(886,496,'_wp_trash_meta_time','1735683823'),(887,495,'_wp_trash_meta_status','0'),(888,495,'_wp_trash_meta_time','1735683823'),(889,494,'_wp_trash_meta_status','0'),(890,494,'_wp_trash_meta_time','1735683823'),(891,493,'_wp_trash_meta_status','0'),(892,493,'_wp_trash_meta_time','1735683823'),(893,492,'_wp_trash_meta_status','0'),(894,492,'_wp_trash_meta_time','1735683823'),(895,491,'_wp_trash_meta_status','0'),(896,491,'_wp_trash_meta_time','1735683823'),(897,490,'_wp_trash_meta_status','0'),(898,490,'_wp_trash_meta_time','1735683823'),(899,489,'_wp_trash_meta_status','0'),(900,489,'_wp_trash_meta_time','1735683823'),(901,488,'_wp_trash_meta_status','0'),(902,488,'_wp_trash_meta_time','1735683823'),(903,487,'_wp_trash_meta_status','0'),(904,487,'_wp_trash_meta_time','1735683823'),(905,486,'_wp_trash_meta_status','0'),(906,486,'_wp_trash_meta_time','1735683823'),(907,485,'_wp_trash_meta_status','0'),(908,485,'_wp_trash_meta_time','1735683823'),(909,484,'_wp_trash_meta_status','0'),(910,484,'_wp_trash_meta_time','1735683823'),(911,483,'_wp_trash_meta_status','0'),(912,483,'_wp_trash_meta_time','1735683823'),(913,482,'_wp_trash_meta_status','0'),(914,482,'_wp_trash_meta_time','1735683823'),(915,481,'_wp_trash_meta_status','0'),(916,481,'_wp_trash_meta_time','1735683823'),(917,480,'_wp_trash_meta_status','0'),(918,480,'_wp_trash_meta_time','1735683823'),(919,479,'_wp_trash_meta_status','0'),(920,479,'_wp_trash_meta_time','1735683823'),(921,478,'_wp_trash_meta_status','0'),(922,478,'_wp_trash_meta_time','1735683823'),(923,477,'_wp_trash_meta_status','0'),(924,477,'_wp_trash_meta_time','1735683823'),(925,476,'_wp_trash_meta_status','0'),(926,476,'_wp_trash_meta_time','1735683823'),(927,475,'_wp_trash_meta_status','0'),(928,475,'_wp_trash_meta_time','1735683823'),(929,474,'_wp_trash_meta_status','0'),(930,474,'_wp_trash_meta_time','1735683823'),(931,473,'_wp_trash_meta_status','0'),(932,473,'_wp_trash_meta_time','1735683823'),(933,472,'_wp_trash_meta_status','0'),(934,472,'_wp_trash_meta_time','1735683823'),(935,471,'_wp_trash_meta_status','0'),(936,471,'_wp_trash_meta_time','1735683823'),(937,470,'_wp_trash_meta_status','0'),(938,470,'_wp_trash_meta_time','1735683823'),(939,449,'_wp_trash_meta_status','0'),(940,449,'_wp_trash_meta_time','1735683823'),(941,448,'_wp_trash_meta_status','0'),(942,448,'_wp_trash_meta_time','1735683823'),(943,447,'_wp_trash_meta_status','0'),(944,447,'_wp_trash_meta_time','1735683823');
+INSERT INTO `wp_commentmeta` VALUES (964,534,'ct_hash','7a541e8b10a302c0873334f39fe93f14'),(965,535,'ct_hash','0d6d2b5cc4a6bcc8b041dc9d4b1e4453'),(966,536,'ct_real_user_badge_hash','0be3bcb092c39d30add45460032790f0'),(967,537,'ct_hash','302c0f6700c472a8a62d85e6f27324f3'),(968,538,'ct_real_user_badge_hash','3b86b2dfb04e2a3fb4d85885ca504336'),(969,539,'ct_real_user_badge_hash','6ba3622684f9acaf73027734def195f0');
 /*!40000 ALTER TABLE `wp_commentmeta` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -53,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-01-30 17:30:01
+-- Dump completed on 2025-02-08 18:10:06
