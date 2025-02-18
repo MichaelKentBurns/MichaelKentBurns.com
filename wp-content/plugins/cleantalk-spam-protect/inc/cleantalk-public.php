@@ -24,7 +24,7 @@ function apbct_init()
 
     // Pixel
     if ( $apbct->settings['data__pixel'] && empty($apbct->pixel_url) ) {
-        $apbct->pixel_url = apbct_get_pixel_url__ajax(true);
+        $apbct->pixel_url = apbct_get_pixel_url(true);
     }
 
     // Localize data
@@ -1207,7 +1207,7 @@ function ct_enqueue_scripts_public($_hook)
     if ( in_array("administrator", $current_user->roles) ) {
         // Admin javascript for managing comments on public pages
         if ( $apbct->settings['comments__manage_comments_on_public_page'] ) {
-            $ajax_nonce = wp_create_nonce("ct_secret_nonce");
+            $ajax_nonce = $apbct->ajax_service->getAdminNonce();
             wp_enqueue_script(
                 'ct_public_admin_js',
                 APBCT_JS_ASSETS_PATH . '/cleantalk-public-admin.min.js',
@@ -1311,13 +1311,45 @@ function apbct_enqueue_and_localize_public_scripts()
     $in_footer = defined('CLEANTALK_PLACE_PUBLIC_JS_SCRIPTS_IN_FOOTER') && CLEANTALK_PLACE_PUBLIC_JS_SCRIPTS_IN_FOOTER;
 
     // Different JS params
-    wp_enqueue_script(
-        'ct_public_functions',
-        APBCT_URL_PATH . '/js/apbct-public-bundle.min.js',
-        array(),
-        APBCT_VERSION,
-        $in_footer
-    );
+    if (!$apbct->settings['forms__check_external'] && !$apbct->settings['forms__check_internal']) {
+        wp_enqueue_script(
+            'ct_public_functions',
+            APBCT_URL_PATH . '/js/apbct-public-bundle.min.js',
+            array(),
+            APBCT_VERSION,
+            $in_footer
+        );
+    }
+
+    if ($apbct->settings['forms__check_external'] && !$apbct->settings['forms__check_internal']) {
+        wp_enqueue_script(
+            'ct_public_functions-external_forms',
+            APBCT_URL_PATH . '/js/apbct-public-bundle_ext-protection.min.js',
+            array(),
+            APBCT_VERSION,
+            $in_footer
+        );
+    }
+
+    if ($apbct->settings['forms__check_internal'] && !$apbct->settings['forms__check_external']) {
+        wp_enqueue_script(
+            'ct_public_functions-internal_forms',
+            APBCT_URL_PATH . '/js/apbct-public-bundle_int-protection.min.js',
+            array(),
+            APBCT_VERSION,
+            $in_footer
+        );
+    }
+
+    if ($apbct->settings['forms__check_external'] && $apbct->settings['forms__check_internal']) {
+        wp_enqueue_script(
+            'ct_public_functions',
+            APBCT_URL_PATH . '/js/apbct-public-bundle_full-protection.min.js',
+            array(),
+            APBCT_VERSION,
+            $in_footer
+        );
+    }
 
     // Bot detector
     if ( $apbct->settings['data__bot_detector_enabled'] && ! apbct_bot_detector_scripts_exclusion()) {
