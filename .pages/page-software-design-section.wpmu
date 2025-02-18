@@ -1,11 +1,25 @@
 <!-- wp:paragraph -->
-<p>Software Design is a large topic that developers grow into as they mature in their technical skills.     This page introduces a series of larger articles that in turn will contain a sequence of small articles that can be read and digested one at a time. </p>
+<p>Software Design is a large topic that developers grow into as they mature in their technical skills. This page introduces a series of larger articles that in turn will contain a sequence of small articles that can be read and digested one at a time.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:heading -->
-<h2 class="wp-block-heading"><a href="https://michaelkentburns.com/index.php/2025/02/02/from-code-snippets-to-software-design-building-robust-web-applications/">Software Design Overview Part 1</a></h2>
+<h2 class="wp-block-heading">Software Design Overview</h2>
 <!-- /wp:heading -->
 
+<!-- wp:heading {"fontSize":"medium"} -->
+<h2 class="wp-block-heading has-medium-font-size"><a href="https://michaelkentburns.com/index.php/from-code-snippets-to-software-design-building-robust-web-applications/">Part 1 - From Code Snippets to Software Design</a></h2>
+<p>This first part lays the groundwork for understanding software design by highlighting the common "code snippet collection" problem new developers face and introducing the need for a more structured, top-down approach to building robust applications. It emphasizes the importance of moving beyond simply assembling code snippets and learning to think about the bigger picture of software design.</p>
+<!-- /wp:heading -->
+
+<!-- wp:heading {"fontSize":"medium"} -->
+<h2 class="wp-block-heading has-medium-font-size"><a href="https://michaelkentburns.com/index.php/works-in-progress/software-design-section/part-2-thinking-in-objectswhy-object-oriented-design-matters/">Part 2 - Thinking in Objects:Why Object-Oriented Design Matters</a></h2>
+<p>Part 2 - Thinking in Objects: Why Object-Oriented Design Matters explores the fundamental concepts of object-oriented programming (OOP), explaining how thinking in terms of objects, their properties, and behaviors can significantly improve software design and development. It emphasizes the importance of learning OOP principles early on, even for beginners, and highlights the numerous benefits of this design paradigm.</p>
+<h2 class="wp-block-heading has-medium-font-size">Part 3 -</h2>
+<h2 class="wp-block-heading has-medium-font-size"> </h2>
+<!-- /wp:heading -->
+
+<!-- wp:heading {"fontSize":"medium"} --><!-- /wp:heading -->
+
 <!-- wp:paragraph -->
-<p></p>
+<p>&nbsp;</p>
 <!-- /wp:paragraph -->

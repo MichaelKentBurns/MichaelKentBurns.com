@@ -1,0 +1,145 @@
+<!-- wp:image {"id":746,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://michaelkentburns.com/wp-content/uploads/2025/01/fotis-fotopoulos-6sAl6aQ4OWI-unsplash-1024x656.jpg" alt="" class="wp-image-746"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p><em>Image source: Unspash</em></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>We've talked about the importance of software design and how avoiding the "code snippet collection" trap is crucial for building robust applications. Now, let's dive into a core concept that underpins effective software design: <strong>object-oriented programming (OOP)</strong>. Understanding OOP, even at a basic level, is incredibly beneficial for new developers. It's not just about using an "object-oriented language" – it's a way of <em>thinking</em> about software.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Learning to See the World as Objects</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>From the moment we're born, we start learning about the world by recognizing <em>objects</em>. An object is simply a "thing" in our environment that we can identify, that has certain <em>properties</em>, and that <em>behaves</em> in a predictable way. Think about a toddler encountering the family cat. The cat is an <em>object</em>. It's furry (property), has four legs (property), makes a "meow" sound (behavior), and likes to rub against things (behavior). If you pull its tail, it might scratch (behavior – a less desirable one!). The family might have multiple cats – different sizes, different colors, but they all mostly behave the same way. We learn to categorize them as "cats" and anticipate their properties and behaviors. A dog, on the other hand, is a different <em>kind</em> of object, with its own set of properties and behaviors.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>This ability to recognize objects, classify them, and predict how they'll behave is fundamental to how we understand the world. And it's also the core idea behind object-oriented programming.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Object-Oriented Programming: A Simple Idea with Powerful Consequences</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Object-oriented programming takes this natural way of thinking and applies it to software development. Instead of just writing lines of code, we organize our programs around <em>objects</em>, just like we organize our understanding of the world around objects. These software objects have properties (data) and behaviors (methods – functions that do things).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>One of the beautiful things about object-oriented languages is that their syntax can be surprisingly simple and intuitive. Take <a href="https://en.wikipedia.org/wiki/Smalltalk">Smalltalk</a>, for example. Smalltalk is one of the earliest object-oriented programming languages, created way back in the 1970s, and it's still used today for educational purposes and even some commercial projects.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The amazing thing about Smalltalk is its simplicity. The <em>entire</em> syntax of the language can fit on a postcard! Think about that – a whole programming language described on a tiny piece of paper. This simplicity makes it an excellent tool for learning the fundamental concepts of OOP. The Smalltalk environment itself is also object-oriented – the operating system, the development tools, everything is represented as objects. This purity makes it easier to understand how everything connects.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image {"id":704,"sizeSlug":"full","linkDestination":"none"} -->
+<figure class="wp-block-image size-full"><img src="https://michaelkentburns.com/wp-content/uploads/2024/09/Pharo-syntax-PostCard.png" alt="" class="wp-image-704"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p><strong>(Important Note: I'm not suggesting you learn Smalltalk! I'm using it as an example of how elegant and simple a pure object-oriented language can be.)</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>If you want a thorough explanation of the syntax and usage, well, that takes two whole pages: <a href="http://files.pharo.org/media/pharoCheatSheet.pdf">http://files.pharo.org/media/pharoCheatSheet.pdf</a>. There is a 29 post-card live tutorial named ProfStef. <a href="http://rmod-pharo-mooc.lille.inria.fr/MOOC/PharoMOOC-Videos/EN/Week1/W1-LiveB-EN-final.mp4">Introductory video</a>. Live tutorial.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>For a more thorough discussion on object oriented languages and Smalltalk see this article : <a href="https://medium.com/@etherservices.vimalraj/are-there-purely-object-oriented-languages-d9a569361f58">Are There Purely Object Oriented Languages?</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Pure Object-Oriented Languages vs. Languages that "Support Objects"</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Smalltalk is considered a "pure" object-oriented language. This means that <em>everything</em> in Smalltalk is an object. Other languages, like JavaScript, <em>support</em> objects, but they aren't purely object-oriented. There's a subtle but important difference. JavaScript has some object-oriented features, but it also has other elements that aren't objects. This can make things a bit more complex. It’s a topic of much debate in the programming world, but for our purposes, the key takeaway is that the <em>object-oriented paradigm</em> – the way of <em>thinking</em> about software as objects – is valuable <em>regardless</em> of whether you're using a "pure" object-oriented language or one that just "supports" objects. I won't wade into the open and endless debate but instead, refer you to this <a href="http://Javascript supports &quot;objects&quot; and &quot;classes&quot;, but the basic syntax and runtime is not object oriented.   In javascript variables can be a list of name-value pairs.  https://stackoverflow.com/questions/107464/is-javascript-object-oriented">StackOverflow thread.</a>  You can apply object-oriented design principles even when working with JavaScript.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>The Benefits of Object-Oriented Design</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Why bother with object-oriented design at all? What are the benefits? Here are a few:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item -->
+<li><strong>Modularity:</strong> Objects are self-contained units. This makes it easier to organize your code and break down complex problems into smaller, more manageable pieces. Think of it like building with LEGO bricks – each brick is an object, and you can combine them in different ways to create larger structures.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Reusability:</strong> Once you've created an object, you can reuse it in other parts of your program or even in other projects. This saves you time and effort. Imagine you create a "button" object for your website. You can reuse that same button object on multiple pages without having to rewrite the code.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Maintainability:</strong> Because objects are self-contained, it's easier to make changes without affecting other parts of the system. If you need to update the behavior of a button, you only need to change the code within the button object, not the code for every page that uses the button.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Abstraction:</strong> Objects allow you to hide the complex details of how something works and just focus on what it <em>does</em>. You don't need to know how a car's engine works to drive the car – you just need to know how to use the steering wheel, pedals, and gear shift. Similarly, in object-oriented programming, you can use an object without needing to know the intricate details of its implementation.</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:heading {"level":4} -->
+<h4 class="wp-block-heading">Object-Oriented design</h4>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>I will discuss two OO design techniques that are relevant to this site and its training for beginning developers: Unified Modeling Language and CRC. UML is a very powerful visually oriented way of describing a design. I am a visual learner. For me a picture is worth way more than a thousand words. If I have to read a design description, I will get a piece of paper, and diagram what I am reading. With a diagram you can actually point your finger at things and trace their relationships to other things. There are people that can describe complex things in words in very vivid terms. <a href="https://en.wikipedia.org/wiki/Richard_Feynman">Richard Feynman</a> is perhaps one of the best. He has a series of lectures to ordinary college classes in which he describes <a href="https://en.wikipedia.org/wiki/Quantum_mechanics">Quantum Mechanics</a> (which he was the major contributor to) in ways that make me say "OH! I get it now.". But, he was a very brilliant and gifted professor. Most engineers can't describe designs like that.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Introducing CRC Cards and UML</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Now that you understand the basic principles of object-oriented design, you might be wondering how to actually <em>apply</em> these principles when planning your projects. There are several tools and techniques that can help, two of which are particularly useful for beginners: CRC cards and UML. CRC cards are a simple, low-tech way to brainstorm and explore the relationships between objects. UML (<a href="https://en.wikipedia.org/wiki/Unified_Modeling_Language">Unified Modeling Language</a>) is a more powerful and visual language for describing software designs. We'll explore both of these in more detail in the upcoming articles.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>For full disclosure:</strong><br>I am a HUGE proponent of the use of UML. I used it extensively during my career<br>at <a href="https://en.wikipedia.org/wiki/SAS_Institute">SAS Institute</a>. I was one of the employees that was part of the origins of the formalized use of <a href="https://en.wikipedia.org/wiki/Metadata">metadata</a>. &nbsp; Metadata is a fancy term for information about data. &nbsp;One of the simplest forms of metadata is the filesystem on your computer. &nbsp;You create a directory called a Git repository. &nbsp;Inside the repository you create files. &nbsp;The files have names like README.md and index.html. &nbsp; The name tells you generally what it represents and the file extension tells you the language and the program needed to edit or present it (eg. .md for markdown, .html you can edit in a text program or a programming IDE, and you run it in a web browser. &nbsp; &nbsp;Other metadata is the date and time the file was modified, its size, and more. &nbsp;</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The original metadata database for SAS products was written for a single specific project. It was called the "<strong>Metabase</strong>" (Metadata database) written in a SAS proprietary object-oriented language called SCL (Screen Control Language). It was written by one guy while flat on his back in the hospital after back surgery. He knew the details of how data and programs were described in our products and wrote SCL code to model that. If the details changed he would have to go back into the SCL and modify it to match. &nbsp;Since this was a fairly simple model, that was not too much effort.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>However, when it was decided that all metadata for all SAS' many products would be incorporated into a single metadata model, it was quite a huge task. &nbsp;See the <a href="https://support.sas.com/documentation/cdl/en/omamodref/67417/HTML/default/viewer.htm#hierlist.htm">product documentation of the metadata model</a>. &nbsp;There are 172 different data types described. My team's job was to implement a metadata server that would provide access to the storage of all of that metadata for all <a href="https://support.sas.com/en/software/all-products-support.html">300+ SAS products</a>. &nbsp;Those products were growing and changing constantly. &nbsp;To implement all of that by hand coding classes was a monstrous job that would have taken a large team years to implement and maintained.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>I thought there was a better way. I attended a software development conference called <strong>SD2000</strong> in San Jose, California (where I went to university). Several of the presenters were the pioneers in the latest software development methodologies and technologies. I took what I learned there and came back to work. I pitched the idea of using the UML language and the applications to build and manage the model<br>as a tool. One of our team members learned to used those modeling tools, and her job was to visit with the development teams for all SAS products. She learned what metadata they needed to to make their product work and built a standardized model that unified all metadata for all those products.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Meanwhile, I wrote a program called ModelCompiler (in Java) which would read in that model from the tools and generate C source code to implement the model in the<br><a href="https://support.sas.com/en/software/metadata-server-support.html">metadata server that our team built</a>. &nbsp; That code was compiled and linked into our products so that they could access the server. &nbsp; By the way, the product documentation shown in the link above for the SAS metadata model is also generated using the UML model.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Even though the most visible part of a UML model is the diagrams, the underlying model that describes all of those details is stored in a rich database. &nbsp; The diagrams are drawn automatically using drawing algorithms. &nbsp; There is also text and lists and lots of other representations. &nbsp; Since the model is a live database, it is possible to write programs that navigate through the details in that database and generate almost any kind of representation, including source code, and HTML diagrams.&nbsp;</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>What have you learned?</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Think about a recent coding project you worked on, even a small one. Can you identify some of the objects involved? What are their properties and behaviors? Share your thoughts in the comments below!</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>What's next?</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Now that we've explored the importance of object-oriented design and the benefits it brings, we'll delve into how to apply it using CRC cards. This simple technique will help you start thinking in objects and lay a solid foundation for your software design process. Click here to continue to the next article: <a href="https://www.google.com/">Designing with Objects: An Introduction to CRC Cards.</a></p>
+<!-- /wp:paragraph -->
