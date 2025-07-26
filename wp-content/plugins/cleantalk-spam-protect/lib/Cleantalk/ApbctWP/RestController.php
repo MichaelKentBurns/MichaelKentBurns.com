@@ -42,17 +42,6 @@ class RestController extends \WP_REST_Controller
                     ),
                 ),
                 'permission_callback' => '__return_true',
-            ),
-            array(
-                'methods'             => 'GET',
-                'callback'            => array(AltSessions::class, 'getFromRemote'),
-                'args'                => array(
-                    'name' => array(
-                        'type'     => 'string',
-                        'required' => true,
-                    ),
-                ),
-                'permission_callback' => '__return_true',
             )
         ));
 
@@ -112,17 +101,6 @@ class RestController extends \WP_REST_Controller
                 'callback'            => function () {
                     return ['success' => true];
                 },
-                'permission_callback' => function (WP_REST_Request $request) {
-                    return wp_verify_nonce(TT::toString($request->get_header('x_wp_nonce')), 'wp_rest');
-                }
-            )
-        ));
-
-        // REST route for set important parameters (apbct_timestamp etc)
-        register_rest_route($this->namespace, "/apbct_set_important_parameters", array(
-            array(
-                'methods'             => 'POST',
-                'callback'            => 'apbct_cookie',
                 'permission_callback' => function (WP_REST_Request $request) {
                     return wp_verify_nonce(TT::toString($request->get_header('x_wp_nonce')), 'wp_rest');
                 }

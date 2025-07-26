@@ -1,5 +1,10 @@
 <?php
 
+// Prevent direct call
+if ( ! defined('ABSPATH') ) {
+    die('Not allowed!');
+}
+
 $apbct_integrations_by_class = array(
     'BuddyPress' => array(
         'plugin_path' => 'buddypress/bp-loader.php',
@@ -8,6 +13,15 @@ $apbct_integrations_by_class = array(
     'Woocommerce' => array(
         'plugin_path' => 'woocommerce/woocommerce.php',
         'plugin_class' => 'WooCommerce',
+    ),
+    'WPSearchForm' => array(
+        'plugin_path' => '',
+        'plugin_class' => '',
+        'wp_includes' => true,
+    ),
+    'WPForms' => array(
+        'plugin_path' => ['wpforms-lite/wpforms.php', 'wpforms/wpforms.php'],
+        'plugin_class' => 'WPForms',
     ),
 );
 

@@ -21,6 +21,11 @@ use Cleantalk\ApbctWP\Variables\Server;
 use Cleantalk\ApbctWP\RequestParameters\RequestParameters;
 use Cleantalk\Common\TT;
 
+// Prevent direct call
+if ( ! defined('ABSPATH') ) {
+    die('Not allowed!');
+}
+
 function apbct_array($array)
 {
     return new \Cleantalk\Common\Arr($array);
@@ -75,9 +80,6 @@ $ct_admin_notoice_period = 21600;
 // Sevice negative comment to visitor.
 // It uses for BuddyPress registrations to avoid double checks
 $ct_negative_comment = null;
-
-
-add_action('wp_login', 'apbct_add_admin_ip_to_swf_whitelist', 10, 2);
 
 /**
  * Public action 'plugins_loaded' - Loads locale, see http://codex.wordpress.org/Function_Reference/load_plugin_textdomain
@@ -224,7 +226,21 @@ function apbct_base_call($params = array(), $reg_flag = false)
         ! apbct_is_trackback() &&
         ! defined('XMLRPC_REQUEST')
     ) {
-        $params['exception_action'] = 1;
+        /**
+         * If the constant APBCT_SERVICE__DISABLE_EMPTY_EMAIL_EXCEPTION is defined,
+         * it means that the exception action should be disabled for empty email checks.
+         *
+         * Check all post data option ignore this constant.
+         * @since 6.58.99
+         */
+        if (
+            $apbct->service_constants->disable_empty_email_exception->isDefined() &&
+            !$apbct->settings['data__general_postdata_test']
+        ) {
+            $params['exception_action'] = 0;
+        } else {
+            $params['exception_action'] = 1;
+        }
     }
     /**
      * Skip checking excepted requests if the "Log excluded requests" option is disabled.
@@ -413,11 +429,16 @@ function apbct_exclusions_check__url()
             $exclusions = explode(',', $apbct->settings['exclusions__urls']);
         }
 
+        $rest_url_only_path = apbct_get_rest_url_only_path();
         // Fix for AJAX and WP REST API forms
         $haystack =
             (
                 Server::get('REQUEST_URI') === '/wp-admin/admin-ajax.php' ||
-                stripos(TT::toString(Server::get('REQUEST_URI')), '/wp-json/') === 0
+                stripos(TT::toString(Server::getString('REQUEST_URI')), '/wp-json/') === 0 ||
+                (
+                    $rest_url_only_path !== 'index.php' &&
+                    stripos(TT::toString(Server::getString('REQUEST_URI')), $rest_url_only_path) === 0
+                )
             ) &&
             TT::toString(Server::get('HTTP_REFERER'))
             ? str_ireplace(
@@ -543,15 +564,29 @@ function apbct_get_sender_info()
     $cache_plugins_detected = json_encode($cache_plugins_detected);
 
     $apbct_urls = RequestParameters::getCommonStorage('apbct_urls');
-    $apbct_urls = $apbct_urls ? json_encode(json_decode($apbct_urls, true)) : null;
+    if (!empty($apbct_urls)) {
+        if (is_string($apbct_urls)) {
+            $apbct_urls = json_encode(json_decode($apbct_urls, true));
+        } else {
+            $apbct_urls = json_encode($apbct_urls);
+        }
+    }
+    $apbct_urls = !empty($apbct_urls) ? $apbct_urls : null;
 
     $site_landing_ts = RequestParameters::get('apbct_site_landing_ts', true);
     $site_landing_ts = !empty($site_landing_ts) ? TT::toString($site_landing_ts) : null;
 
     $site_referer = RequestParameters::get('apbct_site_referer', true);
-    $site_referer = !empty($site_referer) ? TT::toString($site_referer) : null;
+    $site_referer = !empty($site_referer) ? TT::toString($site_referer) : 'UNKNOWN';
 
-    $page_hits = RequestParameters::get('apbct_page_hits', true);
+    /**
+     * Important! Do not use just HTTP only flag here. Page hits are handled on JS side
+     * and could be provided via NoCookie hidden field.
+     * Also, forms with forced alt cookies does not provide it via hidden field and in the same time other forms do,
+     * so we need a flag to know the source.
+     * A.G.
+     */
+    $page_hits = RequestParameters::get('apbct_page_hits', Cookie::$force_alt_cookies_global);
     $page_hits = !empty($page_hits) ? TT::toString($page_hits) : null;
 
     //Let's keep $data_array for debugging
@@ -572,9 +607,9 @@ function apbct_get_sender_info()
         'cookies_enabled'           => $cookie_is_ok,
         'data__set_cookies'         => $apbct->settings['data__set_cookies'],
         'data__cookies_type'        => $apbct->data['cookies_type'],
-        'REFFERRER'                 => Cookie::$force_alt_cookies_global ? $site_referer : Server::get('HTTP_REFERER'),
-        'REFFERRER_PREVIOUS'        => Cookie::get('apbct_prev_referer') && $cookie_is_ok
-            ? Cookie::get('apbct_prev_referer')
+        'REFFERRER'                 => Server::getString('HTTP_REFERER'),
+        'REFFERRER_PREVIOUS'        => !empty(Cookie::getString('apbct_prev_referer')) && $cookie_is_ok
+            ? Cookie::getString('apbct_prev_referer')
             : null,
         'site_landing_ts'           => $site_landing_ts,
         'page_hits'                 => $page_hits,
@@ -1117,14 +1152,15 @@ function ct_get_fields_any($arr, $email = '', $nickname = '')
  * @param array $input_array maybe raw POST array or other preprocessed POST data.
  * @param string $email email, rewriting result of process $input_array data
  * @param string $nickname nickname, rewriting result of process $input_array data
+ * @param array $emails_array additional emails array, rewriting result of process $input_array data
  * @deprecated since 6.48, use ct_gfa_dto() instead
  * @return array
  */
-function ct_gfa($input_array, $email = '', $nickname = '')
+function ct_gfa($input_array, $email = '', $nickname = '', $emails_array = array())
 {
     $gfa = new GetFieldsAny($input_array);
 
-    return $gfa->getFields($email, $nickname);
+    return $gfa->getFields($email, $nickname, $emails_array);
 }
 
 /**
@@ -1134,14 +1170,15 @@ function ct_gfa($input_array, $email = '', $nickname = '')
  * @param array $input_array maybe raw POST array or other preprocessed POST data.
  * @param string $email email, rewriting result of process $input_array data
  * @param string $nickname nickname, rewriting result of process $input_array data
+ * @param array $emails_array array of additional emails, rewriting result of process $input_array data
  *
  * @return GetFieldsAnyDTO
  */
-function ct_gfa_dto($input_array, $email = '', $nickname = '')
+function ct_gfa_dto($input_array, $email = '', $nickname = '', $emails_array = array())
 {
     $gfa = new GetFieldsAny($input_array);
 
-    return $gfa->getFieldsDTO($email, $nickname);
+    return $gfa->getFieldsDTO($email, $nickname, $emails_array);
 }
 
 /**

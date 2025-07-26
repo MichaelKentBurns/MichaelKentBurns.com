@@ -622,7 +622,7 @@ class SSO {
 
 					<?php if ( $display_name && $gravatar ) : ?>
 					<a rel="nofollow" class="jetpack-sso-wrap__reauth" href="<?php echo esc_url( $this->build_sso_button_url( array( 'force_reauth' => '1' ) ) ); ?>">
-						<?php esc_html_e( 'Log in as a different WordPress.com user', 'jetpack-connection' ); ?>
+						<?php esc_html_e( 'Log in with another WordPress.com account', 'jetpack-connection' ); ?>
 					</a>
 				<?php else : ?>
 					<p>
@@ -823,7 +823,7 @@ class SSO {
 		}
 
 		$user_found_with = '';
-		if ( empty( $user ) && isset( $user_data->external_user_id ) ) {
+		if ( isset( $user_data->external_user_id ) ) {
 			$user_found_with = 'external_user_id';
 			$user            = get_user_by( 'id', (int) $user_data->external_user_id );
 			if ( $user ) {

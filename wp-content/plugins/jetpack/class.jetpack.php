@@ -652,11 +652,6 @@ class Jetpack {
 		require_once JETPACK__PLUGIN_DIR . 'class-jetpack-stats-dashboard-widget.php';
 		add_action( 'wp_dashboard_setup', array( new Jetpack_Stats_Dashboard_Widget(), 'init' ) );
 
-		if ( defined( 'JETPACK_NEWSLETTER_WIDGET' ) && JETPACK_NEWSLETTER_WIDGET ) {
-			require_once JETPACK__PLUGIN_DIR . 'class-jetpack-newsletter-dashboard-widget.php';
-			add_action( 'wp_dashboard_setup', array( new Jetpack_Newsletter_Dashboard_Widget(), 'init' ) );
-		}
-
 		// Returns HTTPS support status.
 		add_action( 'wp_ajax_jetpack-recheck-ssl', array( $this, 'ajax_recheck_ssl' ) );
 
@@ -759,6 +754,7 @@ class Jetpack {
 			array(
 				'jitm',
 				'sync',
+				'account_protection',
 				'waf',
 				'videopress',
 				'stats',
@@ -788,10 +784,6 @@ class Jetpack {
 		);
 
 		$config->ensure( 'search' );
-
-		if ( defined( 'ENABLE_WORDADS_SHARED_UI' ) && ENABLE_WORDADS_SHARED_UI ) {
-			$config->ensure( 'wordads' );
-		}
 
 		if ( ! $this->connection_manager ) {
 			$this->connection_manager = new Connection_Manager( 'jetpack' );
@@ -1507,6 +1499,8 @@ class Jetpack {
 			/** This filter is documented in packages/status/src/class-status.php */
 		} elseif ( has_filter( 'jetpack_development_mode' ) && apply_filters( 'jetpack_development_mode', false ) ) { // This is a deprecated filter name.
 			$notice = __( 'The jetpack_development_mode filter is set to true.', 'jetpack' );
+		} elseif ( get_option( 'jetpack_offline_mode' ) ) {
+			$notice = __( 'The jetpack_offline_mode option is set to true.', 'jetpack' );
 		} else {
 			$notice = __( 'The jetpack_offline_mode filter is set to true.', 'jetpack' );
 		}
@@ -3197,7 +3191,7 @@ p {
 
 			if ( $throw ) {
 				/* translators: Plugin name to deactivate. */
-				throw new RuntimeException( sprintf( __( 'Jetpack contains the most recent version of the old “%1$s” plugin.', 'jetpack' ), 'WordPress.com Stats' ) );
+				throw new RuntimeException( sprintf( __( 'Jetpack contains the most recent version of the old "%1$s" plugin.', 'jetpack' ), 'WordPress.com Stats' ) );
 			}
 		}
 	}
@@ -4494,8 +4488,7 @@ endif;
 				if ( is_a( $jp_user, 'WP_User' ) ) {
 					wp_set_current_user( $jp_user->ID );
 					$user_can = is_multisite()
-						// @phan-suppress-next-line PhanDeprecatedFunction -- @todo Switch to current_user_can_for_site when we drop support for WP 6.6.
-						? current_user_can_for_blog( get_current_blog_id(), 'manage_options' )
+						? current_user_can_for_site( get_current_blog_id(), 'manage_options' )
 						: current_user_can( 'manage_options' );
 					if ( $user_can ) {
 						$token_type              = 'user';

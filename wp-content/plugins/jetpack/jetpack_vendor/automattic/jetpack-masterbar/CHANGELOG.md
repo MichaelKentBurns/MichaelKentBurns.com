@@ -5,6 +5,137 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.18.0] - 2025-06-30
+### Changed
+- Admin Menu: Show Jetpack > Stats to Calypso users. [#44090]
+
+### Fixed
+- Admin Menu: Add JITM upsells back to default admin interface. [#44125]
+- Phan: Clean up error due to errant file reference. [#44031]
+
+## [0.17.11] - 2025-06-23
+### Changed
+- Admin Menu: Consolidate "Dashboard" and "My Home" menus. [#43983]
+- Update dependencies. [#44002]
+- Update package dependencies. [#44020]
+
+## [0.17.10] - 2025-06-16
+### Changed
+- Update package dependencies. [#43914]
+
+## [0.17.9] - 2025-06-09
+### Changed
+- Forms: Update Feedback menu slug to point to forms inbox. [#43780]
+
+## [0.17.8] - 2025-06-06
+### Fixed
+- Fix the Jetpack submenu order for WordPress.com sites that use Nav Unification. [#43781]
+
+## [0.17.7] - 2025-06-05
+### Changed
+- Update dependencies. [#43785]
+
+## [0.17.6] - 2025-06-03
+### Changed
+- Update package dependencies. [#43734]
+
+## [0.17.5] - 2025-06-02
+### Changed
+- Update package dependencies. [#43710]
+
+## [0.17.4] - 2025-05-26
+### Changed
+- Update package dependencies. [#43516] [#43578]
+
+## [0.17.3] - 2025-05-19
+### Changed
+- Update package dependencies. [#43398]
+
+## [0.17.2] - 2025-05-12
+### Changed
+- Update package dependencies. [#43400]
+
+### Fixed
+- Add "Additional CSS" in the Appearance menu for Atomic sites. [#43272]
+
+## [0.17.1] - 2025-05-05
+### Changed
+- Update package dependencies. [#43326]
+
+### Fixed
+- Linting: Address final rules in WordPress Stylelint config. [#43296]
+- Linting: Do additional stylesheet cleanup. [#43247]
+
+## [0.17.0] - 2025-04-28
+### Removed
+- Remove unused Phan exception. [#43063]
+
+### Fixed
+- Code: Remove unneeded `data:` URI components. [#43227]
+- Linting: Fix more Stylelint violations. [#43213]
+
+## [0.16.1] - 2025-04-21
+### Fixed
+- Add translation context to Search menu item. [#43094]
+
+## [0.16.0] - 2025-04-14
+### Changed
+- Admin Menu: Update the icon of WooCommerce for the Woo installation. [#43029]
+
+### Removed
+- Color Scheme: Clean up `*-rgb` CSS variables. [#42960]
+- Remove the site card from the admin sidebar. [#42499]
+
+### Fixed
+- Linting: Clean up various Stylelint violations. [#43010]
+- Linting: Format SCSS imports consistently. [#43018]
+- Linting: Update stylesheets to use WordPress rules for fonts and colors. [#42920] [#42928]
+- Linting: Use double colon notation for pseudo-element selectors. [#43019]
+
+## [0.15.1] - 2025-04-07
+### Changed
+- Code: First pass of style coding standards. [#42734]
+
+## [0.15.0] - 2025-04-04
+### Changed
+- Stop using RDV experiment assignment. [#42765]
+
+## [0.14.4] - 2025-04-02
+### Changed
+- Update dependencies. [#42820]
+- Update package dependencies. [#42809]
+
+## [0.14.3] - 2025-03-31
+### Changed
+- Internal updates.
+
+## [0.14.2] - 2025-03-24
+### Changed
+- Update dependencies. [#42564]
+
+### Fixed
+- Admin Color Scheme: Fix colors in the Aquatic color scheme. [#42632]
+- Site Badge: Update styles of the Coming Soon badge. [#42496]
+
+## [0.14.1] - 2025-03-18
+### Changed
+- Update package dependencies. [#42511]
+
+## [0.14.0] - 2025-03-17
+### Added
+- Add subscribers in WP Admin boilerplate. [#42066]
+
+### Fixed
+- Upsell to correct plan in Additional CSS customizer menu when running the Global Styles experiment. [#42471]
+
+## [0.13.2] - 2025-03-12
+### Changed
+- Internal updates.
+
+## [0.13.1] - 2025-03-10
+### Changed
+- Internal updates.
+
 ## [0.13.0] - 2025-03-03
 ### Changed
 - Admin Color Schemes: Update color schemes to match Calypso. [#40908]
@@ -242,6 +373,30 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Notifications: Change Icon [#37676]
 - Updated package dependencies. [#37669] [#37706]
 
+[0.18.0]: https://github.com/Automattic/jetpack-masterbar/compare/v0.17.11...v0.18.0
+[0.17.11]: https://github.com/Automattic/jetpack-masterbar/compare/v0.17.10...v0.17.11
+[0.17.10]: https://github.com/Automattic/jetpack-masterbar/compare/v0.17.9...v0.17.10
+[0.17.9]: https://github.com/Automattic/jetpack-masterbar/compare/v0.17.8...v0.17.9
+[0.17.8]: https://github.com/Automattic/jetpack-masterbar/compare/v0.17.7...v0.17.8
+[0.17.7]: https://github.com/Automattic/jetpack-masterbar/compare/v0.17.6...v0.17.7
+[0.17.6]: https://github.com/Automattic/jetpack-masterbar/compare/v0.17.5...v0.17.6
+[0.17.5]: https://github.com/Automattic/jetpack-masterbar/compare/v0.17.4...v0.17.5
+[0.17.4]: https://github.com/Automattic/jetpack-masterbar/compare/v0.17.3...v0.17.4
+[0.17.3]: https://github.com/Automattic/jetpack-masterbar/compare/v0.17.2...v0.17.3
+[0.17.2]: https://github.com/Automattic/jetpack-masterbar/compare/v0.17.1...v0.17.2
+[0.17.1]: https://github.com/Automattic/jetpack-masterbar/compare/v0.17.0...v0.17.1
+[0.17.0]: https://github.com/Automattic/jetpack-masterbar/compare/v0.16.1...v0.17.0
+[0.16.1]: https://github.com/Automattic/jetpack-masterbar/compare/v0.16.0...v0.16.1
+[0.16.0]: https://github.com/Automattic/jetpack-masterbar/compare/v0.15.1...v0.16.0
+[0.15.1]: https://github.com/Automattic/jetpack-masterbar/compare/v0.15.0...v0.15.1
+[0.15.0]: https://github.com/Automattic/jetpack-masterbar/compare/v0.14.4...v0.15.0
+[0.14.4]: https://github.com/Automattic/jetpack-masterbar/compare/v0.14.3...v0.14.4
+[0.14.3]: https://github.com/Automattic/jetpack-masterbar/compare/v0.14.2...v0.14.3
+[0.14.2]: https://github.com/Automattic/jetpack-masterbar/compare/v0.14.1...v0.14.2
+[0.14.1]: https://github.com/Automattic/jetpack-masterbar/compare/v0.14.0...v0.14.1
+[0.14.0]: https://github.com/Automattic/jetpack-masterbar/compare/v0.13.2...v0.14.0
+[0.13.2]: https://github.com/Automattic/jetpack-masterbar/compare/v0.13.1...v0.13.2
+[0.13.1]: https://github.com/Automattic/jetpack-masterbar/compare/v0.13.0...v0.13.1
 [0.13.0]: https://github.com/Automattic/jetpack-masterbar/compare/v0.12.4...v0.13.0
 [0.12.4]: https://github.com/Automattic/jetpack-masterbar/compare/v0.12.3...v0.12.4
 [0.12.3]: https://github.com/Automattic/jetpack-masterbar/compare/v0.12.2...v0.12.3

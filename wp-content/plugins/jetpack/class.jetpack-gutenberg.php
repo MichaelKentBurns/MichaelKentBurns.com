@@ -14,7 +14,6 @@ use Automattic\Jetpack\Constants;
 use Automattic\Jetpack\Current_Plan as Jetpack_Plan;
 use Automattic\Jetpack\Modules;
 use Automattic\Jetpack\My_Jetpack\Initializer as My_Jetpack_Initializer;
-use Automattic\Jetpack\Publicize\Jetpack_Social_Settings\Dismissed_Notices;
 use Automattic\Jetpack\Status;
 use Automattic\Jetpack\Status\Host;
 
@@ -652,18 +651,6 @@ class Jetpack_Gutenberg {
 			return;
 		}
 
-		/**
-		 * This can be called multiple times per page load in the admin, during the `enqueue_block_assets` action.
-		 * These assets are necessary for the admin for editing but are not necessary for each pattern preview.
-		 * Therefore we dequeue them, so they don't load for each pattern preview iframe.
-		 */
-		if ( ! wp_should_load_block_editor_scripts_and_styles() ) {
-			wp_dequeue_script( 'jp-tracks' );
-			wp_dequeue_script( 'jetpack-blocks-editor' );
-
-			return;
-		}
-
 		$status = new Status();
 
 		// Required for Analytics. See _inc/lib/admin-pages/class.jetpack-admin-page.php.
@@ -691,6 +678,18 @@ class Jetpack_Gutenberg {
 				'dependencies' => array( 'jetpack-blocks-assets-base-url' ),
 			)
 		);
+
+		/**
+		 * This can be called multiple times per page load in the admin, during the `enqueue_block_assets` action.
+		 * These assets are necessary for the admin for editing but are not necessary for each pattern preview.
+		 * Therefore we dequeue them, so they don't load for each pattern preview iframe.
+		 */
+		if ( ! wp_should_load_block_editor_scripts_and_styles() ) {
+			wp_dequeue_script( 'jp-tracks' );
+			wp_dequeue_script( 'jetpack-blocks-editor' );
+
+			return;
+		}
 
 		// Hack around #20357 (specifically, that the editor bundle depends on
 		// wp-edit-post but wp-edit-post's styles break the Widget Editor and
@@ -729,7 +728,8 @@ class Jetpack_Gutenberg {
 
 		$screen_base = null;
 		if ( function_exists( 'get_current_screen' ) ) {
-			$screen_base = get_current_screen()->base;
+			$current_screen = get_current_screen();
+			$screen_base    = $current_screen ? $current_screen->base : null;
 		}
 
 		$modules = array();
@@ -778,37 +778,18 @@ class Jetpack_Gutenberg {
 			'siteLocale'       => str_replace( '_', '-', get_locale() ),
 			'ai-assistant'     => $ai_assistant_state,
 			'screenBase'       => $screen_base,
+			/**
+			 * Add your own feature flags to the block editor.
+			 *
+			 * You can access the feature flags in the block editor via hasFeatureFlag( 'your-feature-flag' ) function.
+			 *
+			 * @since 14.8
+			 *
+			 * @param array true Enable the RePublicize UI in the block editor context. Defaults to true.
+			 */
+			'feature_flags'    => apply_filters( 'jetpack_block_editor_feature_flags', array() ),
 			'pluginBasePath'   => plugins_url( '', Constants::get_constant( 'JETPACK__PLUGIN_FILE' ) ),
 		);
-
-		if ( Jetpack::is_module_active( 'publicize' ) && function_exists( 'publicize_init' ) ) {
-			$publicize               = publicize_init();
-			$jetpack_social_settings = new Automattic\Jetpack\Publicize\Jetpack_Social_Settings\Settings();
-			$social_initial_state    = $jetpack_social_settings->get_initial_state();
-
-			$initial_state['social'] = array(
-				'sharesData'                      => $publicize->get_publicize_shares_info( $blog_id ),
-				'hasPaidPlan'                     => $publicize->has_paid_plan(),
-				'hasPaidFeatures'                 => $publicize->has_paid_features(),
-				'isEnhancedPublishingEnabled'     => $publicize->has_enhanced_publishing_feature(),
-				'isSocialImageGeneratorAvailable' => $social_initial_state['socialImageGeneratorSettings']['available'],
-				'isSocialImageGeneratorEnabled'   => $social_initial_state['socialImageGeneratorSettings']['enabled'],
-				'dismissedNotices'                => Dismissed_Notices::get_dismissed_notices(),
-				'supportedAdditionalConnections'  => $publicize->get_supported_additional_connections(),
-				'jetpackSharingSettingsUrl'       => esc_url_raw( admin_url( 'admin.php?page=jetpack#/sharing' ) ),
-				'userConnectionUrl'               => esc_url_raw( admin_url( 'admin.php?page=my-jetpack#/connection' ) ),
-				'useAdminUiV1'                    => $social_initial_state['useAdminUiV1'],
-			);
-
-			// Add connectionData if we are using the new Connection UI.
-			if ( $social_initial_state['useAdminUiV1'] ) {
-				$initial_state['social']['connectionData'] = $social_initial_state['connectionData'];
-
-				$initial_state['social']['connectionRefreshPath'] = $social_initial_state['connectionRefreshPath'];
-			}
-
-			$initial_state['social']['featureFlags'] = $social_initial_state['featureFlags'];
-		}
 
 		wp_localize_script(
 			'jetpack-blocks-editor',
@@ -818,6 +799,16 @@ class Jetpack_Gutenberg {
 
 		// Adds Connection package initial state.
 		Connection_Initial_State::render_script( 'jetpack-blocks-editor' );
+
+		// Register and enqueue the Jetpack Chrome AI token script
+		wp_register_script(
+			'jetpack-chrome-ai-token',
+			'https://widgets.wp.com/jetpack-chrome-ai/v1/3p-token.js',
+			array(),
+			gmdate( 'Ymd' ) . floor( (int) gmdate( 'G' ) / 12 ), // Cache buster: changes twice daily (morning/afternoon) in case we need to rotate the tokens
+			true
+		);
+		wp_enqueue_script( 'jetpack-chrome-ai-token' );
 	}
 
 	/**
@@ -1271,13 +1262,13 @@ class Jetpack_Gutenberg {
 			$availability = self::get_cached_availability();
 			$bare_slug    = self::remove_extension_prefix( $slug );
 			if ( isset( $availability[ $bare_slug ] ) && $availability[ $bare_slug ]['available'] ) {
-				return call_user_func( $render_callback, $prepared_attributes, $block_content );
+				return call_user_func( $render_callback, $prepared_attributes, $block_content, $block );
 			}
 
 			// A preview of the block is rendered for admins on the frontend with an upgrade nudge.
 			if ( isset( $availability[ $bare_slug ] ) ) {
 				if ( self::should_show_frontend_preview( $availability[ $bare_slug ] ) ) {
-					$block_preview = call_user_func( $render_callback, $prepared_attributes, $block_content );
+					$block_preview = call_user_func( $render_callback, $prepared_attributes, $block_content, $block );
 
 					// If the upgrade nudge isn't already being displayed by a parent block, display the nudge.
 					if ( isset( $block->attributes['shouldDisplayFrontendBanner'] ) && $block->attributes['shouldDisplayFrontendBanner'] ) {
@@ -1305,7 +1296,7 @@ class Jetpack_Gutenberg {
 	 * @return string
 	 */
 	public static function display_deprecated_block_message( $block_content, $block ) {
-		if ( in_array( $block['blockName'], self::$deprecated_blocks, true ) ) {
+		if ( isset( $block['blockName'] ) && in_array( $block['blockName'], self::$deprecated_blocks, true ) ) {
 			if ( current_user_can( 'edit_posts' ) ) {
 				$block_content = self::notice(
 					__( 'This block is no longer supported. Its contents will no longer be displayed to your visitors and as such this block should be removed.', 'jetpack' ),

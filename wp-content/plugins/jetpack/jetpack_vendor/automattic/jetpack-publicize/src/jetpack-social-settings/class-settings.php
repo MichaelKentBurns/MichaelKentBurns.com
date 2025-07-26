@@ -7,9 +7,7 @@
 
 namespace Automattic\Jetpack\Publicize\Jetpack_Social_Settings;
 
-use Automattic\Jetpack\Connection\Manager;
 use Automattic\Jetpack\Modules;
-use Automattic\Jetpack\Publicize\Publicize_Script_Data;
 use Automattic\Jetpack\Publicize\Social_Image_Generator\Templates;
 
 /**
@@ -156,11 +154,14 @@ class Settings {
 					'schema' => array(
 						'type'       => 'object',
 						'properties' => array(
-							'enabled'  => array(
+							'enabled'          => array(
 								'type' => 'boolean',
 							),
-							'template' => array(
+							'template'         => array(
 								'type' => 'string',
+							),
+							'default_image_id' => array(
+								'type' => 'number',
 							),
 						),
 					),
@@ -317,43 +318,12 @@ class Settings {
 
 	/**
 	 * Get the initial state.
+	 * Deprecated method, stub left here to avoid fatal.
+	 *
+	 * @deprecated 0.62.0
 	 */
 	public function get_initial_state() {
-		global $publicize;
-
-		$settings = $this->get_settings( true );
-
-		$settings['useAdminUiV1'] = false;
-		$settings['featureFlags'] = array();
-
-		$settings['is_publicize_enabled'] = false;
-		$settings['hasPaidFeatures']      = false;
-
-		$connection = new Manager();
-
-		if ( ( new Modules() )->is_active( 'publicize' ) && $connection->has_connected_user() ) {
-			$settings['useAdminUiV1']   = $publicize->use_admin_ui_v1();
-			$settings['connectionData'] = array(
-				'connections' => $publicize->get_all_connections_for_user(),
-				'adminUrl'    => esc_url_raw( $publicize->publicize_connections_url( 'jetpack-social-connections-admin-page' ) ),
-				'services'    => Publicize_Script_Data::get_supported_services(),
-			);
-
-			$settings['is_publicize_enabled'] = true;
-			$settings['hasPaidFeatures']      = $publicize->has_paid_features();
-
-			foreach ( self::FEATURE_FLAGS as $feature_flag ) {
-				$settings['featureFlags'][ $feature_flag['variable_name'] ] = $publicize->has_feature_flag( $feature_flag['flag_name'], $feature_flag['feature_name'] );
-			}
-		} else {
-			$settings['connectionData'] = array(
-				'connections' => array(),
-			);
-		}
-
-		$settings['connectionRefreshPath'] = ! empty( $settings['useAdminUiV1'] ) ? 'jetpack/v4/publicize/connections?test_connections=1' : '/jetpack/v4/publicize/connection-test-results';
-
-		return $settings;
+		return array();
 	}
 
 	/**
@@ -447,5 +417,24 @@ class Settings {
 			$sig_settings = self::DEFAULT_IMAGE_GENERATOR_SETTINGS;
 		}
 		return $sig_settings['template'];
+	}
+
+	/**
+	 * Get the default image ID.
+	 *
+	 * @return int
+	 */
+	public function sig_get_default_image_id() {
+		$this->migrate_old_option();
+		$sig_settings = get_option( self::OPTION_PREFIX . self::IMAGE_GENERATOR_SETTINGS );
+		if ( empty( $sig_settings ) || ! is_array( $sig_settings ) ) {
+			return 0;
+		}
+
+		if ( isset( $sig_settings['default_image_id'] ) ) {
+			return $sig_settings['default_image_id'];
+		}
+
+		return 0;
 	}
 }

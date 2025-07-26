@@ -1,7 +1,7 @@
 <?php // phpcs:ignore WordPress.Files.FileName.InvalidClassFileName
 /**
  * Module Name: Notifications
- * Module Description: Receive instant notifications of site comments and likes.
+ * Module Description: Receive real‑time notifications about site activity across your devices.
  * Sort Order: 13
  * First Introduced: 1.9
  * Requires Connection: Yes
@@ -205,7 +205,7 @@ class Jetpack_Notifications {
 					'class' => 'menupop',
 				),
 				'parent' => 'top-secondary',
-				'href'   => 'https://wordpress.com/notifications',
+				'href'   => 'https://wordpress.com/reader/notifications',
 			)
 		);
 	}

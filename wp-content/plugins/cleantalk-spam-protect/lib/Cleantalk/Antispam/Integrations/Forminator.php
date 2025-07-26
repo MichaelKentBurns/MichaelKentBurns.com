@@ -25,7 +25,7 @@ class Forminator extends IntegrationBase
         $tmp_data = ct_gfa(apply_filters('apbct__filter_post', $data));
 
         if ($username !== '') {
-            $tmp_data['username'] = $username;
+            $tmp_data['nickname'] = $username;
         }
 
         if ($email !== '') {
@@ -37,6 +37,9 @@ class Forminator extends IntegrationBase
 
     public function doBlock($message)
     {
+        if ( current_filter() === 'forminator_spam_protection' ) {
+            throw new \Exception($message);
+        }
         wp_send_json_error(
             array(
                 'message' => $message,

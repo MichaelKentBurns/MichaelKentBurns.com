@@ -311,6 +311,10 @@ class RemoteCalls
         $out['fw_stats']           = $apbct->fw_stats;
         $out['data']               = $apbct->data;
         $out['cron']               = $apbct->cron;
+        $out['sessions']           = [
+            'sessions count' => $wpdb->get_var('SELECT COUNT(*) FROM ' . APBCT_TBL_SESSIONS),
+            'sessions clear log' => get_option('cleantalk_sessions_clear_log', 'empty yet'),
+        ];
         $out['errors']             = $apbct->errors;
         $out['queue']              = get_option('cleantalk_sfw_update_queue');
         $out['connection_reports'] = $apbct->getConnectionReports()->remoteCallOutput();
@@ -318,6 +322,7 @@ class RemoteCalls
         if ($apbct->settings['data__set_cookies'] == 3 && $apbct->data['cookies_type'] === 'alternative') {
             $out['alt_sessions_auto_state_reason'] = $apbct->isAltSessionsRequired(true);
         }
+        $out['active_service_constants'] = $apbct->service_constants->getDefinitionsActive();
 
         if ( APBCT_WPMS ) {
             $out['network_settings'] = $apbct->network_settings;
@@ -484,6 +489,8 @@ class RemoteCalls
             'data__email_check_exist_post' => 'Check email before POST request',
             'data__honeypot_field' => 'Add a honeypot field',
             'data__email_decoder' => 'Encode contact data',
+            'data__email_decoder_encode_phone_numbers' => 'Encode phones',
+            'data__email_decoder_encode_email_addresses' => 'Encode emails',
             'data__email_decoder_buffer' => 'Use the output buffer',
             'exclusions__log_excluded_requests' => 'Log excluded requests',
             'exclusions__urls' => 'URL exclusions',

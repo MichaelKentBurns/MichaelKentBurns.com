@@ -1358,7 +1358,7 @@ class The_Neverending_Home_Page {
 		$page = (int) $_REQUEST['page']; // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- we're casting this to an int and not making changes to the site.
 
 		// Sanitize and set $previousday. Expected format: dd.mm.yy
-		if ( isset( $_REQUEST['currentday'] ) && preg_match( '/^\d{2}\.\d{2}\.\d{2}$/', $_REQUEST['currentday'] ) ) { // phpcs:ignore WordPress.Security.ValidatedSanitizedInput, WordPress.Security.NonceVerification.Recommended -- manually validating, no changes to site
+		if ( isset( $_REQUEST['currentday'] ) && is_string( $_REQUEST['currentday'] ) && preg_match( '/^\d{2}\.\d{2}\.\d{2}$/', $_REQUEST['currentday'] ) ) { // phpcs:ignore WordPress.Security.ValidatedSanitizedInput, WordPress.Security.NonceVerification.Recommended -- manually validating, no changes to site
 			global $previousday;
 			$previousday = $_REQUEST['currentday']; // phpcs:ignore WordPress.Security.NonceVerification.Recommended, WordPress.Security.ValidatedSanitizedInput
 		}
@@ -2062,7 +2062,7 @@ class The_Neverending_Home_Page {
 	protected static function amp_get_max_pages() {
 		global $wp_query;
 
-		return (int) $wp_query->max_num_pages - $wp_query->query_vars['paged'];
+		return (int) $wp_query->max_num_pages - (int) $wp_query->query_vars['paged'];
 	}
 
 	/**

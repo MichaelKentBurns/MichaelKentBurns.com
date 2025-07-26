@@ -526,6 +526,7 @@ class AntiCrawler extends \Cleantalk\Common\Firewall\FirewallModule
 
     private function checkExclusions()
     {
+        global $apbct;
         /**
          * Check if W3 Total Cache minified files requested during Anti-Crawler Work.
          * All the next conditions should be true:
@@ -551,6 +552,18 @@ class AntiCrawler extends \Cleantalk\Common\Firewall\FirewallModule
                         }
                     }
                 }
+            }
+        }
+
+        // skip for RSS Feed requests
+        if ($apbct->service_constants->skip_anticrawler_on_rss_feed->isDefined()) {
+            if (Server::getString('REQUEST_URI') &&
+                preg_match_all('/feed/i', Server::getString('REQUEST_URI'))
+            ) {
+                return true;
+            }
+            if (is_feed()) {
+                return true;
             }
         }
 

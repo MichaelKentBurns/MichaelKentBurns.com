@@ -1,7 +1,7 @@
 <?php // phpcs:ignore WordPress.Files.FileName.InvalidClassFileName
 /**
  * Module Name: Asset CDN
- * Module Description: Jetpack’s Site Accelerator loads your site faster by optimizing your images and serving your images and static files from our global network of servers.
+ * Module Description: Serve static files like CSS and JS from Jetpack’s global CDN for faster load times.
  * Sort Order: 26
  * Recommendation Order: 1
  * First Introduced: 6.6
@@ -226,7 +226,7 @@ class Jetpack_Photon_Static_Assets_CDN {
 	 */
 	public static function get_plugin_assets( $plugin, $version ) {
 		if ( 'jetpack' === $plugin && JETPACK__VERSION === $version ) {
-			if ( ! self::is_public_version( $version ) ) {
+			if ( ! self::is_public_version( $version ) || ! file_exists( JETPACK__PLUGIN_DIR . 'modules/photon-cdn/jetpack-manifest.php' ) ) {
 				return false;
 			}
 

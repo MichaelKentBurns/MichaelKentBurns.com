@@ -4,7 +4,9 @@ namespace Cleantalk\ApbctWP;
 
 use AllowDynamicProperties;
 use ArrayObject;
+use Cleantalk\ApbctWP\FindSpam\LoginIPKeeper;
 use Cleantalk\ApbctWP\Firewall\SFWUpdateSentinel;
+use Cleantalk\ApbctWP\ServiceConstants;
 
 /**
  * CleanTalk Anti-Spam State class
@@ -51,6 +53,7 @@ class State extends \Cleantalk\Common\State
         'forms__comments_test'                     => 1,
         'forms__contact_forms_test'                => 1,
         'forms__flamingo_save_spam'                => 1,
+        'forms__gravityforms_save_spam'            => 1,
         'forms__general_contact_forms_test'        => 1, // Anti-Spam test for unsupported and untested contact forms
         'forms__wc_checkout_test'                  => 1, // WooCommerce checkout default test
         'forms__wc_register_from_order'            => 1, // Woocommerce registration during checkout
@@ -88,6 +91,10 @@ class State extends \Cleantalk\Common\State
         'data__honeypot_field'                     => 1,
         'data__email_decoder'                      => 1,
         'data__email_decoder_buffer'               => 0,
+        'data__email_decoder_obfuscation_mode'     => 'blur',
+        'data__email_decoder_obfuscation_custom_text' => '',
+        'data__email_decoder_encode_phone_numbers' => 0,
+        'data__email_decoder_encode_email_addresses' => 1,
         'data__wc_store_blocked_orders'            => 0,
 
         // Exclusions
@@ -231,6 +238,9 @@ class State extends \Cleantalk\Common\State
         'wl_support_faq'     => 'https://wordpress.org/plugins/cleantalk-spam-protect/faq/',
         'wl_support_url'     => 'https://wordpress.org/support/plugin/cleantalk-spam-protect',
         'wl_support_email'   => 'support@cleantalk.org',
+
+        //IP keeper data
+        'ip_keeper_data'     => array()
     );
 
     /**
@@ -374,6 +384,15 @@ class State extends \Cleantalk\Common\State
      */
     public $sfw_update_sentinel;
 
+     /**
+      * @var LoginIPKeeper
+      */
+    public $login_ip_keeper;
+     /**
+      * @var ServiceConstants
+      */
+    public $service_constants;
+
     private $auto_save_defaults_list = array();
 
     public $errors;
@@ -515,6 +534,8 @@ class State extends \Cleantalk\Common\State
             // Limit for firewall logs sending.
             define('APBCT_SFW_SEND_LOGS_LIMIT', 1000);
         }
+
+        $this->service_constants = new ServiceConstants();
     }
 
     protected function setOptions()
@@ -986,6 +1007,11 @@ class State extends \Cleantalk\Common\State
     public function setSFWUpdateSentinel()
     {
         $this->sfw_update_sentinel = new SFWUpdateSentinel();
+    }
+
+    public function setLoginIPKeeper()
+    {
+        $this->login_ip_keeper = new \Cleantalk\ApbctWP\FindSpam\LoginIPKeeper();
     }
 
     /**

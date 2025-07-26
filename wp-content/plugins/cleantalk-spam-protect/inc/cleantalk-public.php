@@ -1,5 +1,6 @@
 <?php
 
+use Cleantalk\ApbctWP\ApbctEnqueue;
 use Cleantalk\ApbctWP\Escape;
 use Cleantalk\ApbctWP\Localize\LocalizeHandler;
 use Cleantalk\ApbctWP\Sanitize;
@@ -8,6 +9,12 @@ use Cleantalk\ApbctWP\Variables\Get;
 use Cleantalk\ApbctWP\Variables\Post;
 use Cleantalk\ApbctWP\Variables\Server;
 use Cleantalk\ApbctWP\LinkConstructor;
+use Cleantalk\ApbctWP\ApbctJsBundleResolver;
+
+// Prevent direct call
+if ( ! defined('ABSPATH') ) {
+    die('Not allowed!');
+}
 
 /**
  * Init functions
@@ -44,11 +51,6 @@ function apbct_init()
 
         // The exclusion of scripts from wp-rocket handler
         add_filter('rocket_delay_js_exclusions', 'apbct_rocket_delay_js_exclusions');
-    }
-
-    //Search form hook init
-    if ( $apbct->settings['forms__search_test'] ) {
-        add_filter('get_search_form', 'apbct_form_search__add_fields', 999);
     }
 
     //fix for EPM registration form
@@ -218,6 +220,7 @@ function apbct_init()
         add_filter('bbp_new_reply_pre_content', 'ct_bbp_new_pre_content', 1);
         add_action('bbp_theme_before_topic_form_content', 'ct_comment_form');
         add_action('bbp_theme_before_reply_form_content', 'ct_comment_form');
+        add_action('bbp_edit_reply_pre_content', 'ct_bbp_edit_pre_content', 1, 2);
     }
 
     //Custom Contact Forms
@@ -1195,16 +1198,9 @@ function ct_enqueue_scripts_public($_hook)
         // Admin javascript for managing comments on public pages
         if ( $apbct->settings['comments__manage_comments_on_public_page'] ) {
             $ajax_nonce = $apbct->ajax_service->getAdminNonce();
-            wp_enqueue_script(
-                'ct_public_admin_js',
-                APBCT_JS_ASSETS_PATH . '/cleantalk-public-admin.min.js',
-                // keep this jquery dependency if option comments__manage_comments_on_public_page is enabled
-                array('jquery'),
-                APBCT_VERSION,
-                false /*in header*/
-            );
+            ApbctEnqueue::getInstance()->js('cleantalk-public-admin.js', array('jquery'), false);
 
-            wp_localize_script('ct_public_admin_js', 'ctPublicAdmin', array(
+            wp_localize_script('cleantalk-public-admin-js', 'ctPublicAdmin', array(
                 'ct_ajax_nonce'       => $ajax_nonce,
                 'ajaxurl'             => admin_url('admin-ajax.php', 'relative'),
                 'ct_feedback_error'   => __('Error occurred while sending feedback.', 'cleantalk-spam-protect'),
@@ -1247,43 +1243,19 @@ function ct_enqueue_styles_public()
         $apbct->settings['comments__bp_private_messages'] ||
         $apbct->settings['data__general_postdata_test']
     ) {
-        // Common public styles
-        wp_enqueue_style(
-            'ct_public_css',
-            APBCT_CSS_ASSETS_PATH . '/cleantalk-public.min.css',
-            array(),
-            APBCT_VERSION
-        );
-
-        // Email Decoder styles
-        wp_enqueue_style(
-            'ct_email_decoder_css',
-            APBCT_CSS_ASSETS_PATH . '/cleantalk-email-decoder.min.css',
-            array(),
-            APBCT_VERSION
-        );
+        ApbctEnqueue::getInstance()->css('cleantalk-public.css');
+        ApbctEnqueue::getInstance()->css('cleantalk-email-decoder.css');
 
         // Public admin styles
         if ( in_array("administrator", $current_user->roles) ) {
             // Admin style for managing comments on public pages
             if ( $apbct->settings['comments__manage_comments_on_public_page'] ) {
-                 wp_enqueue_style(
-                     'ct_public_admin_css',
-                     APBCT_CSS_ASSETS_PATH . '/cleantalk-public-admin.min.css',
-                     array(),
-                     APBCT_VERSION,
-                     'all'
-                 );
+                ApbctEnqueue::getInstance()->css('cleantalk-public-admin.css');
             }
         }
     }
     if ( $apbct->settings['comments__the_real_person'] ) {
-        wp_enqueue_style(
-            'ct_trp_public',
-            APBCT_CSS_ASSETS_PATH . '/cleantalk-trp.min.css',
-            array(),
-            APBCT_VERSION
-        );
+        ApbctEnqueue::getInstance()->css('cleantalk-trp.css');
     }
 }
 
@@ -1296,69 +1268,26 @@ function apbct_enqueue_and_localize_public_scripts()
     global $apbct;
 
     $in_footer = defined('CLEANTALK_PLACE_PUBLIC_JS_SCRIPTS_IN_FOOTER') && CLEANTALK_PLACE_PUBLIC_JS_SCRIPTS_IN_FOOTER;
-
     // Different JS params
-    if (!$apbct->settings['forms__check_external'] && !$apbct->settings['forms__check_internal']) {
-        wp_enqueue_script(
-            'ct_public_functions',
-            APBCT_URL_PATH . '/js/apbct-public-bundle.min.js',
-            array(),
-            APBCT_VERSION,
-            $in_footer
-        );
-    }
-
-    if ($apbct->settings['forms__check_external'] && !$apbct->settings['forms__check_internal']) {
-        wp_enqueue_script(
-            'ct_public_functions-external_forms',
-            APBCT_URL_PATH . '/js/apbct-public-bundle_ext-protection.min.js',
-            array(),
-            APBCT_VERSION,
-            $in_footer
-        );
-    }
-
-    if ($apbct->settings['forms__check_internal'] && !$apbct->settings['forms__check_external']) {
-        wp_enqueue_script(
-            'ct_public_functions-internal_forms',
-            APBCT_URL_PATH . '/js/apbct-public-bundle_int-protection.min.js',
-            array(),
-            APBCT_VERSION,
-            $in_footer
-        );
-    }
-
-    if ($apbct->settings['forms__check_external'] && $apbct->settings['forms__check_internal']) {
-        wp_enqueue_script(
-            'ct_public_functions',
-            APBCT_URL_PATH . '/js/apbct-public-bundle_full-protection.min.js',
-            array(),
-            APBCT_VERSION,
-            $in_footer
-        );
-    }
+    $bundle_name = ApbctJsBundleResolver::getBundleName($apbct->settings);
+    ApbctEnqueue::getInstance()->js($bundle_name, array(), $in_footer);
 
     // Bot detector
     if ( $apbct->settings['data__bot_detector_enabled'] && ! apbct_bot_detector_scripts_exclusion()) {
+        // Attention! Skip old enqueue way for external script.
         wp_enqueue_script(
             'ct_bot_detector',
-            'https://moderate.cleantalk.org/ct-bot-detector-wrapper.js',
+            APBCT_MODERATE_URL . '/ct-bot-detector-wrapper.js',
             [],
             APBCT_VERSION,
             array(
                 'in_footer' => $in_footer,
                 'strategy' => 'defer'
-                )
+            )
         );
     }
 
-    wp_enqueue_style(
-        'ct_public_css',
-        APBCT_CSS_ASSETS_PATH . '/cleantalk-public.min.css',
-        array(),
-        APBCT_VERSION,
-        'all'
-    );
+    ApbctEnqueue::getInstance()->css('cleantalk-public.css');
 }
 
 function apbct_bot_detector_scripts_exclusion()

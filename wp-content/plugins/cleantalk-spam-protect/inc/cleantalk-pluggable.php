@@ -9,6 +9,11 @@ use Cleantalk\ApbctWP\Variables\Request;
 use Cleantalk\ApbctWP\Variables\Server;
 use Cleantalk\Common\TT;
 
+// Prevent direct call
+if ( ! defined('ABSPATH') ) {
+    die('Not allowed!');
+}
+
 /**
  * Getting current user by cookie
  *
@@ -36,7 +41,13 @@ function apbct_wp_get_current_user()
         }
     }
 
-    return $user ? $user : $current_user;
+    if (!is_null($current_user) && $current_user instanceof WP_User) {
+        $current_user_defined = $current_user->ID === 0 ? null : $current_user;
+    } else {
+        $current_user_defined = null;
+    }
+
+    return $user ? $user : $current_user_defined;
 }
 
 function apbct_wp_set_current_user($user = null)
@@ -227,6 +238,18 @@ function apbct_get_rest_url($blog_id = null, $path = '/', $scheme = 'rest')
      *
      */
     return apply_filters('rest_url', $url, $path, $blog_id, $scheme);
+}
+
+/**
+ * Gets REST url only path
+ *
+ * @return string
+ */
+function apbct_get_rest_url_only_path()
+{
+    $url = apbct_get_rest_url(null, '/');
+    $url = parse_url($url);
+    return isset($url['path']) ? $url['path'] : '/';
 }
 
 /**
@@ -534,6 +557,15 @@ function apbct_is_skip_request($ajax = false, $ajax_message_obj = array())
         return 'Admin side request.';
     }
 
+    // Events Manager - there is the direct integration
+    if (
+        apbct_is_plugin_active('events-manager/events-manager.php') &&
+        (Post::getString('action') === 'booking_add' || Post::getString('action') === 'em_booking_add') &&
+        wp_verify_nonce(Post::getString('_wpnonce'), 'booking_add')
+    ) {
+        return 'Event Manager skip';
+    }
+
     if ( $ajax ) {
         /*****************************************/
         /*    Here is ajax requests skipping     */
@@ -677,9 +709,12 @@ function apbct_is_skip_request($ajax = false, $ajax_message_obj = array())
             'wpforms_restricted_email', //WPForm validate
             'fluentcrm_unsubscribe_ajax', //FluentCRM unsubscribe
             'forminator_submit_form_custom', //Forminator has direct integration
+            'forminator_submit_form_custom-forms', //Forminator has direct integration
             'wcf_woocommerce_login', //WooCommerce CartFlows login
             'nasa_process_login', //Nasa login
             'leaky_paywall_validate_registration', //Leaky Paywall validation request
+            'cleantalk_force_ajax_check', //Force ajax check has direct integration
+            'cscf-submitform', // CSCF has direct integration
         );
 
         // Skip test if
@@ -735,6 +770,10 @@ function apbct_is_skip_request($ajax = false, $ajax_message_obj = array())
 
         if ( Post::get('action') === 'arm_shortcode_form_ajax_action' && Post::get('arm_action') === 'please-login' ) {
             return 'ARM forms skip login';
+        }
+
+        if (apbct_is_plugin_active('ws-form/ws-form.php') && Post::getString('action') === 'the_ajax_hook') {
+            return 'WS Form submit service request';
         }
 
         // Paid Memberships Pro - Login Form
@@ -883,8 +922,14 @@ function apbct_is_skip_request($ajax = false, $ajax_message_obj = array())
         }
         // FluentForm multistep skip
         if (
-            (apbct_is_plugin_active('fluentformpro/fluentformpro.php') ||  apbct_is_plugin_active('fluentform/fluentform.php')) &&
-            TT::toString(Post::get('action')) === 'active_step'
+            (
+                apbct_is_plugin_active('fluentformpro/fluentformpro.php')
+                ||  apbct_is_plugin_active('fluentform/fluentform.php'))
+            &&
+            (
+                Post::getString('action') === 'active_step'
+                || Post::getString('action') === 'fluentform_step_form_save_data'
+            )
         ) {
             return 'fluentform_skip';
         }
@@ -1017,8 +1062,9 @@ function apbct_is_skip_request($ajax = false, $ajax_message_obj = array())
         if (
             apbct_is_plugin_active('smartquizbuilder/smartquizbuilder.php') &&
             (
-                TT::toString(Post::get('action')) === 'sqb_lead_save' ||
-                TT::toString(Post::get('action')) === 'SQBSendNotificationAjax'
+                Post::getString('action') === 'sqb_lead_save' ||
+                Post::getString('action') === 'SQBSendNotificationAjax' ||
+                Post::getString('action') === 'SQBSubmitQuizAjax'
             )
         ) {
             return 'Smart Quiz Builder - skip some requests';
@@ -1080,7 +1126,9 @@ function apbct_is_skip_request($ajax = false, $ajax_message_obj = array())
         //Skip RegistrationMagic service request
         if (
             apbct_is_plugin_active('custom-registration-form-builder-with-submission-manager/registration_magic.php') &&
-            Post::get('action') === 'rm_user_exists'
+            Post::get('action') === 'rm_user_exists' ||
+            Post::get('action') === 'check_username_validity' ||
+            Post::get('action') === 'check_email_exists'
         ) {
             return 'RegistrationMagic service request';
         }
@@ -1304,6 +1352,7 @@ function apbct_is_skip_request($ajax = false, $ajax_message_obj = array())
             ) &&
             Post::get('action') === 'edd_add_to_cart' ||
             Post::get('action') === 'edd_get_shipping_rate' ||
+            Post::get('action') === 'edd_check_email' ||
             Post::get('action') === 'edd_recalculate_discounts_pro'
         ) {
             return 'Easy Digital Downloads service action';
@@ -1483,10 +1532,75 @@ function apbct_is_skip_request($ajax = false, $ajax_message_obj = array())
         ) {
             return 'listeo ajax register';
         }
+
+        // skip BravePopUp Pro - have direct integration
+        if (
+            apbct_is_plugin_active('bravepopup-pro/index.php') &&
+            Post::get('action') === 'bravepop_form_submission' &&
+            check_ajax_referer('brave-ajax-form-nonce', 'security')
+        ) {
+            return 'BravePopUp Pro';
+        }
+        // Exclusion of hooks from the Avada theme for the forms of the fusion form builder
+        if (
+            (apbct_is_theme_active('Avada') || apbct_is_theme_active('Avada Child')) &&
+            Post::get('action') === 'fusion_form_submit_form_to_database_email' ||
+            Post::get('action') === 'fusion_form_submit_form_to_email' ||
+            Post::get('action') === 'fusion_form_submit_ajax'
+        ) {
+            return 'fusion_form/avada_theme skip';
+        }
+
+        // skip Newsletter - has direct integration
+        if (
+            apbct_is_plugin_active('newsletter/plugin.php') &&
+            Request::getString('action') === 'tnp'
+        ) {
+            return 'Newsletter';
+        }
+
+        // skip ChatyContactForm - has direct integration
+        if (
+            apbct_is_plugin_active('chaty/cht-icons.php') &&
+            Request::getString('action') === 'chaty_front_form_save_data'
+        ) {
+            return 'ChatyContactForm';
+        }
+
+        // skip Login/Signup Popup - has direct integration
+        if (
+            apbct_is_plugin_active('easy-login-woocommerce/xoo-el-main.php') &&
+            Request::getString('action') === 'xoo_el_form_action'
+        ) {
+            return 'Login/Signup Popup';
+        }
+
+        // skip QuickCal - has direct integration
+        if (
+            apbct_is_plugin_active('quickcal/quickcal.php') &&
+            Request::getString('action') === 'booked_add_appt'
+        ) {
+            return 'QuickCal';
+        }
+
+        // skip FluentCommunity (login form)
+        if (
+            apbct_is_plugin_active('fluent-community/fluent-community.php') &&
+            Post::getString('action') === 'fcom_user_login_form'
+        ) {
+            return 'FluentCommunity login form skip';
+        }
     } else {
         /*****************************************/
         /*  Here is non-ajax requests skipping   */
         /*****************************************/
+        //Skip RegistrationMagic main request - has own integration
+        if (
+            apbct_is_plugin_active('custom-registration-form-builder-with-submission-manager/registration_magic.php') &&
+            isset($_POST['rm_cond_hidden_fields'])
+        ) {
+            return 'RegistrationMagic main request';
+        }
         // WC payment APIs
         if ( apbct_is_plugin_active('woocommerce/woocommerce.php') &&
              apbct_is_in_uri('wc-api=2checkout_ipn_convert_plus') ) {
@@ -1592,8 +1706,8 @@ function apbct_is_skip_request($ajax = false, $ajax_message_obj = array())
         // APBCT service actions
         if (
             apbct_is_plugin_active('cleantalk-spam-protect/cleantalk.php') &&
-            apbct_is_in_uri('wp-json/cleantalk-antispam/v1/check_email_before_post') ||
-            apbct_is_in_uri('wp-json/cleantalk-antispam/v1/check_email_exist_post')
+            apbct_is_in_uri('cleantalk-antispam/v1/check_email_before_post') ||
+            apbct_is_in_uri('cleantalk-antispam/v1/check_email_exist_post')
         ) {
             return 'APBCT service actions';
         }
@@ -1663,8 +1777,8 @@ function apbct_is_skip_request($ajax = false, $ajax_message_obj = array())
         // Plugin Name: OptimizeCheckouts - skip fields checks
         if (
             apbct_is_plugin_active('op-cart/op-checkouts.php') &&
-            ( apbct_is_in_uri('wp-json/opc/v1/cart/recalculate') ||
-            apbct_is_in_uri('wp-json/opc/v1/cart/update-payment-method') )
+            ( apbct_is_in_uri('opc/v1/cart/recalculate') ||
+            apbct_is_in_uri('opc/v1/cart/update-payment-method') )
         ) {
             return 'Plugin Name: OptimizeCheckouts skip fields checks';
         }
@@ -1699,6 +1813,11 @@ function apbct_is_skip_request($ajax = false, $ajax_message_obj = array())
             TT::toString(Post::get('action')) === 'coblocks-form-submit'
         ) {
             return 'Plugin Name: CoBlocks - have the direct integration';
+        }
+
+        // Plugin Name: SureForms
+        if ( apbct_is_plugin_active('sureforms/sureforms.php') && apbct_is_in_uri('/sureforms/v1/submit-form')) {
+            return 'Plugin Name: SureForms skip fields checks';
         }
     }
 
@@ -1735,15 +1854,6 @@ function apbct_is_skip_request($ajax = false, $ajax_message_obj = array())
         (Post::get('wpforms') || Post::get('actions') === 'wpforms_submit')
     ) {
         return 'wp_forms';
-    }
-
-    // Event Manager - there is the direct integration
-    if (
-        apbct_is_plugin_active('events-manager/events-manager.php') &&
-        Post::get('action') === 'booking_add' &&
-        wp_verify_nonce(TT::toString(Post::get('_wpnonce')), 'booking_add')
-    ) {
-        return 'Event Manager skip';
     }
 
     //Plugin Name: Kali Forms
@@ -1806,10 +1916,10 @@ function apbct_settings__get_ajax_type()
     global $apbct;
 
     //force ajax route type if constant is defined and compatible
-    if (defined('APBCT_SET_AJAX_ROUTE_TYPE')
-        && in_array(APBCT_SET_AJAX_ROUTE_TYPE, array('rest','admin_ajax'))
+    if ($apbct->service_constants->set_ajax_route_type->isDefined()
+        && in_array($apbct->service_constants->set_ajax_route_type->getValue(), array('rest','admin_ajax'))
     ) {
-        return APBCT_SET_AJAX_ROUTE_TYPE;
+        return $apbct->service_constants->set_ajax_route_type->getValue();
     }
 
     // Check rest availability
@@ -1864,7 +1974,10 @@ function apbct__get_cookie_prefix()
 function apbct__is_rest_api_request()
 {
     if (isset($_SERVER['REQUEST_URI'])) {
-        return strpos(TT::toString($_SERVER['REQUEST_URI']), '/wp-json/') !== false;
+        $rest_url_only_path = apbct_get_rest_url_only_path();
+        return strpos(TT::toString($_SERVER['REQUEST_URI']), '/wp-json/') !== false ||
+        ($rest_url_only_path !== 'index.php' &&
+        strpos(TT::toString($_SERVER['REQUEST_URI']), $rest_url_only_path) !== false);
     }
 
     return false;

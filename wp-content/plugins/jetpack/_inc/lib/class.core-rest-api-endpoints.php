@@ -2335,7 +2335,6 @@ class Jetpack_Core_Json_Api_Endpoints {
 				'validate_callback' => __CLASS__ . '::validate_posint',
 				'jp_group'          => 'settings',
 			),
-
 			// WAF.
 			'jetpack_waf_automatic_rules'               => array(
 				'description'       => esc_html__( 'Enable automatic rules - Protect your site against untrusted traffic sources with automatic security rules.', 'jetpack' ),
@@ -2936,6 +2935,11 @@ class Jetpack_Core_Json_Api_Endpoints {
 				'validate_callback' => __CLASS__ . '::validate_alphanum',
 				'jp_group'          => 'google-analytics',
 			),
+			'jetpack_wga'                               => array(
+				'description' => esc_html__( 'Google Analytics', 'jetpack' ),
+				'type'        => 'object',
+				'jp_group'    => 'settings',
+			),
 
 			// Stats.
 			'admin_bar'                                 => array(
@@ -3095,6 +3099,19 @@ class Jetpack_Core_Json_Api_Endpoints {
 				'jp_group'          => 'videopress',
 			),
 		);
+
+		// SEO Tools - SEO Enhancer.
+		// TODO: move this to the main options array? The filter was there while developing the feature.
+		// It might come in handy to hold its availability behind the filter since it still depends on AI to be available.
+		if ( apply_filters( 'ai_seo_enhancer_enabled', true ) ) {
+			$options['ai_seo_enhancer_enabled'] = array(
+				'description'       => esc_html__( 'Automatically generate SEO title, SEO description, and image alt text for new posts.', 'jetpack' ),
+				'type'              => 'boolean',
+				'default'           => 0,
+				'validate_callback' => __CLASS__ . '::validate_boolean',
+				'jp_group'          => 'seo-tools',
+			);
+		}
 
 		// Add modules to list so they can be toggled.
 		$modules = Jetpack::get_available_modules();
@@ -3778,7 +3795,7 @@ class Jetpack_Core_Json_Api_Endpoints {
 	 */
 	public static function get_module_requested( $route = '/module/(?P<slug>[a-z\-]+)' ) {
 
-		if ( empty( $GLOBALS['wp']->query_vars['rest_route'] ) ) {
+		if ( empty( $GLOBALS['wp']->query_vars['rest_route'] ) || ! is_string( $GLOBALS['wp']->query_vars['rest_route'] ) ) {
 			return '';
 		}
 

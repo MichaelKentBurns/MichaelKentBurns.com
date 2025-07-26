@@ -5,6 +5,7 @@ use Cleantalk\Antispam\CleantalkRequest;
 use Cleantalk\ApbctWP\AdjustToEnvironmentModule\AdjustToEnvironmentHandler;
 use Cleantalk\ApbctWP\AJAXService;
 use Cleantalk\ApbctWP\Antispam\EmailEncoder;
+use Cleantalk\ApbctWP\ApbctEnqueue;
 use Cleantalk\ApbctWP\CleantalkSettingsTemplates;
 use Cleantalk\ApbctWP\Escape;
 use Cleantalk\ApbctWP\Variables\Get;
@@ -12,6 +13,11 @@ use Cleantalk\ApbctWP\Variables\Post;
 use Cleantalk\ApbctWP\Variables\Server;
 use Cleantalk\ApbctWP\LinkConstructor;
 use Cleantalk\Common\TT;
+
+// Prevent direct call
+if ( ! defined('ABSPATH') ) {
+    die('Not allowed!');
+}
 
 require_once('cleantalk-settings.php');
 
@@ -94,8 +100,16 @@ function ct_dashboard_statistics_widget()
     if (isset($apbct->data['wl_brandname']) && $apbct->data['wl_brandname'] !== APBCT_NAME) {
         $actual_plugin_name = $apbct->data['wl_brandname'];
     }
+    /**
+     * Hook. List of allowed user roles for the Dashboard widget.
+     * add_filter('apbct_hook_dashboard_widget_allowed_roles_list', function($roles_list) {
+     *  $roles_list[] = 'editor';
+     *  return $roles_list;
+     * });
+     */
+    $roles_list = apply_filters('apbct_hook_dashboard_widget_allowed_roles_list', array('administrator'));
 
-    if ( apbct_is_user_role_in(array('administrator')) ) {
+    if (is_array($roles_list) && apbct_is_user_role_in($roles_list) ) {
         wp_add_dashboard_widget(
             'ct_dashboard_statistics_widget',
             $actual_plugin_name,
@@ -171,7 +185,7 @@ function ct_dashboard_statistics_widget_output($_post, $_callback_args)
                  "<u>{$apbct->brief_data['error']}</u>"
              )
              . '</h2>';
-        if ( $apbct->user_token && ! $apbct->white_label ) {
+        if (apbct_is_user_role_in(array('administrator')) && $apbct->user_token && ! $apbct->white_label ) {
             $link = LinkConstructor::buildCleanTalkLink(
                 'anti_crawler_inactive',
                 'my',
@@ -224,7 +238,7 @@ function ct_dashboard_statistics_widget_output($_post, $_callback_args)
                 } ?>
             </table>
             <?php
-            if ( $apbct->user_token && ! $apbct->data["wl_mode_enabled"] ) {
+            if (apbct_is_user_role_in(array('administrator')) && $apbct->user_token && ! $apbct->data["wl_mode_enabled"] ) {
                 $link = LinkConstructor::buildCleanTalkLink(
                     'dashboard_widget_all_data_link',
                     'my/show_requests',
@@ -243,50 +257,55 @@ function ct_dashboard_statistics_widget_output($_post, $_callback_args)
         <?php
     }
     // Notice at the bottom
-    if ( isset($current_user) && in_array('administrator', $current_user->roles) ) {
-        if ( $apbct->spam_count && $apbct->spam_count > 0 ) {
+    if ( $apbct->spam_count && $apbct->spam_count > 0 ) {
+        $cp_total_stats = '';
+        //Link to CP is only for admins due the token provided
+        if ( apbct_is_user_role_in(array('administrator')) ) {
             $link = LinkConstructor::buildCleanTalkLink(
                 'dashboard_widget_go_to_cp',
                 'my',
                 array(
                     'user_token' => $apbct->user_token,
-                    'cp_mode' => 'antispam'
+                    'cp_mode'    => 'antispam'
                 )
             );
-            echo '<div class="ct_widget_wprapper_total_blocked">'
-                 . ($apbct->data["wl_mode_enabled"] ? '' : '<img src="' . Escape::escUrl($apbct->logo__small__colored) . '" class="ct_widget_small_logo"/>')
-                 . '<span title="' . sprintf(
-                     __(
-                         'This is the count from the %s\'s cloud and could be different to admin bar counters',
-                         'cleantalk-spam-protect'
-                     ) . '">',
-                     $actual_plugin_name
-                 )
-                 . sprintf(
-                 /* translators: %s: Number of spam messages */
-                     __(
-                         '%s%s%s has blocked %s spam for past year. The statistics are automatically updated every 24 hours.',
-                         'cleantalk-spam-protect'
-                     ),
-                     ! $apbct->data["wl_mode_enabled"] ? '<a href="' . $link . '" target="_blank">' : '',
-                     $actual_plugin_name,
-                     ! $apbct->data["wl_mode_enabled"] ? '</a>' : '',
-                     number_format($apbct->data['spam_count'], 0, ',', ' ')
-                 )
-                 . '</span>'
-                 . (! $apbct->white_label && ! $apbct->data["wl_mode_enabled"]
-                    ? '<br><br>'
-                      . '<b style="font-size: 16px;">'
-                      . sprintf(
-                          __('Do you like CleanTalk? %sPost your feedback here%s.', 'cleantalk-spam-protect'),
-                          '<u><a href="https://wordpress.org/support/plugin/cleantalk-spam-protect/reviews/#new-post" target="_blank">',
-                          '</a></u>'
-                      )
-                      . '</b>'
-                    : ''
-                 )
-                 . '</div>';
+            $cp_total_stats =
+                ($apbct->data["wl_mode_enabled"] ? '' : '<img src="' . Escape::escUrl($apbct->logo__small__colored) . '" class="ct_widget_small_logo"/>')
+                . '<span title="'
+                . sprintf(
+                    __(
+                        'This is the count from the %s\'s cloud and could be different to admin bar counters',
+                        'cleantalk-spam-protect'
+                    ) . '">',
+                    $actual_plugin_name
+                )
+                . sprintf(
+                /* translators: %s: Number of spam messages */
+                    __(
+                        '%s%s%s has blocked %s spam for past year. The statistics are automatically updated every 24 hours.',
+                        'cleantalk-spam-protect'
+                    ),
+                    ! $apbct->data["wl_mode_enabled"] ? '<a href="' . $link . '" target="_blank">' : '',
+                    $actual_plugin_name,
+                    ! $apbct->data["wl_mode_enabled"] ? '</a>' : '',
+                    number_format($apbct->data['spam_count'], 0, ',', ' ')
+                )
+                . '</span>';
         }
+        echo '<div class="ct_widget_wprapper_total_blocked">'
+             . $cp_total_stats
+             . (! $apbct->white_label && ! $apbct->data["wl_mode_enabled"]
+                ? '<br><br>'
+                  . '<b style="font-size: 16px;">'
+                  . sprintf(
+                      __('Do you like CleanTalk? %sPost your feedback here%s.', 'cleantalk-spam-protect'),
+                      '<u><a href="https://wordpress.org/support/plugin/cleantalk-spam-protect/reviews/#new-post" target="_blank">',
+                      '</a></u>'
+                  )
+                  . '</b>'
+                : ''
+             )
+             . '</div>';
     }
     echo '</div>';
 }
@@ -506,38 +525,11 @@ function apbct_admin__enqueue_scripts($hook)
     global $apbct;
 
     // Scripts to all admin pages
-    wp_enqueue_script(
-        'cleantalk-modal',
-        APBCT_JS_ASSETS_PATH . '/apbct-public--3--cleantalk-modal.min.js',
-        array('jquery'),
-        APBCT_VERSION
-    );
-    wp_enqueue_script(
-        'ct_admin_common',
-        APBCT_JS_ASSETS_PATH . '/cleantalk-admin.min.js',
-        array('cleantalk-modal', 'jquery'),
-        APBCT_VERSION
-    );
-    wp_enqueue_style(
-        'ct_admin_css',
-        APBCT_CSS_ASSETS_PATH . '/cleantalk-admin.min.css',
-        array(),
-        APBCT_VERSION,
-        'all'
-    );
-    wp_enqueue_style(
-        'ct_icons',
-        APBCT_CSS_ASSETS_PATH . '/cleantalk-icons.min.css',
-        array(),
-        APBCT_VERSION,
-        'all'
-    );
-    wp_enqueue_style(
-        'ct_email_decoder_css',
-        APBCT_CSS_ASSETS_PATH . '/cleantalk-email-decoder.min.css',
-        array(),
-        APBCT_VERSION
-    );
+    ApbctEnqueue::getInstance()->js('apbct-public--3--cleantalk-modal.js', array('jquery'));
+    ApbctEnqueue::getInstance()->js('cleantalk-admin.js', array('apbct-public--3--cleantalk-modal-js', 'jquery'));
+    ApbctEnqueue::getInstance()->css('cleantalk-admin.css');
+    ApbctEnqueue::getInstance()->css('cleantalk-icons.css');
+    ApbctEnqueue::getInstance()->css('cleantalk-email-decoder.css');
 
     $data = array(
         '_ajax_nonce'        => $apbct->ajax_service->getAdminNonce(),
@@ -551,41 +543,24 @@ function apbct_admin__enqueue_scripts($hook)
         'apbctNoticeForceProtectionOn'       => esc_html__('This option affects the reflection of the page by checking the user and adds a cookie "apbct_force_protection_check", which serves as an indicator of successful or unsuccessful verification. If the check is successful, it will no longer run.', 'cleantalk-spam-protect'),
     );
     $data = array_merge($data, EmailEncoder::getLocalizationText());
-    wp_localize_script('ct_admin_common', 'ctAdminCommon', $data);
+    wp_localize_script('cleantalk-admin-js', 'ctAdminCommon', $data);
 
+    /**
+     * Hook. List of allowed user roles for the Dashboard widget.
+     * add_filter('apbct_hook_dashboard_widget_allowed_roles_list', function($roles_list) {
+     *  $roles_list[] = 'editor';
+     *  return $roles_list;
+     * });
+     */
+    $roles_list = apply_filters('apbct_hook_dashboard_widget_allowed_roles_list', array('administrator'));
     // DASHBOARD page JavaScript and CSS
-    if ( $hook == 'index.php' && apbct_is_user_role_in(array('administrator')) ) {
-        wp_enqueue_style(
-            'ct_admin_css_widget_dashboard',
-            APBCT_CSS_ASSETS_PATH . '/cleantalk-dashboard-widget.min.css',
-            array(),
-            APBCT_VERSION,
-            'all'
-        );
-        wp_enqueue_style(
-            'ct_icons',
-            APBCT_CSS_ASSETS_PATH . '/cleantalk-icons.min.css',
-            array(),
-            APBCT_VERSION,
-            'all'
-        );
-
+    if (
+        $hook == 'index.php' &&
+        is_array($roles_list) && apbct_is_user_role_in($roles_list) &&
+        $apbct->settings['wp__dashboard_widget__show'] &&
+        ! $apbct->moderate_ip
+    ) {
         // Enqueue widget scripts if the dashboard widget enabled and not IP license
-        if ( $apbct->settings['wp__dashboard_widget__show'] && ! $apbct->moderate_ip ) {
-            wp_enqueue_script(
-                'ct_canvas_charts_loader',
-                APBCT_JS_ASSETS_PATH . '/cleantalk-dashboard-widget--chartjs.min.js',
-                array(),
-                APBCT_VERSION
-            );
-            wp_enqueue_script(
-                'ct_admin_js_widget_dashboard',
-                APBCT_JS_ASSETS_PATH . '/cleantalk-dashboard-widget.min.js',
-                array('ct_canvas_charts_loader'),
-                APBCT_VERSION
-            );
-        }
-
         // Preparing widget data
         // Parsing brief data 'spam_stat' {"yyyy-mm-dd": spam_count, "yyyy-mm-dd": spam_count} to [["yyyy-mm-dd", "spam_count"], ["yyyy-mm-dd", "spam_count"]]
         $to_chart = array();
@@ -608,7 +583,10 @@ function apbct_admin__enqueue_scripts($hook)
             array_shift($to_chart);
         }
 
-        wp_localize_script('ct_admin_js_widget_dashboard', 'apbctDashboardWidget', array(
+        ApbctEnqueue::getInstance()->css('cleantalk-dashboard-widget.css');
+        $widget_chart_handler = ApbctEnqueue::getInstance()->js('cleantalk-dashboard-widget--chartjs.js', array('jquery'));
+        $widget_handler = ApbctEnqueue::getInstance()->js('cleantalk-dashboard-widget.js', array($widget_chart_handler));
+        wp_localize_script($widget_handler, 'apbctDashboardWidget', array(
             'data' => $to_chart,
         ));
     }
@@ -617,60 +595,29 @@ function apbct_admin__enqueue_scripts($hook)
     if ( $hook == 'settings_page_cleantalk' ) {
         wp_enqueue_media();
 
-        wp_enqueue_script(
-            'cleantalk_admin_js_settings_page',
-            APBCT_JS_ASSETS_PATH . '/cleantalk-admin-settings-page.min.js',
-            array(),
-            APBCT_VERSION
-        );
-        wp_enqueue_style(
-            'cleantalk_admin_css_settings_page',
-            APBCT_CSS_ASSETS_PATH . '/cleantalk-admin-settings-page.min.css',
-            array(),
-            APBCT_VERSION,
-            'all'
-        );
+        ApbctEnqueue::getInstance()->js('cleantalk-admin-settings-page.js');
+        ApbctEnqueue::getInstance()->css('cleantalk-admin-settings-page.css');
 
-        wp_localize_script('cleantalk_admin_js_settings_page', 'ctSettingsPage', array(
+        wp_localize_script('cleantalk-admin-settings-page-js', 'ctSettingsPage', array(
             'ct_subtitle' => $apbct->ip_license ? __('Hosting Anti-Spam', 'cleantalk-spam-protect') : '',
             'ip_license'  => $apbct->ip_license ? true : false,
             'key_changed' => ! empty($apbct->data['key_changed']),
-            'key_is_ok'   => ! empty($apbct->key_is_ok)
+            'key_is_ok'   => ! empty($apbct->key_is_ok) && !empty($apbct->settings['apikey'])
         ));
 
-        wp_enqueue_script(
-            'cleantalk-modal',
-            APBCT_JS_ASSETS_PATH . '/apbct-public--3--cleantalk-modal.min.js',
-            array(),
-            APBCT_VERSION
-        );
+        ApbctEnqueue::getInstance()->js('apbct-public--3--cleantalk-modal.js');
     }
 
     // COMMENTS page JavaScript
     if ( $hook == 'edit-comments.php' ) {
-        wp_enqueue_style(
-            'ct_trp_admin',
-            APBCT_CSS_ASSETS_PATH . '/cleantalk-trp.min.css',
-            array(),
-            APBCT_VERSION
-        );
-        wp_enqueue_script(
-            'ct_trp_admin',
-            APBCT_JS_ASSETS_PATH . '/apbct-public--7--trp.min.js',
-            array(),
-            APBCT_VERSION
-        );
+        ApbctEnqueue::getInstance()->css('cleantalk-trp.css');
+        ApbctEnqueue::getInstance()->js('apbct-public--7--trp.js');
         wp_localize_script(
-            'ct_trp_admin',
+            'apbct-public--7--trp-js',
             'ctTrpAdminLocalize',
             \Cleantalk\ApbctWP\CleantalkRealPerson::getLocalizingData()
         );
-        wp_enqueue_script(
-            'ct_comments_editscreen',
-            APBCT_JS_ASSETS_PATH . '/cleantalk-comments-editscreen.min.js',
-            array(),
-            APBCT_VERSION
-        );
+        ApbctEnqueue::getInstance()->js('cleantalk-comments-editscreen.js');
         $link = LinkConstructor::buildCleanTalkLink(
             'public_comments_page_go_to_cp',
             'my',
@@ -679,7 +626,7 @@ function apbct_admin__enqueue_scripts($hook)
                 'cp_mode' => 'antispam'
             )
         );
-        wp_localize_script('ct_comments_editscreen', 'ctCommentsScreen', array(
+        wp_localize_script('cleantalk-comments-editscreen-js', 'ctCommentsScreen', array(
             'ct_ajax_nonce'               => $apbct->ajax_service->getAdminNonce(),
             'spambutton_text'             => __("Find spam comments", 'cleantalk-spam-protect'),
             'ct_feedback_msg_whitelisted' => __("The sender has been whitelisted.", 'cleantalk-spam-protect'),
@@ -697,20 +644,9 @@ function apbct_admin__enqueue_scripts($hook)
 
     // USERS page JavaScript
     if ( $hook == 'users.php' ) {
-        wp_enqueue_style(
-            'ct_icons',
-            APBCT_CSS_ASSETS_PATH . '/cleantalk-icons.min.css',
-            array(),
-            APBCT_VERSION,
-            'all'
-        );
-        wp_enqueue_script(
-            'ct_users_editscreen',
-            APBCT_JS_ASSETS_PATH . '/cleantalk-users-editscreen.min.js',
-            array(),
-            APBCT_VERSION
-        );
-        wp_localize_script('ct_users_editscreen', 'ctUsersScreen', array(
+        ApbctEnqueue::getInstance()->css('cleantalk-icons.css');
+        ApbctEnqueue::getInstance()->js('cleantalk-users-editscreen.js');
+        wp_localize_script('cleantalk-users-editscreen-js', 'ctUsersScreen', array(
             'spambutton_text'     => __("Find spam-users", 'cleantalk-spam-protect'),
             'ct_show_check_links' => (bool)$apbct->settings['comments__show_check_links'],
             'ct_img_src_new_tab'  => plugin_dir_url(__FILE__) . "images/new_window.gif"

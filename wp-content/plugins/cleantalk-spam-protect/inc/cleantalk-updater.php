@@ -6,6 +6,11 @@ use Cleantalk\ApbctWP\Variables\Server;
 use Cleantalk\ApbctWP\Firewall\SFWUpdateHelper;
 use Cleantalk\Common\TT;
 
+// Prevent direct call
+if ( ! defined('ABSPATH') ) {
+    die('Not allowed!');
+}
+
 /**
  * Main function to compare versions and run necessary update functions.
  *
@@ -1300,4 +1305,76 @@ function apbct_update_to_6_46_1()
     }
 
     $apbct->deleteOption('debug', true);
+}
+
+function apbct_update_to_6_54_1()
+{
+    global $apbct;
+
+    $apbct->settings['data__email_decoder_encode_phone_numbers'] = 0;
+
+    if ($apbct->settings['data__email_decoder']) {
+        $apbct->settings['data__email_decoder_encode_email_addresses'] = 1;
+    } else {
+        $apbct->settings['data__email_decoder_encode_email_addresses'] = 0;
+    }
+
+    if ( ! isset($apbct->settings['forms__gravityforms_save_spam']) ) {
+        $apbct->settings['forms__gravityforms_save_spam'] =
+            isset($apbct->default_settings['forms__gravityforms_save_spam'])
+                ? $apbct->default_settings['forms__gravityforms_save_spam']
+                : 1;
+        $apbct->saveSettings();
+    }
+
+    $apbct->saveSettings();
+}
+
+function apbct_update_to_6_60_0()
+{
+    global $wpdb;
+
+    // Check if the table exists first to avoid unnecessary queries
+    if ($wpdb->get_var("SHOW TABLES LIKE '" . APBCT_TBL_SESSIONS . "'") !== APBCT_TBL_SESSIONS) {
+        return;
+    }
+
+    $query = $wpdb->prepare('
+        SELECT 
+            index_name AS index_name,
+            COUNT(*) AS column_count
+        FROM 
+            information_schema.statistics
+        WHERE 
+            table_schema = %s AND
+            table_name = %s AND
+            index_name IN (
+                SELECT index_name 
+                FROM information_schema.statistics 
+                WHERE column_name = \'id\'
+            )
+        GROUP BY 
+            index_name;
+    ', $wpdb->dbname, APBCT_TBL_SESSIONS);
+
+    $indexes = $wpdb->get_results($query, ARRAY_A);
+
+    $wrong_index = false;
+    if (!empty($indexes)) {
+        $index_data = $indexes[0];
+        if (isset($index_data['column_count'], $index_data['index_name'])) {
+            $wrong_index = (
+                strtoupper($index_data['index_name']) !== 'PRIMARY' ||
+                $index_data['column_count'] != 1 // Loose comparison for type flexibility
+            );
+        }
+    }
+
+    if ($wrong_index) {
+        $drop_result = $wpdb->query('DROP TABLE IF EXISTS ' . APBCT_TBL_SESSIONS);
+        if ($drop_result !== false) {
+            $db_creator = new \Cleantalk\ApbctWP\UpdatePlugin\DbTablesCreator();
+            $db_creator->createTable(APBCT_TBL_SESSIONS); // Use the original constant
+        }
+    }
 }

@@ -13,6 +13,8 @@ new WPCOM_JSON_API_GET_Site_Endpoint(
 		'path_labels'                          => array(
 			'$site' => '(int|string) Site ID or domain',
 		),
+		'rest_route'                           => '/site',
+		'rest_min_jp_version'                  => '14.5-a.2',
 		'allow_jetpack_site_auth'              => true,
 
 		'allow_fallback_to_jetpack_blog_token' => true,
@@ -40,6 +42,7 @@ class WPCOM_JSON_API_GET_Site_Endpoint extends WPCOM_JSON_API_Endpoint {
 	 */
 	public static $site_format = array(
 		'ID'                          => '(int) Site ID',
+		'slug'                        => '(string) Slug of site',
 		'name'                        => '(string) Title of site',
 		'description'                 => '(string) Tagline or description of site',
 		'URL'                         => '(string) Full URL to the site',
@@ -205,7 +208,6 @@ class WPCOM_JSON_API_GET_Site_Endpoint extends WPCOM_JSON_API_Endpoint {
 		'is_difm_lite_in_progress',
 		'site_intent',
 		'site_partner_bundle',
-		'site_goals',
 		'onboarding_segment',
 		'site_vertical_id',
 		'blogging_prompts_settings',
@@ -228,6 +230,7 @@ class WPCOM_JSON_API_GET_Site_Endpoint extends WPCOM_JSON_API_Endpoint {
 	 * @var array $jetpack_response_field_additions
 	 */
 	protected static $jetpack_response_field_additions = array(
+		'slug',
 		'subscribers_count',
 		'site_migration',
 		'site_owner',
@@ -462,6 +465,9 @@ class WPCOM_JSON_API_GET_Site_Endpoint extends WPCOM_JSON_API_Endpoint {
 		switch ( $key ) {
 			case 'ID':
 				$response[ $key ] = $this->site->blog_id;
+				break;
+			case 'slug':
+				$response[ $key ] = $this->site->get_slug();
 				break;
 			case 'name':
 				$response[ $key ] = $this->site->get_name();

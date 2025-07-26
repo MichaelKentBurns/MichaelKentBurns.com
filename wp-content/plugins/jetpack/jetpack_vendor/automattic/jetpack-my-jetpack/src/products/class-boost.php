@@ -52,6 +52,13 @@ class Boost extends Product {
 	public static $category = 'performance';
 
 	/**
+	 * Defines whether or not to show a product interstitial as tiered pricing or not
+	 *
+	 * @var bool
+	 */
+	public static $is_tiered_pricing = true;
+
+	/**
 	 * Boost has a standalone plugin
 	 *
 	 * @var bool
@@ -103,7 +110,7 @@ class Boost extends Product {
 	 * @return string
 	 */
 	public static function get_description() {
-		return __( 'Speed up your site and improve SEO in seconds', 'jetpack-my-jetpack' );
+		return __( 'Improves your site speed and performance.', 'jetpack-my-jetpack' );
 	}
 
 	/**

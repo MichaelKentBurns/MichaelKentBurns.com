@@ -53,6 +53,10 @@ class Status {
 		 */
 		$offline_mode = (bool) apply_filters( 'jetpack_offline_mode', $offline_mode );
 
+		if ( ! $offline_mode ) {
+			$offline_mode = (bool) get_option( 'jetpack_offline_mode' );
+		}
+
 		Cache::set( 'is_offline_mode', $offline_mode );
 		return $offline_mode;
 	}
@@ -375,7 +379,7 @@ class Status {
 	public function is_coming_soon() {
 		$ret = Cache::get( 'is_coming_soon' );
 		if ( null === $ret ) {
-			$is_coming_soon = (bool) ( function_exists( 'site_is_coming_soon' ) && \site_is_coming_soon() )
+			$is_coming_soon = ( function_exists( 'site_is_coming_soon' ) && \site_is_coming_soon() )
 				|| get_option( 'wpcom_public_coming_soon' );
 
 			/**

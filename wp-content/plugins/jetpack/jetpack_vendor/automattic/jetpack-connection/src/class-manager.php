@@ -156,6 +156,13 @@ class Manager {
 		add_action( 'deleted_user', array( $manager, 'disconnect_user_force' ), 9, 1 );
 		add_action( 'remove_user_from_blog', array( $manager, 'disconnect_user_force' ), 9, 1 );
 
+		// Add hooks for cleaning up account mismatch transients
+		$user_account_status = new User_Account_Status();
+		add_action( 'delete_user', array( $user_account_status, 'clean_account_mismatch_transients' ), 9, 1 );
+		add_action( 'remove_user_from_blog', array( $user_account_status, 'clean_account_mismatch_transients' ), 9, 1 );
+		add_action( 'user_register', array( $user_account_status, 'clean_account_mismatch_transients' ), 9, 1 );
+		add_action( 'profile_update', array( $user_account_status, 'clean_account_mismatch_transients' ), 9, 1 );
+
 		$manager->add_connection_status_invalidation_hooks();
 
 		// Set up package version hook.
@@ -262,7 +269,7 @@ class Manager {
 			// Hack to preserve $HTTP_RAW_POST_DATA.
 			add_filter( 'xmlrpc_methods', array( $this, 'xmlrpc_methods' ) );
 
-		} elseif ( $has_connected_owner && ! $is_signed ) {
+		} elseif ( $has_connected_owner ) {
 			// The jetpack.authorize method should be available for unauthenticated users on a site with an
 			// active Jetpack connection, so that additional users can link their account.
 			$callback = array( $this->xmlrpc_server, 'authorize_xmlrpc_methods' );
@@ -644,8 +651,7 @@ class Manager {
 
 			$has_blog_id = (bool) \Jetpack_Options::get_option( 'id' );
 			if ( $has_blog_id ) {
-				$has_blog_token     = (bool) $this->get_tokens()->get_access_token();
-				self::$is_connected = ( $has_blog_id && $has_blog_token );
+				self::$is_connected = (bool) $this->get_tokens()->get_access_token();
 			} else {
 				// Short-circuit, no need to check for tokens if there's no blog ID.
 				self::$is_connected = false;
@@ -1017,6 +1023,10 @@ class Manager {
 
 		$is_disconnected_locally = false;
 		if ( $is_disconnected_from_wpcom || $force_disconnect_locally ) {
+			// Get the WordPress.com email before disconnecting the user
+			$wpcom_user_data = $this->get_connected_user_data( $user_id );
+			$wpcom_email     = isset( $wpcom_user_data['email'] ) ? $wpcom_user_data['email'] : null;
+
 			// Disconnect the user locally.
 			$is_disconnected_locally = $this->get_tokens()->disconnect_user( $user_id );
 
@@ -1024,6 +1034,12 @@ class Manager {
 				// Delete cached connected user data.
 				$transient_key = "jetpack_connected_user_data_$user_id";
 				delete_transient( $transient_key );
+
+				// Clean up account mismatch transients for this user
+				if ( $wpcom_email ) {
+					$user_account_status = new User_Account_Status();
+					$user_account_status->clean_account_mismatch_transients( $wpcom_email );
+				}
 
 				/**
 				 * Fires after the current user has been unlinked from WordPress.com.
@@ -1635,7 +1651,7 @@ class Manager {
 	 *
 	 * @since 1.7.0
 	 * @since-jetpack 5.4.0
-	 * @param Integer $min_timeout the minimum timeout value.
+	 * @param int $min_timeout the minimum timeout value.
 	 **/
 	public function set_min_time_limit( $min_timeout ) {
 		$timeout = $this->get_max_execution_time();
@@ -2711,6 +2727,8 @@ class Manager {
 	/**
 	 * If the site-level connection is active, add the list of plugins using connection to the heartbeat (except Jetpack itself)
 	 *
+	 * @since 6.11.0 Add the list of Jetpack package versions to the heartbeat.
+	 *
 	 * @param array $stats The Heartbeat stats array.
 	 * @return array $stats
 	 */
@@ -2727,6 +2745,9 @@ class Manager {
 				$stats[ $stats_group ][] = $plugin_slug;
 			}
 		}
+
+		$stats['jetpack_package_versions'] = apply_filters( 'jetpack_package_versions', array() );
+
 		return $stats;
 	}
 
