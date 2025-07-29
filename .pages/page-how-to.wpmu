@@ -1,5 +1,5 @@
 <!-- wp:list -->
-<ul><!-- wp:list-item -->
+<ul class="wp-block-list"><!-- wp:list-item -->
 <li><a href="https://michaelkentburns.com/index.php/how-to/how-to-contribute-to-this-site/" data-type="page" data-id="115">Contribute to this site</a></li>
 <!-- /wp:list-item -->
 
@@ -21,5 +21,17 @@
 
 <!-- wp:list-item -->
 <li><a href="https://michaelkentburns.com/index.php/using-xampp-for-development-work/" data-type="page" data-id="247">Install a full stack on your local development computer</a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><a href="https://michaelkentburns.com/index.php/how-to/how-to-install-wordpress-inside-a-xampp-stack-on-your-local-development-machine/" data-type="page" data-id="824">Install WordPress inside XAMPP on your local development computer.</a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li></li>
 <!-- /wp:list-item --></ul>
 <!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->

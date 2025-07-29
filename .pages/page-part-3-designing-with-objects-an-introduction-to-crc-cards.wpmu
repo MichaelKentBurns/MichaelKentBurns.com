@@ -1,0 +1,87 @@
+<!-- wp:paragraph -->
+<p>We've discussed the power of object-oriented thinking and its importance for software design. Now, let's get practical. How do we <em>start</em> designing with objects? One excellent, low-tech way to begin is by using CRC cards. These simple tools can be incredibly effective for brainstorming and exploring the relationships between objects in your design.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>What are CRC Cards?</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>CRC stands for Class, Responsibility, and Collaborator. These cards, traditionally 3x5 index cards, are a wonderfully tactile and collaborative approach to object-oriented design. They offer a tangible and accessible entry point, particularly useful before jumping into more complex modeling tools. <a href="https://en.wikipedia.org/wiki/Class-responsibility-collaboration_card" data-type="link" data-id="https://en.wikipedia.org/wiki/Class-responsibility-collaboration_card">As the Wikipedia page on CRC cards&nbsp;</a>explains, they represent a simplified method for describing the basics of object-oriented software design. I highly recommend giving that page a quick read.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>How Do CRC Cards Work?</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Imagine you're designing a system. As you discuss the design, whenever you identify a potential class (a type of object), you grab a blank CRC card. On the card, you write the name of the class at the top. Below the name, you list the <em>responsibilities</em> of that class – what it's supposed to do. Finally, in the right-hand column, you note the <em>collaborators</em> – other classes that this class needs to interact with to fulfill its responsibilities.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Let's illustrate with an example. Suppose we're designing a simple online store. We might identify a class called Customer. Its responsibilities might include "Place an order," "View order history," and "Update profile." To place an order, the Customer class would likely need to collaborate with an Order class and a Product class. So, we'd write Order and Product in the collaborators' column on the Customer card.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image {"id":786,"sizeSlug":"full","linkDestination":"none"} -->
+<figure class="wp-block-image size-full"><img src="https://michaelkentburns.com/wp-content/uploads/2025/02/customer-CRC.jpg" alt="" class="wp-image-786"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p>As the design discussion progresses, you might realize you also need a ShoppingCart class. You'd grab another card and start filling it out. Perhaps ShoppingCart's responsibilities include "Add item," "Remove item," and "Calculate total." It would collaborate with the Customer (to associate the cart with a customer) and the Product (to get the price of items).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image {"id":788,"sizeSlug":"full","linkDestination":"none"} -->
+<figure class="wp-block-image size-full"><img src="https://michaelkentburns.com/wp-content/uploads/2025/02/shopping-CRC.jpg" alt="" class="wp-image-788"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p><strong>The Magic of Physical Cards</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The beauty of CRC cards lies in their physicality. During a design session, you physically move the cards around on the table. You lay related cards next to each other. When you introduce a new class, you place its card near the cards it interacts with. This visual representation helps you quickly grasp the relationships between different parts of your design.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>You can also use the cards to "role-play" or walk through typical usage scenarios. For instance, you might simulate a customer adding items to their shopping cart by physically moving the ShoppingCart card and discussing how it interacts with the Product cards. This process helps you uncover potential design flaws or missing responsibilities early on.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Pen and Paper vs. Digital Tools</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>While there are web applications and software tools for creating CRC cards, I find that pen and paper work best, especially for initial brainstorming. There's something about the tactile nature of writing on index cards and physically manipulating them that fosters creativity and collaboration. The low-tech approach also keeps the focus on the design itself, rather than getting bogged down in software intricacies. When the design starts to solidify, then a more structured digital tool can be useful for documentation.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>A Simple but Powerful Technique</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>CRC cards might seem almost <em>too</em> simple, but don't let their simplicity fool you. They're a powerful tool for getting started with object-oriented design. They encourage collaboration, help you identify key classes and their responsibilities, and uncover potential design flaws early in the process. They're a great way to start "thinking in objects" and building a solid foundation for your software projects.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>What have you learned?</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Think about a small software project you’d like to build. Even something like a simple to-do list application. Try sketching out some CRC cards for the key classes you think you’d need. What responsibilities would they have? Who would they collaborate with? Share your initial thoughts in the comments!</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>What's next?</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Now that you've got a grasp of CRC cards and how they can help you start designing with objects, let's explore a more formal and visual approach to software design using the Unified Modeling Language, or UML. UML offers a standardized way to diagram and document your designs. Click here to continue to the next article: <a href="https://www.google.com/" target="_blank" rel="noreferrer noopener">Visualizing Your Designs: An Introduction to UML</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Special note from Michael regarding comments on this article:</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>When you read the comments on this page you will find a long comment by Ashuza.  It's a good one, but before you dive too deep into his comment, skip ahead to the following comment where I put some perspective on his comment.   Then, based on my comment, go ahead and read at least the first parts of Ashuza's comment.   </p>
+<!-- /wp:paragraph -->

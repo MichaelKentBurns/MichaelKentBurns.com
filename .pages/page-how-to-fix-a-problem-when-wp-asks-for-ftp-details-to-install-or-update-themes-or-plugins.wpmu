@@ -1,0 +1,11 @@
+<!-- wp:paragraph -->
+<p>On a new WP install, you might run into a problem the first time you try to install or update a plugin or theme in the wp-admin panel.    You will try to install or update and suddenly you will get a popup asking for FTP credentials to be used to do the install.   But you might be puzzled because you are working directly on the machine and WP should be able to download the new software directly into the WP directory locally.  </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Here is the solution I found: <a href="https://logicox.com/how-to-fix-wordpress-asking-for-ftp-credentials/">https://logicox.com/how-to-fix-wordpress-asking-for-ftp-credentials/</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->

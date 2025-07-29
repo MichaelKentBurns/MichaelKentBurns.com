@@ -1,5 +1,5 @@
 <!-- wp:list -->
-<ul><!-- wp:list-item -->
+<ul class="wp-block-list"><!-- wp:list-item -->
 <li>Getting to the administrative control panel.</li>
 <!-- /wp:list-item -->
 
@@ -8,6 +8,14 @@
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li></li>
+<li><a href="https://michaelkentburns.com/index.php/how-to/how-to-install-wordpress-inside-a-xampp-stack-on-your-local-development-machine/">Install WordPress inside XAMPP on your local development computer.</a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><a href="https://michaelkentburns.com/index.php/how-to/how-to-install-wordpress-inside-a-xampp-stack-on-your-local-development-machine/" data-type="page" data-id="824">Fix a problem when WP asks for FTP details to install or update themes or plugins.</a></li>
 <!-- /wp:list-item --></ul>
 <!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->

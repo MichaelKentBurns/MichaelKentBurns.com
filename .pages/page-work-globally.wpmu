@@ -30,6 +30,26 @@
 <p>Using a GitHub account with repositories for each project that you have done allows others (if your repo is public) to see not only your code and documentation, but also the process you used to make the changes.   Each time you fix a bug or add a new feature, you should push that to GitHub with a comment that describes the fix or new feature.  </p>
 <!-- /wp:paragraph -->
 
+<!-- wp:image {"id":420,"width":"65px","height":"auto","sizeSlug":"full","linkDestination":"none"} -->
+<figure class="wp-block-image size-full is-resized"><img src="https://michaelkentburns.com/wp-content/uploads/2024/05/New.jpg" alt="" class="wp-image-420" style="width:65px;height:auto"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p>The next two paragraphs are about new tools that are very helpful and were added on June 21st, 2025.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong><a href="https://cli.github.com">GitHub CLI</a> </strong>is command line tool that handles the somewhat confusing interaction between your git repository directory (or <a href="https://desktop.github.com/download/">GitDesktop application</a>) and your GitHub account via the <a href="https://github.com/">GitHub web interface</a> or the <a href="https://github.com/apps/desktop">GitHub local application</a> . I know, it's all so complicated. But the GitHub CLI allows you to use your shell commands to quickly clone from the GitHub repository to your local machine, and also to publish your local repository and create a new repository on the GitHub server. This tool is installed into your shell environment and appears as a 'gh' command.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>In addition to all of that, most modern IDE tools (such as VS Code, WebStorm, PHPStorm, Apples Xcode, and many others) integrate Git support in their UI.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Now go try it for yourself.</h2>
+<!-- /wp:heading -->
+
 <!-- wp:paragraph -->
 <p>With all that in mind you should take action now by taking my <a href="https://michaelkentburns.com/index.php/challenge-setup-your-own-github-account-and-install-desktop-github-app/" data-type="page" data-id="187">Challenge: Setup your own GitHub account and install Desktop GitHub app</a>.</p>
 <!-- /wp:paragraph -->

@@ -14,7 +14,16 @@
 <!-- wp:heading {"fontSize":"medium"} -->
 <h2 class="wp-block-heading has-medium-font-size"><a href="https://michaelkentburns.com/index.php/works-in-progress/software-design-section/part-2-thinking-in-objectswhy-object-oriented-design-matters/">Part 2 - Thinking in Objects:Why Object-Oriented Design Matters</a></h2>
 <p>Part 2 - Thinking in Objects: Why Object-Oriented Design Matters explores the fundamental concepts of object-oriented programming (OOP), explaining how thinking in terms of objects, their properties, and behaviors can significantly improve software design and development. It emphasizes the importance of learning OOP principles early on, even for beginners, and highlights the numerous benefits of this design paradigm.</p>
-<h2 class="wp-block-heading has-medium-font-size">Part 3 -</h2>
+<h2 class="wp-block-heading has-medium-font-size"><a href="https://michaelkentburns.com/index.php/works-in-progress/software-design-section/part-3-designing-with-objects-an-introduction-to-crc-cards/">Part 3 - Designing with Objects: An Introduction to CRC Cards</a></h2>
+<p>An Introduction to CRC Cards introduces a simple yet powerful technique for object-oriented design using Class-Responsibility-Collaborator (CRC) cards. It explains how to use these physical cards to brainstorm, identify classes, define their responsibilities, and explore their collaborations, providing a practical starting point for software design.</p>
+<h2 class="wp-block-heading has-medium-font-size"><a href="https://michaelkentburns.com/index.php/works-in-progress/software-design-section/visualizing-your-designs-an-introduction-to-uml/">Part 4 - Visualizing Your Designs: An Introduction to UML</a></h2>
+<p>"Visualizing Your Designs: An Introduction to UML" introduces Unified Modeling Language (UML) as a tool for creating visual blueprints of software designs. <span class="citation-0 recitation citation-end-0">It explains how UML diagrams, such as class, use case, and sequence diagrams, help communicate and understand the structure and behavior of software systems, making complex designs easier to grasp and share.</span></p>
+<header class="entry-header">
+<p>&nbsp;</p>
+</header><header class="entry-header">
+<p>&nbsp;</p>
+</header>
+<div class="entry-content"> </div>
 <h2 class="wp-block-heading has-medium-font-size"> </h2>
 <!-- /wp:heading -->
 

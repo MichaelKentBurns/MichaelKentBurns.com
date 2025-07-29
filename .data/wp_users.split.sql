@@ -1,9 +1,9 @@
 /*M!999999\- enable the sandbox mode */ 
--- MariaDB dump 10.19  Distrib 10.5.28-MariaDB, for debian-linux-gnu (x86_64)
+-- MariaDB dump 10.19  Distrib 10.5.29-MariaDB, for debian-linux-gnu (x86_64)
 --
 -- Host: localhost    Database: hynxgrbyjv
 -- ------------------------------------------------------
--- Server version	10.5.28-MariaDB-deb11-log
+-- Server version	10.5.29-MariaDB-deb11-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -47,7 +47,7 @@ CREATE TABLE `wp_users` (
 
 LOCK TABLES `wp_users` WRITE;
 /*!40000 ALTER TABLE `wp_users` DISABLE KEYS */;
-INSERT INTO `wp_users` VALUES (1,'michaelkentburns@gmail.com','$P$BYU5QjN1.rTMUuyFqotafBeTNUoJRr0','michael','michaelkentburns@gmail.com','https://michaelkentburns.com','2023-03-28 22:47:23','',0,'Michael'),
+INSERT INTO `wp_users` VALUES (1,'michaelkentburns@gmail.com','$wp$2y$10$GQ0kOolRMv7RI9o7c4TyzOao.pdk3i7xdyOac2iDVuwZrmXX8jkKS','michael','michaelkentburns@gmail.com','https://michaelkentburns.com','2023-03-28 22:47:23','',0,'Michael'),
 (2,'Michael','$P$B/27ElBvfVdnDyLg9xlfphS.IiZIxN1','michael-2','MichaelBurns@mac.com','http://MichaelKentBurns.com','2023-04-01 23:43:21','',0,'Michael Burns'),
 (4,'Mike','$P$BDQ0yDRwMrFDa9HdCQSkUpqB0fZ6Qu.','mike','Mike@michaelkentburns.com','','2024-01-20 23:51:53','1705794713:$P$BB7FXpt7dr3lGgqUPI61Avg5xmaC1r0',0,'Mike Burns'),
 (5,'Bahati Philemon','$P$BASTWB9GDJHE6JjNMN3e7QqMut9uOU1','bahati-philemon','bahatiphilmon8@gmail.com','https://bahatiphilemon.netlify.app','2024-04-01 20:11:32','',0,'Philemon Bahati'),
@@ -67,4 +67,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-02-18 22:25:56
+-- Dump completed on 2025-07-29 20:50:33

@@ -1,0 +1,331 @@
+<!-- wp:paragraph -->
+<p>Alright, folks! We've dipped our toes into object-oriented design with CRC cards, and now it's time to talk about a more structured way to visualize our software blueprints: Unified Modeling Language, or UML.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Now, don't let the name intimidate you. Think of UML as a universal language for drawing pictures of your software. Just like architects use blueprints to show how buildings will look, we use UML diagrams to show how our software systems will work. This article is just a quick peek. We'll focus on a few key diagrams to get you started, and I'll point you to some great resources if you want to dive deeper.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Why Bother with UML?</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Imagine trying to describe a complex software system in words alone. It'd be like trying to explain how a car engine works just by talking about it—a jumbled mess! UML helps us avoid that. It lets us draw pictures that make our designs much easier to understand and share.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>The Big Picture: UML Diagram Categories</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>UML diagrams are grouped into two main categories:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item -->
+<li><strong>Structure Diagrams:</strong> These show the static structure of your system—the classes, objects, components, and how they relate to each other.                                               Examples: Class Diagram, Object Diagram, Component Diagram, Deployment Diagram, Package Diagram, Composite Structure Diagram, <strong>Architecture Diagram</strong>.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Behavior Diagrams:</strong> These show the dynamic behavior of your system—how objects interact, how the system responds to events, and how it changes over time.   Examples: Use Case Diagram, Activity Diagram, <strong>State Machine Diagram</strong>, Interaction Diagrams (which include <strong>Sequence Diagrams</strong>, Communication Diagrams, Interaction Overview Diagrams, and Timing Diagrams).<!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item -->
+<li><strong>Entity Relationship Diagram</strong> is another very useful diagram, although it is not officially part of the UML standard, it is commonly used in conjunction with UML.</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list --></li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>We'll focus on a few of these today: Class Diagrams, State Machine Diagrams, Architecture Diagrams, Sequence Diagrams and ER Diagrams.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image {"id":811,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://michaelkentburns.com/wp-content/uploads/2025/03/UML-Diagrams-1024x632.png" alt="" class="wp-image-811"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p><strong>1. Class Diagrams: Building the Foundation</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Think of class diagrams as the blueprints for your software's building blocks. They show the classes (types of objects), their attributes (data), and their relationships.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Let's use our online store example. Imagine these classes like Customer, Product, Order, and ShoppingCart</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item -->
+<li>Customer: Attributes like name, address, email.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Order: Attributes like orderDate, orderTotal.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Product: Attributes like productName, price.</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>Relationships: A Customer places Orders; a ShoppingCart contains Products. This Diagram will show all of these elements and how they connect.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image {"id":812,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://michaelkentburns.com/wp-content/uploads/2025/03/class-diagram-952x1024.png" alt="" class="wp-image-812"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p><strong>Why Class Diagrams are your friend:</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item -->
+<li>They give you a clear visual overview of your system's structure.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>They help you think about the data your system needs.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>They make it easy to see how different parts of your system connect.</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p><strong>2. State Machine Diagrams: Tracking Changes</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>State machine diagrams show how an object changes its state over time. Think of it like a flowchart for an object's life. But here's the key: the transitions between states are triggered by <em>events</em>.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Let's say we have an <code>Order</code> object. It might have these states: "Pending," "Processing," "Shipped," and "Delivered." A state diagram would show how the order transitions from one state to another. For example, when the customer pays, the order moves from "Pending" to "Processing."</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>But it's not just <em>what</em> changes, it's <em>how</em> it changes. Those labels on the lines between states, like "Payment Received" or "Shipment Confirmed," represent <em>events</em>. These events are what cause the transitions.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Think of events as triggers:</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item -->
+<li><strong>"Payment Received"</strong>: This event might be generated when the payment gateway confirms a successful transaction.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>"Shipment Confirmed"</strong>: This event might be generated when the shipping service sends a notification that the order has been shipped.</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>These events are crucial because they represent real interactions or actions that happen within the software. A mouse click, a form submission, a server response—all of these can generate events that trigger state transitions.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The state diagram, then, is a bird's-eye view of the key events and state changes that occur during the object's lifecycle. It's not just about what states exist, but about <em>how</em> the object moves from one state to another, driven by these important events. They represent the actions that the software is taking to satisfy the customer.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Why State Diagrams are helpful:</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item -->
+<li>They help you visualize how your system handles different scenarios.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>They prevent you from forgetting to handle edge cases.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>They are very useful to describe the lifecycle of objects and the events that drive those lifecycles.</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:image {"id":819,"sizeSlug":"full","linkDestination":"none"} -->
+<figure class="wp-block-image size-full"><img src="https://michaelkentburns.com/wp-content/uploads/2025/03/state-machine2.png" alt="" class="wp-image-819"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p><strong>Why State Diagrams are helpful:</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item -->
+<li>They help you visualize how your system handles different scenarios.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>They prevent you from forgetting to handle edge cases.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>They are very useful to describe the lifecyle of objects.</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p><strong>3. Architecture Diagrams: Seeing the Big Picture</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Architecture diagrams provide a high-level overview of your system's structure. They show the major components and how they interact.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>For our online store, We'd have components like a "Frontend" (user interface), "Backend" (server-side logic), and "Database" (data storage). The diagram would show how these components interact (e.g., the Frontend sends requests to the Backend, which retrieves data from the Database). This diagram will show the overall flow of information, and the different parts of the application.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image {"id":814,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://michaelkentburns.com/wp-content/uploads/2025/03/architecture-440x1024.png" alt="" class="wp-image-814"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p><strong>Why Architecture Diagrams are important:</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item -->
+<li>They help you understand the overall design of your system.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>They make it easier to communicate your design to others.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>They are great to explain the technical infrastructure of the system.</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p><strong>4. Sequence Diagrams: Showing Object Interactions</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Sequence diagrams show how objects interact with each other over time. They're like a timeline of messages passed between objects.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Imagine a Customer adding a Product to their ShoppingCart. The diagram would show the Customer object sending a message to the ShoppingCart object, which in turn interacts with the Product object. It will show the order of the messages, and the objects involved. This diagram helps visualize the step by step process of an action.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image {"id":815,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://michaelkentburns.com/wp-content/uploads/2025/03/sequence-diagram-1024x431.png" alt="" class="wp-image-815"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p><strong>Why Sequence Diagrams are useful:</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item -->
+<li>They help you understand the flow of your system.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>They make it easy to identify potential bottlenecks.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>They are very useful to understand complex interactions.</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p><strong>5. ER Diagrams: Modeling Data</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>ER (Entity-Relationship) diagrams are used to model the data in your system. They show the entities (tables), their attributes (columns), and their relationships.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>In our online store, we might have entities like: Customers, Products, Orders, Categories. Relationships: A Customer places many Orders; a Product belongs to a Category. This diagram will show the data tables, and how they relate to one another.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image {"id":816,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://michaelkentburns.com/wp-content/uploads/2025/03/ERD-1024x793.png" alt="" class="wp-image-816"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p><strong>Why ER Diagrams are important:</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item -->
+<li>They help you design your database.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>They make it easy to understand the data in your system.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>They are essential to build databases.</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p><strong>Where to Learn More:</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>This is just a quick introduction to UML. If you want to dive deeper, here are some excellent resources:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item -->
+<li><strong>Wikipedia:</strong> A great overview of UML: <a href="https://www.google.com/url?sa=E&amp;source=gmail&amp;q=https://en.wikipedia.org/wiki/Unified_Modeling_Language" target="_blank" rel="noreferrer noopener">https://en.wikipedia.org/wiki/Unified_Modeling_Language</a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Visual Paradigm's UML Tutorial:</strong> A very comprehensive tutorial: <a href="https://www.google.com/search?q=https://www.visual-paradigm.com/guide/uml/what-is-uml/" target="_blank" rel="noreferrer noopener">https://www.visual-paradigm.com/guide/uml/what-is-uml/</a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Lucidchart's UML Tutorial:</strong> Another good tutorial: <a href="https://www.google.com/search?q=https://www.lucidchart.com/pages/uml-diagram" target="_blank" rel="noreferrer noopener">https://www.lucidchart.com/pages/uml-diagram</a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Geeksforgeeks: </strong><a href="https://www.geeksforgeeks.org/unified-modeling-language-uml-introduction/"><br>https://www.geeksforgeeks.org/unified-modeling-language-uml-introduction/</a></li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p><strong>Don't Get Overwhelmed!</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>UML can seem complex, but start with the basics. Practice drawing simple diagrams, and you'll get the hang of it. Remember, it's a tool to help you think and communicate clearly.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>What have you learned?</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Try drawing a simple class diagram for a small application you'd like to build. Share your designs and thoughts in the comments!</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>What's next?</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Now that you have a basic understanding of UML, you can start using it to visualize your software designs. In the next article, we will be looking at some practical applications of UML.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->
