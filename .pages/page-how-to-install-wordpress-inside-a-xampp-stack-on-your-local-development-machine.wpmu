@@ -12,20 +12,16 @@
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li>On a Mac you may have to consult this:  <a href="https://www.macobserver.com/tips/how-to/fixing-macos-cannot-verify-app-free-malware/">fixing-macos-cannot-verify-app-free-malware</a></li>
+<li>On a Mac you may have to consult this:&nbsp; <a href="https://www.macobserver.com/tips/how-to/fixing-macos-cannot-verify-app-free-malware/">fixing-macos-cannot-verify-app-free-malware</a></li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li>Possible:  Nginx detour: You may see this if you have already installed NGINX:<!-- wp:list -->
-<ul class="wp-block-list"><!-- wp:list-item -->
-<li></li>
-<!-- /wp:list-item --></ul>
-<!-- /wp:list --></li>
+<li>Possible:  Nginx detour: You may see this if you have already installed NGINX:</li>
 <!-- /wp:list-item --></ul>
 <!-- /wp:list -->
 
-<!-- wp:image -->
-<figure class="wp-block-image"><img alt="Screenshot 2025-06-16 at 5.22.34 PM.png"/></figure>
+<!-- wp:image {"id":843,"sizeSlug":"full","linkDestination":"none"} -->
+<figure class="wp-block-image size-full"><img src="https://michaelkentburns.com/wp-content/uploads/2025/07/Welcome-to-nginx.png" alt="" class="wp-image-843"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:paragraph -->
@@ -44,21 +40,25 @@
 <ul class="wp-block-list"><!-- wp:list-item -->
 <li>In the control panel for XAMPP (which differs for different OSs (Mac, Linux, Windows))<!-- wp:list -->
 <ul class="wp-block-list"><!-- wp:list-item -->
-<li>Start at least MySQL Database and Apache Web Server </li>
+<li>Start at least MySQL Database and Apache Web Server&nbsp;</li>
 <!-- /wp:list-item --></ul>
 <!-- /wp:list --></li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
 <li>When those services are up, the main control panel has a button: “Go to Application”  which opens a tab on your web browser and opens the dashboard of XAMPP.   It should look like this:  </li>
-<!-- /wp:list-item -->
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
 
-<!-- wp:list-item -->
-<li><img src="blob:https://michaelkentburns.com/85c3b976-1705-4450-9ebd-f92d6b8b0130" alt="Screenshot 2025-06-16 at 5.34.45 PM.png"></li>
-<!-- /wp:list-item -->
+<!-- wp:image {"id":844,"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://michaelkentburns.com/wp-content/uploads/2025/07/XAMPP-Apache-MariaDB-PHP-Perl-1024x672.png" alt="" class="wp-image-844"/></figure>
+<!-- /wp:image -->
 
-<!-- wp:list-item -->
-<li>You should explore this top level links:<!-- wp:list -->
+<!-- wp:heading {"level":4} -->
+<h4 class="wp-block-heading">You should explore these top level links::</h4>
+<!-- /wp:heading -->
+
+<!-- wp:list -->
 <ul class="wp-block-list"><!-- wp:list-item -->
 <li>Apache Friends</li>
 <!-- /wp:list-item -->
@@ -78,9 +78,11 @@
 <!-- wp:list-item -->
 <li>phpMyAdmin</li>
 <!-- /wp:list-item --></ul>
-<!-- /wp:list --></li>
-<!-- /wp:list-item --></ul>
 <!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->
 
 <!-- wp:list -->
 <ul class="wp-block-list"><!-- wp:list-item -->
@@ -112,7 +114,7 @@
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li>htdocs </li>
+<li>htdocs&nbsp;</li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
@@ -120,7 +122,7 @@
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li>For Mac:  manager-osx.app</li>
+<li>For Mac:&nbsp; manager-osx.app</li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
@@ -132,7 +134,7 @@
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li> </li>
+<li>&nbsp;</li>
 <!-- /wp:list-item --></ul>
 <!-- /wp:list --></li>
 <!-- /wp:list-item --></ul>
@@ -148,7 +150,7 @@
 <!-- wp:list-item -->
 <li><a href="https://wordpress.org/download/">https://wordpress.org/download/</a><!-- wp:list -->
 <ul class="wp-block-list"><!-- wp:list-item -->
-<li>NOTE: this next link is the howto-install document.  Give it a look over, but DON’T start any steps yet.  There is a link for ‘Before You Install’ that you should follow and read first. This is because there are preliminary steps that we want to get captured in a Git repository before doing any modifications.   The first paragraph of the  ‘howto’ talks about tools available to do some of the install for you.   The purpose of this exercise is to learn about the internals as shipped to we can explore add-ons and modifications we can do to WordPress.  </li>
+<li>NOTE: this next link is the howto-install document.&nbsp; Give it a look over, but DON’T start any steps yet.&nbsp; There is a link for ‘Before You Install’ that you should follow and read first. This is because there are preliminary steps that we want to get captured in a Git repository before doing any modifications. &nbsp; The first paragraph of the&nbsp; ‘howto’ talks about tools available to do some of the install for you. &nbsp; The purpose of this exercise is to learn about the internals as shipped to we can explore add-ons and modifications we can do to WordPress. &nbsp;</li>
 <!-- /wp:list-item --></ul>
 <!-- /wp:list --></li>
 <!-- /wp:list-item -->
@@ -158,27 +160,27 @@
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li>My install on my laptop is at /Applications/XAMPP/xamppfiles/htdocs/RDwordpress </li>
+<li>My install on my laptop is at /Applications/XAMPP/xamppfiles/htdocs/RDwordpress&nbsp;</li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li>Before doing the manual install steps, first turn the top level WP directory (RDwordpress) into a git repository and add that to your GitHub account. </li>
+<li>Before doing the manual install steps, first turn the top level WP directory (RDwordpress) into a git repository and add that to your GitHub account.&nbsp;</li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li>When creating the repository GitHub Desktop will give you the option of selecting a .gitignore file.  I select the ‘wordpress’ version.  However, once you do that very little of the content will be tracked as evidence of using a  ‘git status’ command.   You should edit that .gitignore as suggested in the next step.</li>
+<li>When creating the repository GitHub Desktop will give you the option of selecting a .gitignore file.&nbsp; I select the ‘wordpress’ version.&nbsp; However, once you do that very little of the content will be tracked as evidence of using a&nbsp; ‘git status’ command. &nbsp; You should edit that .gitignore as suggested in the next step.</li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li>I commented out many of the files and directories except leaving /wp-content/themes/twenty*/ and /wp-content/plugins/hello.php, *.log, and .htaccess .  This is because while doing research and development I might choose to modify some of the original files and I want to track those changes.   </li>
+<li>I commented out many of the files and directories except leaving /wp-content/themes/twenty*/ and /wp-content/plugins/hello.php, *.log, and .htaccess .&nbsp; This is because while doing research and development I might choose to modify some of the original files and I want to track those changes.&nbsp; &nbsp;</li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li>My GitHub repository is <a href="https://github.com/MichaelKentBurns/RDwordpress.git">https://github.com/MichaelKentBurns/RDwordpress.git</a> so you can consult it and see exactly what I changed during this install and future research and development work. </li>
+<li>My GitHub repository is <a href="https://github.com/MichaelKentBurns/RDwordpress.git">https://github.com/MichaelKentBurns/RDwordpress.git</a> so you can consult it and see exactly what I changed during this install and future research and development work.&nbsp;</li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li>Before you start </li>
+<li>Before you start&nbsp;</li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
@@ -186,47 +188,47 @@
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li>While editing the wpconfig.php file with database name, username and password and when you commit and push that to GitHub, you should get an email from ‘GitGuardian’ telling you you just exposed some secret information to the world.  Take a look at that and follow some of the links in the email so you understand the issue.  Normally, this is a serious matter so don’t ignore it.   If someone were to peek into my public repository they would have valuable secrets that would let them viciously attack my new wordpress site.   HOWEVER, in this specific case where I am creating a wordpress site inside XAMPP on my local and private laptop, I’m safe for several reasons.  1) This is a learning exercise and not a production wordpress site there is nothing sensitive in it, and in fact I’m committing everything to GitHub so I can detect any malicious changes.  2) All of this is on my private, password protected, and physically under my control at all times, so nobody can access it at all.  (I do not provide any network access to this machine inside the firewall of my private network, and I don’t take this laptop to public places.    So learn this lesson, and heed these warnings whenever you encounter them.   If you hope to get work to deal with other people’s WordPress sites, you are responsible for their privacy and it is a serious matter that could affect your career.  </li>
+<li>While editing the wpconfig.php file with database name, username and password and when you commit and push that to GitHub, you should get an email from ‘GitGuardian’ telling you you just exposed some secret information to the world.&nbsp; Take a look at that and follow some of the links in the email so you understand the issue.&nbsp; Normally, this is a serious matter so don’t ignore it. &nbsp; If someone were to peek into my public repository they would have valuable secrets that would let them viciously attack my new wordpress site. &nbsp; HOWEVER, in this specific case where I am creating a wordpress site inside XAMPP on my local and private laptop, I’m safe for several reasons.&nbsp; 1) This is a learning exercise and not a production wordpress site there is nothing sensitive in it, and in fact I’m committing everything to GitHub so I can detect any malicious changes.&nbsp; 2) All of this is on my private, password protected, and physically under my control at all times, so nobody can access it at all.&nbsp; (I do not provide any network access to this machine inside the firewall of my private network, and I don’t take this laptop to public places.&nbsp; &nbsp; So learn this lesson, and heed these warnings whenever you encounter them. &nbsp; If you hope to get work to deal with other people’s WordPress sites, you are responsible for their privacy and it is a serious matter that could affect your career. &nbsp;</li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li>Once you have edited your wp-config you are ready to activate the self configuration script.  As it says in the howto-install doc mentioned above, simply point your browser to  your localhost wordpress wp-admin/install.php page, which in my case is <a href="https://localhost/RDwordpress/wp-admin/install.php">https://localhost/RDwordpress/wp-admin/install.php</a>   That page will ask a few questions and then it will quickly configure your wordpress and end up in the wp-admin dashboard.   Two of the questions will be the username for a new admin account in your WP install and the password to go with it.   (I need to go through that again and screen capture the details here).   After it is finished you will be able to login to your new wordpress site admin panel using that username/password.   The URL will be something like  <a href="https://localhost/RDwordpress/wp-admin/">https://localhost/RDwordpress/wp-admin/</a>  . From there you can look down the tool bar on the left for the ‘Users’ page.  There you will find yourself with the role of Administrator.   Keep that username and password private, and don’t use a password that you use for anything else.    Logging in as Administrator allows you full control of every detail of your wordpress instance!! </li>
+<li>Once you have edited your wp-config you are ready to activate the self configuration script.&nbsp; As it says in the howto-install doc mentioned above, simply point your browser to&nbsp; your localhost wordpress wp-admin/install.php page, which in my case is <a href="https://localhost/RDwordpress/wp-admin/install.php">https://localhost/RDwordpress/wp-admin/install.php</a> &nbsp; That page will ask a few questions and then it will quickly configure your wordpress and end up in the wp-admin dashboard. &nbsp; Two of the questions will be the username for a new admin account in your WP install and the password to go with it. &nbsp; (I need to go through that again and screen capture the details here). &nbsp; After it is finished you will be able to login to your new wordpress site admin panel using that username/password. &nbsp; The URL will be something like&nbsp; <a href="https://localhost/RDwordpress/wp-admin/">https://localhost/RDwordpress/wp-admin/</a>&nbsp; . From there you can look down the tool bar on the left for the ‘Users’ page.&nbsp; There you will find yourself with the role of Administrator. &nbsp; Keep that username and password private, and don’t use a password that you use for anything else.&nbsp; &nbsp; Logging in as Administrator allows you full control of every detail of your wordpress instance!!&nbsp;</li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li>At this point you should be able to use a shell or GitHub Desktop and see that there are ‘No local changes’.  But, where did all the details like the admin username/pw go?  If it’s not in any files just setup, then where is it? The answer is that all of that, and a lot more, are stored in the mySQL database which is not itself a file in the WordPress directory.   So, how do you see it?  How does that get into your Git repository?  Good Question!</li>
+<li>At this point you should be able to use a shell or GitHub Desktop and see that there are ‘No local changes’.&nbsp; But, where did all the details like the admin username/pw go?&nbsp; If it’s not in any files just setup, then where is it? The answer is that all of that, and a lot more, are stored in the mySQL database which is not itself a file in the WordPress directory. &nbsp; So, how do you see it?&nbsp; How does that get into your Git repository?&nbsp; Good Question!</li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li>Remember the phpMyAdmin that you used to create the database?  Go there in a new tab that you open to the XAMPP dashboard page (<a href="https://localhost/">https://localhost/</a>).  Then look at the tabs in the blue banner and find phpMyAdmin.  Find the RDwordpress database in the left navigation bar.  Open that and see the data tables.</li>
+<li>Remember the phpMyAdmin that you used to create the database?&nbsp; Go there in a new tab that you open to the XAMPP dashboard page (<a href="https://localhost/">https://localhost/</a>).&nbsp; Then look at the tabs in the blue banner and find phpMyAdmin.&nbsp; Find the RDwordpress database in the left navigation bar.&nbsp; Open that and see the data tables.</li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li>When you click on one of the tables you will see the records.   Try RDwp_options.    That table contains the main options that control your site.   Also look at RDwp_users and see your admin user account.</li>
+<li>When you click on one of the tables you will see the records. &nbsp; Try RDwp_options.&nbsp; &nbsp; That table contains the main options that control your site. &nbsp; Also look at RDwp_users and see your admin user account.</li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li>Let’s dump that data into files in your git repository.  Use a shell to create three hidden directories next to the .git directory:    mkdir .data .pages .posts </li>
+<li>Let’s dump that data into files in your git repository.&nbsp; Use a shell to create three hidden directories next to the .git directory:&nbsp; &nbsp; mkdir .data .pages .posts&nbsp;</li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li>Use ls -la to see that directory and you should see things like wp-content, index.php and a bunch of other wp-* files and directories.     You should probably make those directories private:   chmod 700 .data .pages .posts</li>
+<li>Use ls -la to see that directory and you should see things like wp-content, index.php and a bunch of other wp-* files and directories. &nbsp; &nbsp; You should probably make those directories private: &nbsp; chmod 700 .data .pages .posts</li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li>Back at the table view of phpMyAdmin under the table of rows, you will see Query results operations.   Choose Export.  In that form, take all the defaults until you get to Export method:    For that choose Custom and that will open up a number of other options, one of which will be ‘Output:’   First, just select ‘View output as text’ and click the Export button at the bottom.  This will show you what the dump will look like.   </li>
+<li>Back at the table view of phpMyAdmin under the table of rows, you will see Query results operations. &nbsp; Choose Export.&nbsp; In that form, take all the defaults until you get to Export method:&nbsp; &nbsp; For that choose Custom and that will open up a number of other options, one of which will be ‘Output:’ &nbsp; First, just select ‘View output as text’ and click the Export button at the bottom.&nbsp; This will show you what the dump will look like.&nbsp; &nbsp;</li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li>After browsing that some, change the output to ‘Save output to a file.’   You should find that file in the Downloads directory that your browser defaults to.   Repeat this for each table.  You will notice that initially some of the tables will not have any rows, and thus the Export won’t work.    But if there are rows then you can export.  Don’t forget to change the Export method: to “Custom”.    You should end up with about 9 output files. </li>
+<li>After browsing that some, change the output to ‘Save output to a file.’ &nbsp; You should find that file in the Downloads directory that your browser defaults to. &nbsp; Repeat this for each table.&nbsp; You will notice that initially some of the tables will not have any rows, and thus the Export won’t work.&nbsp; &nbsp; But if there are rows then you can export.&nbsp; Don’t forget to change the Export method: to “Custom”.&nbsp; &nbsp; You should end up with about 9 output files.&nbsp;</li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li>Copy those from your downloads directory to the .data directory in your wp instance. </li>
+<li>Copy those from your downloads directory to the .data directory in your wp instance.&nbsp;</li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li>Now go back to GitHub Desktop and you should see those files show up as changes.   Commit those with the comment ‘Initial data dump’  and push it.    Then find them in your GitHub repository.   You have now exported your database. </li>
+<li>Now go back to GitHub Desktop and you should see those files show up as changes. &nbsp; Commit those with the comment ‘Initial data dump’&nbsp; and push it.&nbsp; &nbsp; Then find them in your GitHub repository. &nbsp; You have now exported your database.&nbsp;</li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
@@ -240,7 +242,7 @@
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
-<li>You now have a full server stack with a WordPress instance installed on your development machine. </li>
+<li>You now have a full server stack with a WordPress instance installed on your development machine.&nbsp;</li>
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
