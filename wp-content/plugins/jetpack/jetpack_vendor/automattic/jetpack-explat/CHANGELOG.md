@@ -5,6 +5,69 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.4.5] - 2026-01-06
+### Changed
+- Update package dependencies. [#46427]
+
+## [0.4.4] - 2025-12-22
+### Changed
+- Update dependencies. [#46381]
+
+## [0.4.3] - 2025-12-11
+### Changed
+- Update package dependencies. [#46244]
+
+## [0.4.2] - 2025-12-08
+### Changed
+- Update dependencies. [#43068]
+
+## [0.4.1] - 2025-12-01
+### Changed
+- Update package dependencies. [#46143]
+
+## [0.4.0] - 2025-11-17
+### Added
+- Add the possibility of passing the platform to the explat assignment endpoint. [#45922]
+
+### Changed
+- Update package dependencies. [#45915] [#45958]
+
+## [0.3.14] - 2025-11-10
+### Changed
+- Update package dependencies. [#45756]
+
+## [0.3.13] - 2025-10-28
+### Changed
+- Update package dependencies. [#45652]
+
+## [0.3.12] - 2025-10-06
+### Changed
+- Update package dependencies. [#45334]
+
+## [0.3.11] - 2025-09-22
+### Changed
+- Update dependencies. [#43068]
+
+## [0.3.10] - 2025-09-19
+### Changed
+- Update package dependencies. [#45173] [#45229]
+
+## [0.3.9] - 2025-09-08
+### Changed
+- Update package dependencies. [#45027] [#45097]
+
+## [0.3.8] - 2025-08-18
+### Added
+- Add `typecheck` script to ensure that TypeScript files are type-checked. [#44795]
+
+## [0.3.7] - 2025-08-14
+### Changed
+- Update package dependencies. [#44701]
+
+## [0.3.6] - 2025-08-11
+### Changed
+- Update package dependencies. [#44677]
+
 ## [0.3.5] - 2025-08-04
 ### Changed
 - Internal updates.
@@ -207,6 +270,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - ExPlat: add condition to prevent fetching the experiment assignment if there's not anon id (meaning that Tracks is likely disabled) [#38327]
 - Updated package dependencies. [#38132]
 
+[0.4.5]: https://github.com/Automattic/jetpack-explat/compare/v0.4.4...v0.4.5
+[0.4.4]: https://github.com/Automattic/jetpack-explat/compare/v0.4.3...v0.4.4
+[0.4.3]: https://github.com/Automattic/jetpack-explat/compare/v0.4.2...v0.4.3
+[0.4.2]: https://github.com/Automattic/jetpack-explat/compare/v0.4.1...v0.4.2
+[0.4.1]: https://github.com/Automattic/jetpack-explat/compare/v0.4.0...v0.4.1
+[0.4.0]: https://github.com/Automattic/jetpack-explat/compare/v0.3.14...v0.4.0
+[0.3.14]: https://github.com/Automattic/jetpack-explat/compare/v0.3.13...v0.3.14
+[0.3.13]: https://github.com/Automattic/jetpack-explat/compare/v0.3.12...v0.3.13
+[0.3.12]: https://github.com/Automattic/jetpack-explat/compare/v0.3.11...v0.3.12
+[0.3.11]: https://github.com/Automattic/jetpack-explat/compare/v0.3.10...v0.3.11
+[0.3.10]: https://github.com/Automattic/jetpack-explat/compare/v0.3.9...v0.3.10
+[0.3.9]: https://github.com/Automattic/jetpack-explat/compare/v0.3.8...v0.3.9
+[0.3.8]: https://github.com/Automattic/jetpack-explat/compare/v0.3.7...v0.3.8
+[0.3.7]: https://github.com/Automattic/jetpack-explat/compare/v0.3.6...v0.3.7
+[0.3.6]: https://github.com/Automattic/jetpack-explat/compare/v0.3.5...v0.3.6
 [0.3.5]: https://github.com/Automattic/jetpack-explat/compare/v0.3.4...v0.3.5
 [0.3.4]: https://github.com/Automattic/jetpack-explat/compare/v0.3.3...v0.3.4
 [0.3.3]: https://github.com/Automattic/jetpack-explat/compare/v0.3.2...v0.3.3

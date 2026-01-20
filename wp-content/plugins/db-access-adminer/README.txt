@@ -2,8 +2,8 @@
 Contributors: lev0
 Tags: database, sql, recovery, import
 Requires at least: 5.3
-Tested up to: 6.1.1
-Stable tag: 2.1.0
+Tested up to: 6.8.3
+Stable tag: 3.0.1
 Requires PHP: 5.6.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -20,17 +20,22 @@ This plugin provides a secure connection to your WordPress database, limited to 
 
 Note that any other databases on the same host and protected by the same credentials will also be accessible in Adminer. This is how databases operate and not a limitation of Adminer nor this plugin. If other databases need different access restrictions, they should have separate credentials.
 
+It comes with all the themes published in Adminer's Git repository, so you can select a style that suits you.
+
 == Installation ==
 
-After installing the plugin, go to *Settings > Adminer* to configure the plugin and confirm the warning about the risk to your data. Go to *Tools > Adminer* to use it.
-
-== Screenshots ==
-
-1. The settings screen
-2. Link to adminer
-3. The Adminer interface, in the `pepa-linha-dark` theme.
+After installing the plugin, go to *Settings > Database Access with Adminer* to configure the plugin and confirm the warning about the risk to your data. Go to *Tools > Adminer* to use it.
 
 == Changelog ==
+
+= 3.0.1 =
+* Fix issue with style selection. Re-save your existing settings to ensure correct loading if using a dark theme.
+* Clearer error when plugin deactivated.
+
+= 3.0.0 =
+* Major Adminer upgrade.
+* All current styles selectable.
+* Option for less restrictive permissions on ephemeral files, for environments where Adminer won't because the file group differs from file owner (typically when PHP and the web server run under different accounts).
 
 = 2.1.0 =
 * Preserve Adminer URL if session times out.

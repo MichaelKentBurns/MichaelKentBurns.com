@@ -280,7 +280,7 @@ class Initializer {
 			$preview_on_hover = sprintf(
 				'<div class="jetpack-videopress-player__overlay" %s></div><script type="application/json">%s</script>',
 				$inline_style,
-				wp_json_encode( $preview_on_hover )
+				wp_json_encode( $preview_on_hover, JSON_UNESCAPED_SLASHES | JSON_HEX_TAG | JSON_HEX_AMP )
 			);
 
 			// Set `autoplay` and `muted` attributes to the video element.
@@ -320,8 +320,8 @@ class Initializer {
 		$maybe_premium_script     = '';
 		if ( $is_premium_content_child ) {
 			Access_Control::instance()->set_guid_subscription( $guid, $premium_block_plan_id );
-			$escaped_guid         = esc_js( $guid );
-			$script_content       = "if ( ! window.__guidsToPlanIds ) { window.__guidsToPlanIds = {}; }; window.__guidsToPlanIds['$escaped_guid'] = $premium_block_plan_id;";
+			$escaped_guid         = wp_json_encode( $guid, JSON_UNESCAPED_SLASHES | JSON_HEX_TAG | JSON_HEX_AMP );
+			$script_content       = "if ( ! window.__guidsToPlanIds ) { window.__guidsToPlanIds = {}; }; window.__guidsToPlanIds[$escaped_guid] = $premium_block_plan_id;";
 			$maybe_premium_script = '<script>' . $script_content . '</script>';
 		}
 
@@ -376,19 +376,6 @@ class Initializer {
 
 		// Do not register if the block is already registered.
 		if ( $is_block_registered ) {
-			return;
-		}
-
-		// Is this a REST API request?
-		$is_rest = defined( 'REST_API_REQUEST' ) && REST_API_REQUEST;
-
-		if ( $is_rest ) {
-			register_block_type(
-				$videopress_video_metadata_file,
-				array(
-					'render_callback' => array( __CLASS__, 'render_videopress_video_block' ),
-				)
-			);
 			return;
 		}
 

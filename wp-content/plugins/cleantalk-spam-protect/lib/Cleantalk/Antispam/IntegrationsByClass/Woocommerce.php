@@ -82,9 +82,6 @@ class Woocommerce extends IntegrationByClassBase
             $this->addActions();
         }
 
-        //add to cart AJAX actions
-        $this->addCartActions();
-
         // Restore Spam Order
         add_action('wp_ajax_apbct_restore_spam_order', array(WcSpamOrdersFunctions::class, 'restoreOrderAction'));
 
@@ -298,14 +295,16 @@ class Woocommerce extends IntegrationByClassBase
                     }
                 }
 
-                if ( class_exists('\Automattic\WooCommerce\StoreApi\Exceptions\RouteException') ) {
-                    /** @psalm-suppress InvalidThrow */
-                    throw new \Automattic\WooCommerce\StoreApi\Exceptions\RouteException(
-                        'woocommerce_store_api_checkout_order_processed',
-                        $ct_result->comment,
-                        403
-                    );
-                }
+                $response = [
+                        'code' => 'woocommerce_store_api_checkout_order_processed',
+                        'message' => $ct_result->comment,
+                        'data' => [
+                                'status' => 403
+                        ]
+                ];
+
+                http_response_code(403);
+                die(json_encode($response));
             }
         }
     }
@@ -448,7 +447,8 @@ class Woocommerce extends IntegrationByClassBase
             );
         }
 
-        $event_token = $request->get_param('event_token');
+        $event_token = $request->get_param('ct_bot_detector_event_token');
+
         if ($event_token && $event_token !== 'undefined' && $event_token !== 'null') {
             $token = @json_decode($event_token, true);
             if (is_array($token) && isset($token['value'])) {
@@ -619,7 +619,7 @@ class Woocommerce extends IntegrationByClassBase
         $spam_ids = array();
 
         foreach ($ids as $order_id) {
-            $order = new WC_Order((int)$order_id);
+            $order = new \WC_Order((int)$order_id);
             if ( $action === 'unspamorder' ) {
                 $order->update_status('wc-on-hold');
             } else {
@@ -723,5 +723,31 @@ class Woocommerce extends IntegrationByClassBase
             add_filter('woocommerce_add_to_cart_validation', [$this, 'addToCartUnloggedUser'], 10, 6);
             add_filter('woocommerce_store_api_add_to_cart_data', [$this, 'storeApiAddToCartData'], 10, 2);
         }
+    }
+
+    /**
+     * @return bool
+     * @inheritDoc
+     */
+    public function isSkipIntegration()
+    {
+        if (
+                (isset($_GET['wc-ajax']) && $_GET['wc-ajax'] === 'update_order_review') ||
+                apbct_is_in_referer('wc-ajax=update_order_review') ||
+                apbct_is_in_uri('wc-ajax=iwd_opc_update_order_review') ||
+                apbct_is_in_uri('wc-ajax=apply_coupon')
+        ) {
+            $skip_rules_base = array(
+                    'get' => $_GET,
+                    'post' => $_POST,
+                    'ref' => Server::get('HTTP_REFERER'),
+                    'uri' => Server::get('REQUEST_URI'),
+            );
+            do_action('apbct_skipped_request', __FILE__ . ' -> ' . __FUNCTION__ . '():' . __LINE__, $skip_rules_base);
+
+            return true;
+        }
+
+        return false;
     }
 }

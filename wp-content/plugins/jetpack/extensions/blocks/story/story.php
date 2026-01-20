@@ -15,6 +15,10 @@ use Jetpack;
 use Jetpack_Gutenberg;
 use Jetpack_PostImages;
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit( 0 );
+}
+
 const EMBED_SIZE        = array( 360, 640 ); // twice as many pixels for retina displays.
 const CROP_UP_TO        = 0.2;
 const MAX_BULLETS       = 7;
@@ -183,6 +187,10 @@ function enrich_video_meta( $media_file ) {
  * @return string
  */
 function render_image( $media ) {
+	$src    = '';
+	$width  = null;
+	$height = null;
+
 	if ( empty( $media['id'] ) || empty( $media['url'] ) ) {
 		return __( 'Error retrieving media', 'jetpack' );
 	}
@@ -192,7 +200,7 @@ function render_image( $media ) {
 	}
 
 	// if image does not match.
-	if ( ! $image || isset( $media['url'] ) && ! is_same_resource( $media['url'], $src ) ) {
+	if ( ! $image || isset( $media['url'] ) && ! is_same_resource( $media['url'], $src ?? '' ) ) {
 		$width  = isset( $media['width'] ) ? $media['width'] : null;
 		$height = isset( $media['height'] ) ? $media['height'] : null;
 		$title  = isset( $media['title'] ) ? $media['title'] : '';
@@ -347,7 +355,7 @@ function render_static_slide( $media_files ) {
 	}
 
 	// if no "static" media was found for the thumbnail try to render a video tag without poster.
-	if ( empty( $media_template ) && ! empty( $media_files ) ) {
+	if ( empty( $media_template ) ) {
 		$media_template = render_video( $media_files[0] );
 	}
 
@@ -498,7 +506,7 @@ function render_block( $attributes ) {
 		</div>',
 		esc_attr( Blocks::classes( Blocks::get_block_feature( __DIR__ ), $attributes, array( 'wp-story', 'aligncenter' ) ) ),
 		esc_attr( 'wp-story-' . get_the_ID() . '-' . strval( ++$story_block_counter ) ),
-		filter_var( wp_json_encode( $settings ), FILTER_SANITIZE_SPECIAL_CHARS ),
+		filter_var( wp_json_encode( $settings, JSON_UNESCAPED_SLASHES ), FILTER_SANITIZE_SPECIAL_CHARS ),
 		get_permalink() . '?wp-story-load-in-fullscreen=true&amp;wp-story-play-on-load=true',
 		__( 'Play story in new tab', 'jetpack' ),
 		__( 'Site icon', 'jetpack' ),

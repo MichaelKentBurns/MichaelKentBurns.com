@@ -12,10 +12,10 @@ use Cleantalk\ApbctWP\State;
 use Cleantalk\ApbctWP\Variables\Cookie;
 use Cleantalk\ApbctWP\Variables\Get;
 use Cleantalk\ApbctWP\Variables\Post;
-use Cleantalk\ApbctWP\Variables\AltSessions;
 use Cleantalk\ApbctWP\Variables\Request;
 use Cleantalk\ApbctWP\Variables\Server;
 use Cleantalk\Common\TT;
+use Cleantalk\ApbctWP\ApbctJsBundleResolver;
 
 // Prevent direct call
 if ( ! defined('ABSPATH') ) {
@@ -30,12 +30,23 @@ if ( class_exists('Cleantalk\Antispam\Integrations\MailChimp') ) {
 /*
  * Fluent Booking shortcode localize CT script and vars.
  */
-add_action('fluent_booking/before_calendar_event_landing_page', function () {
+add_action('fluent_booking/before_calendar_event_landing_page', 'apbct_print_public_scripts', 1);
+add_action('fluent_booking/main_landing', 'apbct_print_public_scripts', 1);
+
+function apbct_print_public_scripts()
+{
+    global $apbct;
+
+    $bundle_name = ApbctJsBundleResolver::getBundleName($apbct->settings) ?: 'apbct-public-bundle.min.js';
+    $js_url_wrapper = APBCT_BOT_DETECTOR_SCRIPT_URL;
+    $js_url = APBCT_URL_PATH . '/js/' . $bundle_name . '?' . APBCT_VERSION;
+
     echo CtPublicFunctionsLocalize::getCode();
     echo CtPublicLocalize::getCode();
-    $js_url = APBCT_URL_PATH . '/js/apbct-public-bundle.min.js?' . APBCT_VERSION;
+
     echo '<script src="' . $js_url . '" type="application/javascript"></script>';
-}, 1);
+    echo '<script src="' . $js_url_wrapper . '" type="application/javascript"></script>';
+}
 
 /**
  * Function to set validate function for CCF form
@@ -861,7 +872,14 @@ function ct_registration_errors($errors, $sanitized_user_login = null, $user_ema
         }
     }
 
+    /**
+     * Exclusions
+     */
     if ( Post::get('wpmem_reg_page') && apbct_is_plugin_active('wp-members/wp-members.php') ) {
+        return $errors;
+    }
+    // BuddyBoss login form
+    if ( Post::getString('wp-submit') && Post::getString('log') && Post::getString('pwd') ) {
         return $errors;
     }
 
@@ -923,7 +941,7 @@ function ct_registration_errors($errors, $sanitized_user_login = null, $user_ema
     $sender_info = array(
         'post_checkjs_passed'   => $checkjs_post,
         'cookie_checkjs_passed' => $checkjs_cookie,
-        'form_validation'       => ! empty($errors)
+        'form_validation'       => ! empty($errors) && $errors instanceof \WP_Error
             ? json_encode(
                 array(
                     'validation_notice' => $errors->get_error_message(),
@@ -953,6 +971,12 @@ function ct_registration_errors($errors, $sanitized_user_login = null, $user_ema
             $username_parts = explode('.', $sanitized_user_login);
             $sanitized_user_login = implode(' ', $username_parts);
         }
+    }
+
+    if (Post::getString('tutor_action') === 'tutor_register_student') {
+        $user_email = Post::getString('email');
+        $sanitized_user_login = Post::getString('user_login');
+        $reg_flag = true;
     }
 
     $base_call_array = array(
@@ -1691,7 +1715,7 @@ function apbct_form__appointment_booking_calendar__testSpam()
  *
  * @return void
  */
-function apbct_form__optimizepress__testSpam()
+function apbct_form__optimizepress__testSpam($reg_flag = false)
 {
     $params = ct_gfa(apply_filters('apbct__filter_post', $_POST));
 
@@ -1705,7 +1729,9 @@ function apbct_form__optimizepress__testSpam()
             'sender_nickname' => isset($params['nickname']) ? $params['nickname'] : Post::get('first_name'),
             'post_info'       => array('comment_type' => 'subscribe_form_wordpress_optimizepress'),
             'sender_info'     => $sender_info,
-        )
+            'message'         => isset($params['message']) ? $params['message'] : '',
+        ),
+        $reg_flag
     );
 
     if ( isset($base_call_result['ct_result']) ) {
@@ -1766,8 +1792,6 @@ function apbct_form__metform_subscribe__testSpam()
 function apbct_form__ninjaForms__testSpam()
 {
     global $apbct, $cleantalk_executed;
-
-    Cookie::$force_alt_cookies_global = true;
 
     if ( $cleantalk_executed ) {
         do_action('apbct_skipped_request', __FILE__ . ' -> ' . __FUNCTION__ . '():' . __LINE__, $_POST);
@@ -1860,14 +1884,11 @@ function apbct_form__ninjaForms__testSpam()
             'message'         => $message,
             'sender_email'    => $sender_email,
             'sender_nickname' => $sender_nickname,
-            'post_info'       => array('comment_type' => 'contact_form_wordpress_ninja_froms'),
+            'post_info'       => array('comment_type' => 'contact_form_wordpress_ninja_forms'),
             'sender_info'   => array('sender_emails_array' => $sender_emails_array),
             'js_on'           => $checkjs,
-            'event_token'     => Cookie::get('ct_bot_detector_event_token'),
         )
     );
-
-    Cookie::$force_alt_cookies_global = false;
 
     if ( isset($base_call_result['ct_result']) ) {
         $ct_result = $base_call_result['ct_result'];
@@ -1897,6 +1918,46 @@ function apbct_form__ninjaForms__testSpam()
                 1,
                 2
             ); // Prevent mail notification
+            add_filter(
+                'ninja_forms_run_action_type_add_to_hubspot',
+                /** @psalm-suppress UnusedClosureParam */
+                function ($result) {
+                    return false;
+                },
+                1
+            );
+            add_filter(
+                'ninja_forms_run_action_type_nfacds',
+                /** @psalm-suppress UnusedClosureParam */
+                function ($result) {
+                    return false;
+                },
+                1
+            );
+            add_filter(
+                'ninja_forms_run_action_type_save',
+                /** @psalm-suppress UnusedClosureParam */
+                function ($result) {
+                    return false;
+                },
+                1
+            );
+            add_filter(
+                'ninja_forms_run_action_type_successmessage',
+                /** @psalm-suppress UnusedClosureParam */
+                function ($result) {
+                    return false;
+                },
+                1
+            );
+            add_filter(
+                'ninja_forms_run_action_type_email',
+                /** @psalm-suppress UnusedClosureParam */
+                function ($result) {
+                    return false;
+                },
+                1
+            );
         }
     }
 }
@@ -2982,38 +3043,36 @@ function apbct_custom_forms_trappings()
 {
     global $apbct;
 
-    // Registration form of Wishlist Members plugin
-    if ( $apbct->settings['forms__registrations_test'] && Post::get('action') === 'wpm_register' ) {
-        return true;
-    }
+    if ($apbct->settings['forms__registrations_test']) {
+        // Registration form of Wishlist Members plugin
+        if ( Post::get('action') === 'wpm_register' ) {
+            return true;
+        }
 
-    // Registration form of masteriyo registration
-    if ( $apbct->settings['forms__registrations_test'] &&
-         Post::get('masteriyo-registration') === 'yes' &&
-         (
-             apbct_is_plugin_active('learning-management-system/lms.php') ||
-             apbct_is_plugin_active('learning-management-system-pro/lms.php')
-         )
-    ) {
-        return true;
-    }
+        // Registration form of masteriyo registration
+        if ( Post::get('masteriyo-registration') === 'yes' &&
+             (
+                 apbct_is_plugin_active('learning-management-system/lms.php') ||
+                 apbct_is_plugin_active('learning-management-system-pro/lms.php')
+             )
+        ) {
+            return true;
+        }
 
-    // Registration form of eMember plugin
-    if (
-        $apbct->settings['forms__registrations_test'] &&
-        Request::get('emember-form-builder-submit') &&
-        wp_verify_nonce(TT::toString(Request::get('_wpnonce')), 'emember-form-builder-nonce')
-    ) {
-        return true;
-    }
+        // Registration form of eMember plugin
+        if ( Request::get('emember-form-builder-submit') &&
+            wp_verify_nonce(TT::toString(Request::get('_wpnonce')), 'emember-form-builder-nonce')
+        ) {
+            return true;
+        }
 
-    // Registration form of goodlayers-lms
-    if (
-        apbct_is_plugin_active('goodlayers-lms/goodlayers-lms.php') &&
-        $apbct->settings['forms__registrations_test'] &&
-        Post::get('action') === 'create-new-user'
-    ) {
-        return true;
+        // Registration form of goodlayers-lms
+        if (
+            apbct_is_plugin_active('goodlayers-lms/goodlayers-lms.php') &&
+            Post::get('action') === 'create-new-user'
+        ) {
+            return true;
+        }
     }
 
     return false;
@@ -3112,11 +3171,15 @@ function apbct_form_happyforms_test_spam($is_valid, $request, $_form)
     global $cleantalk_executed;
 
     if ( ! $cleantalk_executed && $is_valid ) {
+        $event_token = null;
         /**
          * Filter for request
          */
         if (isset($request['data'])) {
             apbct_form__get_no_cookie_data($request['data']);
+            if ( isset($request['data']['ct_bot_detector_event_token']) ) {
+                $event_token = $request['data']['ct_bot_detector_event_token'];
+            }
             unset($request['data']);
         }
 
@@ -3135,6 +3198,7 @@ function apbct_form_happyforms_test_spam($is_valid, $request, $_form)
                 'sender_info'     => array(
                     'sender_emails_array' => isset($data['emails_array']) ? $data['emails_array'] : '',
                 ),
+                'event_token' => $event_token ?: '',
             )
         );
 

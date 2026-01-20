@@ -2,11 +2,11 @@
 /*
 Plugin Name: Database Access with Adminer
 Description: Direct database administration using the open source Adminer application.
-Version: 2.1.0
+Version: 3.0.1
 Requires at least: 5.3
 Requires PHP: 5.6
-Author: Roy Orbison
-Author URI: https://profiles.wordpress.org/lev0/	
+Author: Roy Orbitson
+Author URI: https://profiles.wordpress.org/lev0/
 Licence: GPLv2 or later
 */
 
@@ -22,7 +22,6 @@ define(__NAMESPACE__ . '\REST_NS', 'lev0/' . BASE);
 const REST_CONDUIT = '/conduit/';
 const WP_REST_NONCE = 'wp_rest';
 const ENCRYPTION_LIFETIME = 300;
-const RES_CSS = __DIR__ . '/adminer.css';
 
 add_action('admin_menu', function() {
 	$options = get_option(BASE);
@@ -80,30 +79,48 @@ add_action('admin_menu', function() {
 		return;
 	}
 
-	
 	add_action(
 		'admin_init'
 		, function() use (&$options, $slug_fields) {
 			$designs = designs();
 
+			$once = false;
 			register_setting(
 				$slug_fields
 				, BASE
 				, [
-					'sanitize_callback' => function($inputs) use ($slug_fields, $designs) {
+					'default' => [],
+					'sanitize_callback' => function($inputs) use ($slug_fields, $designs, &$once) {
+						if ($once) { # trac ticket 21989
+							return $inputs;
+						}
+						$once = true;
 						ignore_user_abort(true);
 
+						$reset_temp = function($ignore, $options) { # both hooks have (new) value as second arg
+							wipe_var_files();
+							maintain_conduit(!empty($options['auto_submit']), !empty($options['looser_perms']), true);
+						};
+						foreach (['add', 'update'] as $hook_pfx) {
+							add_action("${hook_pfx}_option_" . BASE, $reset_temp, 0, 2);
+						}
+
+						$design = null;
 						foreach ($inputs as $name => &$val) {
 							switch ("$name") {
 								case 'design':
-									if (!is_string($val) || !array_key_exists($val, $designs)) {
-										add_settings_error(
-											$slug_fields
-											, 'design_select'
-											, esc_html__('Unknown design selection.', 'db-access-adminer')
-										);
+									if (!is_string($val)) {
 										$val = '';
 									}
+									elseif (array_key_exists($val, $designs)) {
+										$design = $val;
+										break;
+									}
+									add_settings_error(
+										$slug_fields
+										, 'design_select'
+										, esc_html__('Unknown design selection.', 'db-access-adminer')
+									);
 									break;
 								default:
 									$val = (bool) $val;
@@ -113,20 +130,37 @@ add_action('admin_menu', function() {
 						$inputs += array_fill_keys(
 							[
 								'auto_submit',
-								'warning_accepted'
+								'looser_perms',
+								'warning_accepted',
 							]
 							, false
 						);
 
+						$design_reset_error = false;
+						foreach (['', '-dark'] as $design_link_suffix) {
+							$design_link_file = "adminer$design_link_suffix.css";
+							$design_link_path = __DIR__ . "/$design_link_file";
+							if (@is_link($design_link_path)) {
+								if (
+									$design !== null
+									&& basename($design) === $design_link_file
+									&& $design === @readlink($design_link_path)
+								) {
+									$design = null; # setting unchanged so leave existing link
+								}
+								elseif (!@unlink($design_link_path)) {
+									$design_reset_error = true;
+								}
+							}
+							elseif (@file_exists($design_link_path)) { # likely a custom file
+								$design_reset_error = true;
+							}
+						}
 						if (
-							(
-								file_exists(RES_CSS)
-								&& !@unlink(RES_CSS)
-							)
+							$design_reset_error
 							|| (
-								!empty($inputs['design'])
-								&& !@symlink($inputs['design'], RES_CSS)
-								&& !@copy($inputs['design'], RES_CSS)
+								$design !== null
+								&& !@symlink($design, __DIR__ . '/' . basename($design))
 							)
 						) {
 							add_settings_error(
@@ -162,11 +196,22 @@ add_action('admin_menu', function() {
 							, esc_attr(BASE)
 							, esc_attr($name)
 						);
+						$selected = isset($options[$name]) ? $options[$name] : '';
+						if ($selected && !array_key_exists($selected, $designs)) {
+							$old = preg_replace('#^[^/]+/|\.css$|/.+#', '', $selected);
+							if ($possible = array_search($old, $designs)) {
+								$selected = $possible;
+								$designs[$selected] .= ' (re-save to update)';
+							}
+							else {
+								$designs = [$selected => "invalid selection (was $old)"] + $designs;
+							}
+						}
 						foreach ($designs as $file => $design) {
 							printf(
 								'<option value="%s"%s>%s</option>' . "\n"
 								, esc_attr($file)
-								, (isset($options[$name]) ? $options[$name] : '') === $file ? ' selected' : ''
+								, $selected === $file ? ' selected' : ''
 								, esc_html($design)
 							);
 						}
@@ -178,29 +223,38 @@ add_action('admin_menu', function() {
 					, $slug_sect
 				);
 			}
-			$name = 'auto_submit';
-			add_settings_field(
-				$name
-				, '<label for="' . esc_attr(BASE . "-$name") . '">'
-					. esc_html__("Auto-submit Adminer's login form", 'db-access-adminer')
-					. '</label>'
-				, function() use (&$options, $name) {
-					printf(
-						'<input type=checkbox id="%1$s-%2$s" name="%1$s[%2$s]" value=1%3$s>'
-						, esc_attr(BASE)
-						, esc_attr($name)
-						, empty($options[$name]) ? '' : ' checked'
-					);
-					echo '<p class=description>'
-						, sprintf(
-							esc_html__("Adminer has its own login system which must still be activated, even though this plugin limits access. It's slightly more secure to submit it manually at the cost of a little convenience.", 'db-access-adminer')
-							, '<strong>'
-							, '</strong>'
-						)
-						, '</p>';
-				}
-				, SETTINGS
-				, $slug_sect
+			$add_bool_setting = function($slug_sect, $name, $label, $description) use (&$options) {
+				return add_settings_field(
+					$name
+					, '<label for="' . esc_attr(BASE . "-$name") . '">' . $label . '</label>'
+					, function() use (&$options, $name, $description) {
+						printf(
+							'<input type=checkbox id="%1$s-%2$s" name="%1$s[%2$s]" value=1%3$s>'
+							, esc_attr(BASE)
+							, esc_attr($name)
+							, empty($options[$name]) ? '' : ' checked'
+						);
+						echo "<p class=description>$description</p>";
+					}
+					, SETTINGS
+					, $slug_sect
+				);
+			};
+			$add_bool_setting(
+				$slug_sect
+				, 'auto_submit'
+				, esc_html__("Auto-submit Adminer's login form", 'db-access-adminer')
+				, sprintf(
+					esc_html__("Adminer has its own login system which must still be activated, even though this plugin limits access. It's slightly more secure to submit it manually at the cost of a little convenience.", 'db-access-adminer')
+					, '<strong>'
+					, '</strong>'
+				)
+			);
+			$add_bool_setting(
+				$slug_sect
+				, 'looser_perms'
+				, esc_html__('Less restrictive permissions on authentication files', 'db-access-adminer')
+				, esc_html__("This grants read access to the group set on those ephemeral files, for cases where the group is different to the owner and that prevents Adminer from running. This can occur when the web server runs under a different account to PHP. Enable only if necessary.", 'db-access-adminer')
 			);
 			$slug_sect = BASE . '-danger';
 			add_settings_section(
@@ -209,31 +263,17 @@ add_action('admin_menu', function() {
 				, '__return_empty_string'
 				, SETTINGS
 			);
-			$name = 'warning_accepted';
-			add_settings_field(
-				$name
-				, '<label for="' . esc_attr(BASE . "-$name") . '">'
-					. esc_html__('I accept', 'db-access-adminer')
-					. '</label>'
-				, function() use (&$options, $name) {
-					printf(
-						'<input type=checkbox id="%1$s-%2$s" name="%1$s[%2$s]" value=1%3$s>'
-						, esc_attr(BASE)
-						, esc_attr($name)
-						, empty($options[$name]) ? '' : ' checked'
-					);
-					echo '<p class=description>';
-					printf(
-						/* translators: open and close <strong> tag on consequences, WP capability name */
-						esc_html__("This tool enables direct editing of your database, which can be very useful. However, if you are unfamiliar with it, %syou risk irreversible loss of or damage to your site's data%s. This includes losing access to your site admin pages if you modify records in the users table. It is recommended you do not use this tool unless you have a regular backup regime. It will also be available to all accounts that have the %s capability (normally admins), so you may wish to limit other accounts' access now. Checking this box means you understand this and accept the risk.", 'db-access-adminer')
-						, '<strong>'
-						, '</strong>'
-						, '<code>' . esc_html(CAP) . '</code>'
-					);
-					echo '</p>';
-				}
-				, SETTINGS
-				, $slug_sect
+			$add_bool_setting(
+				$slug_sect
+				, 'warning_accepted'
+				, esc_html__('I accept', 'db-access-adminer')
+				, sprintf(
+					/* translators: open and close <strong> tag on consequences, WP capability name */
+					esc_html__("This tool enables direct editing of your database, which can be very useful. However, if you are unfamiliar with it, %syou risk irreversible loss of or damage to your site's data%s. This includes losing access to your site admin pages if you modify records in the users table. It is recommended you do not use this tool unless you have a regular backup regime. It will also be available to all accounts that have the %s capability (normally admins), so you may wish to limit other accounts' access now. Checking this box means you understand this and accept the risk.", 'db-access-adminer')
+					, '<strong>'
+					, '</strong>'
+					, '<code>' . esc_html(CAP) . '</code>'
+				)
 			);
 		}
 	);
@@ -265,7 +305,7 @@ add_action('admin_menu', function() {
 		foreach ($GLOBALS['submenu']['tools.php'] as $i => $link) {
 			if (isset($link[2]) && $link[2] === BASE) {
 				$found_link = true;
-				if (maintain_conduit(!empty($options['auto_submit']), true)) {
+				if (maintain_conduit(!empty($options['auto_submit']), !empty($options['looser_perms']), true)) {
 					# change link to adminer entry point
 					$GLOBALS['submenu']['tools.php'][$i][2] = $okay_link = plugin_dir_url(__FILE__);
 				}
@@ -314,11 +354,11 @@ add_action(
 						);
 					}
 
-					$maintained_encryption = maintain_encryption($encryption);
+					$maintained_encryption = maintain_encryption(!empty($options['looser_perms']), $encryption);
 
 					if (
 						(!$maintained_encryption && $encryption)
-						|| !maintain_conduit(!empty($options['auto_submit']))
+						|| !maintain_conduit(!empty($options['auto_submit']), !empty($options['looser_perms']))
 					) {
 						return new \WP_REST_Response(
 							[
@@ -412,8 +452,8 @@ function reqs_unmet() {
 	return $reqs_unmet;
 }
 
-function maintain_conduit($auto_submit, $and_messages = false) {
-	if ($and_messages && !maintain_messages()) {
+function maintain_conduit($auto_submit, $looser_perms, $and_messages = false) {
+	if ($and_messages && !maintain_messages($looser_perms)) {
 		return false;
 	}
 	if (empty($_COOKIE[LOGGED_IN_COOKIE])) {
@@ -441,6 +481,7 @@ function maintain_conduit($auto_submit, $and_messages = false) {
 			, $conduit + [
 				'nonce' => wp_create_nonce(WP_REST_NONCE),
 			]
+			, $looser_perms
 		);
 }
 
@@ -489,8 +530,8 @@ function messages($message = null) {
 			'db_failed' => [
 				__('Database communication error.', 'db-access-adminer'),
 			],
-			'load_failed' => [
-				__('Could not load Adminer.', 'db-access-adminer'),
+			'inactive' => [
+				__('The plugin must be activated to use Adminer.', 'db-access-adminer'),
 			],
 			'unknown' => [
 				__('An unknown error has occurred.', 'db-access-adminer'),
@@ -502,17 +543,17 @@ function messages($message = null) {
 	}
 	return $messages;
 }
-function maintain_messages() {
+function maintain_messages($looser_perms) {
 	$messages = messages();
 	return (
 			($messages_saved = var_file(FMT_MESSAGES))
 			&& is_array($messages_saved)
 			&& $messages_saved === $messages
 		)
-		|| var_file(FMT_MESSAGES, $messages);
+		|| var_file(FMT_MESSAGES, $messages, $looser_perms);
 }
 
-function maintain_encryption(&$encryption = null) {
+function maintain_encryption($looser_perms, &$encryption = null) {
 	$cipher_algos = array_filter(openssl_get_cipher_methods(), function($cipher_algo) {
 		return preg_match('/^AES-(\d+)-CBC$/i', $cipher_algo, $matches)
 			&& $matches[1] > 128;
@@ -566,7 +607,7 @@ function maintain_encryption(&$encryption = null) {
 			'iv' => base64_encode($iv),
 			'passphrase' => base64_encode($passphrase),
 		]);
-		if (!var_file(FMT_ENCRYPT, $encryption_escaped)) {
+		if (!var_file(FMT_ENCRYPT, $encryption_escaped, $looser_perms)) {
 			return false;
 		}
 	}
@@ -581,18 +622,15 @@ function maintain_encryption(&$encryption = null) {
 }
 
 function designs() {
-	$ext = '.css';
 	$designs = [];
-	$files = glob(__DIR__ . "/*$ext");
+	$files = glob(__DIR__ . "/designs/*/adminer*.css");
+	$remove = strlen(__DIR__) + 1;
 	if ($files) {
 		/* translators: no specific design selected */
 		$designs[''] = __('default', 'db-access-adminer');
 		foreach ($files as $file) {
-			if ($file == RES_CSS) {
-				continue;
-			}
-			$file = basename($file, $ext);
-			$designs[$file . $ext] = $file;
+			$file = substr($file, $remove);
+			$designs[$file] = basename(dirname($file));
 		}
 	}
 	return $designs;

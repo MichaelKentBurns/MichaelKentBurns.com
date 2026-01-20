@@ -5,6 +5,96 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [4.2.35] - 2025-12-22
+### Changed
+- Update package dependencies. [#46362]
+
+## [4.2.34] - 2025-12-15
+### Changed
+- Update dependencies. [#46271]
+
+## [4.2.33] - 2025-12-08
+### Fixed
+- Ensure proper flags are used with `json_encode()`. [#46092]
+
+## [4.2.32] - 2025-12-01
+### Changed
+- Update package dependencies. [#46143]
+
+## [4.2.31] - 2025-11-20
+### Changed
+- Update package dependencies. [#46022]
+
+### Fixed
+- Phan: Address PhanPossiblyUndeclaredVariable violations. [#45911]
+
+## [4.2.30] - 2025-11-18
+### Changed
+- Update dependencies. [#45553]
+
+## [4.2.29] - 2025-11-17
+### Changed
+- Update package dependencies. [#45915] [#45932] [#45958]
+
+## [4.2.28] - 2025-11-10
+### Changed
+- Update package dependencies. [#45737] [#45756]
+
+## [4.2.27] - 2025-11-03
+### Changed
+- Update package dependencies. [#45652]
+
+## [4.2.26] - 2025-10-20
+### Changed
+- Update dependencies. [#45488]
+
+## [4.2.25] - 2025-10-06
+### Changed
+- Update package dependencies. [#45334] [#45335]
+
+## [4.2.24] - 2025-09-29
+### Changed
+- Update dependencies. [#44940]
+
+## [4.2.23] - 2025-09-22
+### Changed
+- Update dependencies. [#44940]
+
+## [4.2.22] - 2025-09-19
+### Changed
+- Update package dependencies. [#45173] [#45229]
+
+## [4.2.21] - 2025-09-15
+### Changed
+- Update dependencies. [#44940]
+
+## [4.2.20] - 2025-09-08
+### Changed
+- Update package dependencies. [#45027] [#45097]
+
+## [4.2.19] - 2025-09-01
+### Changed
+- Update dependencies. [#44940]
+
+## [4.2.18] - 2025-08-25
+### Changed
+- Update dependencies. [#44934]
+
+## [4.2.17] - 2025-08-18
+### Added
+- Add `typecheck` script to ensure that TypeScript files are type-checked. [#44795]
+
+## [4.2.16] - 2025-08-14
+### Changed
+- Update package dependencies. [#44701]
+
+## [4.2.15] - 2025-08-11
+### Changed
+- Update package dependencies. [#44677]
+
+### Fixed
+- I18n: Improve context hints in comments for translators. [#44686]
+
 ## [4.2.14] - 2025-08-04
 ### Changed
 - Update dependencies. [#44551]
@@ -912,6 +1002,27 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Add API endpoints and Jetpack Backup package for managing Help…
 
+[4.2.35]: https://github.com/Automattic/jetpack-backup/compare/v4.2.34...v4.2.35
+[4.2.34]: https://github.com/Automattic/jetpack-backup/compare/v4.2.33...v4.2.34
+[4.2.33]: https://github.com/Automattic/jetpack-backup/compare/v4.2.32...v4.2.33
+[4.2.32]: https://github.com/Automattic/jetpack-backup/compare/v4.2.31...v4.2.32
+[4.2.31]: https://github.com/Automattic/jetpack-backup/compare/v4.2.30...v4.2.31
+[4.2.30]: https://github.com/Automattic/jetpack-backup/compare/v4.2.29...v4.2.30
+[4.2.29]: https://github.com/Automattic/jetpack-backup/compare/v4.2.28...v4.2.29
+[4.2.28]: https://github.com/Automattic/jetpack-backup/compare/v4.2.27...v4.2.28
+[4.2.27]: https://github.com/Automattic/jetpack-backup/compare/v4.2.26...v4.2.27
+[4.2.26]: https://github.com/Automattic/jetpack-backup/compare/v4.2.25...v4.2.26
+[4.2.25]: https://github.com/Automattic/jetpack-backup/compare/v4.2.24...v4.2.25
+[4.2.24]: https://github.com/Automattic/jetpack-backup/compare/v4.2.23...v4.2.24
+[4.2.23]: https://github.com/Automattic/jetpack-backup/compare/v4.2.22...v4.2.23
+[4.2.22]: https://github.com/Automattic/jetpack-backup/compare/v4.2.21...v4.2.22
+[4.2.21]: https://github.com/Automattic/jetpack-backup/compare/v4.2.20...v4.2.21
+[4.2.20]: https://github.com/Automattic/jetpack-backup/compare/v4.2.19...v4.2.20
+[4.2.19]: https://github.com/Automattic/jetpack-backup/compare/v4.2.18...v4.2.19
+[4.2.18]: https://github.com/Automattic/jetpack-backup/compare/v4.2.17...v4.2.18
+[4.2.17]: https://github.com/Automattic/jetpack-backup/compare/v4.2.16...v4.2.17
+[4.2.16]: https://github.com/Automattic/jetpack-backup/compare/v4.2.15...v4.2.16
+[4.2.15]: https://github.com/Automattic/jetpack-backup/compare/v4.2.14...v4.2.15
 [4.2.14]: https://github.com/Automattic/jetpack-backup/compare/v4.2.13...v4.2.14
 [4.2.13]: https://github.com/Automattic/jetpack-backup/compare/v4.2.12...v4.2.13
 [4.2.12]: https://github.com/Automattic/jetpack-backup/compare/v4.2.11...v4.2.12

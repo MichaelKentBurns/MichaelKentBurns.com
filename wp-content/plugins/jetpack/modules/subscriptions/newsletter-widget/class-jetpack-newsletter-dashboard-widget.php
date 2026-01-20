@@ -44,8 +44,16 @@ class Jetpack_Newsletter_Dashboard_Widget {
 	 * @return array
 	 */
 	public static function get_config_data() {
-		$subscriber_counts = array();
-		$config_data       = array();
+		$config_data = array(
+			'emailSubscribers'       => 0,
+			'paidSubscribers'        => 0,
+			'allSubscribers'         => 0,
+			'subscriberTotalsByDate' => array(),
+			'isStatsModuleActive'    => false,
+			'showHeader'             => false,
+			'showChart'              => false,
+			'isWidgetVisible'        => false,
+		);
 
 		if ( Jetpack::is_connection_ready() ) {
 			$site_id  = Jetpack_Options::get_option( 'id' );
@@ -78,6 +86,16 @@ class Jetpack_Newsletter_Dashboard_Widget {
 			}
 
 			$config_data['isStatsModuleActive'] = ( new Modules() )->is_active( 'stats' );
+
+			$config_data['showHeader'] = $config_data['isStatsModuleActive'] && ( $config_data['allSubscribers'] > 0 || $config_data['paidSubscribers'] > 0 );
+			foreach ( $config_data['subscriberTotalsByDate'] as $day ) {
+				if ( $day && ( $day['all'] >= 5 || $day['paid'] > 0 ) ) {
+					$config_data['showChart'] = true;
+					break;
+				}
+			}
+
+			$config_data['isWidgetVisible'] = $config_data['showHeader'] || $config_data['showChart'];
 		}
 
 		return $config_data;
@@ -93,12 +111,18 @@ class Jetpack_Newsletter_Dashboard_Widget {
 		}
 
 		if ( Jetpack::is_connection_ready() ) {
+			$config_data = static::get_config_data();
+
+			if ( ! $config_data['isWidgetVisible'] ) {
+				return;
+			}
+
 			static::load_admin_scripts(
 				'jp-newsletter-widget',
 				'newsletter-widget',
 				array(
 					'config_variable_name' => 'jetpackNewsletterWidgetConfigData',
-					'config_data'          => static::get_config_data(),
+					'config_data'          => $config_data,
 					'load_minified_js'     => false,
 				)
 			);
@@ -204,7 +228,7 @@ class Jetpack_Newsletter_Dashboard_Widget {
 		if ( ! empty( $options['config_data'] ) ) {
 			wp_add_inline_script(
 				$asset_handle,
-				"window.{$options['config_variable_name']} = " . wp_json_encode( $options['config_data'] ) . ';',
+				"window.{$options['config_variable_name']} = " . wp_json_encode( $options['config_data'], JSON_UNESCAPED_SLASHES | JSON_HEX_TAG | JSON_HEX_AMP ) . ';',
 				'before'
 			);
 		}

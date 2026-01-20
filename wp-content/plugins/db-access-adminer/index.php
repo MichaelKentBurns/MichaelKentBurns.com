@@ -1,13 +1,14 @@
 <?php
 
-$sql = null;
+use Lev0\DbAccessAdminer as Dba;
+
 require_once __DIR__ . '/incs.php';
 
 function adminer_object() {
 
-	$messages = Lev0\DbAccessAdminer\var_file(Lev0\DbAccessAdminer\FMT_MESSAGES);
+	$messages = Dba\var_file(Dba\FMT_MESSAGES);
 
-	class DbAccessAdminer extends Adminer {
+	class DbAccessAdminer extends \Adminer\Adminer {
 
 		private $wp_adminer_creds;
 		private $wp_adminer_auto_submit;
@@ -30,7 +31,7 @@ function adminer_object() {
 			if (!$this->wp_adminer_creds) {
 				# always check external stat rather than relying on adminer's session login
 				$this->wp_adminer_message_printed = true;
-				auth_error($this->esc_message($this->wp_adminer_message));
+				\Adminer\auth_error($this->esc_message($this->wp_adminer_message), $GLOBALS['permanent']);
 				return [];
 			}
 			return [
@@ -52,32 +53,20 @@ function adminer_object() {
 				return;
 			}
 
-			if (!$this->wp_adminer_auto_submit) {
-				goto ret;
+			if ($this->wp_adminer_auto_submit) {
+				echo \Adminer\script(
+					<<<EOJS
+document.addEventListener(
+	'DOMContentLoaded',
+	function() {
+		document.forms[0].submit();
+	},
+	true
+);
+EOJS
+				);
 			}
 
-			$nonce_attr = null;
-			$response_headers = headers_list();
-			while ($response_headers) {
-				$response_header = array_pop($response_headers);
-				if (preg_match('/^Content-Security-Policy:.*?\'nonce-([^\']+)/i', $response_header, $nonce_matches)) {
-					$nonce_attr = ' nonce="' . h($nonce_matches[1]) . '"';
-					break;
-				}
-			}
-			echo <<<EOHTML
-<script$nonce_attr>
-	document.addEventListener(
-		'DOMContentLoaded',
-		function() {
-			document.forms[0].submit();
-		},
-		true
-	);
-</script>
-EOHTML;
-
-			ret:
 			parent::loginForm();
 		}
 
@@ -91,7 +80,7 @@ EOHTML;
 				case 'server':
 				case 'username':
 				case 'password':
-					$name = h($name);
+					$name = \Adminer\h($name);
 					return <<<EOHTML
 <input type="hidden" name="auth[$name]">
 
@@ -99,7 +88,7 @@ EOHTML;
 				default:
 					return parent::loginFormField($name, $heading, $value);
 			}
-			$value = h($value);
+			$value = \Adminer\h($value);
 			return <<<EOHTML
 $heading<input type="text" name="auth[$name]" value="$value">
 
@@ -112,7 +101,7 @@ EOHTML;
 
 		function esc_message(array $message) {
 			list ($format, $values) = $message + ['', []];
-			return vsprintf(h($format), $values);
+			return vsprintf(\Adminer\h($format), $values);
 		}
 	}
 
@@ -123,18 +112,15 @@ EOHTML;
 		|| !is_array($messages)
 	) {
 		$message = [
-			'No messages file found. Check %sWP Admin > Settings > Adminer%s.',
+			'No messages file found. Check %sWP Admin > Settings > Database Access with Adminer%s.',
 			[
 				'<em>',
 				'</em>',
 			],
 		];
 	}
-	elseif (count(get_class_methods('Adminer')) < 5) { # only one method in fallback class, below
-		$message = $messages['load_failed'];
-	}
 	elseif (
-		!($conduit = Lev0\DbAccessAdminer\var_file(Lev0\DbAccessAdminer\FMT_CONDUIT))
+		!($conduit = Dba\var_file(Dba\FMT_CONDUIT))
 		|| !is_array($conduit)
 		|| empty($conduit['url'])
 		|| empty($conduit['cookie_name'])
@@ -220,7 +206,7 @@ EOHTML;
 		}
 		elseif (
 			$status != 200
-			|| $body->message !== Lev0\DbAccessAdminer\OK
+			|| $body->message !== Dba\OK
 			|| !$body->creds
 		) {
 			if (
@@ -230,12 +216,19 @@ EOHTML;
 			) {
 				$message = empty($body->message) ? $messages['unknown'] : (array) $body->message;
 			}
+			elseif (
+				$status == 404
+				&& !empty($body->code)
+				&& $body->code === 'rest_no_route'
+			) {
+				$message = $messages['inactive'];
+			}
 			else {
 				$message = $messages['unprivileged'];
 			}
 		}
 		elseif (
-			!($encryption = Lev0\DbAccessAdminer\var_file(Lev0\DbAccessAdminer\FMT_ENCRYPT))
+			!($encryption = Dba\var_file(Dba\FMT_ENCRYPT))
 			|| !is_array($encryption)
 			|| empty($encryption['cipher_algo'])
 			|| empty($encryption['passphrase'])
@@ -273,17 +266,4 @@ EOHTML;
 	return new DbAccessAdminer($creds, $message, $auto_submit);
 }
 
-if (
-	!is_readable(Lev0\DbAccessAdminer\INC_ADMINER)
-	|| !include Lev0\DbAccessAdminer\INC_ADMINER
-) {
-	function h($string) {
-		return str_replace("\0", "&#0;", htmlspecialchars($string, ENT_QUOTES, 'utf-8'));
-	}
-	class Adminer {
-		function loginForm() {
-			echo '<p>', $this->esc_message($this->wp_adminer_message), '</p>';
-		}
-	}
-	adminer_object()->loginForm();
-}
+require __DIR__ . '/adminer.php';

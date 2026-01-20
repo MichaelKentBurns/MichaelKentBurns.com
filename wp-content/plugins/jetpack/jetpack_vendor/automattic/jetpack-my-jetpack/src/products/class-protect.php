@@ -15,6 +15,10 @@ use Automattic\Jetpack\Waf\Waf_Runner;
 use WP_Error;
 use WP_REST_Response;
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit( 0 );
+}
+
 /**
  * Class responsible for handling the Protect product
  */
@@ -33,6 +37,13 @@ class Protect extends Hybrid_Product {
 	 * @var string
 	 */
 	public static $slug = 'protect';
+
+	/**
+	 * The Jetpack module name
+	 *
+	 * @var string
+	 */
+	public static $module_name = 'protect';
 
 	/**
 	 * The filename (id) of the plugin associated with this product.

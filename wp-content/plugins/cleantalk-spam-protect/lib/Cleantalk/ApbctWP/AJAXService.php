@@ -144,7 +144,7 @@ class AJAXService
             }
         } else {
             if (!is_string($callback) || !function_exists($callback)) {
-                throw new \InvalidArgumentException('AJAX handler is empty or not callable');
+                throw new \InvalidArgumentException('AJAX not string or is not callable');
             }
         }
 
@@ -185,8 +185,9 @@ class AJAXService
      */
     public function handleAjaxRequest($args)
     {
-        $current_hook_data = isset($this->hooks_list[current_action()])
-            ? $this->hooks_list[current_action()]
+        $current_action = current_action();
+        $current_hook_data = ($current_action !== false && isset($this->hooks_list[$current_action]))
+            ? $this->hooks_list[$current_action]
             : null;
         if ( !empty($current_hook_data) && is_array($current_hook_data) ) {
             $ajax_handler = TT::getArrayValueAsString($current_hook_data, 'ajax_handler');

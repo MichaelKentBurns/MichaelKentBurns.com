@@ -275,6 +275,10 @@ abstract class Publicize_Base {
 	/**
 	 * Whether the site has the feature flag enabled.
 	 *
+	 * @deprecated 0.69.1 Use Current_Plan::supports() directly instead.
+	 *
+	 * @todo Remove this method After March 2026.
+	 *
 	 * @param string $flag_name The feature flag to check. Will be prefixed with 'jetpack_social_has_' for the option.
 	 * @param string $feature_name The feature name to check for for the Current_Plan check, without the social- prefix.
 	 * @return bool
@@ -910,7 +914,7 @@ abstract class Publicize_Base {
 							get_post_meta( $post->ID, $this->POST_SKIP_PUBLICIZE . $connection_id, true )
 							||
 							// Old flags.
-							get_post_meta( $post->ID, $this->POST_SKIP . $service_name )
+							get_post_meta( $post->ID, $this->POST_SKIP . $service_name, false )
 						)
 					)
 					||
@@ -1143,6 +1147,7 @@ abstract class Publicize_Base {
 				'image_generator_settings' => array(
 					'template'         => ( new Jetpack_Social_Settings\Settings() )->sig_get_default_template(),
 					'default_image_id' => ( new Jetpack_Social_Settings\Settings() )->sig_get_default_image_id(),
+					'font'             => ( new Jetpack_Social_Settings\Settings() )->sig_get_default_font(),
 					'enabled'          => false,
 				),
 				'version'                  => 2,
@@ -1190,6 +1195,9 @@ abstract class Publicize_Base {
 								'template'         => array(
 									'type' => 'string',
 								),
+								'font'             => array(
+									'type' => 'string',
+								),
 								'token'            => array(
 									'type' => 'string',
 								),
@@ -1197,6 +1205,10 @@ abstract class Publicize_Base {
 									'type' => 'number',
 								),
 							),
+						),
+						'media_source'             => array(
+							'type' => 'string',
+							'enum' => array( 'featured-image', 'sig', 'media-library', 'upload-video', 'none' ),
 						),
 					),
 				),
@@ -1310,12 +1322,8 @@ abstract class Publicize_Base {
 		// phpcs:ignore WordPress.Security.NonceVerification.Missing
 		$title = isset( $_POST['wpas_title'] ) ? sanitize_textarea_field( wp_unslash( $_POST['wpas_title'] ) ) : null;
 
-		if ( ( $from_web || defined( 'POST_BY_EMAIL' ) ) && $title ) {
-			if ( empty( $title ) ) {
-				delete_post_meta( $post_id, $this->POST_MESS );
-			} else {
-				update_post_meta( $post_id, $this->POST_MESS, trim( stripslashes( $title ) ) );
-			}
+		if ( ( $from_web || defined( 'POST_BY_EMAIL' ) ) && ! empty( $title ) ) {
+			update_post_meta( $post_id, $this->POST_MESS, trim( stripslashes( $title ) ) );
 		}
 
 		// Change current user to provide context for get_services() if we're running during cron.
@@ -1805,7 +1813,7 @@ abstract class Publicize_Base {
 	 * @return string
 	 */
 	public function publicize_connections_url() {
-		$has_social_admin_page = defined( 'JETPACK_SOCIAL_PLUGIN_DIR' ) || Publicize_Script_Data::has_feature_flag( 'admin-page' );
+		$has_social_admin_page = defined( 'JETPACK_SOCIAL_PLUGIN_DIR' );
 
 		$page = $has_social_admin_page ? 'jetpack-social' : 'jetpack#/sharing';
 
