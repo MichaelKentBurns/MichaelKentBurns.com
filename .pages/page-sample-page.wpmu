@@ -28,7 +28,7 @@
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p><img class="wp-image-420" style="width: 50px;" src="https://michaelkentburns.com/wp-content/uploads/2024/05/New.jpg" alt=""> There is now a new major page about <strong>Security</strong> that you will find in the sidebar.   <a href="https://michaelkentburns.com/index.php/security/" data-type="page" data-id="583">That section</a> will grow over time, and its initial content is composed of the two blog posts of July 10th and 11th of 2024.   </p>
+<p><img class="wp-image-420" style="width: 50px;" src="https://michaelkentburns.com/wp-content/uploads/2024/05/New.jpg" alt=""> There is a very important post today about the <strong>use of AI in our work.</strong> I will want replies to each of those posts, so keep a look out on the post list.  There are also two new sections listed in the sidebar:  <strong>“AI and ethics”</strong> and <strong>“WordPress”</strong> which is a new major emphasis for the teams.    I’ll explain in the new pages that will be added shortly.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:heading -->
@@ -133,7 +133,7 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:list {"ordered":true} -->
-<ol><!-- wp:list-item {"fontSize":"small"} -->
+<ol class="wp-block-list"><!-- wp:list-item {"fontSize":"small"} -->
 <li class="has-small-font-size">the <strong>state</strong> or quality of <strong>being active</strong>:</li>
 <!-- /wp:list-item -->
 
@@ -152,7 +152,7 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:list -->
-<ul><!-- wp:list-item -->
+<ul class="wp-block-list"><!-- wp:list-item -->
 <li><strong>Learning</strong>: gaining the knowledge to understand software.</li>
 <!-- /wp:list-item -->
 
@@ -194,7 +194,7 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:list -->
-<ul><!-- wp:list-item -->
+<ul class="wp-block-list"><!-- wp:list-item -->
 <li>A <strong>learner</strong> needs a <strong>teacher</strong>.</li>
 <!-- /wp:list-item -->
 
@@ -244,7 +244,7 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:list -->
-<ul><!-- wp:list-item -->
+<ul class="wp-block-list"><!-- wp:list-item -->
 <li><strong>Teaching platforms</strong>: Wikipedia, the WWW, <strong>this site somewhat.</strong></li>
 <!-- /wp:list-item -->
 
