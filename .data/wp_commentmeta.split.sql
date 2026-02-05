@@ -31,7 +31,7 @@ CREATE TABLE `wp_commentmeta` (
   PRIMARY KEY (`meta_id`),
   KEY `comment_id` (`comment_id`),
   KEY `meta_key` (`meta_key`(191))
-) ENGINE=InnoDB AUTO_INCREMENT=1142 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1148 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -212,7 +212,13 @@ INSERT INTO `wp_commentmeta` VALUES (964,534,'ct_hash','7a541e8b10a302c0873334f3
 (1138,721,'ct_hash','d3f2f420a2a04205b902f5aefde6365c'),
 (1139,722,'ct_hash','cc00473e88967dc96e86e657aaed75b8'),
 (1140,723,'ct_hash','9cf9e7a97211c695455c49b16008eaea'),
-(1141,724,'ct_hash','63fecc0277e9c7a9ac125ef629aa0777');
+(1141,724,'ct_hash','63fecc0277e9c7a9ac125ef629aa0777'),
+(1142,725,'ct_hash','780bdfb2882571103a6045d979b7b9ff'),
+(1143,726,'ct_hash','6346ef2182e09473145ae6103ec7e588'),
+(1144,727,'ct_hash','69d2391c32f906a2dc730b156bff49f9'),
+(1145,728,'ct_hash','caf664e41029c46793565fb5acef927e'),
+(1146,729,'ct_hash','946f7fbf6ee1d1b4803c342b756e4eea'),
+(1147,730,'ct_hash','ee14650ed82548a9832ec97a0aa82167');
 /*!40000 ALTER TABLE `wp_commentmeta` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -225,4 +231,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-01-20 22:38:16
+-- Dump completed on 2026-02-05 16:35:26
