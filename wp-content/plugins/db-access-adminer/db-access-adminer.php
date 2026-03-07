@@ -2,7 +2,7 @@
 /*
 Plugin Name: Database Access with Adminer
 Description: Direct database administration using the open source Adminer application.
-Version: 3.0.1
+Version: 3.1.0
 Requires at least: 5.3
 Requires PHP: 5.6
 Author: Roy Orbitson

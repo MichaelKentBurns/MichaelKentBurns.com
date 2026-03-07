@@ -284,6 +284,7 @@ class State extends \Cleantalk\Common\State
         'check_website'                 => array('last_call' => 0, 'cooldown' => 0),
         'update_settings'               => array('last_call' => 0, 'cooldown' => 0),
         'run_service_template_get'      => array('last_call' => 0, 'cooldown' => 60),
+        'license_update'                => array('last_call' => 0, 'cooldown' => 0),
 
 
         // Firewall
@@ -368,6 +369,7 @@ class State extends \Cleantalk\Common\State
         'expected_ua_count_personal'   => 0,
         'update_mode'                  => 0,
         'reason_direct_update_log'     => null,
+        'multi_request_batch_size'     => 10,
         'personal_lists_url_id' => '',
         'common_lists_url_id' => '',
         'calls' => 0,
@@ -379,7 +381,7 @@ class State extends \Cleantalk\Common\State
     private $connection_reports;
 
     /**
-     * @var ConnectionReports
+     * @var JsErrorsReport
      */
     private $js_errors_report;
 

@@ -31,7 +31,7 @@ CREATE TABLE `wp_commentmeta` (
   PRIMARY KEY (`meta_id`),
   KEY `comment_id` (`comment_id`),
   KEY `meta_key` (`meta_key`(191))
-) ENGINE=InnoDB AUTO_INCREMENT=1148 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1178 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -218,7 +218,37 @@ INSERT INTO `wp_commentmeta` VALUES (964,534,'ct_hash','7a541e8b10a302c0873334f3
 (1144,727,'ct_hash','69d2391c32f906a2dc730b156bff49f9'),
 (1145,728,'ct_hash','caf664e41029c46793565fb5acef927e'),
 (1146,729,'ct_hash','946f7fbf6ee1d1b4803c342b756e4eea'),
-(1147,730,'ct_hash','ee14650ed82548a9832ec97a0aa82167');
+(1147,730,'ct_hash','ee14650ed82548a9832ec97a0aa82167'),
+(1148,731,'ct_hash','80fe7f5139f2eaaaab3c3d826d043bc2'),
+(1149,732,'ct_hash','e3a160e26de6a151d8e4f8bd44064c54'),
+(1150,733,'ct_hash','297f4a7c9404198044bf2799a19b7534'),
+(1151,734,'ct_hash','4cfd504cab5884f2e63e54e6c60ef5c6'),
+(1152,735,'ct_hash','1c1fe9eadc5d06bd89da30fec5bbafd9'),
+(1153,736,'ct_hash','0d30dd3287bc86036e2d8743009739d0'),
+(1154,737,'ct_hash','e97fe284796938972e27607a37a7a698'),
+(1155,738,'ct_hash','49cbf15ef2c18ab6db07d7020a15eab6'),
+(1156,739,'ct_hash','061c7a5815f67a0be87bfda44d180d81'),
+(1157,740,'ct_hash','c129a02cd61bf7cd783c471b88d71ceb'),
+(1158,741,'ct_hash','358ff0f879340ec1ea578714c7fb6d83'),
+(1159,742,'ct_hash','2fac9d350c03713d3e002f50b9414a02'),
+(1160,743,'ct_hash','8f152a0fde3c82e9cea829bc5afd6d4b'),
+(1161,744,'ct_hash','e5556a0441ce865695e0ebec3742fd82'),
+(1162,748,'ct_hash','2a36fc699dcf6aba43923193d168dbfb'),
+(1163,749,'ct_hash','430971aabd8ed2b8480f432ba3869026'),
+(1164,750,'ct_hash','8b715d245482e2c72a92a5759a8c44e8'),
+(1165,751,'ct_hash','2e2400e938d53b2dd9c86728a763cd02'),
+(1166,752,'ct_hash','8c196332b7014f80bc7d4fe593c657dc'),
+(1167,753,'ct_hash','9364ea75279dcf8068306dd6570e66eb'),
+(1168,754,'ct_hash','e05086a0aa2319a07d0eb1146ec83078'),
+(1169,755,'ct_hash','50f793820d717abe28edfeb9275c225c'),
+(1170,756,'ct_hash','f99c17e5d80ba6298e150a8cabda2ce9'),
+(1171,757,'ct_hash','647708575331f6c59763fa3c26c274ed'),
+(1172,764,'ct_hash','a032c6fbbd90eb4ab4cc0d12b8851d8d'),
+(1173,765,'ct_hash','e41aa12230c4bea4d95240f890e670a1'),
+(1174,766,'ct_hash','ee8ce20e09a02a78c58bbb1694584a97'),
+(1175,767,'ct_hash','a83eec4d8792e48ae6b2506f41c7cf17'),
+(1176,766,'_wp_trash_meta_status','0'),
+(1177,766,'_wp_trash_meta_time','1771887495');
 /*!40000 ALTER TABLE `wp_commentmeta` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -231,4 +261,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-02-05 16:35:26
+-- Dump completed on 2026-02-24 22:52:39
