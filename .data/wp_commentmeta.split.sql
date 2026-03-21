@@ -31,7 +31,7 @@ CREATE TABLE `wp_commentmeta` (
   PRIMARY KEY (`meta_id`),
   KEY `comment_id` (`comment_id`),
   KEY `meta_key` (`meta_key`(191))
-) ENGINE=InnoDB AUTO_INCREMENT=1178 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1197 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -248,7 +248,26 @@ INSERT INTO `wp_commentmeta` VALUES (964,534,'ct_hash','7a541e8b10a302c0873334f3
 (1174,766,'ct_hash','ee8ce20e09a02a78c58bbb1694584a97'),
 (1175,767,'ct_hash','a83eec4d8792e48ae6b2506f41c7cf17'),
 (1176,766,'_wp_trash_meta_status','0'),
-(1177,766,'_wp_trash_meta_time','1771887495');
+(1177,766,'_wp_trash_meta_time','1771887495'),
+(1178,772,'ct_hash','3ecf314c663fe90c63420de4402f0d29'),
+(1179,773,'ct_hash','80256fe1756d185cb6c6f3d8ae84744e'),
+(1180,774,'ct_hash','7ce09eb6b54410fdf8877beeca90edff'),
+(1181,775,'ct_hash','452be6985b99ce99300a692c995a066d'),
+(1182,776,'ct_hash','7263c1e0cd90b81e3ba5beb058937060'),
+(1183,777,'ct_hash','1ca36a0c66310dc0065845f1aa84827a'),
+(1184,778,'ct_hash','ad885002da65fbd7a367dfa02f7a2623'),
+(1185,779,'ct_hash','fb39ff875a2a491c44d26798689737c9'),
+(1186,782,'ct_hash','6e82e6cea82933feea4ad25bc4f06669'),
+(1187,783,'ct_hash','a035e165a365a12fb65cb6b217d71f46'),
+(1188,786,'ct_hash','d0003d1693a105420e7c2f737b30dc66'),
+(1189,787,'ct_hash','bea6e6583efe15b43d652ddb1a099ca9'),
+(1190,789,'ct_hash','522409dc210b89e3c49ecd383d1210ac'),
+(1191,790,'ct_hash','50548771a9f803c9f0680a0af78acc94'),
+(1192,791,'ct_hash','15082e51facde49aa31ad583e948cac2'),
+(1193,792,'ct_hash','dba34e310fc53f9d145d89211ca2ab0f'),
+(1194,793,'ct_hash','fd029a9cee4b6d353801e7a9d3b7e498'),
+(1195,794,'ct_hash','1f68dba157ad5d776b57277791a62046'),
+(1196,795,'ct_hash','ce25619c3405f589ddfb6fa0ab697f8a');
 /*!40000 ALTER TABLE `wp_commentmeta` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -261,4 +280,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-02-24 22:52:39
+-- Dump completed on 2026-03-21 20:44:10
