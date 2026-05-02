@@ -1,0 +1,161 @@
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Let's all admit this:  <strong>Testing our work is not very exciting!</strong></h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Go on <strong>Admit it!</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>I think there are several reasons for our reluctance to test:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item -->
+<li>We naturally test the new feature that we are coding, just for the satisfaction of knowing that it's done.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Repeated testing of the same feature gets boring real fast, and besides, we already tested it and it worked. </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Our users will test it for us and tell us if it's broken.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>We have not been taught how to thoroughly test our work.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>We build incrementally and (should) test as we go, but we don't tend to go back and test everything again as a whole.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>We add new features which can break the older parts.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>We focus on getting the job done and moving on, usually because of time or cost pressure. </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>And many more things.</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Reflection time</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>As you read those reasons, I imagine that some of them resonated with you as you realized that you probably think that too.   Good!</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Other reasons may not seem true to you, and that's good too. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":4} -->
+<h4 class="wp-block-heading">Feedback time:   </h4>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Go to the bottom of the page and leave a comment please about those thoughts, and please if you think of others I did not mention, then add them to the list.   Thank You.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Please go read this article and see what you learn: </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong><a href="https://www.geeksforgeeks.org/blogs/developers-are-not-good-testers-really/" data-type="link" data-id="https://www.geeksforgeeks.org/blogs/developers-are-not-good-testers-really/">Developers are Not Good Testers - Really</a></strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Please leave another comment about what you learned from that reading.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Done done.</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Some development teams use more precise metrics on the state of their work.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>"<strong>Done</strong>" means that it has been shown to work, and it's time to move on.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>"<strong>Done</strong>" is often the primary focus of the developer, and rightly so.  However he often lacks access to proper testing tools or environments, which can discourage thorough testing.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The testing team equips itself with the most relevant tools, environments, and techniques.   These often change as fast as the development tools.   </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Finally, creating good communication channels between testers and developers that have low friction ensure that both can do their jobs in an atmosphere of trust and interdependence.  </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>But <strong>"Done done"</strong> means it has been code reviewed and tested by another developer or better yet a dedicated testing expert, and it's been documented. In other words it is done in every way we can think of.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>When the whole team works properly, then <strong>Done</strong> goes to <strong>Done Done</strong> quickly and the team succeeds as a whole. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Testing table of contents:</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>The rest of this page will be a table of contents to other sections about testing</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item -->
+<li><a href="https://michaelkentburns.com/index.php/testing-your-work/fundamentals-of-testing/" data-type="page" data-id="925">Fundamentals of testing</a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><a href="https://michaelkentburns.com/index.php/testing-your-work/the-user-comes-first/" data-type="page" data-id="929">The user comes first</a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><a href="https://michaelkentburns.com/index.php/testing-your-work/eat-your-own-dog-food/" data-type="page" data-id="943">Eat your own dog food</a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><a href="https://michaelkentburns.com/index.php/front-end-testing/" data-type="page" data-id="950">Front end testing</a></li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Future sections:</h3>
+<!-- /wp:heading -->
+
+<!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item -->
+<li><a href="https://testsigma.com/guides/ui-testing/">Types of UI testing</a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Interactive UI testing</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Automated UI testing</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>When you have completed reading those resources, pause again here and leave comments on this page.   This is a team effort, and your insight is valuable to the rest of the team. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"align":"right"} -->
+<p class="has-text-align-right">Next Page --&gt; <a href="https://michaelkentburns.com/index.php/testing-your-work/fundamentals-of-testing/" data-type="page" data-id="925">Fundamentals of testing</a></p>
+<!-- /wp:paragraph -->

@@ -1,0 +1,55 @@
+<!-- wp:paragraph -->
+<p>There are a number of cloud computing providers, but the big 3 are:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">AWS - Amazon Web Services</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>We will start with AWS because there is a close match between AWS Lightsail and the delivery of the JSGo-Literacy solution we have built and JSGo uses AWS.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="https://www.youtube.com/@TinyTechnicalTutorials">Great YouTuber for understanding AWS</a> - This woman does a great job of creating explainer and tutorial videos especially for AWS (and cloud computing in general). </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Her "<a href="https://www.youtube.com/watch?v=W6jQmVi31Xk&amp;t=10s&amp;pp=ygULYXdzIGdyYW5kbWE%3D">Explain Cloud Computing to Grandma</a>" video is awesome.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="https://aws.amazon.com">AWS overview</a> is an overview of all of the complexity.  That page is a showcase that features new stuff.  Avoid that and click on the <strong>Products</strong> and <strong>Solutions</strong> tabs at the top.  A brief browse of those page gives you the idea. Don't focus too much on the details, just get the idea of how powerful it is as a whole.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>I have an AWS account, so I have been exploring it.   I would like a couple of the more advanced members of our team to start exploring it so they can introduce it appropriately to the rest of you.   When those individuals come forward, I can get them access to my account (with specific instructions). </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Like all of these providers <strong>AWS</strong> as a whole is extremely complicated. But, I believe I have found a narrow slice that is specifically built to make this job quicker, easier, and cheaper: <strong>Lightsail</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>To learn the advantages and simplicity of Lightsail read the "<strong><a href="https://docs.aws.amazon.com/lightsail/latest/userguide/what-is-amazon-lightsail.html">What is Amazon Lightsail</a></strong>", but just read the main article for now.  There are other links there for further exploration.  Avoid those for now, but remember that it is there. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Azure - Microsoft Azure</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>I also have an Azure account for the purpose of getting familiar with it if we get an opportunity to participate in the<strong> Guidance LMS</strong> system testing. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Google Cloud - Google Cloud</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"align":"right"} -->
+<p class="has-text-align-right">Next -> <strong><a href="https://michaelkentburns.com/index.php/deploying-to-the-cloud/" data-type="page" data-id="1005">Deploying to the Cloud</a></strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->

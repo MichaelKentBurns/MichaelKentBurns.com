@@ -1,0 +1,49 @@
+<!-- wp:paragraph -->
+<p>There are many types of testing and we will eventually introduce those, but the simplest place to start is Front End (UI) manual and automated testing. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Front End </strong>- means a GUI running in a browser.  </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>UI -</strong> means we are testing that the primary focus is on how the user and the UI interact, without much focus on what happens after the page is submitted to the backend.  </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Manual</strong> - means that the tester is simply using the UI with a keyboard and mouse and observing the display to make sure it shows what it is supposed to show. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Automated</strong> - means that that same testing is captured by a tool that records the details of the interaction in such a way that it can be repeated over and over and re-tested after any code changes are made.   </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>I have found what looks to be a good introductory course on frontendmentor.io: <a href="https://www.frontendmentor.io/learning-paths/introduction-to-front-end-testing-kacF_IJQO5/article/66a105f34833d72d4198a564/read"><strong>Welcome to the front-end testing learning path</strong>.</a>  Read at least the first page of that learning path, then return here and leave some comments about:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item -->
+<li>Before this reading, did you imagine that in-depth UI testing would be tedious and random "just poking around"? </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>What do you think now?</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>What did you read that makes you want to test?</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>What might you discover about our dog food if you did this kind of testing? </li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph {"align":"right"} -->
+<p class="has-text-align-right"><strong>Next Page -> <a href="https://michaelkentburns.com/index.php/testing-your-work/special-challenge-for-cohort-3-intro-to-testing/" data-type="page" data-id="977">Special Challenge for Cohort-3 - Intro to testing. </a></strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->

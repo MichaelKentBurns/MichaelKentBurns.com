@@ -1,5 +1,5 @@
 <!-- wp:paragraph -->
-<p>To complete this challenge please go to the <a href="https://demo.michaelkentburns.com/dashboard/MKB/cohort1/MKB-cohort-1-Demo/"><strong>survey app</strong></a> and complete the ‘<strong>challenge-tell-me-about-your-development-setup.json</strong>’ survey. Then email me the json file downloaded through your browser. Thanks for your patience.</p>
+<p>To complete this challenge please go to the <a href="https://student.MichaelKentBurns.com">student survey app</a> and complete the <strong><a href="https://student.michaelkentburns.com/survey/cohort-2-starter-course-challenge-tell-me-about-your-development-setup/">challenge-tell-me-about-your-development-setup</a></strong> survey. Then email me the json file downloaded through your browser. Thanks for your patience.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
@@ -7,7 +7,7 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:list -->
-<ul><!-- wp:list-item -->
+<ul class="wp-block-list"><!-- wp:list-item -->
 <li>Your computer model, memory, disk, processor.   </li>
 <!-- /wp:list-item -->
 

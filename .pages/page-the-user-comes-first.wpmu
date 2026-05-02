@@ -1,0 +1,61 @@
+<!-- wp:paragraph -->
+<p>If what we are testing is a <strong>User Interface</strong>, then the most important consideration is the <strong>User</strong>.   If that is true, then we must start with an <strong>understanding of the user and why she is using this interface</strong>.  This seems so obvious, but there is much more to it than the obvious. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>All users are not the same.  Here are some variations:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item -->
+<li>There is the <strong>developer's conception of the user</strong>. If his conception is not correct then even if he does his job right, it might not work for the user for many reasons.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>A first time user may not even know what <strong>the outcome should be</strong>. The UI should lead a first time user to discover the 'first time' things that should be done. A simple example of this is the button or link on an application labeled '<strong>Login</strong>' or '<strong>Create an account</strong>.' She may not realize that she does not have an account and just try '<strong>Login'</strong> first (we have all done this). So the <strong>Login</strong> screen must make it clear that if they don't have a username that works, they need help figuring out if they don't have an account or that they have simply forgotten the password. If this is confusing the UI has already failed.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>A first time user may not understand the <strong>first steps in the journey,</strong> so the UI should have obvious landmarks like tabs to indicate the way. Naturally most users would start exploring the tabs from left to right assuming that the leftmost tab is the starting point. There are many other ways to guide the user.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>On the other hand an <strong>experienced user</strong> needs navigational clues to lead them to the appropriate UI for their current intended use. He should not have to read or navigate very far to find the right path to the appropriate page.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>A confused user may have tried a number of things before finding the path, but those wanderings may have <strong>unexpected consequences that now block success</strong>. This user may have a very negative experience and abandon the attempt.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>An experienced user may follow his usual path for a repeat of some previous experience. However, sometimes changes in the UI might add or remove steps or present them differently. If the <strong>navigation or on screen guidance has changed </strong>to reflect that change, then this user will be confused.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Terms and labels that are unfamiliar to a user. The use of small decorations that have tooltips or a small dialog or lead to an explanatory page, will allow the user to an understanding that could avoid errors or unexpected outcomes. A tester should try those and see if they make sense.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>There are very many issues like these that are variations on a user's experience that were not anticipated by an engineer who "knows what the user should do".  The developer naturally asks "why would they do that?".  <strong>Users do silly things</strong> sometimes.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>You may have other ideas for this list based on your user experiences. If so <strong>drop a comment below.</strong></li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>As I wrote above "<strong>All users are not the same. </strong>"   One of the primary jobs of a tester is to learn about the user and anticipate these differences.    </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>For every part of the UI there is <strong>not one unified experience</strong>. Your job is to use your knowledge of the various users to guide you to a variety of variations for each use case.  And sometimes that means <strong>doing silly things</strong>.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"align":"right"} -->
+<p class="has-text-align-right">Next Page -&gt; <strong><a href="https://michaelkentburns.com/index.php/eat-your-own-dog-food/" data-type="page" data-id="943">Eat your own dog food</a></strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->

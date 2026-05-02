@@ -1,0 +1,23 @@
+<!-- wp:heading -->
+<h2 class="wp-block-heading">What is a container? </h2>
+<!-- /wp:heading -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Docker Containers</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Docker Compose</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"align":"right"} -->
+<p class="has-text-align-right">Next --> <a href="https://michaelkentburns.com/index.php/cloud/cloud-computing-providers/" data-type="page" data-id="997">Cloud Computing Providers</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->

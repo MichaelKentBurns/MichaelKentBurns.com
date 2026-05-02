@@ -1,9 +1,9 @@
 <!-- wp:paragraph -->
-<p>To complete this challenge please go to the <a href="https://demo.michaelkentburns.com/dashboard/MKB/cohort1/MKB-cohort-1-Demo/"><strong>survey app</strong></a> and complete the '<strong>challenge-tell-me-about-yourself.json</strong>’ survey.   Then email me the json file downloaded through your browser.   Thanks for your patience.  </p>
+<p>To complete this challenge please go to the <a href="https://student.michaelkentburns.com/survey/cohort-2-starter-course-challenge-tell-me-about-yourself/"><strong>survey app</strong></a> and complete the '<a href="https://student.michaelkentburns.com/survey/cohort-2-starter-course-challenge-tell-me-about-yourself/"><strong>challenge-tell-me-about-yourself.json</strong>’ </a>survey. </p>
 <!-- /wp:paragraph -->
 
 <!-- wp:list -->
-<ul><!-- wp:list-item -->
+<ul class="wp-block-list"><!-- wp:list-item -->
 <li>Your name and email address, as well as any other contact info like Facebook, LinkedIn, Twitter,  Discord, GitHub or other profiles you might have. </li>
 <!-- /wp:list-item -->
 

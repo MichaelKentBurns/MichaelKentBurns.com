@@ -1,0 +1,65 @@
+<!-- wp:paragraph -->
+<p><strong>A-Team and Cohort-3</strong> are starting to do some testing together. If you have gotten to this page via a link from the<strong>"<a href="https://michaelkentburns.com/index.php/testing-your-work/" data-type="page" data-id="913">Testing your work"</a></strong><a href="https://michaelkentburns.com/index.php/testing-your-work/" data-type="page" data-id="913"></a>page, then you are in the right place.    You may want to refer back to the <strong><a href="https://michaelkentburns.com/index.php/testing-your-work/eat-your-own-dog-food/" data-type="page" data-id="943">Eat your own dog food</a></strong> page for context.  There is a paragraph in the middle that has links to appropriate resources for this challenge. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Here are your instructions:</h3>
+<!-- /wp:heading -->
+
+<!-- wp:list {"ordered":true} -->
+<ol class="wp-block-list"><!-- wp:list-item -->
+<li>Coordinate this challenge as a team of mentor and mentees.  Tell your mentor that you are ready for this challenge. </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>If you have not already read the first four pages in the <strong><a href="https://michaelkentburns.com/index.php/testing-your-work/" data-type="page" data-id="913">"Testing your work" </a></strong>section of the sidebar, then do so now.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Mentor: </strong>Create a GitHub project then agree with your mentor and go ahead and create a repository named "&lt;YourName&gt; Special Challenge for Cohort-3".  Create it as a clone of <a href="https://github.com/bahati7/MKB-cohort-2-Demo">https://github.com/bahati7/MKB-cohort-2-Demo</a>.   <!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item -->
+<li>Adjust the README.md as needed.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Introduce your mentees, and invite them and myself (Michael) to the repository. </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>In the 'doc' directory, remove the component-diagram, it won't be needed. </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>In <strong>doc/usecase-diagram/users/Plant UML Diagram</strong> folder show the <strong>UC-All users.md</strong> diagram and explain it to your mentees.   </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Find <strong>use cases/ UC-Login / sub_UC-Login / UC-Create_Account.md </strong>and explain that to your mentees. </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Create a new Issue in the project named "Test Create Account &lt;mentee-name&gt;" for each of your mentees, and assign it to them.   Apply the 'good first issue' label to the issue.   <!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item -->
+<li>Describe the issue as: <em>"Find the UC-Login.md file and study it, asking questions using the comment log of your issue.  Add as many comments as you can as you work through the process.  If you get "stuck" (can't proceed without help), then add the "Stuck!!" tag on your issue, then work with your mentor to get unstuck.</em></li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list --></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Mentor, create issues for any problems you have in getting this far.</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list --></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Mentee: </strong>Find your first issue and begin to work it.   Ask questions, make observations.   If you find something that seems broken in the UI then create a new sub-issue and describe it.  </li>
+<!-- /wp:list-item --></ol>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>... More to come ...</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->

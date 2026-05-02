@@ -1,0 +1,137 @@
+<!-- wp:paragraph -->
+<p><strong>Launching Cohort 3: The A-Team &amp; Pair Challenge Structure</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Refer to the blog post <a href="https://michaelkentburns.com/index.php/2026/03/06/new-challenge-section-for-cohort-3/">New Challenge Section For Cohort-3</a> for the background of this new initiative.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>As we enter this new phase of growth at Michael Kent Burns (MKB), I am proud to announce the official launch of <strong>Cohort 3</strong>.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Our community is evolving. To recognize the expertise and dedication shown by our previous students, we are officially designating members of <strong>Cohort 1 and Cohort 2 as the "A-Team."</strong> Moving forward, the A-Team will serve as mentors, guiding our newest students—Cohort 3—through a high-impact, hands-on learning journey.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">The New "Pair Challenge" Model</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>We are moving away from individual isolated study to a <strong>Pair Challenge Structure</strong>. Each A-Team mentor will be paired with a Cohort 3 mentee. This partnership is designed to simulate a professional senior-junior developer relationship.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">1. The Challenge Selection</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Mentors will select a professional challenge from <a href="https://www.frontendmentor.io/">Frontend Mentor</a>. This ensures our mentees are working on real-world designs and modern layouts.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item -->
+<li><strong>Technology Stack:</strong> All challenges must be completed using <strong>Vanilla HTML, CSS, and JavaScript</strong>. No frameworks (React, Vue, etc.) are allowed for these foundational challenges.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Documentation:</strong> The mentor must include the original Frontend Mentor challenge link in the repository <code>README.md</code> and the GitHub Discussions tab.</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">2. Repository &amp; Workflow Management</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>To maintain professional standards, mentors will manage the project lifecycle on GitHub:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item -->
+<li><strong>Setup:</strong> The mentor creates a new repository under the <strong>FreeDev Group</strong> GitHub organization.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Planning:</strong> The mentor will break down the project into granular, step-by-step <strong>GitHub Issues</strong>. Each issue must clearly explain the specific task the mentee needs to complete.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Communication:</strong> Mentors must open a thread in the <strong>GitHub Discussions</strong> tab to facilitate technical dialogue and project planning.</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">3. Mentee Responsibilities &amp; Daily Pushes</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Consistency is the key to growth.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item -->
+<li><strong>Daily Updates:</strong> Mentees are required to push their code <strong>daily</strong>.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Commit Standards:</strong> Commit messages must be descriptive and <strong>reference the specific issue number</strong> (e.g., <code>feat: implement navigation bar layout #4</code>).</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Progress Reports:</strong> Each daily commit should include a brief explanation of what was achieved that day.</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">4. Mentorship &amp; Code Review</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>The mentor's primary role is to ensure code quality through daily reviews.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item -->
+<li><strong>Feedback:</strong> Mentors will review the mentee's code daily, leaving comments and suggestions directly on the Pull Requests.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Submission:</strong> Once the challenge is complete, the mentee must submit their solution following the <a href="https://www.frontendmentor.io/guides/how-to-submit-solutions">Official Frontend Mentor Guide</a>.</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">5. Final Approval &amp; Compensation</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>We are introducing a performance-based compensation model tracked via Upwork:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item -->
+<li><strong>A-Team Mentors:</strong> Mentors are paid for their time spent guiding and reviewing.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Cohort 3 Mentees:</strong> Mentees will be paid upon the <strong>satisfactory completion</strong> of the project.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><strong>Final Review:</strong> Once the mentor is satisfied with the code, they must invite <strong>Philémon (Team Leader)</strong> for a final code review. Payment is released, and the Upwork contract is closed only after this final verification.</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>This new structure is not just about writing code; it’s about learning the <strong>collaboration, documentation, and accountability</strong> required in the global tech industry.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>A-Team, welcome to your new roles as leaders. Cohort 3, welcome to the challenge.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Philémon</strong> <em>Project Leader, A-Team</em></p>
+<!-- /wp:paragraph -->

@@ -1,0 +1,39 @@
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">What?</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>There is an expression: <a href="https://en.wikipedia.org/wiki/Eating_your_own_dog_food" data-type="link" data-id="https://en.wikipedia.org/wiki/Eating_your_own_dog_food">"<strong>We eat our own dog food."</strong></a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The link on that statement leads to the Wikipedia Page about the origins of the term.  What is crazy is that I remember seeing the dog food commercial in the '70s. Now you are curious if you have not read it.  If you read very far in that article you will see a number of examples of software and other companies (like Microsoft, Oracle, Apple) that have used that term to exhort their employees to actively use their own product while doing their job.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">What is our dog food? </h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>We have already trained the A-Team members in the use of <strong><a href="https://en.wikipedia.org/wiki/Use_case_diagram">UML Use-Case diagrams </a></strong>in the project contained in <a href="https://github.com/bahati7/MKB-cohort-2-Demo">https://github.com/bahati7/MKB-cohort-2-Demo</a>. That repository has a good README.md file and a doc directory containing UML markup for users and use case diagrams. That project was in preparation for the <a href="https://github.com/bahati7/student-survey-app">https://github.com/bahati7/student-survey-app</a> project. That project has been completed and is live at <strong><a href="https://student.MichaelKentBurns.com">Student Survey App Portal</a></strong>.  Go visit those sites, as you will soon need to read them with a goal in mind. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Here is my challenge: </h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>We are going to learn how to test UI and software in general by using <strong>our own products and processes</strong> to test <strong>our own software</strong> mentioned in the paragraph above. So, pay close attention to the details. We know how the users of that software use it because we are the users. Also, we will feel the pain of the issues with the UI, and will be motivated to fix those problems. We will be finding and reporting the usability issues, and then we will have to put on our developer hats and fix the problems.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Soon, there will be a new challenge added to our challenges page… and the details will be discussed there. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"align":"right"} -->
+<p class="has-text-align-right">Next Page -> <strong><a href="https://michaelkentburns.com/index.php/front-end-testing/" data-type="page" data-id="950">Front end testing</a></strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->

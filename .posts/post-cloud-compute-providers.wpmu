@@ -1,0 +1,31 @@
+<!-- wp:paragraph -->
+<p>There are a number of cloud computing providers, but the big 3 are:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">AWS - Amazon Web Services</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p><a href="https://aws.amazon.com">AWS overview</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="https://www.youtube.com/@TinyTechnicalTutorials">Great YouTuber for understanding AWS</a> - This woman does a great job of creating explainer and tutorial videos especially for AWS.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Her "<a href="https://www.youtube.com/watch?v=W6jQmVi31Xk&amp;t=10s&amp;pp=ygULYXdzIGdyYW5kbWE%3D">Explain Cloud Computing to Grandma</a>" video is awesome. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Azure - Microsoft Azure</h2>
+<!-- /wp:heading -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Google Cloud - Google Cloud</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->

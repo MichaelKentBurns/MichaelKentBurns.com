@@ -1,0 +1,75 @@
+<!-- wp:paragraph -->
+<p>There are many ways to deploy an application to a cloud server. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>There are usually a number of steps, including:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Get an account</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>There are many levels of account.   Most of the services provide an entry level starter option.   Those are free but restricted to a small footprint.  Some also allow a "getting started period" where you can create various services from many of their products that is free for a trial period.  </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong><a href="https://signin.aws.amazon.com/signup?request_type=register">Register for AWS</a></strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Create one or more instances from a variety of services</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>One of the easiest ways to deploy <strong>WordPress</strong> to <strong>AWS</strong> is shown in the video titled <a href="https://www.youtube.com/watch?v=F149JBiNhRM">Host Wordpress Website on Amazon Lightsail (aws) in just 4 mins</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Build your application </h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>In the previous section you saw an example of creating a Wordpress site during the creation of a Lightsail instance.   That is fine if you are starting from scratch.  Wordpress has all the tools you need to build out your site. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>But, you may choose to start on your local machine using your usual tools, and then copy the application to AWS.   </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>You can do this in a simple directory on your computer with an <strong><a href="https://en.wikipedia.org/wiki/Integrated_development_environment">IDE</a></strong> such as <a href="https://code.visualstudio.com">VS Code</a>. Once it is working you can create a zip file of your project and simply upload it during the instance creation process.    However, if you are going to frequently update it, you will have re-zip it and upload it again and again. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p> But, better than that it is good to start with a GitHub repository that you clone to your personal machine. That way you can code and test locally, and then push features one at a time to the GitHub repo.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Make a copy of your application in the cloud instance</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Most cloud solutions provide some means to <strong>ssh</strong> into your cloud instance.  Once there you can simply clone your project from its GitHub repository.    But, better than that you can use GitHub actions that will trigger an update to your cloud instance whenever you push your changes to a specific branch in your repo.   This arrangement is is often referred to as a <a href="https://en.wikipedia.org/wiki/Continuous_delivery#Deployment_pipeline">deployment pipeline</a>.    In the GitHub page for your project, select the "<strong>Actions</strong>" tab and read all about how it works. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>As a simple example here is a video of deploying a static website.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="https://www.youtube.com/watch?v=biYVW1TMYAU&amp;t=585s">AWS Project: Build a Game with a Continuous Deployment Pipeline from GitHub to S3 | AWS Tutorial</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Hook all the pieces of your solution together</h3>
+<!-- /wp:heading -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Publish it to the World Wide Web.</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"align":"right"} -->
+<p class="has-text-align-right">Next -> <strong>xxx</strong></p>
+<!-- /wp:paragraph -->

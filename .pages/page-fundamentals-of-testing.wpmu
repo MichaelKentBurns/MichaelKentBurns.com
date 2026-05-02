@@ -1,0 +1,45 @@
+<!-- wp:paragraph -->
+<p>Testing is a HUGE topic.   We are just getting started with serious testing and have to start at the fundamentals.   Later we will broaden out to cover many other types and aspects of testing.    </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>But, for now let's get a feel of the fundamentals. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>I found this article <strong><a href="https://namastedev.com/blog/fundamentals-of-software-testing/" data-type="link" data-id="https://namastedev.com/blog/fundamentals-of-software-testing/">Fundamentals of Software Testing</a></strong>. and it is a good place to start. Don't worry about absorbing it. Just get a feel from it and we will cover just one aspect at a time. Each time we broaden our learning, it is a good idea to come back and review this article.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Please read the article and make some comment below so I know you have read it.  In your comment you may do several things:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item -->
+<li>Things covered that you already knew.  Perhaps you can teach the rest of us.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Point out things you learned for the first time.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>The value of that article (or lacking).  </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Other recommendations for similar and hopefully better articles.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Other things that you thought should have been dealt with. </li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>So, now go read <strong><a href="https://namastedev.com/blog/fundamentals-of-software-testing/" data-type="link" data-id="https://namastedev.com/blog/fundamentals-of-software-testing/">Fundamentals of Software Testing</a></strong> and learn, but return here when you have read it so you can comment below.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"align":"right"} -->
+<p class="has-text-align-right">Next page -&gt; <a href="https://michaelkentburns.com/index.php/testing-your-work/the-user-comes-first/" data-type="page" data-id="929">The user comes first.</a></p>
+<!-- /wp:paragraph -->

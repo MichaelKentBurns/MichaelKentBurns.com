@@ -1,0 +1,21 @@
+<!-- wp:paragraph -->
+<p>The site you are visiting is the main <strong><a href="https://MichaelKentBurns.com" data-type="link" data-id="https://MichaelKentBurns.com">Mentoring and Training site.</a></strong> It also has a <a href="https://MichaelKentBurns.com/wp-admin/" data-type="link" data-id="https://MichaelKentBurns.com/wp-admin/">WordPress dashboard</a>.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>But there are several other sites we have created and/or use:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item -->
+<li>Our <strong><a href="https://student.MichaelKentBurns.com" data-type="link" data-id="https://student.MichaelKentBurns.com">Student Survey App</a></strong> is where <strong>instructors</strong> create surveys (like quizzes or tests) that our students need to visit when completing a lesson or challenge.   The instructors can login and create surveys, see completed surveys and respond to them.  The <strong>students</strong> get sent links that lead them to the surveys they need to complete.   The students can also see the full list of surveys and complete them as they choose.   It also has a <a href="https://student.MichaelKentBurns.com/wp-admin/" data-type="link" data-id="https://MichaelKentBurns.com/wp-admin/">WordPress</a><a href="https://MichaelKentBurns.com/wp-admin/" data-type="link" data-id="https://MichaelKentBurns.com/wp-admin/"> dashboard</a>.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Our <strong><a href="https://team.MichaelKentBurns.com" data-type="link" data-id="https://team.MichaelKentBurns.com">Team CRM</a></strong> is a Disciple-Tools instance which is a CRM system.   We use it to communicate between <strong>team members</strong>.  Each <strong>mentor</strong> has a group that also contains all of the <strong>mentees</strong> that he is assigned.  It is also used to track each members progress.    This is a private site accessible only to team members.   It also has a <a href="https://MichaelKentBurns.com/wp-admin/" data-type="link" data-id="https://MichaelKentBurns.com/wp-admin/">WordPress </a><a href="https://team.MichaelKentBurns.com/wp-admin/" data-type="link" data-id="https://team.MichaelKentBurns.com/wp-admin/">dashboard</a>.</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>We have <a href="https://dtdev.MichaelKentBurns.com" data-type="link" data-id="https://dtdev.MichaelKentBurns.com">DtDev</a>, a Disciple-Tools instance we use as a lab for trying new features, themes, and plugins.  It also has a <a href="https://dtdev.MichaelKentBurns.com/wp-admin/" data-type="link" data-id="https://dtdev.MichaelKentBurns.com/wp-admin/">WordPress dashboard.</a></li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->

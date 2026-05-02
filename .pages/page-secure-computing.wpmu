@@ -1,0 +1,73 @@
+<!-- wp:paragraph -->
+<p>One of the key principles of cloud computing is that because the resources are accessible from anywhere on the internet, <strong>security</strong> becomes a major consideration. If you have not already studied our page on <strong><a href="https://michaelkentburns.com/index.php/security/" data-type="page" data-id="583">Security</a></strong> you should do so now and return here later. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Personal computing</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>When your applications ran on your desktop or laptop computer, you were usually the only person with physical access to the computer, and thus the resources it contains.   Sure, you kept your computer inside your house or your office and did not just leave it laying around.  But, sometimes you carried it out in public like a coffee shop or restaurant or a public room in your companies office building.   In those cases you were strongly advised to lock your computer with a login password and a screensaver to lock it after some reasonable period of inactivity.   </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Another consideration is that most applications, and especially browsers and email access requires that your computer have a wifi or even cellular connection to the internet.   If your computer is connected to the internet then there is a good chance that someone could access your computer through the network.    To prevent that you usually had to install and activate a program called a firewall.  Such a program restricts almost all in coming connections.   </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Corporate computing</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>If your computer was used for corporate work then you usually had to access servers inside your corporate network.   When you do so, the information you are sending or receiving is traveling through the internet.   That opens the possibility that someone could access the data as it travels.    One solution for that is secure communication.  </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Originally, you accessed web servers with addresses like <strong>http</strong>://myCompany.com.  The <strong>http</strong> was the original internet protocol, but it was not secure.   By implementing the <strong>https</strong> protocol, your computer and the service you accessed would arrange security by exchanging ssl keys.  The protocol designator on the URL is visible and it should be <strong>https</strong>.   But, that is not usually good enough.   A malicious site could trick you into connecting to it with a URL similar but not exactly the same as the site you thought you were accessing.   One clue to that is that the URL starts the same as the URL for you online banking service, but ends with a different top level domain.  So, you think you are accessing https://myBank.<strong>com</strong> when in fact it is https://myBank.<strong>net </strong>or .<strong>cn</strong>.   When that top level domain is a foreign country, particularly one that is not friendly with your country, then you have lost your information or been hacked. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>An additional security method used to prevent that sort of thing is called a network certificate.   It is similar to an ssl public/private key pair, but it is a cryptographic certificate that is validated by network authorities to only be usable on the expected website.   See our blog post on <strong><a href="https://michaelkentburns.com/index.php/2024/07/11/security-lesson-2-secure-web-browsing-is-your-job-too/">security lesson #2</a></strong> for more on this topic.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Why is this so complicated??</h2>
+<!-- /wp:heading -->
+
+<!-- wp:list {"ordered":true} -->
+<ol class="wp-block-list"><!-- wp:list-item -->
+<li>The internet was built on a community of trust.  Originally university researchers sharing academic papers.   Those papers were not private.  The whole point was to give that information freely.   You have no motivation to steal research information. Most internet addresses in those days were something like <strong>http</strong>://www.cmu.<strong>edu </strong>  </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>When the internet became open to commercial sites many of the URLs were <strong>http</strong>://www.ibm.<strong>com </strong>or <strong>https://</strong>www.<strong>BofA.com</strong> and now electronic funds transfer or credit card accounts were abundant. </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>When the general public was accessing their financial or personal information then the commercial servers demanded that people create usernames and passwords.  Believe it or not most people are not very imaginative in creating passwords.  Many people used the same username and password for many of their accounts.  If they tried to remember their passwords they kept them simple.   See our blog post <a href="https://michaelkentburns.com/index.php/2024/07/10/so-you-want-to-be-a-pro-do-you/"><strong>So, you want to be a pro do you?</strong> </a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>When professionals had secure access to valuable resources, the managers of those resources demanded much more secure authentication in the form of SSL public/private keys.   Some computer professionals, but certainly not most, have the technical prowess to generate and install those keys so that they were activated when their ssl login or sftp connections were triggered.    There is no way that most non-professionals would want to, or have the ability to use such keys. </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Many web servers, or application servers are installed in a corporate data center along with internal applications and stored data.  As new applications or data are added, the security requirements get more and more complicated.   It is very difficult to keep such a data center secure and the risks are very high.   Security systems need to be professional engineers who are trained in security, and frequent security audits are required.  </li>
+<!-- /wp:list-item --></ol>
+<!-- /wp:list -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">So, what is the solution? </h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Simply:  containerized applications and dev-ops deployment.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"align":"right"} -->
+<p class="has-text-align-right">Next --> <strong><a href="https://michaelkentburns.com/index.php/cloud/deployment-containers/" data-type="page" data-id="1017">Deployment containers. </a></strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->
