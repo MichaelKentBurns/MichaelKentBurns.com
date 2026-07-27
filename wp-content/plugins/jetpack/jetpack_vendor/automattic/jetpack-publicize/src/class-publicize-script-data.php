@@ -114,6 +114,7 @@ class Publicize_Script_Data {
 			'api_paths'            => self::get_api_paths(),
 			'assets_url'           => plugins_url( '/build/', __DIR__ ),
 			'is_publicize_enabled' => Utils::is_publicize_active(),
+			'message_templates'    => array(),
 			'supported_services'   => array(),
 			'urls'                 => array(),
 			'settings'             => self::get_social_settings(),
@@ -138,6 +139,9 @@ class Publicize_Script_Data {
 				'supported_services'  => self::get_supported_services(),
 				'urls'                => self::get_urls(),
 				'store_initial_state' => self::get_store_initial_state(),
+				'message_templates'   => array(
+					'placeholders' => Message_Templates_Placeholders::get_all(),
+				),
 			)
 		);
 	}
@@ -159,6 +163,7 @@ class Publicize_Script_Data {
 				'config'  => $settings->get_social_notes_config(),
 			),
 			'showPricingPage'      => $settings->should_show_pricing_page(),
+			'messageTemplate'      => $settings->get_message_template(),
 		);
 	}
 
@@ -248,10 +253,9 @@ class Publicize_Script_Data {
 	public static function get_api_paths() {
 
 		return array(
-			'refreshConnections' => '/wpcom/v2/publicize/connections?test_connections=1',
 			// The complete path will be like `/jetpack/v4/social/settings`.
-			'socialToggleBase'   => Utils::should_use_jetpack_module_endpoint() ? 'settings' : 'social/settings',
-			'resharePost'        => '/wpcom/v2/publicize/share-post/{postId}',
+			'socialToggleBase' => Utils::should_use_jetpack_module_endpoint() ? 'settings' : 'social/settings',
+			'resharePost'      => '/wpcom/v2/publicize/share-post/{postId}',
 		);
 	}
 

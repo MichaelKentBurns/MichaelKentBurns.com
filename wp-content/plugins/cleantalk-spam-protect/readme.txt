@@ -1,29 +1,29 @@
-=== Anti Spam for Contact Forms, Comments & Online Stores - CleanTalk ===
+=== CleanTalk Anti-Spam. Spam Firewall & Bot protection ===
 Contributors: glomberg, alexandergull, sergefcleantalk, antonv1
-Tags: antispam, honeypot, contact form spam, captcha, akismet 
+Tags: antispam, honeypot, bot, captcha, spam
 Requires at least: 4.7
 Tested up to: 7.0
 Requires PHP: 7.2
-Stable tag: 6.79
+Stable tag: 6.84
 License: GPLv2
 
-Top-rated anti spam protection for WordPress, eCommerce. Blocks spam on forms, comments and registrations automatically. No CAPTCHA.
+Top-rated antispam for contact forms, comments, WooCommerce, eCommerce, and login. No CAPTCHAs, no friction, just background anti spam protection.
 
 == Description ==
 
-Top-rated antispam protection for WordPress. No CAPTCHA, no puzzles, and no visitor friction - just automatic spam blocking for forms, comments, registrations, subscriptions, and fake orders.
+**Trusted by over 200,000 websites and rated among the top anti-spam solutions for WordPress in 2026**. No CAPTCHAs, no puzzles, and no visitor friction — just automatic spam blocking for forms, comments, registrations, subscriptions, and fake orders. Powered by a **global spam detection network that includes over 1,078,000 websites** and helps stop spam before it reaches your website. **Install it in less than 30 seconds** and start protecting your site immediately.
 
 = Superpowers =
 1. Stops spam comments.
-2. Stops spam registrations.
+2. Stops spam registrations and logins.
 3. Stops spam contact emails.
 4. Stops fake orders eCommerce sites and online stores.
-5. Stops spam bookings.
-6. Stops spam subscriptions.
+5. Antispam for bookings.
+6. Antispam subscriptions.
 7. Stops spam surveys, polls.
 9. Stops spam in WooCommerce.
-17. Stops spam in Search Form.
-10. Real-time email validation. Check if an email is real or fake. 
+17. Antispam for Search Form.
+10. Real-time email validation. Check if an email is real or fake.
 11. Checks and removes the existing spam comments and spam users.
 14. Blocking  disposable & temporary emails.
 22. Block messages by languages, countries, networks and stop words.
@@ -35,18 +35,9 @@ Top-rated antispam protection for WordPress. No CAPTCHA, no puzzles, and no visi
 > Improve Your Security WordPress Spam Protection With CleanTalk Anti-Spam
 > <a href="https://thehackernews.com/2023/07/improve-your-security-wordpress-spam.html" target="_blank">The Hacker News</a>.
 
-> CleanTalk - Cloud-Based Anti-Spam Service to Keep Your Site Bot-Free.
-> <a href="https://newswatchtv.com/2018/07/18/cleantalk-newswatch-review/" target="_blank">NewsWatch Review</a>.
-
 > Compare reCAPTCHA & Akismet VS CleanTalk
-> [CleanTalk vs Google reRECAPTCHA](https://cleantalk.org/recaptcha-alternative) 
+> [CleanTalk vs Google reRECAPTCHA](https://cleantalk.org/recaptcha-alternative)
 > [CleanTalk vs Akismet](https://cleantalk.org/help/cleantalk-vs-akismet)
-
->I know you have heard of a number of anti-spam plugins. But you must know, the cloud-based ones are the best regarding detection rate. They compare all the content in forms with their own algorithm to find out the legibility.
->*<a href="https://www.techwibe.com/cleantalk-wordpress-plugin-review/" target="_blank">www.techwibe.com</a>*
-
-> The key selling point of CleanTalk for me is not simply its effectiveness. It's the fact that CleanTalk works in the background. It does not make users jump through hoops in order to submit a comment or complete a form.
-> <a href="https://www.kevinmuldoon.com/cleantalk-anti-spam-service/">www.kevinmuldoon.com</a>
 
 = Free trial then $12 per year =
 CleanTalk is an anti-spam plugin which works with the premium Cloud Anti-Spam service cleantalk.org. This plugin as a service <a href="https://developer.wordpress.org/plugins/wordpress-org/detailed-plugin-guidelines/#6-software-as-a-service-is-permitted">https://developer.wordpress.org/plugins/wordpress-org/detailed-plugin-guidelines/#6-software-as-a-service-is-permitted</a>
@@ -54,47 +45,99 @@ CleanTalk is an anti-spam plugin which works with the premium Cloud Anti-Spam se
 = AntiSpam protection for comments =
 Native spam protection for WordPress, JetPack comments and any other comment plugins. The plugin moves spam comments to SPAM folder or you can set the option to ban spam comments silently. You can also enable the option in the plugin settings to auto-delete comments from SPAM folder.
 
-= Contact Form 7 spam filter =
+
+= Contact Form 7 Antispam =
 Plugin extends spam protection for Contact Form 7 (CF7). It can be used with any other third-party spam filters.
 <a href="https://blog.cleantalk.org/how-to-protect-your-contactform7-contact-form-using-cleantalk-anti-spam-plugin/">How to protect your Contact Form 7 using CleanTalk Anti-Spam plugin</a>
 
-= Elementor Website Builder filter =
-Plugin extends spam protection for Elementor Website Builder. It filters spam submisssions and tested for contact form type.
-
-= Gravity forms spam filter =
-Plugin extends spam protection for Gravity forms. It filters spam submisssions for any type of forms.
-
-= Formidable Form Builder spam filter =
-Plugin extends spam protection for Formidable Form Builder. It filters spam submisssions for any type of forms - Contact Form, Survey & Quiz Forms.
-
-= Leaky Paywall subscription protection =
-Plugin protects Leaky Paywall plugin (by ZEEN01) against spam subscriptions. It can be used with any other third-party spam filters.
-
-= HubSpot protection for embedded forms =
-Plugin protects HubSpot embedded forms against any spam submissions. Guide to start using embedded forms https://knowledge.hubspot.com/forms/how-can-i-share-a-hubspot-form-if-im-using-an-external-site
-
-= Contact Form by WPForms spam filter =
+= Contact Form by WPForms Antispam =
 Plugin extends Contact Form by WPForms to provide spam protection. It filters spam submissions for each type of forms - simple contact form, marketing form, request a quote and etc.
 
-= WooCommerce spam & fake orders filter =
+= Antispam for WooCommerce & fake orders filter =
 Anti-spam by CleanTalk filters spam registrations, spam reviews, and fake orders for WooCommerce (any eCommerce plugin as well). The plugin is fully compatible with WooCommerce 2.1+ and online stores.
 
-= Spam filter for theme contact forms =
-The plugin blocks spam emails via any theme (built-in ones included) contact forms. The plugin filters spam emails silently (without any error notices on WordPress frontend) in AJAX forms as well.
+= Many other great contact, signups and all kind of forms that supported by Anti-Spam plugin by CleanTalk =
+* Asgaros Forum
+* Avada Forms
+* AWeber form builder
+* Awesome Support – WordPress HelpDesk & Support Plugin
+* Back In Stock Notifier for WooCommerce | WooCommerce Waitlist Pro
+* bbPress by John James Jacoby
+* Brave Popup Builder – Popup, Optins, Lead Generation, Survey & Interactive Content
+* Brevo – Email, SMS, Web Push, Chat, and more by Brevo
+* Calculated Fields Form
+* Chatway Live Chat – AI Chatbot, Customer Support, FAQ & Helpdesk Customer Service & Chat Buttons
+* Contact Form Clean and Simple
+* Contact Form by BestWebSoft – Advanced WP Contact Form Builder for WordPress
+* Contact Form Plugin by Fluent Forms Ninja forms
+* Contact Form by Supsystic
+* Contact Form Email
+* Constant Contact Forms
+* Comments – wpDiscuz By AdvancedCoding
+* Customer Reviews for WooCommerce
+* Floating Chat Widget: Contact Chat Icons, Telegram Chat, Line Messenger, WeChat, Email, SMS, Call Button – Chaty
+* Forminator Forms – Contact Form, Payment Form & Custom Form Builder
+* Easy Digital Downloads – eCommerce Payments and Subscriptions made easy
+* eForm - WordPress Form Builder
+* Elementor - Build, Design & Manage Forms From One Place
+* Elfsight Blocks for Elementor — 80+ Widgets
+* Events Manager – Calendar, Bookings, Tickets, and more! By Marcus (aka @msykes)
+* Everest Forms – Contact Form, Payment Form, Quiz, Survey & Custom Form Builder with AI
+* FiboSearch – Ajax Search for WooCommerce
+* Flamingo
+* Fluentbooking.com
+* Formidable Forms – WordPress Form Builder for Contact Forms, Calculators, Quizzes & More
+* Form Maker by 10Web – Mobile-Friendly Drag & Drop Contact Form Builder
+* GeoDirectory – WP Business Directory Plugin and Classified Listings Directory
+* GiveWP – Donation Plugin and Fundraising Platform
+* gravityforms.com - Powerful data capture fueled by Gravity Forms
+* Gwolle Guestbook
+* Happyforms – Form Builder for WordPress: Drag & Drop Contact Forms, Surveys, Payments & Multipurpose Forms
+* HivePress – Business Directory, Listings & Classified Ads Plugin
+* HubSpot All-In-One Marketing – Forms, Popups, Live Chat
+* Hustle – Email Marketing, Lead Generation, Optins, Popups
+* JetFormBuilder — Dynamic Blocks Form Builder
+* Jetpack – WP Security, Backup, Speed, & Growth
+* Jotform - Online Forms — Customizable Payment, Contact, Quiz, Survey Form Builder
+* Kadence Blocks — Page Builder Toolkit for Gutenberg Editor
+* Kali Forms (Free & Pro) — Contact Form & Drag-and-Drop Builder
+* Klaviyo
+* Kulahub
+* Landing Page Builder – Coming Soon page, Maintenance Mode, Lead Page, WordPress Landing Pages
+* Leaky Paywall
+* LearnPress – WordPress LMS Plugin for Create and Sell Online Courses
+* Lead Form Builder & Contact Form By ThemeHunk
+* Login & Register Customizer – Popup | Slider | Inline | WooCommerce
+* MailChimp Forms by MailMunch
+* MailOptin – Popup, Optin Forms & Email Newsletters for Mailchimp, HubSpot, AWeber Etc.
+* My Sticky Elements - All-in-one Sticky Floating Contact Form, Call, Click to Chat, and 50+ Social Icon Tabs
+* MetForm – Contact Form, Survey, Quiz, & Custom Form Builder for Elementor
+* Newsletter – Send awesome emails from WordPress by Stefano Lissa
+* Newsletters by Tribulant Software
+* Newsletters - MC4WP: Mailchimp for WordPress
+* NEX-Forms – Ultimate Forms Plugin for WordPress by Basix
+* Nextend Social Login and Register by Nextendweb
+* Ninja forms by Kevin Stover
+* Piotnet by piotnet.com
+* Product Enquiry for WooCommerce (Now with AI Assistant) By WisdmLabs
+* Quform by quform.com
+* QuickCal by quickcal.co
+* RegistrationMagic – Custom Registration Forms, User Registration, Payment, and User Login By Metagauss
+* Simple Registration for WooCommerce By Astoundify
+* Smart Forms – when you need more than just a contact form By EDGARROJAS
+* Strong Testimonials By WP Chill
+* SureForms – Drag & Drop Contact Form & Form Builder, Payment Form, Survey, Quiz & Calculator By Brainstorm Force
+* User Registration & Membership – Free & Paid Memberships, Subscriptions, Content Restriction, User Profile, Custom User Registration & Login Builder By wpeverest
+* Visual Form Builder By Matthew Muro
+* WP Booking System – Booking Calendar By Roland Murg
+* User Frontend: AI Powered Frontend Posting, User Directory, Profile, Membership & User Registration By weDevs
+* WS Form LITE – Drag & Drop Contact Form Builder By Mark Westguard
+* Wufoo Shortcode By wronganswersonly
+* WP User Frontend, UserPro
+* WordPress Landing Pages
+* ZeroBounce Email Verification & Validation By zerobounce
+* Zoho Forms – Drag & Drop Form Builder for Websites – Contact Forms, Payment Forms, Order Forms & More By Zoho Forms
 
-= bbPress spam filter =
-Spam protection for everything about bbPress: logins, registrations, forums, topics and replies.
-
-= Many other great contact, signups and all kind of forms that supported by CleanTalk =
-* AWeber form builder <a href="https://wordpress.org/plugins/aweber-web-form-widget/">https://wordpress.org/plugins/aweber-web-form-widget/</a>
-* Contact form by BestWebSoft <a href="https://wordpress.org/plugins/contact-form-plugin/">https://wordpress.org/plugins/contact-form-plugin/</a>
-* Contact Form Plugin by Fluent Forms Ninja forms <a href="https://fluentforms.com/">https://fluentforms.com</a>
-* Forminator contact from <a href="https://wpmudev.com/project/forminator-pro/">https://wpmudev.com/project/forminator-pro/</a>
-* Ninja forms <a href="https://ninjaforms.com/">https://ninjaforms.com</a>
-* Newsletters - MC4WP: Mailchimp for WordPress (<a href="https://www.mc4wp.com/">mc4wp.com</a>), MailPoet – emails and newsletters in WordPress (https://www.mailpoet.com/)
-* WS Form Lite <a href="https://wordpress.org/plugins/ws-form/">https://wordpress.org/plugins/ws-form/</a>
-* WP User Frontend, UserPro.
-* WordPress Landing Pages.
 
 Protection for the forms above works as a built-in feature of Anti-Spam by CleanTalk without requiring any additional actions from the user.
 
@@ -125,13 +168,15 @@ All the CleanTalk Spam FireWall activity is being logged in the process of filte
 = Spam FireWall: Anti-Flood & Anti-Crawler =
 Spam FireWall: Anti-Flood and Anti-Crawler options are intended for blocking unwanted bots, content parsing, shop goods prices parsing or aggressive website scanning bots. Learn more https://cleantalk.org/help/anti-flood-and-anti-crawler
 
+By default, well-known good bots — including AI crawlers such as GPTBot (ChatGPT), ClaudeBot (Claude), Google-Extended (Gemini), and Copilot — are allowed. You can choose which of these bots to block individually in your private lists. Blocking a bot will stop the corresponding AI service from accessing your content.
+
 = How to protect sites from spam bots without CAPTCHA? =
 CleanTalk Anti-Spam protects websites from spam bots without using traditional CAPTCHA, reCAPTCHA, or other visitor challenges. Instead of showing CAPTCHA puzzles, the service uses behavioral analysis, invisible JavaScript tests, and a global spam database to detect spam automatically in the background. This CAPTCHA-free anti-spam protection works for contact forms, comments, registrations, and WooCommerce checkouts without creating friction for real visitors. By replacing CAPTCHA with automated spam detection, CleanTalk helps improve usability, accessibility, and conversion rates while still blocking spam effectively.
 
 Sometimes CAPTCHA reminds us of the doodles of a two year old child. For users with vision problems CAPTCHA is an insurmountable obstacle. Users hate captcha. Captcha for users means "hate". Unreadable CAPTCHA **stops about 80% of site visitors**. After 2 failed attempts to decipher CAPTCHA **95% of visitors reject** further attempts. At the sight of CAPTCHA and after input errors, many visitors leave the resource. Thus, CAPTCHA helps to protect the resource spam both from bots and visitors. CAPTCHA is not a panacea from spam. Doubts concerning the Need for CAPTCHA?
 
 *"Ultimately, CAPTCHAs are useless for spam because they're designed to tell you if someone is 'human' or not, but not whether something is spam or not." Matt Mullenweg*
- 
+
 = Real-time email validation. Is email real or Not. =
 It is very important to be sure that the user used his real email address. Spambots very often use fake email addresses, i.e. which addresses do not exist.
 
@@ -151,9 +196,9 @@ Block fake and suspicious users with disposable & temporary emails to improve em
 = Stops Spam in Search Form =
 Spam bots can use your search form to make a GET request with spam text. CleanTalk Anti-Spam has the option to protect your website search form from spam bots. Each time, the search generates a new page and if there are many requests, this can create additional load. So, under some conditions, spam searches can be indexed, which affects SEO,
 
-* Anti-Spam protection for website search forms repels spambots.
+* Anti-Spam protection for website search forms repels spam bots.
 * If your search form gets data too often the CleanTalk Anti-Spam plugin will add a pause and increase it with each new attempt to send data. It saves your web server processor time.
-* Spam protection allows you to not forbid indexation for the crawler bots if you really need it but simultaneously you will get protection from spambots.
+* Spam protection allows you to not forbid indexation for the crawler bots if you really need it but simultaneously you will get protection from spam bots.
 
 You will always know what users were looking for on your site.
 
@@ -228,7 +273,7 @@ The plugin uses several simple tests to stop spammers:
 1. **Comment submit time.** Spam bots usually submit the info immediately after the page has been loaded, this happens because spam bots don't actually fill the web form, they just send $_POST data to the blog. The normal visitor sends the data after several seconds or minutes.
 
 = What about pingback, trackback spam? =
-The plugin passes pingbacks without any checks by default. All trackbacks will be blocked if the sender had spam activity.
+The plugin does not filter trackbacks or pingbacks, but it can disable them using WordPress core functionality. To enable this option, go to: *WordPress Dashboard → Settings → Anti-Spam by CleanTalk → Advanced Settings → "Disable Pingbacks and Trackbacks"*.
 
 = Can I use CleanTalk to remove pending spam comments? =
 Yes, you can. The plugin has the option to test all pending comments via database of <a href="https://cleantalk.org/blacklists">spam active IP/Email</a>, found spam comments will be moved to Trash folder.
@@ -380,6 +425,73 @@ CleanTalk stops up to 99.998% of spam bots, so you can disable other anti-spam p
 8. Prevent any other spamers, from any other forms, for example from WPForms.
 
 == Changelog ==
+
+= 6.84 23.07.2026 =
+New. Integration. WooCommerce. Spam order details modal windows implemented.
+New. Integration. Catch fetch request. Iframe forms of sender.com protected.
+Fix. Settings. Improve alt storage.
+Fix. ContactEncoder. Addition typecheck.
+Fix. Code. Deprecated notice fixed.
+Fix. Integrations. XStore checkout update flow.
+Fix. Integrations. Woo fluent checkout update flow.
+
+= 6.83.1 16.07.2026 =
+Upd. Settings. Implement honey test.
+
+= 6.83 09.07.2026 =
+New. Settings. Getting apikey wizard.
+New. RateLimit. Enabled the RateLimit shared library
+New. Footer. New link on Website Feedback Plugin
+New. RateLimit. Enabled the RateLimit shared library
+Upd. Contacts Encoder. Flow improvements.
+Upd. ContactEncoder. Improve shortcode flow.
+Mod. BannerReview. Changing the design of the review banner
+Mod. LinkConstructor. Changing all links on the settings page to LinkConstructor
+Fix. ContactEncoder. Edits made in the shortcode omitted from encoding.
+Fix. SFW. RSS exclusion fixed.
+Fix. RemoteCalls. Editing multiple calls
+Fix. SFW. Update SFW fix
+Fix. SFW. Modules die pages fixed.
+Fix. Integration. Amelia integration fixed: event_token added.
+Fix. Integration. Brevo integration fixed.
+Fix. Integration. WooCommerce register requests protection fixed.
+
+= 6.82 24.06.2026 =
+* New. Integration. Integration with Email Subscribers
+* Fix. Integration. Editing the doBlock method
+* New. Integration. Integration edits when on and off js
+* Fix. Code. Editing the check_value parametere
+
+= 6.81 10.06.2026 =
+* New. Code. Amelia integration
+* Code. Links from backend
+* Fix. Code. Improve statement.
+* Fix. Code. Editing the array key transfer
+* Fix. SFWUpdateLog. Transferring values to placeholders prepare()
+* Fix. SFW. Mixing values in cookies SFW
+* New. Pingback and trackback rejection implemented.
+* Code. Mobile styles fix (#803)
+* Mod. Integrations. Opting out of force alt cookies for SmartForms. (#808)
+
+= 6.80 28.05.2026 =
+* Fix. catchJqueryAjax. Object as null comparison fixed.
+* Fix. CatchXHR. Mailpoet integration added to provide the event_token.
+* Upd. Bot Detector Service. Added alternative source URL.
+* Upd. Bot Detector Service. Updates.
+* Fix. PHP8. Prevent duplicate headers before sending HTTP response code.
+* Fix. TRP. Correctly save TRP hashes.
+* Mod. Settings. Transferring an option and deleting its description
+* Fix. Code. Bug fixes after WP 7.0 update
+* Fix. Admin banners. Call-to-action buttons visibility fixed.
+* Mod. Settings. Editing the description of the Anti-Crawler option
+* Fix. Settings. Edit long description
+* Mod. Integration. Opting out of force alt cookies for UserRegistrationPro members
+* Fix. BotDetector. Editing the bot detector connection
+* Fix. CheckJS. Edit the check_js entry if the global key is not available
+* Fix. Code. Added a space between the username and the TRP text
+
+= 6.79.1 25.05.2026 =
+* Fix. Admin banners. Call-to-action buttons visibility fixed.
 
 = 6.79 14.05.2026 =
 * Mod. Settings. Moving the AC option
@@ -539,171 +651,5 @@ CleanTalk stops up to 99.998% of spam bots, so you can disable other anti-spam p
 * New. Integration. Bit Form integration implemented.
 * Upd. Code. PHP compatibility increased to 7.2.
 * New. Settings. Added project management menu item.
-
-= 6.70.1 19.12.2025 =
-* Fix. Integration. Fluent forms integration fixed (fix for commit ae74511a96417b607f2b79b83ef984de7eac0588).
-
-= 6.70 18.12.2025 =
-New. Integrations. Protect Bitrix24 external forms.
-New. SFW. Update. Constant APBCT_SERVICE__SFW_UPDATE_CURL_MULTI_BATCH_SIZE. Used to reduce curl multi batch size.
-Upd. Integrations. Added precheck email for Gravity Forms.
-Upd. Contact Data Encoder. Encoder lib updated to support new formats.
-Upd. Contact Data Encoder. Added new format to encode phone numbers.
-Upd. Setting. Do not drop settings state on disabling. Uses a special list.
-Mod. FluentForm. Added the ability to connect js scripts for logged in users.
-Fix. FluentForm. The verification depends on the data__protect_logged_in and is_user_logged_in() options.
-Fix. Contact Data Encoder. Fixed shortcode flow on multiple use.
-Fix. Contact Data Encoder. PHP 8.4 notices fixed.
-Fix. The Real Person. Adding a check that excludes duplication of TRP.
-
-= 6.69.2  09.12.2025 =
-Fix. Contact Data Encoder. Fixed deprecation notice.
-Fix. Contact Data Encoder. Frontend. Fixed connection errors handling.
-
-= 6.69.1  08.12.2025 =
-Fix. Integrations. Update Woo add to cart check.
-
-= 6.69 04.12.2025 =
-New. WPRecipeMaker. Integration with WP Recipe Maker
-Upd. Code. ContactsEncoder module refactoring.
-Upd. ContactEncoder. Improve UX.
-Upd. TRP. Restart show badge on woo review page.
-Upd. WCAddToCart. Processing and adding event_token to the request
-Upd. Integrations. JS. Dynamic rendered form interval clearance on window load custom events.
-Upd. EmailEncoder. Added new format to encode phone numbers.
-Mod. CheckEmailExist. Integration of Check Email Exist with Ninja Forms
-Mod. WPRecipeMaker. Editing the blocking message
-Fix. Bot detector. Set event_token for the different cookies types fixed.
-Fix. Integration. Ninja Forms refactored - no using force_alt_cookies.
-Fix. Integration. Fluentbook. Added public scripts echoing on author landing visit.
-Fix. Integrations. JS. Run dynamic forms catching on interval.
-Fix. Woocommerce. Exclusion for WC Stripe Apple Pay frontend request.
-Fix. Integration. Brick theme ajax response fixed.
-Fix. Integration. FunnelKit. Funnel builder action added.
-Fix. WPMS. Getting and recreating personal tables on WPMS.
-Fix. OptiPress. Editing the integration in passing the message parameter
-Fix. WPRecipeMaker. Combining logic under one condition
-Fix. Helper. Correcting the error of using 'static' in string callables inside array_map since version 8.2
-Fix. FluentForm. The verification depends on the data__protect_logged_in and is_user_logged_in() options
-Github. New action to create assets from dev/fix on push event.
-
-= 6.68 13.11.2025 =
-New. Integration. Ultimate affiliate plugin (Codecanyon).
-New. Integration. Gwolle Guestbook integration implemented.
-Upd. Integrations. Improved capability with perfmatters.
-Upd. Settings. Improved UX.
-Upd. Email Encoder. Try to decode in both ways ssl/str_base.
-Fix. ContactEncoder. Editing duplicate pages due to buffer interception.
-Fix. Code. Unit text TestRequirementsChecker refactored.
-Fix. Integration. WPForo. Catch email and nickname via native WPF object. Get message from input.
-Fix. Integrations. Nex-forms POST clearance from service fields after check.
-Fix. Protection by fake button. Sender.net forms ignored, preparing for the next iteration.
-Fix. Integrations. GiveWP. Partially protected Give REST submission.
-Code. Unused code removed.
-Mod. TRP. TRP edits, duplicate the cleantalk_allowed_moderation option and move it to settings.
-
-= 6.67 30.10.2025 =
-New. AdminBanner. Separation of banners about an empty and invalid key
-New. AdminBanner. Editing logic for a banner about an incorrect key
-Fix. ContactEncoder. Revert svg content.
-Fix. Integrations. Prevent spam requests to third-party services.
-Fix. Integrations. Added Beaver Builder.
-Fix. Integrations. Improved gathering data for fluentbooking pro.
-Fix. OptimizePress. Registration process protected.
-Fix. Integration. WP Booking System integration fixed.
-New. Integration. Doctor Plus theme registration and login.
-Fix. Integration. WPForms. Fixed missed request on non-emtpty WPForm form errors array.
-Fix. Hide website field. Forced condition to replace via honeypot.
-Upd. Server Requirements Checker. Added curl_multi_exec to the check-list.
-New. Email exists check. Implemented for CF7. (#669)
-Upd. Settings. Updated access key link parameters for improved registration process.
-Fix. Settings. Typo (system requirements) fixed.
-Fix. Settings. Complete deactivation fixed.
-Fix. State. Default `fw_stats` fixed.
-Fix. SFW. SFW updating (process exclusions) fixed.
-Fix. Exclusion. Newsletter Automation. Skip test newsletter check.
-Fix. Integration. btQuoteBooking form params gathering fixed.
-Fix. Integration. WP Mailer Lite. Fixed exclusion.
-
-
-= 6.66 16.10.2025 =
-Fix. Remote calls. Debug RC now hide sensitive data.
-Fix. TRP. Show TRP for admins and editors.
-Fix. TRP. Twenty Twenty-Five theme support added.
-Fix. Settings. Activator fixed.
-New. Summary and statistics. Support user action moved.
-Fix. Integrations. Skip service requests for checkout process.
-Fix. FW. Improved rules to update personal tables.
-Fix. Integrations. Updated statement to skip woo-mailerlite service requests.
-Fix. Integrations. Fixed statement for cwginstock.
-Fix. Integrations. Improved statement to intruding to checkout request.
-
-= 6.65 02.10.2025 =
-Fix. Code. Pluggable exclusions logic fixed.
-Fix. Common. Alt cookies getting fixed.
-Fix. ContactEncoder. Skip SVG content.
-Fix. Integration. Added WPCommunity login to request exclusions.
-Fix. Integration. Fluent Booking Pro integration fixed - exclude requests from general contact forms checking.
-Fix. Integration. Skip BuddyBoss login form.
-Fix. Integration. WooCommerce mark spam orders fixed.
-Fix. Integration. WP Booking System integration fixed - support pro version.
-Fix. Integrations. Added rules to skip woocommerce service request.
-New. CheckEmailExist. Support for Registration Form.
-New. CheckEmailExist. Support for Woocommerce checkout form.
-New. Integration. Added NEXForms integration.
-New. Integration. Indeed Coming Soon integration implemented.
-New. Summary and statistics. Temporary support user creation implemented.
-Upd. CheckEmailExist. Improve support for Woocommerce checkout form and update option description.
-Upd. Search form. Added CleanTalk unique sign for native form.
-Upd. UsersChecker. Include first name, last name, and nickname in csv report of user data output.
-
-= 6.64 18.09.2025 =
-New. Integration. Integration with WPFunnels.
-New. CheckEmailExist. Support for Registration Form.
-New. Integration. LifterLMS (registration) protection implemented.
-New. CheckEmailExist. Support for Fluent Forms.
-Upd. Request parameters. Calculate no submittime if bot detector enabled.
-Upd. Bot detector gathering. Changed URL of wrapper to fd.cleantalk.org
-Mod. Integration. Unset visible fields.
-Fix. Integration. Happy Forms protection fixed.
-Fix. Integration. HabSpot external form (transparent div) protection fixed.
-Fix. Integration. Back-In-Stock ajax catching detect fixed.
-Fix. Integration. Back-in-stock-notifier fixed event token transport.
-Fix. External forms. Protection by cover fixed.
-Fix. Code. Undefined object botDetectorLocalStorage using removed.
-
-= 6.63 04.09.2025 =
-New. Integrations. BuddyPress App REST API protection.
-New. Integration. WooCommerce Wholesale Lead Capture registration protection implemented.
-Fix. Integration. SiteReviews integration fixed.
-Fix. Integration. Connecting the required js bundle and bot detector for Fluent Booking.
-Fix. JS. Passing the original context to an anonymous function
-Fix. Integration. FluentBooking integration fixed.
-Fix. Code. JS function getCleanTalkStorageDataArray moved to common file.
-Fix. Anti-Spam. Integrations by class logic fixed.
-Fix. Registration. Checking WP_Error during registration protection.
-
-= 6.62 21.08.2025 =
-* Mod. Firewall. Disabling SFW, AntiCrawler, and AntiFlood if the key is invalid or empty
-* Fix. Woocommerce. Add to cart validation on AJAX fixed.
-* Mod. Settings. Renaming email verification options before submitting the form
-* Fix. EmailCheckExist. Edit for WL mode
-* Ref. Frontend. Optimize flow to prevent forсed reflow.
-
-= 6.61 07.08.2025 =
-* New. Integration. Asgaros Forum topics and replies protected.
-* Upd. EmailEncoder. Add mode handler for shortcode.
-* Upd. Settings. Restore notice about get key auto.
-* Upd. Footer links. Footer links block Recommended plugins updated.
-* Upd. ServerRequirementsChecker. Check updated, unit test provided, docs added.
-* Ref. JS. Refactoring to optimize bundle size.
-* Mod. Code. Removing the option - Manage comments on public pages.
-* Del. Script. Remove cleantalk-public-admin.js.
-* Fix. Integrations. Do not skip check for woo registration during checkout.
-* Fix. Integrations. Fixed uni cpo gathering meta data about woocommerce item.
-* Fix. Woocommerce. Deleting REST API order if on pending status.
-* Fix. Woocommerce. Event token gathering fixed on any cookies mode.
-* Fix. Searchform. JS error on form class gathering fixed.
-* Fix. Settings. Search forms. Forgotten space added.
 
 = Look for early changelogs in <a href="https://github.com/CleanTalk/wordpress-antispam/blob/master/changelog.txt" target="_blank">changelog.txt</a>=

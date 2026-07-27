@@ -415,8 +415,6 @@ class Tus_File {
 
 				$this->offset += $bytes;
 
-				$this->cache->set( $key, array( 'offset' => $this->offset ) );
-
 				if ( $this->offset > $total_bytes ) {
 					throw new \Out_Of_Range_Exception( 'The uploaded file is corrupt.' );
 				}
@@ -428,6 +426,12 @@ class Tus_File {
 		} finally {
 			$this->close( $input );
 			$this->close( $output );
+
+			try {
+				$this->cache->set( $key, array( 'offset' => $this->offset ) );
+			} catch ( \Throwable $e ) {
+				Logger::log( 'error', $e );
+			}
 		}
 
 		return $this->offset;
@@ -600,7 +604,7 @@ class Tus_File {
 	public function copy( $source, $destination ) {
 		$status = copy( $source, $destination );
 
-		if ( false === $status ) {
+		if ( ! $status ) {
 			Logger::log( 'error', sprintf( 'Cannot copy source (%s) to destination (%s).', $source, $destination ) );
 			throw new File_Exception( 'Cannot copy source file to destination file.' );
 		}

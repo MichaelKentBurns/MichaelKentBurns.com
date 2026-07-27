@@ -1,0 +1,86 @@
+/*
+ * Plugin Notices Manager – Admin Notices CSS
+ * Version: 1.0.16
+ *
+ * Styles for the Plugin Notices Manager admin notices.
+ *
+ * These rules control the layout and appearance of the documentation and review
+ * notices rendered in the WordPress admin by the Daextteam Plugin Notices Manager
+ * library.
+ */
+.daextpnm-notice {
+	border: 1px solid #e5e5e5;
+	padding: 12px 20px;
+	margin: 24px 32px 0;
+	background: #fff;
+	position: relative;
+	border-radius: 8px;
+}
+
+.daextpnm-notice p {
+	margin: 0;
+	line-height: 24px;
+}
+
+.daextpnm-notice strong {
+	font-weight: 600;
+}
+
+.daextpnm-notice a {
+	margin-right: 10px;
+}
+
+.daextpnm-notice-actions {
+	margin-top: 12px;
+	display: flex;
+	gap: 10px;
+}
+
+.daextpnm-review-never,
+.daextpnm-dismiss-doc {
+	height: auto;
+	line-height: 17px;
+	margin: 6.5px 0;
+	display: block;
+}
+
+.daextpnm-button {
+	background: #0783be !important;
+	border-color: #0783be !important;
+	color: #fff !important;
+	height: 32px !important;
+	line-height: 22px !important;
+	padding: 4px 12px !important;
+	border: 1px solid rgba(29, 40, 58, .2) !important;
+	font-size: 13px !important;
+	border-radius: 6px !important;
+	text-decoration: none !important;
+	transition: all .2s ease-in-out !important;
+	transition-property: background, border, box-shadow !important;
+}
+
+.daextpnm-button:hover {
+	background: #066998 !important;
+	border-color: #066998 !important;
+}
+
+
+.daextpnm-button-secondary {
+	color: #2271b1 !important;
+	border-color: #2271b1 !important;
+	background: #f6f7f7 !important;
+}
+
+.daextpnm-button-secondary:hover {
+	background: #f0f0f1 !important;
+	border-color: #0a4b78 !important;
+	color: #0a4b78 !important;
+}
+
+.daextpnm-button-link {
+	color: #2271b1 !important;
+}
+
+.daextpnm-button-link:hover {
+	color: #0a4b78 !important;
+}

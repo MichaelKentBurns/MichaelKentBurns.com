@@ -4,13 +4,14 @@
   Plugin Name: Anti-Spam by CleanTalk
   Plugin URI: https://cleantalk.org
   Description: Max power, all-in-one, no Captcha, premium anti-spam plugin. No comment spam, no registration spam, no contact spam, protects any WordPress forms.
-  Version: 6.79
+  Version: 6.84
   Author: CleanTalk - Anti-Spam Protection <welcome@cleantalk.org>
   Author URI: https://cleantalk.org
   Text Domain: cleantalk-spam-protect
   Domain Path: /i18n
 */
 
+use Cleantalk\Antispam\ScriptsIntegration\CleantalkScriptsIntegrator;
 use Cleantalk\Antispam\ProtectByShortcode;
 use Cleantalk\ApbctWP\Activator;
 use Cleantalk\ApbctWP\AdminNotices;
@@ -42,6 +43,8 @@ use Cleantalk\ApbctWP\Variables\Get;
 use Cleantalk\ApbctWP\Variables\Post;
 use Cleantalk\ApbctWP\Variables\Request;
 use Cleantalk\ApbctWP\Variables\Server;
+use Cleantalk\ApbctWP\PingbackTrackback\PingbackHandler;
+use Cleantalk\ApbctWP\PingbackTrackback\TrackBackHandler;
 use Cleantalk\Common\ContactsEncoder\Dto\Params;
 use Cleantalk\Common\DNS;
 use Cleantalk\Common\Firewall;
@@ -135,7 +138,9 @@ if ( defined('CLEANTALK_SERVER') ) {
     define('APBCT_MODERATE_URL', 'https://moderate.cleantalk.org'); // Api URL
 }
 
-define('APBCT_BOT_DETECTOR_SCRIPT_URL', 'https://fd.cleantalk.org/ct-bot-detector-wrapper.js');
+if ( ! defined('APBCT_BOT_DETECTOR_SCRIPT_URL') ) {
+    define('APBCT_BOT_DETECTOR_SCRIPT_URL', 'https://fd.cleantalk.org/ct-bot-detector-wrapper.js');
+}
 
 /**
  * Require base classes.
@@ -227,7 +232,9 @@ if (
     if ($apbct->settings['data__email_decoder'] && !$skip_email_encode && !apbct_is_amp_request()) {
         // Encode content
         $contacts_encoder->runEncoding();
+    }
 
+    if ( apbct_is_ajax() ) {
         // Email Encoder ajax handlers for decoding
         $contacts_encoder->registerAjaxRoute();
     }
@@ -271,6 +278,11 @@ apbct_update_actions();
 
 add_action('init', function () {
     global $apbct;
+
+    if ($apbct->settings['wp__disable_pingback_and_trackback']) {
+        new PingbackHandler();
+        new TrackBackHandler();
+    }
 
     // Self cron
     $ct_cron = Cron::getInstance();
@@ -597,27 +609,8 @@ add_action('mec_booking_end_form_step_2', function () {
 
 // Public actions
 if ( ! is_admin() && ! apbct_is_ajax() && ! apbct_is_customize_preview() ) {
-    if (
-        apbct_is_plugin_active('fluentformpro/fluentformpro.php') &&
-        (
-            apbct_is_in_uri('ff_landing=') ||
-            (
-                // Load scripts for logged in users if constant is defined
-                apbct_is_user_logged_in() &&
-                (defined('APBCT_FF_JS_SCRIPTS_LOAD') &&
-                APBCT_FF_JS_SCRIPTS_LOAD == true)
-            )
-        )
-    ) {
-        add_action('wp_head', function () {
-            echo '<script data-pagespeed-no-defer="" src="'
-                . APBCT_URL_PATH
-                . '/js/apbct-public-bundle.min.js'
-                . '?ver=' . APBCT_VERSION . '" id="ct_public_functions-js"></script>';
-            echo '<script src="' . APBCT_BOT_DETECTOR_SCRIPT_URL . '?ver='
-                . APBCT_VERSION . '" async id="ct_bot_detector-js" data-wp-strategy="async"></script>';
-        }, 100);
-    }
+    $sci = new CleantalkScriptsIntegrator();
+    $sci->run();
 
     SFWUpdateHelper::processSFWOutdatedError($apbct);
 
@@ -709,6 +702,7 @@ if ( is_admin() || is_network_admin() ) {
     require_once(CLEANTALK_PLUGIN_DIR . 'inc/cleantalk-find-spam.php');
     require_once(CLEANTALK_PLUGIN_DIR . 'inc/cleantalk-admin.php');
     require_once(CLEANTALK_PLUGIN_DIR . 'inc/cleantalk-settings.php');
+    require_once(CLEANTALK_PLUGIN_DIR . 'inc/apbct-sync-react.php');
 
     add_action('admin_init', 'apbct_admin__init', 1);
 
@@ -876,12 +870,15 @@ function apbct_sfw__check()
     global $apbct, $spbc, $cleantalk_url_exclusions;
 
     // Turn off the SpamFireWall if current url in the exceptions list and WordPress core pages
+    $core_page_to_skip_check = array('/feed');
     if ( ! empty($cleantalk_url_exclusions) && is_array($cleantalk_url_exclusions) ) {
-        $core_page_to_skip_check = array('/feed');
-        foreach ( array_merge($cleantalk_url_exclusions, $core_page_to_skip_check) as $v ) {
-            if ( apbct_is_in_uri($v) ) {
-                return;
-            }
+        $cleantalk_url_exclusions = array_merge($cleantalk_url_exclusions, $core_page_to_skip_check);
+    } else {
+        $cleantalk_url_exclusions = $core_page_to_skip_check;
+    }
+    foreach ( $cleantalk_url_exclusions as $v ) {
+        if ( apbct_is_in_uri($v) ) {
+            return;
         }
     }
 
@@ -899,7 +896,7 @@ function apbct_sfw__check()
             );
             Cookie::set(
                 'ct_sfw_pass_key',
-                md5(Server::get('REMOTE_ADDR') . $apbct->api_key),
+                md5(Server::get('REMOTE_ADDR') . $apbct->api_key . $apbct->data['salt']),
                 time() + 1200,
                 '/',
                 ''
@@ -1000,14 +997,30 @@ function apbct_plugin_redirect()
 {
     global $apbct;
     wp_suspend_cache_addition(true);
+    $redirect = get_option('ct_plugin_do_activation_redirect', false);
     if (
-        get_option('ct_plugin_do_activation_redirect', false) &&
+        $redirect &&
         delete_option('ct_plugin_do_activation_redirect') &&
         ! Get::get('activate-multi')
     ) {
         ct_account_status_check(null, false);
         apbct_sfw_update__init(3); // Updating SFW
-        wp_redirect($apbct->settings_link);
+
+        if ( is_string($redirect) && $redirect !== '1' ) {
+            $redirect_url = $redirect;
+        } else {
+            $redirect_url = $apbct->settings_link;
+            if (
+                function_exists('apbct_settings__needs_signup_wizard') &&
+                apbct_settings__needs_signup_wizard() &&
+                empty($apbct->api_key)
+            ) {
+                $redirect_url = apbct_settings__get_signup_wizard_url();
+            }
+        }
+
+        wp_safe_redirect($redirect_url);
+        exit;
     }
     wp_suspend_cache_addition(false);
 }
@@ -2132,18 +2145,12 @@ function apbct_rc__install_plugin($_wp = null, $plugin = null)
                     } else {
                         die('FAIL ' . json_encode(array('error' => $installer->apbct_result)));
                     }
-                } elseif ( $result instanceof \WP_Error ) {
+                } else {
+                    /** @psalm-suppress PossiblyInvalidMethodCall */
                     die(
                         'FAIL ' . json_encode(array(
                             'error'   => 'FAIL_TO_GET_LATEST_VERSION',
                             'details' => $result->get_error_message(),
-                        ))
-                    );
-                } else {
-                    die(
-                        'FAIL ' . json_encode(array(
-                            'error'   => 'FAIL_TO_GET_LATEST_VERSION',
-                            'details' => 'Unknown error',
                         ))
                     );
                 }
@@ -2177,15 +2184,18 @@ function apbct_rc__activate_plugin($plugin)
             $result = activate_plugins($plugin);
 
             $result_array = array('success' => true);
-            $error_msg = '';
 
-            if ( ! $result || is_wp_error($result) ) {
-                if ( $result instanceof \WP_Error ) {
-                    $error_msg = ' ' . $result->get_error_message();
-                }
+            if ( is_wp_error($result) ) {
+                /** @psalm-suppress PossiblyInvalidMethodCall */
+                $error_msg = ' ' . $result->get_error_message();
                 $result_array = array(
                     'error'   => 'FAIL_TO_ACTIVATE',
                     'details' => $error_msg
+                );
+            } elseif ( ! $result ) {
+                $result_array = array(
+                    'error'   => 'FAIL_TO_ACTIVATE',
+                    'details' => ''
                 );
             }
             return $result_array;
@@ -2627,7 +2637,7 @@ function apbct_cookie()
     // Cookie names to validate
     $cookie_test_value = array(
         'cookies_names' => array(),
-        'check_value'   => $apbct->api_key,
+        'check_value'   => $apbct->api_key . $apbct->data['salt'],
     );
 
     // We need to skip the domain attribute for prevent including the dot to the cookie's domain on the client.
@@ -2722,11 +2732,11 @@ function apbct_cookies_test()
             return 0;
         }
 
-        $check_string = $apbct->api_key;
+        $check_string = $apbct->api_key . $apbct->data['salt'];
         // generate value
         $cookie_names = TT::getArrayValueAsArray($cookie_test, 'cookies_names');
         foreach ( $cookie_names as $cookie_name ) {
-            $check_string .= Cookie::get($cookie_name);
+            $check_string .= Cookie::getString($cookie_name);
         }
         // check generated value with current cookie
         $check_value = TT::getArrayValueAsString($cookie_test, 'check_value');

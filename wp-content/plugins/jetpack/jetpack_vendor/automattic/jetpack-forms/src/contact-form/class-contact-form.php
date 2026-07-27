@@ -346,6 +346,121 @@ class Contact_Form extends Contact_Form_Shortcode {
 	}
 
 	/**
+	 * Determine whether a form is configured to collect its responses anywhere.
+	 *
+	 * A form "collects responses" when submissions are delivered to at least one
+	 * destination: emailed to a recipient, saved to the responses dashboard, or
+	 * routed to an active data integration. When all three are off, submissions
+	 * are silently dropped.
+	 *
+	 * This must run on the RAW block attributes (as authored), not the values
+	 * merged with Contact_Form's runtime defaults — e.g. `jetpackCRM` defaults to
+	 * `true` at render time but is only "on" when explicitly enabled on the form.
+	 *
+	 * Keep this in sync with the JS helper `isCollectingResponses()` in
+	 * blocks/contact-form/util/is-collecting-responses.ts.
+	 *
+	 * @since 7.23.0
+	 *
+	 * @param mixed $attributes Raw contact-form block attributes. Non-arrays are
+	 *                          treated as collecting (no warning).
+	 * @return bool True when the form has at least one response destination.
+	 */
+	public static function is_collecting_responses( $attributes ) {
+		if ( ! is_array( $attributes ) ) {
+			return true;
+		}
+
+		// Email destination: on by default. A blank or invalid recipient is not a
+		// dead end — submissions fall back to the site admin email at send time —
+		// so email being on always counts as a real destination.
+		$email_active = self::attribute_is_truthy( $attributes, 'emailNotifications', true );
+
+		// Saving to the responses dashboard: on by default.
+		$saving_active = self::attribute_is_truthy( $attributes, 'saveResponses', true );
+
+		// Integrations that actually persist or route the submission. Akismet
+		// (spam filtering) and Google Drive (exports already-saved responses) are
+		// intentionally excluded — neither is an independent destination.
+		//
+		// Webhooks (`postToUrl`/`webhooks`) are also excluded: they only fire when
+		// the form author has `manage_options` (see
+		// Jetpack_Forms::should_honor_content_destinations()), so whether they're a
+		// real destination depends on author capability, not the attributes alone.
+		// This shared helper is intentionally context-free so PHP and JS agree, so
+		// counting them here would wrongly silence the warning for editor-authored
+		// forms whose webhook never runs.
+		$integration_active = self::attribute_is_truthy( $attributes, 'jetpackCRM', false )
+			|| ! empty( $attributes['mailpoet']['enabledForForm'] )
+			|| ! empty( $attributes['hostingerReach']['enabledForForm'] )
+			|| (
+				! empty( $attributes['salesforceData']['sendToSalesforce'] )
+				&& ! empty( $attributes['salesforceData']['organizationId'] )
+			);
+
+		return $email_active || $saving_active || $integration_active;
+	}
+
+	/**
+	 * Normalize a possibly-boolean-or-string block attribute to a boolean.
+	 *
+	 * Toggle attributes arrive as JS booleans from the editor but are persisted
+	 * as `'yes'`/`'no'` strings in some contexts, so both forms must be handled.
+	 *
+	 * @since 7.23.0
+	 *
+	 * @param array  $attributes Block attributes.
+	 * @param string $key        Attribute name.
+	 * @param bool   $default    Value to use when the attribute is absent.
+	 * @return bool
+	 */
+	private static function attribute_is_truthy( $attributes, $key, $default ) {
+		if ( ! array_key_exists( $key, $attributes ) ) {
+			return $default;
+		}
+
+		$value = $attributes[ $key ];
+
+		if ( is_bool( $value ) ) {
+			return $value;
+		}
+
+		if ( is_string( $value ) ) {
+			return ! in_array( strtolower( trim( $value ) ), array( '', 'no', 'false', '0' ), true );
+		}
+
+		return (bool) $value;
+	}
+
+	/**
+	 * Render an admin-only notice when a form isn't collecting responses.
+	 *
+	 * Shown on the live front-end form and in form previews, but only to users
+	 * who can manage forms (`edit_pages`) — never to visitors.
+	 *
+	 * @since 7.23.0
+	 *
+	 * @param array $attributes Raw contact-form block attributes.
+	 * @return string Notice HTML, or an empty string.
+	 */
+	private static function render_not_collecting_notice( $attributes ) {
+		if ( ! current_user_can( 'edit_pages' ) ) {
+			return '';
+		}
+
+		if ( self::is_collecting_responses( $attributes ) ) {
+			return '';
+		}
+
+		wp_enqueue_style( 'jetpack-form-status-notice' );
+
+		return sprintf(
+			'<div class="jetpack-form-status-notice jetpack-form-status-notice--warning jetpack-form-not-collecting-notice"><p>%s</p></div>',
+			esc_html__( 'Only you can see this. This form isn’t collecting responses. Turn on email notifications or response storage in form settings.', 'jetpack-forms' )
+		);
+	}
+
+	/**
 	 * Construction function.
 	 *
 	 * @param array  $attributes - the attributes.
@@ -539,7 +654,7 @@ class Contact_Form extends Contact_Form_Shortcode {
 			}
 
 			// Determine which cipher was used (stored in JWT or default to GCM)
-			$cipher = isset( $data['cipher'] ) ? $data['cipher'] : 'aes-256-gcm';
+			$cipher = $data['cipher'] ?? 'aes-256-gcm';
 
 			// Check if the cipher is available on this server
 			$available_cipher_methods = array_map( 'strtolower', openssl_get_cipher_methods() );
@@ -1310,7 +1425,7 @@ class Contact_Form extends Contact_Form_Shortcode {
 		&& isset( $_GET['contact-form-sent'] )
 		&& isset( $_GET['contact-form-hash'] )
 		&& is_string( $_GET['contact-form-hash'] )
-		&& hash_equals( $form->hash, wp_unslash( $_GET['contact-form-hash'] ) ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+		&& hash_equals( $form->hash, wp_unslash( $_GET['contact-form-hash'] ) );
 
 		$feedback_id           = 0;
 		$is_reload_nonce_valid = false;
@@ -1366,7 +1481,7 @@ class Contact_Form extends Contact_Form_Shortcode {
 
 		if ( $is_multistep ) {
 			$multistep_context = array(
-				'currentStep' => isset( $_GET[ $id . '-step' ] ) ? absint( $_GET[ $id . '-step' ] ) : 1, // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+				'currentStep' => isset( $_GET[ $id . '-step' ] ) ? absint( $_GET[ $id . '-step' ] ) : 1,
 				'maxSteps'    => $max_steps,
 				'direction'   => 'forward', // Default direction for animations
 				'transition'  => $form->get_attribute( 'stepTransition' ) ? $form->get_attribute( 'stepTransition' ) : 'fade-slide', // Transition style for step animations
@@ -1562,6 +1677,9 @@ class Contact_Form extends Contact_Form_Shortcode {
 
 		$r .= '</div>';
 
+		// Surface an admin-only warning above the form when nothing will capture its responses.
+		$r = self::render_not_collecting_notice( $attributes ) . $r;
+
 		/**
 		 * Filter the contact form, allowing plugins to modify the HTML.
 		 *
@@ -1695,7 +1813,7 @@ class Contact_Form extends Contact_Form_Shortcode {
 			$images = self::get_images( $field_data['value'] );
 			$files  = self::get_files( $field_data['value'] );
 			$rating = self::get_rating( $field_data['value'] );
-			$type   = isset( $field_data['type'] ) ? $field_data['type'] : 'text';
+			$type   = $field_data['type'] ?? 'text';
 
 			$formatted_submission_data[] = array(
 				'label'          => Util::maybe_add_colon_to_label( $field_data['label'] ),
@@ -1746,7 +1864,7 @@ class Contact_Form extends Contact_Form_Shortcode {
 		if ( is_array( $value ) && isset( $value['type'] ) && $value['type'] === 'rating' ) {
 			$rating     = isset( $value['rating'] ) ? (int) $value['rating'] : 0;
 			$max_rating = isset( $value['maxRating'] ) ? (int) $value['maxRating'] : 5;
-			$icon_style = isset( $value['iconStyle'] ) ? $value['iconStyle'] : 'stars';
+			$icon_style = $value['iconStyle'] ?? 'stars';
 
 			// Generate translated screen reader text.
 			$icon_label = 'hearts' === $icon_style
@@ -1943,7 +2061,7 @@ class Contact_Form extends Contact_Form_Shortcode {
 					$has_files      = ! empty( $submission['files'] );
 					$has_rating     = ! empty( $submission['rating'] );
 					$show_plain_val = ! $has_url && ! $has_images && ! $has_files && ! $has_rating;
-					$field_type     = isset( $submission['type'] ) ? $submission['type'] : 'text';
+					$field_type     = $submission['type'] ?? 'text';
 
 					$html .= '<div data-wp-each-child class="jetpack_forms_contact-form-success-summary">';
 
@@ -2212,7 +2330,7 @@ class Contact_Form extends Contact_Form_Shortcode {
 			$file_links = array();
 			foreach ( $files as $file ) {
 				if ( ! empty( $file['file_id'] ) ) {
-					$file_name = isset( $file['name'] ) ? $file['name'] : __( 'Attached file', 'jetpack-forms' );
+					$file_name = $file['name'] ?? __( 'Attached file', 'jetpack-forms' );
 					$file_size = isset( $file['size'] ) ? size_format( $file['size'] ) : '';
 
 					$html = esc_html( $file_name );
@@ -2346,7 +2464,7 @@ class Contact_Form extends Contact_Form_Shortcode {
 
 		// Don't try to parse contact form fields if not inside a contact form (????)
 		if ( ! Contact_Form_Plugin::$using_contact_form_field ) {
-			$type = isset( $attributes['type'] ) ? $attributes['type'] : null;
+			$type = $attributes['type'] ?? null;
 
 			if ( $type === 'checkbox-multiple' || $type === 'radio' ) {
 				preg_match_all( '/' . get_shortcode_regex() . '/s', $content, $matches );
@@ -3423,12 +3541,12 @@ class Contact_Form extends Contact_Form_Shortcode {
 		// For URL fields, extract the display text value (original user input without auto-added protocol).
 		if ( is_array( $value ) && isset( $value['type'] ) && $value['type'] === 'url' ) {
 			// Prefer displayValue (raw input) over url (which may have https:// prepended).
-			return isset( $value['displayValue'] ) ? $value['displayValue'] : ( isset( $value['url'] ) ? $value['url'] : '' );
+			return $value['displayValue'] ?? ( $value['url'] ?? '' );
 		}
 
 		// For rating fields, return the displayValue (e.g., "3/5") for text fallback.
 		if ( is_array( $value ) && isset( $value['type'] ) && $value['type'] === 'rating' ) {
-			return isset( $value['displayValue'] ) ? $value['displayValue'] : '';
+			return $value['displayValue'] ?? '';
 		}
 
 		// For file upload fields, we want to show the file name and size

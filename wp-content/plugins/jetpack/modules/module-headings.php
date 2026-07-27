@@ -10,7 +10,7 @@
  *
  * @param string $key Module file name without `.php`.
  *
- * @return array
+ * @return array|null
  */
 function jetpack_get_module_i18n( $key ) {
 	static $modules;
@@ -119,6 +119,11 @@ function jetpack_get_module_i18n( $key ) {
 			'photon' => array(
 				'name' => _x( 'Image CDN', 'Module Name', 'jetpack' ),
 				'description' => _x( 'Deliver images quickly with automatic resizing from Jetpack’s global image CDN.', 'Module Description', 'jetpack' ),
+			),
+
+			'podcast' => array(
+				'name' => _x( 'Podcast', 'Module Name', 'jetpack' ),
+				'description' => _x( 'Publish, manage, and grow your podcast right from your site.', 'Module Description', 'jetpack' ),
 			),
 
 			'post-by-email' => array(
@@ -242,7 +247,7 @@ function jetpack_get_module_i18n( $key ) {
 			),
 		);
 	}
-	return isset( $modules[ $key ] ) ? $modules[ $key ] : null;
+	return $modules[ $key ] ?? null;
 }
 
 /**
@@ -308,6 +313,7 @@ function jetpack_get_module_i18n_tag( $key ) {
 			// - modules/json-api.php
 			// - modules/latex.php
 			// - modules/markdown.php
+			// - modules/podcast.php
 			// - modules/post-by-email.php
 			// - modules/shortcodes.php
 			'Writing' => _x( 'Writing', 'Module Tag', 'jetpack' ),
@@ -376,7 +382,7 @@ function jetpack_get_module_i18n_tag( $key ) {
  *
  * @param string $key Module file name without `.php`.
  *
- * return array|string An array containing the module info or an empty string if the given module isn't known.
+ * return array|string|null An array containing the module info or an empty string if the given module isn't known.
  */
 function jetpack_get_module_info( $key ) {
 	static $module_info = array (
@@ -758,6 +764,24 @@ function jetpack_get_module_info( $key ) {
 	    'additional_search_queries' => 'photon, photo cdn, image cdn, speed, compression, resize, responsive images, responsive, content distribution network, optimize, page speed, image optimize, photon jetpack',
 	    'plan_classes' => '',
 	  ),
+	  'podcast' => 
+	  array (
+	    'name' => 'Podcast',
+	    'description' => 'Publish, manage, and grow your podcast right from your site.',
+	    'sort' => '38',
+	    'recommendation_order' => '',
+	    'introduced' => '',
+	    'changed' => '',
+	    'deactivate' => '',
+	    'free' => '',
+	    'requires_connection' => 'Yes',
+	    'requires_user_connection' => '',
+	    'auto_activate' => 'Yes',
+	    'module_tags' => 'Writing',
+	    'feature' => 'Writing',
+	    'additional_search_queries' => 'podcast, podcasts, podcasting, audio, episodes, rss, feed, distribution',
+	    'plan_classes' => '',
+	  ),
 	  'post-by-email' => 
 	  array (
 	    'name' => 'Post by Email',
@@ -881,7 +905,7 @@ function jetpack_get_module_info( $key ) {
 	    'auto_activate' => 'No',
 	    'module_tags' => 'Social, Appearance',
 	    'feature' => 'Traffic',
-	    'additional_search_queries' => 'search engine optimization, social preview, meta description, custom title format',
+	    'additional_search_queries' => 'search engine optimization, social preview, meta description, custom title format, seo, sitemap, open graph, search engine, title tag',
 	    'plan_classes' => '',
 	  ),
 	  'sharedaddy' => 
@@ -1004,7 +1028,7 @@ function jetpack_get_module_info( $key ) {
 	    'free' => '',
 	    'requires_connection' => 'Yes',
 	    'requires_user_connection' => 'Yes',
-	    'auto_activate' => 'No',
+	    'auto_activate' => 'Yes',
 	    'module_tags' => 'Social',
 	    'feature' => 'Engagement',
 	    'additional_search_queries' => 'subscriptions, subscription, email, follow, followers, subscribers, signup, newsletter, creator',
@@ -1191,7 +1215,7 @@ function jetpack_get_module_info( $key ) {
 	    'plan_classes' => '',
 	  ),
 	);
-	return isset( $module_info[ $key ] ) ? $module_info[ $key ] : null;
+	return $module_info[ $key ] ?? null;
 }
 
 /**

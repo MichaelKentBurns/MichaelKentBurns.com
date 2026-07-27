@@ -85,6 +85,9 @@ class Woocommerce extends IntegrationByClassBase
         // Restore Spam Order
         add_action('wp_ajax_apbct_restore_spam_order', array(WcSpamOrdersFunctions::class, 'restoreOrderAction'));
 
+        // Details
+        add_action('wp_ajax_apbct_details_spam_order', array(WcSpamOrdersFunctions::class, 'detailsOrderAction'));
+
         // Uni CPO integration, remove service fields from order items
         add_action('woocommerce_checkout_create_order_line_item', [$this, 'removeServiceFieldsFromOrderItems'], 100, 4);
     }
@@ -303,7 +306,9 @@ class Woocommerce extends IntegrationByClassBase
                         ]
                 ];
 
-                http_response_code(403);
+                if ( ! headers_sent() ) {
+                    http_response_code(403);
+                }
                 die(json_encode($response));
             }
         }

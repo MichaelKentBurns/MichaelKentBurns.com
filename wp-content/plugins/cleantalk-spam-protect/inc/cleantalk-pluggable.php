@@ -1744,6 +1744,14 @@ function apbct_is_skip_request($ajax = false, $ajax_message_obj = array())
         ) {
             return 'invoicing';
         }
+
+        // Email Subscribers by Icegram Express - skip subscribe action
+        if (
+            apbct_is_plugin_active('email-subscribers/email-subscribers.php') &&
+            (Post::equal('action', 'es_add_subscriber') || Post::equal('action', 'ig_es_validate_subscription'))
+        ) {
+            return 'Email Subscribers by Icegram Express - skip subscribe action';
+        }
     } else {
         /*****************************************/
         /*  Here is non-ajax requests skipping   */
@@ -2006,6 +2014,15 @@ function apbct_is_skip_request($ajax = false, $ajax_message_obj = array())
             (apbct_is_in_uri('/hivepress/v1/listings/') || apbct_is_in_uri('/hivepress/v1/users'))
         ) {
             return 'Plugin Name: HivePress skip REST route checking';
+        }
+
+        // WooCommerce register request skipping - this have to be processed by hook `woocommerce_registration_errors`
+        if (
+            apbct_is_plugin_active('woocommerce/woocommerce.php') &&
+            Post::getString('woocommerce-register-nonce') &&
+            wp_verify_nonce(Post::getString('woocommerce-register-nonce'), 'woocommerce-register')
+        ) {
+            return 'WooCommerce register request (have to be processed by hook `woocommerce_registration_errors`)';
         }
     }
 

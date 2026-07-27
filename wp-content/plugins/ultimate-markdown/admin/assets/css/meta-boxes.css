@@ -1,0 +1,80 @@
+/* Import Document Meta Box ----------------------------------------------------------------------------------------- */
+.daextulma-upload-wrapper {
+    margin-top: 1em;
+    display: flex;
+    gap: 4px;
+}
+
+#daextulma-import-trigger .dashicons {
+    margin-right: 5px;
+}
+
+p.daextulma-import-document-metabox-description{
+    margin: 1em 0 6px;
+}
+
+/* Load Document Meta Box ------------------------------------------------------------------------------------------- */
+
+.daextulma-document-selector-label-wrapper{
+    margin-bottom: 0.5em;
+}
+
+.daextulma-document-selector-label{
+    vertical-align: baseline;
+    font-weight: 600;
+}
+
+.daextulma-document-selector-wrapper {
+    display: flex;
+    gap: 4px;
+}
+
+#daextulma-document-selector {
+    width: 180px;
+}
+
+.daextulma-load-actions {
+    margin-top: 10px;
+}
+
+p.daextulma-load-document-metabox-description{
+    margin: 1em 0 6px;
+}
+
+.daextulma-load-status{
+    margin-top: 10px;
+}
+
+/* Submit Text Meta Box --------------------------------------------------------------------------------------------- */
+.daextulma-submit-text-textarea-label-wrapper{
+    margin-bottom: 0.5em;
+}
+
+.daextulma-submit-text-textarea-label{
+    vertical-align: baseline;
+    font-weight: 600;
+}
+
+.daextulma-submit-text-textarea-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#daextulma-submit-text-textarea {
+    resize: vertical;
+    height: 110px;
+}
+
+p.daextulma-submit-text-metabox-description{
+    margin: 1em 0 6px;
+}
+
+/* Notice Styles ---------------------------------------------------------------------------------------------------- */
+.daextulma-import-status.notice,
+.daextulma-load-status.notice,
+.daextulma-submit-text-status.notice,
+.daextulma-export-status.notice {
+    margin-top: 6px;
+    margin-bottom: 13px;
+}

@@ -1,8 +1,8 @@
 === Jetpack - WP Security, Backup, Speed, & Growth ===
-Contributors: automattic, adamkheckler, adrianmoldovanwp, aduth, akirk, allendav, alternatekev, andy, annamcphee, annezazu, apeatling, arcangelini, arsihasi, azaozz, barry, batmoo, beaulebens, bindlegirl, biskobe, bjorsch, blobaugh, brbrr, brileyhooper, cainm, cena, cfinke, cgastrell, chaselivingston, chellycat, clickysteve, csonnek, danielbachhuber, daniloercoli, davoraltman, delawski, designsimply, dkmyta, dllh, dlocc, drawmyface, dsmart, dun2mis, dzver, ebinnion, egregor, eliorivero, enej, eoigal, erania-pinnera, ethitter, fgiannar, gcorne, georgestephanis, gibrown, goldsounds, hew, hugobaeta, hypertextranch, iammattthomas, iandunn, joen, jblz, jeffgolenski, jeherve, jenhooks, jenia, jessefriedman, jgs, jkudish, jmdodd, joanrho, johnjamesjacoby, jshreve, kbrownkd, keoshi, koke, kraftbj, lancewillett, leogermani, lhkowalski, lschuyler, macmanx, martinremy, matt, mattwiebe, matveb, maverick3x6, mcsf, mdawaffe, mdbitz, MichaelArestad, migueluy, miguelxavierpenha, mikeyarce, mkaz, nancythanki, nickmomrik, njweller, nunyvega, obenland, oskosk, pento, professor44, rachelsquirrel, rdcoll, renatoagds, retrofox, richardmtl, richardmuscat, robertbpugh, roccotripaldi, ryancowles, samhotchkiss, samiff, scarstocea, scottsweb, sdixon194, sdquirk, sermitr, simison, stephdau, thehenridev, tmoorewp, tyxla, Viper007Bond, westi, williamvianas, wpkaren, yoavf, zinigor
+Contributors: automattic, adamkheckler, adrianmoldovanwp, aduth, akirk, allendav, alternatekev, andy, annamcphee, annezazu, apeatling, arcangelini, arsihasi, azaozz, barry, batmoo, beaulebens, bindlegirl, biskobe, bjorsch, blobaugh, brbrr, brileyhooper, cainm, cena, cfinke, cgastrell, chaselivingston, chellycat, clickysteve, csonnek, danielbachhuber, daniloercoli, davoraltman, delawski, designsimply, dkmyta, dllh, dlocc, drawmyface, dsmart, dun2mis, dzver, ebinnion, egregor, eliorivero, enej, eoigal, erania-pinnera, ethitter, fgiannar, gcorne, georgestephanis, gibrown, goldsounds, hew, hugobaeta, hypertextranch, iammattthomas, iandunn, joen, jblz, jeffgolenski, jeherve, jennywp, jenia, jessefriedman, jgs, jkudish, jmdodd, joanrho, johnjamesjacoby, jshreve, kbrownkd, keoshi, koke, kraftbj, lancewillett, leogermani, lhkowalski, lschuyler, macmanx, martinremy, matt, mattwiebe, matveb, maverick3x6, mcsf, mdawaffe, mdbitz, MichaelArestad, migueluy, miguelxavierpenha, mikeyarce, mkaz, nancythanki, nickmomrik, njweller, nunyvega, obenland, oskosk, pento, professor44, rachelsquirrel, rdcoll, renatoagds, retrofox, richardmtl, richardmuscat, robertbpugh, roccotripaldi, ryanc413, samhotchkiss, samiff, scarstocea, scottsweb, sdixon194, sdquirk, sermitr, simison, stephdau, thehenridev, tmoorewp, tyxla, Viper007Bond, westi, williamvianas, wpkaren, yoavf, zinigor
 Tags: Security, backup, malware, scan, performance
-Stable tag: 15.8
-Requires at least: 6.8
+Stable tag: 16.0.1
+Requires at least: 6.9
 Requires PHP: 7.2
 Tested up to: 7.0
 License: GPLv2 or later
@@ -326,45 +326,63 @@ Jetpack Backup can do a full website migration to a new host, migrate theme file
 
 
 == Changelog ==
-### 15.8 - 2026-05-05
-#### Enhancements
-- Activity Log: Replace the external sidebar redirect with a native WP Admin page — search, activity type filter, sort, pagination, and a date-range picker.
-- Activity Log: Default the page to the Table layout, fix the free-tier upsell callout layout, and surface the disabled toolbar + disabled date-range picker on the free tier with upgrade tooltips.
-- Add MCP settings admin page and REST endpoint for managing external AI agent access to Jetpack AI.
-- Forms: Add `jetpack_forms_email_show_actions` filter to hide action buttons in notification emails.
-- Forms: Support granular date filter in inbox.
-- Make phone numbers in the Contact Info widget clickable on all devices, not just mobile.
-- Newsletter: Register Abilities API surface for module settings and subscriber stats on WP 6.9+.
-- Omnibar: Add wpcom/v2/admin-bar endpoint to fetch site's admin bar nodes.
-- Performance: Add early-return guard conditions to skip loading scripts and styles on pages where they are not needed.
-- REST API: Add `/sites/%s/plugins/replace` and `/sites/%s/themes/replace` endpoints for installing or overwriting a plugin/theme via zip upload.
-- Search: Add fallback image capability in expanded search.
-- Settings: Replace custom tab navigation with @wordpress/ui Tabs component for proper ARIA semantics, built-in overflow handling, and animated indicator.
-- Sites endpoint: Expose `jetpack_recovery_mode_status` option so callers can read recovery-mode state from WordPress.com.
-- Stats: Register abilities.
-- Subscriptions: Check email preview content with Akismet before sending to protect the mailer pipeline.
-- Top Posts block: Add `jetpack_top_posts_item_title` filter allowing customization of the posts' titles in the block.
+### 16.0.1 - 2026-07-15
+#### Bug fixes
+- Fix the Forms and VideoPress admin dashboards rendering a blank "Something went wrong!" error on WordPress 6.9.
+- My Jetpack: Fix route changes in Chrome when scroll APIs return promises.
+- Poll shortcode: Require HTTPS and an exact script path when loading the poll script.
 
-#### Improved compatibility
-- AI settings: Bundle WordPress private-apis and theme packages in the admin script so dependencies enqueue reliably on all hosts.
-- Componentry: Use WordPress admin theme color variable instead of hardcoded color for text input focus state.
-- Tested up to WordPress 7.0.
-- Update purchases endpoint from v1.1 `/sites/$site/purchases` to v1.2 `/upgrades?site=$site`.
+### 16.0 - 2026-07-07
+#### Enhancements
+- Add AI-powered "Generate/Improve with Jetpack" buttons to the Content Guidelines admin page.
+- AI: Surface SEO Enhancer suggestions (SEO title and meta description) in the AI sidebar.
+- AI Admin: Restructure MCP settings Read/Write pages to group tools by display group with collapsible per-group tool lists and a page-level Enable all toggle.
+- AI Sidebar: Enable Optimize Title suggestions.
+- Daily Writing Prompt: Load the Dashboard widget on connected self-hosted Jetpack sites.
+- Donations Block: Render the block in emails with email-friendly CTA buttons.
+- Forms: Warn admins and editors when a form isn't collecting responses (email and saving both off, no integration).
+- Newsletter: Allow setting a custom description for the free tier and hiding it from the subscriber plan selector.
+- Newsletter: Link to the site visibility settings from the Coming Soon notice in the pre-publish panel.
+- Render the unified Jetpack admin header and footer on Akismet's admin pages.
+- Subscriptions: Replace the Subscribers menu link with a transitional announcement page when the Newsletter modernization filter is enabled.
+- Subscriptions Block: Customize the Subscribe modal heading site-wide via a new Newsletter setting.
+- VideoPress: Add presentation to the player iframe allow list to enable casting from embeds.
+- VideoPress: Make the VideoPress admin dashboard available in the Jetpack plugin (previously only in the standalone Jetpack VideoPress plugin).
 
 #### Bug fixes
-- AI: Change admin page slug from 'ai' to 'jetpack-ai' to avoid conflicts with the WordPress core AI plugin.
-- AI Site Logo extension: Fix static import of @wordpress/edit-post that was breaking the P2 frontend block inserter.
-- Fix taxonomies endpoint returning error when number parameter exceeds 1000.
-- Forms: Fix the Form block not being usable when the Blocks module is inactive.
-- Newsletter: Fail silently on email stats fetch errors in the editor and skip the fetch for drafts so timeouts no longer flash as errors in Gutenberg.
-- oEmbed: Prevent PHP warnings when a registered provider is malformed.
-- PayPal Payments Button: Fix escaping issue for stacked payments buttons.
-- Paywall: Subscribers can now access tier-gated posts regardless of plan price.
-- Settings: Show an empty state when search returns no matching settings.
-- Subscriptions: Avoid conflicts in the block editor when editing custom post types.
-- Subscriptions: Prevent warning when $post global is malformed.
-- Sync: Increase lock time tolerance in tests.
-- WordAds: Prevent PHP warning when headers are already sent.
+- AI Agent Access: Correct module references in Shortlinks and Related Posts ability descriptions.
+- AI Assistant: Hide legacy block toolbar controls when Jetpack AI Sidebar content editing is enabled.
+- AI Chat block: Stop prompting to enable Jetpack Search when the Search module is active in a non-Instant Search experience (Theme, Inline, or Embedded).
+- Akismet: Hide the empty `#screen-meta-links` container so it no longer reserves a blank slot above the Jetpack header (notably on WordPress.com Simple sites).
+- Akismet: Show the Akismet logo (instead of the Jetpack logo) in the unified admin header.
+- Archives shortcode: Cap the `postbypost` type with a filterable default limit to prevent memory exhaustion on large sites.
+- Blaze: Warn users with active campaigns before disabling the Blaze module.
+- Content Guidelines AI: Place the suggestion badge to the left of the section chevron so chevrons stay aligned across sections with and without a badge.
+- Content Guidelines AI: Wrap the per-section Save/Clear/Generate button row so the buttons no longer overlap on narrow screens.
+- Crowdsignal shortcode: Render rating settings as data rather than building markup from them.
+- Daily Writing Prompt: Defer the connection-readiness check to Dashboard setup to avoid a fatal error on Atomic sites.
+- Donations Form: Prevent the editor from flickering when hovering the block as an inserter preview.
+- Fix fatal error on My Jetpack when the current stable Jetpack plugin is active along with other Jetpack standalone plugins.
+- Forms: Sign file download links with an expiring token so they work for any logged-in editor.
+- JSON API: Ensure error responses always serialize an HTTP error status (>= 400), never a non-integer or a 2xx that clients could interpret as success.
+- JSON API: Only default a missing or invalid error status to 400, and stop overwriting valid HTTP status codes below 400 that callers return via `WP_Error`.
+- Memberships: Delegate the Payment Request API to the checkout iframe so Apple Pay, Google Pay, and Stripe Link can load and complete payments.
+- Newsletter: Default the post access level to "everybody" when the stored meta is not a string, and sanitize non-string writes, so corrupt values can no longer cause a fatal error when rendering a post.
+- Newsletter: Fix "Sorry, you are not allowed to do this" error for Contributors on the first Submit for Review when the Subscriptions module is active.
+- Newsletter: When setting up paid subscriptions, only prompt for the steps that are actually missing (Stripe connection and/or a newsletter tier).
+- Paid Content: Ensure paid subscribers on Atomic-hosted sites retain access to gated content.
+- Paid Content Block: Prevent lockout after a subscription renewal.
+- Podcast: Load the package outside Jetpack's connection-gated module loader so the podcast feed and dashboard keep working when the site is disconnected.
+- Prevent Slideshow block crash when converting from Gallery.
+- Social: Prevent errors in the post-publish sharing status panel from crashing the editor.
+- Subscriptions: Prevent a duplicate Subscribers menu entry on WordPress.com (Atomic) sites.
+- Tiled Gallery: Fix an infinite resize loop when the block is inside a Row or Stack block.
+- Tiled Gallery: Keep the mosaic layout stable and split rows evenly between galleries when the block is inside a Row or Stack.
+- Tiled Gallery: Prevent editor crash when transforming a core gallery block.
+- Top Posts & Pages: Use the live post permalink so links reflect the current site URL.
+- VideoPress: Fix the player overflowing the page on the non-iframe embed path.
+- VideoPress: Load player scripts only once when a page contains multiple videos.
+- WhatsApp Button block: Fix icon and text overlapping in RTL languages.
 
 --------
 

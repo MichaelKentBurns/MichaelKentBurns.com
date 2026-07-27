@@ -391,6 +391,7 @@ function apbct_admin__init()
     add_action('wp_ajax_apbct_sync', 'apbct_settings__sync');
 
     add_action('wp_ajax_apbct_get_key_auto', 'apbct_settings__get_key_auto');
+    add_action('wp_ajax_apbct_save_key', 'apbct_settings__save_key');
 
     add_action('wp_ajax_apbct_update_account_email', 'apbct_settings__update_account_email');
 
@@ -523,7 +524,7 @@ function apbct_admin__enqueue_scripts($hook)
 
     // Scripts to all admin pages
     ApbctEnqueue::getInstance()->js('common-cleantalk-modal.js', array('jquery'));
-    ApbctEnqueue::getInstance()->js('cleantalk-admin.js', array('common-cleantalk-modal-js', 'jquery'));
+    ApbctEnqueue::getInstance()->js('cleantalk-admin.js', array('wp-i18n','common-cleantalk-modal-js', 'jquery'));
     ApbctEnqueue::getInstance()->css('cleantalk-admin.css');
     ApbctEnqueue::getInstance()->css('cleantalk-icons.css');
     ApbctEnqueue::getInstance()->css('cleantalk-email-decoder.css');
@@ -537,8 +538,11 @@ function apbct_admin__enqueue_scripts($hook)
         'logo_small_colored' => '<img src="' . Escape::escUrl($apbct->logo__small__colored) . '" alt=""  height="" style="width: 17px; vertical-align: text-bottom;" />',
         'new_window_gif'     => APBCT_URL_PATH . "/inc/images/new_window.gif",
         'notice_when_deleting_user_text' => esc_html__('Warning! Users are deleted without the possibility of restoring them, you can only restore them from a site backup.', 'cleantalk-spam-protect'),
-        'apbctNoticeDismissSuccess'       => esc_html__('Thank you for the review! We strive to make our Anti-Spam plugin better every day.', 'cleantalk-spam-protect'),
         'apbctNoticeForceProtectionOn'       => esc_html__('This option affects the reflection of the page by checking the user and adds a cookie "apbct_force_protection_check", which serves as an indicator of successful or unsuccessful verification. If the check is successful, it will no longer run.', 'cleantalk-spam-protect'),
+        'links' => array(
+            'users_editscreen'    => LinkConstructor::buildCleanTalkLink('admin_blacklists_avatar_link', 'blacklists/{TARGET}'),
+            'comments_editscreen' => LinkConstructor::buildCleanTalkLink('admin_blacklists_avatar_link', 'blacklists/{TARGET}'),
+        ),
     );
     $data = array_merge($data, ContactsEncoder::getLocalizationText());
     wp_localize_script('cleantalk-admin-js', 'ctAdminCommon', $data);
@@ -604,6 +608,14 @@ function apbct_admin__enqueue_scripts($hook)
             'support_user_creation_msg_array' => SupportUser::getMessages(),
         ));
 
+        wp_enqueue_script('wp-i18n');
+        ApbctEnqueue::getInstance()->js(
+            'public/apbct-react-bundle.js',
+            array('wp-i18n', 'cleantalk-admin-js'),
+            true
+        );
+        wp_set_script_translations('apbct-react-bundle-js', 'cleantalk-spam-protect');
+
         ApbctEnqueue::getInstance()->js('common-cleantalk-modal.min.js');
     }
 
@@ -616,7 +628,7 @@ function apbct_admin__enqueue_scripts($hook)
             'ctTrpAdminLocalize',
             \Cleantalk\ApbctWP\CleantalkRealPerson::getLocalizingData()
         );
-        ApbctEnqueue::getInstance()->js('cleantalk-comments-editscreen.js');
+        ApbctEnqueue::getInstance()->js('cleantalk-comments-editscreen.js', array('cleantalk-admin-js'));
         $link = LinkConstructor::buildCleanTalkLink(
             'public_comments_page_go_to_cp',
             'my',
@@ -634,7 +646,7 @@ function apbct_admin__enqueue_scripts($hook)
                 __("Feedback has been sent to %sCleanTalk Dashboard%s.", 'cleantalk-spam-protect'),
                 $apbct->user_token ? "<a target='_blank' href='$link'>" : '',
                 $apbct->user_token ? "</a>" : ''
-            ) . ' ' . esc_html__('The service accepts feedback only for requests made no more than 7 or 45 days 
+            ) . ' ' . esc_html__('The service accepts feedback only for requests made no more than 7 or 45 days
             (if the Extra package is activated) ago.', 'cleantalk-spam-protect'),
             'ct_show_check_links'         => (bool)$apbct->settings['comments__show_check_links'],
             'ct_img_src_new_tab'          => plugin_dir_url(__FILE__) . "images/new_window.gif",
@@ -644,11 +656,11 @@ function apbct_admin__enqueue_scripts($hook)
     // USERS page JavaScript
     if ( $hook == 'users.php' ) {
         ApbctEnqueue::getInstance()->css('cleantalk-icons.css');
-        ApbctEnqueue::getInstance()->js('cleantalk-users-editscreen.js');
+        ApbctEnqueue::getInstance()->js('cleantalk-users-editscreen.js', array('cleantalk-admin-js'));
         wp_localize_script('cleantalk-users-editscreen-js', 'ctUsersScreen', array(
             'spambutton_text'     => __("Find spam-users", 'cleantalk-spam-protect'),
             'ct_show_check_links' => (bool)$apbct->settings['comments__show_check_links'],
-            'ct_img_src_new_tab'  => plugin_dir_url(__FILE__) . "images/new_window.gif"
+            'ct_img_src_new_tab'  => plugin_dir_url(__FILE__) . "images/new_window.gif",
         ));
     }
 }
