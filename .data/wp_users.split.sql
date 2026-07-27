@@ -38,7 +38,7 @@ CREATE TABLE `wp_users` (
   KEY `user_login_key` (`user_login`),
   KEY `user_nicename` (`user_nicename`),
   KEY `user_email` (`user_email`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -55,7 +55,8 @@ INSERT INTO `wp_users` VALUES (1,'michaelkentburns@gmail.com','$wp$2y$10$S3GJ3Ap
 (7,'ashuza','$P$BTuyeZ38dzEIxcNAPvEPpUlWFVMMcx0','ashuza','ashuzamaheshe4@gmail.com','','2024-04-16 21:45:10','',0,'Destin Ashuza'),
 (9,'mikegiffen9','$P$BwcEVBk39NJ3YO29goyRj1.IIU848g.','mikegiffen9','jkbkxdsr@maillv.com','','2024-06-04 08:21:35','',0,'mikegiffen9'),
 (11,'jeffrymcclendon','$P$BLqSKhA1SvYuJAduJwAmmXoJeMt2MO.','jeffrymcclendon','trinadeandre@andindoc.com','','2024-08-17 23:16:55','1723936615:$P$BuTg7XiN0Ox.U8KewXXpNHcTaUEXlf/',0,'jeffrymcclendon'),
-(14,'EdoDev','$wp$2y$10$kNgwNhf0m23PczXQ7KZ8CuRTrst4QNdY17kvf9oxdw5ZdxJbUjLdu','edodev','edouard.kne.3@gmail.com','https://github.com/edouardkne','2026-04-20 02:44:59','',0,'EdoDev');
+(14,'EdoDev','$wp$2y$10$kNgwNhf0m23PczXQ7KZ8CuRTrst4QNdY17kvf9oxdw5ZdxJbUjLdu','edodev','edouard.kne.3@gmail.com','https://github.com/edouardkne','2026-04-20 02:44:59','',0,'EdoDev'),
+(15,'Salomon','$wp$2y$10$fBwoh/zxI2wCdRb9BlTHue6Xt7kO1tqF6D7KKnDAqs1anr8jvyZiC','salomon','salomonmwilo@gmail.com','','2026-07-10 18:50:16','',0,'Salomon Mwilo');
 /*!40000 ALTER TABLE `wp_users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -68,4 +69,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-05-26 23:19:35
+-- Dump completed on 2026-07-27 15:11:27

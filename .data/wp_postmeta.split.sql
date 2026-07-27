@@ -31,7 +31,7 @@ CREATE TABLE `wp_postmeta` (
   PRIMARY KEY (`meta_id`),
   KEY `post_id` (`post_id`),
   KEY `meta_key` (`meta_key`(191))
-) ENGINE=InnoDB AUTO_INCREMENT=1700 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1706 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -692,7 +692,7 @@ INSERT INTO `wp_postmeta` VALUES (1,2,'_wp_page_template','default'),
 (1023,720,'footnotes',''),
 (1024,721,'footnotes',''),
 (1026,729,'footnotes',''),
-(1029,731,'_edit_lock','1738229346:5'),
+(1029,731,'_edit_lock','1784297688:1'),
 (1030,731,'classic-editor-remember','block-editor'),
 (1033,733,'_wp_attached_file','2024/11/windows-MYomVPpR5FU-unsplash-scaled.jpg'),
 (1034,733,'_wp_attachment_metadata','a:7:{s:5:\"width\";i:2560;s:6:\"height\";i:1707;s:4:\"file\";s:47:\"2024/11/windows-MYomVPpR5FU-unsplash-scaled.jpg\";s:8:\"filesize\";i:384662;s:5:\"sizes\";a:7:{s:6:\"medium\";a:5:{s:4:\"file\";s:40:\"windows-MYomVPpR5FU-unsplash-300x200.jpg\";s:5:\"width\";i:300;s:6:\"height\";i:200;s:9:\"mime-type\";s:10:\"image/jpeg\";s:8:\"filesize\";i:13474;}s:5:\"large\";a:5:{s:4:\"file\";s:41:\"windows-MYomVPpR5FU-unsplash-1024x683.jpg\";s:5:\"width\";i:1024;s:6:\"height\";i:683;s:9:\"mime-type\";s:10:\"image/jpeg\";s:8:\"filesize\";i:71623;}s:9:\"thumbnail\";a:5:{s:4:\"file\";s:40:\"windows-MYomVPpR5FU-unsplash-150x150.jpg\";s:5:\"width\";i:150;s:6:\"height\";i:150;s:9:\"mime-type\";s:10:\"image/jpeg\";s:8:\"filesize\";i:7920;}s:12:\"medium_large\";a:5:{s:4:\"file\";s:40:\"windows-MYomVPpR5FU-unsplash-768x512.jpg\";s:5:\"width\";i:768;s:6:\"height\";i:512;s:9:\"mime-type\";s:10:\"image/jpeg\";s:8:\"filesize\";i:45637;}s:9:\"1536x1536\";a:5:{s:4:\"file\";s:42:\"windows-MYomVPpR5FU-unsplash-1536x1024.jpg\";s:5:\"width\";i:1536;s:6:\"height\";i:1024;s:9:\"mime-type\";s:10:\"image/jpeg\";s:8:\"filesize\";i:140381;}s:9:\"2048x2048\";a:5:{s:4:\"file\";s:42:\"windows-MYomVPpR5FU-unsplash-2048x1365.jpg\";s:5:\"width\";i:2048;s:6:\"height\";i:1365;s:9:\"mime-type\";s:10:\"image/jpeg\";s:8:\"filesize\";i:242220;}s:14:\"post-thumbnail\";a:5:{s:4:\"file\";s:40:\"windows-MYomVPpR5FU-unsplash-825x510.jpg\";s:5:\"width\";i:825;s:6:\"height\";i:510;s:9:\"mime-type\";s:10:\"image/jpeg\";s:8:\"filesize\";i:49014;}}s:10:\"image_meta\";a:12:{s:8:\"aperture\";s:1:\"0\";s:6:\"credit\";s:0:\"\";s:6:\"camera\";s:0:\"\";s:7:\"caption\";s:0:\"\";s:17:\"created_timestamp\";s:1:\"0\";s:9:\"copyright\";s:0:\"\";s:12:\"focal_length\";s:1:\"0\";s:3:\"iso\";s:1:\"0\";s:13:\"shutter_speed\";s:1:\"0\";s:5:\"title\";s:0:\"\";s:11:\"orientation\";s:1:\"0\";s:8:\"keywords\";a:0:{}}s:14:\"original_image\";s:32:\"windows-MYomVPpR5FU-unsplash.jpg\";}'),
@@ -1208,7 +1208,10 @@ INSERT INTO `wp_postmeta` VALUES (1,2,'_wp_page_template','default'),
 (1695,1021,'_menu_item_target',''),
 (1696,1021,'_menu_item_classes','a:1:{i:0;s:0:\"\";}'),
 (1697,1021,'_menu_item_xfn',''),
-(1698,1021,'_menu_item_url','');
+(1698,1021,'_menu_item_url',''),
+(1700,1028,'_edit_lock','1785163282:1'),
+(1701,1028,'classic-editor-remember','block-editor'),
+(1703,1028,'_edit_last','1');
 /*!40000 ALTER TABLE `wp_postmeta` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -1221,4 +1224,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-05-26 23:19:35
+-- Dump completed on 2026-07-27 15:11:27
