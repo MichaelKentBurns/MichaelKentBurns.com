@@ -4,6 +4,7 @@ namespace Cleantalk\Antispam\Integrations;
 
 use Cleantalk\ApbctWP\Variables\Post;
 use Cleantalk\ApbctWP\Escape;
+use Cleantalk\ApbctWP\Validate;
 
 class CleantalkExternalForms extends IntegrationBase
 {
@@ -14,8 +15,15 @@ class CleantalkExternalForms extends IntegrationBase
     {
         if ( empty($_POST)
             || !apbct_is_post()
-            || Post::get('cleantalk_hidden_method') === ''
-            || Post::get('cleantalk_hidden_action') === ''
+            || Post::getString('cleantalk_hidden_method') === ''
+            || Post::getString('cleantalk_hidden_action') === ''
+        ) {
+            return false;
+        }
+
+        // Reject non-http(s) actions early (e.g. javascript:/data:) before any output.
+        if ( ! $this->isAllowedExternalFormAction(Post::getString('cleantalk_hidden_action'))
+            || ! $this->isAllowedExternalFormMethod(Post::getString('cleantalk_hidden_method'))
         ) {
             return false;
         }
@@ -27,11 +35,27 @@ class CleantalkExternalForms extends IntegrationBase
     {
         if ( ! empty($_POST)
             && apbct_is_post()
-            && Post::get('cleantalk_hidden_method') !== ''
-            && Post::get('cleantalk_hidden_action') !== ''
+            && Post::getString('cleantalk_hidden_method') !== ''
+            && Post::getString('cleantalk_hidden_action') !== ''
         ) {
-            $this->action = Escape::escHtml(Post::get('cleantalk_hidden_action'));
-            $this->method = Escape::escHtml(Post::get('cleantalk_hidden_method'));
+            $action = Post::getString('cleantalk_hidden_action');
+            $method = Post::getString('cleantalk_hidden_method');
+
+            if ( ! $this->isAllowedExternalFormAction($action)
+                || ! $this->isAllowedExternalFormMethod($method)
+            ) {
+                return null;
+            }
+
+            // Keep a sanitized raw URL; escape for HTML only when rendering the form.
+            // HTML escaping alone does not block javascript: URLs in action attributes.
+            $this->action = Escape::escUrlRaw($action);
+            $this->method = strtoupper($method);
+
+            if ( empty($this->action) ) {
+                return null;
+            }
+
             unset($_POST['cleantalk_hidden_action'], $_POST['cleantalk_hidden_method']);
 
             /**
@@ -111,6 +135,22 @@ class CleantalkExternalForms extends IntegrationBase
 
     private function constructOriginExternalForm($action, $method)
     {
+        if ( empty($action)
+            || empty($method)
+            || ! $this->isAllowedExternalFormAction($action)
+            || ! $this->isAllowedExternalFormMethod($method)
+        ) {
+            return '';
+        }
+
+        // Restrict protocols at output: only http/https are allowed in form action.
+        $action = esc_url($action, array('http', 'https'));
+        $method = Escape::escHtml(strtoupper($method));
+
+        if ( empty($action) ) {
+            return '';
+        }
+
         // HTML form template
         $form_template = '
         <html lang="">
@@ -123,11 +163,11 @@ class CleantalkExternalForms extends IntegrationBase
         </html>';
 
         // Cookiebot chunk
-        $bot_chunk = class_exists('Cookiebot_WP') ? 'data-cookieconsent="ignore"' : '';
+        $bot_attrs = class_exists('Cookiebot_WP') ? array('data-cookieconsent' => 'ignore') : array();
 
         // HTML form clearing script
-        $script = "<script " . $bot_chunk . ">
-                let form = document.forms[0];
+        $script = apbct_get_inline_script_tag(
+            "let form = document.forms[0];
                 let availabilitySubmit = false;
                 for (let i = 0; i < form.length; i++) {
                     let typeElem = form[i].getAttribute('type');
@@ -142,9 +182,9 @@ class CleantalkExternalForms extends IntegrationBase
                         form.removeChild(objects[0]);
                     }
                 }
-                form.submit();
-                </script>
-        ";
+                form.submit();",
+            $bot_attrs
+        );
 
         $form_template = str_replace('%METHOD', $method, $form_template);
         $form_template = str_replace('%ACTION', $action, $form_template);
@@ -152,5 +192,31 @@ class CleantalkExternalForms extends IntegrationBase
         $form_template = str_replace('%FORM_ELEMENTS', $this->constructFormInnerElements($_POST, ''), $form_template);
 
         return $form_template;
+    }
+
+    /**
+     * External form action must be an absolute http/https URL.
+     * javascript:, data:, vbscript: and other schemes are rejected.
+     *
+     * @param mixed $action
+     *
+     * @return bool
+     */
+    private function isAllowedExternalFormAction($action)
+    {
+        return is_string($action) && Validate::isUrl($action);
+    }
+
+    /**
+     * HTML form method may only be GET or POST.
+     *
+     * @param mixed $method
+     *
+     * @return bool
+     */
+    private function isAllowedExternalFormMethod($method)
+    {
+        return is_string($method)
+            && in_array(strtolower($method), array('get', 'post'), true);
     }
 }

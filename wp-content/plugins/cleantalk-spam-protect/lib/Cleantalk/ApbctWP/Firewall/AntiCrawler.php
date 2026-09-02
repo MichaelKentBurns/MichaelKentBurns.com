@@ -2,6 +2,7 @@
 
 namespace Cleantalk\ApbctWP\Firewall;
 
+use Cleantalk\ApbctWP\Constant;
 use Cleantalk\ApbctWP\RequestParameters\RequestParameters;
 use Cleantalk\ApbctWP\State;
 use Cleantalk\ApbctWP\Validate;
@@ -250,11 +251,12 @@ class AntiCrawler extends \Cleantalk\Common\Firewall\FirewallModule
      *
      * @param string $ip
      * @param string $status
+     * @param bool   $is_personal
      * @return array
      */
-    private function makeResult($ip, $status)
+    private function makeResult($ip, $status, $is_personal = false)
     {
-        return array('ip' => $ip, 'is_personal' => false, 'status' => $status);
+        return array('ip' => $ip, 'is_personal' => $is_personal, 'status' => $status);
     }
 
     /**
@@ -293,9 +295,12 @@ class AntiCrawler extends \Cleantalk\Common\Firewall\FirewallModule
                 }
 
                 // Blacklisted — record but continue to cookie check
+                // HardCode - write AC dined by UA as personal: blacklisted user-agent may be only personally
+                // `is_personal` makes priority bigger, but we don't have a personal flag in the AC module yet, so this fix is needed
+                $is_personal = true;
                 return array(
-                    'entries'      => array($this->makeResult($current_ip, 'DENY_ANTICRAWLER_UA')),
-                    'early_return' => false,
+                    'entries'      => array($this->makeResult($current_ip, 'DENY_ANTICRAWLER_UA', $is_personal)),
+                    'early_return' => true,
                 );
             }
         }
@@ -315,7 +320,7 @@ class AntiCrawler extends \Cleantalk\Common\Firewall\FirewallModule
      */
     private function visitorHasAntiBotCookie()
     {
-        $hash = hash('sha256', $this->api_key . $this->apbct->data['salt']);
+        $hash = apbct_get_anti_bot_cookie_hash($this->api_key, $this->apbct->data['salt']);
         return Cookie::getString(self::COOKIE_NAME__ANTIBOT) === $hash;
     }
 
@@ -458,12 +463,11 @@ class AntiCrawler extends \Cleantalk\Common\Firewall\FirewallModule
     {
         global $apbct;
 
-        $script =
-        "<script>
-            window.addEventListener('DOMContentLoaded', function () {
-                ctSetCookie( " . json_encode(self::COOKIE_NAME__ANTIBOT) . ", '" . hash('sha256', $apbct->api_key . $apbct->data['salt']) . "', 0 );
-            });
-        </script>";
+        $script = apbct_get_inline_script_tag(
+            "window.addEventListener('DOMContentLoaded', function () {
+                ctSetCookie( " . json_encode(self::COOKIE_NAME__ANTIBOT) . ", '" . apbct_get_anti_bot_cookie_hash($apbct->api_key, $apbct->data['salt']) . "', 0 );
+            });"
+        );
 
         echo $script;
     }
@@ -477,6 +481,10 @@ class AntiCrawler extends \Cleantalk\Common\Firewall\FirewallModule
     public function updateLog($ip, $status)
     {
         /** @psalm-suppress InvalidLiteralArgument */
+
+        if ( Helper::ipValidate($ip) === false ) {
+            return;
+        }
 
         if ( strpos($status, '_UA') !== false ) {
             $id_str = $ip . $this->module_name . '_UA';
@@ -580,7 +588,7 @@ class AntiCrawler extends \Cleantalk\Common\Firewall\FirewallModule
                 '{REMOTE_ADDRESS}'                 => esc_html($ip),
                 '{SERVICE_ID}'                     => esc_html($this->apbct->data['service_id']) . ', ' . esc_html($net_count),
                 '{HOST}'                           => get_home_url() . ', ' . APBCT_VERSION,
-                '{COOKIE_ANTICRAWLER}'             => hash('sha256', $apbct->api_key . $apbct->data['salt']),
+                '{COOKIE_ANTICRAWLER}'             => apbct_get_anti_bot_cookie_hash($apbct->api_key, $apbct->data['salt']),
                 '{COOKIE_ANTICRAWLER_PASSED}'      => '1',
                 '{GENERATED}'                      => '<p>The page was generated at&nbsp;' . date('D, d M Y H:i:s') . "</p>",
                 '{SCRIPT_URL}'                     => esc_url($js_url),
@@ -654,9 +662,7 @@ class AntiCrawler extends \Cleantalk\Common\Firewall\FirewallModule
             $this->sfw_die_page = str_replace($place_holder, $replace, $this->sfw_die_page);
         }
 
-        if ( ! headers_sent() ) {
-            http_response_code(403);
-        }
+        $this->sendForbiddenStatus();
 
         // File exists?
         if ( file_exists(CLEANTALK_PLUGIN_DIR . "lib/Cleantalk/ApbctWP/Firewall/die_page_sfw.html") ) {
@@ -670,6 +676,8 @@ class AntiCrawler extends \Cleantalk\Common\Firewall\FirewallModule
      * Determine whether the current request should bypass AntiCrawler checks.
      *
      * Returns true (excluded) when any of the following conditions is met:
+     * - The request uses the WordPress HTTP API loopback User-Agent (Site Health, cron, updates).
+     * - The request is a WP Rocket cache-preload hit (no JS, so it cannot pass the antibot cookie).
      * - The URI points to a W3 Total Cache minified asset listed in the w3tc_minify option.
      * - The skip_anticrawler_on_rss_feed service constant is defined and the request is an RSS feed.
      * - An SFW test is running and the visitor holds a valid antibot cookie or bot-detector param.
@@ -679,6 +687,16 @@ class AntiCrawler extends \Cleantalk\Common\Firewall\FirewallModule
      */
     private function checkExclusions()
     {
+        if ( $this->isWordPressLoopbackUserAgent() ) {
+            $this->debug('exclusions precheck: WordPress loopback user-agent');
+            return true;
+        }
+
+        if ( strpos($this->server__http_user_agent, 'WP Rocket/Preload') !== false ) {
+            $this->debug('exclusions precheck: WP Rocket preload user-agent');
+            return true;
+        }
+
         /**
          * Check if W3 Total Cache minified files requested during Anti-Crawler Work.
          * All the next conditions should be true:
@@ -709,13 +727,13 @@ class AntiCrawler extends \Cleantalk\Common\Firewall\FirewallModule
         }
 
         // skip for RSS Feed requests
-        if ($this->apbct->service_constants->skip_anticrawler_on_rss_feed->isDefined()) {
+        if (Constant::is(Constant::APBCT_SERVICE__SKIP_ANTICRAWLER_ON_RSS_FEED)) {
             if (Server::getString('REQUEST_URI') &&
                 preg_match_all('/feed/i', Server::getString('REQUEST_URI'))
             ) {
                 $this->debug(
                     'exclusions precheck: RSS feed requests disabled by service constant',
-                    $this->apbct->service_constants->skip_anticrawler_on_rss_feed->allowed_public_names
+                    Constant::getNames(Constant::APBCT_SERVICE__SKIP_ANTICRAWLER_ON_RSS_FEED)
                 );
                 return true;
             }
@@ -728,9 +746,9 @@ class AntiCrawler extends \Cleantalk\Common\Firewall\FirewallModule
         //skip check if SFW test is running
         if (
             Get::get('sfw_test_ip') &&
-            (Cookie::getString(self::COOKIE_NAME__ANTIBOT) == hash(
-                'sha256',
-                $this->api_key . $this->apbct->data['salt']
+            (Cookie::getString(self::COOKIE_NAME__ANTIBOT) == apbct_get_anti_bot_cookie_hash(
+                $this->api_key,
+                $this->apbct->data['salt']
             ) ||
             RequestParameters::get(self::PARAM_NAME__BOT_DETECTOR_EXIST, true) == '1')
         ) {
@@ -753,6 +771,18 @@ class AntiCrawler extends \Cleantalk\Common\Firewall\FirewallModule
         }
 
         return false;
+    }
+
+    /**
+     * WordPress core loopbacks (Site Health, updates, cron) use the HTTP API
+     * default User-Agent "WordPress/{version}; {url}" and never run JavaScript,
+     * so Anti-Crawler would log the first hit and 403 the rest.
+     *
+     * @return bool
+     */
+    private function isWordPressLoopbackUserAgent()
+    {
+        return apbct__is_wordpress_loopback_request();
     }
 
     /**

@@ -42,7 +42,7 @@ class Request
      *      get_code              - getting only HTTP response code
      *      async                 - async requests. Sends request and return 'true' value. Doesn't wait for response.
      *      get                   - makes GET-type request instead of default POST-type
-     *      ssl                   - uses SSL
+     *      ssl                   - ensure TLS peer/host verification and CA bundle (enabled by default)
      *      cache                 - allow caching for this request
      *      retry_with_socket     - make another request with socket if cURL failed to retrieve data
      */
@@ -110,7 +110,7 @@ class Request
      *      get_code              - getting only HTTP response code
      *      async                 - async requests. Sends request and return 'true' value. Doesn't wait for response.
      *      get                   - makes GET-type request instead of default POST-type
-     *      ssl                   - uses SSL
+     *      ssl                   - ensure TLS peer/host verification and CA bundle (enabled by default)
      *      cache                 - allow caching for this request
      *      retry_with_socket     - make another request with socket if cURL failed to retrieve data
      *
@@ -172,13 +172,23 @@ class Request
      */
     public function request()
     {
-        // Return the error if cURL is not installed
-        if ( ! function_exists('curl_init') ) {
-            return array('error' => 'CURL_NOT_INSTALLED');
-        }
-
         if ( empty($this->url) ) {
             return array('error' => 'URL_IS_NOT_SET');
+        }
+
+        // Fallback to socket when cURL is unavailable
+        if ( ! function_exists('curl_init') ) {
+            if (
+                ! is_array($this->url) &&
+                in_array('retry_with_socket', $this->presets, true)
+            ) {
+                $this->response = $this->requestWithSocket();
+                if ( $this->response->getError() ) {
+                    return $this->response->getError();
+                }
+                return $this->runCallbacks();
+            }
+            return array('error' => 'CURL_NOT_INSTALLED');
         }
 
         $this->convertOptionsTocURLFormat();
@@ -302,20 +312,56 @@ class Request
             return new Response(['error' => 'ALLOW_URL_FOPEN_IS_DISABLED'], []);
         }
 
-        $context = stream_context_create(
-            [
-                'http' => [
-                    'method'  => 'GET', //in_array('get', $this->presets, true) ? 'GET' : 'POST',
-                    'timeout' => $this->options[CURLOPT_TIMEOUT],
-                    'content' => $this->data,
-                ],
-            ]
-        );
+        $is_get = in_array('get', $this->presets, true);
 
-        $response_content = @file_get_contents($this->url, false, $context)
+        // Use URL from processed options if available (presets may have appended query params)
+        $url = (defined('CURLOPT_URL') && isset($this->options[CURLOPT_URL]))
+            ? $this->options[CURLOPT_URL]
+            : $this->url;
+
+        $context_options = [
+            'http' => [
+                'timeout' => $this->getSocketTimeout(),
+            ],
+        ];
+
+        if ( $is_get ) {
+            $context_options['http']['method'] = 'GET';
+            // Append data to URL if processPresets() hasn't done it yet (no cURL path)
+            if ( ! empty($this->data) && ! (defined('CURLOPT_URL') && isset($this->options[CURLOPT_URL])) ) {
+                $url = self::appendParametersToURL($url, $this->data);
+            }
+        } else {
+            $context_options['http']['method']  = 'POST';
+            $context_options['http']['content'] = is_array($this->data) ? http_build_query($this->data) : $this->data;
+            $context_options['http']['header']  = 'Content-Type: application/x-www-form-urlencoded';
+        }
+
+        $context = stream_context_create($context_options);
+
+        $response_content = @file_get_contents($url, false, $context)
             ?: ['error' => 'FAILED_TO_USE_FILE_GET_CONTENTS'];
 
-        return new Response($response_content, []);
+        $info = [];
+        if ( isset($http_response_header[0]) && preg_match('/\s(\d{3})/', $http_response_header[0], $matches) ) {
+            $info['http_code'] = (int) $matches[1];
+        }
+
+        return new Response($response_content, $info);
+    }
+
+    /**
+     * Get timeout for socket requests, works without cURL extension constants
+     */
+    private function getSocketTimeout()
+    {
+        if ( isset($this->options['timeout']) ) {
+            return (int) $this->options['timeout'];
+        }
+        if ( defined('CURLOPT_TIMEOUT') && isset($this->options[CURLOPT_TIMEOUT]) ) {
+            return (int) $this->options[CURLOPT_TIMEOUT];
+        }
+        return 10;
     }
 
     // Process with callback if passed. Save the processed result.
@@ -391,11 +437,10 @@ class Request
                     unset($this->options[$option_name]);
                     break;
                 case 'sslverify':
-                    if ( $option_value ) {
-                        $temp_options[CURLOPT_SSL_VERIFYPEER] = (bool)$option_value;      // Boolean
-                        $temp_options[CURLOPT_SSL_VERIFYHOST] = (int)(bool)$option_value; // Int 0|1
-                        unset($this->options[$option_name]);
-                    }
+                    $temp_options[CURLOPT_SSL_VERIFYPEER] = (bool)$option_value;
+                    // VERIFYHOST must be 2 for hostname check; 1 is deprecated and insecure
+                    $temp_options[CURLOPT_SSL_VERIFYHOST] = $option_value ? 2 : 0;
+                    unset($this->options[$option_name]);
                     break;
                 case 'sslcertificates':
                     $temp_options[CURLOPT_CAINFO] = $option_name; // String
@@ -428,33 +473,36 @@ class Request
      */
     protected function appendOptionsObligatory()
     {
-        // Merging OBLIGATORY options with GIVEN options
-        $this->options = array_replace(
-            array(
-                CURLOPT_URL            => ! is_array($this->url) ? $this->url : null,
-                CURLOPT_TIMEOUT        => 50,
-                CURLOPT_LOW_SPEED_TIME => 25,
-                CURLOPT_RETURNTRANSFER => true,
-                CURLOPT_CONNECTTIMEOUT => 5000,
-                CURLOPT_FORBID_REUSE   => true,
-                CURLOPT_USERAGENT      => self::AGENT,
-                CURLOPT_POST           => true,
-                CURLOPT_POSTFIELDS     => $this->data,
-                CURLOPT_SSL_VERIFYPEER => false,
-                CURLOPT_SSL_VERIFYHOST => 0,
-                CURLOPT_HTTPHEADER     => array(
-                    'Expect:',
-                    // Fix for large data and old servers http://php.net/manual/ru/function.curl-setopt.php#82418
-                    'Expires: ' . date(DATE_RFC822, mktime(0, 0, 0, 1, 1, 1971)),
-                    'Cache-Control: no-store, no-cache, must-revalidate',
-                    'Cache-Control: post-check=0, pre-check=0',
-                    'Pragma: no-cache',
-                ),
-                CURLOPT_FOLLOWLOCATION => true,
-                CURLOPT_MAXREDIRS      => 5,
+        $defaults = array(
+            CURLOPT_URL            => ! is_array($this->url) ? $this->url : null,
+            CURLOPT_TIMEOUT        => 50,
+            CURLOPT_LOW_SPEED_TIME => 25,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_CONNECTTIMEOUT => 5000,
+            CURLOPT_FORBID_REUSE   => true,
+            CURLOPT_USERAGENT      => self::AGENT,
+            CURLOPT_POST           => true,
+            CURLOPT_POSTFIELDS     => $this->data,
+            CURLOPT_SSL_VERIFYPEER => true,
+            CURLOPT_SSL_VERIFYHOST => 2,
+            CURLOPT_HTTPHEADER     => array(
+                'Expect:',
+                // Fix for large data and old servers http://php.net/manual/ru/function.curl-setopt.php#82418
+                'Expires: ' . date(DATE_RFC822, mktime(0, 0, 0, 1, 1, 1971)),
+                'Cache-Control: no-store, no-cache, must-revalidate',
+                'Cache-Control: post-check=0, pre-check=0',
+                'Pragma: no-cache',
             ),
-            $this->options
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_MAXREDIRS      => 5,
         );
+
+        if ( defined('APBCT_CASERT_PATH') && APBCT_CASERT_PATH ) {
+            $defaults[CURLOPT_CAINFO] = APBCT_CASERT_PATH;
+        }
+
+        // Merging OBLIGATORY options with GIVEN options
+        $this->options = array_replace($defaults, $this->options);
     }
 
     /**

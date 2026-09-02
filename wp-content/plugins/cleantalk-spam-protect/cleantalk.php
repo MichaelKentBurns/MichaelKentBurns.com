@@ -4,7 +4,7 @@
   Plugin Name: Anti-Spam by CleanTalk
   Plugin URI: https://cleantalk.org
   Description: Max power, all-in-one, no Captcha, premium anti-spam plugin. No comment spam, no registration spam, no contact spam, protects any WordPress forms.
-  Version: 6.85
+  Version: 6.87
   Author: CleanTalk - Anti-Spam Protection <welcome@cleantalk.org>
   Author URI: https://cleantalk.org
   Text Domain: cleantalk-spam-protect
@@ -15,6 +15,7 @@ use Cleantalk\Antispam\ScriptsIntegration\CleantalkScriptsIntegrator;
 use Cleantalk\Antispam\ProtectByShortcode;
 use Cleantalk\ApbctWP\Activator;
 use Cleantalk\ApbctWP\AdminNotices;
+use Cleantalk\ApbctWP\Constant;
 use Cleantalk\ApbctWP\ContactsEncoder\ContactsEncoder;
 use Cleantalk\ApbctWP\Antispam\ForceProtection;
 use Cleantalk\ApbctWP\API;
@@ -56,7 +57,18 @@ if ( ! defined('ABSPATH') ) {
     die('Not allowed!');
 }
 
-global $apbct, $wpdb, $pagenow;
+/**
+ * @var State $apbct
+ */
+global $apbct;
+/**
+ * @var \wpdb $wpdb
+ */
+global $wpdb;
+/**
+ * @var mixed|string $pagenow
+ */
+global $pagenow;
 
 $cleantalk_executed = false;
 
@@ -129,6 +141,7 @@ if ( preg_match('@^(\d+)\.(\d+)\.(\d{1,2})-(dev|fix)$@', $plugin_version__agent,
 }
 define('APBCT_AGENT', 'wordpress-' . $plugin_version__agent); // Prepared agent
 
+//todo make this as $apbct->service_constants
 if ( defined('CLEANTALK_SERVER') ) {
     define('APBCT_MODERATE_URL', 'https://moderate.' . CLEANTALK_SERVER);
     if ( ! defined('CLEANTALK_API_URL') ) {
@@ -263,7 +276,7 @@ function apbct_register_my_rest_routes()
 // Database prefix
 global $wpdb, $wp_version;
 $apbct->db_prefix = ! APBCT_WPMS || $apbct->allow_custom_key || $apbct->white_label ? $wpdb->prefix : $wpdb->base_prefix;
-$apbct->db_prefix = ! $apbct->white_label && defined('CLEANTALK_ACCESS_KEY') ? $wpdb->base_prefix : $wpdb->prefix;
+$apbct->db_prefix = ! $apbct->white_label && Constant::is(Constant::APBCT_SERVICE__SELF_OWNED_ACCESS_KEY) ? $wpdb->base_prefix : $wpdb->prefix;
 
 /** @todo HARDCODE FIX */
 if ( $apbct->plugin_version === '1.0.0' ) {
@@ -282,6 +295,21 @@ add_action('init', function () {
     if ($apbct->settings['wp__disable_pingback_and_trackback']) {
         new PingbackHandler();
         new TrackBackHandler();
+    }
+
+    if ( RemoteCalls::check() ) {
+        try {
+            /**
+             * Needs to include apbct_settings__validate() for run_service_template_get remote call.
+             * TODO:Probably we should refactor apbct_settings__validate() to a class feature to use it within autoloader
+             */
+            if ( Get::get('spbc_remote_call_action') === 'run_service_template_get' ) {
+                require_once(CLEANTALK_PLUGIN_DIR . 'inc/cleantalk-settings.php');
+            }
+            RemoteCalls::perform();
+        } catch ( Exception $e ) {
+            die(json_encode(array('ERROR' => $e->getMessage())));
+        }
     }
 
     // Self cron
@@ -306,21 +334,6 @@ add_action('init', function () {
             }
         }
     }
-    // Remote calls
-    if ( RemoteCalls::check() ) {
-        try {
-            /**
-             * Needs to include apbct_settings__validate() for run_service_template_get remote call.
-             * TODO:Probably we should refactor apbct_settings__validate() to a class feature to use it within autoloader
-             */
-            if ( Get::get('spbc_remote_call_action') === 'run_service_template_get' ) {
-                require_once(CLEANTALK_PLUGIN_DIR . 'inc/cleantalk-settings.php');
-            }
-            RemoteCalls::perform();
-        } catch ( Exception $e ) {
-            die(json_encode(array('ERROR' => $e->getMessage())));
-        }
-    }
 });
 
 //Delete cookie for admin trial notice
@@ -334,6 +347,7 @@ if ( ! is_admin() && ! apbct_is_ajax() && ! defined('DOING_CRON')
      && empty(Post::get('action')) //bbPress
      && ! \Cleantalk\Variables\Server::inUri('/favicon.ico') // /favicon request rewritten cookies fix
      && ! apbct__is_wp_rocket_preloader_request()
+     && ! apbct__is_wordpress_loopback_request()
 ) {
     if ( $apbct->data['cookies_type'] !== 'alternative' ) {
         if ( !$apbct->settings['forms__search_test'] && !Get::get('s') ) { //skip cookie set for search form redirect page
@@ -344,7 +358,8 @@ if ( ! is_admin() && ! apbct_is_ajax() && ! defined('DOING_CRON')
     }
     if (
         empty($_POST) &&
-        $apbct->data['key_is_ok']
+        $apbct->data['key_is_ok'] &&
+        ! apbct_is_wp_login_excluded_from_protection()
     ) {
         if ( (isset($_GET['q']) && $_GET['q'] !== '') || empty($_GET) ) {
             apbct_cookie();
@@ -600,11 +615,11 @@ add_action('frm_entries_footer_scripts', 'apbct_form__formidable__footerScripts'
 
 
 add_action('mec_booking_end_form_step_2', function () {
-    echo "<script>
-        if (typeof ctPublic.force_alt_cookies == 'undefined' || (ctPublic.force_alt_cookies !== 'undefined' && !ctPublic.force_alt_cookies)) {
+    echo apbct_get_inline_script_tag(
+        "if (typeof ctPublic.force_alt_cookies == 'undefined' || (ctPublic.force_alt_cookies !== 'undefined' && !ctPublic.force_alt_cookies)) {
 			ctNoCookieAttachHiddenFieldsToForms();
-		}
-    </script>";
+		}"
+    );
 });
 
 // Public actions
@@ -1253,8 +1268,8 @@ function apbct_sfw_update__switch_to_direct()
 
     $apbct->fw_stats['reason_direct_update_log'] = null;
 
-    if (defined('APBCT_SFW_FORCE_DIRECT_UPDATE')) {
-        $apbct->fw_stats['reason_direct_update_log'] = 'const APBCT_SFW_FORCE_DIRECT_UPDATE exists';
+    if (Constant::is(Constant::APBCT_SERVICE__SFW_FORCE_DIRECT_UPDATE)) {
+        $apbct->fw_stats['reason_direct_update_log'] = 'constant exists';
         return true;
     }
 
@@ -2755,6 +2770,43 @@ function apbct_cookies_test()
 }
 
 /**
+ * Whether an API result is a transport/connection failure (not an invalid Access key).
+ *
+ * @param mixed $result API result array, error string, or errors['account_check'] bucket
+ * @return bool
+ */
+function apbct__is_connection_error_result($result)
+{
+    if ( is_array($result) ) {
+        if ( isset($result['error']) ) {
+            $result = $result['error'];
+        } else {
+            // State::errorAdd stores a list of error entries under the type key
+            $last = end($result);
+            if ( is_array($last) && isset($last['error']) ) {
+                $result = $last['error'];
+            } elseif ( is_string($last) ) {
+                $result = $last;
+            } else {
+                return false;
+            }
+        }
+    }
+
+    if ( ! is_string($result) || $result === '' ) {
+        return false;
+    }
+
+    $error = strtolower($result);
+
+    return strpos($error, 'connection_error') !== false
+        || strpos($error, 'json_decode_error') !== false
+        || strpos($error, 'curl error') !== false
+        || strpos($error, 'failed to connect') !== false
+        || strpos($error, 'operation timed out') !== false;
+}
+
+/**
  * Inner function - Account status check. Scheduled in 1800 seconds for default!
  * @param $api_key
  * @param $process_errors
@@ -2764,12 +2816,15 @@ function ct_account_status_check($api_key = null, $process_errors = true)
 {
     global $apbct;
 
-    $api_key = $api_key ?: $apbct->api_key;
-    $result  = API::methodNoticePaidTill(
+    $previous_key_is_ok = ! empty($apbct->data['key_is_ok']);
+    $api_key            = $api_key ?: $apbct->api_key;
+    $result             = API::methodNoticePaidTill(
         $api_key,
         preg_replace('/http[s]?:\/\//', '', get_option('home'), 1),
         ! is_main_site() && $apbct->white_label ? 'anti-spam-hosting' : 'antispam'
     );
+
+    $is_connection_error = ! empty($result['error']) && apbct__is_connection_error_result($result);
 
     if ( empty($result['error']) || ! empty($result['valid']) ) {
         // Notices
@@ -2809,15 +2864,15 @@ function ct_account_status_check($api_key = null, $process_errors = true)
             : 0;
 
         //todo:temporary solution for description, until we found the way to transfer this from cloud
-        if (defined('APBCT_WHITELABEL_PLUGIN_DESCRIPTION')) {
+        if (Constant::is(Constant::APBCT_SERVICE__WHITELABEL_PLUGIN_DESCRIPTION)) {
             /** @psalm-suppress PossiblyInvalidArrayAssignment */
-            $result['wl_antispam_description'] = APBCT_WHITELABEL_PLUGIN_DESCRIPTION;
+            $result['wl_antispam_description'] = esc_html(Constant::getValue(Constant::APBCT_SERVICE__WHITELABEL_PLUGIN_DESCRIPTION));
         }
 
         //todo:temporary solution for FAQ
-        if (defined('APBCT_WHITELABEL_FAQ_LINK')) {
+        if (Constant::is(Constant::APBCT_SERVICE__WHITELABEL_FAQ_LINK)) {
             /** @psalm-suppress PossiblyInvalidArrayAssignment */
-            $result['wl_faq_url'] = APBCT_WHITELABEL_FAQ_LINK;
+            $result['wl_faq_url'] = esc_url(Constant::getValue(Constant::APBCT_SERVICE__WHITELABEL_FAQ_LINK));
         }
 
         if ( isset($result['wl_status']) && $result['wl_status'] === 'ON' ) {
@@ -2865,6 +2920,11 @@ function ct_account_status_check($api_key = null, $process_errors = true)
     if ( ! empty($result['valid']) ) {
         $apbct->data['key_is_ok'] = true;
         $result                   = true;
+    } elseif ( $is_connection_error ) {
+        // Transport/SSL/timeout failures must not mark the Access key as invalid.
+        // @see https://app.doboard.com/1/task/54504
+        $apbct->data['key_is_ok'] = $previous_key_is_ok;
+        $result                   = false;
     } else {
         $apbct->data['key_is_ok'] = false;
         $result                   = false;

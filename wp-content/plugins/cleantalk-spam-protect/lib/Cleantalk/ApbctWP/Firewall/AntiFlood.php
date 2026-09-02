@@ -195,6 +195,10 @@ class AntiFlood extends \Cleantalk\Common\Firewall\FirewallModule
      */
     public function updateLog($ip, $status)
     {
+        if ( Helper::ipValidate($ip) === false ) {
+            return;
+        }
+
         $id   = md5($ip . $this->module_name);
         $time = time();
 
@@ -318,9 +322,7 @@ class AntiFlood extends \Cleantalk\Common\Firewall\FirewallModule
             $this->sfw_die_page = str_replace($place_holder, $replace, $this->sfw_die_page);
         }
 
-        if ( ! headers_sent() ) {
-            http_response_code(403);
-        }
+        $this->sendForbiddenStatus();
 
         // File exists?
         if (file_exists(CLEANTALK_PLUGIN_DIR . "lib/Cleantalk/ApbctWP/Firewall/die_page_sfw.html")) {
