@@ -7,6 +7,8 @@ if (!class_exists('CWMGRCallbackRequest')) :
 		public $method;
 		public $wing;
 		public $is_afterload;
+		public $is_aftershutdown;
+		public $keep_page_output;
 		public $is_admin_ajax;
 		public $is_debug;
 		public $account;
@@ -36,6 +38,9 @@ if (!class_exists('CWMGRCallbackRequest')) :
 			$this->wing = $in_params['wing'];
 			$this->method = $in_params['bvMethod'];
 			$this->is_afterload = array_key_exists('afterload', $in_params);
+			$this->is_aftershutdown = array_key_exists('aftershutdown', $in_params);
+			$this->keep_page_output = $this->is_aftershutdown &&
+				array_key_exists('keeppageoutput', $in_params);
 			$this->is_admin_ajax = array_key_exists('adajx', $in_params);
 			$this->is_debug = array_key_exists('bvdbg', $in_params);
 			$this->sig = $in_params['sig'];
@@ -44,7 +49,7 @@ if (!class_exists('CWMGRCallbackRequest')) :
 			$this->version = $in_params['bvVersion'];
 			$this->is_sha1 = array_key_exists('sha1', $in_params);
 			$this->bvb64stream = isset($in_params['bvb64stream']);
-			$this->bvb64cksize = array_key_exists('bvb64cksize', $in_params) ? intval($in_params['bvb64cksize']) : false;
+			$this->bvb64cksize = array_key_exists('bvb64cksize', $in_params) ? intval($in_params['bvb64cksize']) : 0;
 			$this->checksum = array_key_exists('checksum', $in_params) ? $in_params['checksum'] : false;
 			$this->pubkey_name = !empty($in_params['pubkeyname']) ?
 					CWMGRAccount::sanitizeKey($in_params['pubkeyname']) : 'm_public';
@@ -98,6 +103,12 @@ if (!class_exists('CWMGRCallbackRequest')) :
 			}
 			if ($this->is_afterload) {
 				$info["afterload"] = true;
+			}
+			if ($this->is_aftershutdown) {
+				$info["aftershutdown"] = true;
+			}
+			if ($this->keep_page_output) {
+				$info["keeppageoutput"] = true;
 			}
 			return $info;
 		}
@@ -285,16 +296,13 @@ if (!class_exists('CWMGRCallbackRequest')) :
 
 		public function authFailedResp() {
 			$api_public_key = CWMGRAccount::getApiPublicKey($this->settings);
-			$default_secret = CWMGRRecover::getDefaultSecret($this->settings);
 			$default_account_pubkey = CWMGRAccount::getDefaultPublicKey();
 			$bvinfo = new CWMGRInfo($this->settings);
 			$resp = array(
 				"request_info" => $this->info(),
 				"bvinfo" => $bvinfo->info(),
 				"statusmsg" => "FAILED_AUTH",
-				"api_pubkey" => substr($api_public_key, 0, 8),
-				"def_key_status" => CWMGRRecover::getSecretStatus($this->settings),
-				"def_sigmatch" => substr(hash('sha1', $this->method.$default_secret.$this->time.$this->version), 0, 8)
+				"api_pubkey" => substr($api_public_key, 0, 8)
 			);
 
 			if (is_string($default_account_pubkey) && strlen($default_account_pubkey) >= 32) {
@@ -303,7 +311,6 @@ if (!class_exists('CWMGRCallbackRequest')) :
 
 			if ($this->account) {
 				$resp["account_info"] = $this->account->info();
-				$resp["sigmatch"] = substr(hash('sha1', $this->method.$this->account->secret.$this->time.$this->version), 0, 6);
 			} else {
 				$resp["account_info"] = array("error" => "ACCOUNT_NOT_FOUND");
 			}

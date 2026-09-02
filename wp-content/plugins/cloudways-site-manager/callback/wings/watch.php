@@ -7,7 +7,7 @@ class CWMGRWatchCallback extends CWMGRCallbackBase {
 	public $db;
 	public $settings;
 
-	const WATCH_WING_VERSION = 1.6;
+	const WATCH_WING_VERSION = 1.7;
 
 	public function __construct($callback_handler) {
 		$this->db = $callback_handler->db;
@@ -144,14 +144,14 @@ class CWMGRWatchCallback extends CWMGRCallbackBase {
 			if (array_key_exists('lp', $params)) {
 				require_once dirname( __FILE__ ) . '/../../protect/lp.php';
 				$lp_params = $params['lp'];
-				if (!isset($lp_params['bv_check_table']) || $db->isTablePresent($db->getBVTable(CWMGRProtectLP_V647::TABLE_NAME))) {
+				if (!isset($lp_params['bv_check_table']) || $db->isTablePresent($db->getBVTable(CWMGRProtectLP_V672::TABLE_NAME))) {
 					$limit = intval($lp_params['limit']);
 					$filter = $lp_params['filter'];
 					$offset = isset($lp_params['offset']) ? intval($lp_params['offset']) : 0;
-					$table = $db->getBVTable(CWMGRProtectLP_V647::TABLE_NAME);
+					$table = $db->getBVTable(CWMGRProtectLP_V672::TABLE_NAME);
 					$resp["lplogs"] = $this->getOffsetResetInfo($lp_params, $offset, $table);
 					if (empty($resp["lplogs"])) {
-						$db->deleteBVTableContent(CWMGRProtectLP_V647::TABLE_NAME, $lp_params['rmfilter']);
+						$db->deleteBVTableContent(CWMGRProtectLP_V672::TABLE_NAME, $lp_params['rmfilter']);
 						$resp["lplogs"] = $this->getData($table, $limit, $filter);
 					}
 				} else {
@@ -167,14 +167,14 @@ class CWMGRWatchCallback extends CWMGRCallbackBase {
 			if (array_key_exists('fw', $params)) {
 				require_once dirname( __FILE__ ) . '/../../protect/fw.php';
 				$fw_params = $params['fw'];
-				if (!isset($fw_params['bv_check_table']) || $db->isTablePresent($db->getBVTable(CWMGRProtectFW_V647::TABLE_NAME))) {
+				if (!isset($fw_params['bv_check_table']) || $db->isTablePresent($db->getBVTable(CWMGRProtectFW_V672::TABLE_NAME))) {
 					$limit = intval($fw_params['limit']);
 					$filter = $fw_params['filter'];
 					$offset = isset($fw_params['offset']) ? intval($fw_params['offset']) : 0;
-					$table = $db->getBVTable(CWMGRProtectFW_V647::TABLE_NAME);
+					$table = $db->getBVTable(CWMGRProtectFW_V672::TABLE_NAME);
 					$resp["fwlogs"] = $this->getOffsetResetInfo($fw_params, $offset, $table);
 					if (empty($resp["fwlogs"])){
-						$db->deleteBVTableContent(CWMGRProtectFW_V647::TABLE_NAME, $fw_params['rmfilter']);
+						$db->deleteBVTableContent(CWMGRProtectFW_V672::TABLE_NAME, $fw_params['rmfilter']);
 						$resp["fwlogs"] = $this->getData($table, $limit, $filter);
 					}
 				} else {

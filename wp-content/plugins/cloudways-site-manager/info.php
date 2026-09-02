@@ -11,7 +11,7 @@ if (!class_exists('CWMGRInfo')) :
 		public $ip_header_option = 'cwmgripheader';
 		public $brand_option = 'cwmbrand';
 		public $wp_lp_whitelabel_option = 'cwmgrLpWhitelabelConf';
-		public $version = '6.47';
+		public $version = '6.72';
 		public $webpage = 'https://www.cloudways.com';
 		public $appurl = 'https://app.wpremote.com';
 		public $slug = 'cloudways-site-manager/cloudways_site_manager.php';
@@ -64,14 +64,15 @@ if (!class_exists('CWMGRInfo')) :
 			$bvsiteinfo = new CWMGRWPSiteInfo();
 			$encoded_url = base64_encode($bvsiteinfo->siteurl());
 			$secret = CWMGRRecover::defaultSecret($this->settings);
+			$tag = CWMGRRecover::connectionTag($this->settings);
 
-			return base64_encode("v2:".$secret.":".$encoded_url.":".$this->plugname);
-		}
+			#No tag means this site has no salt material in wp-config.php, and there
+			#is no connection key that would be safe to hand out.
+			if (empty($secret) || empty($tag)) {
+				return null;
+			}
 
-		public function getDefaultSecret() {
-			require_once dirname( __FILE__ ) . '/recover.php';
-			$bvsiteinfo = new CWMGRWPSiteInfo();
-			return CWMGRRecover::defaultSecret($this->settings);
+			return base64_encode("v3:".$secret.":".$encoded_url.":".$this->plugname.":".$tag);
 		}
 
 		public function getLatestElementorDBVersion($file) {

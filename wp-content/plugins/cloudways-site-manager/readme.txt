@@ -1,9 +1,9 @@
 === Cloudways Site Manager ===
 Tags: Cloudways
 Requires at least: 4.0
-Tested up to: 7.0
+Tested up to: 7.1
 Requires PHP: 7.0
-Stable tag: 6.47
+Stable tag: 6.72
 License: GPLv2 or later
 License URI: [http://www.gnu.org/licenses/gpl-2.0.html](http://www.gnu.org/licenses/gpl-2.0.html)
 
@@ -33,8 +33,19 @@ Need help? Contact us at [https://tickets.cloudways.com/hc/en-us/requests/new](h
 
 == Changelog ==
 
+= 6.72 =
+* Tweak: Added validation checks for input params.
+
+= 6.65 =
+* Improvement: Enhanced secret generation using the secure random_int function.
+* Improvement: Improved connection key generation mechanism.
+* Improvement: Optimized synchronization of large database tables.
+* Tweak: Improved Uptime Monitoring with full-page checks.
+
 = 6.47 =
 * Fix: Prevent stale WordPress core update cleanup rules from deleting files added by newer WordPress core packages.
+
+= 6.44 =
 * Tweak: Improved the WP core updates flow.
 * Tweak: Improved the plugin auto-install flow.
 

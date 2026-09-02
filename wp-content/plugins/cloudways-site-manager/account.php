@@ -17,6 +17,10 @@ if (!class_exists('CWMGRAccount')) :
 		}
 
 		public static function find($settings, $public) {
+			if (!is_string($public)) {
+				return null;
+			}
+
 			$accounts = self::allAccounts($settings);
 			if (array_key_exists($public, $accounts) && isset($accounts[$public]['secret'])) {
 				$secret = $accounts[$public]['secret'];
@@ -43,12 +47,16 @@ if (!class_exists('CWMGRAccount')) :
 			$str = "";
 			$size = strlen($chars);
 			for( $i = 0; $i < $length; $i++ ) {
-				$str .= $chars[rand(0, $size - 1)]; // phpcs:ignore WordPress.WP.AlternativeFunctions.rand_rand
+				$str .= $chars[random_int(0, $size - 1)];
 			}
 			return $str;
 		}
 
 		public static function sanitizeKey($key) {
+			if (!is_string($key)) {
+				return '';
+			}
+
 			return preg_replace('/[^a-zA-Z0-9_\-]/', '', $key);
 		}
 

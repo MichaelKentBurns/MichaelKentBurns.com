@@ -70,6 +70,7 @@ class CWMGRWPAdmin {
 	public function siteInfoTags() {
 		require_once dirname( __FILE__ ) . '/recover.php';
 		$secret = CWMGRRecover::defaultSecret($this->settings);
+		$ctag = CWMGRRecover::connectionTag($this->settings);
 		$public = CWMGRAccount::getApiPublicKey($this->settings);
 		$server_ip = CWMGRHelper::getStringParamEscaped('SERVER', 'SERVER_ADDR', 'attr');
 		$tags = "<input type='hidden' name='url' value='".esc_attr($this->siteinfo->wpurl())."'/>\n".
@@ -81,6 +82,7 @@ class CWMGRWPAdmin {
 	 			"<input type='hidden' name='serverip' value='".$server_ip."'/>\n".
 				"<input type='hidden' name='abspath' value='".esc_attr(ABSPATH)."'/>\n".
 				"<input type='hidden' name='secret' value='".esc_attr($secret)."'/>\n".
+				"<input type='hidden' name='bvctag' value='".esc_attr($ctag)."'/>\n".
 				"<input type='hidden' name='public' value='".esc_attr($public)."'/>\n";
 		return $tags;
 	}

@@ -5,7 +5,7 @@ Plugin URI: https://www.cloudways.com
 Description: The easiest way to manage your sites on Cloudways
 Author: Cloudways
 Author URI: https://www.cloudways.com
-Version: 6.47
+Version: 6.72
 Network: True
 License: GPLv2 or later
 License URI: [http://www.gnu.org/licenses/gpl-2.0.html](http://www.gnu.org/licenses/gpl-2.0.html)
@@ -73,6 +73,7 @@ if (defined('WP_CLI') && WP_CLI) {
 		WP_CLI::add_command("cloudways_wp_manager", $wp_cli);
 }
 
+
 if (is_admin()) {
 	require_once dirname( __FILE__ ) . '/wp_admin.php';
 	$wpadmin = new CWMGRWPAdmin($bvsettings, $bvsiteinfo);
@@ -92,8 +93,6 @@ if (is_admin()) {
 	##POPUP_ON_DEACTIVATION##
 	##ACTIVATEWARNING##
 	##ADMINENQUEUESCRIPTS##
-	##ALPURGECACHEFUNCTION##
-	##ALADMINMENU##
 }
 
 if ((array_key_exists('bvreqmerge', $_POST)) || (array_key_exists('bvreqmerge', $_GET))) { // phpcs:ignore WordPress.Security.NonceVerification.Missing, WordPress.Security.NonceVerification.Recommended
@@ -124,7 +123,9 @@ if (CWMGRHelper::getRawParam('REQUEST', 'bvplugname') == "cloudways_wp_manager")
 	$rcvracc = CWMGRHelper::getRawParam('REQUEST', 'rcvracc');
 
 	if (isset($rcvracc)) {
-		$account = CWMGRRecover::find($bvsettings, $pubkey);
+		$bvctag = CWMGRHelper::getRawParam('REQUEST', 'bvctag');
+		$bvctag = isset($bvctag) ? CWMGRAccount::sanitizeKey($bvctag) : null;
+		$account = CWMGRRecover::find($bvsettings, $pubkey, $bvctag);
 	} else {
 		$account = CWMGRAccount::find($bvsettings, $pubkey);
 	}
@@ -147,7 +148,9 @@ if (CWMGRHelper::getRawParam('REQUEST', 'bvplugname') == "cloudways_wp_manager")
 			}
 			$request->params = $params;
 			$callback_handler = new CWMGRCallbackHandler($bvdb, $bvsettings, $bvsiteinfo, $request, $account, $response);
-			if ($request->is_afterload) {
+			if ($request->is_aftershutdown) {
+				$callback_handler->deferExecutionUntilShutdown();
+			} else if ($request->is_afterload) {
 				add_action('wp_loaded', array($callback_handler, 'execute'));
 			} else if ($request->is_admin_ajax) {
 				add_action('wp_ajax_bvadm', array($callback_handler, 'bvAdmExecuteWithUser'));
@@ -165,7 +168,7 @@ if (CWMGRHelper::getRawParam('REQUEST', 'bvplugname') == "cloudways_wp_manager")
 		##DYNSYNCMODULE##
 	}
 	$bv_site_settings = $bvsettings->getOption('bv_site_settings');
-	if (isset($bv_site_settings)) {
+	if (is_array($bv_site_settings)) {
 		if (isset($bv_site_settings['wp_auto_updates'])) {
 			$wp_auto_updates = $bv_site_settings['wp_auto_updates'];
 			if (array_key_exists('block_auto_update_core', $wp_auto_updates)) {
@@ -183,6 +186,7 @@ if (CWMGRHelper::getRawParam('REQUEST', 'bvplugname') == "cloudways_wp_manager")
 				add_filter('auto_update_translation', '__return_false' );
 			}
 		}
+
 	}
 
 	##HIDEPLUGINUPDATEMODULE##
