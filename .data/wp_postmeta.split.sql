@@ -1,9 +1,9 @@
 /*M!999999\- enable the sandbox mode */ 
--- MariaDB dump 10.19  Distrib 10.5.29-MariaDB, for debian-linux-gnu (x86_64)
+-- MariaDB dump 10.19  Distrib 10.11.19-MariaDB, for debian-linux-gnu (x86_64)
 --
 -- Host: localhost    Database: hynxgrbyjv
 -- ------------------------------------------------------
--- Server version	10.5.29-MariaDB-deb11-log
+-- Server version	10.11.19-MariaDB-deb12-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -40,7 +40,8 @@ CREATE TABLE `wp_postmeta` (
 
 LOCK TABLES `wp_postmeta` WRITE;
 /*!40000 ALTER TABLE `wp_postmeta` DISABLE KEYS */;
-INSERT INTO `wp_postmeta` VALUES (1,2,'_wp_page_template','default'),
+INSERT INTO `wp_postmeta` VALUES
+(1,2,'_wp_page_template','default'),
 (2,3,'_wp_page_template','default'),
 (8,2,'_edit_lock','1774134292:1'),
 (9,10,'origin','theme'),
@@ -1209,7 +1210,7 @@ INSERT INTO `wp_postmeta` VALUES (1,2,'_wp_page_template','default'),
 (1696,1021,'_menu_item_classes','a:1:{i:0;s:0:\"\";}'),
 (1697,1021,'_menu_item_xfn',''),
 (1698,1021,'_menu_item_url',''),
-(1700,1028,'_edit_lock','1785163282:1'),
+(1700,1028,'_edit_lock','1789391780:5'),
 (1701,1028,'classic-editor-remember','block-editor'),
 (1703,1028,'_edit_last','1');
 /*!40000 ALTER TABLE `wp_postmeta` ENABLE KEYS */;
@@ -1224,4 +1225,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-09-02 16:59:55
+-- Dump completed on 2026-10-13 16:18:24

@@ -1,9 +1,9 @@
 /*M!999999\- enable the sandbox mode */ 
--- MariaDB dump 10.19  Distrib 10.5.29-MariaDB, for debian-linux-gnu (x86_64)
+-- MariaDB dump 10.19  Distrib 10.11.19-MariaDB, for debian-linux-gnu (x86_64)
 --
 -- Host: localhost    Database: hynxgrbyjv
 -- ------------------------------------------------------
--- Server version	10.5.29-MariaDB-deb11-log
+-- Server version	10.11.19-MariaDB-deb12-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -45,7 +45,7 @@ CREATE TABLE `wp_comments` (
   KEY `comment_date_gmt` (`comment_date_gmt`),
   KEY `comment_parent` (`comment_parent`),
   KEY `comment_author_email` (`comment_author_email`(10))
-) ENGINE=InnoDB AUTO_INCREMENT=921 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=927 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -54,7 +54,8 @@ CREATE TABLE `wp_comments` (
 
 LOCK TABLES `wp_comments` WRITE;
 /*!40000 ALTER TABLE `wp_comments` DISABLE KEYS */;
-INSERT INTO `wp_comments` VALUES (4,229,'Efatha Rutakaza','efathabyamungu4@gmail.com','','45.221.4.20','2024-03-14 03:57:50','2024-03-14 03:57:50','This is a very good heads up. I\'m very thrilled that I\'m going to be a part of a great time which has somehow interesting initiatives.',0,'1','Mozilla/5.0 (Linux; Android 6.0.1; vivo Y66) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Mobile Safari/537.36','comment',0,0),
+INSERT INTO `wp_comments` VALUES
+(4,229,'Efatha Rutakaza','efathabyamungu4@gmail.com','','45.221.4.20','2024-03-14 03:57:50','2024-03-14 03:57:50','This is a very good heads up. I\'m very thrilled that I\'m going to be a part of a great time which has somehow interesting initiatives.',0,'1','Mozilla/5.0 (Linux; Android 6.0.1; vivo Y66) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Mobile Safari/537.36','comment',0,0),
 (5,229,'Efatha Rutakaza','efathabyamungu4@gmail.com','https://github.com/efatha/packetcodeofficial.github.io','45.221.4.23','2024-03-15 11:11:44','2024-03-15 11:11:44','This is remarkably good. nonetheless, I would suggest that  on the About tab, to add a little more details about your personal life in code path so that the developers who will read, that should be more motivated and lead them to a critical decision in their commitment. Then in the new link contact tab. I would suggest to manage the very big empty space at the bottom by putting links or \r\na bottom footer element. Eventually, I would like to suggest a form login that leads to all the social media whether someone submit.',0,'1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36','comment',0,0),
 (6,229,'Efatha Rutakaza','efathabyamungu4@gmail.com','','45.221.4.23','2024-03-15 11:18:57','2024-03-15 11:18:57','This website helps me very much, I as a web developer to think more on the Best websites, I\'ve been browsing lately! \r\nI\'m convinced that this is a very smart one.',0,'1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36','comment',0,0),
 (20,430,'Bahati Philemon','bahatiphilmon8@gmail.com','','169.239.159.113','2024-05-08 14:13:08','2024-05-08 14:13:08','Thank you very much Michael, we\'re really grateful to you for all the training you\'re giving us.',0,'1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36','comment',0,0),
@@ -500,7 +501,13 @@ INSERT INTO `wp_comments` VALUES (4,229,'Efatha Rutakaza','efathabyamungu4@gmail
 (917,2,'ORGANIC VISITS','EdmondVee74884@gmail.com','https://bonusbacklinks.com/seo-category/premium-seo/da-30-backlinks/','195.63.6.164','2026-08-05 11:57:21','2026-08-05 11:57:21','I’d should test with you here. Which isn\'t something I normally do! I get pleasure from studying a post that will make people think. Also, thanks for allowing me to comment!',0,'spam','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36','comment',0,0),
 (918,2,'backlinks every day','TandySchurz75626@gmail.com','https://bonusbacklinks.com/buy/2-tier-links-pyramid-5000-backlinks/','195.63.20.160','2026-08-08 12:07:18','2026-08-08 12:07:18','woh I like your articles, bookmarked! .',0,'spam','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36','comment',0,0),
 (919,2,'Gabrielle Simmons','gabrielle.simmons@jmailservice.com','https://www.google.com','191.102.149.61','2026-08-10 13:09:35','2026-08-10 13:09:35','If customers are searching for what you offer, your business should show up first. We can make that happen within a day.\r\nWant to see how easy it is?',0,'spam','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36','comment',0,0),
-(920,2,'Nathaniel Brooks','nathaniel.brooks@jmailservice.com','https://www.google.com','170.246.54.152','2026-08-26 20:44:50','2026-08-26 20:44:50','Imagine your brand appearing first when customers search online. That\'s exactly what we do - and we can launch it within a day.\r\nAre you interested in more details?',0,'spam','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36','comment',0,0);
+(920,2,'Nathaniel Brooks','nathaniel.brooks@jmailservice.com','https://www.google.com','170.246.54.152','2026-08-26 20:44:50','2026-08-26 20:44:50','Imagine your brand appearing first when customers search online. That\'s exactly what we do - and we can launch it within a day.\r\nAre you interested in more details?',0,'spam','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36','comment',0,0),
+(921,1028,'Invest','aysun@gmail.com','https://www.fonh.online/','20.244.28.108','2026-09-29 14:37:16','2026-09-29 14:37:16','aramalarım sonunda buraya geldim ve kesinlikle işime yarayan bir makale oldu. teşekkür ederim',0,'spam','','comment',0,0),
+(922,1028,'مواهب','julietgordon@gmail.com','https://www.tued.online/','20.244.28.108','2026-09-29 15:09:37','2026-09-29 15:09:37','çok bilgilendirici bir yazı olmuş ellerinize sağlık teşekkür ederim',0,'spam','','comment',0,0),
+(923,1028,'digital illustration tutorials','safak@gmail.com','https://www.styles2d.com/','20.244.28.108','2026-09-29 15:12:50','2026-09-29 15:12:50','I just like the helpful information you provide in your articles',0,'spam','','comment',0,0),
+(924,784,'WordPress Backlinks','MelSuffridge55937@gmail.com','https://WpBacklinks.com','195.63.25.232','2026-09-30 03:06:21','2026-09-30 03:06:21','very interesting info ! .',0,'spam','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36','comment',0,0),
+(925,1028,'Yousaf A Shaikh','yousafshaikh2026@gmail.com','','154.192.106.206','2026-10-04 10:45:39','2026-10-04 10:45:39','Dear Sir/Madam,\r\nI\'m writing to offer my services for remote document editing and technical content preparation. With over 22 years of experience managing telecom projects with leading firms such as ZTE and Huawei, I bring strong skills in professional communication, technical writing, and document refinement.\r\nWhile I may not have formal samples or a documented portfolio, I have extensive hands-on experience crafting and editing high-level correspondence, reports, and technical documentation. I would be happy to demonstrate my capabilities through a sample assignment or trial document.\r\nHow I Can Support You:\r\n•	Proofreading and content editing (grammar, tone, clarity, and structure)\r\n•	Preparing technical and professional documents (resumes, reports, training materials, white papers)\r\n•	Writing for business events, conferences, and seminars\r\n•	Document localization, formatting, and translation (as needed)\r\nI am flexible with working hours and committed to delivering high-quality work tailored to your needs. If you have a project in mind, I’d be glad to contribute and support your goals.\r\nLooking forward to your response and the opportunity to collaborate.\r\nWith regards,\r\nYousaf A Shaikh\r\nEmail: yousafarjumand2026@gmail.com',0,'0','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36','comment',0,0),
+(926,2,'Nathaniel Reid','nathaniel.reid@jmailservice.com','https://www.google.com','143.137.167.189','2026-10-04 21:42:49','2026-10-04 21:42:49','We make it easy for your business to be seen first and chosen first. You pick the keywords, and we put your banner at the top of search results - usually live within 24 hours.\r\n\r\nNo contracts, no long setup - just traffic and visibility.\r\nWould you like me to prepare a few keyword options for your business?',0,'spam','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36','comment',0,0);
 /*!40000 ALTER TABLE `wp_comments` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -513,4 +520,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-09-02 16:59:55
+-- Dump completed on 2026-10-13 16:18:24

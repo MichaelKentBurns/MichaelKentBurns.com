@@ -1,9 +1,9 @@
 /*M!999999\- enable the sandbox mode */ 
--- MariaDB dump 10.19  Distrib 10.5.29-MariaDB, for debian-linux-gnu (x86_64)
+-- MariaDB dump 10.19  Distrib 10.11.19-MariaDB, for debian-linux-gnu (x86_64)
 --
 -- Host: localhost    Database: hynxgrbyjv
 -- ------------------------------------------------------
--- Server version	10.5.29-MariaDB-deb11-log
+-- Server version	10.11.19-MariaDB-deb12-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -31,7 +31,7 @@ CREATE TABLE `wp_commentmeta` (
   PRIMARY KEY (`meta_id`),
   KEY `comment_id` (`comment_id`),
   KEY `meta_key` (`meta_key`(191))
-) ENGINE=InnoDB AUTO_INCREMENT=1226 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1232 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,7 +40,8 @@ CREATE TABLE `wp_commentmeta` (
 
 LOCK TABLES `wp_commentmeta` WRITE;
 /*!40000 ALTER TABLE `wp_commentmeta` DISABLE KEYS */;
-INSERT INTO `wp_commentmeta` VALUES (964,534,'ct_hash','7a541e8b10a302c0873334f39fe93f14'),
+INSERT INTO `wp_commentmeta` VALUES
+(964,534,'ct_hash','7a541e8b10a302c0873334f39fe93f14'),
 (965,535,'ct_hash','0d6d2b5cc4a6bcc8b041dc9d4b1e4453'),
 (967,537,'ct_hash','302c0f6700c472a8a62d85e6f27324f3'),
 (970,540,'ct_real_user_badge_hash','fe7e155de22adf69e524e89c5fbbd9bb'),
@@ -291,7 +292,13 @@ INSERT INTO `wp_commentmeta` VALUES (964,534,'ct_hash','7a541e8b10a302c0873334f3
 (1222,917,'ct_hash','7c33f08823bae7b6467b91118415b960'),
 (1223,918,'ct_hash','bff783784dad29b07e0830794c58f7a1'),
 (1224,919,'ct_hash','2f7b31f8436c647afc4217dd33e19ff8'),
-(1225,920,'ct_hash','674ec69b0836bcc0127943e481e889ef');
+(1225,920,'ct_hash','674ec69b0836bcc0127943e481e889ef'),
+(1226,921,'ct_hash','1b40798cfed59729d9d7004c40d51005'),
+(1227,922,'ct_hash','9635b3f3cf3e4a36d2bd7c396d1d0fe5'),
+(1228,923,'ct_hash','4d0f88eaed7515a5e359a3f73f0e00e6'),
+(1229,924,'ct_hash','23f3d5d9b10dc4f2a246e751915c321a'),
+(1230,925,'ct_hash','764295e9d313255a03448333938a0d75'),
+(1231,926,'ct_hash','cf4fa2249ccbfa29231317dd65848cc8');
 /*!40000 ALTER TABLE `wp_commentmeta` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -304,4 +311,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-09-02 16:59:55
+-- Dump completed on 2026-10-13 16:18:24
