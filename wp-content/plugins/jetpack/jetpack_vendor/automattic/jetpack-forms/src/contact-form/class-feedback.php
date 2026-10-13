@@ -11,6 +11,11 @@ use Automattic\Jetpack\Connection\Client;
 use Automattic\Jetpack\Device_Detection\User_Agent_Info;
 use Automattic\Jetpack\Forms\Dashboard\Dashboard as Forms_Dashboard;
 use WP_Post;
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit( 0 );
+}
+
 /**
  * Handles the response for a contact form submission.
  *
@@ -326,6 +331,13 @@ class Feedback {
 	protected $has_consent = false;
 
 	/**
+	 * Whether this response was loaded from structured feedback data.
+	 *
+	 * @var bool
+	 */
+	protected $uses_structured_fields = false;
+
+	/**
 	 * Whether the feedback entry is unread.
 	 *
 	 * @var bool
@@ -507,6 +519,15 @@ class Feedback {
 	 */
 	private function load_from_submission( $post_data, $form, $current_post = null, $current_page_number = 1 ) {
 
+		// Drop the answers to fields conditional logic hid, once, before anything reads them.
+		//
+		// get_computed_fields() already skips hidden fields for the stored response, but the
+		// comment content, the consent flag, the author details and the notification
+		// recipients all read $post_data directly and were still seeing them. Stripping here
+		// is what makes "a hidden field was never answered" true for every consumer instead
+		// of just the one.
+		$post_data = self::without_hidden_answers( $post_data, $form );
+
 		$this->source = Feedback_Source::from_submission( $current_post, $current_page_number );
 
 		// Use the form's ref attribute as the authoritative form ID.
@@ -544,6 +565,32 @@ class Feedback {
 	}
 
 	/**
+	 * Remove submitted values belonging to fields conditional logic resolved as hidden.
+	 *
+	 * The form owns the resolution and caches it, so this asks rather than resolving again --
+	 * a second resolution over a different value source is exactly what let validation and
+	 * storage disagree about a prefilled consent field.
+	 *
+	 * @param array        $post_data The post data from the form submission.
+	 * @param Contact_Form $form      The form object.
+	 * @return array The post data, less any hidden field's answer.
+	 */
+	private static function without_hidden_answers( $post_data, $form ) {
+		if ( ! is_array( $post_data ) ) {
+			return $post_data;
+		}
+
+		// Empty when the feature is off, so this is a no-op then.
+		foreach ( $form->get_resolved_field_visibility() as $field_id => $is_visible ) {
+			if ( false === $is_visible ) {
+				unset( $post_data[ $field_id ] );
+			}
+		}
+
+		return $post_data;
+	}
+
+	/**
 	 * Get a sanitized value from the post data.
 	 *
 	 * @param string      $key The key to look for in the post data.
@@ -573,12 +620,59 @@ class Feedback {
 
 		if ( isset( $post_data[ $key ] ) ) {
 			if ( is_array( $post_data[ $key ] ) ) {
-				return array_map( 'sanitize_textarea_field', wp_unslash( $post_data[ $key ] ) );
+				return array_map( array( self::class, 'sanitize_text_value' ), wp_unslash( $post_data[ $key ] ) );
 			} else {
-				return sanitize_textarea_field( wp_unslash( $post_data[ $key ] ) );
+				return self::sanitize_text_value( wp_unslash( $post_data[ $key ] ) );
 			}
 		}
 		return '';
+	}
+
+	/**
+	 * Sanitize a submitted text value.
+	 *
+	 * @param mixed $value The unslashed submitted value.
+	 *
+	 * @return string The sanitized value.
+	 */
+	private static function sanitize_text_value( $value ) {
+		// Encoding first keeps tag-like text as typed instead of letting strip_tags() drop it.
+		return sanitize_textarea_field( self::encode_special_chars( $value ) );
+	}
+
+	/**
+	 * HTML-encode `<`, `>` and `&` in a string, or in each string of a nested array.
+	 *
+	 * Encoding `&` as well keeps the result reversible: a literally-typed `&lt;` becomes
+	 * `&amp;lt;`, distinct from an encoded `<` (`&lt;`), so decode_special_chars() restores it.
+	 *
+	 * @param mixed $value The value to encode.
+	 *
+	 * @return mixed The value, with the same shape.
+	 */
+	public static function encode_special_chars( $value ) {
+		if ( is_array( $value ) ) {
+			return array_map( array( self::class, 'encode_special_chars' ), $value );
+		}
+
+		// ENT_SUBSTITUTE keeps a value with invalid UTF-8 from becoming ''; this runs before
+		// sanitize_textarea_field(), which is what would otherwise have scrubbed those bytes.
+		return is_string( $value ) ? htmlspecialchars( $value, ENT_NOQUOTES | ENT_SUBSTITUTE, 'UTF-8' ) : $value;
+	}
+
+	/**
+	 * Reverse encode_special_chars() for a value that is about to be shown as text.
+	 *
+	 * @param mixed $value The stored value.
+	 *
+	 * @return mixed The value, with the same shape.
+	 */
+	public static function decode_special_chars( $value ) {
+		if ( is_array( $value ) ) {
+			return array_map( array( self::class, 'decode_special_chars' ), $value );
+		}
+
+		return is_string( $value ) ? htmlspecialchars_decode( $value, ENT_NOQUOTES ) : $value;
 	}
 
 	/**
@@ -592,12 +686,30 @@ class Feedback {
 		$file_data_array = is_array( $raw_data )
 			? array_map(
 				function ( $json_str ) {
+					/*
+					 * The entries come straight from $_POST, so any of them may be an array: a request
+					 * carrying `field[1][x]=y` reaches here with a nested array where a JSON string is
+					 * expected, and stripslashes() raises an uncaught TypeError on PHP 8. Nothing above
+					 * this catches it, so an anonymous visitor could crash the submission with a 500.
+					 *
+					 * Contact_Form_Field::validate() sanitizes its own copy — which turns a nested array
+					 * into '' — but that copy is not the one read here.
+					 */
+					if ( ! is_string( $json_str ) ) {
+						return array(
+							'file_id' => '',
+							'name'    => '',
+							'size'    => 0,
+							'type'    => '',
+						);
+					}
+
 					$decoded = json_decode( stripslashes( $json_str ), true );
 					return array(
 						'file_id' => isset( $decoded['file_id'] ) ? sanitize_text_field( $decoded['file_id'] ) : '',
-						'name'    => isset( $decoded['name'] ) ? sanitize_text_field( $decoded['name'] ) : '',
+						'name'    => isset( $decoded['name'] ) ? self::encode_special_chars( sanitize_text_field( $decoded['name'] ) ) : '',
 						'size'    => isset( $decoded['size'] ) ? absint( $decoded['size'] ) : 0,
-						'type'    => isset( $decoded['type'] ) ? sanitize_text_field( $decoded['type'] ) : '',
+						'type'    => isset( $decoded['type'] ) ? self::encode_special_chars( sanitize_text_field( $decoded['type'] ) ) : '',
 					);
 				},
 				$raw_data
@@ -630,13 +742,13 @@ class Feedback {
 		$selection_data_array = is_array( $raw_data )
 			? array_map(
 				function ( $json_str ) {
-					return json_decode( stripslashes( $json_str ), true );
+					return is_string( $json_str ) ? json_decode( stripslashes( $json_str ), true ) : null;
 				},
 				$raw_data
-			) : array( json_decode( stripslashes( $raw_data ), true ) );
+			) : array( is_string( $raw_data ) ? json_decode( stripslashes( $raw_data ), true ) : null );
 
 		if ( ! empty( $selection_data_array ) ) {
-			$value['choices'] = $selection_data_array;
+			$value['choices'] = self::encode_special_chars( $selection_data_array );
 		}
 
 		return $value;
@@ -690,7 +802,7 @@ class Feedback {
 			$custom_text    = '';
 
 			if ( isset( $post_data[ $other_text_key ] ) ) {
-				$custom_text = sanitize_textarea_field( wp_unslash( $post_data[ $other_text_key ] ) );
+				$custom_text = self::sanitize_text_value( wp_unslash( $post_data[ $other_text_key ] ) );
 			}
 
 			$meta['is_other_option']  = true;
@@ -773,6 +885,15 @@ class Feedback {
 			}
 		}
 		return false;
+	}
+
+	/**
+	 * Whether this response uses structured feedback fields.
+	 *
+	 * @return bool
+	 */
+	public function uses_structured_fields() {
+		return $this->uses_structured_fields;
 	}
 
 	/**
@@ -1654,9 +1775,11 @@ class Feedback {
 	 */
 	private function parse_content( $post_content = '', $version = null ) {
 		if ( $version === 'v3' ) {
+			$this->uses_structured_fields = true;
 			return $this->parse_content_v3( $post_content );
 		}
 		if ( $version === 'v2' ) {
+			$this->uses_structured_fields = true;
 			return $this->parse_content_v2( $post_content );
 		}
 
@@ -1671,6 +1794,7 @@ class Feedback {
 				$decoded_content = json_decode( stripslashes( trim( $post_content ) ), true );
 			}
 			if ( isset( $decoded_content['fields'] ) && is_array( $decoded_content['fields'] ) ) {
+				$this->uses_structured_fields = true;
 				return $this->parse_content_v3( $post_content );
 			}
 		}
@@ -2202,16 +2326,54 @@ class Feedback {
 		$fields = array();
 
 		$field_ids = $form->get_field_ids();
-		// For all fields, grab label and value
-		$i = 1;
+
+		// Collect renderable fields and their submitted values up front so conditional logic
+		// rules (which may reference any sibling field) can be evaluated in the loop below.
+		$renderable  = array();
+		$form_values = array();
 		foreach ( $field_ids['all'] as $field_id ) {
 			$field = $form->fields[ $field_id ];
 			$type  = $field->get_attribute( 'type' );
 			if ( ! $field->is_field_renderable( $type ) ) {
 				continue;
 			}
+			$value                    = $this->get_field_value( $field_id, $post_data, $type );
+			$form_values[ $field_id ] = $value;
+			$renderable[ $field_id ]  = array(
+				'field' => $field,
+				'type'  => $type,
+				'value' => $value,
+			);
+		}
 
-			$value = $this->get_field_value( $field_id, $post_data, $type );
+		// Ask the form, rather than resolving a second time.
+		//
+		// Storage used to run its own resolve_visibility() over a different value source and a
+		// different field set than validation did, and the two disagreed. Validation reads
+		// get_computed_field_value() -- POST, then GET, then the field's default, then the
+		// logged-in user -- while this loop reads POST only; and it skips anything
+		// is_field_renderable() rejects, so a rule whose subject is an option-less select was
+		// evaluated during validation and ignored here.
+		//
+		// Unchecking a consent field prefilled from a query argument hit both: the browser
+		// posts nothing, validation fell back to the query argument and read it checked,
+		// storage read '' and read it unchecked. The dependent field was required-validated
+		// and then had its answer dropped -- the silently discarded answer this feature is
+		// supposed to make impossible.
+		//
+		// Returns an empty array when conditional logic does not apply, so there is nothing extra to guard.
+		$visibility = $form->get_resolved_field_visibility();
+
+		$i = 1;
+		foreach ( $renderable as $field_id => $entry ) {
+			$field = $entry['field'];
+			$type  = $entry['type'];
+			$value = $entry['value'];
+
+			if ( isset( $visibility[ $field_id ] ) && false === $visibility[ $field_id ] ) {
+				continue;
+			}
+
 			$label = wp_strip_all_tags( $field->get_attribute( 'label' ) );
 			$key   = $i . '_' . $label;
 
@@ -2227,7 +2389,7 @@ class Feedback {
 			if ( ! $this->has_file && $fields[ $key ]->has_file() ) {
 				$this->has_file = true;
 			}
-			++$i; // Increment prefix counter for the next field.
+			++$i;
 		}
 
 		return $fields;

@@ -23,6 +23,27 @@ __( "Work phone", "jetpack-forms" );
 __( "Cell phone", "jetpack-forms" );
 __( "Contact form", "jetpack-forms" );
 __( "Calendar", "jetpack-forms" );
+/* translators: %s: keyboard shortcut. */
+__( "Keyboard shortcut: %s", "jetpack-forms" );
+/* translators: accessibility text appended to link text */
+__( "(opens in a new tab)", "jetpack-forms" );
+__( "Loading", "jetpack-forms" );
+/* translators: 1: Calendar type. 2: Current month and year. */
+__( "%1$s, %2$s", "jetpack-forms" );
+__( "Date calendar", "jetpack-forms" );
+__( "Date range calendar", "jetpack-forms" );
+__( "Navigation bar", "jetpack-forms" );
+/* translators: %s is the full date (e.g. "Monday, April 29, 2025") */
+__( "Today, %s", "jetpack-forms" );
+__( "Next month", "jetpack-forms" );
+__( "Previous month", "jetpack-forms" );
+/* translators: %s is the full date (e.g. "Monday, April 29, 2025") */
+__( "Today, %s, selected", "jetpack-forms" );
+/* translators: %s is the full date (e.g. "Monday, April 29, 2025") */
+__( "%s, selected", "jetpack-forms" );
+__( "Required", "jetpack-forms" );
+__( "Optional", "jetpack-forms" );
+__( "More details follow the field.", "jetpack-forms" );
 __( "Sort ascending", "jetpack-forms" );
 __( "Sort descending", "jetpack-forms" );
 __( "(no title)", "jetpack-forms" );
@@ -61,6 +82,7 @@ __( "Density", "jetpack-forms" );
 _x( "Comfortable", "Density option for DataView layout", "jetpack-forms" );
 _x( "Balanced", "Density option for DataView layout", "jetpack-forms" );
 _x( "Compact", "Density option for DataView layout", "jetpack-forms" );
+__( "Original aspect ratio", "jetpack-forms" );
 __( "Preview size", "jetpack-forms" );
 __( "Table", "jetpack-forms" );
 __( "Grid", "jetpack-forms" );
@@ -177,8 +199,9 @@ __( "Weeks ago", "jetpack-forms" );
 __( "Months ago", "jetpack-forms" );
 __( "Years ago", "jetpack-forms" );
 __( "Unit", "jetpack-forms" );
-__( "Required", "jetpack-forms" );
-__( "Optional", "jetpack-forms" );
+__( "Coordinated Universal Time", "jetpack-forms" );
+/* translators: %s: timezone detail, e.g. "(CEST) Europe/Madrid" or "UTC+3". */
+__( "Timezone: %s", "jetpack-forms" );
 __( "Date time", "jetpack-forms" );
 __( "Today", "jetpack-forms" );
 __( "Yesterday", "jetpack-forms" );
@@ -196,6 +219,7 @@ __( "To", "jetpack-forms" );
 __( "The max. value must be greater than the min. value.", "jetpack-forms" );
 __( "Min.", "jetpack-forms" );
 __( "Max.", "jetpack-forms" );
+__( "The end time must be later than the start time.", "jetpack-forms" );
 __( "Open color picker", "jetpack-forms" );
 __( "Hide password", "jetpack-forms" );
 __( "Show password", "jetpack-forms" );
@@ -208,9 +232,7 @@ __( "Value must be true, false, or undefined", "jetpack-forms" );
 __( "Value must be an array.", "jetpack-forms" );
 __( "Every value must be a string.", "jetpack-forms" );
 __( "Value must be a valid color.", "jetpack-forms" );
-__( "Loading", "jetpack-forms" );
-/* translators: accessibility text appended to link text */
-__( "(opens in a new tab)", "jetpack-forms" );
+__( "OK", "jetpack-forms" );
 __( "Dismiss", "jetpack-forms" );
 __( "Akismet icon", "jetpack-forms" );
 __( "Add one-click spam protection for your forms with <a>Akismet</a>. Simply install the plugin and you're set.", "jetpack-forms" );
@@ -260,6 +282,12 @@ __( "Which email list should contacts be added to?", "jetpack-forms" );
 __( "You do not have any MailPoet lists yet. Click the dashboard button below to create one, or contacts will be added to a \"Jetpack Forms Subscribers\" list.", "jetpack-forms" );
 __( "View dashboard", "jetpack-forms" );
 __( "Unknown error", "jetpack-forms" );
+/* translators: date format. DD is the day of the month, MM the month, and YYYY the year (e.g., 12/31/2023). */
+__( "MM/DD/YYYY", "jetpack-forms" );
+/* translators: date format. DD is the day of the month, MM the month, and YYYY the year (e.g., 31/12/2023). */
+__( "DD/MM/YYYY", "jetpack-forms" );
+/* translators: date format. DD is the day of the month, MM the month, and YYYY the year (e.g., 2023-12-31). */
+__( "YYYY-MM-DD", "jetpack-forms" );
 __( "Create Salesforce lead form", "jetpack-forms" );
 __( "Enter a Salesforce Organization ID to enable.", "jetpack-forms" );
 __( "Configured per form", "jetpack-forms" );
@@ -287,10 +315,12 @@ __( "Manage integrations", "jetpack-forms" );
 __( "Untitled Form", "jetpack-forms" );
 __( "Name", "jetpack-forms" );
 __( "Save", "jetpack-forms" );
-__( "Create a form", "jetpack-forms" );
 __( "Create form", "jetpack-forms" );
 __( "Create", "jetpack-forms" );
 __( "Enter form title", "jetpack-forms" );
+__( "Opening the editor…", "jetpack-forms" );
+__( "Could not create the form. Please try again.", "jetpack-forms" );
+__( "Create a form", "jetpack-forms" );
 __( "Want automatic spam filtering? Akismet Anti-spam protects millions of sites. <moreInfoLink>Learn more.</moreInfoLink>", "jetpack-forms" );
 __( "Activate Akismet Anti-spam", "jetpack-forms" );
 __( "Install Akismet Anti-spam", "jetpack-forms" );
@@ -548,6 +578,18 @@ __( "Wallis and Futuna", "jetpack-forms" );
 __( "Yemen", "jetpack-forms" );
 __( "Zambia", "jetpack-forms" );
 __( "Zimbabwe", "jetpack-forms" );
+__( "All", "jetpack-forms" );
+__( "Published", "jetpack-forms" );
+__( "Draft", "jetpack-forms" );
+__( "Pending review", "jetpack-forms" );
+__( "Scheduled", "jetpack-forms" );
+__( "Private", "jetpack-forms" );
+__( "Trash", "jetpack-forms" );
+/* translators: 1: rating value, 2: maximum rating (e.g. "4" and "5" for "4 out of 5") */
+__( "Rating %1$s out of %2$s", "jetpack-forms" );
+__( "No answer", "jetpack-forms" );
+/* translators: %d: number of files uploaded in a single form field. */
+_n( "%d file", "%d files", 1, "jetpack-forms" );
 __( "Inbox", "jetpack-forms" );
 __( "Spam", "jetpack-forms" );
 _x( "Trash", "noun", "jetpack-forms" );
@@ -558,28 +600,39 @@ __( "Products", "jetpack-forms" );
 __( "Help", "jetpack-forms" );
 __( "Jetpack", "jetpack-forms" );
 __( "Breadcrumbs", "jetpack-forms" );
-/* translators: date format. DD is the day of the month, MM the month, and YYYY the year (e.g., 12/31/2023). */
-__( "MM/DD/YYYY", "jetpack-forms" );
-/* translators: date format. DD is the day of the month, MM the month, and YYYY the year (e.g., 31/12/2023). */
-__( "DD/MM/YYYY", "jetpack-forms" );
-/* translators: date format. DD is the day of the month, MM the month, and YYYY the year (e.g., 2023-12-31). */
-__( "YYYY-MM-DD", "jetpack-forms" );
+__( "Sections", "jetpack-forms" );
+__( "This will permanently delete this form. This action cannot be undone.", "jetpack-forms" );
+/* translators: %d: number of forms */
+_n( "This will permanently delete %d form. This action cannot be undone.", "This will permanently delete %d forms. This action cannot be undone.", 1, "jetpack-forms" );
+__( "Delete permanently", "jetpack-forms" );
 __( "Edit form", "jetpack-forms" );
+/* translators: 1: Responses deleted once the current batch finishes. 2: Total responses being deleted. */
+__( "Deleting %1$s of %2$s…", "jetpack-forms" );
 __( "Could not empty spam.", "jetpack-forms" );
 __( "Could not empty trash.", "jetpack-forms" );
+/* translators: 1: Responses deleted once the current batch finishes. 2: Total responses being deleted. */
+__( "Deleting %1$s of %2$s responses… Keep this page open.", "jetpack-forms" );
 __( "Response deleted permanently.", "jetpack-forms" );
 /* translators: %s: The number of responses. */
 _n( "%s response deleted permanently.", "%s responses deleted permanently.", 1, "jetpack-forms" );
-__( "Delete", "jetpack-forms" );
+/* translators: %s: The number of responses deleted before the error. */
+_n( "%s response was deleted, then an error stopped the rest.", "%s responses were deleted, then an error stopped the rest.", 1, "jetpack-forms" );
+/* translators: %s: The number of selected spam responses. */
+_n( "Delete %s selected spam response?", "Delete %s selected spam responses?", 1, "jetpack-forms" );
+/* translators: %s: The number of spam responses matching the current filter. */
+_n( "Delete %s matching spam response?", "Delete %s matching spam responses?", 1, "jetpack-forms" );
+/* translators: %s: The total number of spam responses. */
+_n( "Delete %s spam response?", "Delete %s spam responses?", 1, "jetpack-forms" );
+__( "This action cannot be undone.", "jetpack-forms" );
 __( "Delete forever", "jetpack-forms" );
-/* translators: %s: the number of responses in spam */
-_n( "%s response in spam will be deleted forever. This action cannot be undone.", "All %s responses in spam will be deleted forever. This action cannot be undone.", 1, "jetpack-forms" );
-__( "All responses in spam will be deleted forever. This action cannot be undone.", "jetpack-forms" );
-__( "Spam is already empty.", "jetpack-forms" );
 __( "Delete spam", "jetpack-forms" );
+/* translators: %s: The number of spam responses that will be deleted. */
+__( "Delete spam (%s)", "jetpack-forms" );
+__( "Spam is already empty.", "jetpack-forms" );
 /* translators: %s: the number of responses in the trash. */
 _n( "%s response in trash will be deleted forever. This action cannot be undone.", "All %s responses in trash will be deleted forever. This action cannot be undone.", 1, "jetpack-forms" );
 __( "All responses in trash will be deleted forever. This action cannot be undone.", "jetpack-forms" );
+__( "Delete", "jetpack-forms" );
 __( "Trash is already empty.", "jetpack-forms" );
 __( "Empty trash", "jetpack-forms" );
 __( "Export", "jetpack-forms" );
@@ -587,7 +640,6 @@ __( "Export spam", "jetpack-forms" );
 __( "Export trash", "jetpack-forms" );
 __( "Upgrade your plan to use video covers", "jetpack-forms" );
 __( "Upgrade your plan to upload audio", "jetpack-forms" );
-__( "A connection check failed.", "jetpack-forms" );
 __( "CSV File", "jetpack-forms" );
 __( "Download your form response data as a CSV file.", "jetpack-forms" );
 __( "Download", "jetpack-forms" );
@@ -600,13 +652,6 @@ __( "Export responses", "jetpack-forms" );
 /* translators: %d: number of selected test responses. */
 _n( "Your selection includes %d test response from form preview. It will be included in the export.", "Your selection includes %d test responses from form preview. They will be included in the export.", 1, "jetpack-forms" );
 __( "Nothing to export.", "jetpack-forms" );
-__( "All", "jetpack-forms" );
-__( "Published", "jetpack-forms" );
-__( "Draft", "jetpack-forms" );
-__( "Pending review", "jetpack-forms" );
-__( "Scheduled", "jetpack-forms" );
-__( "Private", "jetpack-forms" );
-__( "Trash", "jetpack-forms" );
 __( "Could not load the form to duplicate. Please try again.", "jetpack-forms" );
 /* translators: %s: original form title */
 __( "%s Copy", "jetpack-forms" );
@@ -635,7 +680,6 @@ __( "Failed to move form to trash.", "jetpack-forms" );
 __( "Form deleted permanently.", "jetpack-forms" );
 __( "Could not delete form.", "jetpack-forms" );
 __( "Restore", "jetpack-forms" );
-__( "Delete permanently", "jetpack-forms" );
 __( "Preview", "jetpack-forms" );
 __( "Copy embed", "jetpack-forms" );
 __( "Copy shortcode", "jetpack-forms" );
@@ -653,12 +697,12 @@ __( "View responses for this form.", "jetpack-forms" );
 __( "View and manage all your form responses in one place.", "jetpack-forms" );
 __( "More actions", "jetpack-forms" );
 __( "Rename form", "jetpack-forms" );
-__( "This will permanently delete this form. This action cannot be undone.", "jetpack-forms" );
 __( "Undoing…", "jetpack-forms" );
 __( "An error occurred.", "jetpack-forms" );
 /* translators: %s: the number of responses. */
 _n( "An error occurred for %s response.", "An error occurred for %s responses.", 1, "jetpack-forms" );
 __( "View", "jetpack-forms" );
+__( "Print", "jetpack-forms" );
 /* translators: %s: the number of responses. */
 _n( "Moving %s response to spam…", "Moving %s responses to spam…", 1, "jetpack-forms" );
 __( "Response marked as spam.", "jetpack-forms" );
@@ -723,17 +767,16 @@ __( "Add note", "jetpack-forms" );
 __( "Loading preview…", "jetpack-forms" );
 __( "Copied!", "jetpack-forms" );
 __( "Copy", "jetpack-forms" );
-/* translators: %1$s size of the file and %2$s is the file extension */
-__( "%1$s, %2$s", "jetpack-forms" );
-/* translators: 1: rating value, 2: maximum rating (e.g. "4" and "5" for "4 out of 5") */
-__( "Rating %1$s out of %2$s", "jetpack-forms" );
+__( "No", "jetpack-forms" );
 __( "Date:", "jetpack-forms" );
 __( "Source:", "jetpack-forms" );
 __( "IP address:", "jetpack-forms" );
 __( "Lookup IP address", "jetpack-forms" );
 __( "Browser:", "jetpack-forms" );
 __( "Logged-in user:", "jetpack-forms" );
+__( "Mark as spam", "jetpack-forms" );
 __( "Are you sure you want to mark this response as spam?", "jetpack-forms" );
+__( "Could not mark the response as spam. Please try again.", "jetpack-forms" );
 __( "Previous", "jetpack-forms" );
 __( "Next", "jetpack-forms" );
 __( "Close", "jetpack-forms" );

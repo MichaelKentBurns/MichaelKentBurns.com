@@ -7,14 +7,16 @@
  * @package automattic/jetpack
  */
 
-// @phan-file-suppress PhanUndeclaredFunction, PhanUndeclaredClassMethod @phan-suppress-current-line UnusedSuppression -- Abilities API added in WP 6.9; suppressions needed for older-WP compatibility runs.
-
 namespace Automattic\Jetpack\Plugin\Abilities;
 
 use Automattic\Jetpack\Connection\Manager as Connection_Manager;
 use Automattic\Jetpack\WP_Abilities\Registrar;
 use Jetpack;
 use Jetpack_IXR_Client;
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit( 0 );
+}
 
 /**
  * Registers Jetpack Downtime Monitor abilities with the WordPress Abilities API.

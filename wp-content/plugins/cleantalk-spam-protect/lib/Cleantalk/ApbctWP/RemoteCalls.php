@@ -2,6 +2,7 @@
 
 namespace Cleantalk\ApbctWP;
 
+use Cleantalk\ApbctWP\Firewall\FirewallBypass;
 use Cleantalk\ApbctWP\Firewall\SFWUpdateHelper;
 use Cleantalk\ApbctWP\RateLimit\ApbctRateLimiter;
 use Cleantalk\ApbctWP\Variables\Post;
@@ -116,6 +117,31 @@ class RemoteCalls
         return in_array($rc, self::$allowedActionsWithoutToken, true);
     }
 
+    /**
+     * Delay to wait before the remote call is passed to the host.
+     *
+     * Only the whitelisted actions are allowed to delay, and the delay itself is limited
+     * by self::MAX_DELAY.
+     *
+     * @param string $action Remote call action name, without the "action__" prefix
+     * @param mixed $delay Delay as it came in the request
+     *
+     * @return int|null Seconds to sleep, null when the call must be performed without a delay
+     * @psalm-return int<0, max>|null
+     */
+    private static function getDelayForAction($action, $delay)
+    {
+        if ( ! $delay || ! in_array(strtolower($action), self::$allowedActionsWithDelay, true) ) {
+            return null;
+        }
+
+        $delay = TT::toInt($delay);
+        $delay = max($delay, 0);
+        $delay = min($delay, self::MAX_DELAY);
+
+        return $delay;
+    }
+
     public static function checkWithoutToken()
     {
         global $apbct;
@@ -215,18 +241,13 @@ class RemoteCalls
                     // Flag to let plugin know that Remote Call is running.
                     $apbct->rc_running = true;
 
+                    $raw_action = $action;
                     $action = 'action__' . $action;
 
                     if ( method_exists(__CLASS__, $action) ) {
                         // Delay before perform action - only for whitelisted actions
-                        $current_action = strtolower(Request::getString('spbc_remote_call_action'));
-                        if (
-                            Request::get('delay') &&
-                            in_array($current_action, self::$allowedActionsWithDelay, true)
-                        ) {
-                            $delay = Request::getInt('delay');
-                            $delay = max($delay, 0);
-                            $delay = min($delay, self::MAX_DELAY);
+                        $delay = self::getDelayForAction($raw_action, Request::get('delay'));
+                        if ( ! is_null($delay) ) {
                             sleep($delay);
                             $params = $_REQUEST;
                             unset($params['delay']);
@@ -400,15 +421,6 @@ class RemoteCalls
     }
 
     /**
-     * Update settings.
-     * @deprecated Since 6.85, see https://app.doboard.com/1/task/36680
-     */
-    public static function action__update_settings() // phpcs:ignore PSR1.Methods.CamelCapsMethodName.NotCamelCaps
-    {
-        return apbct_rc__update_settings($_REQUEST);
-    }
-
-    /**
      * Deactivate plugin
      */
     public static function action__deactivate_plugin() // phpcs:ignore PSR1.Methods.CamelCapsMethodName.NotCamelCaps
@@ -524,7 +536,7 @@ class RemoteCalls
             header("Content-Type: application/json");
         }
 
-        $key = trim(Request::getString('api_key'));
+        $key = trim(Request::getString('api_key'), " \n\r\t\v\x00");
         if ( ! apbct_api_key__is_correct($key) ) {
             die(json_encode(['FAIL' => ['error' => 'Api key is incorrect']]));
         }
@@ -680,19 +692,28 @@ class RemoteCalls
      */
     public static function action__get_fresh_wpnonce() // phpcs:ignore PSR1.Methods.CamelCapsMethodName.NotCamelCaps
     {
+        global $apbct;
+
         if ( ! isset($_POST['nonce_prev']) ) {
             return json_encode(array('error' => 'No nonce provided'));
         }
 
         $nonce_prev = Post::getString('nonce_prev');
-        $nonce_name = apbct_settings__get_ajax_type() === 'rest'
-            ? 'wp_rest'
-            : AJAXService::$public_nonce_id;
 
         // Check $nonce_prev by regexp '^[a-f0-9]{10}$'
         if ( ! preg_match('/^[a-f0-9]{10}$/', $nonce_prev) ) {
             return json_encode(array('error' => 'Wrong nonce provided'));
         }
+
+        // Detected once on activation/update/settings save, apbct_settings__get_ajax_type()
+        // probes the site over blocking loopback HTTP requests.
+        $ajax_type = ! empty($apbct->data['ajax_type'])
+            ? $apbct->data['ajax_type']
+            : apbct_settings__get_ajax_type();
+
+        $nonce_name = $ajax_type === 'rest'
+            ? 'wp_rest'
+            : AJAXService::$public_nonce_id;
 
         // set response type 'json'
         header('Content-Type: application/json');
@@ -703,6 +724,23 @@ class RemoteCalls
                 )
             )
         );
+    }
+
+    /**
+     * Remote call: generates a one-time firewall bypass link and emails it to the site admin.
+     *
+     * @return void Dies with 'OK' or with 'FAIL {"error":"..."}'.
+     * @psalm-suppress PossiblyUnusedMethod
+     */
+    public static function action__send_fw_bypass_email() // phpcs:ignore PSR1.Methods.CamelCapsMethodName.NotCamelCaps
+    {
+        $result = FirewallBypass::processGenerationRemoteCall();
+        if ( ! $result ) {
+            $error_message = FirewallBypass::$last_error ?? 'Unknown error';
+            die('FAIL ' . json_encode(['error' => $error_message]));
+        }
+
+        die('OK');
     }
 
     private static function isRcAllowed()

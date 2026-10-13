@@ -94,7 +94,9 @@ class State extends \Cleantalk\Common\State
         'data__email_decoder_obfuscation_custom_text' => '',
         'data__email_decoder_encode_phone_numbers' => 0,
         'data__email_decoder_encode_email_addresses' => 1,
+        'data__email_decoder_excluded_strings' => '',
         'data__wc_store_blocked_orders'            => 0,
+        'forms__wc_hide_rejection_message'         => 0,
 
         // Exclusions
         // Send to the cloud some excepted requests
@@ -285,7 +287,6 @@ class State extends \Cleantalk\Common\State
         //Common
         'close_renew_banner'            => array('last_call' => 0, 'cooldown' => 0),
         'check_website'                 => array('last_call' => 0, 'cooldown' => 0),
-        'update_settings'               => array('last_call' => 0, 'cooldown' => 0),
         'run_service_template_get'      => array('last_call' => 0, 'cooldown' => 60),
         'license_update'                => array('last_call' => 0, 'cooldown' => 0),
 
@@ -316,6 +317,7 @@ class State extends \Cleantalk\Common\State
         'rest_check'         => array('last_call' => 0,),
         // WP nonce gathering
         'get_fresh_wpnonce'         => array('last_call' => 0,),
+        'send_fw_bypass_email'         => array('last_call' => 0, 'cooldown' => 60),
     );
 
     /**

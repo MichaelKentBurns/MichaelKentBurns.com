@@ -16,6 +16,85 @@ class EmailEncoderShortCode extends \Cleantalk\ApbctWP\ShortCode
     protected $public_name;
 
     /**
+     * @var string Wrapper template overridden by child classes as the placeholder source.
+     */
+    protected $exclusion_wrapper = '';
+
+    // Placeholder nonce for ensuring unique placeholders per render.
+    protected $placeholder_nonce = '';
+
+    /**
+     * Lightweight pre-check to avoid running heavy regexes on every hit.
+     *
+     * Any valid shortcode pair must contain an opening tag `[public_name` — a cheap
+     * strpos() lookup rejects the vast majority of content before preg_* is involved.
+     *
+     * @param string|null $content
+     *
+     * @return bool True if the content may contain this shortcode.
+     */
+    protected function contentMayContainShortcode($content)
+    {
+        if ( ! is_string($content) || $content === '' || (string)$this->public_name === '' ) {
+            return false;
+        }
+
+        return strpos($content, '[' . $this->public_name) !== false;
+    }
+
+    /**
+     * Build a placeholder for the given counter using the child's $exclusion_wrapper as a template.
+     * Lazy-initialises the per-render nonce so replacements survive isolated render passes.
+     *
+     * @param int $counter
+     *
+     * @return string
+     */
+    protected function buildPlaceholder($counter)
+    {
+        if ($this->placeholder_nonce === '') {
+            $this->placeholder_nonce = $this->generatePlaceholderNonce();
+        }
+
+        $wrapper = (string)$this->exclusion_wrapper;
+        $placeholder = preg_replace(
+            '/EE\_\d+/',
+            'EE_' . (string)$counter . '_' . $this->placeholder_nonce,
+            $wrapper
+        );
+
+        return is_null($placeholder) ? $wrapper : $placeholder;
+    }
+
+    /**
+     * Rotates the placeholder nonce to ensure unique placeholders for subsequent renders.
+     * @return void
+     */
+    protected function rotatePlaceholderNonce()
+    {
+        $this->placeholder_nonce = $this->generatePlaceholderNonce();
+    }
+
+    /**
+     * Generates a new high-entropy nonce for placeholders.
+     * @return string
+     */
+    protected function generatePlaceholderNonce()
+    {
+        if (function_exists('random_bytes')) {
+            try {
+                return bin2hex(random_bytes(16));
+            } catch (\Exception $e) {
+                // fall through to WP fallback
+            }
+        }
+        if (function_exists('wp_generate_password')) {
+            return strtolower(wp_generate_password(32, false));
+        }
+        return substr(hash('sha256', uniqid((string)mt_rand(), true)), 0, 32);
+    }
+
+    /**
      * Process only this encoder's shortcode tags in the content.
      *
      * Must not call do_shortcode() on the full string: untrusted content (e.g. comments)
@@ -27,6 +106,10 @@ class EmailEncoderShortCode extends \Cleantalk\ApbctWP\ShortCode
     protected function doCallbackAction($content)
     {
         if ( ! is_string($content) || $this->public_name === '' ) {
+            return $content;
+        }
+
+        if ( ! $this->contentMayContainShortcode($content) ) {
             return $content;
         }
 
@@ -51,6 +134,10 @@ class EmailEncoderShortCode extends \Cleantalk\ApbctWP\ShortCode
 
                 $inner_content = isset($matches[2]) ? $matches[2] : '';
 
+                if ( $this->shortcodeContentContainsHtmlTags($inner_content) ) {
+                    return isset($matches[0]) ? $matches[0] : '';
+                }
+
                 return $this->callback($atts, $inner_content, $this->public_name);
             },
             $content
@@ -64,7 +151,7 @@ class EmailEncoderShortCode extends \Cleantalk\ApbctWP\ShortCode
      * @return string The modified content.
      * @psalm-suppress PossiblyUnusedMethod
      */
-    protected function changeContentBeforeEncoderModify($content)
+    protected function changeContentBeforeEncoderModify($content = '')
     {
         return $content;
     }
@@ -76,7 +163,7 @@ class EmailEncoderShortCode extends \Cleantalk\ApbctWP\ShortCode
      * @return string The modified content.
      * @psalm-suppress PossiblyUnusedMethod
      */
-    protected function changeContentAfterEncoderModify($content)
+    protected function changeContentAfterEncoderModify($content = '')
     {
         return $content;
     }
@@ -104,7 +191,9 @@ class EmailEncoderShortCode extends \Cleantalk\ApbctWP\ShortCode
      */
     protected function isShortcodeInsideHtmlTag($content)
     {
-        if ( ! is_string($content) ) {
+        // is_string() is repeated here for Psalm: it cannot infer the type narrowing
+        // that happens inside contentMayContainShortcode().
+        if ( ! is_string($content) || ! $this->contentMayContainShortcode($content) ) {
             return false;
         }
 
@@ -133,6 +222,26 @@ class EmailEncoderShortCode extends \Cleantalk\ApbctWP\ShortCode
         }
 
         return false;
+    }
+
+    /**
+     * Skip shortcode pairs whose inner content contains HTML tags.
+     *
+     * In buffer mode the lazy [tag]...[/tag] match can pair an opener in one
+     * fragment with a closer in another and swallow everything between them
+     * (comments, articles, any markup). A legitimate shortcode wraps text only.
+     *
+     * @param string $content Inner shortcode content.
+     *
+     * @return bool
+     */
+    protected function shortcodeContentContainsHtmlTags($content)
+    {
+        if ( ! is_string($content) || $content === '' ) {
+            return false;
+        }
+
+        return (bool) preg_match('/<\/?[a-zA-Z][a-zA-Z0-9:-]*(?:\s[^<>]*)?>/', $content);
     }
 
     /**

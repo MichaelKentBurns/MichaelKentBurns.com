@@ -5,7 +5,7 @@ namespace Cleantalk\ApbctWP\ServerRequirementsChecker;
 class ServerRequirementsChecker
 {
     public $requirements = [
-        'php_version' => '5.6',
+        'php_version' => '7.2',
         'curl_support' => true,
         'allow_url_fopen' => true,
         'memory_limit' => '128M',
@@ -197,7 +197,7 @@ class ServerRequirementsChecker
      */
     private function normalizeMemoryLimit($val)
     {
-        $val = trim($val);
+        $val = trim($val, " \n\r\t\v\x00");
         $last = strtolower($val[strlen($val) - 1]);
         $val = (int)$val;
         switch ($last) {

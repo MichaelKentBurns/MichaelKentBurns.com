@@ -6,9 +6,12 @@
 // translation files resolve. Never loaded at runtime: the generated PHP
 // loaders are pinned to the .min.js sibling.
 
-__( "Total clicks", "jetpack-premium-analytics-pkg" );
-__( "Total opens", "jetpack-premium-analytics-pkg" );
+__( "Clicks", "jetpack-premium-analytics-pkg" );
+__( "Opens", "jetpack-premium-analytics-pkg" );
+/* translators: %s: number of clicks. */
+_n( "%s Click", "%s Clicks", 1, "jetpack-premium-analytics-pkg" );
+/* translators: %s: number of opens. */
+_n( "%s Open", "%s Opens", 1, "jetpack-premium-analytics-pkg" );
 __( "We couldn't load this email's timeline. Please try again in a moment.", "jetpack-premium-analytics-pkg" );
 __( "Retry", "jetpack-premium-analytics-pkg" );
-__( "No activity for this email in this period.", "jetpack-premium-analytics-pkg" );
 __( "Open an email report to see its timeline here.", "jetpack-premium-analytics-pkg" );

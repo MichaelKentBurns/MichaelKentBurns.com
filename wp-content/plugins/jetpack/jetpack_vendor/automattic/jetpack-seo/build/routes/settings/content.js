@@ -6,10 +6,12 @@
 // translation files resolve. Never loaded at runtime: the generated PHP
 // loaders are pinned to the .min.js sibling.
 
-__( "Loading" );
-__( "More details follow." );
 /* translators: accessibility text appended to link text */
 __( "(opens in a new tab)" );
+/* translators: %s: keyboard shortcut. */
+__( "Keyboard shortcut: %s" );
+__( "Loading" );
+__( "More details follow." );
 __( "Dismiss" );
 __( "We couldn’t load this page", "jetpack-seo" );
 __( "This is usually temporary. Give it another try.", "jetpack-seo" );
@@ -22,8 +24,10 @@ __( "Help", "jetpack-components" );
 __( "Jetpack", "jetpack-components" );
 /* translators: accessibility text */
 __( "(opens in a new tab)", "jetpack-components" );
+__( "Sections" );
 /* translators: %s: an error message. */
 __( "There was an error testing Jetpack. Error: %s", "jetpack-components" );
+__( "Dismiss", "jetpack-components" );
 __( "What is GEO?", "jetpack-seo" );
 __( "GEO stands for generative engine optimization. These settings control how AI sees and uses your site.", "jetpack-seo" );
 __( "Overview", "jetpack-seo" );
@@ -35,6 +39,25 @@ __( "Could not enable SEO tools. Please try again.", "jetpack-seo" );
 __( "Could not disable SEO tools. Please try again.", "jetpack-seo" );
 __( "Enable SEO tools", "jetpack-seo" );
 __( "SEO tools help your content get found: customize titles and meta descriptions, generate a sitemap, verify your site with search engines, and control how pages look when shared. Turn it on to manage all of it from here.", "jetpack-seo" );
+__( "Site name", "jetpack-seo" );
+__( "Tagline", "jetpack-seo" );
+__( "Post title", "jetpack-seo" );
+__( "Page title", "jetpack-seo" );
+__( "Tag or category name", "jetpack-seo" );
+__( "Date", "jetpack-seo" );
+__( "Archive title", "jetpack-seo" );
+__( "Front page", "jetpack-seo" );
+__( "Posts", "jetpack-seo" );
+__( "Pages", "jetpack-seo" );
+__( "Tags", "jetpack-seo" );
+__( "Archives", "jetpack-seo" );
+__( "Your site", "jetpack-seo" );
+__( "Your tagline", "jetpack-seo" );
+__( "Hello World", "jetpack-seo" );
+__( "Sample Page", "jetpack-seo" );
+__( "News", "jetpack-seo" );
+__( "January 2025", "jetpack-seo" );
+__( "Sample Archive", "jetpack-seo" );
 __( "Updating settings…", "jetpack-seo" );
 __( "Settings saved.", "jetpack-seo" );
 __( "Could not save settings. Please try again.", "jetpack-seo" );
@@ -140,25 +163,6 @@ __( "How your home page looks in search results and social shares. Updates as yo
 __( "Google search result", "jetpack-seo" );
 __( "Facebook", "jetpack-seo" );
 __( "X (Twitter)", "jetpack-seo" );
-__( "Site name", "jetpack-seo" );
-__( "Tagline", "jetpack-seo" );
-__( "Post title", "jetpack-seo" );
-__( "Page title", "jetpack-seo" );
-__( "Tag or category name", "jetpack-seo" );
-__( "Date", "jetpack-seo" );
-__( "Archive title", "jetpack-seo" );
-__( "Front page", "jetpack-seo" );
-__( "Posts", "jetpack-seo" );
-__( "Pages", "jetpack-seo" );
-__( "Tags", "jetpack-seo" );
-__( "Archives", "jetpack-seo" );
-__( "Your site", "jetpack-seo" );
-__( "Your tagline", "jetpack-seo" );
-__( "Hello World", "jetpack-seo" );
-__( "Sample Page", "jetpack-seo" );
-__( "News", "jetpack-seo" );
-__( "January 2025", "jetpack-seo" );
-__( "Sample Archive", "jetpack-seo" );
 __( "Preview", "jetpack-seo" );
 __( "Insert a title part", "jetpack-seo" );
 __( "How your titles appear in search results and browser tabs. Each page type keeps the default until you set a format; parts your site has no value for show as empty.", "jetpack-seo" );
@@ -188,6 +192,8 @@ __( "Enable site verification", "jetpack-seo" );
 __( "Adds your saved verification codes to the site so supported services can confirm ownership.", "jetpack-seo" );
 __( "Publishes a map of your posts and pages so search engines can find your content.", "jetpack-seo" );
 __( "Allow search engines to index this site to generate a sitemap.", "jetpack-seo" );
+__( "Turning this off asks search engines to stop indexing your site — Google and Bing honor it, others ignore it. Same setting as Settings → Reading.", "jetpack-seo" );
+__( "Your site is private, so search engines cannot see it at all. Make it public in your site visibility settings to change this.", "jetpack-seo" );
 __( "View sitemap", "jetpack-seo" );
 __( "Shown under your site name in search results and social shares. About the first 155 characters display in search, or 120 on mobile.", "jetpack-seo" );
 __( "Unable to load settings.", "jetpack-seo" );
@@ -197,7 +203,6 @@ __( "Home page description", "jetpack-seo" );
 _n( "%d character", "%d characters", 1, "jetpack-seo" );
 __( "Site visibility", "jetpack-seo" );
 __( "Allow search engines to index this site", "jetpack-seo" );
-__( "Turning this off asks search engines to stop indexing your site — Google and Bing honor it, others ignore it. Same setting as Settings → Reading.", "jetpack-seo" );
 __( "Generate an XML sitemap", "jetpack-seo" );
 __( "Canonical URLs", "jetpack-seo" );
 __( "Add canonical URLs to archive pages", "jetpack-seo" );

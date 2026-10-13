@@ -2,10 +2,8 @@
 /**
  * Dashboard widget modules: REST exposure + import-map wiring.
  *
- * Reads get_available_widget_types() (the registry filtered by
- * widget-availability.php) and exposes it two ways: the
- * `/wpcom/v2/widget-modules` REST list, and the page import map, where each
- * widget's render and metadata modules are registered for dynamic `import()`.
+ * Reads get_available_widget_types() and exposes it two ways: the `/wpcom/v2/widget-modules`
+ * REST list, and the page import map, for dynamic `import()`.
  *
  * @package automattic/jetpack-premium-analytics
  */
@@ -32,14 +30,11 @@ function register_widget_modules_rest_route() {
 }
 
 /**
- * Load and hydrate the widget type registry, once.
+ * Load the widget type API and the build manifest, once, ahead of the registry's first read.
  *
- * Deferred to here (the registry's only two readers) instead of running
- * unconditionally at boot: this package boots on every request to a site
- * that has it active, and on WPCOM Simple this file's registration runs on
- * every public-api request across all of WPCOM, not just ones that touch
- * Premium Analytics. Most such requests never read the registry at all, so
- * parsing the widget manifest and hydrating it eagerly was wasted work.
+ * Deferred to the registry's only two readers rather than run at boot: on Simple this file's
+ * registration runs on every WPCOM public-api request, and most never read the registry. The
+ * registry hydrates itself on that read, from the registration action.
  *
  * @return void
  */
@@ -53,26 +48,12 @@ function ensure_widget_registry_ready() {
 	require_once __DIR__ . '/widget-types.php';
 	require_once __DIR__ . '/widget-availability.php';
 
-	/**
-	 * Filters the path to the generated widget manifest.
-	 *
-	 * Load-bearing since WOOA7S-1804: the build is otherwise admin-only, so on a
-	 * REST request this require is the only thing that puts the manifest in
-	 * reach. Drop it and every dashboard widget renders "Widget is no longer
-	 * available" (the #49961 bug).
-	 *
-	 * @param string $path Absolute path to the manifest register_widget_types()
-	 *                     reads. Absent without a JS build.
-	 */
-	$widgets_manifest = apply_filters(
-		'jetpack_premium_analytics_widgets_manifest_path',
-		__DIR__ . '/../build/widgets.php'
-	);
+	// REST does not load the admin build, so this require is the manifest's only route in
+	// (WOOA7S-1804). Drop it and every widget renders "Widget is no longer available" (#49961).
+	$widgets_manifest = Analytics::widget_manifest_path();
 	if ( file_exists( $widgets_manifest ) ) {
 		require_once $widgets_manifest;
 	}
-
-	bootstrap_widget_types();
 }
 
 /**
@@ -95,7 +76,12 @@ function get_widget_modules_response() {
 			'title'         => $widget_type->title,
 			'description'   => $widget_type->description,
 			'help'          => $widget_type->help,
+			'icon'          => $widget_type->icon,
+			'actions'       => $widget_type->actions,
 			'keywords'      => $widget_type->keywords,
+			'textdomain'    => $widget_type->textdomain,
+			'i18n_manifest' => $widget_type->i18n_manifest,
+			'former_names'  => $widget_type->former_names,
 		);
 	}
 
@@ -130,8 +116,4 @@ function add_widget_modules_to_boot_deps( $boot_dependencies ) {
 
 	return $boot_dependencies;
 }
-// The full-page interceptor (page.php) renders via the `{page-id}` filter; the
-// in-admin variant (page-wp-admin.php) uses the `{page-id}-wp-admin` filter. Hook
-// both so the widget modules land in the import map regardless of which renders.
-add_filter( 'jetpack-premium-analytics_boot_dependencies', __NAMESPACE__ . '\\add_widget_modules_to_boot_deps' );
 add_filter( 'jetpack-premium-analytics-wp-admin_boot_dependencies', __NAMESPACE__ . '\\add_widget_modules_to_boot_deps' );

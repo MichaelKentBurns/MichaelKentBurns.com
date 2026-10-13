@@ -6,9 +6,11 @@
 // translation files resolve. Never loaded at runtime: the generated PHP
 // loaders are pinned to the .min.js sibling.
 
-__( "Loading" );
 /* translators: accessibility text appended to link text */
 __( "(opens in a new tab)" );
+/* translators: %s: keyboard shortcut. */
+__( "Keyboard shortcut: %s" );
+__( "Loading" );
 __( "Dismiss" );
 __( "We couldn’t load this page", "jetpack-seo" );
 __( "This is usually temporary. Give it another try.", "jetpack-seo" );
@@ -21,8 +23,10 @@ __( "Help", "jetpack-components" );
 __( "Jetpack", "jetpack-components" );
 /* translators: accessibility text */
 __( "(opens in a new tab)", "jetpack-components" );
+__( "Sections" );
 /* translators: %s: an error message. */
 __( "There was an error testing Jetpack. Error: %s", "jetpack-components" );
+__( "Dismiss", "jetpack-components" );
 __( "What is GEO?", "jetpack-seo" );
 __( "GEO stands for generative engine optimization. These settings control how AI sees and uses your site.", "jetpack-seo" );
 __( "Overview", "jetpack-seo" );
@@ -37,6 +41,25 @@ __( "SEO tools help your content get found: customize titles and meta descriptio
 __( "Boost your search engine ranking", "jetpack-seo" );
 __( "Get tools to optimize your site for improved search engine results.", "jetpack-seo" );
 __( "Upgrade", "jetpack-seo" );
+__( "Site name", "jetpack-seo" );
+__( "Tagline", "jetpack-seo" );
+__( "Post title", "jetpack-seo" );
+__( "Page title", "jetpack-seo" );
+__( "Tag or category name", "jetpack-seo" );
+__( "Date", "jetpack-seo" );
+__( "Archive title", "jetpack-seo" );
+__( "Front page", "jetpack-seo" );
+__( "Posts", "jetpack-seo" );
+__( "Pages", "jetpack-seo" );
+__( "Tags", "jetpack-seo" );
+__( "Archives", "jetpack-seo" );
+__( "Your site", "jetpack-seo" );
+__( "Your tagline", "jetpack-seo" );
+__( "Hello World", "jetpack-seo" );
+__( "Sample Page", "jetpack-seo" );
+__( "News", "jetpack-seo" );
+__( "January 2025", "jetpack-seo" );
+__( "Sample Archive", "jetpack-seo" );
 __( "AI crawlers can't reach this site while it's on a staging address.", "jetpack-seo" );
 __( "AI crawlers can't reach this site while it's closed to search engines.", "jetpack-seo" );
 __( "Crawler settings can't apply while a static robots.txt file exists in the WordPress installation directory.", "jetpack-seo" );

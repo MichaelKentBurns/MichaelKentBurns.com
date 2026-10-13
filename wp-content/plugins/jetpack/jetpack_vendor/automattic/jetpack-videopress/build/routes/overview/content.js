@@ -8,6 +8,7 @@
 
 /* translators: accessibility text appended to link text */
 __( "(opens in a new tab)", "jetpack-videopress-pkg" );
+__( "Sections", "jetpack-videopress-pkg" );
 __( "Jetpack Logo", "jetpack-videopress-pkg" );
 __( "An Automattic Airline", "jetpack-videopress-pkg" );
 /* translators: %1$s is button label 1 and %2$s is button label 2 */
@@ -32,20 +33,69 @@ __( "Help", "jetpack-videopress-pkg" );
 __( "Jetpack", "jetpack-videopress-pkg" );
 /* translators: %s: an error message. */
 __( "There was an error testing Jetpack. Error: %s", "jetpack-videopress-pkg" );
+/* translators: %s: keyboard shortcut. */
+__( "Keyboard shortcut: %s", "jetpack-videopress-pkg" );
 __( "Loading", "jetpack-videopress-pkg" );
 __( "Dismiss", "jetpack-videopress-pkg" );
+/* translators: %s: the error. */
+__( "There was an error reconnecting Jetpack. Error: %s", "jetpack-videopress-pkg" );
+__( "Your account (connection owner)", "jetpack-videopress-pkg" );
+/* translators: %s is the display name of the Jetpack connection owner. */
+__( "Connection owner's account (%s)", "jetpack-videopress-pkg" );
+__( "Connection owner's account", "jetpack-videopress-pkg" );
+__( "Your account", "jetpack-videopress-pkg" );
+__( "Another user's account", "jetpack-videopress-pkg" );
+__( "User connection", "jetpack-videopress-pkg" );
+__( "Site connection", "jetpack-videopress-pkg" );
+/* translators: %s is what the error applies to, e.g. "Site connection" or "Your account". */
+__( "Jetpack Connection error: %s", "jetpack-videopress-pkg" );
+/* translators: %d is the number of connection errors found. */
+_n( "%d Jetpack Connection error", "%d Jetpack Connection errors", 1, "jetpack-videopress-pkg" );
+__( "Jetpack Connection error", "jetpack-videopress-pkg" );
+__( "Still having trouble? <link>Contact Jetpack Support</link>.", "jetpack-videopress-pkg" );
+__( "Reconnecting Jetpack", "jetpack-videopress-pkg" );
+__( "Loading…", "jetpack-videopress-pkg" );
+__( "Restore Connection", "jetpack-videopress-pkg" );
+__( "Take Action", "jetpack-videopress-pkg" );
+__( "Reconnecting Jetpack…", "jetpack-videopress-pkg" );
+__( "Close", "jetpack-videopress-pkg" );
+__( "Add at least three chapters.", "jetpack-videopress-pkg" );
+__( "The first chapter must start at 0:00.", "jetpack-videopress-pkg" );
+__( "At least three chapters are required.", "jetpack-videopress-pkg" );
+__( "Every chapter needs a title.", "jetpack-videopress-pkg" );
+__( "Chapters must be in ascending order without repeated timestamps.", "jetpack-videopress-pkg" );
+__( "Chapters must be at least 10 seconds apart.", "jetpack-videopress-pkg" );
+__( "Chapters cannot start after the video ends.", "jetpack-videopress-pkg" );
+__( "English (auto-generated)", "jetpack-videopress-pkg" );
+__( "Video chapters could not be updated.", "jetpack-videopress-pkg" );
 __( "Library", "jetpack-videopress-pkg" );
 __( "Stats", "jetpack-videopress-pkg" );
 __( "Settings", "jetpack-videopress-pkg" );
-__( "Host, manage, customize, and track your videos — all in one place.", "jetpack-videopress-pkg" );
+__( "You’re on the free plan, which allows 1 video upload. Upgrade for more storage and unlimited uploads.", "jetpack-videopress-pkg" );
+__( "You’ve reached the free plan’s 1-video limit. Upgrade to upload more.", "jetpack-videopress-pkg" );
+__( "Upgrade", "jetpack-videopress-pkg" );
+__( "Only video files can be uploaded.", "jetpack-videopress-pkg" );
+/* translators: %d: number of videos that could not be uploaded because the plan limit was reached. */
+_n( "%d video wasn’t uploaded because it exceeds your plan’s limit.", "%d videos weren’t uploaded because they exceed your plan’s limit.", 1, "jetpack-videopress-pkg" );
+__( "What VideoPress does", "jetpack-videopress-pkg" );
+__( "A player you own", "jetpack-videopress-pkg" );
+__( "No ads, no logos, and nothing recommended afterwards.", "jetpack-videopress-pkg" );
+__( "Bring existing videos", "jetpack-videopress-pkg" );
+__( "Move library videos over in one click, no re-uploads.", "jetpack-videopress-pkg" );
+__( "Share it anywhere", "jetpack-videopress-pkg" );
+__( "Every video gets a link and an embed that work off-site.", "jetpack-videopress-pkg" );
+__( "Your Video. Your Player.", "jetpack-videopress-pkg" );
+__( "The same ad-free player every video on your site will use — your visitors stay on your site, and VideoPress handles the hosting and streaming. Upload one to see it live.", "jetpack-videopress-pkg" );
+/* translators: %d: number of local videos in the media library. */
+_n( "Move %d video over", "Move %d videos over", 1, "jetpack-videopress-pkg" );
+__( "Learn more", "jetpack-videopress-pkg" );
+__( "Upload a video", "jetpack-videopress-pkg" );
+__( "Host, manage, customize, and track your videos — all in one place. <link>Learn more</link>.", "jetpack-videopress-pkg" );
 __( "Retry", "jetpack-videopress-pkg" );
 __( "Last 7 days", "jetpack-videopress-pkg" );
 __( "Last 30 days", "jetpack-videopress-pkg" );
 __( "Last 90 days", "jetpack-videopress-pkg" );
 __( "Last 365 days", "jetpack-videopress-pkg" );
-__( "A connection check failed.", "jetpack-videopress-pkg" );
-__( "You’re on the free plan, which allows 1 video upload. Upgrade for more storage and unlimited uploads.", "jetpack-videopress-pkg" );
-__( "Upgrade", "jetpack-videopress-pkg" );
 __( "Active metric", "jetpack-videopress-pkg" );
 __( "VIEWS", "jetpack-videopress-pkg" );
 __( "IMPRESSIONS", "jetpack-videopress-pkg" );
@@ -59,28 +109,34 @@ __( "See all videos", "jetpack-videopress-pkg" );
 __( "%1$s of %2$s of cloud video storage", "jetpack-videopress-pkg" );
 __( "Top videos by watch time", "jetpack-videopress-pkg" );
 __( "No videos watched in the chosen period.", "jetpack-videopress-pkg" );
+_x( "%1$s, %2$s", "legend item label and value", "jetpack-videopress-pkg" );
+_x( "%s: visible. Toggle visibility.", "visible interactive legend item", "jetpack-videopress-pkg" );
+_x( "%s: hidden. Toggle visibility.", "hidden interactive legend item", "jetpack-videopress-pkg" );
+_x( "%s: hidden", "hidden non-interactive legend item", "jetpack-videopress-pkg" );
+__( "Comparison period", "jetpack-videopress-pkg" );
+__( "No data", "jetpack-videopress-pkg" );
+_x( "All segments are hidden. Click legend items to show data.", "chart empty state: interactive segments", "jetpack-videopress-pkg" );
+_x( "All segments are hidden.", "chart empty state: segments", "jetpack-videopress-pkg" );
+_x( "All series are hidden. Click legend items to show data.", "chart empty state: interactive series", "jetpack-videopress-pkg" );
+_x( "All series are hidden.", "chart empty state: series", "jetpack-videopress-pkg" );
 __( "Reset zoom", "jetpack-videopress-pkg" );
 __( "View details", "jetpack-videopress-pkg" );
-__( "Close", "jetpack-videopress-pkg" );
-__( "Line chart", "jetpack-videopress-pkg" );
-__( "All series are hidden. Click legend items to show data.", "jetpack-videopress-pkg" );
 __( "No data available", "jetpack-videopress-pkg" );
 __( "Invalid data", "jetpack-videopress-pkg" );
+__( "Line chart", "jetpack-videopress-pkg" );
 __( "Area chart", "jetpack-videopress-pkg" );
+__( "Week of %s", "jetpack-videopress-pkg" );
 __( "%1$s: %2$s", "jetpack-videopress-pkg" );
 __( "Bar chart", "jetpack-videopress-pkg" );
 __( "Loading map", "jetpack-videopress-pkg" );
 __( "Less", "jetpack-videopress-pkg" );
 __( "More", "jetpack-videopress-pkg" );
-__( "No data", "jetpack-videopress-pkg" );
 __( "Heatmap chart", "jetpack-videopress-pkg" );
 __( "Current period", "jetpack-videopress-pkg" );
 __( "Previous period", "jetpack-videopress-pkg" );
-__( "Loading…", "jetpack-videopress-pkg" );
 __( "Not enough space to display data", "jetpack-videopress-pkg" );
 __( "Percentage change unavailable", "jetpack-videopress-pkg" );
 __( "No comparison data", "jetpack-videopress-pkg" );
-__( "All segments are hidden. Click legend items to show data.", "jetpack-videopress-pkg" );
 __( "Views trends", "jetpack-videopress-pkg" );
 __( "Views", "jetpack-videopress-pkg" );
 __( "Impressions", "jetpack-videopress-pkg" );
